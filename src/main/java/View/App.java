@@ -9,6 +9,8 @@ public class App extends Application
     public void start(Stage stage)
     {
         ViewInitialize viewInitialize = new ViewInitialize(stage);
+        stage.setMaxHeight(500);
+        stage.setMinWidth(700);
         stage.show();
 
     }

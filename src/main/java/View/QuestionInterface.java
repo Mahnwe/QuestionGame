@@ -5,44 +5,30 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.stage.Popup;
 import org.example.Question;
 import org.example.QuestionStorage;
 
 public class QuestionInterface extends BorderPane
 {
     private QuestionStorage questionList;
-    VBox game;
-    Question question;
-    Label questionToAsk;
+    private VBox game;
+    private Question question;
+    private Label questionToAsk;
 
-    Label questionCount;
-    Popup confirmPopUp;
+    private Label questionCount;
 
-    Alert confirmAlert;
-    Button answerButton1;
-    Button answerButton2;
-    Button answerButton3;
-    Button answerButton4;
+    private Alert confirmAlert;
+    private Button answerButton1;
+    private Button answerButton2;
+    private Button answerButton3;
+    private Button answerButton4;
 
-    Label askConfirm;
-    Button yesButton;
-    Button noButton;
 
     public QuestionInterface(Question question)
     {
         this.question = question;
         this.questionList = new QuestionStorage();
-        confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
-        confirmPopUp = new Popup();
-        VBox confirmBox = new VBox();
-        askConfirm = new Label("Etes vous certain de votre réponse ?");
-        yesButton = new Button("Oui");
-        noButton = new Button("Non");
-        confirmBox.getChildren().add(askConfirm);
-        confirmBox.getChildren().add(yesButton);
-        confirmBox.getChildren().add(noButton);
-        confirmPopUp.getContent().add(confirmBox);
+        this.confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
 
     }
 
@@ -53,48 +39,33 @@ public class QuestionInterface extends BorderPane
         game.setMinWidth(200);
         game.setMinHeight(200);
 
-
     }
 
     public void createQuestionLabel()
     {
-        for(int i = 0; i<questionList.getQuestionList().size(); i++) {
-            questionToAsk = new Label(questionList.getQuestionList().get(i).getQuestionToAsk());
+        for(int i = 0; i<questionList.getQuestionList().size(); i++)
+        {
+            questionToAsk = new Label(question.getQuestionToAsk());
         }
     }
 
-    public void createAnswerButton() {
-        for (int i = 0; i < questionList.getQuestionList().size(); i++) {
-            //for (int y = 0; y < questionList.getQuestionList().get(i).getAnswerList().size(); y++) {
-                answerButton1 = new Button(questionList.getQuestionList().get(i).getAnswerList().get(0));
-            //}
+    public void createAnswerButton()
+    {
+            answerButton1 = new Button(question.getAnswerList().get(0));
+            answerButton1.setTranslateY(10);
+            answerButton1.setTranslateX(15);
 
-            answerButton1.setTranslateY(5);
-            answerButton1.setTranslateX(5);
+            answerButton2 = new Button(question.getAnswerList().get(1));
+            answerButton2.setTranslateY(20);
+            answerButton2.setTranslateX(15);
 
+            answerButton3 = new Button(question.getAnswerList().get(2));
+            answerButton3.setTranslateY(30);
+            answerButton3.setTranslateX(15);
 
-            for (int y = 0; y < questionList.getQuestionList().get(i).getAnswerList().size(); y++) {
-                answerButton2 = new Button(questionList.getQuestionList().get(i).getAnswerList().get(1));
-            }
-
-            answerButton2.setTranslateY(10);
-            answerButton2.setTranslateX(5);
-
-            for (int y = 0; y < questionList.getQuestionList().get(i).getAnswerList().size(); y++) {
-                answerButton3 = new Button(questionList.getQuestionList().get(i).getAnswerList().get(2));
-            }
-
-            answerButton3.setTranslateY(15);
-            answerButton3.setTranslateX(5);
-
-
-            for (int y = 0; y < questionList.getQuestionList().get(i).getAnswerList().size(); y++) {
-                answerButton4 = new Button(questionList.getQuestionList().get(i).getAnswerList().get(3));
-            }
-
-            answerButton4.setTranslateY(20);
-            answerButton4.setTranslateX(5);
-        }
+            answerButton4 = new Button(question.getAnswerList().get(3));
+            answerButton4.setTranslateY(40);
+            answerButton4.setTranslateX(15);
 
     }
 
@@ -146,18 +117,6 @@ public class QuestionInterface extends BorderPane
 
     public Button getAnswerButton4() {
         return answerButton4;
-    }
-
-    public Popup getConfirmPopUp() {
-        return confirmPopUp;
-    }
-
-    public Button getYesButton() {
-        return yesButton;
-    }
-
-    public Button getNoButton() {
-        return noButton;
     }
 
     public Alert getConfirmAlert() {

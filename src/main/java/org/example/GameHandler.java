@@ -8,7 +8,6 @@ public class GameHandler
 
     private Question question;
     private Player player;
-    private final int answerIndex = 1;
     private String playerAnswer;
 
     private String goodAnswer;

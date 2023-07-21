@@ -18,6 +18,7 @@ import java.util.Optional;
 
 public class MainScene extends Scene
 {
+    private BorderPane menuPane;
     private QuestionStorage questionStorage;
     private QuestionInterface questionInterface;
     private TextArea userInputArea;
@@ -42,12 +43,14 @@ public class MainScene extends Scene
     private Question question;
 
     private Stage stage;
+
     public MainScene(BorderPane menuPane, Stage stage)
     {
         super(menuPane);
+        this.menuPane = menuPane;
         this.stage = stage;
         this.questionStorage = new QuestionStorage();
-        Border border = new Border(new BorderStroke(Color.BLACK,BorderStrokeStyle.SOLID,CornerRadii.EMPTY,BorderWidths.DEFAULT));
+        Border border = new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT));
         Background background = new Background(new BackgroundFill(Color.SADDLEBROWN, CornerRadii.EMPTY, Insets.EMPTY));
 
         VBox getPlayerName = new VBox();
@@ -69,12 +72,11 @@ public class MainScene extends Scene
         getPlayerName.getChildren().add(sendButton);
         menuPane.setTop(getPlayerName);
         sendButton.setOnAction(event -> {
-            if(!userInputArea.getText().isEmpty())
-            {
+            if (!userInputArea.getText().isEmpty()) {
                 VBox playerInfos = new VBox();
-                playerName = new Label("Nom : "+userInputArea.getText());
+                playerName = new Label("Nom : " + userInputArea.getText());
                 playerInfos.getChildren().add(createStatArea(playerName));
-                playerInfos.setBorder(new Border(new BorderStroke(Color.BLACK,BorderStrokeStyle.SOLID,CornerRadii.EMPTY,BorderWidths.DEFAULT)));
+                playerInfos.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
                 playerScore = new Label("Score : ");
                 playerInfos.getChildren().add(createStatArea(playerScore));
                 playerInfos.setMinWidth(150);
@@ -85,45 +87,19 @@ public class MainScene extends Scene
             getPlayerName.setMinHeight(0);
             getPlayerName.setVisible(false);
         });
-
-        questionCount = new Label("Question numéro : ");
-
-        questionInterface = new QuestionInterface(questionStorage.getQuestionList().get(0));
-        questionInterface.createView(questionStorage.getQuestionList().get(0));
-
-
-        menuPane.setCenter(questionInterface);
-        questionInterface.getAnswerButton1().setOnAction(event -> questionInterface.getConfirmAlert().show());
-        questionInterface.getAnswerButton2().setOnAction(event -> questionInterface.getConfirmAlert().show());
-        questionInterface.getAnswerButton3().setOnAction(event -> questionInterface.getConfirmAlert().show());
-        questionInterface.getAnswerButton4().setOnAction(event -> questionInterface.getConfirmAlert().show());
-        if(questionInterface.getConfirmAlert().isShowing())
-        {
-            Optional<ButtonType> result = questionInterface.getConfirmAlert().showAndWait();
-            ButtonType resultButton = result.orElse(ButtonType.CANCEL);
-            if (resultButton == ButtonType.OK)
-            //oke button is pressed
-            {
-                for(int i = 1; i<questionStorage.getQuestionList().size(); i++)
-                {
-                    questionInterface = new QuestionInterface(questionStorage.getQuestionList().get(i));
-                    questionInterface.createView(questionStorage.getQuestionList().get(i));
-                }
-            }
-            else
-            {
-
-            }
-        }
+    for(int i = 0; i<questionStorage.getQuestionList().size(); i++) {
+        menuPane.setCenter(switchQuestion(i));
     }
 
-    public HBox createStatArea(Label label)
-    {
+
+    }
+
+    public HBox createStatArea(Label label) {
         label.setTranslateY(3);
 
         HBox area = new HBox();
         area.setMinHeight(30);
-        area.setBorder(new Border(new BorderStroke(Color.BLACK,BorderStrokeStyle.SOLID,CornerRadii.EMPTY,BorderWidths.DEFAULT)));
+        area.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 
 
         Label emptySpace = new Label();
@@ -134,11 +110,42 @@ public class MainScene extends Scene
         return area;
     }
 
-    public Label getPlayerScore() {
+    public QuestionInterface switchQuestion(int i) {
+
+        questionCount = new Label("Question numéro : ");
+        questionInterface = new QuestionInterface(questionStorage.getQuestionList().get(0));
+        questionInterface.createView(questionStorage.getQuestionList().get(0));
+
+
+        menuPane.setCenter(questionInterface);
+        questionInterface.getAnswerButton1().setOnAction(event -> questionInterface.getConfirmAlert().show());
+        questionInterface.getAnswerButton2().setOnAction(event -> questionInterface.getConfirmAlert().show());
+        questionInterface.getAnswerButton3().setOnAction(event -> questionInterface.getConfirmAlert().show());
+        questionInterface.getAnswerButton4().setOnAction(event -> questionInterface.getConfirmAlert().show());
+            if (questionInterface.getConfirmAlert().isShowing()) {
+
+                Optional<ButtonType> result = questionInterface.getConfirmAlert().showAndWait();
+                ButtonType resultButton = result.orElse(ButtonType.CANCEL);
+
+                if (resultButton == ButtonType.OK)
+                {
+                    questionInterface = new QuestionInterface(questionStorage.getQuestionList().get(i));
+                    questionInterface.createView(questionStorage.getQuestionList().get(i));
+                }
+                else
+                {
+
+                }
+            }
+        return questionInterface;
+    }
+    public Label getPlayerScore()
+    {
         return playerScore;
     }
 
-    public void setPlayerScore(Label playerScore) {
+    public void setPlayerScore (Label playerScore)
+    {
         this.playerScore = playerScore;
     }
 }

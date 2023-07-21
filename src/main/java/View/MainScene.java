@@ -11,12 +11,14 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import org.example.GameHandler;
 import org.example.Question;
+import org.example.QuestionStorage;
 
 import java.util.Optional;
 
 
 public class MainScene extends Scene
 {
+    private QuestionStorage questionStorage;
     private QuestionInterface questionInterface;
     private TextArea userInputArea;
     private Button sendButton;
@@ -44,6 +46,7 @@ public class MainScene extends Scene
     {
         super(menuPane);
         this.stage = stage;
+        this.questionStorage = new QuestionStorage();
         Border border = new Border(new BorderStroke(Color.BLACK,BorderStrokeStyle.SOLID,CornerRadii.EMPTY,BorderWidths.DEFAULT));
         Background background = new Background(new BackgroundFill(Color.SADDLEBROWN, CornerRadii.EMPTY, Insets.EMPTY));
 
@@ -85,8 +88,9 @@ public class MainScene extends Scene
 
         questionCount = new Label("Question numéro : ");
 
-        questionInterface = new QuestionInterface(question);
-        questionInterface.createView();
+        questionInterface = new QuestionInterface(questionStorage.getQuestionList().get(0));
+        questionInterface.createView(questionStorage.getQuestionList().get(0));
+
 
         menuPane.setCenter(questionInterface);
         questionInterface.getAnswerButton1().setOnAction(event -> questionInterface.getConfirmAlert().show());
@@ -96,18 +100,17 @@ public class MainScene extends Scene
         if(questionInterface.getConfirmAlert().isShowing())
         {
             Optional<ButtonType> result = questionInterface.getConfirmAlert().showAndWait();
-            if (!result.isPresent())
-            // alert is exited, no button has been pressed.
-            {
-
-            }
-            if (result.get() == ButtonType.OK)
+            ButtonType resultButton = result.orElse(ButtonType.CANCEL);
+            if (resultButton == ButtonType.OK)
             //oke button is pressed
             {
-
+                for(int i = 1; i<questionStorage.getQuestionList().size(); i++)
+                {
+                    questionInterface = new QuestionInterface(questionStorage.getQuestionList().get(i));
+                    questionInterface.createView(questionStorage.getQuestionList().get(i));
+                }
             }
-            if (result.get() == ButtonType.CANCEL)
-            // cancel button is pressed
+            else
             {
 
             }

@@ -79,7 +79,7 @@ public class QuestionInterface extends BorderPane
         this.setCenter(game);
     }
 
-    public void createView()
+    public void createView(Question question)
     {
         createGameSpace();
         createQuestionLabel();

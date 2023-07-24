@@ -87,9 +87,11 @@ public class MainScene extends Scene
             getPlayerName.setMinHeight(0);
             getPlayerName.setVisible(false);
         });
-    for(int i = 0; i<questionStorage.getQuestionList().size(); i++) {
-        menuPane.setCenter(switchQuestion(i));
-    }
+    //for(int i = 0; i<questionStorage.getQuestionList().size(); i++) {
+        switchQuestion(0);
+        createNewQuestionInterface(1);
+
+    //}
 
 
     }
@@ -110,34 +112,34 @@ public class MainScene extends Scene
         return area;
     }
 
-    public QuestionInterface switchQuestion(int i) {
+    public void switchQuestion(int i) {
 
         questionCount = new Label("Question numéro : ");
         questionInterface = new QuestionInterface(questionStorage.getQuestionList().get(0));
         questionInterface.createView(questionStorage.getQuestionList().get(0));
 
-
         menuPane.setCenter(questionInterface);
-        questionInterface.getAnswerButton1().setOnAction(event -> questionInterface.getConfirmAlert().show());
-        questionInterface.getAnswerButton2().setOnAction(event -> questionInterface.getConfirmAlert().show());
-        questionInterface.getAnswerButton3().setOnAction(event -> questionInterface.getConfirmAlert().show());
-        questionInterface.getAnswerButton4().setOnAction(event -> questionInterface.getConfirmAlert().show());
-            if (questionInterface.getConfirmAlert().isShowing()) {
+    }
 
-                Optional<ButtonType> result = questionInterface.getConfirmAlert().showAndWait();
-                ButtonType resultButton = result.orElse(ButtonType.CANCEL);
+    public void createNewQuestionInterface(int i){
+            if (questionInterface.getAnswerButton1().isPressed()) {
 
-                if (resultButton == ButtonType.OK)
-                {
-                    questionInterface = new QuestionInterface(questionStorage.getQuestionList().get(i));
-                    questionInterface.createView(questionStorage.getQuestionList().get(i));
-                }
-                else
-                {
+                //Optional<ButtonType> result = questionInterface.getConfirmAlert().showAndWait();
+                //ButtonType resultButton = result.orElse(ButtonType.CANCEL);
 
-                }
+                //if (resultButton == ButtonType.OK)
+                //{
+                    menuPane.setCenter(null);
+                    questionInterface.getGame().getChildren().clear();
+                    questionInterface = new QuestionInterface(questionStorage.getQuestionList().get(1));
+                    questionInterface.createView(questionStorage.getQuestionList().get(1));
+                    menuPane.setCenter(questionInterface);
+               // }
+                //else
+                //{
+
+                //}
             }
-        return questionInterface;
     }
     public Label getPlayerScore()
     {

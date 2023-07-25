@@ -1,5 +1,6 @@
 package View;
 
+import javafx.geometry.Insets;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -52,22 +53,22 @@ public class QuestionInterface extends BorderPane
     public void createAnswerButton()
     {
             answerButton1 = new Button(question.getAnswerList().get(0));
-            answerButton1.setOnAction(event -> confirmAlert.show());
+            //answerButton1.setOnAction(event -> confirmAlert.show());
             answerButton1.setTranslateY(10);
             answerButton1.setTranslateX(15);
 
             answerButton2 = new Button(question.getAnswerList().get(1));
-            answerButton2.setOnAction(event -> confirmAlert.show());
+            //answerButton2.setOnAction(event -> confirmAlert.show());
             answerButton2.setTranslateY(20);
             answerButton2.setTranslateX(15);
 
             answerButton3 = new Button(question.getAnswerList().get(2));
-            answerButton3.setOnAction(event -> confirmAlert.show());
+            //answerButton3.setOnAction(event -> confirmAlert.show());
             answerButton3.setTranslateY(30);
             answerButton3.setTranslateX(15);
 
             answerButton4 = new Button(question.getAnswerList().get(3));
-            answerButton4.setOnAction(event -> confirmAlert.show());
+            //answerButton4.setOnAction(event -> confirmAlert.show());
             answerButton4.setTranslateY(40);
             answerButton4.setTranslateX(15);
 
@@ -89,6 +90,20 @@ public class QuestionInterface extends BorderPane
         createQuestionLabel();
         createAnswerButton();
         initGameSpace();
+        checkAnswer();
+    }
+
+    public boolean checkAnswer()
+    {
+      if(answerButton1.isPressed())
+      {
+          if(answerButton1.getText() == question.getGoodAnswer().toString())
+          {
+              answerButton1.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
+              return true;
+          }
+      }
+        return false;
     }
 
     public HBox createStatArea(Label label)

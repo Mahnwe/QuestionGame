@@ -87,12 +87,9 @@ public class MainScene extends Scene
             getPlayerName.setMinHeight(0);
             getPlayerName.setVisible(false);
         });
-    //for(int i = 0; i<questionStorage.getQuestionList().size(); i++) {
+
         switchQuestion(0);
         createNewQuestionInterface(1);
-
-    //}
-
 
     }
 
@@ -115,28 +112,29 @@ public class MainScene extends Scene
     public void switchQuestion(int i) {
 
         questionCount = new Label("Question numéro : ");
-        questionInterface = new QuestionInterface(questionStorage.getQuestionList().get(0));
-        questionInterface.createView(questionStorage.getQuestionList().get(0));
+        questionInterface = new QuestionInterface(questionStorage.getQuestionList().get(i));
+        questionInterface.createView(questionStorage.getQuestionList().get(i));
 
         menuPane.setCenter(questionInterface);
     }
 
     public void createNewQuestionInterface(int i){
-            if (questionInterface.getAnswerButton1().isPressed()) {
+            if (questionInterface.getAnswerButton1().isPressed()|| questionInterface.getAnswerButton2().isPressed()
+                || questionInterface.getAnswerButton3().isPressed() || questionInterface.getAnswerButton4().isPressed())
+            {
 
                 //Optional<ButtonType> result = questionInterface.getConfirmAlert().showAndWait();
-                //ButtonType resultButton = result.orElse(ButtonType.CANCEL);
 
-                //if (resultButton == ButtonType.OK)
-                //{
+                //if (result.get() == ButtonType.OK)
+               // {
                     menuPane.setCenter(null);
                     questionInterface.getGame().getChildren().clear();
-                    questionInterface = new QuestionInterface(questionStorage.getQuestionList().get(1));
-                    questionInterface.createView(questionStorage.getQuestionList().get(1));
+                    questionInterface = new QuestionInterface(questionStorage.getQuestionList().get(i+1));
+                    questionInterface.createView(questionStorage.getQuestionList().get(i+1));
                     menuPane.setCenter(questionInterface);
                // }
-                //else
-                //{
+               // else
+               // {
 
                 //}
             }
@@ -150,4 +148,5 @@ public class MainScene extends Scene
     {
         this.playerScore = playerScore;
     }
+
 }

@@ -9,9 +9,8 @@ public class ViewInitialize
 {
     public ViewInitialize(Stage stage)
     {
-        MainScene mainScene = new MainScene(new BorderPane(), stage);
+        MainScene mainScene = new MainScene(new BorderPane());
         stage.setScene(mainScene);
-
     }
 
 }

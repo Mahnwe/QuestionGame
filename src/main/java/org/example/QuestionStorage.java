@@ -21,8 +21,8 @@ public class QuestionStorage
                 "186 av JC", "67 ap JC", "52 av JC", "52 av JC");
         questionList.add(question2);
 
-        Question question3 = new Question("Qu'est ce que le 'chibouque' ?", "Une espece de bouc du Moyen Orient",
-                "L'ancetre des narguiles actuels", "Une insulte du patois auvergnat", "Ce mot n'existe pas", "L'ancetre des narguiles actuels");
+        Question question3 = new Question("Qu'est ce que le 'chibouque' ?", "Une espece rare de bouc",
+                "L'ancetre des narguiles", "Une insulte du patois auvergnat", "Ce mot n'existe pas", "L'ancetre des narguiles");
         questionList.add(question3);
 
         Question question4 = new Question("Ou se trouve l'archipel des 'Comores' ?", "A l'Ouest de l'Argentine",
@@ -38,15 +38,15 @@ public class QuestionStorage
         questionList.add(question6);
 
         Question question7 = new Question("Qu'est ce que le 'Sepak Takraw' ?", "Un sport insolite",
-                "Un plat particulierement epice", "Un animal en voie de disparition", "Une cérémonie religieuse", "Un sport insolite");
+                "Un plat très epice", "Un animal en voie de disparition", "Une cérémonie religieuse", "Un sport insolite");
         questionList.add(question7);
 
         Question question8 = new Question("A quelle profondeur se trouve le point le plus profond des oceans ?", "8 848 metres",
                 "21 325 metres", "10 994 metres", "16 687 metres", "10 994 metres");
         questionList.add(question8);
 
-        Question question9 = new Question("Quand sont apparues les premieres tortues ?", "Il y a environ 67 millions d'annees",
-                "Il y a environ 330 millions d'annees", "Il y a environ 130 millions d'années", "Il y a environ 210 millions d'annees", "Il y a environ 210 millions d'annees");
+        Question question9 = new Question("Quand sont apparues les premieres tortues ?", "Il y a 67 millions d'annees",
+                "Il y a 330 millions d'annees", "Il y a 130 millions d'années", "Il y a 210 millions d'annees", "Il y a 210 millions d'annees");
         questionList.add(question9);
 
         Question question10 = new Question("A combien de degres s'eleve le point chaud creer par les pinces de la crevette pistolet ?",

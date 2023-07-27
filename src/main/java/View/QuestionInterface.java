@@ -26,8 +26,11 @@ public class QuestionInterface extends BorderPane
     private Button answerButton2;
     private Button answerButton3;
     private Button answerButton4;
+    private Button nextQuestionButton;
 
     private HBox displayingResult;
+
+    private int playerScore;
 
 
     public QuestionInterface(Question question)
@@ -52,7 +55,6 @@ public class QuestionInterface extends BorderPane
         for(int i = 0; i<questionList.getQuestionList().size(); i++)
         {
             questionToAsk = new Label("Question n°"+questionNumber+" : "+question.getQuestionToAsk());
-            questionNumber++;
         }
     }
 
@@ -65,10 +67,7 @@ public class QuestionInterface extends BorderPane
                 {
                     checkAnswer(answerButton1);
                 }
-                else
-                {
 
-                }
             });
             answerButton1.setTranslateY(15);
             answerButton1.setTranslateX(15);
@@ -80,10 +79,7 @@ public class QuestionInterface extends BorderPane
                 {
                     checkAnswer(answerButton2);
                 }
-                else
-                {
 
-                }
             });
             answerButton2.setTranslateY(30);
             answerButton2.setTranslateX(15);
@@ -95,13 +91,10 @@ public class QuestionInterface extends BorderPane
                 {
                     checkAnswer(answerButton3);
                 }
-                else
-                {
 
-                }
             });
             answerButton3.setTranslateY(-35);
-            answerButton3.setTranslateX(120);
+            answerButton3.setTranslateX(180);
 
             answerButton4 = new Button(question.getAnswerList().get(3));
             answerButton4.setOnAction(event -> {
@@ -110,14 +103,13 @@ public class QuestionInterface extends BorderPane
                 {
                     checkAnswer(answerButton4);
                 }
-                else
-                {
-
-                }
 
             });
             answerButton4.setTranslateY(-20);
-            answerButton4.setTranslateX(120);
+            answerButton4.setTranslateX(180);
+
+            nextQuestionButton = new Button("Question suivante");
+            nextQuestionButton.setTranslateX(50);
 
     }
 
@@ -128,6 +120,7 @@ public class QuestionInterface extends BorderPane
         game.getChildren().add(answerButton2);
         game.getChildren().add(answerButton3);
         game.getChildren().add(answerButton4);
+        game.getChildren().add(nextQuestionButton);
         this.setCenter(game);
     }
 
@@ -145,11 +138,21 @@ public class QuestionInterface extends BorderPane
           {
               button.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
               displayGoodAnswer();
+              questionNumber++;
+              answerButton1.setDisable(true);
+              answerButton2.setDisable(true);
+              answerButton3.setDisable(true);
+              answerButton4.setDisable(true);
+
           }
           else
           {
               button.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
               displayBadAnswer();
+              answerButton1.setDisable(true);
+              answerButton2.setDisable(true);
+              answerButton3.setDisable(true);
+              answerButton4.setDisable(true);
           }
     }
 
@@ -157,7 +160,8 @@ public class QuestionInterface extends BorderPane
     {
         displayingResult = new HBox();
         displayingResult.setMinHeight(40);
-        Label goodResult = new Label("Good answer !");
+        Label goodResult = new Label("Bonne réponse !");
+        playerScore++;
         displayingResult.getChildren().add(goodResult);
         this.setBottom(displayingResult);
     }
@@ -166,7 +170,7 @@ public class QuestionInterface extends BorderPane
     {
         displayingResult = new HBox();
         displayingResult.setMinHeight(40);
-        Label badResult = new Label("Bad answer !");
+        Label badResult = new Label("Mauvaise réponse !");
         displayingResult.getChildren().add(badResult);
         this.setBottom(displayingResult);
     }
@@ -218,4 +222,13 @@ public class QuestionInterface extends BorderPane
     public VBox getGame() {
         return game;
     }
+
+    public Button getNextQuestionButton() {
+        return nextQuestionButton;
+    }
+
+    public int getPlayerScore() {
+        return playerScore;
+    }
+
 }

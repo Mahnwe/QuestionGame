@@ -21,6 +21,7 @@ public class MainScene extends Scene
     private Button sendButton;
     private Label playerNameLabel;
     private Label playerScoreLabel;
+    private Button nextQuestionButton;
 
     private int playerScore;
 
@@ -33,10 +34,6 @@ public class MainScene extends Scene
 
     private Label askPlayerName;
 
-    private Button answer1;
-    private Button answer2;
-    private Button answer3;
-    private Button answer4;
 
     public MainScene(BorderPane menuPane)
     {
@@ -53,8 +50,8 @@ public class MainScene extends Scene
 
     private void setAnswersButtonListeners()
     {
-        answer1 = questionInterface.getAnswerButton1();
-        //answer1.setOnAction(e -> createNewQuestionInterface());
+        nextQuestionButton = questionInterface.getNextQuestionButton();
+        nextQuestionButton.setOnAction(e -> createNewQuestionInterface());
     }
 
     private void createPlayerNameBox()
@@ -93,6 +90,7 @@ public class MainScene extends Scene
                 playerNameLabel = new Label("Nom : " + userInputArea.getText());
                 playerInfos.getChildren().add(createStatArea(playerNameLabel));
                 playerInfos.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+                playerScore = questionInterface.getPlayerScore();
                 playerScoreLabel = new Label("Score : "+playerScore);
                 playerInfos.getChildren().add(createStatArea(playerScoreLabel));
                 playerInfos.setMinWidth(150);
@@ -123,8 +121,6 @@ public class MainScene extends Scene
     public void createNewQuestionInterface()
     {
             menuPane.setCenter(null);
-            // Should be in class "questionInterface"
-            // Label questionCountLabel = new Label("Question numéro : " + questionCount);
             questionInterface = new QuestionInterface(questionStorage.getQuestionList().get(questionCount));
             // createView() should be called directly in the constructor because why not
             questionInterface.createView(questionStorage.getQuestionList().get(questionCount));

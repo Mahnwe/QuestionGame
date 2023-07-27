@@ -3,11 +3,14 @@ package View;
 import javafx.geometry.Insets;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import org.example.Question;
 import org.example.QuestionStorage;
+
+import java.util.Optional;
 
 public class QuestionInterface extends BorderPane
 {
@@ -16,13 +19,15 @@ public class QuestionInterface extends BorderPane
     private Question question;
     private Label questionToAsk;
 
-    private Label questionCount;
+    private int questionNumber = 1;
 
     private Alert confirmAlert;
     private Button answerButton1;
     private Button answerButton2;
     private Button answerButton3;
     private Button answerButton4;
+
+    private HBox displayingResult;
 
 
     public QuestionInterface(Question question)
@@ -46,31 +51,73 @@ public class QuestionInterface extends BorderPane
     {
         for(int i = 0; i<questionList.getQuestionList().size(); i++)
         {
-            questionToAsk = new Label(question.getQuestionToAsk());
+            questionToAsk = new Label("Question n°"+questionNumber+" : "+question.getQuestionToAsk());
+            questionNumber++;
         }
     }
 
     public void createAnswerButton()
     {
             answerButton1 = new Button(question.getAnswerList().get(0));
-            //answerButton1.setOnAction(event -> confirmAlert.show());
-            answerButton1.setTranslateY(10);
+            answerButton1.setOnAction(event -> {
+                Optional<ButtonType> result = confirmAlert.showAndWait();
+                if(result.get() == ButtonType.OK)
+                {
+                    checkAnswer(answerButton1);
+                }
+                else
+                {
+
+                }
+            });
+            answerButton1.setTranslateY(15);
             answerButton1.setTranslateX(15);
 
             answerButton2 = new Button(question.getAnswerList().get(1));
-            //answerButton2.setOnAction(event -> confirmAlert.show());
-            answerButton2.setTranslateY(20);
+            answerButton2.setOnAction(event -> {
+                Optional<ButtonType> result = confirmAlert.showAndWait();
+                if(result.get() == ButtonType.OK)
+                {
+                    checkAnswer(answerButton2);
+                }
+                else
+                {
+
+                }
+            });
+            answerButton2.setTranslateY(30);
             answerButton2.setTranslateX(15);
 
             answerButton3 = new Button(question.getAnswerList().get(2));
-            //answerButton3.setOnAction(event -> confirmAlert.show());
-            answerButton3.setTranslateY(30);
-            answerButton3.setTranslateX(15);
+            answerButton3.setOnAction(event -> {
+                Optional<ButtonType> result = confirmAlert.showAndWait();
+                if(result.get() == ButtonType.OK)
+                {
+                    checkAnswer(answerButton3);
+                }
+                else
+                {
+
+                }
+            });
+            answerButton3.setTranslateY(-35);
+            answerButton3.setTranslateX(120);
 
             answerButton4 = new Button(question.getAnswerList().get(3));
-            //answerButton4.setOnAction(event -> confirmAlert.show());
-            answerButton4.setTranslateY(40);
-            answerButton4.setTranslateX(15);
+            answerButton4.setOnAction(event -> {
+                Optional<ButtonType> result = confirmAlert.showAndWait();
+                if(result.get() == ButtonType.OK)
+                {
+                    checkAnswer(answerButton4);
+                }
+                else
+                {
+
+                }
+
+            });
+            answerButton4.setTranslateY(-20);
+            answerButton4.setTranslateX(120);
 
     }
 
@@ -90,20 +137,38 @@ public class QuestionInterface extends BorderPane
         createQuestionLabel();
         createAnswerButton();
         initGameSpace();
-        checkAnswer();
     }
 
-    public boolean checkAnswer()
+    public void checkAnswer(Button button)
     {
-      if(answerButton1.isPressed())
-      {
-          if(answerButton1.getText() == question.getGoodAnswer().toString())
+          if(button.getText().equals(question.getGoodAnswer()))
           {
-              answerButton1.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
-              return true;
+              button.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
+              displayGoodAnswer();
           }
-      }
-        return false;
+          else
+          {
+              button.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
+              displayBadAnswer();
+          }
+    }
+
+    private void displayGoodAnswer()
+    {
+        displayingResult = new HBox();
+        displayingResult.setMinHeight(40);
+        Label goodResult = new Label("Good answer !");
+        displayingResult.getChildren().add(goodResult);
+        this.setBottom(displayingResult);
+    }
+
+    private void displayBadAnswer()
+    {
+        displayingResult = new HBox();
+        displayingResult.setMinHeight(40);
+        Label badResult = new Label("Bad answer !");
+        displayingResult.getChildren().add(badResult);
+        this.setBottom(displayingResult);
     }
 
     public HBox createStatArea(Label label)

@@ -19,8 +19,10 @@ public class MainScene extends Scene
     private VBox getPlayerName;
     private TextArea userInputArea;
     private Button sendButton;
-    private Label playerName;
-    private Label playerScore;
+    private Label playerNameLabel;
+    private Label playerScoreLabel;
+
+    private int playerScore;
 
     private Border border = new Border(new BorderStroke(Color.BLACK,
             BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT));
@@ -29,7 +31,7 @@ public class MainScene extends Scene
 
     private int questionCount = 0;
 
-    private Label askName;
+    private Label askPlayerName;
 
     private Button answer1;
     private Button answer2;
@@ -52,14 +54,14 @@ public class MainScene extends Scene
     private void setAnswersButtonListeners()
     {
         answer1 = questionInterface.getAnswerButton1();
-        answer1.setOnAction(e -> createNewQuestionInterface());
+        //answer1.setOnAction(e -> createNewQuestionInterface());
     }
 
     private void createPlayerNameBox()
     {
         getPlayerName = new VBox();
-        askName = new Label("Bienvenue dans le jeu des questions ! Entrez votre nom");
-        getPlayerName.getChildren().add(askName);
+        askPlayerName = new Label("Bienvenue dans le jeu des questions ! Entrez votre nom");
+        getPlayerName.getChildren().add(askPlayerName);
 
         createUserInputArea();
         getPlayerName.getChildren().add(userInputArea);
@@ -88,11 +90,11 @@ public class MainScene extends Scene
             if (!userInputArea.getText().isEmpty())
             {
                 VBox playerInfos = new VBox();
-                playerName = new Label("Nom : " + userInputArea.getText());
-                playerInfos.getChildren().add(createStatArea(playerName));
+                playerNameLabel = new Label("Nom : " + userInputArea.getText());
+                playerInfos.getChildren().add(createStatArea(playerNameLabel));
                 playerInfos.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-                playerScore = new Label("Score : ");
-                playerInfos.getChildren().add(createStatArea(playerScore));
+                playerScoreLabel = new Label("Score : "+playerScore);
+                playerInfos.getChildren().add(createStatArea(playerScoreLabel));
                 playerInfos.setMinWidth(150);
                 playerInfos.setMinHeight(50);
                 menuPane.setLeft(playerInfos);

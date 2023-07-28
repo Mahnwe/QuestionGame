@@ -7,8 +7,7 @@ public class Initialize
 
     public Initialize()
     {
-        Player player = new Player(null, 0);
-        gameHandler = new GameHandler(player);
+
     }
 
     public void launchGame()

@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import org.example.Player;
 
 public class PlayerInfoVBox extends VBox
 {
@@ -17,13 +18,16 @@ public class PlayerInfoVBox extends VBox
     private Label playerNameLabel;
     private Label playerScoreLabel;
 
+    private Player player;
+
     private Border border = new Border(new BorderStroke(Color.BLACK,
             BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT));
     private Background background = new Background(new BackgroundFill(Color.SADDLEBROWN,
             CornerRadii.EMPTY, Insets.EMPTY));
 
-    public PlayerInfoVBox()
+    public PlayerInfoVBox(Player player)
     {
+        this.player = player;
         getPlayerName = new VBox();
         Label askPlayerName = new Label("Bienvenue dans le jeu des questions ! Entrez votre nom et cliquez sur le bouton 'Send'");
         getPlayerName.getChildren().add(askPlayerName);
@@ -54,10 +58,12 @@ public class PlayerInfoVBox extends VBox
             if (!userInputArea.getText().isEmpty())
             {
                 playerInfos = new VBox();
-                playerNameLabel = new Label("Nom : " + userInputArea.getText());
+                player.setPlayerName(userInputArea.getText());
+                playerNameLabel = new Label("Nom : " + player.getPlayerName());
                 playerInfos.getChildren().add(createStatArea(playerNameLabel));
                 playerInfos.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-                playerScoreLabel = new Label("Score : "+playerScore);
+
+                playerScoreLabel = new Label("Score : "+player.getPlayerScore());
                 playerInfos.getChildren().add(createStatArea(playerScoreLabel));
                 playerInfos.setMinWidth(150);
                 playerInfos.setMinHeight(50);
@@ -85,5 +91,20 @@ public class PlayerInfoVBox extends VBox
         return area;
     }
 
+    public int getPlayerScore() {
+        return playerScore;
+    }
+
+    public void setPlayerScore(int playerScore) {
+        this.playerScore = playerScore;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public Label getPlayerScoreLabel() {
+        return playerScoreLabel;
+    }
 }
 

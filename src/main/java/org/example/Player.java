@@ -5,10 +5,9 @@ public class Player
     private String playerName;
     private int playerScore;
 
-    public Player(String playerName, int playerScore)
+    public Player()
     {
-        this.playerName = playerName;
-        this.playerScore = playerScore;
+
     }
 
     public String getPlayerName()

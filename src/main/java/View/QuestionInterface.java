@@ -28,7 +28,7 @@ public class QuestionInterface extends BorderPane
 
     private HBox displayingResult;
 
-    private int playerScore;
+    private boolean playerAnswer;
 
 
     public QuestionInterface(Question question)
@@ -120,23 +120,21 @@ public class QuestionInterface extends BorderPane
     {
           if(button.getText().equals(question.getGoodAnswer()))
           {
+              playerAnswer = true;
               button.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
               displayGoodAnswer();
-              answerButton1.setDisable(true);
-              answerButton2.setDisable(true);
-              answerButton3.setDisable(true);
-              answerButton4.setDisable(true);
-
           }
+
           else
           {
+              playerAnswer = false;
               button.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
               displayBadAnswer();
-              answerButton1.setDisable(true);
-              answerButton2.setDisable(true);
-              answerButton3.setDisable(true);
-              answerButton4.setDisable(true);
           }
+        answerButton1.setDisable(true);
+        answerButton2.setDisable(true);
+        answerButton3.setDisable(true);
+        answerButton4.setDisable(true);
     }
 
     private void displayGoodAnswer()
@@ -144,7 +142,6 @@ public class QuestionInterface extends BorderPane
         displayingResult = new HBox();
         displayingResult.setMinHeight(40);
         Label goodResult = new Label("Bonne réponse !");
-        playerScore++;
         displayingResult.getChildren().add(goodResult);
         this.setBottom(displayingResult);
     }
@@ -179,8 +176,7 @@ public class QuestionInterface extends BorderPane
         return nextQuestionButton;
     }
 
-    public int getPlayerScore() {
-        return playerScore;
+    public boolean isPlayerAnswer() {
+        return playerAnswer;
     }
-
 }

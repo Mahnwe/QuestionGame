@@ -13,16 +13,16 @@ public class PlayerInfoVBox extends VBox
     private VBox getPlayerName;
     private Button sendButton;
     private TextArea userInputArea;
-    private int playerScore;
+
     private VBox playerInfos;
     private Label playerNameLabel;
     private Label playerScoreLabel;
 
     private Player player;
 
-    private Border border = new Border(new BorderStroke(Color.BLACK,
+    private final Border border = new Border(new BorderStroke(Color.BLACK,
             BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT));
-    private Background background = new Background(new BackgroundFill(Color.SADDLEBROWN,
+    private final Background background = new Background(new BackgroundFill(Color.SADDLEBROWN,
             CornerRadii.EMPTY, Insets.EMPTY));
 
     public PlayerInfoVBox(Player player)
@@ -89,14 +89,6 @@ public class PlayerInfoVBox extends VBox
         area.getChildren().add(label);
 
         return area;
-    }
-
-    public int getPlayerScore() {
-        return playerScore;
-    }
-
-    public void setPlayerScore(int playerScore) {
-        this.playerScore = playerScore;
     }
 
     public Player getPlayer() {

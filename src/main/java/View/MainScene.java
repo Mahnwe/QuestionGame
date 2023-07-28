@@ -1,12 +1,8 @@
 package View;
 
-import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
+import javafx.scene.layout.BorderPane;
 import org.example.QuestionStorage;
 
 
@@ -16,23 +12,7 @@ public class MainScene extends Scene
     private QuestionStorage questionStorage;
     private QuestionInterface questionInterface;
 
-    private VBox getPlayerName;
-    private TextArea userInputArea;
-    private Button sendButton;
-    private Label playerNameLabel;
-    private Label playerScoreLabel;
-    private Button nextQuestionButton;
-
-    private int playerScore;
-
-    private Border border = new Border(new BorderStroke(Color.BLACK,
-            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT));
-    private Background background = new Background(new BackgroundFill(Color.SADDLEBROWN,
-            CornerRadii.EMPTY, Insets.EMPTY));
-
     private int questionCount = 0;
-
-    private Label askPlayerName;
 
 
     public MainScene(BorderPane menuPane)
@@ -41,8 +21,9 @@ public class MainScene extends Scene
         this.menuPane = menuPane;
         this.questionStorage = new QuestionStorage();
 
-        createPlayerNameBox();
-        menuPane.setTop(getPlayerName);
+        PlayerInfoVBox playerInfoVBox = new PlayerInfoVBox();
+        menuPane.setTop(playerInfoVBox.createUserInputArea());
+        playerInfoVBox.setOnActionSendButton(menuPane);
 
         createNewQuestionInterface();
         setAnswersButtonListeners();
@@ -50,73 +31,10 @@ public class MainScene extends Scene
 
     private void setAnswersButtonListeners()
     {
-        nextQuestionButton = questionInterface.getNextQuestionButton();
+        Button nextQuestionButton = questionInterface.getNextQuestionButton();
         nextQuestionButton.setOnAction(e -> createNewQuestionInterface());
     }
 
-    private void createPlayerNameBox()
-    {
-        getPlayerName = new VBox();
-        askPlayerName = new Label("Bienvenue dans le jeu des questions ! Entrez votre nom");
-        getPlayerName.getChildren().add(askPlayerName);
-
-        createUserInputArea();
-        getPlayerName.getChildren().add(userInputArea);
-
-        createSendButton();
-        getPlayerName.getChildren().add(sendButton);
-    }
-
-    private void createUserInputArea()
-    {
-        userInputArea = new TextArea();
-        userInputArea.setBorder(border);
-        userInputArea.setBackground(background);
-        userInputArea.setMaxHeight(50);
-    }
-
-    private void createSendButton()
-    {
-        sendButton = new Button("Send");
-        sendButton.setBorder(border);
-        sendButton.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
-        sendButton.setTextFill(Color.GHOSTWHITE);
-        sendButton.setPrefWidth(50);
-
-        sendButton.setOnAction(event -> {
-            if (!userInputArea.getText().isEmpty())
-            {
-                VBox playerInfos = new VBox();
-                playerNameLabel = new Label("Nom : " + userInputArea.getText());
-                playerInfos.getChildren().add(createStatArea(playerNameLabel));
-                playerInfos.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-                playerScore = questionInterface.getPlayerScore();
-                playerScoreLabel = new Label("Score : "+playerScore);
-                playerInfos.getChildren().add(createStatArea(playerScoreLabel));
-                playerInfos.setMinWidth(150);
-                playerInfos.setMinHeight(50);
-                menuPane.setLeft(playerInfos);
-            }
-            getPlayerName.setMaxHeight(0);
-            getPlayerName.setMinHeight(0);
-            getPlayerName.setVisible(false);
-        });
-    }
-
-    public HBox createStatArea(Label label) {
-        label.setTranslateY(3);
-
-        HBox area = new HBox();
-        area.setMinHeight(30);
-        area.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-
-        Label emptySpace = new Label();
-        emptySpace.setMinWidth(20);
-        area.getChildren().add(emptySpace);
-        area.getChildren().add(label);
-
-        return area;
-    }
 
     public void createNewQuestionInterface()
     {

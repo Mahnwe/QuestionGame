@@ -19,8 +19,6 @@ public class QuestionInterface extends BorderPane
     private Question question;
     private Label questionToAsk;
 
-    private int questionNumber = 1;
-
     private Alert confirmAlert;
     private Button answerButton1;
     private Button answerButton2;
@@ -54,57 +52,42 @@ public class QuestionInterface extends BorderPane
     {
         for(int i = 0; i<questionList.getQuestionList().size(); i++)
         {
-            questionToAsk = new Label("Question n°"+questionNumber+" : "+question.getQuestionToAsk());
+            questionToAsk = new Label("Question n°"+question.getQuestionNumber()+" : "+question.getQuestionToAsk());
         }
+    }
+
+    public void setAnswerButtonOnAction(Button button)
+    {
+        button.setOnAction(event -> {
+            Optional<ButtonType> result = confirmAlert.showAndWait();
+            if(result.get() == ButtonType.OK)
+            {
+                checkAnswer(button);
+            }
+
+        });
+
     }
 
     public void createAnswerButton()
     {
             answerButton1 = new Button(question.getAnswerList().get(0));
-            answerButton1.setOnAction(event -> {
-                Optional<ButtonType> result = confirmAlert.showAndWait();
-                if(result.get() == ButtonType.OK)
-                {
-                    checkAnswer(answerButton1);
-                }
-
-            });
+            setAnswerButtonOnAction(answerButton1);
             answerButton1.setTranslateY(15);
             answerButton1.setTranslateX(15);
 
             answerButton2 = new Button(question.getAnswerList().get(1));
-            answerButton2.setOnAction(event -> {
-                Optional<ButtonType> result = confirmAlert.showAndWait();
-                if(result.get() == ButtonType.OK)
-                {
-                    checkAnswer(answerButton2);
-                }
-
-            });
+            setAnswerButtonOnAction(answerButton2);
             answerButton2.setTranslateY(30);
             answerButton2.setTranslateX(15);
 
             answerButton3 = new Button(question.getAnswerList().get(2));
-            answerButton3.setOnAction(event -> {
-                Optional<ButtonType> result = confirmAlert.showAndWait();
-                if(result.get() == ButtonType.OK)
-                {
-                    checkAnswer(answerButton3);
-                }
-
-            });
+            setAnswerButtonOnAction(answerButton3);
             answerButton3.setTranslateY(-35);
             answerButton3.setTranslateX(180);
 
             answerButton4 = new Button(question.getAnswerList().get(3));
-            answerButton4.setOnAction(event -> {
-                Optional<ButtonType> result = confirmAlert.showAndWait();
-                if(result.get() == ButtonType.OK)
-                {
-                    checkAnswer(answerButton4);
-                }
-
-            });
+            setAnswerButtonOnAction(answerButton4);
             answerButton4.setTranslateY(-20);
             answerButton4.setTranslateX(180);
 
@@ -138,7 +121,6 @@ public class QuestionInterface extends BorderPane
           {
               button.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
               displayGoodAnswer();
-              questionNumber++;
               answerButton1.setDisable(true);
               answerButton2.setDisable(true);
               answerButton3.setDisable(true);
@@ -190,37 +172,6 @@ public class QuestionInterface extends BorderPane
         area.getChildren().add(label);
 
         return area;
-    }
-
-    public Button getAnswerButton1() {
-    return answerButton1;
-    }
-
-    public Button getAnswerButton2() {
-        return answerButton2;
-    }
-    public Button getAnswerButton3() {
-        return answerButton3;
-    }
-
-    public Button getAnswerButton4() {
-        return answerButton4;
-    }
-
-    public Alert getConfirmAlert() {
-        return confirmAlert;
-    }
-
-    public Label getQuestionToAsk() {
-        return questionToAsk;
-    }
-
-    public void setQuestionToAsk(Label questionToAsk) {
-        this.questionToAsk = questionToAsk;
-    }
-
-    public VBox getGame() {
-        return game;
     }
 
     public Button getNextQuestionButton() {

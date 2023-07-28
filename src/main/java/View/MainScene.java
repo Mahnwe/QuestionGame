@@ -40,8 +40,6 @@ public class MainScene extends Scene
     {
             menuPane.setCenter(null);
             questionInterface = new QuestionInterface(questionStorage.getQuestionList().get(questionCount));
-            // createView() should be called directly in the constructor because why not
-            questionInterface.createView(questionStorage.getQuestionList().get(questionCount));
             setAnswersButtonListeners();
             menuPane.setCenter(questionInterface);
             questionCount++;

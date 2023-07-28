@@ -36,6 +36,7 @@ public class QuestionInterface extends BorderPane
         this.question = question;
         this.questionList = new QuestionStorage();
         this.confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        createView();
 
     }
 
@@ -107,7 +108,7 @@ public class QuestionInterface extends BorderPane
         this.setCenter(game);
     }
 
-    public void createView(Question question)
+    public void createView()
     {
         createGameSpace();
         createQuestionLabel();

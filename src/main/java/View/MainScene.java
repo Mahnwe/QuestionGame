@@ -55,7 +55,7 @@ public class MainScene extends Scene
     public void createNewQuestionInterface()
     {
             menuPane.setCenter(null);
-            questionInterface = new QuestionInterface(questionStorage.getQuestionList().get(questionCount));
+            questionInterface = new QuestionInterface(new BorderPane(), questionStorage.getQuestionList().get(questionCount));
             setAnswersButtonListeners();
             menuPane.setCenter(questionInterface);
             questionCount++;

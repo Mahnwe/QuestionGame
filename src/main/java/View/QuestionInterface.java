@@ -1,10 +1,7 @@
 package View;
 
 import javafx.geometry.Insets;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import org.example.Question;
@@ -15,6 +12,8 @@ import java.util.Optional;
 public class QuestionInterface extends BorderPane
 {
     private QuestionStorage questionList;
+
+    private BorderPane questionPane;
     private VBox game;
     private Question question;
     private Label questionToAsk;
@@ -26,13 +25,18 @@ public class QuestionInterface extends BorderPane
     private Button answerButton4;
     private Button nextQuestionButton;
 
-    private HBox displayingResult;
+    private VBox displayingResult;
 
     private boolean playerAnswer;
+    private final Border border = new Border(new BorderStroke(Color.BLACK,
+            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT));
+    private Label explanation;
 
 
-    public QuestionInterface(Question question)
+    public QuestionInterface(BorderPane questionPane, Question question)
     {
+        super(questionPane);
+        this.questionPane = questionPane;
         this.question = question;
         this.questionList = new QuestionStorage();
         this.confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -43,8 +47,9 @@ public class QuestionInterface extends BorderPane
     public void createGameSpace()
     {
         game = new VBox();
+        game.setBorder(border);
         game.setBorder(new Border(new BorderStroke(Color.BLACK,BorderStrokeStyle.SOLID,CornerRadii.EMPTY,BorderWidths.DEFAULT)));
-        game.setMinWidth(200);
+        game.setMinWidth(600);
         game.setMinHeight(200);
 
     }
@@ -54,6 +59,7 @@ public class QuestionInterface extends BorderPane
         for(int i = 0; i<questionList.getQuestionList().size(); i++)
         {
             questionToAsk = new Label("Question n°"+question.getQuestionNumber()+" : "+question.getQuestionToAsk());
+            questionToAsk.setTranslateX(40);
         }
     }
 
@@ -84,28 +90,30 @@ public class QuestionInterface extends BorderPane
 
             answerButton3 = new Button(question.getAnswerList().get(2));
             setAnswerButtonOnAction(answerButton3);
-            answerButton3.setTranslateY(-35);
-            answerButton3.setTranslateX(180);
+            answerButton3.setTranslateX(200);
+            answerButton3.setTranslateY(-34);
+
 
             answerButton4 = new Button(question.getAnswerList().get(3));
             setAnswerButtonOnAction(answerButton4);
+            answerButton4.setTranslateX(200);
             answerButton4.setTranslateY(-20);
-            answerButton4.setTranslateX(180);
 
             nextQuestionButton = new Button("Question suivante");
-            nextQuestionButton.setTranslateX(50);
+            nextQuestionButton.setTranslateY(50);
+            nextQuestionButton.setTranslateX(120);
 
     }
 
     public void initGameSpace()
     {
-        game.getChildren().add(createStatArea(questionToAsk));
+        game.getChildren().add(questionToAsk);
         game.getChildren().add(answerButton1);
         game.getChildren().add(answerButton2);
         game.getChildren().add(answerButton3);
         game.getChildren().add(answerButton4);
         game.getChildren().add(nextQuestionButton);
-        this.setCenter(game);
+        questionPane.setCenter(game);
     }
 
     public void createView()
@@ -139,20 +147,24 @@ public class QuestionInterface extends BorderPane
 
     private void displayGoodAnswer()
     {
-        displayingResult = new HBox();
-        displayingResult.setMinHeight(40);
+        displayingResult = new VBox();
+        displayingResult.setMinHeight(60);
         Label goodResult = new Label("Bonne réponse !");
+        explanation = new Label(question.getExplanation());
         displayingResult.getChildren().add(goodResult);
-        this.setBottom(displayingResult);
+        displayingResult.getChildren().add(explanation);
+        questionPane.setBottom(displayingResult);
     }
 
     private void displayBadAnswer()
     {
-        displayingResult = new HBox();
-        displayingResult.setMinHeight(40);
+        displayingResult = new VBox();
+        displayingResult.setMinHeight(60);
         Label badResult = new Label("Mauvaise réponse !");
+        explanation = new Label(question.getExplanation());
         displayingResult.getChildren().add(badResult);
-        this.setBottom(displayingResult);
+        displayingResult.getChildren().add(explanation);
+        questionPane.setBottom(displayingResult);
     }
 
     public HBox createStatArea(Label label)

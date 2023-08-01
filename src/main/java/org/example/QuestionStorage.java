@@ -44,17 +44,17 @@ public class QuestionStorage
         questionList.add(question6);
 
         Question question7 = new Question(7,"Qu'est ce que le 'Sepak Takraw' ?", "Un sport insolite",
-                "Un plat très epice", "Un animal en voie de disparition", "Une cérémonie religieuse", "Un sport insolite",
+                "Un plat très épicé", "Un animal en voie de disparition", "Une cérémonie religieuse", "Un sport insolite",
                 "Le Sepak Takraw est un sport proche du volley-ball et est très populaire en Asie du sud-est");
         questionList.add(question7);
 
-        Question question8 = new Question(8,"A quelle profondeur se trouve le point le plus profond des oceans ?", "8 848 metres",
+        Question question8 = new Question(8,"A quelle profondeur se trouve le point le plus profond des océans ?", "8 848 metres",
                 "21 325 metres", "10 994 metres", "16 687 metres", "10 994 metres",
                 "Le point le plus profond des océans s'appelle le Challenger Deep et a été mesuré à 10 994 metres");
         questionList.add(question8);
 
-        Question question9 = new Question(9,"Quand sont apparues les premieres tortues ?", "Il y a 67 millions d'annees",
-                "Il y a 330 millions d'annees", "Il y a 130 millions d'années", "Il y a 210 millions d'annees", "Il y a 210 millions d'annees",
+        Question question9 = new Question(9,"Quand sont apparues les premières tortues ?", "Il y a 67 millions d'années",
+                "Il y a 330 millions d'années", "Il y a 130 millions d'années", "Il y a 210 millions d'années", "Il y a 210 millions d'années",
                 "Les premières tortues sont apparus il y a environ 210 millions d'années"+"\n"+"pendant la période du Trias et étaient semi-aquatique");
         questionList.add(question9);
 

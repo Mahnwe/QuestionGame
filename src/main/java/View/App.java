@@ -13,7 +13,7 @@ public class App extends Application
         stage.setMinHeight(400);
         stage.setMinWidth(600);
         stage.setScene(menuScene);
-        stage.setTitle("Turbo Questions Game");
+        stage.setTitle("Turbo Jeu des Question");
         stage.show();
 
     }

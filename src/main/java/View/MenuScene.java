@@ -37,7 +37,7 @@ public class MenuScene extends Scene
     public void createWelcomeArea()
     {
         VBox welcomeArea = new VBox();
-        Label welcomeInGame = new Label("Welcome in the Turbo Question Game !");
+        Label welcomeInGame = new Label("Bienvenue dans le Turbo Jeu des Questions !");
         welcomeArea.getChildren().add(createStatArea(welcomeInGame));
         pane.setTop(welcomeArea);
     }
@@ -46,13 +46,13 @@ public class MenuScene extends Scene
     {
         VBox selectModeArea = new VBox();
 
-        Label chooseMode = new Label("Click on the mod that you want to play !");
+        Label chooseMode = new Label("Cliquez sur le nombre de questions auquel vous voulez répondre");
 
-        fiveModeButton = new Button("Five questions");
+        fiveModeButton = new Button("Cinq questions");
         fiveModeButton.setTranslateX(10);
         fiveModeButton.setTranslateY(10);
 
-        tenModeButton = new Button("Ten questions");
+        tenModeButton = new Button("Dix questions");
         tenModeButton.setTranslateX(10);
         tenModeButton.setTranslateY(30);
 

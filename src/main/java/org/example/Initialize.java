@@ -13,8 +13,6 @@ public class Initialize
     public void launchGame()
     {
 
-
-        gameHandler.playGame();
     }
 
     public GameHandler getGameHandler() {

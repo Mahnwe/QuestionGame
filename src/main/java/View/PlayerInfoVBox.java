@@ -29,7 +29,7 @@ public class PlayerInfoVBox extends VBox
     {
         this.player = player;
         getPlayerName = new VBox();
-        Label askPlayerName = new Label("Bienvenue dans le jeu des questions ! Entrez votre nom et cliquez sur le bouton 'Send'");
+        Label askPlayerName = new Label("Entrez votre nom et cliquez sur le bouton 'Send'");
         getPlayerName.getChildren().add(askPlayerName);
 
     }

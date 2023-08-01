@@ -1,6 +1,7 @@
 package View;
 
 import javafx.application.Application;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class App extends Application
@@ -8,9 +9,11 @@ public class App extends Application
     @Override
     public void start(Stage stage)
     {
-        ViewInitialize viewInitialize = new ViewInitialize(stage);
-        stage.setMaxHeight(500);
-        stage.setMinWidth(700);
+        MenuScene menuScene = new MenuScene(new BorderPane(), stage);
+        stage.setMinHeight(400);
+        stage.setMinWidth(600);
+        stage.setScene(menuScene);
+        stage.setTitle("Turbo Questions Game");
         stage.show();
 
     }

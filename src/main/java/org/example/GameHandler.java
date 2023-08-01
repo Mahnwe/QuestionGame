@@ -1,95 +1,40 @@
 package org.example;
 
-import java.util.Scanner;
+import java.util.ArrayList;
 
 public class GameHandler
 {
-   private QuestionStorage questionList;
+   private QuestionStorage questionBank;
+   private ArrayList<Question> questionList;
 
-    private Question question;
-    private Player player;
-    private String playerAnswer;
+   private Question question;
 
-    private String goodAnswer;
 
-    private String returnPlayerAnswer;
-
-    private int playerScore;
-
-    private int questionCount = 1;
-    private int questionIndex = 0;
-
-    private Scanner scanner;
-
-    public GameHandler(Player player)
+    public GameHandler()
     {
-        this.questionList = new QuestionStorage();
-        this.player = player;
-        playerScore = player.getPlayerScore();
+        this.questionBank = new QuestionStorage();
+        this.questionList = new ArrayList<>();
     }
 
-    public void playGame()
+    public void fiveQuestionList()
     {
-        for(int i = 0; i<questionList.getQuestionList().size(); i++ )
+        for(int i = 0; i < 5; i++)
         {
-            askQuestion();
-            compareAnswer();
+            question = questionBank.getQuestionList().get(i);
+            questionList.add(question);
         }
-        endGame();
     }
 
-    public void askQuestion()
+    public void tenQuestionList()
     {
-        System.out.println("Ecrivez le chiffre correspondant à votre réponse");
-        System.out.println("Question numéro "+questionCount);
-        question = questionList.getQuestionList().get(questionIndex);
-        System.out.println(question.getQuestionToAsk());
-        for(int i = 0; i<question.getAnswerList().size(); i++)
+        for(int i = 0; i < 10; i++)
         {
-            System.out.println("Reponse "+ (i+1) +" : " + question.getAnswerList().get(i));
+            question = questionBank.getQuestionList().get(i);
+            questionList.add(question);
         }
-        goodAnswer = question.getGoodAnswer();
-        scanner = new Scanner(System.in);
-        playerAnswer = scanner.next();
-        System.out.println("Votre réponse est : "+playerAnswer);
     }
 
-    public void compareAnswer()
-    {
-        if(playerAnswer.equals(goodAnswer))
-        {
-            System.out.println("Bonne réponse !");
-            playerScore++;
-        }
-        else
-        {
-            System.out.println("Mauvaise réponse !");
-        }
-        System.out.println("Votre score est : "+playerScore);
-        System.out.println("Question suivante !"+"\n");
-        questionCount++;
-        questionIndex++;
-    }
-
-    public void endGame()
-    {
-        System.out.println("Bravo vous avez répondu à toutes les questions !");
-        System.out.println("Votre score final est : "+playerScore+ " réponses correctes sur "+questionIndex);
-    }
-
-    public Player getPlayer() {
-        return player;
-    }
-
-    public int getQuestionCount() {
-        return questionCount;
-    }
-
-    public int getPlayerScore() {
-        return playerScore;
-    }
-
-    public String getGoodAnswer() {
-        return goodAnswer;
+    public ArrayList<Question> getQuestionList() {
+        return questionList;
     }
 }

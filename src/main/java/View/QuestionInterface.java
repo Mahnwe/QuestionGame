@@ -12,12 +12,10 @@ import java.util.Optional;
 public class QuestionInterface extends BorderPane
 {
     private QuestionStorage questionList;
-
     private BorderPane questionPane;
     private VBox game;
     private Question question;
     private Label questionToAsk;
-
     private Alert confirmAlert;
     private Button answerButton1;
     private Button answerButton2;
@@ -59,7 +57,8 @@ public class QuestionInterface extends BorderPane
         for(int i = 0; i<questionList.getQuestionList().size(); i++)
         {
             questionToAsk = new Label("Question n°"+question.getQuestionNumber()+" : "+question.getQuestionToAsk());
-            questionToAsk.setTranslateX(40);
+            questionToAsk.setTranslateX(45);
+            questionToAsk.setTranslateY(5);
         }
     }
 
@@ -80,28 +79,28 @@ public class QuestionInterface extends BorderPane
     {
             answerButton1 = new Button(question.getAnswerList().get(0));
             setAnswerButtonOnAction(answerButton1);
-            answerButton1.setTranslateY(15);
-            answerButton1.setTranslateX(15);
+            answerButton1.setTranslateY(20);
+            answerButton1.setTranslateX(20);
 
             answerButton2 = new Button(question.getAnswerList().get(1));
             setAnswerButtonOnAction(answerButton2);
-            answerButton2.setTranslateY(30);
-            answerButton2.setTranslateX(15);
+            answerButton2.setTranslateY(35);
+            answerButton2.setTranslateX(20);
 
             answerButton3 = new Button(question.getAnswerList().get(2));
             setAnswerButtonOnAction(answerButton3);
-            answerButton3.setTranslateX(200);
-            answerButton3.setTranslateY(-34);
+            answerButton3.setTranslateX(205);
+            answerButton3.setTranslateY(-29);
 
 
             answerButton4 = new Button(question.getAnswerList().get(3));
             setAnswerButtonOnAction(answerButton4);
-            answerButton4.setTranslateX(200);
-            answerButton4.setTranslateY(-20);
+            answerButton4.setTranslateX(205);
+            answerButton4.setTranslateY(-15);
 
             nextQuestionButton = new Button("Question suivante");
-            nextQuestionButton.setTranslateY(50);
-            nextQuestionButton.setTranslateX(120);
+            nextQuestionButton.setTranslateY(55);
+            nextQuestionButton.setTranslateX(125);
 
     }
 

@@ -45,7 +45,11 @@ public class MainScene extends Scene
             if(playerAnswer)
             {
                 playerScore++;
-                playerInfoVBox.getPlayerScoreLabel().setText("Score : "+ playerScore);
+                playerInfoVBox.getPlayerScoreLabel().setText("Score : "+playerScore+"/"+questionCount);
+            }
+            else
+            {
+                playerInfoVBox.getPlayerScoreLabel().setText("Score : "+playerScore+"/"+questionCount);
             }
             createNewQuestionInterface();
         });

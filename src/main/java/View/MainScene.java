@@ -11,7 +11,6 @@ public class MainScene extends Scene
 {
     private BorderPane menuPane;
     private QuestionInterface questionInterface;
-    private Player player;
     private int questionCount = 0;
 
     private int playerScore;
@@ -27,7 +26,6 @@ public class MainScene extends Scene
     {
         super(menuPane);
         this.menuPane = menuPane;
-        this.player = player;
         this.gameHandler = gameHandler;
 
         playerInfoVBox = new PlayerInfoVBox(player);
@@ -61,6 +59,7 @@ public class MainScene extends Scene
     {
             menuPane.setCenter(null);
             questionInterface = new QuestionInterface(new BorderPane(), gameHandler.getQuestionList().get(questionCount));
+            questionInterface.getQuestionToAsk().setText("Question n°"+(questionCount+1)+" : "+questionInterface.getQuestion().getQuestionToAsk());
             setAnswersButtonListeners();
             menuPane.setCenter(questionInterface);
             questionCount++;

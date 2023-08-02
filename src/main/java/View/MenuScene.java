@@ -13,14 +13,12 @@ import org.example.Player;
 public class MenuScene extends Scene
 {
     private BorderPane pane;
-    private Player player;
-
-    private MainScene mainScene;
 
     private Stage stage;
 
     private Button fiveModeButton;
     private Button tenModeButton;
+    private Button fifteenModeButton;
 
     private GameHandler gameHandler;
     public MenuScene(BorderPane pane, Stage stage)
@@ -56,9 +54,14 @@ public class MenuScene extends Scene
         tenModeButton.setTranslateX(10);
         tenModeButton.setTranslateY(30);
 
+        fifteenModeButton = new Button("Quinze questions");
+        fifteenModeButton.setTranslateX(10);
+        fifteenModeButton.setTranslateY(50);
+
         selectModeArea.getChildren().add(createStatArea(chooseMode));
         selectModeArea.getChildren().add(fiveModeButton);
         selectModeArea.getChildren().add(tenModeButton);
+        selectModeArea.getChildren().add(fifteenModeButton);
         pane.setCenter(selectModeArea);
     }
 
@@ -73,6 +76,13 @@ public class MenuScene extends Scene
 
         tenModeButton.setOnAction(event -> {
             gameHandler.tenQuestionList();
+            Player player = new Player();
+            MainScene mainScene = new MainScene(new BorderPane(), player, gameHandler);
+            stage.setScene(mainScene);
+        });
+
+        fifteenModeButton.setOnAction(event -> {
+            gameHandler.fifteenQuestionList();
             Player player = new Player();
             MainScene mainScene = new MainScene(new BorderPane(), player, gameHandler);
             stage.setScene(mainScene);
@@ -94,7 +104,4 @@ public class MenuScene extends Scene
         return area;
     }
 
-    public GameHandler getGameHandler() {
-        return gameHandler;
-    }
 }

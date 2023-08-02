@@ -4,8 +4,6 @@ import java.util.ArrayList;
 
 public class Question
 {
-
-    private int questionNumber;
     private String questionToAsk;
     private String goodAnswer;
 
@@ -13,9 +11,8 @@ public class Question
 
     private ArrayList<String> answerList = new ArrayList<>();
 
-    public Question(int questionNumber, String questionToAsk, String answerA, String answerB, String answerC, String answerD, String goodAnswer, String explanation)
+    public Question(String questionToAsk, String answerA, String answerB, String answerC, String answerD, String goodAnswer, String explanation)
     {
-        this.questionNumber = questionNumber;
         this.questionToAsk = questionToAsk;
         this.goodAnswer = goodAnswer;
         this.explanation = explanation;
@@ -37,11 +34,8 @@ public class Question
         return answerList;
     }
 
-    public int getQuestionNumber() {
-        return questionNumber;
-    }
-
     public String getExplanation() {
         return explanation;
     }
+
 }

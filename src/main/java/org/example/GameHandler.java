@@ -1,14 +1,12 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class GameHandler
 {
    private QuestionStorage questionBank;
    private ArrayList<Question> questionList;
-
-   private Question question;
-
 
     public GameHandler()
     {
@@ -18,20 +16,35 @@ public class GameHandler
 
     public void fiveQuestionList()
     {
-        for(int i = 0; i < 5; i++)
-        {
-            question = questionBank.getQuestionList().get(i);
-            questionList.add(question);
-        }
+        setupQuestionList(5);
     }
 
     public void tenQuestionList()
     {
-        for(int i = 0; i < 10; i++)
+        setupQuestionList(10);
+    }
+
+    public void fifteenQuestionList()
+    {
+        setupQuestionList(15);
+    }
+
+    public void setupQuestionList(int listSize)
+    {
+        for(int i = 0; i < listSize; i++)
         {
-            question = questionBank.getQuestionList().get(i);
+            int randomQuestionIndex = generateRandomIndex();
+            Question question = questionBank.getQuestionList().remove(randomQuestionIndex);
             questionList.add(question);
         }
+    }
+
+    public int generateRandomIndex()
+    {
+        Random randomIndex = new Random();
+        int maxRandom = questionBank.getQuestionList().size();
+        int minRandom = 0;
+        return randomIndex.nextInt((maxRandom - 1 - minRandom) + 1) + minRandom;
     }
 
     public ArrayList<Question> getQuestionList() {

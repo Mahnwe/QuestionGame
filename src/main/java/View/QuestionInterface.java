@@ -56,7 +56,7 @@ public class QuestionInterface extends BorderPane
     {
         for(int i = 0; i<questionList.getQuestionList().size(); i++)
         {
-            questionToAsk = new Label("Question n°"+question.getQuestionNumber()+" : "+question.getQuestionToAsk());
+            questionToAsk = new Label();
             questionToAsk.setTranslateX(45);
             questionToAsk.setTranslateY(5);
         }
@@ -189,5 +189,13 @@ public class QuestionInterface extends BorderPane
 
     public boolean isPlayerAnswer() {
         return playerAnswer;
+    }
+
+    public Label getQuestionToAsk() {
+        return questionToAsk;
+    }
+
+    public Question getQuestion() {
+        return question;
     }
 }

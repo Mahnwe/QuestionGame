@@ -91,10 +91,6 @@ public class PlayerInfoVBox extends VBox
         return area;
     }
 
-    public Player getPlayer() {
-        return player;
-    }
-
     public Label getPlayerScoreLabel() {
         return playerScoreLabel;
     }

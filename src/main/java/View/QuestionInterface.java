@@ -14,9 +14,9 @@ public class QuestionInterface extends BorderPane
     private QuestionStorage questionList;
     private BorderPane questionPane;
     private VBox game;
-    private Question question;
+    private final Question question;
     private Label questionToAsk;
-    private Alert confirmAlert;
+    private final Alert confirmAlert;
     private Button answerButton1;
     private Button answerButton2;
     private Button answerButton3;
@@ -136,6 +136,7 @@ public class QuestionInterface extends BorderPane
           {
               playerAnswer = false;
               button.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
+              showGoodAnswer();
               displayBadAnswer();
           }
         answerButton1.setDisable(true);
@@ -164,6 +165,26 @@ public class QuestionInterface extends BorderPane
         displayingResult.getChildren().add(badResult);
         displayingResult.getChildren().add(explanation);
         questionPane.setBottom(displayingResult);
+    }
+
+    public void showGoodAnswer()
+    {
+        if(answerButton1.getText().equals(question.getGoodAnswer()))
+        {
+            answerButton1.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
+        }
+        else if(answerButton2.getText().equals(question.getGoodAnswer()))
+        {
+            answerButton2.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
+        }
+        else if(answerButton3.getText().equals(question.getGoodAnswer()))
+        {
+            answerButton3.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
+        }
+        else if(answerButton4.getText().equals(question.getGoodAnswer()))
+        {
+            answerButton4.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
+        }
     }
 
     public HBox createStatArea(Label label)

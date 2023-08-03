@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 public class Question
 {
-    private String questionToAsk;
-    private String goodAnswer;
+    private final String questionToAsk;
+    private final String goodAnswer;
 
-    private String explanation;
+    private final String explanation;
 
     private ArrayList<String> answerList = new ArrayList<>();
 

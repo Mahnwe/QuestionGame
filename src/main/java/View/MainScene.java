@@ -19,7 +19,7 @@ public class MainScene extends Scene
 
     private PlayerInfoVBox playerInfoVBox;
 
-    private GameHandler gameHandler;
+    private final GameHandler gameHandler;
 
 
     public MainScene(BorderPane menuPane, Player player, GameHandler gameHandler)

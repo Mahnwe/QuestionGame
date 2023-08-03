@@ -3,7 +3,6 @@ package org.example;
 
 public class Initialize
 {
-    private GameHandler gameHandler;
 
     public Initialize()
     {
@@ -15,7 +14,4 @@ public class Initialize
 
     }
 
-    public GameHandler getGameHandler() {
-        return gameHandler;
-    }
 }

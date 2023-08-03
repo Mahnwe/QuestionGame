@@ -57,7 +57,7 @@ public class QuestionInterface extends BorderPane
         for(int i = 0; i<questionList.getQuestionList().size(); i++)
         {
             questionToAsk = new Label();
-            questionToAsk.setTranslateX(45);
+            questionToAsk.setTranslateX(30);
             questionToAsk.setTranslateY(5);
         }
     }
@@ -99,14 +99,14 @@ public class QuestionInterface extends BorderPane
             answerButton4.setTranslateY(-15);
 
             nextQuestionButton = new Button("Question suivante");
-            nextQuestionButton.setTranslateY(55);
-            nextQuestionButton.setTranslateX(125);
+            nextQuestionButton.setTranslateY(50);
+            nextQuestionButton.setTranslateX(130);
 
     }
 
     public void initGameSpace()
     {
-        game.getChildren().add(questionToAsk);
+        game.getChildren().add(createStatArea(questionToAsk));
         game.getChildren().add(answerButton1);
         game.getChildren().add(answerButton2);
         game.getChildren().add(answerButton3);

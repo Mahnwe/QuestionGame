@@ -94,5 +94,9 @@ public class PlayerInfoVBox extends VBox
     public Label getPlayerScoreLabel() {
         return playerScoreLabel;
     }
+
+    public Player getPlayer() {
+        return player;
+    }
 }
 

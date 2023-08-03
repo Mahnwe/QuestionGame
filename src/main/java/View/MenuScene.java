@@ -69,24 +69,27 @@ public class MenuScene extends Scene
     {
         fiveModeButton.setOnAction(event -> {
             gameHandler.fiveQuestionList();
-            Player player = new Player();
-            MainScene mainScene = new MainScene(new BorderPane(), player, gameHandler);
-            stage.setScene(mainScene);
+            instantiateMainScene();
         });
 
         tenModeButton.setOnAction(event -> {
             gameHandler.tenQuestionList();
-            Player player = new Player();
-            MainScene mainScene = new MainScene(new BorderPane(), player, gameHandler);
-            stage.setScene(mainScene);
+            instantiateMainScene();
         });
 
         fifteenModeButton.setOnAction(event -> {
             gameHandler.fifteenQuestionList();
-            Player player = new Player();
-            MainScene mainScene = new MainScene(new BorderPane(), player, gameHandler);
-            stage.setScene(mainScene);
+            instantiateMainScene();
         });
+    }
+
+    public void instantiateMainScene()
+    {
+        Player player = new Player();
+        MainScene mainScene = new MainScene(new BorderPane(), player, gameHandler);
+        stage.setScene(mainScene);
+        stage.setMinHeight(400);
+        stage.setMinWidth(750);
     }
 
     public HBox createStatArea(Label label) {

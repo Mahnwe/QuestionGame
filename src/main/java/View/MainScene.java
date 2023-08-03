@@ -29,6 +29,7 @@ public class MainScene extends Scene
         this.gameHandler = gameHandler;
 
         playerInfoVBox = new PlayerInfoVBox(player);
+        playerInfoVBox.getPlayer().setPlayerScore(playerScore);
         menuPane.setTop(playerInfoVBox.createUserInputArea());
         playerInfoVBox.setOnActionSendButton(menuPane);
 

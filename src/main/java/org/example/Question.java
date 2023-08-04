@@ -9,7 +9,7 @@ public class Question
 
     private final String explanation;
 
-    private ArrayList<String> answerList = new ArrayList<>();
+    private final ArrayList<String> answerList = new ArrayList<>();
 
     public Question(String questionToAsk, String answerA, String answerB, String answerC, String answerD, String goodAnswer, String explanation)
     {

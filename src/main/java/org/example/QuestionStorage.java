@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class QuestionStorage
 {
-    private ArrayList<Question> questionList = new ArrayList<>();
+    private final ArrayList<Question> questionList = new ArrayList<>();
 
     public QuestionStorage()
     {

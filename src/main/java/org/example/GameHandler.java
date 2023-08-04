@@ -5,8 +5,8 @@ import java.util.Random;
 
 public class GameHandler
 {
-   private QuestionStorage questionBank;
-   private ArrayList<Question> questionList;
+   private final QuestionStorage questionBank;
+   private final ArrayList<Question> questionList;
 
     public GameHandler()
     {

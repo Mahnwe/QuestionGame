@@ -9,7 +9,7 @@ import org.example.Player;
 
 public class MainScene extends Scene
 {
-    private BorderPane menuPane;
+    private final BorderPane menuPane;
     private QuestionInterface questionInterface;
     private int questionCount = 0;
 
@@ -17,7 +17,7 @@ public class MainScene extends Scene
 
     private boolean playerAnswer;
 
-    private PlayerInfoVBox playerInfoVBox;
+    private final PlayerInfoVBox playerInfoVBox;
 
     private final GameHandler gameHandler;
 

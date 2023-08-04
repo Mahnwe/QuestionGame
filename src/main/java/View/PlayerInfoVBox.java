@@ -10,7 +10,7 @@ import org.example.Player;
 
 public class PlayerInfoVBox extends VBox
 {
-    private VBox getPlayerName;
+    private final VBox getPlayerName;
     private Button sendButton;
     private TextArea userInputArea;
 
@@ -18,7 +18,7 @@ public class PlayerInfoVBox extends VBox
     private Label playerNameLabel;
     private Label playerScoreLabel;
 
-    private Player player;
+    private final Player player;
 
     private final Border border = new Border(new BorderStroke(Color.BLACK,
             BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT));

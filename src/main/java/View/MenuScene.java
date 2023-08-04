@@ -12,15 +12,15 @@ import org.example.Player;
 
 public class MenuScene extends Scene
 {
-    private BorderPane pane;
+    private final BorderPane pane;
 
-    private Stage stage;
+    private final Stage stage;
 
     private Button fiveModeButton;
     private Button tenModeButton;
     private Button fifteenModeButton;
 
-    private GameHandler gameHandler;
+    private final GameHandler gameHandler;
     public MenuScene(BorderPane pane, Stage stage)
     {
         super(pane);

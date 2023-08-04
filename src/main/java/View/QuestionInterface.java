@@ -11,8 +11,8 @@ import java.util.Optional;
 
 public class QuestionInterface extends BorderPane
 {
-    private QuestionStorage questionList;
-    private BorderPane questionPane;
+    private final QuestionStorage questionList;
+    private final BorderPane questionPane;
     private VBox game;
     private final Question question;
     private Label questionToAsk;
@@ -66,6 +66,10 @@ public class QuestionInterface extends BorderPane
     {
         button.setOnAction(event -> {
             Optional<ButtonType> result = confirmAlert.showAndWait();
+            if(result.isPresent())
+            {
+                confirmAlert.close();
+            }
             if(result.get() == ButtonType.OK)
             {
                 checkAnswer(button);

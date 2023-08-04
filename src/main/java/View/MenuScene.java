@@ -40,6 +40,12 @@ public class MenuScene extends Scene
         pane.setTop(welcomeArea);
     }
 
+    public void placeButtons(Button button, int translateX, int translateY)
+    {
+        button.setTranslateX(translateX);
+        button.setTranslateY(translateY);
+    }
+
     public void createButtonArea()
     {
         VBox selectModeArea = new VBox();
@@ -47,16 +53,13 @@ public class MenuScene extends Scene
         Label chooseMode = new Label("Cliquez sur le nombre de questions auquel vous voulez répondre");
 
         fiveModeButton = new Button("Cinq questions");
-        fiveModeButton.setTranslateX(10);
-        fiveModeButton.setTranslateY(10);
+        placeButtons(fiveModeButton, 10, 10);
 
         tenModeButton = new Button("Dix questions");
-        tenModeButton.setTranslateX(10);
-        tenModeButton.setTranslateY(30);
+        placeButtons(tenModeButton, 10, 30);
 
         fifteenModeButton = new Button("Quinze questions");
-        fifteenModeButton.setTranslateX(10);
-        fifteenModeButton.setTranslateY(50);
+        placeButtons(fifteenModeButton, 10, 50);
 
         selectModeArea.getChildren().add(createStatArea(chooseMode));
         selectModeArea.getChildren().add(fiveModeButton);

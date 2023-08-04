@@ -66,11 +66,7 @@ public class QuestionInterface extends BorderPane
     {
         button.setOnAction(event -> {
             Optional<ButtonType> result = confirmAlert.showAndWait();
-            if(result.isPresent())
-            {
-                confirmAlert.close();
-            }
-            if(result.get() == ButtonType.OK)
+            if(result.orElse(null) == ButtonType.OK)
             {
                 checkAnswer(button);
             }

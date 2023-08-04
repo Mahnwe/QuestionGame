@@ -136,7 +136,8 @@ public class QuestionInterface extends BorderPane
           {
               playerAnswer = false;
               button.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
-              showGoodAnswer();
+              showGoodAnswer(answerButton1); showGoodAnswer(answerButton2);
+              showGoodAnswer(answerButton3); showGoodAnswer(answerButton4);
               displayBadAnswer();
           }
         answerButton1.setDisable(true);
@@ -167,23 +168,11 @@ public class QuestionInterface extends BorderPane
         questionPane.setBottom(displayingResult);
     }
 
-    public void showGoodAnswer()
+    public void showGoodAnswer(Button button)
     {
-        if(answerButton1.getText().equals(question.getGoodAnswer()))
+        if(button.getText().equals(question.getGoodAnswer()))
         {
-            answerButton1.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
-        }
-        else if(answerButton2.getText().equals(question.getGoodAnswer()))
-        {
-            answerButton2.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
-        }
-        else if(answerButton3.getText().equals(question.getGoodAnswer()))
-        {
-            answerButton3.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
-        }
-        else if(answerButton4.getText().equals(question.getGoodAnswer()))
-        {
-            answerButton4.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
+            button.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
         }
     }
 

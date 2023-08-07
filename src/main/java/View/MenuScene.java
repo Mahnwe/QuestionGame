@@ -9,6 +9,8 @@ import javafx.stage.Stage;
 import org.example.GameHandler;
 import org.example.Player;
 
+import java.io.File;
+
 
 public class MenuScene extends Scene
 {
@@ -19,14 +21,15 @@ public class MenuScene extends Scene
     private Button fiveModeButton;
     private Button tenModeButton;
     private Button fifteenModeButton;
-
     private final GameHandler gameHandler;
+    private final File saveFile;
     public MenuScene(BorderPane pane, Stage stage)
     {
         super(pane);
         this.pane = pane;
         this.stage = stage;
         this.gameHandler = new GameHandler();
+        saveFile = new File("./src/main/resources/SaveFile/saveScoresFile");
         createWelcomeArea();
         createButtonArea();
         setButtonOnAction();
@@ -89,7 +92,7 @@ public class MenuScene extends Scene
     public void instantiateMainScene()
     {
         Player player = new Player();
-        MainScene mainScene = new MainScene(new BorderPane(), player, gameHandler, stage);
+        MainScene mainScene = new MainScene(new BorderPane(), player, gameHandler, stage, saveFile);
         stage.setScene(mainScene);
         stage.setMinHeight(400);
         stage.setMinWidth(750);

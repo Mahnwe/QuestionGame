@@ -89,7 +89,7 @@ public class MenuScene extends Scene
     public void instantiateMainScene()
     {
         Player player = new Player();
-        MainScene mainScene = new MainScene(new BorderPane(), player, gameHandler);
+        MainScene mainScene = new MainScene(new BorderPane(), player, gameHandler, stage);
         stage.setScene(mainScene);
         stage.setMinHeight(400);
         stage.setMinWidth(750);

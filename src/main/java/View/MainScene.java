@@ -91,8 +91,7 @@ public class MainScene extends Scene
         try {
                 FileWriter fw = new FileWriter(saveFile.getAbsoluteFile());
                 BufferedWriter bw = new BufferedWriter(fw);
-                bw.newLine();
-                bw.write("Nom : "+playerInfoVBox.getPlayer().getPlayerName()+" Score : "+playerScore);
+                bw.write("Nom : "+playerInfoVBox.getPlayer().getPlayerName()+"  "+" Score : "+playerScore+" sur "+questionCount);
                 bw.close();
         }catch (IOException e) {
             e.printStackTrace();
@@ -115,7 +114,7 @@ public class MainScene extends Scene
     public void backToMainMenu()
     {
         MenuScene menuScene = new MenuScene(new BorderPane(), stage);
-        stage.setMinHeight(400);
+        stage.setMinHeight(500);
         stage.setMinWidth(750);
         stage.setScene(menuScene);
     }

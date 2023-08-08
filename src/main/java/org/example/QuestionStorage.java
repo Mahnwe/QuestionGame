@@ -20,7 +20,7 @@ public class QuestionStorage
 
         Question question2 = new Question("Quelle est la date de la bataille d'Alésia ?", "253 ap JC",
                 "186 av JC", "67 ap JC", "52 av JC", "52 av JC",
-                "La bataille d'Alésia se déroule en 52 av JC et oppose une coalition de peuples habitant la 'Gaule'"+"\n"+"(appeler ainsi par Jule César) et les armées romaines menées par ce dernier");
+                "La bataille d'Alésia se déroule en 52 av JC et oppose une coalition de peuples habitant la 'Gaule'"+"\n"+"(appelés ainsi par Jule César) et les armées romaines menées par ce dernier");
         questionList.add(question2);
 
         Question question3 = new Question("Qu'est ce que le 'chibouque' ?", "Une espèce rare de bouc",
@@ -33,7 +33,7 @@ public class QuestionStorage
                 "L'archipel des Comores est situé au Nord de Madagascar et est composé de 4 îles");
         questionList.add(question4);
 
-        Question question5 = new Question("De quel pays les weta géants sont ils endémiques ?", "Du Perou",
+        Question question5 = new Question("De quel pays les wéta géants sont ils endémiques ?", "Du Perou",
                 "De Nouvelle Zélande", "D'Afrique du Sud", "De Norvège", "De Nouvelle Zélande",
                 "Les wétas géants sont endémiques de Nouvelle-Zélande et font partie"+"\n"+"des plus grands et des plus lourds insectes du monde");
         questionList.add(question5);
@@ -58,12 +58,12 @@ public class QuestionStorage
                 "Les premières tortues sont apparus il y a environ 210 millions d'années"+"\n"+"pendant la période du Trias et étaient semi-aquatique");
         questionList.add(question9);
 
-        Question question10 = new Question("A combien de degres s'eleve le point chaud creer par les pinces de la crevette pistolet ?",
+        Question question10 = new Question("A combien de degrés s'élève le point chaud crée par la pince de la crevette pistolet ?",
                 "4700 degres Celsius", "1225 degres Celsius", "6430 degres Celsius", "2500 degres Celsius", "4700 degres Celsius",
                 "La crevette pistolet peux créer un point chaud de 4700 degrés Celsius"+"\n"+" se rapprochant de la température à la surface du Soleil (5900 degrès)");
         questionList.add(question10);
 
-        Question question11 = new Question("Quelles sont les mensurations du plus grand specimen de baleine bleue jamais etudie ?",
+        Question question11 = new Question("Quelles sont les mensurations du plus grand specimen de baleine bleue jamais étudié ?",
                 "28,5 metres pour 140 tonnes", "20 metres pour 70 tonnes", "33,5 metres pour 190 tonnes", "24 metres pour 100 tonnes",
                 "33,5 metres pour 190 tonnes", "Le plus gros spéciment recensé faisait 33,5 metres pour 190 tonnes");
         questionList.add(question11);
@@ -72,7 +72,7 @@ public class QuestionStorage
                 "Wii Sports", "Grand Theft Auto V", "Minecraft", "Minecraft est le jeu vidéo le plus vendu de l'histoire avec 238 millions d'unités vendus");
         questionList.add(question12);
 
-        Question question13 = new Question("En quelle année est sorti 'Le voyage dans la Lune' de Georges Méliès ?", "1898",
+        Question question13 = new Question("En quelle année est sorti le film 'Le voyage dans la Lune' de Georges Méliès ?", "1898",
                 "1921", "1937", "1902", "1902", "Le voyage dans la Lune est sorti en 1902 et est la première oeuvre de Science-fiction au cinéma");
         questionList.add(question13);
 
@@ -85,6 +85,16 @@ public class QuestionStorage
                 "3650ans", "2305ans", "3122ans", "4855ans",
                 "L'arbre le plus vieux du monde est un Pin Bristlecone nommé Mathusalem et âgé de 4855ans");
         questionList.add(question15);
+
+        Question question16 = new Question("Quel est le plus grand océan du monde en superficie ?", "Océan Indien",
+                "Océan Antarctique", "Océan Pacifique", "Océan Atlantique", "Océan Pacifique",
+                "L'Océan Pacifique est le plus grand océan du monde avec environ 166 millions de km²");
+        questionList.add(question16);
+
+        Question question17 = new Question("De quand date la construction de la pyramide de Khéops", "Vers 2560 av J.C",
+                "Vers 1560 av J.C", "Vers 3800 av J.C", "Vers 720 av J.C", "Vers 2560 av J.C",
+                "La pyramide de Khéops fut édifiée vers 2560 av J.C, il y a plus de 4500ans et est la plus grande pyramide de Gizeh");
+        questionList.add(question17);
     }
 
     public ArrayList<Question> getQuestionList() {

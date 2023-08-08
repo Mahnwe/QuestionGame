@@ -23,6 +23,8 @@ public class MenuScene extends Scene
     private Button fifteenModeButton;
     private final GameHandler gameHandler;
     private final File saveFile;
+    private final Border border = new Border(new BorderStroke(Color.BLACK,
+            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT));
     public MenuScene(BorderPane pane, Stage stage)
     {
         super(pane);
@@ -31,6 +33,7 @@ public class MenuScene extends Scene
         this.gameHandler = new GameHandler();
         saveFile = new File("./src/main/resources/SaveFile/saveScoresFile");
         createWelcomeArea();
+        createLeaderBoardButtonArea();
         createButtonArea();
         setButtonOnAction();
     }
@@ -49,6 +52,20 @@ public class MenuScene extends Scene
         button.setTranslateY(translateY);
     }
 
+    public void createLeaderBoardButtonArea()
+    {
+        VBox leaderBoardVBox = new VBox();
+        leaderBoardVBox.setBorder(border);
+        Button leaderBoardButton = new Button("LeaderBoard");
+        placeButtons(leaderBoardButton, 0, 30);
+        leaderBoardButton.setOnAction(event -> {
+            LeaderBoardScene leaderBoardScene = new LeaderBoardScene(new BorderPane(), saveFile);
+            leaderBoardScene.displayLeaderBoard();
+        });
+        leaderBoardVBox.getChildren().add(leaderBoardButton);
+        pane.setLeft(leaderBoardVBox);
+    }
+
     public void createButtonArea()
     {
         VBox selectModeArea = new VBox();
@@ -63,6 +80,7 @@ public class MenuScene extends Scene
 
         fifteenModeButton = new Button("Quinze questions");
         placeButtons(fifteenModeButton, 10, 50);
+
 
         selectModeArea.getChildren().add(createStatArea(chooseMode));
         selectModeArea.getChildren().add(fiveModeButton);

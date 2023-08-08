@@ -47,8 +47,8 @@ public class QuestionInterface extends BorderPane
         game = new VBox();
         game.setBorder(border);
         game.setBorder(new Border(new BorderStroke(Color.BLACK,BorderStrokeStyle.SOLID,CornerRadii.EMPTY,BorderWidths.DEFAULT)));
-        game.setMinWidth(600);
-        game.setMinHeight(200);
+        game.setMinWidth(700);
+        game.setMinHeight(250);
 
     }
 

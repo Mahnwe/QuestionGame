@@ -89,9 +89,10 @@ public class MainScene extends Scene
     public void saveScoreInFile()
     {
         try {
-                FileWriter fw = new FileWriter(saveFile.getAbsoluteFile());
+                boolean append = true;
+                FileWriter fw = new FileWriter(saveFile.getAbsoluteFile(), append);
                 BufferedWriter bw = new BufferedWriter(fw);
-                bw.write("Nom : "+playerInfoVBox.getPlayer().getPlayerName()+"  "+" Score : "+playerScore+" sur "+questionCount);
+                bw.write("Nom : "+playerInfoVBox.getPlayer().getPlayerName()+"  "+" Score : "+playerScore+" sur "+questionCount+"\n");
                 bw.close();
         }catch (IOException e) {
             e.printStackTrace();

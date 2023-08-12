@@ -91,17 +91,17 @@ public class MenuScene extends Scene
     public void setButtonOnAction()
     {
         fiveModeButton.setOnAction(event -> {
-            gameHandler.fiveQuestionList();
+            gameHandler.setupQuestionList(5);
             instantiateMainScene();
         });
 
         tenModeButton.setOnAction(event -> {
-            gameHandler.tenQuestionList();
+            gameHandler.setupQuestionList(10);
             instantiateMainScene();
         });
 
         fifteenModeButton.setOnAction(event -> {
-            gameHandler.fifteenQuestionList();
+            gameHandler.setupQuestionList(15);
             instantiateMainScene();
         });
     }

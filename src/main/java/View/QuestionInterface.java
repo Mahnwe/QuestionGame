@@ -39,7 +39,6 @@ public class QuestionInterface extends BorderPane
         this.questionList = new QuestionStorage();
         this.confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
         createView();
-
     }
 
     public void createGameSpace()

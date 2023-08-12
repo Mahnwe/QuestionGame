@@ -53,7 +53,6 @@ public class PlayerInfoVBox extends VBox
 
     public void setOnActionSendButton(BorderPane pane)
     {
-
         sendButton.setOnAction(event -> {
             if (!userInputArea.getText().isEmpty())
             {

@@ -7,6 +7,11 @@ import javafx.stage.Stage;
 import org.example.GameHandler;
 import org.example.Player;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 
 public class MainScene extends Scene
 {
@@ -24,10 +29,10 @@ public class MainScene extends Scene
 
     private final Stage stage;
 
-    private final SaveFile saveFile;
+    private final File saveFile;
 
 
-    public MainScene(BorderPane menuPane, Player player, GameHandler gameHandler, Stage stage, SaveFile saveFile)
+    public MainScene(BorderPane menuPane, Player player, GameHandler gameHandler, Stage stage, File saveFile)
     {
         super(menuPane);
         this.menuPane = menuPane;
@@ -83,8 +88,15 @@ public class MainScene extends Scene
 
     public void saveScoreInFile()
     {
-        String result = "Nom : " + playerInfoVBox.getPlayer().getPlayerName() + "  " + " Score : " + playerScore + " sur " + questionCount + "\n";
-        saveFile.getScoreArea().appendText(result);
+        try {
+            boolean append = true;
+            FileWriter fw = new FileWriter(saveFile.getAbsoluteFile(), append);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write("Nom : "+playerInfoVBox.getPlayer().getPlayerName()+"  "+" Score : "+playerScore+" sur "+questionCount+"\n");
+            bw.close();
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void checkGameEnding()

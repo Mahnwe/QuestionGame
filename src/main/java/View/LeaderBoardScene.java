@@ -6,24 +6,36 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class LeaderBoardScene extends Scene
 {
-    TextArea leaderBoardArea;
-    private final SaveFile saveFile;
 
-    public LeaderBoardScene(BorderPane pane, SaveFile saveFile)
+    private String line;
+    private final File saveFile;
+
+    public LeaderBoardScene(BorderPane pane, File saveFile)
     {
         super(pane);
         this.saveFile = saveFile;
+        readFile();
         VBox leaderBoardVBox = new VBox();
-        leaderBoardArea = new TextArea();
+        TextArea leaderBoardArea = new TextArea(line);
         leaderBoardVBox.getChildren().add(leaderBoardArea);
         pane.setCenter(leaderBoardVBox);
     }
 
     public void readFile()
     {
-        leaderBoardArea.setText(saveFile.getScoreArea().getText());
+        try {
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(saveFile));
+            line = bufferedReader.readLine();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void displayLeaderBoard()

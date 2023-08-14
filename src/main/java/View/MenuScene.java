@@ -9,6 +9,8 @@ import javafx.stage.Stage;
 import org.example.GameHandler;
 import org.example.Player;
 
+import java.io.File;
+
 
 public class MenuScene extends Scene
 {
@@ -20,7 +22,7 @@ public class MenuScene extends Scene
     private Button tenModeButton;
     private Button fifteenModeButton;
     private final GameHandler gameHandler;
-    private final SaveFile saveFile;
+    private final File saveFile;
     private final Border border = new Border(new BorderStroke(Color.BLACK,
             BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT));
     public MenuScene(BorderPane pane, Stage stage)
@@ -29,7 +31,7 @@ public class MenuScene extends Scene
         this.pane = pane;
         this.stage = stage;
         this.gameHandler = new GameHandler();
-        saveFile = new SaveFile();
+        saveFile = new File("./src/main/resources/SaveFile/saveScoresFile");
         createWelcomeArea();
         createLeaderBoardButtonArea();
         createButtonArea();
@@ -58,7 +60,6 @@ public class MenuScene extends Scene
         placeButtons(leaderBoardButton, 0, 30);
         leaderBoardButton.setOnAction(event -> {
             LeaderBoardScene leaderBoardScene = new LeaderBoardScene(new BorderPane(), saveFile);
-            leaderBoardScene.readFile();
             leaderBoardScene.displayLeaderBoard();
         });
         leaderBoardVBox.getChildren().add(leaderBoardButton);

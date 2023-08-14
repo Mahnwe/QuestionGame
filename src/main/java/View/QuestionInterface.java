@@ -25,7 +25,7 @@ public class QuestionInterface extends BorderPane
 
     private VBox displayingResult;
 
-    private boolean playerAnswer;
+    private Boolean playerAnswer;
     private final Border border = new Border(new BorderStroke(Color.BLACK,
             BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT));
     private Label explanation;
@@ -206,4 +206,5 @@ public class QuestionInterface extends BorderPane
     public Question getQuestion() {
         return question;
     }
+
 }

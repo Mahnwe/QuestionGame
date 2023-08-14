@@ -18,11 +18,6 @@ public class MainScene extends Scene
     private final BorderPane menuPane;
     private QuestionInterface questionInterface;
 
-    // Enlever ces trois variables "intermédiaires"
-    private int questionCount = 0;
-    private int playerScore;
-    private boolean playerAnswer;
-
     private final PlayerInfoVBox playerInfoVBox;
 
     private final GameHandler gameHandler;
@@ -41,7 +36,6 @@ public class MainScene extends Scene
         this.saveFile = saveFile;
 
         playerInfoVBox = new PlayerInfoVBox(player);
-        playerInfoVBox.getPlayer().setPlayerScore(playerScore);
         menuPane.setTop(playerInfoVBox.createUserInputArea());
         playerInfoVBox.setOnActionSendButton(menuPane);
 
@@ -53,17 +47,11 @@ public class MainScene extends Scene
     {
         Button nextQuestionButton = questionInterface.getNextQuestionButton();
         nextQuestionButton.setOnAction(e -> {
-            playerAnswer = questionInterface.isPlayerAnswer();
-            // Faire une fonction dans playerInfoVBox et factoriser le setText pour l'appeller qu'une fois
-            if(playerAnswer)
+            if(questionInterface.isPlayerAnswer())
             {
-                playerScore++;
-                playerInfoVBox.getPlayerScoreLabel().setText("Score : "+playerScore+"/"+questionCount);
+                playerInfoVBox.IncreaseScore();
             }
-            else
-            {
-                playerInfoVBox.getPlayerScoreLabel().setText("Score : "+playerScore+"/"+questionCount);
-            }
+            playerInfoVBox.getPlayerScoreLabel().setText("Score : "+playerInfoVBox.getPlayer().getPlayerScore()+"/"+gameHandler.getQuestionCount());
             checkGameEnding();
         });
     }
@@ -71,18 +59,18 @@ public class MainScene extends Scene
 
     public void createNewQuestionInterface()
     {
-                questionInterface = new QuestionInterface(new BorderPane(), gameHandler.getQuestionList().get(questionCount));
-                questionInterface.getQuestionToAsk().setText("Question n°" + (questionCount + 1) + " : " + questionInterface.getQuestion().getQuestionToAsk());
+                questionInterface = new QuestionInterface(new BorderPane(), gameHandler.getQuestionList().get(gameHandler.getQuestionCount()));
+                questionInterface.getQuestionToAsk().setText("Question n°" + (gameHandler.getQuestionCount() + 1) + " : " + questionInterface.getQuestion().getQuestionToAsk());
                 setAnswersButtonListeners();
                 menuPane.setCenter(questionInterface);
-                questionCount++;
+                gameHandler.IncreaseQuestionCount();
     }
 
     public void setDisplayResult()
     {
         ResultScene resultScene = new ResultScene(menuPane);
         resultScene.getCongratsLabel().setText("Bravo "+playerInfoVBox.getPlayer().getPlayerName()+" vous avez répondu à toutes les questions !");
-        resultScene.getPlayerResult().setText("Votre score : "+playerScore+" sur "+questionCount);
+        resultScene.getPlayerResult().setText("Votre score : "+playerInfoVBox.getPlayer().getPlayerScore()+" sur "+gameHandler.getQuestionCount());
 
         resultScene.getExitToMenuButton().setOnAction(event -> backToMainMenu());
     }
@@ -93,7 +81,7 @@ public class MainScene extends Scene
             boolean append = true;
             FileWriter fw = new FileWriter(saveFile.getAbsoluteFile(), append);
             BufferedWriter bw = new BufferedWriter(fw);
-            bw.write("Nom : "+playerInfoVBox.getPlayer().getPlayerName()+"  "+" Score : "+playerScore+" sur "+questionCount+"\n");
+            bw.write("Nom : "+playerInfoVBox.getPlayer().getPlayerName()+"  "+" Score : "+playerInfoVBox.getPlayer().getPlayerScore()+" sur "+gameHandler.getQuestionCount()+"\n");
             bw.close();
         }catch (IOException e) {
             e.printStackTrace();
@@ -102,8 +90,7 @@ public class MainScene extends Scene
 
     public void checkGameEnding()
     {
-        // Déplacer ce check dans game handler isGameEnded() or some shit ?
-        if(questionCount >= gameHandler.getQuestionList().size())
+        if(gameHandler.isGameEnding())
         {
             saveScoreInFile();
             setDisplayResult();

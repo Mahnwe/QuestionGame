@@ -75,6 +75,11 @@ public class PlayerInfoVBox extends VBox
         });
     }
 
+    public void IncreaseScore()
+    {
+        player.setPlayerScore(player.getPlayerScore()+1);
+    }
+
     public HBox createStatArea(Label label) {
         label.setTranslateY(3);
 

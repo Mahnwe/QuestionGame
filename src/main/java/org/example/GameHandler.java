@@ -8,6 +8,8 @@ public class GameHandler
    private final QuestionStorage questionBank;
    private final ArrayList<Question> questionList;
 
+   private int questionCount;
+
     public GameHandler()
     {
         this.questionBank = new QuestionStorage();
@@ -24,6 +26,16 @@ public class GameHandler
         }
     }
 
+    public boolean isGameEnding()
+    {
+        return questionCount >= questionList.size();
+    }
+
+    public void IncreaseQuestionCount()
+    {
+        questionCount++;
+    }
+
     public int generateRandomIndex()
     {
         Random randomIndex = new Random();
@@ -35,4 +47,9 @@ public class GameHandler
     public ArrayList<Question> getQuestionList() {
         return questionList;
     }
+
+    public int getQuestionCount() {
+        return questionCount;
+    }
+
 }

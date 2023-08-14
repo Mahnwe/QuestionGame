@@ -6,8 +6,8 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import org.example.GameHandler;
-import org.example.Player;
+import model.GameHandler;
+import model.Player;
 
 import java.io.File;
 

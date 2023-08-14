@@ -4,8 +4,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import org.example.GameHandler;
-import org.example.Player;
+import model.GameHandler;
+import model.Player;
 
 import java.io.BufferedWriter;
 import java.io.File;

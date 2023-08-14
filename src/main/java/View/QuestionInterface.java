@@ -4,8 +4,8 @@ import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import org.example.Question;
-import org.example.QuestionStorage;
+import model.Question;
+import model.QuestionStorage;
 
 import java.util.Optional;
 

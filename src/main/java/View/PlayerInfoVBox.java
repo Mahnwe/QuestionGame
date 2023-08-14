@@ -6,7 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import org.example.Player;
+import model.Player;
 
 public class PlayerInfoVBox extends VBox
 {

@@ -14,21 +14,6 @@ public class GameHandler
         this.questionList = new ArrayList<>();
     }
 
-    public void fiveQuestionList()
-    {
-        setupQuestionList(5);
-    }
-
-    public void tenQuestionList()
-    {
-        setupQuestionList(10);
-    }
-
-    public void fifteenQuestionList()
-    {
-        setupQuestionList(15);
-    }
-
     public void setupQuestionList(int listSize)
     {
         for(int i = 0; i < listSize; i++)

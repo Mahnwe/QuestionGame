@@ -17,10 +17,10 @@ public class MainScene extends Scene
 {
     private final BorderPane menuPane;
     private QuestionInterface questionInterface;
+
+    // Enlever ces trois variables "intermédiaires"
     private int questionCount = 0;
-
     private int playerScore;
-
     private boolean playerAnswer;
 
     private final PlayerInfoVBox playerInfoVBox;
@@ -54,6 +54,7 @@ public class MainScene extends Scene
         Button nextQuestionButton = questionInterface.getNextQuestionButton();
         nextQuestionButton.setOnAction(e -> {
             playerAnswer = questionInterface.isPlayerAnswer();
+            // Faire une fonction dans playerInfoVBox et factoriser le setText pour l'appeller qu'une fois
             if(playerAnswer)
             {
                 playerScore++;
@@ -101,6 +102,7 @@ public class MainScene extends Scene
 
     public void checkGameEnding()
     {
+        // Déplacer ce check dans game handler isGameEnded() or some shit ?
         if(questionCount >= gameHandler.getQuestionList().size())
         {
             saveScoreInFile();

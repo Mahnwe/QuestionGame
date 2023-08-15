@@ -15,7 +15,6 @@ public class PlayerInfoVBox extends VBox
     private TextArea userInputArea;
 
     private VBox playerInfos;
-    private Label playerNameLabel;
     private Label playerScoreLabel;
 
     private final Player player;
@@ -56,23 +55,27 @@ public class PlayerInfoVBox extends VBox
         sendButton.setOnAction(event -> {
             if (!userInputArea.getText().isEmpty())
             {
-                playerInfos = new VBox();
-                player.setPlayerName(userInputArea.getText());
-                playerNameLabel = new Label("Nom : " + player.getPlayerName());
-                playerInfos.getChildren().add(createStatArea(playerNameLabel));
-                playerInfos.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
-
-                playerScoreLabel = new Label("Score : "+player.getPlayerScore());
-                playerInfos.getChildren().add(createStatArea(playerScoreLabel));
-                playerInfos.setMinWidth(150);
-                playerInfos.setMinHeight(50);
+                createPlayerInfoArea();
                 pane.setLeft(playerInfos);
             }
             getPlayerName.setMaxHeight(0);
             getPlayerName.setMinHeight(0);
             getPlayerName.setVisible(false);
-
         });
+    }
+
+    public void createPlayerInfoArea()
+    {
+        playerInfos = new VBox();
+        player.setPlayerName(userInputArea.getText());
+        Label playerNameLabel = new Label("Nom : " + player.getPlayerName());
+        playerInfos.getChildren().add(createStatArea(playerNameLabel));
+        playerInfos.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+
+        playerScoreLabel = new Label("Score : "+player.getPlayerScore());
+        playerInfos.getChildren().add(createStatArea(playerScoreLabel));
+        playerInfos.setMinWidth(150);
+        playerInfos.setMaxWidth(150);
     }
 
     public void IncreaseScore()

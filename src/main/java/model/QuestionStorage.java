@@ -93,7 +93,7 @@ public class QuestionStorage
 
         Question question17 = new Question("De quand date la construction de la pyramide de Khéops", "Vers 2560 av J.C",
                 "Vers 1560 av J.C", "Vers 3800 av J.C", "Vers 720 av J.C", "Vers 2560 av J.C",
-                "La pyramide de Khéops fut édifiée vers 2560 av J.C, il y a plus de 4500ans et est la plus grande pyramide de Gizeh");
+                "La pyramide de Khéops fut édifiée vers 2560 av J.C, il y a plus de 4500ans" +"\n"+"et est la plus grande pyramide de Gizeh");
         questionList.add(question17);
     }
 

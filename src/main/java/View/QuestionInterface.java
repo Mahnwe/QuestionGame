@@ -78,22 +78,22 @@ public class QuestionInterface extends BorderPane
     {
             answerButton1 = new Button(question.getAnswerList().get(0));
             setAnswerButtonOnAction(answerButton1);
-            placeButton(answerButton1, 20, 20);
+            placeButton(answerButton1, 20, 40);
 
             answerButton2 = new Button(question.getAnswerList().get(1));
             setAnswerButtonOnAction(answerButton2);
-            placeButton(answerButton2, 35, 20);
+            placeButton(answerButton2, 35, 40);
 
             answerButton3 = new Button(question.getAnswerList().get(2));
             setAnswerButtonOnAction(answerButton3);
-            placeButton(answerButton3, -29, 205);
+            placeButton(answerButton3, -29, 225);
 
             answerButton4 = new Button(question.getAnswerList().get(3));
             setAnswerButtonOnAction(answerButton4);
-            placeButton(answerButton4, -15, 205);
+            placeButton(answerButton4, -15, 225);
 
             nextQuestionButton = new Button("Question suivante");
-            placeButton(nextQuestionButton, 50, 130);
+            placeButton(nextQuestionButton, 50, 150);
 
     }
 

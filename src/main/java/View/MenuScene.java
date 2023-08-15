@@ -56,8 +56,9 @@ public class MenuScene extends Scene
     {
         VBox leaderBoardVBox = new VBox();
         leaderBoardVBox.setBorder(border);
-        Button leaderBoardButton = new Button("LeaderBoard");
-        placeButtons(leaderBoardButton, 0, 30);
+        leaderBoardVBox.setMinWidth(100);
+        Button leaderBoardButton = new Button("Classement");
+        placeButtons(leaderBoardButton, 10, 30);
         leaderBoardButton.setOnAction(event -> {
             LeaderBoardScene leaderBoardScene = new LeaderBoardScene(new BorderPane(), saveFile);
             leaderBoardScene.displayLeaderBoard();
@@ -71,15 +72,16 @@ public class MenuScene extends Scene
         VBox selectModeArea = new VBox();
 
         Label chooseMode = new Label("Cliquez sur le nombre de questions auquel vous voulez répondre");
+        chooseMode.setTranslateX(100);
 
         fiveModeButton = new Button("Cinq questions");
-        placeButtons(fiveModeButton, 10, 10);
+        placeButtons(fiveModeButton, 200, 10);
 
         tenModeButton = new Button("Dix questions");
-        placeButtons(tenModeButton, 10, 30);
+        placeButtons(tenModeButton, 200, 30);
 
         fifteenModeButton = new Button("Quinze questions");
-        placeButtons(fifteenModeButton, 10, 50);
+        placeButtons(fifteenModeButton, 200, 50);
 
 
         selectModeArea.getChildren().add(createStatArea(chooseMode));
@@ -112,8 +114,8 @@ public class MenuScene extends Scene
         Player player = new Player();
         MainScene mainScene = new MainScene(new BorderPane(), player, gameHandler, stage, saveFile);
         stage.setScene(mainScene);
-        stage.setMinHeight(400);
-        stage.setMinWidth(750);
+        stage.setMinHeight(450);
+        stage.setMinWidth(850);
     }
 
     public HBox createStatArea(Label label) {

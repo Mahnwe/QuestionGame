@@ -14,8 +14,9 @@ import java.io.IOException;
 public class LeaderBoardScene extends Scene
 {
 
-    private String line;
     private final File saveFile;
+
+    private StringBuilder stringBuilder;
 
     public LeaderBoardScene(BorderPane pane, File saveFile)
     {
@@ -23,16 +24,22 @@ public class LeaderBoardScene extends Scene
         this.saveFile = saveFile;
         readFile();
         VBox leaderBoardVBox = new VBox();
-        TextArea leaderBoardArea = new TextArea(line);
+        TextArea leaderBoardArea = new TextArea();
+        leaderBoardArea.setText(String.valueOf(stringBuilder));
         leaderBoardVBox.getChildren().add(leaderBoardArea);
         pane.setCenter(leaderBoardVBox);
     }
 
     public void readFile()
     {
+        stringBuilder = new StringBuilder();
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(saveFile));
-            line = bufferedReader.readLine();
+            String line;
+            while((line = bufferedReader.readLine()) != null)
+            {
+                stringBuilder.append(line).append("\n");
+            }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

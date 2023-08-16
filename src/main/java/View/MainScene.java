@@ -35,12 +35,15 @@ public class MainScene extends Scene
         this.stage = stage;
         this.saveFile = saveFile;
 
+        createNewQuestionInterface();
+        setAnswersButtonListeners();
+        //questionInterface.setVisible(false);
         playerInfoVBox = new PlayerInfoVBox(player);
         menuPane.setTop(playerInfoVBox.createUserInputArea());
         playerInfoVBox.setOnActionSendButton(menuPane);
-
-        createNewQuestionInterface();
-        setAnswersButtonListeners();
+        //if(playerInfoVBox.getPlayer().getPlayerName() != null) {
+       //     questionInterface.setVisible(true);
+       // }
     }
 
     private void setAnswersButtonListeners()

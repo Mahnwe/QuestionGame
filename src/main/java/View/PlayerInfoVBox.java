@@ -62,6 +62,16 @@ public class PlayerInfoVBox extends VBox
             getPlayerName.setMinHeight(0);
             getPlayerName.setVisible(false);
         });
+
+        /*userInputArea.setOnKeyPressed(keyEvent -> {
+                if (keyEvent.getCode() == KeyCode.ENTER) {
+                    createPlayerInfoArea();
+                    pane.setLeft(playerInfos);
+                }
+            getPlayerName.setMaxHeight(0);
+            getPlayerName.setMinHeight(0);
+            getPlayerName.setVisible(false);
+        });*/
     }
 
     public void createPlayerInfoArea()

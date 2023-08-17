@@ -63,9 +63,9 @@ public class QuestionStorage
                 "La crevette pistolet peux créer un point chaud de 4700 degrés Celsius"+"\n"+" se rapprochant de la température à la surface du Soleil (5900 degrès)");
         questionList.add(question10);
 
-        Question question11 = new Question("Quelles sont les mensurations du plus grand specimen de baleine bleue jamais étudié ?",
-                "28,5 metres pour 140 tonnes", "20 metres pour 70 tonnes", "33,5 metres pour 190 tonnes", "24 metres pour 100 tonnes",
-                "33,5 metres pour 190 tonnes", "Le plus gros spéciment recensé faisait 33,5 metres pour 190 tonnes");
+        Question question11 = new Question("Quel est le plus grand mammifère marin connu ?",
+                "L'orque", "La baleine grise", "La baleine bleue", "Le cachalot",
+                "La baleine bleue", "Le plus grand mammifère marin connu est la baleine bleue avec en moyenne"+"\n"+"25 mètres de long pour 130 tonnes");
         questionList.add(question11);
 
         Question question12 = new Question("Quel est le jeu vidéo le plus vendu de l'histoire ?", "Tetris", "Minecraft",

@@ -27,6 +27,7 @@ public class LeaderBoardScene extends Scene
         TextArea leaderBoardArea = new TextArea();
         leaderBoardArea.setText(String.valueOf(stringBuilder));
         leaderBoardVBox.getChildren().add(leaderBoardArea);
+        leaderBoardArea.setEditable(false);
         pane.setCenter(leaderBoardVBox);
     }
 

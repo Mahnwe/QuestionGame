@@ -50,13 +50,14 @@ public class PlayerInfoVBox extends VBox
         return getPlayerName;
     }
 
-    public void setOnActionSendButton(BorderPane pane)
+    public void setOnActionSendButton(BorderPane pane, QuestionInterface questionInterface)
     {
         sendButton.setOnAction(event -> {
             if (!userInputArea.getText().isEmpty())
             {
                 createPlayerInfoArea();
                 pane.setLeft(playerInfos);
+                questionInterface.setVisible(true);
             }
             getPlayerName.setMaxHeight(0);
             getPlayerName.setMinHeight(0);
@@ -115,5 +116,6 @@ public class PlayerInfoVBox extends VBox
     public Player getPlayer() {
         return player;
     }
+
 }
 

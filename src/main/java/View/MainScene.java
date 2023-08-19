@@ -37,13 +37,10 @@ public class MainScene extends Scene
 
         createNewQuestionInterface();
         setAnswersButtonListeners();
-        //questionInterface.setVisible(false);
+        questionInterface.setVisible(false);
         playerInfoVBox = new PlayerInfoVBox(player);
         menuPane.setTop(playerInfoVBox.createUserInputArea());
-        playerInfoVBox.setOnActionSendButton(menuPane);
-        //if(playerInfoVBox.getPlayer().getPlayerName() != null) {
-       //     questionInterface.setVisible(true);
-       // }
+        playerInfoVBox.setOnActionSendButton(menuPane, questionInterface);
     }
 
     private void setAnswersButtonListeners()

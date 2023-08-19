@@ -1,7 +1,10 @@
 package View;
 
 import javafx.geometry.Insets;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import model.Question;
@@ -48,7 +51,6 @@ public class QuestionInterface extends BorderPane
         game.setBorder(new Border(new BorderStroke(Color.BLACK,BorderStrokeStyle.SOLID,CornerRadii.EMPTY,BorderWidths.DEFAULT)));
         game.setMinWidth(700);
         game.setMinHeight(250);
-
     }
 
     public void createQuestionLabel()
@@ -69,9 +71,7 @@ public class QuestionInterface extends BorderPane
             {
                 checkAnswer(button);
             }
-
         });
-
     }
 
     public void createAnswerButton()
@@ -94,7 +94,6 @@ public class QuestionInterface extends BorderPane
 
             nextQuestionButton = new Button("Question suivante");
             placeButton(nextQuestionButton, 50, 150);
-
     }
 
     public void placeButton(Button button, int translateY, int translateX)
@@ -138,10 +137,7 @@ public class QuestionInterface extends BorderPane
               showGoodAnswer(answerButton3); showGoodAnswer(answerButton4);
               displayBadAnswer();
           }
-        answerButton1.setDisable(true);
-        answerButton2.setDisable(true);
-        answerButton3.setDisable(true);
-        answerButton4.setDisable(true);
+          disableButtons();
     }
 
     private void displayGoodAnswer()
@@ -173,6 +169,13 @@ public class QuestionInterface extends BorderPane
             button.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
         }
     }
+    public void disableButtons()
+    {
+        answerButton1.setDisable(true);
+        answerButton2.setDisable(true);
+        answerButton3.setDisable(true);
+        answerButton4.setDisable(true);
+    }
 
     public HBox createStatArea(Label label)
     {
@@ -181,7 +184,6 @@ public class QuestionInterface extends BorderPane
         HBox area = new HBox();
         area.setMinHeight(30);
         area.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID,CornerRadii.EMPTY,BorderWidths.DEFAULT)));
-
 
         Label emptySpace = new Label();
         emptySpace.setMinWidth(20);

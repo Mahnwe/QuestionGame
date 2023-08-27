@@ -41,6 +41,7 @@ public class MainScene extends Scene
         playerInfoVBox = new PlayerInfoVBox(player);
         menuPane.setTop(playerInfoVBox.createUserInputArea());
         playerInfoVBox.setOnActionSendButton(menuPane, questionInterface);
+        //playerInfoVBox.setEnterKeyOnAction(menuPane, questionInterface);
     }
 
     private void setAnswersButtonListeners()

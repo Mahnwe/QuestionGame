@@ -28,7 +28,7 @@ public class PlayerInfoVBox extends VBox
     {
         this.player = player;
         getPlayerName = new VBox();
-        Label askPlayerName = new Label("Entrez votre nom et cliquez sur le bouton 'Send'");
+        Label askPlayerName = new Label("Entrez votre nom et cliquez sur le bouton 'Valider'");
         getPlayerName.getChildren().add(askPlayerName);
 
     }
@@ -40,13 +40,13 @@ public class PlayerInfoVBox extends VBox
         userInputArea.setBackground(background);
         userInputArea.setMaxHeight(50);
 
-        sendButton = new Button("Send");
+        sendButton = new Button("Valider");
         sendButton.setBorder(border);
         sendButton.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
         sendButton.setTextFill(Color.GHOSTWHITE);
         sendButton.setPrefWidth(50);
-        getPlayerName.getChildren().add(sendButton);
         getPlayerName.getChildren().add(userInputArea);
+        getPlayerName.getChildren().add(sendButton);
         return getPlayerName;
     }
 
@@ -63,17 +63,26 @@ public class PlayerInfoVBox extends VBox
             getPlayerName.setMinHeight(0);
             getPlayerName.setVisible(false);
         });
+    }
 
-        /*userInputArea.setOnKeyPressed(keyEvent -> {
-                if (keyEvent.getCode() == KeyCode.ENTER) {
-                    createPlayerInfoArea();
-                    pane.setLeft(playerInfos);
-                }
+    /*public void setEnterKeyOnAction(BorderPane pane, QuestionInterface questionInterface)
+    {
+        KeyCode keyCheck = KeyCode.ENTER;
+        userInputArea.setOnKeyPressed(keyEvent -> {
+            if (keyEvent.getCode() == keyCheck) {
+                createPlayerInfoArea();
+                pane.setLeft(playerInfos);
+                questionInterface.setVisible(true);
+            }
+            else
+            {
+                userInputArea.appendText(keyEvent.getText());
+            }
             getPlayerName.setMaxHeight(0);
             getPlayerName.setMinHeight(0);
             getPlayerName.setVisible(false);
-        });*/
-    }
+        });
+    }*/
 
     public void createPlayerInfoArea()
     {

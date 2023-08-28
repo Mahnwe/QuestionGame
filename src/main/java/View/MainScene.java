@@ -38,10 +38,10 @@ public class MainScene extends Scene
         createNewQuestionInterface();
         setAnswersButtonListeners();
         questionInterface.setVisible(false);
+
         playerInfoVBox = new PlayerInfoVBox(player);
         menuPane.setTop(playerInfoVBox.createUserInputArea());
         playerInfoVBox.setOnActionSendButton(menuPane, questionInterface);
-        //playerInfoVBox.setEnterKeyOnAction(menuPane, questionInterface);
     }
 
     private void setAnswersButtonListeners()
@@ -60,16 +60,16 @@ public class MainScene extends Scene
 
     public void createNewQuestionInterface()
     {
-                questionInterface = new QuestionInterface(new BorderPane(), gameHandler.getQuestionList().get(gameHandler.getQuestionCount()));
-                questionInterface.getQuestionToAsk().setText("Question n°" + (gameHandler.getQuestionCount() + 1) + " : " + questionInterface.getQuestion().getQuestionToAsk());
-                setAnswersButtonListeners();
-                menuPane.setCenter(questionInterface);
-                gameHandler.IncreaseQuestionCount();
+        questionInterface = new QuestionInterface(new BorderPane(), gameHandler.getQuestionList().get(gameHandler.getQuestionCount()));
+        questionInterface.getQuestionToAsk().setText("Question n°" + (gameHandler.getQuestionCount() + 1) + " : " + questionInterface.getQuestion().getQuestionToAsk());
+        setAnswersButtonListeners();
+        menuPane.setCenter(questionInterface);
+        gameHandler.IncreaseQuestionCount();
     }
 
     public void setDisplayResult()
     {
-        ResultScene resultScene = new ResultScene(menuPane);
+        ResultScene resultScene = new ResultScene(menuPane, playerInfoVBox.getPlayer().getPlayerScore(), gameHandler.getQuestionCount());
         resultScene.getCongratsLabel().setText("Bravo "+playerInfoVBox.getPlayer().getPlayerName()+" vous avez répondu à toutes les questions !");
         resultScene.getPlayerResult().setText("Votre score : "+playerInfoVBox.getPlayer().getPlayerScore()+" sur "+gameHandler.getQuestionCount());
 

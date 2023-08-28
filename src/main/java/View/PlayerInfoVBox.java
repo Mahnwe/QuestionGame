@@ -44,7 +44,7 @@ public class PlayerInfoVBox extends VBox
         sendButton.setBorder(border);
         sendButton.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
         sendButton.setTextFill(Color.GHOSTWHITE);
-        sendButton.setPrefWidth(50);
+        sendButton.setPrefWidth(80);
         getPlayerName.getChildren().add(userInputArea);
         getPlayerName.getChildren().add(sendButton);
         return getPlayerName;
@@ -64,25 +64,6 @@ public class PlayerInfoVBox extends VBox
             getPlayerName.setVisible(false);
         });
     }
-
-    /*public void setEnterKeyOnAction(BorderPane pane, QuestionInterface questionInterface)
-    {
-        KeyCode keyCheck = KeyCode.ENTER;
-        userInputArea.setOnKeyPressed(keyEvent -> {
-            if (keyEvent.getCode() == keyCheck) {
-                createPlayerInfoArea();
-                pane.setLeft(playerInfos);
-                questionInterface.setVisible(true);
-            }
-            else
-            {
-                userInputArea.appendText(keyEvent.getText());
-            }
-            getPlayerName.setMaxHeight(0);
-            getPlayerName.setMinHeight(0);
-            getPlayerName.setVisible(false);
-        });
-    }*/
 
     public void createPlayerInfoArea()
     {

@@ -95,6 +95,18 @@ public class QuestionStorage
                 "Vers 1560 av J.C", "Vers 3800 av J.C", "Vers 720 av J.C", "Vers 2560 av J.C",
                 "La pyramide de Khéops fut édifiée vers 2560 av J.C, il y a plus de 4500ans" +"\n"+"et est la plus grande pyramide de Gizeh");
         questionList.add(question17);
+
+        Question question18 = new Question("De combien d'états sont composés les Etats-Unis ?", "37", "63",
+                "43", "50", "50", "Les Etats-Unis sont composés de 50 états");
+        questionList.add(question18);
+
+        Question question19 = new Question("Quel animal est un roitelet ?", "Un renard", "Un cheval",
+                "Un oiseau", "Un poisson", "Un oiseau", "Le roitelet est une espèce d'oiseau de l'ordre des passereaux");
+        questionList.add(question19);
+
+        Question question20 = new Question("Ou est né Mozart ?", "A Venise", "A Salzbourg",
+                "A Vienne", "A Turin", "A Salzbourg", "Wolfgang Amadeus Mozart est né à Salzbourg en 1756");
+        questionList.add(question20);
     }
 
     public ArrayList<Question> getQuestionList() {

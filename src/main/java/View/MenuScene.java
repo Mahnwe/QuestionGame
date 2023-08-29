@@ -18,7 +18,7 @@ public class MenuScene extends Scene
 
     private final Stage stage;
 
-    private Button fiveModeButton;
+    private Button twentyModeButton;
     private Button tenModeButton;
     private Button fifteenModeButton;
     private final GameHandler gameHandler;
@@ -74,30 +74,25 @@ public class MenuScene extends Scene
         Label chooseMode = new Label("Cliquez sur le nombre de questions auquel vous voulez répondre");
         chooseMode.setTranslateX(100);
 
-        fiveModeButton = new Button("Cinq questions");
-        placeButtons(fiveModeButton, 200, 10);
-
         tenModeButton = new Button("Dix questions");
-        placeButtons(tenModeButton, 200, 30);
+        placeButtons(tenModeButton, 200, 10);
 
         fifteenModeButton = new Button("Quinze questions");
-        placeButtons(fifteenModeButton, 200, 50);
+        placeButtons(fifteenModeButton, 200, 30);
+
+        twentyModeButton = new Button("Vingt questions");
+        placeButtons(twentyModeButton, 200, 50);
 
 
         selectModeArea.getChildren().add(createStatArea(chooseMode));
-        selectModeArea.getChildren().add(fiveModeButton);
         selectModeArea.getChildren().add(tenModeButton);
         selectModeArea.getChildren().add(fifteenModeButton);
+        selectModeArea.getChildren().add(twentyModeButton);
         pane.setCenter(selectModeArea);
     }
 
     public void setButtonOnAction()
     {
-        fiveModeButton.setOnAction(event -> {
-            gameHandler.setupQuestionList(5);
-            instantiateMainScene();
-        });
-
         tenModeButton.setOnAction(event -> {
             gameHandler.setupQuestionList(10);
             instantiateMainScene();
@@ -105,6 +100,11 @@ public class MenuScene extends Scene
 
         fifteenModeButton.setOnAction(event -> {
             gameHandler.setupQuestionList(15);
+            instantiateMainScene();
+        });
+
+        twentyModeButton.setOnAction(event -> {
+            gameHandler.setupQuestionList(20);
             instantiateMainScene();
         });
     }

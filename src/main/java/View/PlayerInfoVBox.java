@@ -30,12 +30,19 @@ public class PlayerInfoVBox extends VBox
         getPlayerName = new VBox();
         Label askPlayerName = new Label("Entrez votre nom et cliquez sur le bouton 'Valider'");
         getPlayerName.getChildren().add(askPlayerName);
-
     }
 
     public VBox createUserInputArea()
     {
         userInputArea = new TextArea();
+        userInputArea.setOnKeyTyped(event -> {
+            int maxCharacters = 10;
+            if (userInputArea.getText().length() > maxCharacters)
+            {
+                userInputArea.deletePreviousChar();
+            }
+        });
+
         userInputArea.setBorder(border);
         userInputArea.setBackground(background);
         userInputArea.setMaxHeight(50);

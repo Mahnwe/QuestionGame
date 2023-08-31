@@ -107,6 +107,15 @@ public class QuestionStorage
         Question question20 = new Question("Ou est né Mozart ?", "A Venise", "A Salzbourg",
                 "A Vienne", "A Turin", "A Salzbourg", "Wolfgang Amadeus Mozart est né à Salzbourg en 1756");
         questionList.add(question20);
+
+        Question question21 = new Question("Qui a écrit l'Odyssée ?", "Platon", "Péricles",
+                "Hérodote", "Homère", "Homère", "L'Odyssée est la deuxième oeuvre de littérature d'Homère après l'Iliade");
+        questionList.add(question21);
+
+        Question question22 = new Question("Quelle est la deuxième langue la plus parlée en Inde ?", "Le Tamoul",
+                "Le Bengali", "Le Pendjabi", "Le Népalais", "Le Bengali",
+                "Le Bengali est la 2ème langue la plus parlée en Inde, avec 268 millions de locuteurs");
+        questionList.add(question22);
     }
 
     public ArrayList<Question> getQuestionList() {

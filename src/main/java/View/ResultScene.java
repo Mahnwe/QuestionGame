@@ -21,7 +21,6 @@ public class ResultScene extends VBox
     public ResultScene(BorderPane pane, int playerFinalScore, int questionCount)
     {
         VBox gameResult = new VBox();
-
         createIcons();
 
         congratsLabel = new Label();
@@ -86,4 +85,5 @@ public class ResultScene extends VBox
     public Label getCongratsLabel() {
         return congratsLabel;
     }
+
 }

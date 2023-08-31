@@ -28,7 +28,7 @@ public class PlayerInfoVBox extends VBox
     {
         this.player = player;
         getPlayerName = new VBox();
-        Label askPlayerName = new Label("Entrez votre nom et cliquez sur le bouton 'Valider'");
+        Label askPlayerName = new Label("Entrez votre nom et cliquez sur le bouton 'Valider' (10 charactères maximum)");
         getPlayerName.getChildren().add(askPlayerName);
     }
 

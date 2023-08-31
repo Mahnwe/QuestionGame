@@ -57,7 +57,6 @@ public class MainScene extends Scene
         });
     }
 
-
     public void createNewQuestionInterface()
     {
         questionInterface = new QuestionInterface(new BorderPane(), gameHandler.getQuestionList().get(gameHandler.getQuestionCount()));

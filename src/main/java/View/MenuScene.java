@@ -32,6 +32,7 @@ public class MenuScene extends Scene
         this.stage = stage;
         this.gameHandler = new GameHandler();
         saveFile = new File("./src/main/resources/SaveFile/saveScoresFile");
+
         createWelcomeArea();
         createLeaderBoardButtonArea();
         createButtonArea();
@@ -59,6 +60,7 @@ public class MenuScene extends Scene
         leaderBoardVBox.setMinWidth(100);
         Button leaderBoardButton = new Button("Classement");
         placeButtons(leaderBoardButton, 10, 30);
+
         leaderBoardButton.setOnAction(event -> {
             LeaderBoardScene leaderBoardScene = new LeaderBoardScene(new BorderPane(), saveFile);
             leaderBoardScene.displayLeaderBoard();

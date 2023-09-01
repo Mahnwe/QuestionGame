@@ -18,7 +18,7 @@ public class ResultScene extends VBox
     private ImageView bronzeCup;
     private ImageView silverCup;
 
-    public ResultScene(BorderPane pane, int playerFinalScore, int questionCount)
+    public ResultScene(BorderPane pane, int playerFinalScore, int questionCount, TrophyHandler trophyHandler)
     {
         VBox gameResult = new VBox();
         createIcons();
@@ -31,18 +31,36 @@ public class ResultScene extends VBox
         gameResult.getChildren().add(playerResult);
         if(playerFinalScore >= questionCount*90/100)
         {
+            String checkIntInFile = String.valueOf(trophyHandler.ReadInGoldCupFile());
+            String numberOfGoldCup = String.valueOf(checkIntInFile.charAt(checkIntInFile.length() -2));
+            int nbrOfGoldCup = Integer.parseInt(numberOfGoldCup);
+            nbrOfGoldCup++;
+            String howManyGoldCup = "Gold Cups : "+ nbrOfGoldCup;
+            trophyHandler.WriteInGoldCupFile(howManyGoldCup, checkIntInFile);
             Label cupLabel = new Label("Vous avez gagné la coupe d'or !");
             gameResult.getChildren().add(cupLabel);
             gameResult.getChildren().add(goldCup);
         }
         if(playerFinalScore >= questionCount*60/100 && playerFinalScore <= questionCount*80/100)
         {
+            String checkIntInFile = String.valueOf(trophyHandler.ReadInSilverCupFile());
+            String numberOfSilverCup = String.valueOf(checkIntInFile.charAt(checkIntInFile.length() -2));
+            int nbrOfSilverCup = Integer.parseInt(numberOfSilverCup);
+            nbrOfSilverCup++;
+            String howManySilverCup = "Silver Cups : "+ nbrOfSilverCup;
+            trophyHandler.WriteInSilverCupFile(howManySilverCup, checkIntInFile);
             Label cupLabel = new Label("Vous avez gagné la coupe d'argent !");
             gameResult.getChildren().add(cupLabel);
             gameResult.getChildren().add(silverCup);
         }
         if(playerFinalScore >= questionCount*40/100 && playerFinalScore <= questionCount*50/100)
         {
+            String checkIntInFile = String.valueOf(trophyHandler.ReadInBronzeCupFile());
+            String numberOfBronzeCup = String.valueOf(checkIntInFile.charAt(checkIntInFile.length() -2));
+            int nbrOfBronzeCup = Integer.parseInt(numberOfBronzeCup);
+            nbrOfBronzeCup++;
+            String howManyBronzeCup = "Bronze Cups : "+ nbrOfBronzeCup;
+            trophyHandler.WriteInBronzeCupFile(howManyBronzeCup, checkIntInFile);
             Label cupLabel = new Label("Vous avez gagné la coupe de bronze !");
             gameResult.getChildren().add(cupLabel);
             gameResult.getChildren().add(bronzeCup);

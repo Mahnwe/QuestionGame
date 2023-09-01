@@ -25,6 +25,8 @@ public class MenuScene extends Scene
     private final File saveFile;
     private final Border border = new Border(new BorderStroke(Color.BLACK,
             BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT));
+
+    private final TrophyHandler trophyHandler;
     public MenuScene(BorderPane pane, Stage stage)
     {
         super(pane);
@@ -32,6 +34,7 @@ public class MenuScene extends Scene
         this.stage = stage;
         this.gameHandler = new GameHandler();
         saveFile = new File("./src/main/resources/SaveFile/saveScoresFile");
+        trophyHandler = new TrophyHandler();
 
         createWelcomeArea();
         createLeaderBoardButtonArea();
@@ -58,14 +61,25 @@ public class MenuScene extends Scene
         VBox leaderBoardVBox = new VBox();
         leaderBoardVBox.setBorder(border);
         leaderBoardVBox.setMinWidth(100);
+
         Button leaderBoardButton = new Button("Classement");
         placeButtons(leaderBoardButton, 10, 30);
+
+        Button trophyButton = new Button("Trophées");
+        placeButtons(trophyButton, 10, 60);
 
         leaderBoardButton.setOnAction(event -> {
             LeaderBoardScene leaderBoardScene = new LeaderBoardScene(new BorderPane(), saveFile);
             leaderBoardScene.displayLeaderBoard();
         });
+
+        trophyButton.setOnAction(event -> {
+            TrophyScene trophyScene = new TrophyScene(new BorderPane(), trophyHandler);
+            trophyScene.displayTrophyScene();
+        });
+
         leaderBoardVBox.getChildren().add(leaderBoardButton);
+        leaderBoardVBox.getChildren().add(trophyButton);
         pane.setLeft(leaderBoardVBox);
     }
 
@@ -114,7 +128,7 @@ public class MenuScene extends Scene
     public void instantiateMainScene()
     {
         Player player = new Player();
-        MainScene mainScene = new MainScene(new BorderPane(), player, gameHandler, stage, saveFile);
+        MainScene mainScene = new MainScene(new BorderPane(), player, gameHandler, stage, saveFile, trophyHandler);
         stage.setScene(mainScene);
         stage.setMinHeight(450);
         stage.setMinWidth(850);

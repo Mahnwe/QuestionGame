@@ -26,14 +26,17 @@ public class MainScene extends Scene
 
     private final File saveFile;
 
+    private final TrophyHandler trophyHandler;
 
-    public MainScene(BorderPane menuPane, Player player, GameHandler gameHandler, Stage stage, File saveFile)
+
+    public MainScene(BorderPane menuPane, Player player, GameHandler gameHandler, Stage stage, File saveFile, TrophyHandler trophyHandler)
     {
         super(menuPane);
         this.menuPane = menuPane;
         this.gameHandler = gameHandler;
         this.stage = stage;
         this.saveFile = saveFile;
+        this.trophyHandler = trophyHandler;
 
         createNewQuestionInterface();
         setAnswersButtonListeners();
@@ -68,7 +71,7 @@ public class MainScene extends Scene
 
     public void setDisplayResult()
     {
-        ResultScene resultScene = new ResultScene(menuPane, playerInfoVBox.getPlayer().getPlayerScore(), gameHandler.getQuestionCount());
+        ResultScene resultScene = new ResultScene(menuPane, playerInfoVBox.getPlayer().getPlayerScore(), gameHandler.getQuestionCount(), trophyHandler);
         resultScene.getCongratsLabel().setText("Bravo "+playerInfoVBox.getPlayer().getPlayerName()+" vous avez répondu à toutes les questions !");
         resultScene.getPlayerResult().setText("Votre score : "+playerInfoVBox.getPlayer().getPlayerScore()+" sur "+gameHandler.getQuestionCount());
 

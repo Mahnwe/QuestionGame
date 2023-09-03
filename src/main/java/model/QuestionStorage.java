@@ -139,7 +139,7 @@ public class QuestionStorage
         questionList.add(question27);
 
         Question question28 = new Question("En quelle année les femmes obtiennent le droit de vote en France ?", "1913", "1927", "1938", "1944",
-                "1944", "En france les femmes obtiennent le droit de vote en 1944, mais il faudra attendre 1945 pour qu'elles puissent participer à leurs premier vote"+"\n"+"OMG c'est beaucoup trop tard");
+                "1944", "En france les femmes obtiennent le droit de vote en 1944, mais il faudra attendre 1945"+"\n"+"pour qu'elles puissent participer à leurs premier vote (OMG c'est beaucoup trop tard)");
         questionList.add(question28);
     }
 

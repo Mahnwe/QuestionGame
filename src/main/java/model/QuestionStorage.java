@@ -112,10 +112,18 @@ public class QuestionStorage
                 "Hérodote", "Homère", "Homère", "L'Odyssée est la deuxième oeuvre de littérature d'Homère après l'Iliade");
         questionList.add(question21);
 
-        Question question22 = new Question("Quelle est la deuxième langue la plus parlée en Inde ?", "Le Tamoul",
-                "Le Bengali", "Le Pendjabi", "Le Népalais", "Le Bengali",
+        Question question22 = new Question("Quelle est la deuxième langue la plus parlée en Inde ?", "Le Bengali",
+                "Le Tamoul", "Le Pendjabi", "Le Népalais", "Le Bengali",
                 "Le Bengali est la 2ème langue la plus parlée en Inde, avec 268 millions de locuteurs");
         questionList.add(question22);
+
+        Question question23 = new Question("Qu'est ce que la carotide ?", "Un organe", "Une artère",
+                "Une maladie", "Un os", "Une artère", "La carotide est une artère composée de deux parties, interne et externe");
+        questionList.add(question23);
+
+        Question question24 = new Question("Quelle est la vitesse maximale atteinte par une voiture à roues ?", "560,87 km/h", "447,32 km/h",
+                "633,79 km/h", "398,17 km/h", "633,79 km/h", "Le record de vitesse maximale atteinte par un véhicule a roue est de 633,79km/h et à été réalisé en 1947");
+        questionList.add(question24);
     }
 
     public ArrayList<Question> getQuestionList() {

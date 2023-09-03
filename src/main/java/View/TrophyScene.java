@@ -18,6 +18,7 @@ public class TrophyScene extends Scene
     {
         super(pane);
         createIcons();
+
         VBox cupsImages = new VBox();
         cupsImages.getChildren().add(goldCup);
         cupsImages.getChildren().add(silverCup);
@@ -71,7 +72,7 @@ public class TrophyScene extends Scene
     public void displayTrophyScene()
     {
         Stage stage = new Stage();
-        stage.setTitle("Trophées");
+        stage.setTitle("Armoire à trophées");
         stage.setMinWidth(400);
         stage.setMinHeight(400);
         stage.setScene(this);

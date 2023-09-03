@@ -133,6 +133,14 @@ public class QuestionStorage
         Question question26 = new Question("De quand date la plus vieille université du monde ?", "968 après J.C", "132 avant J.C",
                 "425 après J.C", "681 après J.C", "425 après J.C", "La plus vieille université du monde est l'université de Constantinople, sa fondation remonte à 425 après J.C");
         questionList.add(question26);
+
+        Question question27 = new Question("De quel pays Mogadiscio est la capital ?", "Le Kenya", "L'Ethiopie",
+                "Le Niger", "La Somalie", "La Somalie", "Mogadiscio est la capitale de la Somalie et compte plus de 2 millions d'habitants");
+        questionList.add(question27);
+
+        Question question28 = new Question("En quelle année les femmes obtiennent le droit de vote en France ?", "1913", "1927", "1938", "1944",
+                "1944", "En france les femmes obtiennent le droit de vote en 1944, mais il faudra attendre 1945 pour qu'elles puissent participer à leurs premier vote"+"\n"+"OMG c'est beaucoup trop tard");
+        questionList.add(question28);
     }
 
     public ArrayList<Question> getQuestionList() {

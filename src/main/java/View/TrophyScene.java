@@ -21,22 +21,25 @@ public class TrophyScene extends Scene
         VBox cupsImages = new VBox();
         cupsImages.getChildren().add(goldCup);
         cupsImages.getChildren().add(silverCup);
-        silverCup.setTranslateY(80);
+        silverCup.setTranslateY(30);
         cupsImages.getChildren().add(bronzeCup);
-        bronzeCup.setTranslateY(180);
+        bronzeCup.setTranslateY(50);
 
         pane.setLeft(cupsImages);
 
         VBox nbrOfCups = new VBox();
         TextArea nbrOfGoldCup = new TextArea();
+        nbrOfGoldCup.setMaxHeight(120);
         nbrOfGoldCup.setEditable(false);
         nbrOfGoldCup.setText(String.valueOf(trophyHandler.ReadInGoldCupFile()));
 
         TextArea nbrOfSilverCup = new TextArea();
+        nbrOfSilverCup.setMaxHeight(120);
         nbrOfSilverCup.setEditable(false);
         nbrOfSilverCup.setText(String.valueOf(trophyHandler.ReadInSilverCupFile()));
 
         TextArea nbrOfBronzeCup = new TextArea();
+        nbrOfBronzeCup.setMaxHeight(120);
         nbrOfBronzeCup.setEditable(false);
         nbrOfBronzeCup.setText(String.valueOf(trophyHandler.ReadInBronzeCupFile()));
 

@@ -29,26 +29,28 @@ public class TrophyScene extends Scene
         pane.setLeft(cupsImages);
 
         VBox nbrOfCups = new VBox();
+
         TextArea nbrOfGoldCup = new TextArea();
-        nbrOfGoldCup.setMaxHeight(120);
-        nbrOfGoldCup.setEditable(false);
-        nbrOfGoldCup.setText(String.valueOf(trophyHandler.ReadInGoldCupFile()));
+        setUpCupTextArea(nbrOfGoldCup, String.valueOf(trophyHandler.ReadInGoldCupFile()));
 
         TextArea nbrOfSilverCup = new TextArea();
-        nbrOfSilverCup.setMaxHeight(120);
-        nbrOfSilverCup.setEditable(false);
-        nbrOfSilverCup.setText(String.valueOf(trophyHandler.ReadInSilverCupFile()));
+        setUpCupTextArea(nbrOfSilverCup, String.valueOf(trophyHandler.ReadInSilverCupFile()));
 
         TextArea nbrOfBronzeCup = new TextArea();
-        nbrOfBronzeCup.setMaxHeight(120);
-        nbrOfBronzeCup.setEditable(false);
-        nbrOfBronzeCup.setText(String.valueOf(trophyHandler.ReadInBronzeCupFile()));
+        setUpCupTextArea(nbrOfBronzeCup, String.valueOf(trophyHandler.ReadInBronzeCupFile()));
 
         nbrOfCups.getChildren().add(nbrOfGoldCup);
         nbrOfCups.getChildren().add(nbrOfSilverCup);
         nbrOfCups.getChildren().add(nbrOfBronzeCup);
         pane.setCenter(nbrOfCups);
 
+    }
+
+    public void setUpCupTextArea(TextArea textArea, String string)
+    {
+        textArea.setMaxHeight(120);
+        textArea.setEditable(false);
+        textArea.setText(string);
     }
 
     public void createIcons()

@@ -5,8 +5,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import model.IconCreator;
+import model.PathUtil;
 import model.Question;
 import model.QuestionStorage;
 
@@ -33,7 +36,6 @@ public class QuestionInterface extends BorderPane
             BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT));
     private Label explanation;
 
-
     public QuestionInterface(BorderPane questionPane, Question question)
     {
         super(questionPane);
@@ -41,6 +43,13 @@ public class QuestionInterface extends BorderPane
         this.question = question;
         this.questionList = new QuestionStorage();
         this.confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmAlert.setHeaderText("Êtes-vous sûr ?");
+
+        IconCreator iconCreator = new IconCreator(PathUtil.QUESTION_MARK_TEST);
+        ImageView backgroundImage = iconCreator.createImage();
+        backgroundImage.setFitHeight(150);
+        confirmAlert.setGraphic(backgroundImage);
+
         createView();
     }
 

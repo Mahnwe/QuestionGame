@@ -3,10 +3,15 @@ package View;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
+import model.BackgroundCreator;
 import model.GameHandler;
+import model.PathUtil;
 import model.Player;
 
 import java.io.File;
@@ -37,15 +42,24 @@ public class MenuScene extends Scene
         trophyHandler = new TrophyHandler();
 
         createWelcomeArea();
+        createAdviceForPlayer(pane);
         createLeaderBoardButtonArea();
         createButtonArea();
         setButtonOnAction();
+
+        BackgroundCreator menuBackground = new BackgroundCreator(PathUtil.MENU_BACKGROUND);
+        Image menuSceneBackground = menuBackground.createBackground();
+        Background mainSceneBackground = new Background(new BackgroundImage(menuSceneBackground,BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
+                new BackgroundSize(1.0,1.0,true, true, false, false)));
+        pane.setBackground(mainSceneBackground);
     }
 
     public void createWelcomeArea()
     {
         VBox welcomeArea = new VBox();
         Label welcomeInGame = new Label("Bienvenue dans le Turbo Jeu des Questions !");
+        welcomeInGame.setTextFill(Color.BLACK);
+        welcomeInGame.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
         welcomeArea.getChildren().add(createStatArea(welcomeInGame));
         pane.setTop(welcomeArea);
     }
@@ -63,10 +77,10 @@ public class MenuScene extends Scene
         leaderBoardVBox.setMinWidth(100);
 
         Button leaderBoardButton = new Button("Classement");
-        placeButtons(leaderBoardButton, 10, 30);
+        placeButtons(leaderBoardButton, 10, 50);
 
         Button trophyButton = new Button("Trophées");
-        placeButtons(trophyButton, 10, 60);
+        placeButtons(trophyButton, 10, 110);
 
         leaderBoardButton.setOnAction(event -> {
             LeaderBoardScene leaderBoardScene = new LeaderBoardScene(new BorderPane(), saveFile);
@@ -88,16 +102,18 @@ public class MenuScene extends Scene
         VBox selectModeArea = new VBox();
 
         Label chooseMode = new Label("Cliquez sur le nombre de questions auquel vous voulez répondre");
-        chooseMode.setTranslateX(100);
+        chooseMode.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        chooseMode.setTextFill(Color.BLACK);
+        chooseMode.setTranslateX(70);
 
         tenModeButton = new Button("Dix questions");
-        placeButtons(tenModeButton, 200, 10);
+        placeButtons(tenModeButton, 60, 65);
 
         fifteenModeButton = new Button("Quinze questions");
-        placeButtons(fifteenModeButton, 200, 30);
+        placeButtons(fifteenModeButton, 250, 40);
 
         twentyModeButton = new Button("Vingt questions");
-        placeButtons(twentyModeButton, 200, 50);
+        placeButtons(twentyModeButton, 480, 17);
 
 
         selectModeArea.getChildren().add(createStatArea(chooseMode));
@@ -132,6 +148,26 @@ public class MenuScene extends Scene
         stage.setScene(mainScene);
         stage.setMinHeight(450);
         stage.setMinWidth(850);
+    }
+
+    public void createAdviceForPlayer(BorderPane pane)
+    {
+        VBox adviceVbox = new VBox();
+        adviceVbox.setBorder(border);
+
+        Label adviceLabel = new Label("Cliquez sur 'Classement' pour retrouver les scores de vos parties précédentes");
+        adviceLabel.setTranslateX(100);
+        adviceLabel.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        adviceLabel.setTextFill(Color.BLACK);
+
+        Label adviceLabel2 = new Label("Cliquez sur 'Trophées' pour voir tout les trophées débloqués");
+        adviceLabel2.setTranslateX(100);
+        adviceLabel2.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        adviceLabel2.setTextFill(Color.BLACK);
+
+        adviceVbox.getChildren().add(adviceLabel);
+        adviceVbox.getChildren().add(adviceLabel2);
+        pane.setBottom(adviceVbox);
     }
 
     public HBox createStatArea(Label label) {

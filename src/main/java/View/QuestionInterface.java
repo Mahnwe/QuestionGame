@@ -40,6 +40,23 @@ public class QuestionInterface extends BorderPane
         this.question = question;
         this.questionList = new QuestionStorage();
         this.confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
+
+        modifyConfirmAlert();
+
+        createView();
+    }
+
+    public void createGameSpace()
+    {
+        game = new VBox();
+        game.setBorder(border);
+        game.setBorder(new Border(new BorderStroke(Color.BLACK,BorderStrokeStyle.SOLID,CornerRadii.EMPTY,BorderWidths.DEFAULT)));
+        game.setMinWidth(700);
+        game.setMinHeight(250);
+    }
+
+    public void modifyConfirmAlert()
+    {
         confirmAlert.setTitle("Fenêtre de confirmation");
         confirmAlert.setHeaderText("Êtes-vous sûr ?");
 
@@ -55,17 +72,6 @@ public class QuestionInterface extends BorderPane
         Button cancelButton = (Button) confirmAlert.getDialogPane().lookupButton(ButtonType.CANCEL);
         cancelButton.setText("Non");
         placeButton(cancelButton, -20, -20);
-
-        createView();
-    }
-
-    public void createGameSpace()
-    {
-        game = new VBox();
-        game.setBorder(border);
-        game.setBorder(new Border(new BorderStroke(Color.BLACK,BorderStrokeStyle.SOLID,CornerRadii.EMPTY,BorderWidths.DEFAULT)));
-        game.setMinWidth(700);
-        game.setMinHeight(250);
     }
 
     public void createQuestionLabel()

@@ -29,6 +29,7 @@ public class PlayerInfoVBox extends VBox
     public PlayerInfoVBox(Player player)
     {
         this.player = player;
+
         getPlayerName = new VBox();
         Label askPlayerName = new Label("Entrez votre nom et cliquez sur le bouton 'Valider' (10 charactères maximum)");
         askPlayerName.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
@@ -55,7 +56,7 @@ public class PlayerInfoVBox extends VBox
         sendButton.setBorder(border);
         sendButton.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
         sendButton.setTextFill(Color.GHOSTWHITE);
-        sendButton.setPrefWidth(80);
+        sendButton.setMinWidth(80);
         getPlayerName.getChildren().add(userInputArea);
         getPlayerName.getChildren().add(sendButton);
         return getPlayerName;
@@ -81,13 +82,13 @@ public class PlayerInfoVBox extends VBox
         playerInfos = new VBox();
         player.setPlayerName(userInputArea.getText());
         Label playerNameLabel = new Label("Nom : " + player.getPlayerName());
-        playerNameLabel.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        playerNameLabel.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 13));
         playerNameLabel.setTextFill(Color.GHOSTWHITE);
         playerInfos.getChildren().add(createStatArea(playerNameLabel));
         playerInfos.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 
         playerScoreLabel = new Label("Score : "+player.getPlayerScore());
-        playerScoreLabel.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        playerScoreLabel.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 13));
         playerScoreLabel.setTextFill(Color.GHOSTWHITE);
         playerInfos.getChildren().add(createStatArea(playerScoreLabel));
         playerInfos.setMinWidth(150);

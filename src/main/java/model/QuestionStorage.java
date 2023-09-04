@@ -20,7 +20,7 @@ public class QuestionStorage
 
         Question question2 = new Question("Quelle est la date de la bataille d'Alésia ?", "253 ap JC",
                 "186 av JC", "67 ap JC", "52 av JC", "52 av JC",
-                "La bataille d'Alésia se déroule en 52 av JC et oppose une coalition de peuples habitant la 'Gaule'"+"\n"+"(appelés ainsi par Jule César) et les armées romaines menées par ce dernier");
+                "La bataille d'Alésia se déroule en 52 av JC et des peuples habitant la 'Gaule'"+"\n"+"(appelés ainsi par Jule César) et les armées romaines menées par ce dernier");
         questionList.add(question2);
 
         Question question3 = new Question("Qu'est ce que le 'chibouque' ?", "Une espèce rare de bouc",
@@ -83,7 +83,7 @@ public class QuestionStorage
 
         Question question15 = new Question("Quel est l'âge de l'arbre le plus vieux du monde ?", "4855ans",
                 "3650ans", "2305ans", "3122ans", "4855ans",
-                "L'arbre le plus vieux du monde est un Pin Bristlecone nommé Mathusalem et âgé de 4855ans");
+                "L'arbre le plus vieux du monde est un Pin Bristlecone"+"\n"+"nommé Mathusalem et âgé de 4855ans");
         questionList.add(question15);
 
         Question question16 = new Question("Quel est le plus grand océan du monde en superficie ?", "Océan Indien",

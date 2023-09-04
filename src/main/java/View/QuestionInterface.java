@@ -67,11 +67,11 @@ public class QuestionInterface extends BorderPane
 
         Button confirmButton = (Button) confirmAlert.getDialogPane().lookupButton(ButtonType.OK);
         confirmButton.setText("Oui");
-        placeButton(confirmButton, -20, -160);
+        placeButton(confirmButton, -20, -140);
 
         Button cancelButton = (Button) confirmAlert.getDialogPane().lookupButton(ButtonType.CANCEL);
         cancelButton.setText("Non");
-        placeButton(cancelButton, -20, -20);
+        placeButton(cancelButton, -20, -40);
     }
 
     public void createQuestionLabel()

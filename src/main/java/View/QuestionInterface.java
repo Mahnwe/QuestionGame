@@ -81,9 +81,9 @@ public class QuestionInterface extends BorderPane
         for(int i = 0; i<questionList.getQuestionList().size(); i++)
         {
             questionToAsk = new Label();
-            questionToAsk.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+            questionToAsk.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 13));
             questionToAsk.setTextFill(Color.GHOSTWHITE);
-            questionToAsk.setTranslateX(30);
+            questionToAsk.setTranslateX(25);
             questionToAsk.setTranslateY(5);
         }
     }
@@ -175,7 +175,7 @@ public class QuestionInterface extends BorderPane
         goodResult.setTextFill(Color.GHOSTWHITE);
 
         explanation = new Label(question.getExplanation());
-        explanation.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        explanation.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 13));
         explanation.setTextFill(Color.GHOSTWHITE);
 
         displayingResult.getChildren().add(goodResult);
@@ -193,7 +193,7 @@ public class QuestionInterface extends BorderPane
         badResult.setTextFill(Color.GHOSTWHITE);
 
         explanation = new Label(question.getExplanation());
-        explanation.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        explanation.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 13));
         explanation.setTextFill(Color.GHOSTWHITE);
 
         displayingResult.getChildren().add(badResult);

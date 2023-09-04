@@ -116,8 +116,8 @@ public class MainScene extends Scene
     public void backToMainMenu()
     {
         MenuScene menuScene = new MenuScene(new BorderPane(), stage);
-        stage.setMinHeight(400);
-        stage.setMinWidth(800);
+        stage.setMinHeight(450);
+        stage.setMinWidth(850);
         stage.setScene(menuScene);
     }
 

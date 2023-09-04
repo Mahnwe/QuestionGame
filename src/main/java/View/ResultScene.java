@@ -5,6 +5,9 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import model.IconCreator;
 import model.PathUtil;
 
@@ -24,7 +27,12 @@ public class ResultScene extends VBox
         createIcons();
 
         congratsLabel = new Label();
+        congratsLabel.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        congratsLabel.setTextFill(Color.GHOSTWHITE);
+
         playerResult = new Label();
+        playerResult.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        playerResult.setTextFill(Color.GHOSTWHITE);
         exitToMenuButton = new Button("Return to menu");
 
         gameResult.getChildren().add(congratsLabel);
@@ -45,6 +53,8 @@ public class ResultScene extends VBox
         if(playerFinalScore < questionCount*40/100)
         {
             Label cupLabel = new Label("Aucune coupe débloqué, retentez votre chance pour gagner une coupe");
+            cupLabel.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+            cupLabel.setTextFill(Color.GHOSTWHITE);
             gameResult.getChildren().add(cupLabel);
         }
         gameResult.getChildren().add(exitToMenuButton);
@@ -62,6 +72,8 @@ public class ResultScene extends VBox
         trophyHandler.WriteInGoldCupFile(howManyGoldCup, checkIntInFile);
 
         Label cupLabel = new Label("Vous avez gagné la coupe d'or !");
+        cupLabel.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        cupLabel.setTextFill(Color.GHOSTWHITE);
         vBox.getChildren().add(cupLabel);
         vBox.getChildren().add(goldCup);
     }
@@ -77,6 +89,8 @@ public class ResultScene extends VBox
         trophyHandler.WriteInSilverCupFile(howManySilverCup, checkIntInFile);
 
         Label cupLabel = new Label("Vous avez gagné la coupe d'argent !");
+        cupLabel.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        cupLabel.setTextFill(Color.GHOSTWHITE);
         vBox.getChildren().add(cupLabel);
         vBox.getChildren().add(silverCup);
     }
@@ -92,6 +106,8 @@ public class ResultScene extends VBox
         trophyHandler.WriteInBronzeCupFile(howManyBronzeCup, checkIntInFile);
 
         Label cupLabel = new Label("Vous avez gagné la coupe de bronze !");
+        cupLabel.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        cupLabel.setTextFill(Color.GHOSTWHITE);
         vBox.getChildren().add(cupLabel);
         vBox.getChildren().add(bronzeCup);
     }

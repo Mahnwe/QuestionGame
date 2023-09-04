@@ -122,16 +122,16 @@ public class QuestionStorage
         questionList.add(question23);
 
         Question question24 = new Question("Quelle est la vitesse maximale atteinte par une voiture à roues ?", "560,87 km/h", "447,32 km/h",
-                "633,79 km/h", "398,17 km/h", "633,79 km/h", "Le record de vitesse maximale atteinte par un véhicule a roue est de 633,79km/h et à été réalisé en 1947");
+                "633,79 km/h", "398,17 km/h", "633,79 km/h", "Le record de vitesse maximale atteinte par un véhicule a roue est de 633,79km/h"+"\n"+"et à été réalisé en 1947");
         questionList.add(question24);
 
         Question question25 = new Question("Quel est le musée d'art le plus visité au monde ?", "Le Musée du Louvre",
                 "Le Musée national de Chine", "Le British Museum", "Le Musée du Vatican", "Le Musée du Louvre",
-                "Le Musée du Louvre est le musée d'art le plus visité au monde avec plus de 10 millions de visiteurs par an");
+                "Le Musée du Louvre est le musée d'art le plus visité au monde"+"\n"+"avec plus de 10 millions de visiteurs par an");
         questionList.add(question25);
 
         Question question26 = new Question("De quand date la plus vieille université du monde ?", "968 après J.C", "132 avant J.C",
-                "425 après J.C", "681 après J.C", "425 après J.C", "La plus vieille université du monde est l'université de Constantinople, sa fondation remonte à 425 après J.C");
+                "425 après J.C", "681 après J.C", "425 après J.C", "La plus vieille université du monde est l'université de Constantinople"+"\n"+"sa fondation remonte à 425 après J.C");
         questionList.add(question26);
 
         Question question27 = new Question("De quel pays Mogadiscio est la capital ?", "Le Kenya", "L'Ethiopie",

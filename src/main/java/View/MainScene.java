@@ -1,9 +1,11 @@
 package View;
 
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
+import javafx.scene.paint.ImagePattern;
 import javafx.stage.Stage;
 import model.BackgroundCreator;
 import model.GameHandler;
@@ -38,6 +40,8 @@ public class MainScene extends Scene
         this.menuPane = menuPane;
         this.gameHandler = gameHandler;
         this.stage = stage;
+        stage.setMinHeight(450);
+        stage.setMinWidth(850);
         this.saveFile = saveFile;
         this.trophyHandler = trophyHandler;
 
@@ -51,9 +55,8 @@ public class MainScene extends Scene
 
         BackgroundCreator mainSceneBackgroundCreator = new BackgroundCreator(PathUtil.MAIN_BACKGROUND);
         Image mainSceneImage = mainSceneBackgroundCreator.createBackground();
-        Background mainSceneBackground = new Background(new BackgroundImage(mainSceneImage, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
-                new BackgroundSize(1.0,1.0,true, true, false, false)));
-        menuPane.setBackground(mainSceneBackground);
+        BackgroundFill backgroundFill = new BackgroundFill(new ImagePattern(mainSceneImage), CornerRadii.EMPTY, Insets.EMPTY);
+        menuPane.setBackground(new Background(backgroundFill));
     }
 
     private void setAnswersButtonListeners()
@@ -116,8 +119,8 @@ public class MainScene extends Scene
     public void backToMainMenu()
     {
         MenuScene menuScene = new MenuScene(new BorderPane(), stage);
-        stage.setMinHeight(450);
-        stage.setMinWidth(850);
+        stage.setMinHeight(400);
+        stage.setMinWidth(800);
         stage.setScene(menuScene);
     }
 

@@ -58,7 +58,7 @@ public class QuestionStorage
                 "Les premières tortues sont apparus il y a environ 210 millions d'années"+"\n"+"pendant la période du Trias et étaient semi-aquatique");
         questionList.add(question9);
 
-        Question question10 = new Question("A combien de degrés s'élève le point chaud crée par la pince de la crevette pistolet ?",
+        Question question10 = new Question("Quelle est la température du point chaud crée par la pince de la crevette pistolet ?",
                 "4700 degres Celsius", "1225 degres Celsius", "6430 degres Celsius", "2500 degres Celsius", "4700 degres Celsius",
                 "La crevette pistolet peux créer un point chaud de 4700 degrés Celsius"+"\n"+" se rapprochant de la température à la surface du Soleil (5900 degrès)");
         questionList.add(question10);

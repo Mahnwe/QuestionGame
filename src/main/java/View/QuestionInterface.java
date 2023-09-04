@@ -168,7 +168,7 @@ public class QuestionInterface extends BorderPane
     private void displayGoodAnswer()
     {
         displayingResult = new VBox();
-        displayingResult.setMinHeight(60);
+        displayingResult.setMinHeight(65);
         Label goodResult = new Label("Bonne réponse !");
         goodResult.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
         goodResult.setTextFill(Color.GHOSTWHITE);
@@ -185,7 +185,7 @@ public class QuestionInterface extends BorderPane
     private void displayBadAnswer()
     {
         displayingResult = new VBox();
-        displayingResult.setMinHeight(60);
+        displayingResult.setMinHeight(65);
         Label badResult = new Label("Mauvaise réponse !");
         badResult.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
         badResult.setTextFill(Color.GHOSTWHITE);

@@ -1,11 +1,13 @@
 package View;
 
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
@@ -37,21 +39,22 @@ public class MenuScene extends Scene
         super(pane);
         this.pane = pane;
         this.stage = stage;
+        stage.setMinHeight(450);
+        stage.setMinWidth(850);
         this.gameHandler = new GameHandler();
         saveFile = new File("./src/main/resources/SaveFile/saveScoresFile");
         trophyHandler = new TrophyHandler();
 
         createWelcomeArea();
-        createAdviceForPlayer(pane);
         createLeaderBoardButtonArea();
         createButtonArea();
-        setButtonOnAction();
-
+        createAdviceForPlayer();
         BackgroundCreator menuBackground = new BackgroundCreator(PathUtil.MENU_BACKGROUND);
         Image menuSceneBackground = menuBackground.createBackground();
-        Background mainSceneBackground = new Background(new BackgroundImage(menuSceneBackground,BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
-                new BackgroundSize(1.0,1.0,true, true, false, false)));
-        pane.setBackground(mainSceneBackground);
+        BackgroundFill backgroundFill = new BackgroundFill(new ImagePattern(menuSceneBackground), CornerRadii.EMPTY, Insets.EMPTY);
+        pane.setBackground(new Background(backgroundFill));
+
+        setButtonOnAction();
     }
 
     public void createWelcomeArea()
@@ -150,9 +153,11 @@ public class MenuScene extends Scene
         stage.setMinWidth(850);
     }
 
-    public void createAdviceForPlayer(BorderPane pane)
+    public void createAdviceForPlayer()
     {
         VBox adviceVbox = new VBox();
+        adviceVbox.setMinHeight(50);
+        adviceVbox.setMinWidth(250);
         adviceVbox.setBorder(border);
 
         Label adviceLabel = new Label("Cliquez sur 'Classement' pour retrouver les scores de vos parties précédentes");

@@ -6,6 +6,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import model.Player;
 
 public class PlayerInfoVBox extends VBox
@@ -29,6 +31,8 @@ public class PlayerInfoVBox extends VBox
         this.player = player;
         getPlayerName = new VBox();
         Label askPlayerName = new Label("Entrez votre nom et cliquez sur le bouton 'Valider' (10 charactères maximum)");
+        askPlayerName.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        askPlayerName.setTextFill(Color.GHOSTWHITE);
         getPlayerName.getChildren().add(askPlayerName);
     }
 
@@ -77,10 +81,14 @@ public class PlayerInfoVBox extends VBox
         playerInfos = new VBox();
         player.setPlayerName(userInputArea.getText());
         Label playerNameLabel = new Label("Nom : " + player.getPlayerName());
+        playerNameLabel.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        playerNameLabel.setTextFill(Color.GHOSTWHITE);
         playerInfos.getChildren().add(createStatArea(playerNameLabel));
         playerInfos.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 
         playerScoreLabel = new Label("Score : "+player.getPlayerScore());
+        playerScoreLabel.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        playerScoreLabel.setTextFill(Color.GHOSTWHITE);
         playerInfos.getChildren().add(createStatArea(playerScoreLabel));
         playerInfos.setMinWidth(150);
         playerInfos.setMaxWidth(150);

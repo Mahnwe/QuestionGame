@@ -5,6 +5,8 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import model.IconCreator;
 import model.PathUtil;
 import model.Question;
@@ -79,6 +81,8 @@ public class QuestionInterface extends BorderPane
         for(int i = 0; i<questionList.getQuestionList().size(); i++)
         {
             questionToAsk = new Label();
+            questionToAsk.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+            questionToAsk.setTextFill(Color.GHOSTWHITE);
             questionToAsk.setTranslateX(30);
             questionToAsk.setTranslateY(5);
         }
@@ -165,8 +169,15 @@ public class QuestionInterface extends BorderPane
     {
         displayingResult = new VBox();
         displayingResult.setMinHeight(60);
+
         Label goodResult = new Label("Bonne réponse !");
+        goodResult.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        goodResult.setTextFill(Color.GHOSTWHITE);
+
         explanation = new Label(question.getExplanation());
+        explanation.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        explanation.setTextFill(Color.GHOSTWHITE);
+
         displayingResult.getChildren().add(goodResult);
         displayingResult.getChildren().add(explanation);
         questionPane.setBottom(displayingResult);
@@ -176,8 +187,15 @@ public class QuestionInterface extends BorderPane
     {
         displayingResult = new VBox();
         displayingResult.setMinHeight(60);
+
         Label badResult = new Label("Mauvaise réponse !");
+        badResult.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        badResult.setTextFill(Color.GHOSTWHITE);
+
         explanation = new Label(question.getExplanation());
+        explanation.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        explanation.setTextFill(Color.GHOSTWHITE);
+
         displayingResult.getChildren().add(badResult);
         displayingResult.getChildren().add(explanation);
         questionPane.setBottom(displayingResult);

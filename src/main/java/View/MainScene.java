@@ -2,9 +2,12 @@ package View;
 
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
+import model.BackgroundCreator;
 import model.GameHandler;
+import model.PathUtil;
 import model.Player;
 
 import java.io.BufferedWriter;
@@ -45,6 +48,12 @@ public class MainScene extends Scene
         playerInfoVBox = new PlayerInfoVBox(player);
         menuPane.setTop(playerInfoVBox.createUserInputArea());
         playerInfoVBox.setOnActionSendButton(menuPane, questionInterface);
+
+        BackgroundCreator mainSceneBackgroundCreator = new BackgroundCreator(PathUtil.MAIN_BACKGROUND);
+        Image mainSceneImage = mainSceneBackgroundCreator.createBackground();
+        Background mainSceneBackground = new Background(new BackgroundImage(mainSceneImage, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
+                new BackgroundSize(1.0,1.0,true, true, false, false)));
+        menuPane.setBackground(mainSceneBackground);
     }
 
     private void setAnswersButtonListeners()

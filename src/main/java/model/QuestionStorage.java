@@ -141,6 +141,10 @@ public class QuestionStorage
         Question question28 = new Question("En quelle année les femmes obtiennent le droit de vote en France ?", "1913", "1927", "1938", "1944",
                 "1944", "En france les femmes obtiennent le droit de vote en 1944, mais il faudra attendre 1945"+"\n"+"pour qu'elles puissent participer à leurs premier vote (OMG c'est beaucoup trop tard)");
         questionList.add(question28);
+
+        Question question29 = new Question("Que veux dire 'lantiponner' ?", "Faire cuire lentement",
+                "plier un métal", "Parler inutilement", "Être à l'opposé", "Parler inutilement", "lantiponner veux dire parler inutilement, de manière frivole ou importun");
+        questionList.add(question29);
     }
 
     public ArrayList<Question> getQuestionList() {

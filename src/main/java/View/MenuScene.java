@@ -39,8 +39,8 @@ public class MenuScene extends Scene
         super(pane);
         this.pane = pane;
         this.stage = stage;
-        stage.setMinHeight(450);
-        stage.setMinWidth(850);
+        stage.setMinHeight(500);
+        stage.setMinWidth(900);
         this.gameHandler = new GameHandler();
         saveFile = new File("./src/main/resources/SaveFile/saveScoresFile");
         trophyHandler = new TrophyHandler();

@@ -169,6 +169,7 @@ public class QuestionInterface extends BorderPane
     {
         displayingResult = new VBox();
         displayingResult.setMinHeight(65);
+        displayingResult.setMinWidth(150);
         Label goodResult = new Label("Bonne réponse !");
         goodResult.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
         goodResult.setTextFill(Color.GHOSTWHITE);

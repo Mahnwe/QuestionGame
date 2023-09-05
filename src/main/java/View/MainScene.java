@@ -37,11 +37,11 @@ public class MainScene extends Scene
     public MainScene(BorderPane menuPane, Player player, GameHandler gameHandler, Stage stage, File saveFile, TrophyHandler trophyHandler)
     {
         super(menuPane);
+        this.stage = stage;
+        stage.setMinHeight(500);
+        stage.setMinWidth(900);
         this.menuPane = menuPane;
         this.gameHandler = gameHandler;
-        this.stage = stage;
-        stage.setMinHeight(450);
-        stage.setMinWidth(850);
         this.saveFile = saveFile;
         this.trophyHandler = trophyHandler;
 
@@ -119,8 +119,8 @@ public class MainScene extends Scene
     public void backToMainMenu()
     {
         MenuScene menuScene = new MenuScene(new BorderPane(), stage);
-        stage.setMinHeight(400);
-        stage.setMinWidth(800);
+        stage.setMinHeight(500);
+        stage.setMinWidth(900);
         stage.setScene(menuScene);
     }
 

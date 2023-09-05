@@ -10,8 +10,8 @@ public class App extends Application
     public void start(Stage stage)
     {
         MenuScene menuScene = new MenuScene(new BorderPane(), stage);
-        stage.setMinHeight(400);
-        stage.setMinWidth(800);
+        stage.setMinHeight(500);
+        stage.setMinWidth(900);
         stage.setScene(menuScene);
         stage.setTitle("Turbo Jeu des Questions");
         stage.show();

@@ -8,6 +8,7 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.stage.Stage;
 import model.Player;
 
 public class PlayerInfoVBox extends VBox
@@ -62,7 +63,7 @@ public class PlayerInfoVBox extends VBox
         return getPlayerName;
     }
 
-    public void setOnActionSendButton(BorderPane pane, QuestionInterface questionInterface)
+    public void setOnActionSendButton(BorderPane pane, QuestionInterface questionInterface, Stage stage)
     {
         sendButton.setOnAction(event -> {
             if (!userInputArea.getText().isEmpty())
@@ -70,6 +71,8 @@ public class PlayerInfoVBox extends VBox
                 createPlayerInfoArea();
                 pane.setLeft(playerInfos);
                 questionInterface.setVisible(true);
+                stage.setMinWidth(900);
+                stage.setMinHeight(500);
             }
             getPlayerName.setMaxHeight(0);
             getPlayerName.setMinHeight(0);

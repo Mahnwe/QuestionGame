@@ -38,8 +38,6 @@ public class MainScene extends Scene
     {
         super(menuPane);
         this.stage = stage;
-        stage.setMinHeight(500);
-        stage.setMinWidth(900);
         this.menuPane = menuPane;
         this.gameHandler = gameHandler;
         this.saveFile = saveFile;
@@ -51,7 +49,7 @@ public class MainScene extends Scene
 
         playerInfoVBox = new PlayerInfoVBox(player);
         menuPane.setTop(playerInfoVBox.createUserInputArea());
-        playerInfoVBox.setOnActionSendButton(menuPane, questionInterface);
+        playerInfoVBox.setOnActionSendButton(menuPane, questionInterface, stage);
 
         BackgroundCreator mainSceneBackgroundCreator = new BackgroundCreator(PathUtil.MAIN_BACKGROUND);
         Image mainSceneImage = mainSceneBackgroundCreator.createBackground();
@@ -87,7 +85,11 @@ public class MainScene extends Scene
         resultScene.getCongratsLabel().setText("Bravo "+playerInfoVBox.getPlayer().getPlayerName()+" vous avez répondu à toutes les questions !");
         resultScene.getPlayerResult().setText("Votre score : "+playerInfoVBox.getPlayer().getPlayerScore()+" sur "+gameHandler.getQuestionCount());
 
-        resultScene.getExitToMenuButton().setOnAction(event -> backToMainMenu());
+        resultScene.getExitToMenuButton().setOnAction(event -> {
+            stage.setMinHeight(500);
+            stage.setMinWidth(900);
+            backToMainMenu();
+        });
     }
 
     public void saveScoreInFile()
@@ -119,8 +121,6 @@ public class MainScene extends Scene
     public void backToMainMenu()
     {
         MenuScene menuScene = new MenuScene(new BorderPane(), stage);
-        stage.setMinHeight(500);
-        stage.setMinWidth(900);
         stage.setScene(menuScene);
     }
 

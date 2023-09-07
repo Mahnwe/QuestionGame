@@ -76,7 +76,7 @@ public class MenuScene extends Scene
     {
         VBox leaderBoardVBox = new VBox();
         leaderBoardVBox.setBorder(border);
-        leaderBoardVBox.setMinWidth(105);
+        leaderBoardVBox.setPrefWidth(105);
 
         Button leaderBoardButton = new Button("Classement");
         leaderBoardButton.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 13));
@@ -161,8 +161,8 @@ public class MenuScene extends Scene
     public void createAdviceForPlayer()
     {
         VBox adviceVbox = new VBox();
-        adviceVbox.setMinHeight(60);
-        adviceVbox.setMinWidth(250);
+        adviceVbox.setPrefHeight(60);
+        adviceVbox.setPrefWidth(250);
         adviceVbox.setBorder(border);
 
         Label adviceLabel = new Label("Cliquez sur 'Classement' pour retrouver les scores de vos parties précédentes");
@@ -185,11 +185,11 @@ public class MenuScene extends Scene
         label.setTranslateY(3);
 
         HBox area = new HBox();
-        area.setMinHeight(30);
+        area.setPrefHeight(30);
         area.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 
         Label emptySpace = new Label();
-        emptySpace.setMinWidth(20);
+        emptySpace.setPrefWidth(20);
         area.getChildren().add(emptySpace);
         area.getChildren().add(label);
 

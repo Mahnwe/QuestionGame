@@ -86,11 +86,7 @@ public class MainScene extends Scene
         resultScene.getCongratsLabel().setText("Bravo "+playerInfoVBox.getPlayer().getPlayerName()+" vous avez répondu à toutes les questions !");
         resultScene.getPlayerResult().setText("Votre score : "+playerInfoVBox.getPlayer().getPlayerScore()+" sur "+gameHandler.getQuestionCount());
 
-        resultScene.getExitToMenuButton().setOnAction(event -> {
-            stage.setMinHeight(500);
-            stage.setMinWidth(900);
-            backToMainMenu();
-        });
+        resultScene.getExitToMenuButton().setOnAction(event -> backToMainMenu());
     }
 
     public void saveScoreInFile()

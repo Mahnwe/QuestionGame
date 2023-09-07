@@ -53,8 +53,8 @@ public class QuestionInterface extends BorderPane
         game = new VBox();
         game.setBorder(border);
         game.setBorder(new Border(new BorderStroke(Color.BLACK,BorderStrokeStyle.SOLID,CornerRadii.EMPTY,BorderWidths.DEFAULT)));
-        game.setMinWidth(750);
-        game.setMinHeight(250);
+        game.setPrefWidth(750);
+        game.setPrefHeight(250);
     }
 
     public void modifyConfirmAlert()
@@ -173,8 +173,8 @@ public class QuestionInterface extends BorderPane
     private void displayGoodAnswer()
     {
         displayingResult = new VBox();
-        displayingResult.setMinHeight(65);
-        displayingResult.setMinWidth(150);
+        displayingResult.setPrefHeight(65);
+        displayingResult.setPrefWidth(150);
         Label goodResult = new Label("Bonne réponse !");
         goodResult.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
         goodResult.setTextFill(Color.GHOSTWHITE);
@@ -191,7 +191,8 @@ public class QuestionInterface extends BorderPane
     private void displayBadAnswer()
     {
         displayingResult = new VBox();
-        displayingResult.setMinHeight(65);
+        displayingResult.setPrefHeight(65);
+        displayingResult.setPrefWidth(150);
         Label badResult = new Label("Mauvaise réponse !");
         badResult.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
         badResult.setTextFill(Color.GHOSTWHITE);

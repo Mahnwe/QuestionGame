@@ -43,14 +43,15 @@ public class MenuScene extends Scene
         saveFile = new File("./src/main/resources/SaveFile/saveScoresFile");
         trophyHandler = new TrophyHandler();
 
-        createWelcomeArea();
-        createLeaderBoardButtonArea();
-        createButtonArea();
-        createAdviceForPlayer();
         BackgroundCreator menuBackground = new BackgroundCreator(PathUtil.MENU_BACKGROUND);
         Image menuSceneBackground = menuBackground.createBackground();
         BackgroundFill backgroundFill = new BackgroundFill(new ImagePattern(menuSceneBackground), CornerRadii.EMPTY, Insets.EMPTY);
         pane.setBackground(new Background(backgroundFill));
+
+        createWelcomeArea();
+        createLeaderBoardButtonArea();
+        createButtonArea();
+        createAdviceForPlayer();
 
         setButtonOnAction();
     }
@@ -75,13 +76,15 @@ public class MenuScene extends Scene
     {
         VBox leaderBoardVBox = new VBox();
         leaderBoardVBox.setBorder(border);
-        leaderBoardVBox.setMinWidth(100);
+        leaderBoardVBox.setMinWidth(105);
 
         Button leaderBoardButton = new Button("Classement");
-        placeButtons(leaderBoardButton, 10, 50);
+        leaderBoardButton.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 13));
+        placeButtons(leaderBoardButton, 5, 70);
 
         Button trophyButton = new Button("Trophées");
-        placeButtons(trophyButton, 10, 110);
+        trophyButton.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 13));
+        placeButtons(trophyButton, 10, 150);
 
         leaderBoardButton.setOnAction(event -> {
             LeaderBoardScene leaderBoardScene = new LeaderBoardScene(new BorderPane(), saveFile);
@@ -108,13 +111,16 @@ public class MenuScene extends Scene
         chooseMode.setTranslateX(70);
 
         tenModeButton = new Button("Dix questions");
-        placeButtons(tenModeButton, 60, 65);
+        tenModeButton.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        placeButtons(tenModeButton, 250, 50);
 
         fifteenModeButton = new Button("Quinze questions");
-        placeButtons(fifteenModeButton, 250, 40);
+        fifteenModeButton.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        placeButtons(fifteenModeButton, 250, 100);
 
         twentyModeButton = new Button("Vingt questions");
-        placeButtons(twentyModeButton, 480, 17);
+        twentyModeButton.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        placeButtons(twentyModeButton, 250, 150);
 
 
         selectModeArea.getChildren().add(createStatArea(chooseMode));
@@ -155,17 +161,18 @@ public class MenuScene extends Scene
     public void createAdviceForPlayer()
     {
         VBox adviceVbox = new VBox();
-        adviceVbox.setMinHeight(50);
+        adviceVbox.setMinHeight(60);
         adviceVbox.setMinWidth(250);
         adviceVbox.setBorder(border);
 
         Label adviceLabel = new Label("Cliquez sur 'Classement' pour retrouver les scores de vos parties précédentes");
-        adviceLabel.setTranslateX(100);
+        adviceLabel.setTranslateX(105);
         adviceLabel.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
         adviceLabel.setTextFill(Color.BLACK);
 
         Label adviceLabel2 = new Label("Cliquez sur 'Trophées' pour voir tout les trophées débloqués");
-        adviceLabel2.setTranslateX(100);
+        adviceLabel2.setTranslateX(105);
+        adviceLabel2.setTranslateY(15);
         adviceLabel2.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
         adviceLabel2.setTextFill(Color.BLACK);
 

@@ -102,23 +102,28 @@ public class QuestionInterface extends BorderPane
     public void createAnswerButton()
     {
             answerButton1 = new Button(question.getAnswerList().get(0));
+            answerButton1.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 14));
             setAnswerButtonOnAction(answerButton1);
-            placeButton(answerButton1, 20, 40);
+            placeButton(answerButton1, 40, 70);
 
             answerButton2 = new Button(question.getAnswerList().get(1));
+            answerButton2.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 14));
             setAnswerButtonOnAction(answerButton2);
-            placeButton(answerButton2, 35, 40);
+            placeButton(answerButton2, 70, 70);
 
             answerButton3 = new Button(question.getAnswerList().get(2));
+            answerButton3.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 14));
             setAnswerButtonOnAction(answerButton3);
-            placeButton(answerButton3, -29, 225);
+            placeButton(answerButton3, -14, 300);
 
             answerButton4 = new Button(question.getAnswerList().get(3));
+            answerButton4.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 14));
             setAnswerButtonOnAction(answerButton4);
-            placeButton(answerButton4, -15, 225);
+            placeButton(answerButton4, 18, 300);
 
             nextQuestionButton = new Button("Question suivante");
-            placeButton(nextQuestionButton, 50, 150);
+            nextQuestionButton.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 14));
+            placeButton(nextQuestionButton, 70, 160);
     }
 
     public void placeButton(Button button, int translateY, int translateX)
@@ -175,7 +180,7 @@ public class QuestionInterface extends BorderPane
         goodResult.setTextFill(Color.GHOSTWHITE);
 
         explanation = new Label(question.getExplanation());
-        explanation.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 13));
+        explanation.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 14));
         explanation.setTextFill(Color.GHOSTWHITE);
 
         displayingResult.getChildren().add(goodResult);
@@ -192,7 +197,7 @@ public class QuestionInterface extends BorderPane
         badResult.setTextFill(Color.GHOSTWHITE);
 
         explanation = new Label(question.getExplanation());
-        explanation.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 13));
+        explanation.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 14));
         explanation.setTextFill(Color.GHOSTWHITE);
 
         displayingResult.getChildren().add(badResult);

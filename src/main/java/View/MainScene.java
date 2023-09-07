@@ -43,6 +43,11 @@ public class MainScene extends Scene
         this.saveFile = saveFile;
         this.trophyHandler = trophyHandler;
 
+        BackgroundCreator mainSceneBackgroundCreator = new BackgroundCreator(PathUtil.MAIN_BACKGROUND);
+        Image mainSceneImage = mainSceneBackgroundCreator.createBackground();
+        BackgroundFill backgroundFill = new BackgroundFill(new ImagePattern(mainSceneImage), CornerRadii.EMPTY, Insets.EMPTY);
+        menuPane.setBackground(new Background(backgroundFill));
+
         createNewQuestionInterface();
         setAnswersButtonListeners();
         questionInterface.setVisible(false);
@@ -51,10 +56,6 @@ public class MainScene extends Scene
         menuPane.setTop(playerInfoVBox.createUserInputArea());
         playerInfoVBox.setOnActionSendButton(menuPane, questionInterface, stage);
 
-        BackgroundCreator mainSceneBackgroundCreator = new BackgroundCreator(PathUtil.MAIN_BACKGROUND);
-        Image mainSceneImage = mainSceneBackgroundCreator.createBackground();
-        BackgroundFill backgroundFill = new BackgroundFill(new ImagePattern(mainSceneImage), CornerRadii.EMPTY, Insets.EMPTY);
-        menuPane.setBackground(new Background(backgroundFill));
     }
 
     private void setAnswersButtonListeners()

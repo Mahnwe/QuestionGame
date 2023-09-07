@@ -1,13 +1,11 @@
 package View;
 
-import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.ImagePattern;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
@@ -34,6 +32,9 @@ public class MenuScene extends Scene
             BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT));
 
     private final TrophyHandler trophyHandler;
+
+    private VBox selectModeArea;
+
     public MenuScene(BorderPane pane, Stage stage)
     {
         super(pane);
@@ -43,17 +44,19 @@ public class MenuScene extends Scene
         saveFile = new File("./src/main/resources/SaveFile/saveScoresFile");
         trophyHandler = new TrophyHandler();
 
-        BackgroundCreator menuBackground = new BackgroundCreator(PathUtil.MENU_BACKGROUND);
-        Image menuSceneBackground = menuBackground.createBackground();
-        BackgroundFill backgroundFill = new BackgroundFill(new ImagePattern(menuSceneBackground), CornerRadii.EMPTY, Insets.EMPTY);
-        pane.setBackground(new Background(backgroundFill));
-
         createWelcomeArea();
         createLeaderBoardButtonArea();
         createButtonArea();
         createAdviceForPlayer();
 
         setButtonOnAction();
+
+        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
+        BackgroundCreator menuBackground = new BackgroundCreator(PathUtil.MENU_BACKGROUND);
+        Image menuSceneBackground = menuBackground.createBackground();
+        BackgroundImage backgroundImage = new BackgroundImage(menuSceneBackground, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+                backgroundSize);
+        pane.setBackground(new Background(backgroundImage));
     }
 
     public void createWelcomeArea()
@@ -103,7 +106,7 @@ public class MenuScene extends Scene
 
     public void createButtonArea()
     {
-        VBox selectModeArea = new VBox();
+        selectModeArea = new VBox();
 
         Label chooseMode = new Label("Cliquez sur le nombre de questions auquel vous voulez répondre");
         chooseMode.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
@@ -161,24 +164,21 @@ public class MenuScene extends Scene
     public void createAdviceForPlayer()
     {
         VBox adviceVbox = new VBox();
-        adviceVbox.setPrefHeight(60);
-        adviceVbox.setPrefWidth(250);
-        adviceVbox.setBorder(border);
-
+        adviceVbox.setTranslateY(250);
+        adviceVbox.setPrefHeight(70);
         Label adviceLabel = new Label("Cliquez sur 'Classement' pour retrouver les scores de vos parties précédentes");
-        adviceLabel.setTranslateX(105);
         adviceLabel.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
         adviceLabel.setTextFill(Color.BLACK);
 
         Label adviceLabel2 = new Label("Cliquez sur 'Trophées' pour voir tout les trophées débloqués");
-        adviceLabel2.setTranslateX(105);
-        adviceLabel2.setTranslateY(15);
         adviceLabel2.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
         adviceLabel2.setTextFill(Color.BLACK);
+        adviceLabel2.setTranslateY(20);
 
         adviceVbox.getChildren().add(adviceLabel);
         adviceVbox.getChildren().add(adviceLabel2);
-        pane.setBottom(adviceVbox);
+        adviceVbox.setBorder(border);
+        selectModeArea.getChildren().add(adviceVbox);
     }
 
     public HBox createStatArea(Label label) {

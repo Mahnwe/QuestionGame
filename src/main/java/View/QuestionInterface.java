@@ -27,9 +27,6 @@ public class QuestionInterface extends BorderPane
     private Button answerButton3;
     private Button answerButton4;
     private Button nextQuestionButton;
-
-    private VBox displayingResult;
-
     private Boolean playerAnswer;
     private final Border border = new Border(new BorderStroke(Color.BLACK,
             BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT));
@@ -172,9 +169,11 @@ public class QuestionInterface extends BorderPane
 
     private void displayGoodAnswer()
     {
-        displayingResult = new VBox();
-        displayingResult.setPrefHeight(65);
-        displayingResult.setPrefWidth(150);
+        VBox displayResult = new VBox();
+        displayResult.setTranslateY(180);
+        displayResult.setPrefHeight(80);
+        displayResult.setBorder(border);
+
         Label goodResult = new Label("Bonne réponse !");
         goodResult.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
         goodResult.setTextFill(Color.GHOSTWHITE);
@@ -182,28 +181,28 @@ public class QuestionInterface extends BorderPane
         explanation = new Label(question.getExplanation());
         explanation.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 14));
         explanation.setTextFill(Color.GHOSTWHITE);
+        explanation.setTranslateY(20);
 
-        displayingResult.getChildren().add(goodResult);
-        displayingResult.getChildren().add(explanation);
-        questionPane.setBottom(displayingResult);
+        displayResult.getChildren().add(goodResult);
+        displayResult.getChildren().add(explanation);
+        game.getChildren().add(displayResult);
+
     }
 
     private void displayBadAnswer()
     {
-        displayingResult = new VBox();
-        displayingResult.setPrefHeight(65);
-        displayingResult.setPrefWidth(150);
         Label badResult = new Label("Mauvaise réponse !");
         badResult.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
         badResult.setTextFill(Color.GHOSTWHITE);
+        badResult.setTranslateY(120);
 
         explanation = new Label(question.getExplanation());
         explanation.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 14));
         explanation.setTextFill(Color.GHOSTWHITE);
+        explanation.setTranslateY(140);
 
-        displayingResult.getChildren().add(badResult);
-        displayingResult.getChildren().add(explanation);
-        questionPane.setBottom(displayingResult);
+        game.getChildren().add(badResult);
+        game.getChildren().add(explanation);
     }
 
     public void showGoodAnswer(Button button)

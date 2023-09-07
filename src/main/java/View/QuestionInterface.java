@@ -81,7 +81,7 @@ public class QuestionInterface extends BorderPane
         for(int i = 0; i<questionList.getQuestionList().size(); i++)
         {
             questionToAsk = new Label();
-            questionToAsk.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 13));
+            questionToAsk.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 14));
             questionToAsk.setTextFill(Color.GHOSTWHITE);
             questionToAsk.setTranslateX(25);
             questionToAsk.setTranslateY(5);
@@ -109,21 +109,21 @@ public class QuestionInterface extends BorderPane
             answerButton2 = new Button(question.getAnswerList().get(1));
             answerButton2.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 14));
             setAnswerButtonOnAction(answerButton2);
-            placeButton(answerButton2, 70, 70);
+            placeButton(answerButton2, 75, 70);
 
             answerButton3 = new Button(question.getAnswerList().get(2));
             answerButton3.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 14));
             setAnswerButtonOnAction(answerButton3);
-            placeButton(answerButton3, -14, 300);
+            placeButton(answerButton3, -14, 320);
 
             answerButton4 = new Button(question.getAnswerList().get(3));
             answerButton4.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 14));
             setAnswerButtonOnAction(answerButton4);
-            placeButton(answerButton4, 18, 300);
+            placeButton(answerButton4, 22, 320);
 
             nextQuestionButton = new Button("Question suivante");
             nextQuestionButton.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 14));
-            placeButton(nextQuestionButton, 70, 160);
+            placeButton(nextQuestionButton, 70, 180);
     }
 
     public void placeButton(Button button, int translateY, int translateX)

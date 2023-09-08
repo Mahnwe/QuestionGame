@@ -21,6 +21,7 @@ public class TrophyScene extends Scene
 
         VBox cupsImages = new VBox();
         cupsImages.getChildren().add(goldCup);
+        goldCup.setTranslateY(10);
         cupsImages.getChildren().add(silverCup);
         silverCup.setTranslateY(30);
         cupsImages.getChildren().add(bronzeCup);

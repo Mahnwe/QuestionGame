@@ -1,5 +1,6 @@
 package View;
 
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -30,6 +31,8 @@ public class MenuScene extends Scene
     private final File saveFile;
     private final Border border = new Border(new BorderStroke(Color.BLACK,
             BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT));
+
+    private final Background buttonBackground = new Background(new BackgroundFill(Color.TRANSPARENT, CornerRadii.EMPTY, Insets.EMPTY));
 
     private final TrophyHandler trophyHandler;
 
@@ -83,10 +86,12 @@ public class MenuScene extends Scene
 
         Button leaderBoardButton = new Button("Classement");
         leaderBoardButton.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 13));
+        leaderBoardButton.setBackground(buttonBackground);
         placeButtons(leaderBoardButton, 5, 70);
 
         Button trophyButton = new Button("Trophées");
         trophyButton.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 13));
+        trophyButton.setBackground(buttonBackground);
         placeButtons(trophyButton, 10, 150);
 
         leaderBoardButton.setOnAction(event -> {

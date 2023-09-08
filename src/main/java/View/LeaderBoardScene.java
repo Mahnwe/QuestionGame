@@ -24,7 +24,9 @@ public class LeaderBoardScene extends Scene
         this.saveFile = saveFile;
         readFile();
         VBox leaderBoardVBox = new VBox();
+        leaderBoardVBox.setMinSize(400, 400);
         TextArea leaderBoardArea = new TextArea();
+        leaderBoardArea.setMinSize(400, 400);
         leaderBoardArea.setText(String.valueOf(stringBuilder));
         leaderBoardVBox.getChildren().add(leaderBoardArea);
         leaderBoardArea.setEditable(false);

@@ -8,6 +8,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import model.AchievementManager;
 import model.IconCreator;
 import model.PathUtil;
 
@@ -20,9 +21,13 @@ public class ResultScene extends VBox
     private ImageView goldCup;
     private ImageView bronzeCup;
     private ImageView silverCup;
+    private final AchievementManager achievementManager;
+    private final int playerFinalScore;
 
-    public ResultScene(BorderPane pane, int playerFinalScore, int questionCount, TrophyHandler trophyHandler)
+    public ResultScene(BorderPane pane, int playerFinalScore, int questionCount, TrophyHandler trophyHandler, AchievementManager achievementManager)
     {
+        this.achievementManager = achievementManager;
+        this.playerFinalScore = playerFinalScore;
         VBox gameResult = new VBox();
         createIcons();
 
@@ -40,7 +45,7 @@ public class ResultScene extends VBox
 
         if(playerFinalScore >= questionCount*90/100)
         {
-           GoldCupResult(trophyHandler, gameResult);
+            GoldCupResult(trophyHandler, gameResult);
         }
         if(playerFinalScore >= questionCount*60/100 && playerFinalScore <= questionCount*80/100)
         {
@@ -69,6 +74,9 @@ public class ResultScene extends VBox
         int nbrOfGoldCup = Integer.parseInt(numberOfGoldCup);
         nbrOfGoldCup++;
         String howManyGoldCup = "Gold Cups : "+ nbrOfGoldCup;
+
+        achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(3), playerFinalScore);
+        achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(0), nbrOfGoldCup);
         trophyHandler.WriteInGoldCupFile(howManyGoldCup, checkIntInFile);
 
         Label cupLabel = new Label("Vous avez gagné la coupe d'or !");
@@ -86,6 +94,7 @@ public class ResultScene extends VBox
         int nbrOfSilverCup = Integer.parseInt(numberOfSilverCup);
         nbrOfSilverCup++;
         String howManySilverCup = "Silver Cups : "+ nbrOfSilverCup;
+        achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(1), nbrOfSilverCup);
         trophyHandler.WriteInSilverCupFile(howManySilverCup, checkIntInFile);
 
         Label cupLabel = new Label("Vous avez gagné la coupe d'argent !");
@@ -103,6 +112,7 @@ public class ResultScene extends VBox
         int nbrOfBronzeCup = Integer.parseInt(numberOfBronzeCup);
         nbrOfBronzeCup++;
         String howManyBronzeCup = "Bronze Cups : "+ nbrOfBronzeCup;
+        achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(2), nbrOfBronzeCup);
         trophyHandler.WriteInBronzeCupFile(howManyBronzeCup, checkIntInFile);
 
         Label cupLabel = new Label("Vous avez gagné la coupe de bronze !");

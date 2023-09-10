@@ -7,10 +7,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.ImagePattern;
 import javafx.stage.Stage;
-import model.BackgroundCreator;
-import model.GameHandler;
-import model.PathUtil;
-import model.Player;
+import model.*;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -32,9 +29,10 @@ public class MainScene extends Scene
     private final File saveFile;
 
     private final TrophyHandler trophyHandler;
+    private final AchievementManager achievementManager;
 
 
-    public MainScene(BorderPane menuPane, Player player, GameHandler gameHandler, Stage stage, File saveFile, TrophyHandler trophyHandler)
+    public MainScene(BorderPane menuPane, Player player, GameHandler gameHandler, Stage stage, File saveFile, TrophyHandler trophyHandler, AchievementManager achievementManager)
     {
         super(menuPane);
         this.stage = stage;
@@ -42,6 +40,7 @@ public class MainScene extends Scene
         this.gameHandler = gameHandler;
         this.saveFile = saveFile;
         this.trophyHandler = trophyHandler;
+        this.achievementManager = achievementManager;
 
         BackgroundCreator mainSceneBackgroundCreator = new BackgroundCreator(PathUtil.MAIN_BACKGROUND);
         Image mainSceneImage = mainSceneBackgroundCreator.createBackground();
@@ -82,7 +81,7 @@ public class MainScene extends Scene
 
     public void setDisplayResult()
     {
-        ResultScene resultScene = new ResultScene(menuPane, playerInfoVBox.getPlayer().getPlayerScore(), gameHandler.getQuestionCount(), trophyHandler);
+        ResultScene resultScene = new ResultScene(menuPane, playerInfoVBox.getPlayer().getPlayerScore(), gameHandler.getQuestionCount(), trophyHandler, achievementManager);
         resultScene.getCongratsLabel().setText("Bravo "+playerInfoVBox.getPlayer().getPlayerName()+" vous avez répondu à toutes les questions !");
         resultScene.getPlayerResult().setText("Votre score : "+playerInfoVBox.getPlayer().getPlayerScore()+" sur "+gameHandler.getQuestionCount());
 

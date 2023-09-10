@@ -10,10 +10,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import model.BackgroundCreator;
-import model.GameHandler;
-import model.PathUtil;
-import model.Player;
+import model.*;
 
 import java.io.File;
 
@@ -37,6 +34,7 @@ public class MenuScene extends Scene
     private final TrophyHandler trophyHandler;
 
     private VBox selectModeArea;
+    private final AchievementManager achievementManager;
 
     public MenuScene(BorderPane pane, Stage stage)
     {
@@ -46,6 +44,7 @@ public class MenuScene extends Scene
         this.gameHandler = new GameHandler();
         saveFile = new File("./src/main/resources/SaveFile/saveScoresFile");
         trophyHandler = new TrophyHandler();
+        achievementManager = new AchievementManager();
 
         createWelcomeArea();
         createLeaderBoardButtonArea();
@@ -94,6 +93,11 @@ public class MenuScene extends Scene
         trophyButton.setBackground(buttonBackground);
         placeButtons(trophyButton, 10, 150);
 
+        Button achievementButton = new Button("Succés");
+        achievementButton.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 13));
+        achievementButton.setBackground(buttonBackground);
+        placeButtons(achievementButton, 10, 230);
+
         leaderBoardButton.setOnAction(event -> {
             LeaderBoardScene leaderBoardScene = new LeaderBoardScene(new BorderPane(), saveFile);
             leaderBoardScene.displayLeaderBoard();
@@ -104,8 +108,14 @@ public class MenuScene extends Scene
             trophyScene.displayTrophyScene();
         });
 
+        achievementButton.setOnAction(event -> {
+            AchievementScene achievementScene = new AchievementScene(new TilePane(), achievementManager);
+            achievementScene.displayAchievementScene();
+        });
+
         leaderBoardVBox.getChildren().add(leaderBoardButton);
         leaderBoardVBox.getChildren().add(trophyButton);
+        leaderBoardVBox.getChildren().add(achievementButton);
         pane.setLeft(leaderBoardVBox);
     }
 
@@ -159,7 +169,7 @@ public class MenuScene extends Scene
     public void instantiateMainScene()
     {
         Player player = new Player();
-        MainScene mainScene = new MainScene(new BorderPane(), player, gameHandler, stage, saveFile, trophyHandler);
+        MainScene mainScene = new MainScene(new BorderPane(), player, gameHandler, stage, saveFile, trophyHandler, achievementManager);
         stage.setMinHeight(450);
         stage.setMinWidth(850);
         stage.setScene(mainScene);

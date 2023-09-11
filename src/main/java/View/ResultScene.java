@@ -75,8 +75,8 @@ public class ResultScene extends VBox
         nbrOfGoldCup++;
         String howManyGoldCup = "Gold Cups : "+ nbrOfGoldCup;
 
-        achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(3), playerFinalScore);
-        achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(0), nbrOfGoldCup);
+        achievementManager.getAchievementsList().get(3).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(3), playerFinalScore);
+        achievementManager.getAchievementsList().get(0).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(0), nbrOfGoldCup);
         trophyHandler.WriteInGoldCupFile(howManyGoldCup, checkIntInFile);
 
         Label cupLabel = new Label("Vous avez gagné la coupe d'or !");
@@ -94,7 +94,8 @@ public class ResultScene extends VBox
         int nbrOfSilverCup = Integer.parseInt(numberOfSilverCup);
         nbrOfSilverCup++;
         String howManySilverCup = "Silver Cups : "+ nbrOfSilverCup;
-        achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(1), nbrOfSilverCup);
+
+        achievementManager.getAchievementsList().get(1).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(1), nbrOfSilverCup);
         trophyHandler.WriteInSilverCupFile(howManySilverCup, checkIntInFile);
 
         Label cupLabel = new Label("Vous avez gagné la coupe d'argent !");
@@ -112,7 +113,8 @@ public class ResultScene extends VBox
         int nbrOfBronzeCup = Integer.parseInt(numberOfBronzeCup);
         nbrOfBronzeCup++;
         String howManyBronzeCup = "Bronze Cups : "+ nbrOfBronzeCup;
-        achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(2), nbrOfBronzeCup);
+
+        achievementManager.getAchievementsList().get(2).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(2), nbrOfBronzeCup);
         trophyHandler.WriteInBronzeCupFile(howManyBronzeCup, checkIntInFile);
 
         Label cupLabel = new Label("Vous avez gagné la coupe de bronze !");

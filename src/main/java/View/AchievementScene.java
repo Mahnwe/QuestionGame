@@ -1,5 +1,7 @@
 package View;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.TilePane;
@@ -9,19 +11,31 @@ import model.AchievementManager;
 
 public class AchievementScene extends Scene
 {
-    public Label goldCupAchievementInfo;
+    private StringProperty valueOfSuccess = new SimpleStringProperty();
 
     public AchievementScene(TilePane tilePane, AchievementManager achievementManager) {
 
         super(tilePane);
-        VBox achievementVBox = new VBox();
+        for(int i = 0; i < achievementManager.getAchievementsList().size(); i++)
+        {
+            if(achievementManager.getAchievementsList().get(i).isUnlock())
+            {
+                String unlockValue = "Succés obtenu";
+                valueOfSuccess.setValue(unlockValue);
+            }
+            else
+            {
+                String startingValue = "Succés vérouillé";
+                valueOfSuccess.setValue(startingValue);
+            }
+        }
+            VBox achievementVBox = new VBox();
 
         Label goldCupAchievementLabel = new Label();
         goldCupAchievementLabel.setText(achievementManager.getAchievementsList().get(0).getConditionDescription());
 
-        goldCupAchievementInfo = new Label();
-        goldCupAchievementInfo.setText(achievementManager.getAchievementsList().get(0).getSuccessMessage());
-        goldCupAchievementInfo.setVisible(false);
+        Label goldCupAchievementInfo = new Label();
+        goldCupAchievementInfo.textProperty().bind(valueOfSuccess);
         System.out.println(goldCupAchievementInfo);
 
         achievementVBox.getChildren().add(goldCupAchievementLabel);
@@ -38,9 +52,5 @@ public class AchievementScene extends Scene
         stage.setMinHeight(400);
         stage.setScene(this);
         stage.show();
-    }
-
-    public Label getGoldCupAchievementInfo() {
-        return goldCupAchievementInfo;
     }
 }

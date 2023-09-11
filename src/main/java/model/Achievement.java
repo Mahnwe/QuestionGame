@@ -5,14 +5,21 @@ public class Achievement
     private final int condition;
     private boolean isUnlock;
     private final String conditionDescription;
-    private String successMessage;
 
-    public Achievement(int condition, boolean isUnlock, String conditionDescription, String successMessage)
+    public Achievement(int condition, boolean isUnlock, String conditionDescription)
     {
         this.condition = condition;
         this.isUnlock = isUnlock;
         this.conditionDescription = conditionDescription;
-        this.successMessage = successMessage;
+    }
+
+    public void checkIfAchievementIsUnlock(Achievement achievement, int numberToCompareWithCondition)
+    {
+        if(achievement.getCondition() == numberToCompareWithCondition)
+        {
+            isUnlock = true;
+            System.out.println("LE SUCCES EST DEVEROUILLE PUTAIN");
+        }
     }
 
     public int getCondition() {
@@ -23,15 +30,7 @@ public class Achievement
         return isUnlock;
     }
 
-    public void setUnlock(boolean unlock) {
-        isUnlock = unlock;
-    }
-
     public String getConditionDescription() {
         return conditionDescription;
-    }
-
-    public String getSuccessMessage() {
-        return successMessage;
     }
 }

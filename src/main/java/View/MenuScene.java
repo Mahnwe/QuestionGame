@@ -110,13 +110,6 @@ public class MenuScene extends Scene
 
         achievementButton.setOnAction(event -> {
             AchievementScene achievementScene = new AchievementScene(new TilePane(), achievementManager);
-            for(int i = 0; i < achievementManager.getAchievementsList().size(); i++)
-            {
-                if(achievementManager.getAchievementsList().get(i).isUnlock())
-                {
-                    achievementScene.getGoldCupAchievementInfo().setVisible(true);
-                }
-            }
             achievementScene.displayAchievementScene();
         });
 

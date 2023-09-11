@@ -8,17 +8,19 @@ public class AchievementManager
 
     public AchievementManager()
     {
-        Achievement goldCupAchievement = new Achievement(5, false, "Gagnez 5 coupes d'or", "Bien joué !");
+
+        Achievement goldCupAchievement = new Achievement(5, false, "Gagnez 5 coupes d'or", "Succés obtenu");
         achievementsList.add(goldCupAchievement);
 
-        Achievement silverCupAchievement = new Achievement(5, false, "Win 5 silver cups", "Bien joué !");
+        Achievement silverCupAchievement = new Achievement(5, false, "Win 5 silver cups", "Succés vérouillé");
         achievementsList.add(silverCupAchievement);
 
-        Achievement bronzeCupAchievement = new Achievement(5, false, "Win 5 bronze cups", "Bien joué !");
+        Achievement bronzeCupAchievement = new Achievement(5, false, "Win 5 bronze cups", "Succés vérouillé");
         achievementsList.add(bronzeCupAchievement);
 
-        Achievement onlyGoodAnswerAchievement = new Achievement(10, false, "Win a game without a false answer", "Wow perfect score !");
+        Achievement onlyGoodAnswerAchievement = new Achievement(10, false, "Win a game without a false answer", "Succés vérouillé");
         achievementsList.add(onlyGoodAnswerAchievement);
+
     }
 
     public void checkIfAchievementIsUnlock(Achievement achievement, int numberToCompareWithCondition)
@@ -28,8 +30,6 @@ public class AchievementManager
             if(!achievement.isUnlock())
             {
                 achievement.setUnlock(true);
-                achievement.setSuccessMessage("Succés débloqué, bien joué !");
-                System.out.println("Achievement unlocked");
             }
         }
     }
@@ -37,4 +37,5 @@ public class AchievementManager
     public ArrayList<Achievement> getAchievementsList() {
         return achievementsList;
     }
+
 }

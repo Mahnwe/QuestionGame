@@ -145,6 +145,10 @@ public class QuestionStorage
         Question question29 = new Question("Que veux dire 'lantiponner' ?", "Faire cuire lentement",
                 "plier un métal", "Parler inutilement", "Être à l'opposé", "Parler inutilement", "lantiponner veux dire parler inutilement, de manière frivole ou importun");
         questionList.add(question29);
+
+        Question question30 = new Question("Quand se sont éteints les dinosaures ?", "Il y a 46 millions d'années", "Il y a 66 millions d'années",
+                "Il y a 86 millions d'années", "Il y a 106 millions d'années", "Il y a 66 millions d'années", "Les dinosaures ont disparu il y a environ 66 millions d'années");
+        questionList.add(question30);
     }
 
     public ArrayList<Question> getQuestionList() {

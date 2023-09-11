@@ -9,23 +9,23 @@ import model.AchievementManager;
 
 public class AchievementScene extends Scene
 {
-    private final AchievementManager achievementManager;
-    private Label goldCupAchievementSuccessMessage;
+    public Label goldCupAchievementInfo;
 
     public AchievementScene(TilePane tilePane, AchievementManager achievementManager) {
 
         super(tilePane);
-        this.achievementManager = achievementManager;
         VBox achievementVBox = new VBox();
 
         Label goldCupAchievementLabel = new Label();
         goldCupAchievementLabel.setText(achievementManager.getAchievementsList().get(0).getConditionDescription());
 
-        goldCupAchievementSuccessMessage = new Label();
-        goldCupAchievementSuccessMessage.setText(achievementManager.getAchievementsList().get(0).getSuccessMessage());
+        goldCupAchievementInfo = new Label();
+        goldCupAchievementInfo.setText(achievementManager.getAchievementsList().get(0).getSuccessMessage());
+        goldCupAchievementInfo.setVisible(false);
+        System.out.println(goldCupAchievementInfo);
 
         achievementVBox.getChildren().add(goldCupAchievementLabel);
-        achievementVBox.getChildren().add(goldCupAchievementSuccessMessage);
+        achievementVBox.getChildren().add(goldCupAchievementInfo);
         tilePane.getChildren().add(achievementVBox);
 
     }
@@ -38,5 +38,9 @@ public class AchievementScene extends Scene
         stage.setMinHeight(400);
         stage.setScene(this);
         stage.show();
+    }
+
+    public Label getGoldCupAchievementInfo() {
+        return goldCupAchievementInfo;
     }
 }

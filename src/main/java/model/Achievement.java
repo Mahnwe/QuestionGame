@@ -34,8 +34,4 @@ public class Achievement
     public String getSuccessMessage() {
         return successMessage;
     }
-
-    public void setSuccessMessage(String successMessage) {
-        this.successMessage = successMessage;
-    }
 }

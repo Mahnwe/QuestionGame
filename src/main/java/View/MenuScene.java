@@ -36,7 +36,7 @@ public class MenuScene extends Scene
     private VBox selectModeArea;
     private final AchievementManager achievementManager;
 
-    public MenuScene(BorderPane pane, Stage stage)
+    public MenuScene(BorderPane pane, Stage stage, AchievementManager achievementManager)
     {
         super(pane);
         this.pane = pane;
@@ -46,7 +46,7 @@ public class MenuScene extends Scene
         this.gameHandler = new GameHandler();
         saveFile = new File("./src/main/resources/SaveFile/saveScoresFile");
         trophyHandler = new TrophyHandler();
-        achievementManager = new AchievementManager();
+        this.achievementManager = achievementManager;
 
         createWelcomeArea();
         createLeaderBoardButtonArea();
@@ -101,12 +101,12 @@ public class MenuScene extends Scene
         placeButtons(achievementButton, 10, 230);
 
         leaderBoardButton.setOnAction(event -> {
-            LeaderBoardScene leaderBoardScene = new LeaderBoardScene(new BorderPane(), saveFile, menuStage);
+            LeaderBoardScene leaderBoardScene = new LeaderBoardScene(new BorderPane(), saveFile, menuStage, achievementManager);
             menuStage.setScene(leaderBoardScene);
         });
 
         trophyButton.setOnAction(event -> {
-            TrophyScene trophyScene = new TrophyScene(new BorderPane(), trophyHandler, menuStage);
+            TrophyScene trophyScene = new TrophyScene(new BorderPane(), trophyHandler, menuStage, achievementManager);
             menuStage.setScene(trophyScene);
         });
 

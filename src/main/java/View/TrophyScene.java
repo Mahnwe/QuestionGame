@@ -8,6 +8,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import model.AchievementManager;
 import model.IconCreator;
 import model.PathUtil;
 
@@ -17,13 +18,15 @@ public class TrophyScene extends Scene
     private ImageView bronzeCup;
     private ImageView silverCup;
     private final Stage stage;
+    private final AchievementManager achievementManager;
 
-    public TrophyScene(BorderPane pane, TrophyHandler trophyHandler, Stage stage)
+    public TrophyScene(BorderPane pane, TrophyHandler trophyHandler, Stage stage, AchievementManager achievementManager)
     {
         super(pane);
         pane.setPrefHeight(500);
         pane.setPrefWidth(900);
         this.stage = stage;
+        this.achievementManager = achievementManager;
         createIcons();
 
         VBox cupsImages = new VBox();
@@ -87,7 +90,7 @@ public class TrophyScene extends Scene
     }
     public void backToMainMenu()
     {
-        MenuScene menuScene = new MenuScene(new BorderPane(), stage);
+        MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
         stage.setScene(menuScene);
     }
 }

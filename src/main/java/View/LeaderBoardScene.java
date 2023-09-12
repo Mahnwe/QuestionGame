@@ -7,6 +7,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import model.AchievementManager;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -20,14 +21,16 @@ public class LeaderBoardScene extends Scene
 
     private StringBuilder stringBuilder;
     private final Stage stage;
+    private final AchievementManager achievementManager;
 
-    public LeaderBoardScene(BorderPane pane, File saveFile, Stage stage)
+    public LeaderBoardScene(BorderPane pane, File saveFile, Stage stage, AchievementManager achievementManager)
     {
         super(pane);
         pane.setPrefHeight(500);
         pane.setPrefWidth(900);
         this.saveFile = saveFile;
         this.stage = stage;
+        this.achievementManager = achievementManager;
         readFile();
         VBox leaderBoardVBox = new VBox();
         leaderBoardVBox.setMinSize(400, 400);
@@ -63,7 +66,7 @@ public class LeaderBoardScene extends Scene
 
     public void backToMainMenu()
     {
-        MenuScene menuScene = new MenuScene(new BorderPane(), stage);
+        MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
         stage.setScene(menuScene);
     }
 }

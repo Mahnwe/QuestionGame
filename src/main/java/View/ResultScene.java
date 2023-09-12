@@ -160,7 +160,7 @@ public class ResultScene extends VBox
 
     public void backToMainMenu()
     {
-        MenuScene menuScene = new MenuScene(new BorderPane(), stage);
+        MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
         stage.setScene(menuScene);
     }
 

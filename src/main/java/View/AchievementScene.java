@@ -19,12 +19,15 @@ public class AchievementScene extends Scene
     private final Stage stage;
     private Label goldCupAchievementInfo;
 
+    private final AchievementManager achievementManager;
+
     public AchievementScene(BorderPane pane, AchievementManager achievementManager, Stage stage)
     {
         super(pane);
         pane.setPrefHeight(500);
         pane.setPrefWidth(900);
         this.stage = stage;
+        this.achievementManager = achievementManager;
 
         TilePane tilePane = new TilePane();
         VBox achievementVBox = new VBox();
@@ -33,7 +36,6 @@ public class AchievementScene extends Scene
         goldCupAchievementLabel.setText(achievementManager.getAchievementsList().get(0).getConditionDescription());
 
         goldCupAchievementInfo = new Label();
-        //goldCupAchievementInfo.textProperty().bind(valueOfSuccess);
 
         achievementVBox.getChildren().add(goldCupAchievementLabel);
         achievementVBox.getChildren().add(goldCupAchievementInfo);
@@ -50,7 +52,7 @@ public class AchievementScene extends Scene
     }
     public void backToMainMenu()
     {
-        MenuScene menuScene = new MenuScene(new BorderPane(), stage);
+        MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
         stage.setScene(menuScene);
     }
 

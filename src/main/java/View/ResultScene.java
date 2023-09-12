@@ -8,13 +8,13 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.stage.Stage;
 import model.AchievementManager;
 import model.IconCreator;
 import model.PathUtil;
 
 public class ResultScene extends VBox
 {
-    private final Button exitToMenuButton;
     private final Label congratsLabel;
     private final Label playerResult;
 
@@ -24,10 +24,13 @@ public class ResultScene extends VBox
     private final AchievementManager achievementManager;
     private final int playerFinalScore;
 
-    public ResultScene(BorderPane pane, int playerFinalScore, int questionCount, TrophyHandler trophyHandler, AchievementManager achievementManager)
+    private final Stage stage;
+
+    public ResultScene(BorderPane pane, int playerFinalScore, int questionCount, TrophyHandler trophyHandler, AchievementManager achievementManager, Stage stage)
     {
         this.achievementManager = achievementManager;
         this.playerFinalScore = playerFinalScore;
+        this.stage = stage;
         VBox gameResult = new VBox();
         createIcons();
 
@@ -38,7 +41,7 @@ public class ResultScene extends VBox
         playerResult = new Label();
         playerResult.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
         playerResult.setTextFill(Color.GHOSTWHITE);
-        exitToMenuButton = new Button("Return to menu");
+        Button exitToMenuButton = new Button("Return to menu");
 
         gameResult.getChildren().add(congratsLabel);
         gameResult.getChildren().add(playerResult);
@@ -64,6 +67,7 @@ public class ResultScene extends VBox
         }
         gameResult.getChildren().add(exitToMenuButton);
         pane.setCenter(gameResult);
+        exitToMenuButton.setOnAction(event -> backToMainMenu());
     }
 
     public void GoldCupResult(TrophyHandler trophyHandler, VBox vBox)
@@ -154,8 +158,10 @@ public class ResultScene extends VBox
         silverCup.setFitWidth(80);
     }
 
-    public Button getExitToMenuButton() {
-        return exitToMenuButton;
+    public void backToMainMenu()
+    {
+        MenuScene menuScene = new MenuScene(new BorderPane(), stage);
+        stage.setScene(menuScene);
     }
 
     public Label getPlayerResult() {

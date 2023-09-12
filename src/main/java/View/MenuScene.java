@@ -112,10 +112,7 @@ public class MenuScene extends Scene
 
         achievementButton.setOnAction(event -> {
             AchievementScene achievementScene = new AchievementScene(new BorderPane(), achievementManager, menuStage);
-            for(int i = 0; i < achievementManager.getAchievementsList().size(); i++)
-            {
-                achievementScene.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(i));
-            }
+            achievementScene.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(0));
             menuStage.setScene(achievementScene);
         });
 

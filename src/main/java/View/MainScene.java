@@ -81,11 +81,9 @@ public class MainScene extends Scene
 
     public void setDisplayResult()
     {
-        ResultScene resultScene = new ResultScene(menuPane, playerInfoVBox.getPlayer().getPlayerScore(), gameHandler.getQuestionCount(), trophyHandler, achievementManager);
+        ResultScene resultScene = new ResultScene(menuPane, playerInfoVBox.getPlayer().getPlayerScore(), gameHandler.getQuestionCount(), trophyHandler, achievementManager, stage);
         resultScene.getCongratsLabel().setText("Bravo "+playerInfoVBox.getPlayer().getPlayerName()+" vous avez répondu à toutes les questions !");
         resultScene.getPlayerResult().setText("Votre score : "+playerInfoVBox.getPlayer().getPlayerScore()+" sur "+gameHandler.getQuestionCount());
-
-        resultScene.getExitToMenuButton().setOnAction(event -> backToMainMenu());
     }
 
     public void saveScoreInFile()
@@ -112,12 +110,6 @@ public class MainScene extends Scene
         {
             createNewQuestionInterface();
         }
-    }
-
-    public void backToMainMenu()
-    {
-        MenuScene menuScene = new MenuScene(new BorderPane(), stage);
-        stage.setScene(menuScene);
     }
 
 }

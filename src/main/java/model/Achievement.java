@@ -17,7 +17,7 @@ public class Achievement
     {
         if(achievement.getCondition() == numberToCompareWithCondition)
         {
-            isUnlock = true;
+            achievement.isUnlock = true;
             System.out.println("LE SUCCES EST DEVEROUILLE PUTAIN");
         }
     }

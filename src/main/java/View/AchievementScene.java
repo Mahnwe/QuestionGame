@@ -17,6 +17,7 @@ public class AchievementScene extends Scene
 {
     private StringProperty valueOfSuccess = new SimpleStringProperty();
     private final Stage stage;
+    private Label goldCupAchievementInfo;
 
     public AchievementScene(BorderPane pane, AchievementManager achievementManager, Stage stage)
     {
@@ -31,9 +32,8 @@ public class AchievementScene extends Scene
         Label goldCupAchievementLabel = new Label();
         goldCupAchievementLabel.setText(achievementManager.getAchievementsList().get(0).getConditionDescription());
 
-        Label goldCupAchievementInfo = new Label();
-        goldCupAchievementInfo.textProperty().bind(valueOfSuccess);
-        System.out.println(goldCupAchievementInfo);
+        goldCupAchievementInfo = new Label();
+        //goldCupAchievementInfo.textProperty().bind(valueOfSuccess);
 
         achievementVBox.getChildren().add(goldCupAchievementLabel);
         achievementVBox.getChildren().add(goldCupAchievementInfo);
@@ -60,12 +60,13 @@ public class AchievementScene extends Scene
         if(achievement.isUnlock())
         {
             unlockValue = "Succés obtenu";
-            valueOfSuccess.setValue(unlockValue);
         }
         else
         {
             unlockValue = "Succés vérouillé";
-            valueOfSuccess.setValue(unlockValue);
         }
+        valueOfSuccess.setValue(unlockValue);
+        goldCupAchievementInfo.setText(unlockValue);
+        System.out.println(goldCupAchievementInfo);
     }
 }

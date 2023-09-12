@@ -1,8 +1,10 @@
 package View;
 
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -17,11 +19,15 @@ public class LeaderBoardScene extends Scene
     private final File saveFile;
 
     private StringBuilder stringBuilder;
+    private final Stage stage;
 
-    public LeaderBoardScene(BorderPane pane, File saveFile)
+    public LeaderBoardScene(BorderPane pane, File saveFile, Stage stage)
     {
         super(pane);
+        pane.setPrefHeight(500);
+        pane.setPrefWidth(900);
         this.saveFile = saveFile;
+        this.stage = stage;
         readFile();
         VBox leaderBoardVBox = new VBox();
         leaderBoardVBox.setMinSize(400, 400);
@@ -31,6 +37,13 @@ public class LeaderBoardScene extends Scene
         leaderBoardVBox.getChildren().add(leaderBoardArea);
         leaderBoardArea.setEditable(false);
         pane.setCenter(leaderBoardVBox);
+
+        HBox buttonHbox = new HBox();
+        buttonHbox.setPrefHeight(50);
+        Button returnToMenu = new Button("Retour");
+        buttonHbox.getChildren().add(returnToMenu);
+        pane.setTop(buttonHbox);
+        returnToMenu.setOnAction(event -> backToMainMenu());
     }
 
     public void readFile()
@@ -48,14 +61,9 @@ public class LeaderBoardScene extends Scene
         }
     }
 
-    public void displayLeaderBoard()
+    public void backToMainMenu()
     {
-        Stage stage = new Stage();
-        stage.setTitle("LeaderBoard");
-        stage.setMinWidth(400);
-        stage.setMinHeight(400);
-        stage.setScene(this);
-        stage.show();
+        MenuScene menuScene = new MenuScene(new BorderPane(), stage);
+        stage.setScene(menuScene);
     }
-
 }

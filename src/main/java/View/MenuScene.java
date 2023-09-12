@@ -19,7 +19,7 @@ public class MenuScene extends Scene
 {
     private final BorderPane pane;
 
-    private final Stage stage;
+    private final Stage menuStage;
 
     private Button twentyModeButton;
     private Button tenModeButton;
@@ -40,7 +40,9 @@ public class MenuScene extends Scene
     {
         super(pane);
         this.pane = pane;
-        this.stage = stage;
+        this.menuStage = stage;
+        pane.setPrefWidth(900);
+        pane.setPrefHeight(500);
         this.gameHandler = new GameHandler();
         saveFile = new File("./src/main/resources/SaveFile/saveScoresFile");
         trophyHandler = new TrophyHandler();
@@ -99,18 +101,22 @@ public class MenuScene extends Scene
         placeButtons(achievementButton, 10, 230);
 
         leaderBoardButton.setOnAction(event -> {
-            LeaderBoardScene leaderBoardScene = new LeaderBoardScene(new BorderPane(), saveFile);
-            leaderBoardScene.displayLeaderBoard();
+            LeaderBoardScene leaderBoardScene = new LeaderBoardScene(new BorderPane(), saveFile, menuStage);
+            menuStage.setScene(leaderBoardScene);
         });
 
         trophyButton.setOnAction(event -> {
-            TrophyScene trophyScene = new TrophyScene(new BorderPane(), trophyHandler);
-            trophyScene.displayTrophyScene();
+            TrophyScene trophyScene = new TrophyScene(new BorderPane(), trophyHandler, menuStage);
+            menuStage.setScene(trophyScene);
         });
 
         achievementButton.setOnAction(event -> {
-            AchievementScene achievementScene = new AchievementScene(new TilePane(), achievementManager);
-            achievementScene.displayAchievementScene();
+            AchievementScene achievementScene = new AchievementScene(new BorderPane(), achievementManager, menuStage);
+            for(int i = 0; i < achievementManager.getAchievementsList().size(); i++)
+            {
+                achievementScene.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(i));
+            }
+            menuStage.setScene(achievementScene);
         });
 
         leaderBoardVBox.getChildren().add(leaderBoardButton);
@@ -169,10 +175,10 @@ public class MenuScene extends Scene
     public void instantiateMainScene()
     {
         Player player = new Player();
-        MainScene mainScene = new MainScene(new BorderPane(), player, gameHandler, stage, saveFile, trophyHandler, achievementManager);
-        stage.setMinHeight(450);
-        stage.setMinWidth(850);
-        stage.setScene(mainScene);
+        MainScene mainScene = new MainScene(new BorderPane(), player, gameHandler, menuStage, saveFile, trophyHandler, achievementManager);
+        menuStage.setMinHeight(450);
+        menuStage.setMinWidth(850);
+        menuStage.setScene(mainScene);
 
     }
 

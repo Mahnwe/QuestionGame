@@ -1,9 +1,11 @@
 package View;
 
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.IconCreator;
@@ -14,9 +16,14 @@ public class TrophyScene extends Scene
     private ImageView goldCup;
     private ImageView bronzeCup;
     private ImageView silverCup;
-    public TrophyScene(BorderPane pane, TrophyHandler trophyHandler)
+    private final Stage stage;
+
+    public TrophyScene(BorderPane pane, TrophyHandler trophyHandler, Stage stage)
     {
         super(pane);
+        pane.setPrefHeight(500);
+        pane.setPrefWidth(900);
+        this.stage = stage;
         createIcons();
 
         VBox cupsImages = new VBox();
@@ -45,6 +52,13 @@ public class TrophyScene extends Scene
         nbrOfCups.getChildren().add(nbrOfBronzeCup);
         pane.setCenter(nbrOfCups);
 
+        HBox buttonHbox = new HBox();
+        buttonHbox.setPrefHeight(50);
+        Button returnToMenu = new Button("Retour");
+        buttonHbox.getChildren().add(returnToMenu);
+        pane.setTop(buttonHbox);
+        returnToMenu.setOnAction(event -> backToMainMenu());
+
     }
 
     public void setUpCupTextArea(TextArea textArea, String string)
@@ -71,14 +85,9 @@ public class TrophyScene extends Scene
         silverCup.setFitHeight(100);
         silverCup.setFitWidth(80);
     }
-
-    public void displayTrophyScene()
+    public void backToMainMenu()
     {
-        Stage stage = new Stage();
-        stage.setTitle("Armoire à trophées");
-        stage.setMinWidth(400);
-        stage.setMinHeight(400);
-        stage.setScene(this);
-        stage.show();
+        MenuScene menuScene = new MenuScene(new BorderPane(), stage);
+        stage.setScene(menuScene);
     }
 }

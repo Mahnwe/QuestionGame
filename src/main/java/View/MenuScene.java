@@ -193,7 +193,7 @@ public class MenuScene extends Scene
     {
         VBox adviceVbox = new VBox();
         adviceVbox.setTranslateY(250);
-        adviceVbox.setPrefHeight(70);
+        adviceVbox.setPrefHeight(100);
         Label adviceLabel = new Label("Cliquez sur 'Classement' pour retrouver les scores de vos parties précédentes");
         adviceLabel.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
         adviceLabel.setTextFill(Color.BLACK);
@@ -203,8 +203,14 @@ public class MenuScene extends Scene
         adviceLabel2.setTextFill(Color.BLACK);
         adviceLabel2.setTranslateY(20);
 
+        Label adviceLabel3 = new Label("Cliquez sur 'Succés' pour voir tout les succés");
+        adviceLabel3.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        adviceLabel3.setTextFill(Color.BLACK);
+        adviceLabel3.setTranslateY(40);
+
         adviceVbox.getChildren().add(adviceLabel);
         adviceVbox.getChildren().add(adviceLabel2);
+        adviceVbox.getChildren().add(adviceLabel3);
         adviceVbox.setBorder(border);
         selectModeArea.getChildren().add(adviceVbox);
     }

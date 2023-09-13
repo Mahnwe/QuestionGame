@@ -13,6 +13,8 @@ import model.AchievementManager;
 import model.IconCreator;
 import model.PathUtil;
 
+import java.io.*;
+
 public class ResultScene extends VBox
 {
     private final Label congratsLabel;
@@ -25,12 +27,14 @@ public class ResultScene extends VBox
     private final int playerFinalScore;
 
     private final Stage stage;
+    private final File perfectScoreFile;
 
-    public ResultScene(BorderPane pane, int playerFinalScore, int questionCount, TrophyHandler trophyHandler, AchievementManager achievementManager, Stage stage)
+    public ResultScene(BorderPane pane, int playerFinalScore, int questionCount, TrophyHandler trophyHandler, AchievementManager achievementManager, Stage stage, File perfectScoreFile)
     {
         this.achievementManager = achievementManager;
         this.playerFinalScore = playerFinalScore;
         this.stage = stage;
+        this.perfectScoreFile = perfectScoreFile;
         VBox gameResult = new VBox();
         createIcons();
 
@@ -79,7 +83,14 @@ public class ResultScene extends VBox
         nbrOfGoldCup++;
         String howManyGoldCup = "Gold Cups : "+ nbrOfGoldCup;
 
-        achievementManager.getAchievementsList().get(3).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(3), playerFinalScore);
+        String checkIntInPerfectFile = String.valueOf(ReadInPerfectCupFile());
+        if(checkIntInPerfectFile.equals("10")) {
+            achievementManager.getAchievementsList().get(3).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(3), playerFinalScore);
+        }
+        else {
+            String perfectScoreString = String.valueOf(playerFinalScore);
+            WriteInPerfectCupFile(perfectScoreString, checkIntInPerfectFile);
+        }
         achievementManager.getAchievementsList().get(0).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(0), nbrOfGoldCup);
         trophyHandler.WriteInGoldCupFile(howManyGoldCup, checkIntInFile);
 
@@ -162,6 +173,34 @@ public class ResultScene extends VBox
     {
         MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
         stage.setScene(menuScene);
+    }
+    public StringBuilder ReadInPerfectCupFile()
+    {
+        StringBuilder stringBuilder = new StringBuilder();
+        try {
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(perfectScoreFile));
+            String line;
+            while((line = bufferedReader.readLine()) != null)
+            {
+                stringBuilder.append(line).append("\n");
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return stringBuilder;
+    }
+
+    public void WriteInPerfectCupFile(String stringToUse, String lineToReplace)
+    {
+        try {
+            FileWriter fw = new FileWriter(perfectScoreFile.getAbsoluteFile());
+            BufferedWriter bw = new BufferedWriter(fw);
+            String lineReplacement = lineToReplace.replace(lineToReplace, stringToUse);
+            bw.write(lineReplacement);
+            bw.close();
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public Label getPlayerResult() {

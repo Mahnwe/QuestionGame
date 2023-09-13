@@ -35,6 +35,10 @@ public class MenuScene extends Scene
 
     private VBox selectModeArea;
     private final AchievementManager achievementManager;
+    private final File goldCupFile;
+    private final File silverCupFile;
+    private final File bronzeCupFile;
+    private final File perfectScoreFile;
 
     public MenuScene(BorderPane pane, Stage stage, AchievementManager achievementManager)
     {
@@ -43,9 +47,16 @@ public class MenuScene extends Scene
         this.menuStage = stage;
         pane.setPrefWidth(900);
         pane.setPrefHeight(500);
+
         this.gameHandler = new GameHandler();
         saveFile = new File("./src/main/resources/SaveFile/saveScoresFile");
-        trophyHandler = new TrophyHandler();
+
+        goldCupFile = new File("./src/main/resources/SaveFile/GoldCupFile");
+        silverCupFile = new File("./src/main/resources/SaveFile/SilverCupFile");
+        bronzeCupFile = new File("./src/main/resources/SaveFile/BronzeCupFile");
+        perfectScoreFile = new File("./src/main/resources/SaveFile/PerfectScoreFile");
+
+        trophyHandler = new TrophyHandler(goldCupFile, silverCupFile, bronzeCupFile);
         this.achievementManager = achievementManager;
 
         createWelcomeArea();
@@ -111,8 +122,7 @@ public class MenuScene extends Scene
         });
 
         achievementButton.setOnAction(event -> {
-            AchievementScene achievementScene = new AchievementScene(new BorderPane(), achievementManager, menuStage);
-            achievementScene.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(0));
+            AchievementScene achievementScene = new AchievementScene(new BorderPane(), achievementManager, menuStage, goldCupFile, silverCupFile, bronzeCupFile, perfectScoreFile);
             menuStage.setScene(achievementScene);
         });
 
@@ -172,7 +182,7 @@ public class MenuScene extends Scene
     public void instantiateMainScene()
     {
         Player player = new Player();
-        MainScene mainScene = new MainScene(new BorderPane(), player, gameHandler, menuStage, saveFile, trophyHandler, achievementManager);
+        MainScene mainScene = new MainScene(new BorderPane(), player, gameHandler, menuStage, saveFile, trophyHandler, achievementManager, perfectScoreFile);
         menuStage.setMinHeight(450);
         menuStage.setMinWidth(850);
         menuStage.setScene(mainScene);

@@ -30,9 +30,9 @@ public class MainScene extends Scene
 
     private final TrophyHandler trophyHandler;
     private final AchievementManager achievementManager;
+    private final File perfectScoreFile;
 
-
-    public MainScene(BorderPane menuPane, Player player, GameHandler gameHandler, Stage stage, File saveFile, TrophyHandler trophyHandler, AchievementManager achievementManager)
+    public MainScene(BorderPane menuPane, Player player, GameHandler gameHandler, Stage stage, File saveFile, TrophyHandler trophyHandler, AchievementManager achievementManager, File perfectScoreFile)
     {
         super(menuPane);
         this.stage = stage;
@@ -41,6 +41,7 @@ public class MainScene extends Scene
         this.saveFile = saveFile;
         this.trophyHandler = trophyHandler;
         this.achievementManager = achievementManager;
+        this.perfectScoreFile = perfectScoreFile;
 
         BackgroundCreator mainSceneBackgroundCreator = new BackgroundCreator(PathUtil.MAIN_BACKGROUND);
         Image mainSceneImage = mainSceneBackgroundCreator.createBackground();
@@ -81,7 +82,7 @@ public class MainScene extends Scene
 
     public void setDisplayResult()
     {
-        ResultScene resultScene = new ResultScene(menuPane, playerInfoVBox.getPlayer().getPlayerScore(), gameHandler.getQuestionCount(), trophyHandler, achievementManager, stage);
+        ResultScene resultScene = new ResultScene(menuPane, playerInfoVBox.getPlayer().getPlayerScore(), gameHandler.getQuestionCount(), trophyHandler, achievementManager, stage, perfectScoreFile);
         resultScene.getCongratsLabel().setText("Bravo "+playerInfoVBox.getPlayer().getPlayerName()+" vous avez répondu à toutes les questions !");
         resultScene.getPlayerResult().setText("Votre score : "+playerInfoVBox.getPlayer().getPlayerScore()+" sur "+gameHandler.getQuestionCount());
     }

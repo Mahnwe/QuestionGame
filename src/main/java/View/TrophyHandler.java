@@ -8,11 +8,11 @@ public class TrophyHandler
     private final File silverCupFile;
     private final File bronzeCupFile;
 
-    public TrophyHandler()
+    public TrophyHandler(File goldCupFile, File silverCupFile, File bronzeCupFile)
     {
-        goldCupFile = new File("./src/main/resources/SaveFile/GoldCupFile");
-        silverCupFile = new File("./src/main/resources/SaveFile/SilverCupFile");
-        bronzeCupFile = new File("./src/main/resources/SaveFile/BronzeCupFile");
+        this.goldCupFile = goldCupFile;
+        this.silverCupFile = silverCupFile;
+        this.bronzeCupFile = bronzeCupFile;
     }
 
     public void WriteInGoldCupFile(String stringToUse, String lineToReplace)

@@ -18,8 +18,14 @@ public class AchievementManager
         Achievement bronzeCupAchievement = new Achievement(5, false, "Gagnez 5 coupes de bronze");
         achievementsList.add(bronzeCupAchievement);
 
-        Achievement onlyGoodAnswerAchievement = new Achievement(10, false, "Faire un score parfait");
+        Achievement onlyGoodAnswerAchievement = new Achievement(10, false, "Faire un score parfait (10 questions)");
         achievementsList.add(onlyGoodAnswerAchievement);
+
+        Achievement onlyGoodAnswerAchievement15 = new Achievement(15, false, "Faire un score parfait(15 questions)");
+        achievementsList.add(onlyGoodAnswerAchievement15);
+
+        Achievement onlyGoodAnswerAchievement20 = new Achievement(20, false, "Faire un score parfait (20 questions)");
+        achievementsList.add(onlyGoodAnswerAchievement20);
 
     }
 

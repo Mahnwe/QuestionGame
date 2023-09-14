@@ -27,14 +27,21 @@ public class ResultScene extends VBox
     private final int playerFinalScore;
 
     private final Stage stage;
-    private final File perfectScoreFile;
+    private final File perfectScoreFile10;
+    private final File perfectScoreFile15;
+    private final File perfectScoreFile20;
 
-    public ResultScene(BorderPane pane, int playerFinalScore, int questionCount, TrophyHandler trophyHandler, AchievementManager achievementManager, Stage stage, File perfectScoreFile)
+    private final int questionCount;
+
+    public ResultScene(BorderPane pane, int playerFinalScore, int questionCount, TrophyHandler trophyHandler, AchievementManager achievementManager, Stage stage, File perfectScoreFile, File perfectScoreFile15, File perfectScoreFile20)
     {
         this.achievementManager = achievementManager;
         this.playerFinalScore = playerFinalScore;
+        this.questionCount = questionCount;
         this.stage = stage;
-        this.perfectScoreFile = perfectScoreFile;
+        this.perfectScoreFile10 = perfectScoreFile;
+        this.perfectScoreFile15 = perfectScoreFile15;
+        this.perfectScoreFile20 = perfectScoreFile20;
         VBox gameResult = new VBox();
         createIcons();
 
@@ -83,14 +90,35 @@ public class ResultScene extends VBox
         nbrOfGoldCup++;
         String howManyGoldCup = "Gold Cups : "+ nbrOfGoldCup;
 
-        String checkIntInPerfectFile = String.valueOf(ReadInPerfectCupFile());
-        if(checkIntInPerfectFile.equals("10")) {
-            achievementManager.getAchievementsList().get(3).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(3), playerFinalScore);
+        if(questionCount == 10) {
+            String checkIntInPerfectFile = String.valueOf(ReadInPerfectCupFile(perfectScoreFile10));
+            if (checkIntInPerfectFile.equals("10")) {
+                achievementManager.getAchievementsList().get(3).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(3), playerFinalScore);
+            } else {
+                String perfectScoreString = String.valueOf(playerFinalScore);
+                WriteInPerfectCupFile(perfectScoreFile10, perfectScoreString, checkIntInPerfectFile);
+            }
         }
-        else {
-            String perfectScoreString = String.valueOf(playerFinalScore);
-            WriteInPerfectCupFile(perfectScoreString, checkIntInPerfectFile);
+        if(questionCount == 15) {
+            String checkIntInPerfectFile15 = String.valueOf(ReadInPerfectCupFile(perfectScoreFile15));
+            if (checkIntInPerfectFile15.equals("15")) {
+                achievementManager.getAchievementsList().get(4).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(4), playerFinalScore);
+            } else {
+                String perfectScoreString15 = String.valueOf(playerFinalScore);
+                WriteInPerfectCupFile(perfectScoreFile15, perfectScoreString15, checkIntInPerfectFile15);
+            }
         }
+
+        if(questionCount == 20) {
+            String checkIntInPerfectFile20 = String.valueOf(ReadInPerfectCupFile(perfectScoreFile20));
+            if (checkIntInPerfectFile20.equals("20")) {
+                achievementManager.getAchievementsList().get(5).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(5), playerFinalScore);
+            } else {
+                String perfectScoreString20 = String.valueOf(playerFinalScore);
+                WriteInPerfectCupFile(perfectScoreFile20, perfectScoreString20, checkIntInPerfectFile20);
+            }
+        }
+
         achievementManager.getAchievementsList().get(0).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(0), nbrOfGoldCup);
         trophyHandler.WriteInGoldCupFile(howManyGoldCup, checkIntInFile);
 
@@ -174,11 +202,11 @@ public class ResultScene extends VBox
         MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
         stage.setScene(menuScene);
     }
-    public StringBuilder ReadInPerfectCupFile()
+    public StringBuilder ReadInPerfectCupFile(File file)
     {
         StringBuilder stringBuilder = new StringBuilder();
         try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(perfectScoreFile));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
             String line;
             while((line = bufferedReader.readLine()) != null)
             {
@@ -190,10 +218,10 @@ public class ResultScene extends VBox
         return stringBuilder;
     }
 
-    public void WriteInPerfectCupFile(String stringToUse, String lineToReplace)
+    public void WriteInPerfectCupFile(File file, String stringToUse, String lineToReplace)
     {
         try {
-            FileWriter fw = new FileWriter(perfectScoreFile.getAbsoluteFile());
+            FileWriter fw = new FileWriter(file.getAbsoluteFile());
             BufferedWriter bw = new BufferedWriter(fw);
             String lineReplacement = lineToReplace.replace(lineToReplace, stringToUse);
             bw.write(lineReplacement);

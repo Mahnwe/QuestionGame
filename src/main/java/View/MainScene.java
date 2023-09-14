@@ -30,9 +30,11 @@ public class MainScene extends Scene
 
     private final TrophyHandler trophyHandler;
     private final AchievementManager achievementManager;
-    private final File perfectScoreFile;
+    private final File perfectScoreFile10;
+    private final File perfectScoreFile15;
+    private final File perfectScoreFile20;
 
-    public MainScene(BorderPane menuPane, Player player, GameHandler gameHandler, Stage stage, File saveFile, TrophyHandler trophyHandler, AchievementManager achievementManager, File perfectScoreFile)
+    public MainScene(BorderPane menuPane, Player player, GameHandler gameHandler, Stage stage, File saveFile, TrophyHandler trophyHandler, AchievementManager achievementManager, File perfectScoreFile, File perfectScoreFile15, File perfectScoreFile20)
     {
         super(menuPane);
         this.stage = stage;
@@ -41,7 +43,9 @@ public class MainScene extends Scene
         this.saveFile = saveFile;
         this.trophyHandler = trophyHandler;
         this.achievementManager = achievementManager;
-        this.perfectScoreFile = perfectScoreFile;
+        this.perfectScoreFile10 = perfectScoreFile;
+        this.perfectScoreFile15 = perfectScoreFile15;
+        this.perfectScoreFile20 = perfectScoreFile20;
 
         BackgroundCreator mainSceneBackgroundCreator = new BackgroundCreator(PathUtil.MAIN_BACKGROUND);
         Image mainSceneImage = mainSceneBackgroundCreator.createBackground();
@@ -82,7 +86,7 @@ public class MainScene extends Scene
 
     public void setDisplayResult()
     {
-        ResultScene resultScene = new ResultScene(menuPane, playerInfoVBox.getPlayer().getPlayerScore(), gameHandler.getQuestionCount(), trophyHandler, achievementManager, stage, perfectScoreFile);
+        ResultScene resultScene = new ResultScene(menuPane, playerInfoVBox.getPlayer().getPlayerScore(), gameHandler.getQuestionCount(), trophyHandler, achievementManager, stage, perfectScoreFile10, perfectScoreFile15, perfectScoreFile20);
         resultScene.getCongratsLabel().setText("Bravo "+playerInfoVBox.getPlayer().getPlayerName()+" vous avez répondu à toutes les questions !");
         resultScene.getPlayerResult().setText("Votre score : "+playerInfoVBox.getPlayer().getPlayerScore()+" sur "+gameHandler.getQuestionCount());
     }

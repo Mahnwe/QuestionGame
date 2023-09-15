@@ -9,4 +9,6 @@ public class PathUtil
     public static final String QUESTION_MARK_TEST = RESOURCES_PATH + "Background/HelpV1.png";
     public static final String MENU_BACKGROUND = RESOURCES_PATH + "Background/Background-Test.jpg";
     public static final String MAIN_BACKGROUND = RESOURCES_PATH + "Background/MenuSceneBackground.jpg";
+    public static final String LOCK_ICON = RESOURCES_PATH + "Icon/LockedAchievement.png";
+    public static final String UNLOCK_ICON = RESOURCES_PATH + "Icon/UnlockAchievement.png";
 }

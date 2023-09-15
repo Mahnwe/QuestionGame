@@ -5,6 +5,7 @@ import javafx.beans.property.StringProperty;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.TilePane;
@@ -44,26 +45,32 @@ public class AchievementScene extends Scene
 
         VBox goldCupAchievementVBox = new VBox();
         Label goldCupAchievementLabel = new Label();
+        ImageView goldCupImage = achievementManager.getAchievementsList().get(0).getLockImageView();
         Label goldCupAchievementInfo = new Label();
 
         VBox silverCupAchievementVBox = new VBox();
         Label silverCupAchievementLabel = new Label();
+        ImageView silverCupImage = achievementManager.getAchievementsList().get(1).getLockImageView();
         Label silverCupAchievementInfo = new Label();
 
         VBox bronzeCupAchievementVBox = new VBox();
         Label bronzeCupAchievementLabel = new Label();
+        ImageView bronzeCupImage = achievementManager.getAchievementsList().get(2).getLockImageView();
         Label bronzeCupAchievementInfo = new Label();
 
         VBox perfectScoreAchievementVBox = new VBox();
         Label perfectScoreAchievementLabel = new Label();
+        ImageView perfectScoreImage = achievementManager.getAchievementsList().get(3).getLockImageView();
         Label perfectScoreAchievementInfo = new Label();
 
         VBox perfectScoreAchievement15 = new VBox();
         Label perfectScoreAchievement15Label = new Label();
+        ImageView perfectScore15Image = achievementManager.getAchievementsList().get(4).getLockImageView();
         Label perfectScoreAchievement15Info = new Label();
 
         VBox perfectScoreAchievement20 = new VBox();
         Label perfectScoreAchievement20Label = new Label();
+        ImageView perfectScore20Image = achievementManager.getAchievementsList().get(5).getLockImageView();
         Label perfectScoreAchievement20Info = new Label();
 
         String checkIntInGoldFile = String.valueOf(readInCupFile(goldCupFile));
@@ -110,31 +117,37 @@ public class AchievementScene extends Scene
 
         goldCupAchievementLabel.setText(achievementManager.getAchievementsList().get(0).getConditionDescription());
         goldCupAchievementVBox.getChildren().add(goldCupAchievementLabel);
+        goldCupAchievementVBox.getChildren().add(goldCupImage);
         goldCupAchievementVBox.getChildren().add(goldCupAchievementInfo);
         tilePane.getChildren().add(goldCupAchievementVBox);
 
         silverCupAchievementLabel.setText(achievementManager.getAchievementsList().get(1).getConditionDescription());
         silverCupAchievementVBox.getChildren().add(silverCupAchievementLabel);
+        silverCupAchievementVBox.getChildren().add(silverCupImage);
         silverCupAchievementVBox.getChildren().add(silverCupAchievementInfo);
         tilePane.getChildren().add(silverCupAchievementVBox);
 
         bronzeCupAchievementLabel.setText(achievementManager.getAchievementsList().get(2).getConditionDescription());
         bronzeCupAchievementVBox.getChildren().add(bronzeCupAchievementLabel);
+        bronzeCupAchievementVBox.getChildren().add(bronzeCupImage);
         bronzeCupAchievementVBox.getChildren().add(bronzeCupAchievementInfo);
         tilePane.getChildren().add(bronzeCupAchievementVBox);
 
         perfectScoreAchievementLabel.setText(achievementManager.getAchievementsList().get(3).getConditionDescription());
         perfectScoreAchievementVBox.getChildren().add(perfectScoreAchievementLabel);
+        perfectScoreAchievementVBox.getChildren().add(perfectScoreImage);
         perfectScoreAchievementVBox.getChildren().add(perfectScoreAchievementInfo);
         tilePane.getChildren().add(perfectScoreAchievementVBox);
 
         perfectScoreAchievement15Label.setText(achievementManager.getAchievementsList().get(4).getConditionDescription());
         perfectScoreAchievement15.getChildren().add(perfectScoreAchievement15Label);
+        perfectScoreAchievement15.getChildren().add(perfectScore15Image);
         perfectScoreAchievement15.getChildren().add(perfectScoreAchievement15Info);
         tilePane.getChildren().add(perfectScoreAchievement15);
 
         perfectScoreAchievement20Label.setText(achievementManager.getAchievementsList().get(5).getConditionDescription());
         perfectScoreAchievement20.getChildren().add(perfectScoreAchievement20Label);
+        perfectScoreAchievement20.getChildren().add(perfectScore20Image);
         perfectScoreAchievement20.getChildren().add(perfectScoreAchievement20Info);
         tilePane.getChildren().add(perfectScoreAchievement20);
 
@@ -160,6 +173,7 @@ public class AchievementScene extends Scene
         if(achievement.isUnlock())
         {
             unlockValue = "Succés obtenu";
+            achievement.setLockImageView(achievement.getUnlockImageView());
         }
         else
         {

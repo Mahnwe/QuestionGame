@@ -23,10 +23,25 @@ public class AchievementScene extends Scene
 {
     private StringProperty valueOfSuccess = new SimpleStringProperty();
     private final Stage stage;
+    private final TilePane tilePane;
     private final AchievementManager achievementManager;
+
+    private Label goldCupAchievementInfo;
+    private Label silverCupAchievementInfo;
+    private Label bronzeCupAchievementInfo;
+    private Label perfectScoreAchievementInfo;
+    private Label perfectScoreAchievement15Info;
+    private Label perfectScoreAchievement20Info;
     private int nbrPerfectScore10;
     private int nbrPerfectScore15;
     private int nbrPerfectScore20;
+
+    private final File goldCupFile;
+    private final File silverCupFile;
+    private final File bronzeCupFile;
+    private final File perfectScoreFile;
+    private final File perfectScoreFile15;
+    private final File perfectScoreFile20;
 
 
     public AchievementScene(BorderPane pane, AchievementManager achievementManager, Stage stage, File goldCupFile, File silverCupFile, File bronzeCupFile, File perfectScoreFile, File perfectScoreFile15, File perfectScoreFile20)
@@ -36,43 +51,117 @@ public class AchievementScene extends Scene
         pane.setPrefWidth(900);
         this.stage = stage;
         this.achievementManager = achievementManager;
+        this.goldCupFile = goldCupFile;
+        this.silverCupFile = silverCupFile;
+        this.bronzeCupFile = bronzeCupFile;
+        this.perfectScoreFile = perfectScoreFile;
+        this.perfectScoreFile15 = perfectScoreFile15;
+        this.perfectScoreFile20 = perfectScoreFile20;
 
-        TilePane tilePane = new TilePane();
+        tilePane = new TilePane();
         tilePane.setHgap(10);
         tilePane.setVgap(10);
         tilePane.setPrefColumns(4);
         tilePane.setPrefRows(2);
 
+        createGoldAchievementArea();
+        createSilverAchievementArea();
+        createBronzeAchievementArea();
+        createPerfectScore10Area();
+        createPerfectScore15Area();
+        createPerfectScore20Area();
+        checkAchievements();
+
+        pane.setCenter(tilePane);
+
+        HBox buttonHbox = new HBox();
+        buttonHbox.setPrefHeight(50);
+        Button returnToMenu = new Button("Retour");
+        buttonHbox.getChildren().add(returnToMenu);
+        pane.setTop(buttonHbox);
+        returnToMenu.setOnAction(event -> backToMainMenu());
+
+    }
+
+    public void createGoldAchievementArea()
+    {
         VBox goldCupAchievementVBox = new VBox();
         Label goldCupAchievementLabel = new Label();
         ImageView goldCupImage = achievementManager.getAchievementsList().get(0).getLockImageView();
-        Label goldCupAchievementInfo = new Label();
-
+        goldCupAchievementInfo = new Label();
+        goldCupAchievementLabel.setText(achievementManager.getAchievementsList().get(0).getConditionDescription());
+        goldCupAchievementVBox.getChildren().add(goldCupAchievementLabel);
+        goldCupAchievementVBox.getChildren().add(goldCupImage);
+        goldCupAchievementVBox.getChildren().add(goldCupAchievementInfo);
+        tilePane.getChildren().add(goldCupAchievementVBox);
+    }
+    public void createSilverAchievementArea()
+    {
         VBox silverCupAchievementVBox = new VBox();
         Label silverCupAchievementLabel = new Label();
         ImageView silverCupImage = achievementManager.getAchievementsList().get(1).getLockImageView();
-        Label silverCupAchievementInfo = new Label();
+        silverCupAchievementInfo = new Label();
+        silverCupAchievementLabel.setText(achievementManager.getAchievementsList().get(1).getConditionDescription());
+        silverCupAchievementVBox.getChildren().add(silverCupAchievementLabel);
+        silverCupAchievementVBox.getChildren().add(silverCupImage);
+        silverCupAchievementVBox.getChildren().add(silverCupAchievementInfo);
+        tilePane.getChildren().add(silverCupAchievementVBox);
+    }
 
+    public void createBronzeAchievementArea()
+    {
         VBox bronzeCupAchievementVBox = new VBox();
         Label bronzeCupAchievementLabel = new Label();
         ImageView bronzeCupImage = achievementManager.getAchievementsList().get(2).getLockImageView();
-        Label bronzeCupAchievementInfo = new Label();
+        bronzeCupAchievementInfo = new Label();
+        bronzeCupAchievementLabel.setText(achievementManager.getAchievementsList().get(2).getConditionDescription());
+        bronzeCupAchievementVBox.getChildren().add(bronzeCupAchievementLabel);
+        bronzeCupAchievementVBox.getChildren().add(bronzeCupImage);
+        bronzeCupAchievementVBox.getChildren().add(bronzeCupAchievementInfo);
+        tilePane.getChildren().add(bronzeCupAchievementVBox);
+    }
 
+    public void createPerfectScore10Area()
+    {
         VBox perfectScoreAchievementVBox = new VBox();
         Label perfectScoreAchievementLabel = new Label();
         ImageView perfectScoreImage = achievementManager.getAchievementsList().get(3).getLockImageView();
-        Label perfectScoreAchievementInfo = new Label();
+        perfectScoreAchievementInfo = new Label();
+        perfectScoreAchievementLabel.setText(achievementManager.getAchievementsList().get(3).getConditionDescription());
+        perfectScoreAchievementVBox.getChildren().add(perfectScoreAchievementLabel);
+        perfectScoreAchievementVBox.getChildren().add(perfectScoreImage);
+        perfectScoreAchievementVBox.getChildren().add(perfectScoreAchievementInfo);
+        tilePane.getChildren().add(perfectScoreAchievementVBox);
+    }
 
+    public void createPerfectScore15Area()
+    {
         VBox perfectScoreAchievement15 = new VBox();
         Label perfectScoreAchievement15Label = new Label();
         ImageView perfectScore15Image = achievementManager.getAchievementsList().get(4).getLockImageView();
-        Label perfectScoreAchievement15Info = new Label();
+        perfectScoreAchievement15Info = new Label();
+        perfectScoreAchievement15Label.setText(achievementManager.getAchievementsList().get(4).getConditionDescription());
+        perfectScoreAchievement15.getChildren().add(perfectScoreAchievement15Label);
+        perfectScoreAchievement15.getChildren().add(perfectScore15Image);
+        perfectScoreAchievement15.getChildren().add(perfectScoreAchievement15Info);
+        tilePane.getChildren().add(perfectScoreAchievement15);
+    }
 
+    public void createPerfectScore20Area()
+    {
         VBox perfectScoreAchievement20 = new VBox();
         Label perfectScoreAchievement20Label = new Label();
         ImageView perfectScore20Image = achievementManager.getAchievementsList().get(5).getLockImageView();
-        Label perfectScoreAchievement20Info = new Label();
+        perfectScoreAchievement20Info = new Label();
+        perfectScoreAchievement20Label.setText(achievementManager.getAchievementsList().get(5).getConditionDescription());
+        perfectScoreAchievement20.getChildren().add(perfectScoreAchievement20Label);
+        perfectScoreAchievement20.getChildren().add(perfectScore20Image);
+        perfectScoreAchievement20.getChildren().add(perfectScoreAchievement20Info);
+        tilePane.getChildren().add(perfectScoreAchievement20);
+    }
 
+    public void checkAchievements()
+    {
         String checkIntInGoldFile = String.valueOf(readInCupFile(goldCupFile));
         String numberOfGoldCup = checkAndGetNumberOfCup(checkIntInGoldFile);
         int nbrOfGoldCup = Integer.parseInt(numberOfGoldCup);
@@ -114,52 +203,6 @@ public class AchievementScene extends Scene
         }
         achievementManager.getAchievementsList().get(5).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(5), nbrPerfectScore20);
         checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(5), perfectScoreAchievement20Info);
-
-        goldCupAchievementLabel.setText(achievementManager.getAchievementsList().get(0).getConditionDescription());
-        goldCupAchievementVBox.getChildren().add(goldCupAchievementLabel);
-        goldCupAchievementVBox.getChildren().add(goldCupImage);
-        goldCupAchievementVBox.getChildren().add(goldCupAchievementInfo);
-        tilePane.getChildren().add(goldCupAchievementVBox);
-
-        silverCupAchievementLabel.setText(achievementManager.getAchievementsList().get(1).getConditionDescription());
-        silverCupAchievementVBox.getChildren().add(silverCupAchievementLabel);
-        silverCupAchievementVBox.getChildren().add(silverCupImage);
-        silverCupAchievementVBox.getChildren().add(silverCupAchievementInfo);
-        tilePane.getChildren().add(silverCupAchievementVBox);
-
-        bronzeCupAchievementLabel.setText(achievementManager.getAchievementsList().get(2).getConditionDescription());
-        bronzeCupAchievementVBox.getChildren().add(bronzeCupAchievementLabel);
-        bronzeCupAchievementVBox.getChildren().add(bronzeCupImage);
-        bronzeCupAchievementVBox.getChildren().add(bronzeCupAchievementInfo);
-        tilePane.getChildren().add(bronzeCupAchievementVBox);
-
-        perfectScoreAchievementLabel.setText(achievementManager.getAchievementsList().get(3).getConditionDescription());
-        perfectScoreAchievementVBox.getChildren().add(perfectScoreAchievementLabel);
-        perfectScoreAchievementVBox.getChildren().add(perfectScoreImage);
-        perfectScoreAchievementVBox.getChildren().add(perfectScoreAchievementInfo);
-        tilePane.getChildren().add(perfectScoreAchievementVBox);
-
-        perfectScoreAchievement15Label.setText(achievementManager.getAchievementsList().get(4).getConditionDescription());
-        perfectScoreAchievement15.getChildren().add(perfectScoreAchievement15Label);
-        perfectScoreAchievement15.getChildren().add(perfectScore15Image);
-        perfectScoreAchievement15.getChildren().add(perfectScoreAchievement15Info);
-        tilePane.getChildren().add(perfectScoreAchievement15);
-
-        perfectScoreAchievement20Label.setText(achievementManager.getAchievementsList().get(5).getConditionDescription());
-        perfectScoreAchievement20.getChildren().add(perfectScoreAchievement20Label);
-        perfectScoreAchievement20.getChildren().add(perfectScore20Image);
-        perfectScoreAchievement20.getChildren().add(perfectScoreAchievement20Info);
-        tilePane.getChildren().add(perfectScoreAchievement20);
-
-        pane.setCenter(tilePane);
-
-        HBox buttonHbox = new HBox();
-        buttonHbox.setPrefHeight(50);
-        Button returnToMenu = new Button("Retour");
-        buttonHbox.getChildren().add(returnToMenu);
-        pane.setTop(buttonHbox);
-        returnToMenu.setOnAction(event -> backToMainMenu());
-
     }
     public void backToMainMenu()
     {

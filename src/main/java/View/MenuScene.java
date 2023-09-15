@@ -187,8 +187,6 @@ public class MenuScene extends Scene
     {
         Player player = new Player();
         MainScene mainScene = new MainScene(new BorderPane(), player, gameHandler, menuStage, saveFile, trophyHandler, achievementManager, perfectScoreFile10, perfectScoreFile15, perfectScoreFile20);
-        menuStage.setMinHeight(450);
-        menuStage.setMinWidth(850);
         menuStage.setScene(mainScene);
 
     }

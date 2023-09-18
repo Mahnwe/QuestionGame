@@ -88,6 +88,8 @@ public class MainScene extends Scene
 
     public void setDisplayResult()
     {
+        GameTimer.stopTimer();
+        GameTimer.setTimerDisplay();
         ResultScene resultScene = new ResultScene(menuPane, playerInfoVBox.getPlayer().getPlayerScore(), gameHandler.getQuestionCount(), trophyHandler, achievementManager, stage, perfectScoreFile10, perfectScoreFile15, perfectScoreFile20);
         resultScene.getCongratsLabel().setText("Bravo "+playerInfoVBox.getPlayer().getPlayerName()+" vous avez répondu à toutes les questions !");
         resultScene.getPlayerResult().setText("Votre score : "+playerInfoVBox.getPlayer().getPlayerScore()+" sur "+gameHandler.getQuestionCount());
@@ -99,7 +101,7 @@ public class MainScene extends Scene
             boolean append = true;
             FileWriter fw = new FileWriter(saveFile.getAbsoluteFile(), append);
             BufferedWriter bw = new BufferedWriter(fw);
-            bw.write("Nom : "+playerInfoVBox.getPlayer().getPlayerName()+"  "+" Score : "+playerInfoVBox.getPlayer().getPlayerScore()+" sur "+gameHandler.getQuestionCount()+"\n");
+            bw.write("Nom : "+playerInfoVBox.getPlayer().getPlayerName()+"  "+" Score : "+playerInfoVBox.getPlayer().getPlayerScore()+" sur "+gameHandler.getQuestionCount()+" en "+ResultScene.playerTimerElapsedMinutes+ "min "+ResultScene.playerTimerElapsedSecondes+"sec"+"\n");
             bw.close();
         }catch (IOException e) {
             e.printStackTrace();
@@ -110,8 +112,8 @@ public class MainScene extends Scene
     {
         if(gameHandler.isGameEnding())
         {
-            saveScoreInFile();
             setDisplayResult();
+            saveScoreInFile();
         }
         else
         {

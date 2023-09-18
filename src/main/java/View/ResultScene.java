@@ -10,6 +10,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.AchievementManager;
+import model.GameTimer;
 import model.IconCreator;
 import model.PathUtil;
 
@@ -32,6 +33,8 @@ public class ResultScene extends VBox
     private final File perfectScoreFile20;
 
     private final int questionCount;
+    public static long playerTimerElapsedMinutes;
+    public static long playerTimerElapsedSecondes;
 
     public ResultScene(BorderPane pane, int playerFinalScore, int questionCount, TrophyHandler trophyHandler, AchievementManager achievementManager, Stage stage, File perfectScoreFile, File perfectScoreFile15, File perfectScoreFile20)
     {
@@ -54,8 +57,17 @@ public class ResultScene extends VBox
         playerResult.setTextFill(Color.GHOSTWHITE);
         Button exitToMenuButton = new Button("Return to menu");
 
+        Label timeLabel = new Label();
+        timeLabel.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        timeLabel.setTextFill(Color.GHOSTWHITE);
+        timeLabel.setText("Votre chrono : "+ GameTimer.elapsedMinutes+ "min "+GameTimer.secondsDisplay+"sec");
+        playerTimerElapsedMinutes = GameTimer.elapsedMinutes;
+        playerTimerElapsedSecondes = GameTimer.elapsedSeconds;
+
+
         gameResult.getChildren().add(congratsLabel);
         gameResult.getChildren().add(playerResult);
+        gameResult.getChildren().add(timeLabel);
 
         if(playerFinalScore >= questionCount*90/100)
         {

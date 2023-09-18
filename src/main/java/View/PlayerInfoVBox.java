@@ -9,6 +9,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
+import model.GameTimer;
 import model.Player;
 
 public class PlayerInfoVBox extends VBox
@@ -73,6 +74,7 @@ public class PlayerInfoVBox extends VBox
                 questionInterface.setVisible(true);
                 stage.setMinWidth(900);
                 stage.setMinHeight(500);
+                GameTimer.startTimer();
             }
             getPlayerName.setMaxHeight(0);
             getPlayerName.setMinHeight(0);

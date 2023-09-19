@@ -149,6 +149,18 @@ public class QuestionStorage
         Question question30 = new Question("Quand se sont éteints les dinosaures ?", "Il y a 46 millions d'années", "Il y a 66 millions d'années",
                 "Il y a 86 millions d'années", "Il y a 106 millions d'années", "Il y a 66 millions d'années", "Les dinosaures ont disparu il y a environ 66 millions d'années");
         questionList.add(question30);
+
+        Question question31 = new Question("Quelle est la taille de l'humain le plus grand de l'histoire ?", "2,32 mètres",
+                "2,72 mètres", "2,51 mètres", "2,97 mètres", "2,72 mètres", "Robert Wadlow est l'homme le plus grand de l'histoire et mesurait 2,72 mètres au moment de sa mort en 1940");
+        questionList.add(question31);
+
+        Question question32 = new Question("Athéna était la déesse de la sagesse, des artisans et des artistes, mais aussi de", "La statégie militaire", "L'olivier",
+                "L'enfance", "La ruse", "La stratégie militaire", "Dans la mythologie grecque Athéna était la déesse de la sagesse, des artisans et des artistes,"+"\n"+"mais aussi de la stratégie militaire et des maitres d'écoles");
+        questionList.add(question32);
+
+        Question question33 = new Question("Quel est le fruit le plus consommé en France ?", "La banane", "La poire", "L'orange", "La pomme",
+                "La pomme", "La pomme est le fruit le plus consommé en france, juste devant la banane et l'orange");
+        questionList.add(question33);
     }
 
     public ArrayList<Question> getQuestionList() {

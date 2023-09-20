@@ -59,6 +59,7 @@ public class LeaderBoardScene extends Scene
             {
                 stringBuilder.append(line).append("\n");
             }
+            bufferedReader.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

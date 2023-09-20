@@ -12,6 +12,8 @@ import model.AchievementManager;
 import model.IconCreator;
 import model.PathUtil;
 
+import java.io.File;
+
 public class TrophyScene extends Scene
 {
     private ImageView goldCup;
@@ -20,7 +22,7 @@ public class TrophyScene extends Scene
     private final Stage stage;
     private final AchievementManager achievementManager;
 
-    public TrophyScene(BorderPane pane, TrophyHandler trophyHandler, Stage stage, AchievementManager achievementManager)
+    public TrophyScene(BorderPane pane, TrophyHandler trophyHandler, Stage stage, AchievementManager achievementManager, File goldCupFile, File silverCupFile, File bronzeCupFile)
     {
         super(pane);
         pane.setPrefHeight(500);
@@ -42,13 +44,13 @@ public class TrophyScene extends Scene
         VBox nbrOfCups = new VBox();
 
         TextArea nbrOfGoldCup = new TextArea();
-        setUpCupTextArea(nbrOfGoldCup, String.valueOf(trophyHandler.readInGoldCupFile()));
+        setUpCupTextArea(nbrOfGoldCup, String.valueOf(trophyHandler.readInCupFile(goldCupFile)));
 
         TextArea nbrOfSilverCup = new TextArea();
-        setUpCupTextArea(nbrOfSilverCup, String.valueOf(trophyHandler.readInSilverCupFile()));
+        setUpCupTextArea(nbrOfSilverCup, String.valueOf(trophyHandler.readInCupFile(silverCupFile)));
 
         TextArea nbrOfBronzeCup = new TextArea();
-        setUpCupTextArea(nbrOfBronzeCup, String.valueOf(trophyHandler.readInBronzeCupFile()));
+        setUpCupTextArea(nbrOfBronzeCup, String.valueOf(trophyHandler.readInCupFile(bronzeCupFile)));
 
         nbrOfCups.getChildren().add(nbrOfGoldCup);
         nbrOfCups.getChildren().add(nbrOfSilverCup);

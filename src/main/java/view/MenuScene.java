@@ -1,9 +1,9 @@
 package view;
 
-import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
@@ -29,11 +29,7 @@ public class MenuScene extends Scene
     private final Border border = new Border(new BorderStroke(Color.BLACK,
             BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT));
 
-    private final Background buttonBackground = new Background(new BackgroundFill(Color.TRANSPARENT, CornerRadii.EMPTY, Insets.EMPTY));
-
     private final TrophyHandler trophyHandler;
-
-    private VBox selectModeArea;
     private final AchievementManager achievementManager;
     private final File goldCupFile;
     private final File silverCupFile;
@@ -62,13 +58,12 @@ public class MenuScene extends Scene
         perfectScoreFile15 = new File("./src/main/resources/SaveFile/PerfectScoreFile15");
         perfectScoreFile20 = new File("./src/main/resources/SaveFile/PerfectScoreFile20");
 
-        trophyHandler = new TrophyHandler(goldCupFile, silverCupFile, bronzeCupFile);
+        trophyHandler = new TrophyHandler();
         this.achievementManager = achievementManager;
 
         createWelcomeArea();
         createLeaderBoardButtonArea();
         createButtonArea();
-        createAdviceForPlayer();
 
         setButtonOnAction();
 
@@ -103,19 +98,22 @@ public class MenuScene extends Scene
         leaderBoardVBox.setPrefWidth(105);
 
         Button leaderBoardButton = new Button("Classement");
+        Tooltip leaderBoardTooltip = new Tooltip("Cliquez sur 'Classement' pour retrouver les scores de vos parties précédentes");
         leaderBoardButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
-        leaderBoardButton.setBackground(buttonBackground);
         placeButtons(leaderBoardButton, 5, 70);
+        leaderBoardButton.setTooltip(leaderBoardTooltip);
 
         Button trophyButton = new Button("Trophées");
+        Tooltip trophyTooltip = new Tooltip("Cliquez sur 'Trophées' pour voir tout les trophées débloqués");
         trophyButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
-        trophyButton.setBackground(buttonBackground);
         placeButtons(trophyButton, 10, 150);
+        trophyButton.setTooltip(trophyTooltip);
 
         Button achievementButton = new Button("Succés");
+        Tooltip achievementTooltip = new Tooltip("Cliquez sur 'Succés' pour voir tout les succés");
         achievementButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
-        achievementButton.setBackground(buttonBackground);
         placeButtons(achievementButton, 10, 230);
+        achievementButton.setTooltip(achievementTooltip);
 
         leaderBoardButton.setOnAction(event -> {
             LeaderBoardScene leaderBoardScene = new LeaderBoardScene(new BorderPane(), saveFile, menuStage, achievementManager);
@@ -123,7 +121,7 @@ public class MenuScene extends Scene
         });
 
         trophyButton.setOnAction(event -> {
-            TrophyScene trophyScene = new TrophyScene(new BorderPane(), trophyHandler, menuStage, achievementManager);
+            TrophyScene trophyScene = new TrophyScene(new BorderPane(), trophyHandler, menuStage, achievementManager, goldCupFile, silverCupFile, bronzeCupFile);
             menuStage.setScene(trophyScene);
         });
 
@@ -140,12 +138,12 @@ public class MenuScene extends Scene
 
     public void createButtonArea()
     {
-        selectModeArea = new VBox();
+        VBox selectModeArea = new VBox();
 
-        Label chooseMode = new Label("Cliquez sur le nombre de questions auquel vous voulez répondre");
+        Label chooseMode = new Label("Choisissez votre mode de jeu");
         chooseMode.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         chooseMode.setTextFill(Color.BLACK);
-        chooseMode.setTranslateX(70);
+        chooseMode.setTranslateX(200);
 
         tenModeButton = new Button("Dix questions");
         tenModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
@@ -188,35 +186,9 @@ public class MenuScene extends Scene
     public void instantiateMainScene()
     {
         Player player = new Player();
-        MainScene mainScene = new MainScene(new BorderPane(), player, gameHandler, menuStage, saveFile, trophyHandler, achievementManager, perfectScoreFile10, perfectScoreFile15, perfectScoreFile20);
+        MainScene mainScene = new MainScene(new BorderPane(), player, gameHandler, menuStage, saveFile, trophyHandler, achievementManager, perfectScoreFile10, perfectScoreFile15, perfectScoreFile20, goldCupFile, silverCupFile, bronzeCupFile);
         menuStage.setScene(mainScene);
 
-    }
-
-    public void createAdviceForPlayer()
-    {
-        VBox adviceVbox = new VBox();
-        adviceVbox.setTranslateY(250);
-        adviceVbox.setPrefHeight(100);
-        Label adviceLabel = new Label("Cliquez sur 'Classement' pour retrouver les scores de vos parties précédentes");
-        adviceLabel.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
-        adviceLabel.setTextFill(Color.BLACK);
-
-        Label adviceLabel2 = new Label("Cliquez sur 'Trophées' pour voir tout les trophées débloqués");
-        adviceLabel2.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
-        adviceLabel2.setTextFill(Color.BLACK);
-        adviceLabel2.setTranslateY(20);
-
-        Label adviceLabel3 = new Label("Cliquez sur 'Succés' pour voir tout les succés");
-        adviceLabel3.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
-        adviceLabel3.setTextFill(Color.BLACK);
-        adviceLabel3.setTranslateY(40);
-
-        adviceVbox.getChildren().add(adviceLabel);
-        adviceVbox.getChildren().add(adviceLabel2);
-        adviceVbox.getChildren().add(adviceLabel3);
-        adviceVbox.setBorder(border);
-        selectModeArea.getChildren().add(adviceVbox);
     }
 
     public HBox createStatArea(Label label) {

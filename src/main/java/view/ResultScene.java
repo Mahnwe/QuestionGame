@@ -31,12 +31,14 @@ public class ResultScene extends VBox
     private final File perfectScoreFile10;
     private final File perfectScoreFile15;
     private final File perfectScoreFile20;
-
+    private final File goldCupFile;
+    private final File silverCupFile;
+    private final File bronzeCupFile;
     private final int questionCount;
     public static long playerTimerElapsedMinutes;
     public static long playerTimerElapsedSecondes;
 
-    public ResultScene(BorderPane pane, int playerFinalScore, int questionCount, TrophyHandler trophyHandler, AchievementManager achievementManager, Stage stage, File perfectScoreFile, File perfectScoreFile15, File perfectScoreFile20)
+    public ResultScene(BorderPane pane, int playerFinalScore, int questionCount, TrophyHandler trophyHandler, AchievementManager achievementManager, Stage stage, File perfectScoreFile, File perfectScoreFile15, File perfectScoreFile20, File goldCupFile, File silverCupFile, File bronzeCupFile)
     {
         this.achievementManager = achievementManager;
         this.playerFinalScore = playerFinalScore;
@@ -45,6 +47,9 @@ public class ResultScene extends VBox
         this.perfectScoreFile10 = perfectScoreFile;
         this.perfectScoreFile15 = perfectScoreFile15;
         this.perfectScoreFile20 = perfectScoreFile20;
+        this.goldCupFile = goldCupFile;
+        this.silverCupFile = silverCupFile;
+        this.bronzeCupFile = bronzeCupFile;
         VBox gameResult = new VBox();
         createIcons();
 
@@ -95,7 +100,7 @@ public class ResultScene extends VBox
 
     public void goldCupResult(TrophyHandler trophyHandler, VBox vBox)
     {
-        String checkIntInFile = String.valueOf(trophyHandler.readInGoldCupFile());
+        String checkIntInFile = String.valueOf(trophyHandler.readInCupFile(goldCupFile));
         String numberOfGoldCup = checkAndGetNumberOfCup(checkIntInFile);
 
         int nbrOfGoldCup = Integer.parseInt(numberOfGoldCup);
@@ -132,7 +137,7 @@ public class ResultScene extends VBox
         }
 
         achievementManager.getAchievementsList().get(0).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(0), nbrOfGoldCup);
-        trophyHandler.writeInGoldCupFile(howManyGoldCup, checkIntInFile);
+        trophyHandler.writeInCupFile(goldCupFile, howManyGoldCup, checkIntInFile);
 
         Label cupLabel = new Label("Vous avez gagné la coupe d'or !");
         cupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
@@ -143,7 +148,7 @@ public class ResultScene extends VBox
 
     public void silverCupResult(TrophyHandler trophyHandler, VBox vBox)
     {
-        String checkIntInFile = String.valueOf(trophyHandler.readInSilverCupFile());
+        String checkIntInFile = String.valueOf(trophyHandler.readInCupFile(silverCupFile));
         String numberOfSilverCup = checkAndGetNumberOfCup(checkIntInFile);
 
         int nbrOfSilverCup = Integer.parseInt(numberOfSilverCup);
@@ -151,7 +156,7 @@ public class ResultScene extends VBox
         String howManySilverCup = "Silver Cups : "+ nbrOfSilverCup;
 
         achievementManager.getAchievementsList().get(1).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(1), nbrOfSilverCup);
-        trophyHandler.writeInSilverCupFile(howManySilverCup, checkIntInFile);
+        trophyHandler.writeInCupFile(silverCupFile, howManySilverCup, checkIntInFile);
 
         Label cupLabel = new Label("Vous avez gagné la coupe d'argent !");
         cupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
@@ -162,7 +167,7 @@ public class ResultScene extends VBox
 
     public void bronzeCupResult(TrophyHandler trophyHandler, VBox vBox)
     {
-        String checkIntInFile = String.valueOf(trophyHandler.readInBronzeCupFile());
+        String checkIntInFile = String.valueOf(trophyHandler.readInCupFile(bronzeCupFile));
         String numberOfBronzeCup = checkAndGetNumberOfCup(checkIntInFile);
 
         int nbrOfBronzeCup = Integer.parseInt(numberOfBronzeCup);
@@ -170,7 +175,7 @@ public class ResultScene extends VBox
         String howManyBronzeCup = "Bronze Cups : "+ nbrOfBronzeCup;
 
         achievementManager.getAchievementsList().get(2).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(2), nbrOfBronzeCup);
-        trophyHandler.writeInBronzeCupFile(howManyBronzeCup, checkIntInFile);
+        trophyHandler.writeInCupFile(bronzeCupFile, howManyBronzeCup, checkIntInFile);
 
         Label cupLabel = new Label("Vous avez gagné la coupe de bronze !");
         cupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
@@ -224,6 +229,7 @@ public class ResultScene extends VBox
             {
                 stringBuilder.append(line).append("\n");
             }
+            bufferedReader.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

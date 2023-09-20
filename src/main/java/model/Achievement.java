@@ -26,18 +26,17 @@ public class Achievement
         {
             achievement.isUnlock = true;
             achievement.getLockImageView().setImage(unlockImageView.getImage());
-            System.out.println("LE SUCCES EST DEVEROUILLE PUTAIN");
         }
     }
 
     public void createIcons() {
-        IconCreator LockIcon = new IconCreator(PathUtil.LOCK_ICON);
-        lockImageView = LockIcon.createImage();
+        IconCreator lockIcon = new IconCreator(PathUtil.LOCK_ICON);
+        lockImageView = lockIcon.createImage();
         lockImageView.setFitHeight(50);
         lockImageView.setFitWidth(50);
 
-        IconCreator UnlockIcon = new IconCreator(PathUtil.UNLOCK_ICON);
-        unlockImageView = UnlockIcon.createImage();
+        IconCreator unlockIcon = new IconCreator(PathUtil.UNLOCK_ICON);
+        unlockImageView = unlockIcon.createImage();
         unlockImageView.setFitHeight(40);
         unlockImageView.setFitWidth(80);
     }

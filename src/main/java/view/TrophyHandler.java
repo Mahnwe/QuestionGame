@@ -1,4 +1,4 @@
-package View;
+package view;
 
 import java.io.*;
 
@@ -15,7 +15,7 @@ public class TrophyHandler
         this.bronzeCupFile = bronzeCupFile;
     }
 
-    public void WriteInGoldCupFile(String stringToUse, String lineToReplace)
+    public void writeInGoldCupFile(String stringToUse, String lineToReplace)
     {
         try {
             FileWriter fw = new FileWriter(goldCupFile.getAbsoluteFile());
@@ -27,7 +27,7 @@ public class TrophyHandler
             e.printStackTrace();
         }
     }
-    public StringBuilder ReadInGoldCupFile()
+    public StringBuilder readInGoldCupFile()
     {
         StringBuilder stringBuilder = new StringBuilder();
         try {
@@ -43,7 +43,7 @@ public class TrophyHandler
         return stringBuilder;
     }
 
-    public void WriteInSilverCupFile(String stringToUse, String lineToReplace)
+    public void writeInSilverCupFile(String stringToUse, String lineToReplace)
     {
         try {
             FileWriter fw = new FileWriter(silverCupFile.getAbsoluteFile());
@@ -55,7 +55,7 @@ public class TrophyHandler
             e.printStackTrace();
         }
     }
-    public StringBuilder ReadInSilverCupFile()
+    public StringBuilder readInSilverCupFile()
     {
         StringBuilder stringBuilder = new StringBuilder();
         try {
@@ -71,7 +71,7 @@ public class TrophyHandler
         return stringBuilder;
     }
 
-    public void WriteInBronzeCupFile(String stringToUse, String lineToReplace)
+    public void writeInBronzeCupFile(String stringToUse, String lineToReplace)
     {
         try {
             FileWriter fw = new FileWriter(bronzeCupFile.getAbsoluteFile());
@@ -83,7 +83,7 @@ public class TrophyHandler
             e.printStackTrace();
         }
     }
-    public StringBuilder ReadInBronzeCupFile()
+    public StringBuilder readInBronzeCupFile()
     {
         StringBuilder stringBuilder = new StringBuilder();
         try {

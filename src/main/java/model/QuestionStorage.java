@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class QuestionStorage
 {
@@ -163,7 +164,7 @@ public class QuestionStorage
         questionList.add(question33);
     }
 
-    public ArrayList<Question> getQuestionList() {
+    public List<Question> getQuestionList() {
         return questionList;
     }
 }

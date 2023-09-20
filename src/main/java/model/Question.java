@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Question
 {
@@ -30,7 +31,7 @@ public class Question
         return questionToAsk;
     }
 
-    public ArrayList<String> getAnswerList() {
+    public List<String> getAnswerList() {
         return answerList;
     }
 

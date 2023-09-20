@@ -1,4 +1,4 @@
-package View;
+package view;
 
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -42,6 +42,8 @@ public class MenuScene extends Scene
     private final File perfectScoreFile15;
     private final File perfectScoreFile20;
 
+    public static final String POLICE_LABEL = "Verdana";
+
     public MenuScene(BorderPane pane, Stage stage, AchievementManager achievementManager)
     {
         super(pane);
@@ -83,7 +85,7 @@ public class MenuScene extends Scene
         VBox welcomeArea = new VBox();
         Label welcomeInGame = new Label("Bienvenue dans le Turbo Jeu des Questions !");
         welcomeInGame.setTextFill(Color.BLACK);
-        welcomeInGame.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        welcomeInGame.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         welcomeArea.getChildren().add(createStatArea(welcomeInGame));
         pane.setTop(welcomeArea);
     }
@@ -101,17 +103,17 @@ public class MenuScene extends Scene
         leaderBoardVBox.setPrefWidth(105);
 
         Button leaderBoardButton = new Button("Classement");
-        leaderBoardButton.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 13));
+        leaderBoardButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
         leaderBoardButton.setBackground(buttonBackground);
         placeButtons(leaderBoardButton, 5, 70);
 
         Button trophyButton = new Button("Trophées");
-        trophyButton.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 13));
+        trophyButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
         trophyButton.setBackground(buttonBackground);
         placeButtons(trophyButton, 10, 150);
 
         Button achievementButton = new Button("Succés");
-        achievementButton.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 13));
+        achievementButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
         achievementButton.setBackground(buttonBackground);
         placeButtons(achievementButton, 10, 230);
 
@@ -141,20 +143,20 @@ public class MenuScene extends Scene
         selectModeArea = new VBox();
 
         Label chooseMode = new Label("Cliquez sur le nombre de questions auquel vous voulez répondre");
-        chooseMode.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        chooseMode.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         chooseMode.setTextFill(Color.BLACK);
         chooseMode.setTranslateX(70);
 
         tenModeButton = new Button("Dix questions");
-        tenModeButton.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        tenModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         placeButtons(tenModeButton, 250, 50);
 
         fifteenModeButton = new Button("Quinze questions");
-        fifteenModeButton.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        fifteenModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         placeButtons(fifteenModeButton, 250, 100);
 
         twentyModeButton = new Button("Vingt questions");
-        twentyModeButton.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        twentyModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         placeButtons(twentyModeButton, 250, 150);
 
 
@@ -197,16 +199,16 @@ public class MenuScene extends Scene
         adviceVbox.setTranslateY(250);
         adviceVbox.setPrefHeight(100);
         Label adviceLabel = new Label("Cliquez sur 'Classement' pour retrouver les scores de vos parties précédentes");
-        adviceLabel.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        adviceLabel.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         adviceLabel.setTextFill(Color.BLACK);
 
         Label adviceLabel2 = new Label("Cliquez sur 'Trophées' pour voir tout les trophées débloqués");
-        adviceLabel2.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        adviceLabel2.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         adviceLabel2.setTextFill(Color.BLACK);
         adviceLabel2.setTranslateY(20);
 
         Label adviceLabel3 = new Label("Cliquez sur 'Succés' pour voir tout les succés");
-        adviceLabel3.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        adviceLabel3.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         adviceLabel3.setTextFill(Color.BLACK);
         adviceLabel3.setTranslateY(40);
 

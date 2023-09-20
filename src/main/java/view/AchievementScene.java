@@ -1,4 +1,4 @@
-package View;
+package view;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -21,7 +21,7 @@ import java.io.IOException;
 
 public class AchievementScene extends Scene
 {
-    private StringProperty valueOfSuccess = new SimpleStringProperty();
+    private final StringProperty valueOfSuccess = new SimpleStringProperty();
     private final Stage stage;
     private final TilePane tilePane;
     private final AchievementManager achievementManager;

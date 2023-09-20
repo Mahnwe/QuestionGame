@@ -1,4 +1,4 @@
-package View;
+package view;
 
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -42,13 +42,13 @@ public class TrophyScene extends Scene
         VBox nbrOfCups = new VBox();
 
         TextArea nbrOfGoldCup = new TextArea();
-        setUpCupTextArea(nbrOfGoldCup, String.valueOf(trophyHandler.ReadInGoldCupFile()));
+        setUpCupTextArea(nbrOfGoldCup, String.valueOf(trophyHandler.readInGoldCupFile()));
 
         TextArea nbrOfSilverCup = new TextArea();
-        setUpCupTextArea(nbrOfSilverCup, String.valueOf(trophyHandler.ReadInSilverCupFile()));
+        setUpCupTextArea(nbrOfSilverCup, String.valueOf(trophyHandler.readInSilverCupFile()));
 
         TextArea nbrOfBronzeCup = new TextArea();
-        setUpCupTextArea(nbrOfBronzeCup, String.valueOf(trophyHandler.ReadInBronzeCupFile()));
+        setUpCupTextArea(nbrOfBronzeCup, String.valueOf(trophyHandler.readInBronzeCupFile()));
 
         nbrOfCups.getChildren().add(nbrOfGoldCup);
         nbrOfCups.getChildren().add(nbrOfSilverCup);

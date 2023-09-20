@@ -1,12 +1,14 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class GameHandler
 {
    private final QuestionStorage questionBank;
    private final ArrayList<Question> questionList;
+   private final Random randomIndex;
 
    private int questionCount;
 
@@ -14,6 +16,7 @@ public class GameHandler
     {
         this.questionBank = new QuestionStorage();
         this.questionList = new ArrayList<>();
+        randomIndex = new Random();
     }
 
     public void setupQuestionList(int listSize)
@@ -31,20 +34,19 @@ public class GameHandler
         return questionCount >= questionList.size();
     }
 
-    public void IncreaseQuestionCount()
+    public void increaseQuestionCount()
     {
         questionCount++;
     }
 
     public int generateRandomIndex()
     {
-        Random randomIndex = new Random();
         int maxRandom = questionBank.getQuestionList().size();
         int minRandom = 0;
         return randomIndex.nextInt((maxRandom - 1 - minRandom) + 1) + minRandom;
     }
 
-    public ArrayList<Question> getQuestionList() {
+    public List<Question> getQuestionList() {
         return questionList;
     }
 

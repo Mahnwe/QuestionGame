@@ -1,4 +1,4 @@
-package View;
+package view;
 
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -70,7 +70,7 @@ public class MainScene extends Scene
         nextQuestionButton.setOnAction(e -> {
             if(questionInterface.isPlayerAnswer())
             {
-                playerInfoVBox.IncreaseScore();
+                playerInfoVBox.increaseScore();
             }
             playerInfoVBox.getPlayerScoreLabel().setText("Score : "+playerInfoVBox.getPlayer().getPlayerScore()+"/"+gameHandler.getQuestionCount());
             checkGameEnding();
@@ -83,7 +83,7 @@ public class MainScene extends Scene
         questionInterface.getQuestionToAsk().setText("Question n°" + (gameHandler.getQuestionCount() + 1) + " : " + questionInterface.getQuestion().getQuestionToAsk());
         setAnswersButtonListeners();
         menuPane.setCenter(questionInterface);
-        gameHandler.IncreaseQuestionCount();
+        gameHandler.increaseQuestionCount();
     }
 
     public void setDisplayResult()

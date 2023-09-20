@@ -1,4 +1,4 @@
-package View;
+package view;
 
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
@@ -78,7 +78,7 @@ public class QuestionInterface extends BorderPane
         for(int i = 0; i<questionList.getQuestionList().size(); i++)
         {
             questionToAsk = new Label();
-            questionToAsk.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 14));
+            questionToAsk.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
             questionToAsk.setTextFill(Color.GHOSTWHITE);
             questionToAsk.setTranslateX(25);
             questionToAsk.setTranslateY(5);
@@ -99,27 +99,27 @@ public class QuestionInterface extends BorderPane
     public void createAnswerButton()
     {
             answerButton1 = new Button(question.getAnswerList().get(0));
-            answerButton1.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 14));
+            answerButton1.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
             setAnswerButtonOnAction(answerButton1);
             placeButton(answerButton1, 40, 70);
 
             answerButton2 = new Button(question.getAnswerList().get(1));
-            answerButton2.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 14));
+            answerButton2.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
             setAnswerButtonOnAction(answerButton2);
             placeButton(answerButton2, 75, 70);
 
             answerButton3 = new Button(question.getAnswerList().get(2));
-            answerButton3.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 14));
+            answerButton3.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
             setAnswerButtonOnAction(answerButton3);
             placeButton(answerButton3, -14, 320);
 
             answerButton4 = new Button(question.getAnswerList().get(3));
-            answerButton4.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 14));
+            answerButton4.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
             setAnswerButtonOnAction(answerButton4);
             placeButton(answerButton4, 22, 320);
 
             nextQuestionButton = new Button("Question suivante");
-            nextQuestionButton.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 14));
+            nextQuestionButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
             placeButton(nextQuestionButton, 70, 180);
     }
 
@@ -175,11 +175,11 @@ public class QuestionInterface extends BorderPane
         displayResult.setBorder(border);
 
         Label goodResult = new Label("Bonne réponse !");
-        goodResult.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        goodResult.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         goodResult.setTextFill(Color.GHOSTWHITE);
 
         explanation = new Label(question.getExplanation());
-        explanation.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 14));
+        explanation.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
         explanation.setTextFill(Color.GHOSTWHITE);
         explanation.setTranslateY(20);
 
@@ -192,12 +192,12 @@ public class QuestionInterface extends BorderPane
     private void displayBadAnswer()
     {
         Label badResult = new Label("Mauvaise réponse !");
-        badResult.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 15));
+        badResult.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         badResult.setTextFill(Color.GHOSTWHITE);
         badResult.setTranslateY(120);
 
         explanation = new Label(question.getExplanation());
-        explanation.setFont(Font.font("Verdana", FontWeight.EXTRA_LIGHT, 14));
+        explanation.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
         explanation.setTextFill(Color.GHOSTWHITE);
         explanation.setTranslateY(140);
 

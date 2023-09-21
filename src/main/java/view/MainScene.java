@@ -107,7 +107,7 @@ public class MainScene extends Scene
             boolean append = true;
             FileWriter fw = new FileWriter(saveFile.getAbsoluteFile(), append);
             BufferedWriter bw = new BufferedWriter(fw);
-            bw.write("Nom : "+playerInfoVBox.getPlayer().getPlayerName()+"  "+" Score : "+playerInfoVBox.getPlayer().getPlayerScore()+" sur "+gameHandler.getQuestionCount()+" en "+ResultScene.playerTimerElapsedMinutes+ "min "+ResultScene.playerTimerElapsedSecondes+"sec"+"\n");
+            bw.write("Nom : "+playerInfoVBox.getPlayer().getPlayerName()+"  "+" Score : "+playerInfoVBox.getPlayer().getPlayerScore()+" sur "+gameHandler.getQuestionCount()+" en "+GameTimer.getElapsedMinutes()+ "min "+GameTimer.getElapsedSeconds()+"sec"+"\n");
             bw.close();
         }catch (IOException e) {
             e.printStackTrace();

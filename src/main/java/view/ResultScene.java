@@ -35,8 +35,6 @@ public class ResultScene extends VBox
     private final File silverCupFile;
     private final File bronzeCupFile;
     private final int questionCount;
-    public static long playerTimerElapsedMinutes;
-    public static long playerTimerElapsedSecondes;
 
     public ResultScene(BorderPane pane, int playerFinalScore, int questionCount, TrophyHandler trophyHandler, AchievementManager achievementManager, Stage stage, File perfectScoreFile, File perfectScoreFile15, File perfectScoreFile20, File goldCupFile, File silverCupFile, File bronzeCupFile)
     {
@@ -65,10 +63,7 @@ public class ResultScene extends VBox
         Label timeLabel = new Label();
         timeLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         timeLabel.setTextFill(Color.GHOSTWHITE);
-        timeLabel.setText("Votre chrono : "+ GameTimer.elapsedMinutes+ "min "+GameTimer.secondsDisplay+"sec");
-        playerTimerElapsedMinutes = GameTimer.elapsedMinutes;
-        playerTimerElapsedSecondes = GameTimer.elapsedSeconds;
-
+        timeLabel.setText("Votre chrono : "+ GameTimer.getElapsedMinutes() + "min "+ GameTimer.getSecondsDisplay() +"sec");
 
         gameResult.getChildren().add(congratsLabel);
         gameResult.getChildren().add(playerResult);
@@ -243,7 +238,6 @@ public class ResultScene extends VBox
             BufferedWriter bw = new BufferedWriter(fw);
             String lineReplacement = lineToReplace.replace(lineToReplace, stringToUse);
             bw.write(lineReplacement);
-            bw.close();
         }catch (IOException e) {
             e.printStackTrace();
         }

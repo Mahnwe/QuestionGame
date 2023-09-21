@@ -162,6 +162,14 @@ public class QuestionStorage
         Question question33 = new Question("Quel est le fruit le plus consommé en France ?", "La banane", "La poire", "L'orange", "La pomme",
                 "La pomme", "La pomme est le fruit le plus consommé en france, juste devant la banane et l'orange");
         questionList.add(question33);
+
+        Question question34 = new Question("Quelle est la vitesse maximale de l'air expiré par un éternuement ?", "17km/h", "35km/h",
+                "55km/h", "45km/h", "55km/h", "L'air expiré par un éternuement peux atteindre 55km/h");
+        questionList.add(question34);
+
+        Question question35 = new Question("Quelle est la ville avec la plus grande densité de population du monde ?", "Manille", "Dacca",
+                "Le Caire", "Hong Kong", "Manille", "Manille est la ville avec la plus grande densité du monde avec plus de 40 000 habitants/km²");
+        questionList.add(question35);
     }
 
     public List<Question> getQuestionList() {

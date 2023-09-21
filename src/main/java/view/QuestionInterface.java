@@ -121,6 +121,7 @@ public class QuestionInterface extends BorderPane
             nextQuestionButton = new Button("Question suivante");
             nextQuestionButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
             placeButton(nextQuestionButton, 70, 180);
+            nextQuestionButton.setDisable(true);
     }
 
     public void placeButton(Button button, int translateY, int translateX)
@@ -164,6 +165,7 @@ public class QuestionInterface extends BorderPane
               showGoodAnswer(answerButton3); showGoodAnswer(answerButton4);
               displayBadAnswer();
           }
+          nextQuestionButton.setDisable(false);
           disableButtons();
     }
 

@@ -176,12 +176,7 @@ public class ResultScene extends VBox
     public String checkAndGetNumberOfCup(String stringToCheck)
     {
         String numberGetter;
-        if(stringToCheck.length() == 15) {
-            numberGetter = stringToCheck.substring(stringToCheck.length() - 3, stringToCheck.length() - 1);
-        }
-        else {
-            numberGetter = String.valueOf(stringToCheck.charAt(stringToCheck.length() -2));
-        }
+        numberGetter = String.valueOf(stringToCheck.charAt(stringToCheck.length() -2));
         return numberGetter;
     }
 

@@ -14,77 +14,79 @@ public class QuestionStorage
 
     public void createQuestions()
     {
-        Question question1 = new Question("Quelle est la superficie du Brésil ?","8 547 404km²",
-                "3 682 607km²", "5 360 419km²", "10 853 730km²", "8 547 404km²",
-                "Le Brésil fait 8 547 404km² ce qui en fait le 5ème plus grand pays du monde en superficie"+"\n"+"et le 1er en Amérique du sud");
+        Question question1 = new Question(UtilStringStorage.QUESTION_1,UtilStringStorage.ANSWER_A1,
+                UtilStringStorage.ANSWER_B1, UtilStringStorage.ANSWER_C1, UtilStringStorage.ANSWER_D1, UtilStringStorage.GOOD_ANSWER_1,
+                UtilStringStorage.EXPLANATION_1);
         questionList.add(question1);
 
-        Question question2 = new Question("Quelle est la date de la bataille d'Alésia ?", "253 ap JC",
-                "186 av JC", "67 ap JC", "52 av JC", "52 av JC",
-                "La bataille d'Alésia se déroule en 52 av JC et des peuples habitant la 'Gaule'"+"\n"+"(appelés ainsi par Jule César) et les armées romaines menées par ce dernier");
+        Question question2 = new Question(UtilStringStorage.QUESTION_2,UtilStringStorage.ANSWER_A2,
+                UtilStringStorage.ANSWER_B2, UtilStringStorage.ANSWER_C2, UtilStringStorage.ANSWER_D2, UtilStringStorage.GOOD_ANSWER_2,
+                UtilStringStorage.EXPLANATION_2);
         questionList.add(question2);
 
-        Question question3 = new Question("Qu'est ce que le 'chibouque' ?", "Une espèce rare de bouc",
-                "L'ancêtre des narguilés", "Une insulte du patois auvergnat", "Ce mot n'existe pas", "L'ancêtre des narguilés",
-                "'Chibouque' est l'ancien nom donné au narguilés ou chicha actuels");
+        Question question3 = new Question(UtilStringStorage.QUESTION_3,UtilStringStorage.ANSWER_A3,
+                UtilStringStorage.ANSWER_B3, UtilStringStorage.ANSWER_C3, UtilStringStorage.ANSWER_D3, UtilStringStorage.GOOD_ANSWER_3,
+                UtilStringStorage.EXPLANATION_3);
         questionList.add(question3);
 
-        Question question4 = new Question("Ou se trouve l'archipel des 'Comores' ?", "A l'Ouest de l'Argentine",
-                "A l'Est de l'Australie", "Au Sud des Caraibes", "Au Nord de Madagascar", "Au Nord de Madagascar",
-                "L'archipel des Comores est situé au Nord de Madagascar et est composé de 4 îles");
+        Question question4 = new Question(UtilStringStorage.QUESTION_4,UtilStringStorage.ANSWER_A4,
+                UtilStringStorage.ANSWER_B4, UtilStringStorage.ANSWER_C4, UtilStringStorage.ANSWER_D4, UtilStringStorage.GOOD_ANSWER_4,
+                UtilStringStorage.EXPLANATION_4);
         questionList.add(question4);
 
-        Question question5 = new Question("De quel pays les wéta géants sont ils endémiques ?", "Du Perou",
-                "De Nouvelle Zélande", "D'Afrique du Sud", "De Norvège", "De Nouvelle Zélande",
-                "Les wétas géants sont endémiques de Nouvelle-Zélande et font partie"+"\n"+"des plus grands et des plus lourds insectes du monde");
+        Question question5 = new Question(UtilStringStorage.QUESTION_5,UtilStringStorage.ANSWER_A5,
+                UtilStringStorage.ANSWER_B5, UtilStringStorage.ANSWER_C5, UtilStringStorage.ANSWER_D5, UtilStringStorage.GOOD_ANSWER_5,
+                UtilStringStorage.EXPLANATION_5);
         questionList.add(question5);
 
-        Question question6 = new Question("De quel siècle date l'invention des lunettes ?", "Du 11e siecle",
-                "Du 15e siecle", "Du 13e siecle", "Du 9e siecle", "Du 13e siecle",
-                "Les premières lunettes composée de 2 branches et deux verres"+"\n"+"sont inventées au 13ème siècle mais sont très différentes de celle de nos jours");
+        Question question6 = new Question(UtilStringStorage.QUESTION_6,UtilStringStorage.ANSWER_A6,
+                UtilStringStorage.ANSWER_B6, UtilStringStorage.ANSWER_C6, UtilStringStorage.ANSWER_D6, UtilStringStorage.GOOD_ANSWER_6,
+                UtilStringStorage.EXPLANATION_6);
         questionList.add(question6);
 
-        Question question7 = new Question("Qu'est ce que le 'Sepak Takraw' ?", "Un sport insolite",
-                "Un plat très épicé", "Un animal en voie de disparition", "Une cérémonie religieuse", "Un sport insolite",
-                "Le Sepak Takraw est un sport proche du volley-ball et est très populaire en Asie du sud-est");
+        Question question7 = new Question(UtilStringStorage.QUESTION_7,UtilStringStorage.ANSWER_A7,
+                UtilStringStorage.ANSWER_B7, UtilStringStorage.ANSWER_C7, UtilStringStorage.ANSWER_D7, UtilStringStorage.GOOD_ANSWER_7,
+                UtilStringStorage.EXPLANATION_7);
         questionList.add(question7);
 
-        Question question8 = new Question("A quelle profondeur se trouve le point le plus profond des océans ?", "8 848 metres",
-                "21 325 metres", "10 994 metres", "16 687 metres", "10 994 metres",
-                "Le point le plus profond des océans s'appelle le Challenger Deep et a été mesuré à 10 994 metres");
+        Question question8 = new Question(UtilStringStorage.QUESTION_8,UtilStringStorage.ANSWER_A8,
+                UtilStringStorage.ANSWER_B8, UtilStringStorage.ANSWER_C8, UtilStringStorage.ANSWER_D8, UtilStringStorage.GOOD_ANSWER_8,
+                UtilStringStorage.EXPLANATION_8);
         questionList.add(question8);
 
-        Question question9 = new Question("Quand sont apparues les premières tortues ?", "Il y a 67 millions d'années",
-                "Il y a 330 millions d'années", "Il y a 130 millions d'années", "Il y a 210 millions d'années", "Il y a 210 millions d'années",
-                "Les premières tortues sont apparus il y a environ 210 millions d'années"+"\n"+"pendant la période du Trias et étaient semi-aquatique");
+        Question question9 = new Question(UtilStringStorage.QUESTION_9,UtilStringStorage.ANSWER_A9,
+                UtilStringStorage.ANSWER_B9, UtilStringStorage.ANSWER_C9, UtilStringStorage.ANSWER_D9, UtilStringStorage.GOOD_ANSWER_9,
+                UtilStringStorage.EXPLANATION_9);
         questionList.add(question9);
 
-        Question question10 = new Question("A quelle température est le point chaud crée par la pince de la crevette pistolet ?",
-                "4700 degres Celsius", "1225 degres Celsius", "6430 degres Celsius", "2500 degres Celsius", "4700 degres Celsius",
-                "La crevette pistolet peux créer un point chaud de 4700 degrés Celsius"+"\n"+" se rapprochant de la température à la surface du Soleil (5900 degrès)");
+        Question question10 = new Question(UtilStringStorage.QUESTION_10,UtilStringStorage.ANSWER_A10,
+                UtilStringStorage.ANSWER_B10, UtilStringStorage.ANSWER_C10, UtilStringStorage.ANSWER_D10, UtilStringStorage.GOOD_ANSWER_10,
+                UtilStringStorage.EXPLANATION_10);
         questionList.add(question10);
 
-        Question question11 = new Question("Quel est le plus grand mammifère marin connu ?",
-                "L'orque", "La baleine grise", "La baleine bleue", "Le cachalot",
-                "La baleine bleue", "Le plus grand mammifère marin connu est la baleine bleue avec en moyenne"+"\n"+"25 mètres de long pour 130 tonnes");
+        Question question11 = new Question(UtilStringStorage.QUESTION_11,UtilStringStorage.ANSWER_A11,
+                UtilStringStorage.ANSWER_B11, UtilStringStorage.ANSWER_C11, UtilStringStorage.ANSWER_D11, UtilStringStorage.GOOD_ANSWER_11,
+                UtilStringStorage.EXPLANATION_11);
         questionList.add(question11);
 
-        Question question12 = new Question("Quel est le jeu vidéo le plus vendu de l'histoire ?", "Tetris", "Minecraft",
-                "Wii Sports", "Grand Theft Auto V", "Minecraft", "Minecraft est le jeu vidéo le plus vendu de l'histoire avec 238 millions d'unités vendus");
+        Question question12 = new Question(UtilStringStorage.QUESTION_12,UtilStringStorage.ANSWER_A12,
+                UtilStringStorage.ANSWER_B12, UtilStringStorage.ANSWER_C12, UtilStringStorage.ANSWER_D12, UtilStringStorage.GOOD_ANSWER_12,
+                UtilStringStorage.EXPLANATION_12);
         questionList.add(question12);
 
-        Question question13 = new Question("En quelle année est sorti le film 'Le voyage dans la Lune' de Georges Méliès ?", "1898",
-                "1921", "1937", "1902", "1902", "Le voyage dans la Lune est sorti en 1902 et est la première oeuvre de Science-fiction au cinéma");
+        Question question13 = new Question(UtilStringStorage.QUESTION_13,UtilStringStorage.ANSWER_A13,
+                UtilStringStorage.ANSWER_B13, UtilStringStorage.ANSWER_C13, UtilStringStorage.ANSWER_D13, UtilStringStorage.GOOD_ANSWER_13,
+                UtilStringStorage.EXPLANATION_13);
         questionList.add(question13);
 
-        Question question14 = new Question("Quelle est la distance Terre-Lune au point le plus proche ?", "245 320km",
-                "356 700km", "406 300km", "556 820km", "356 700km",
-                "Lorsque la Lune est à son périgée la distance Terre-Lune est de 356 700km");
+        Question question14 = new Question(UtilStringStorage.QUESTION_14,UtilStringStorage.ANSWER_A14,
+                UtilStringStorage.ANSWER_B14, UtilStringStorage.ANSWER_C14, UtilStringStorage.ANSWER_D14, UtilStringStorage.GOOD_ANSWER_14,
+                UtilStringStorage.EXPLANATION_14);
         questionList.add(question14);
 
-        Question question15 = new Question("Quel est l'âge de l'arbre le plus vieux du monde ?", "4855ans",
-                "3650ans", "2305ans", "3122ans", "4855ans",
-                "L'arbre le plus vieux du monde est un Pin Bristlecone"+"\n"+"nommé Mathusalem et âgé de 4855ans");
+        Question question15 = new Question(UtilStringStorage.QUESTION_15,UtilStringStorage.ANSWER_A15,
+                UtilStringStorage.ANSWER_B15, UtilStringStorage.ANSWER_C15, UtilStringStorage.ANSWER_D15, UtilStringStorage.GOOD_ANSWER_15,
+                UtilStringStorage.EXPLANATION_15);
         questionList.add(question15);
 
         Question question16 = new Question("Quel est le plus grand océan du monde en superficie ?", "Océan Indien",

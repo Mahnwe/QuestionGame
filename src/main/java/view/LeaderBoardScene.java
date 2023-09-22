@@ -45,6 +45,7 @@ public class LeaderBoardScene extends Scene
 
         leaderBoardArea.setMinSize(400, 400);
         leaderBoardArea.setText(String.valueOf(stringBuilder));
+        leaderBoardArea.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
 
         leaderBoardVBox.getChildren().add(leaderBoardLabel);
         leaderBoardVBox.getChildren().add(leaderBoardArea);

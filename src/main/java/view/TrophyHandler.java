@@ -7,16 +7,17 @@ public class TrophyHandler
 
     public TrophyHandler()
     {
+        // No need to instantiate something, this class handle writing and reading in files
     }
 
     public void writeInCupFile(File file, String stringToUse, String lineToReplace)
     {
         try {
             FileWriter fw = new FileWriter(file.getAbsoluteFile());
-            BufferedWriter bw = new BufferedWriter(fw);
-            String lineReplacement = lineToReplace.replace(lineToReplace, stringToUse);
-            bw.write(lineReplacement);
-            bw.close();
+            try (BufferedWriter bw = new BufferedWriter(fw)) {
+                String lineReplacement = lineToReplace.replace(lineToReplace, stringToUse);
+                bw.write(lineReplacement);
+            }
         }catch (IOException e) {
             e.printStackTrace();
         }

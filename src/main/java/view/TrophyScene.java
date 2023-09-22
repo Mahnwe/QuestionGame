@@ -2,15 +2,18 @@ package view;
 
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.AchievementManager;
 import model.IconCreator;
 import model.PathUtil;
+import model.UtilStringStorage;
 
 import java.io.File;
 
@@ -43,34 +46,39 @@ public class TrophyScene extends Scene
 
         VBox nbrOfCups = new VBox();
 
-        TextArea nbrOfGoldCup = new TextArea();
-        setUpCupTextArea(nbrOfGoldCup, String.valueOf(trophyHandler.readInCupFile(goldCupFile)));
+        Label nbrOfGoldCupLabel = new Label();
+        nbrOfGoldCupLabel.setText(String.valueOf(trophyHandler.readInCupFile(goldCupFile)));
+        nbrOfGoldCupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
+        placeLabel(nbrOfGoldCupLabel, 10, 50);
 
-        TextArea nbrOfSilverCup = new TextArea();
-        setUpCupTextArea(nbrOfSilverCup, String.valueOf(trophyHandler.readInCupFile(silverCupFile)));
+        Label nbrOfSilverCupLabel = new Label();
+        nbrOfSilverCupLabel.setText(String.valueOf(trophyHandler.readInCupFile(silverCupFile)));
+        nbrOfSilverCupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
+        placeLabel(nbrOfSilverCupLabel, 10, 150);
 
-        TextArea nbrOfBronzeCup = new TextArea();
-        setUpCupTextArea(nbrOfBronzeCup, String.valueOf(trophyHandler.readInCupFile(bronzeCupFile)));
+        Label nbrOfBronzeCupLabel = new Label();
+        nbrOfBronzeCupLabel.setText(String.valueOf(trophyHandler.readInCupFile(bronzeCupFile)));
+        nbrOfBronzeCupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
+        placeLabel(nbrOfBronzeCupLabel, 10, 250);
 
-        nbrOfCups.getChildren().add(nbrOfGoldCup);
-        nbrOfCups.getChildren().add(nbrOfSilverCup);
-        nbrOfCups.getChildren().add(nbrOfBronzeCup);
+        nbrOfCups.getChildren().add(nbrOfGoldCupLabel);
+        nbrOfCups.getChildren().add(nbrOfSilverCupLabel);
+        nbrOfCups.getChildren().add(nbrOfBronzeCupLabel);
         pane.setCenter(nbrOfCups);
 
         HBox buttonHbox = new HBox();
         buttonHbox.setPrefHeight(50);
-        Button returnToMenu = new Button("Retour");
+        Button returnToMenu = new Button(UtilStringStorage.RETURN_BUTTON);
         buttonHbox.getChildren().add(returnToMenu);
         pane.setTop(buttonHbox);
         returnToMenu.setOnAction(event -> backToMainMenu());
 
     }
 
-    public void setUpCupTextArea(TextArea textArea, String string)
+    public void placeLabel(Label label, int x, int y)
     {
-        textArea.setMaxHeight(120);
-        textArea.setEditable(false);
-        textArea.setText(string);
+        label.setTranslateX(x);
+        label.setTranslateY(y);
     }
 
     public void createIcons()

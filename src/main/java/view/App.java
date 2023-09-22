@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import model.AchievementManager;
+import model.UtilStringStorage;
 
 public class App extends Application
 {
@@ -15,7 +16,7 @@ public class App extends Application
         stage.setMinHeight(500);
         stage.setMinWidth(900);
         stage.setScene(menuScene);
-        stage.setTitle("Turbo Jeu des Questions");
+        stage.setTitle(UtilStringStorage.GAME_TITLE);
         stage.show();
 
     }

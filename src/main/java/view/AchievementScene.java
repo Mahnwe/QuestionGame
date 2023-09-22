@@ -13,6 +13,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.Achievement;
 import model.AchievementManager;
+import model.UtilStringStorage;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -76,7 +77,7 @@ public class AchievementScene extends Scene
 
         HBox buttonHbox = new HBox();
         buttonHbox.setPrefHeight(50);
-        Button returnToMenu = new Button("Retour");
+        Button returnToMenu = new Button(UtilStringStorage.RETURN_BUTTON);
         buttonHbox.getChildren().add(returnToMenu);
         pane.setTop(buttonHbox);
         returnToMenu.setOnAction(event -> backToMainMenu());
@@ -215,12 +216,12 @@ public class AchievementScene extends Scene
         String unlockValue;
         if(achievement.isUnlock())
         {
-            unlockValue = "Succés obtenu";
+            unlockValue = UtilStringStorage.SUCCESS_UNLOCK;
             achievement.setLockImageView(achievement.getUnlockImageView());
         }
         else
         {
-            unlockValue = "Succés vérouillé";
+            unlockValue = UtilStringStorage.SUCCESS_LOCK;
         }
         valueOfSuccess.setValue(unlockValue);
         label.setText(unlockValue);

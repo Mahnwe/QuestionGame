@@ -238,6 +238,7 @@ public class ResultScene extends VBox
             BufferedWriter bw = new BufferedWriter(fw);
             String lineReplacement = lineToReplace.replace(lineToReplace, stringToUse);
             bw.write(lineReplacement);
+            bw.close();
         }catch (IOException e) {
             e.printStackTrace();
         }

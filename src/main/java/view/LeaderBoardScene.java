@@ -2,12 +2,16 @@ package view;
 
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.AchievementManager;
+import model.UtilStringStorage;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -34,16 +38,22 @@ public class LeaderBoardScene extends Scene
         readFile();
         VBox leaderBoardVBox = new VBox();
         leaderBoardVBox.setMinSize(400, 400);
+
         TextArea leaderBoardArea = new TextArea();
+        Label leaderBoardLabel = new Label(UtilStringStorage.LEADERBOARD_LABEL);
+        leaderBoardLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
+
         leaderBoardArea.setMinSize(400, 400);
         leaderBoardArea.setText(String.valueOf(stringBuilder));
+
+        leaderBoardVBox.getChildren().add(leaderBoardLabel);
         leaderBoardVBox.getChildren().add(leaderBoardArea);
         leaderBoardArea.setEditable(false);
         pane.setCenter(leaderBoardVBox);
 
         HBox buttonHbox = new HBox();
         buttonHbox.setPrefHeight(50);
-        Button returnToMenu = new Button("Retour");
+        Button returnToMenu = new Button(UtilStringStorage.RETURN_BUTTON);
         buttonHbox.getChildren().add(returnToMenu);
         pane.setTop(buttonHbox);
         returnToMenu.setOnAction(event -> backToMainMenu());

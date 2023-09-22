@@ -78,7 +78,7 @@ public class MenuScene extends Scene
     public void createWelcomeArea()
     {
         VBox welcomeArea = new VBox();
-        Label welcomeInGame = new Label("Bienvenue dans le Turbo Jeu des Questions !");
+        Label welcomeInGame = new Label(UtilStringStorage.WELCOME_LABEL);
         welcomeInGame.setTextFill(Color.BLACK);
         welcomeInGame.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         welcomeArea.getChildren().add(createStatArea(welcomeInGame));
@@ -97,20 +97,20 @@ public class MenuScene extends Scene
         leaderBoardVBox.setBorder(border);
         leaderBoardVBox.setPrefWidth(105);
 
-        Button leaderBoardButton = new Button("Classement");
-        Tooltip leaderBoardTooltip = new Tooltip("Cliquez sur 'Classement' pour retrouver les scores de vos parties précédentes");
+        Button leaderBoardButton = new Button(UtilStringStorage.LEADERBOARD_BUTTON);
+        Tooltip leaderBoardTooltip = new Tooltip(UtilStringStorage.LEADERBOARD_TOOLTIP);
         leaderBoardButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
         placeButtons(leaderBoardButton, 5, 70);
         leaderBoardButton.setTooltip(leaderBoardTooltip);
 
-        Button trophyButton = new Button("Trophées");
-        Tooltip trophyTooltip = new Tooltip("Cliquez sur 'Trophées' pour voir tout les trophées débloqués");
+        Button trophyButton = new Button(UtilStringStorage.TROPHY_BUTTON);
+        Tooltip trophyTooltip = new Tooltip(UtilStringStorage.TROPHY_TOOLTIP);
         trophyButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
         placeButtons(trophyButton, 10, 150);
         trophyButton.setTooltip(trophyTooltip);
 
-        Button achievementButton = new Button("Succés");
-        Tooltip achievementTooltip = new Tooltip("Cliquez sur 'Succés' pour voir tout les succés");
+        Button achievementButton = new Button(UtilStringStorage.ACHIEVEMENT_BUTTON);
+        Tooltip achievementTooltip = new Tooltip(UtilStringStorage.ACHIEVEMENT_TOOLTIP);
         achievementButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
         placeButtons(achievementButton, 10, 230);
         achievementButton.setTooltip(achievementTooltip);
@@ -140,20 +140,20 @@ public class MenuScene extends Scene
     {
         VBox selectModeArea = new VBox();
 
-        Label chooseMode = new Label("Choisissez votre mode de jeu");
+        Label chooseMode = new Label(UtilStringStorage.CHOOSE_MODE);
         chooseMode.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         chooseMode.setTextFill(Color.BLACK);
         chooseMode.setTranslateX(200);
 
-        tenModeButton = new Button("Dix questions");
+        tenModeButton = new Button(UtilStringStorage.MODE_10_BUTTON);
         tenModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         placeButtons(tenModeButton, 250, 50);
 
-        fifteenModeButton = new Button("Quinze questions");
+        fifteenModeButton = new Button(UtilStringStorage.MODE_15_BUTTON);
         fifteenModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         placeButtons(fifteenModeButton, 250, 100);
 
-        twentyModeButton = new Button("Vingt questions");
+        twentyModeButton = new Button(UtilStringStorage.MODE_20_BUTTON);
         twentyModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         placeButtons(twentyModeButton, 250, 150);
 

@@ -78,7 +78,7 @@ public class MainScene extends Scene
             {
                 playerInfoVBox.increaseScore();
             }
-            playerInfoVBox.getPlayerScoreLabel().setText("Score : "+playerInfoVBox.getPlayer().getPlayerScore()+"/"+gameHandler.getQuestionCount());
+            playerInfoVBox.getPlayerScoreLabel().setText(UtilStringStorage.SCORE_LABEL+playerInfoVBox.getPlayer().getPlayerScore()+"/"+gameHandler.getQuestionCount());
             checkGameEnding();
         });
     }
@@ -86,7 +86,7 @@ public class MainScene extends Scene
     public void createNewQuestionInterface()
     {
         questionInterface = new QuestionInterface(new BorderPane(), gameHandler.getQuestionList().get(gameHandler.getQuestionCount()));
-        questionInterface.getQuestionToAsk().setText("Question n°" + (gameHandler.getQuestionCount() + 1) + " : " + questionInterface.getQuestion().getQuestionToAsk());
+        questionInterface.getQuestionToAsk().setText(UtilStringStorage.QUESTION_NUMBER + (gameHandler.getQuestionCount() + 1) + " : " + questionInterface.getQuestion().getQuestionToAsk());
         setAnswersButtonListeners();
         menuPane.setCenter(questionInterface);
         gameHandler.increaseQuestionCount();
@@ -94,11 +94,11 @@ public class MainScene extends Scene
 
     public void setDisplayResult()
     {
+        ResultScene resultScene = new ResultScene(menuPane, playerInfoVBox.getPlayer().getPlayerScore(), gameHandler.getQuestionCount(), trophyHandler, achievementManager, stage, perfectScoreFile10, perfectScoreFile15, perfectScoreFile20, goldCupFile, silverCupFile, bronzeCupFile);
         GameTimer.stopTimer();
         GameTimer.setTimerDisplay();
-        ResultScene resultScene = new ResultScene(menuPane, playerInfoVBox.getPlayer().getPlayerScore(), gameHandler.getQuestionCount(), trophyHandler, achievementManager, stage, perfectScoreFile10, perfectScoreFile15, perfectScoreFile20, goldCupFile, silverCupFile, bronzeCupFile);
-        resultScene.getCongratsLabel().setText("Bravo "+playerInfoVBox.getPlayer().getPlayerName()+" vous avez répondu à toutes les questions !");
-        resultScene.getPlayerResult().setText("Votre score : "+playerInfoVBox.getPlayer().getPlayerScore()+" sur "+gameHandler.getQuestionCount());
+        resultScene.getCongratsLabel().setText(UtilStringStorage.CONGRATS_LABEL+playerInfoVBox.getPlayer().getPlayerName()+UtilStringStorage.ANSWER_ALL_QUESTIONS);
+        resultScene.getPlayerResult().setText(UtilStringStorage.PLAYER_RESULT+playerInfoVBox.getPlayer().getPlayerScore()+UtilStringStorage.SCORE_ON+gameHandler.getQuestionCount());
     }
 
     public void saveScoreInFile()
@@ -107,7 +107,7 @@ public class MainScene extends Scene
             boolean append = true;
             FileWriter fw = new FileWriter(saveFile.getAbsoluteFile(), append);
             BufferedWriter bw = new BufferedWriter(fw);
-            bw.write("Nom : "+playerInfoVBox.getPlayer().getPlayerName()+"  "+" Score : "+playerInfoVBox.getPlayer().getPlayerScore()+" sur "+gameHandler.getQuestionCount()+" en "+GameTimer.getElapsedMinutes()+ "min "+GameTimer.getElapsedSeconds()+"sec"+"\n");
+            bw.write(UtilStringStorage.PLAYER_NAME_INFILE+playerInfoVBox.getPlayer().getPlayerName()+"  "+UtilStringStorage.SCORE_LABEL_INFILE+playerInfoVBox.getPlayer().getPlayerScore()+UtilStringStorage.SCORE_ON+gameHandler.getQuestionCount()+UtilStringStorage.GAME_IN+GameTimer.getElapsedMinutes()+UtilStringStorage.GAME_MINUTES+GameTimer.getElapsedSeconds()+UtilStringStorage.GAME_SECONDES+"\n");
             bw.close();
         }catch (IOException e) {
             e.printStackTrace();

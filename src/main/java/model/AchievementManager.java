@@ -18,22 +18,22 @@ public class AchievementManager
     public AchievementManager()
     {
         createIcons();
-        Achievement goldCupAchievement = new Achievement(lockImageView, 5, false, "Gagnez 5 coupes d'or");
+        Achievement goldCupAchievement = new Achievement(lockImageView, 5, false, UtilStringStorage.GOLD_CUP_ACHIEVEMENT_DESCRIPTION);
         achievementsList.add(goldCupAchievement);
 
-        Achievement silverCupAchievement = new Achievement(lockImageView2, 5, false, "Gagnez 5 coupes d'argent");
+        Achievement silverCupAchievement = new Achievement(lockImageView2, 5, false, UtilStringStorage.SILVER_CUP_ACHIEVEMENT_DESCRIPTION);
         achievementsList.add(silverCupAchievement);
 
-        Achievement bronzeCupAchievement = new Achievement(lockImageView3, 5, false, "Gagnez 5 coupes de bronze");
+        Achievement bronzeCupAchievement = new Achievement(lockImageView3, 5, false, UtilStringStorage.BRONZE_CUP_ACHIEVEMENT_DESCRIPTION);
         achievementsList.add(bronzeCupAchievement);
 
-        Achievement onlyGoodAnswerAchievement = new Achievement(lockImageView4, 10, false, "Faire un score parfait (10 questions)");
+        Achievement onlyGoodAnswerAchievement = new Achievement(lockImageView4, 10, false, UtilStringStorage.PERFECT_SCORE_ACHIEVEMENT);
         achievementsList.add(onlyGoodAnswerAchievement);
 
-        Achievement onlyGoodAnswerAchievement15 = new Achievement(lockImageView5, 15, false, "Faire un score parfait(15 questions)");
+        Achievement onlyGoodAnswerAchievement15 = new Achievement(lockImageView5, 15, false, UtilStringStorage.PERFECT_SCORE15_ACHIEVEMENT);
         achievementsList.add(onlyGoodAnswerAchievement15);
 
-        Achievement onlyGoodAnswerAchievement20 = new Achievement(lockImageView6, 20, false, "Faire un score parfait (20 questions)");
+        Achievement onlyGoodAnswerAchievement20 = new Achievement(lockImageView6, 20, false, UtilStringStorage.PERFECT_SCORE20_ACHIEVEMENT);
         achievementsList.add(onlyGoodAnswerAchievement20);
 
     }

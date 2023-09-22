@@ -7,10 +7,7 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import model.IconCreator;
-import model.PathUtil;
-import model.Question;
-import model.QuestionStorage;
+import model.*;
 
 import java.util.Optional;
 
@@ -56,8 +53,8 @@ public class QuestionInterface extends BorderPane
 
     public void modifyConfirmAlert()
     {
-        confirmAlert.setTitle("Fenêtre de confirmation");
-        confirmAlert.setHeaderText("Êtes-vous sûr ?");
+        confirmAlert.setTitle(UtilStringStorage.CONFIRM_ALERT_WINDOW);
+        confirmAlert.setHeaderText(UtilStringStorage.ASK_TO_CONFIRM);
 
         IconCreator iconCreator = new IconCreator(PathUtil.QUESTION_MARK_TEST);
         ImageView backgroundImage = iconCreator.createImage();
@@ -65,11 +62,11 @@ public class QuestionInterface extends BorderPane
         confirmAlert.setGraphic(backgroundImage);
 
         Button confirmButton = (Button) confirmAlert.getDialogPane().lookupButton(ButtonType.OK);
-        confirmButton.setText("Oui");
+        confirmButton.setText(UtilStringStorage.YES_BUTTON);
         placeButton(confirmButton, -20, -140);
 
         Button cancelButton = (Button) confirmAlert.getDialogPane().lookupButton(ButtonType.CANCEL);
-        cancelButton.setText("Non");
+        cancelButton.setText(UtilStringStorage.NO_BUTTON);
         placeButton(cancelButton, -20, -40);
     }
 
@@ -118,7 +115,7 @@ public class QuestionInterface extends BorderPane
             setAnswerButtonOnAction(answerButton4);
             placeButton(answerButton4, 22, 320);
 
-            nextQuestionButton = new Button("Question suivante");
+            nextQuestionButton = new Button(UtilStringStorage.NEXT_QUESTION_BUTTON);
             nextQuestionButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
             placeButton(nextQuestionButton, 70, 180);
             nextQuestionButton.setDisable(true);
@@ -176,7 +173,7 @@ public class QuestionInterface extends BorderPane
         displayResult.setPrefHeight(80);
         displayResult.setBorder(border);
 
-        Label goodResult = new Label("Bonne réponse !");
+        Label goodResult = new Label(UtilStringStorage.GOOD_ANSWER_LABEL);
         goodResult.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         goodResult.setTextFill(Color.GHOSTWHITE);
 
@@ -193,7 +190,7 @@ public class QuestionInterface extends BorderPane
 
     private void displayBadAnswer()
     {
-        Label badResult = new Label("Mauvaise réponse !");
+        Label badResult = new Label(UtilStringStorage.BAD_ANSWER_LABEL);
         badResult.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         badResult.setTextFill(Color.GHOSTWHITE);
         badResult.setTranslateY(120);

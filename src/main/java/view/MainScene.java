@@ -106,9 +106,9 @@ public class MainScene extends Scene
         try {
             boolean append = true;
             FileWriter fw = new FileWriter(saveFile.getAbsoluteFile(), append);
-            BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(UtilStringStorage.PLAYER_NAME_INFILE+playerInfoVBox.getPlayer().getPlayerName()+"  "+UtilStringStorage.SCORE_LABEL_INFILE+playerInfoVBox.getPlayer().getPlayerScore()+UtilStringStorage.SCORE_ON+gameHandler.getQuestionCount()+UtilStringStorage.GAME_IN+GameTimer.getElapsedMinutes()+UtilStringStorage.GAME_MINUTES+GameTimer.getElapsedSeconds()+UtilStringStorage.GAME_SECONDES+"\n");
-            bw.close();
+            try (BufferedWriter bw = new BufferedWriter(fw)) {
+                bw.write(UtilStringStorage.PLAYER_NAME_INFILE + playerInfoVBox.getPlayer().getPlayerName() + "  " + UtilStringStorage.SCORE_LABEL_INFILE + playerInfoVBox.getPlayer().getPlayerScore() + UtilStringStorage.SCORE_ON + gameHandler.getQuestionCount() + UtilStringStorage.GAME_IN + GameTimer.getElapsedMinutes() + UtilStringStorage.GAME_MINUTES + GameTimer.getElapsedSeconds() + UtilStringStorage.GAME_SECONDES + "\n");
+            }
         }catch (IOException e) {
             e.printStackTrace();
         }

@@ -7,6 +7,9 @@ public class UtilStringStorage
 
     // UTIL
     public static final String RETURN_BUTTON = "Retour";
+    public static final String VALIDATE_BUTTON = "Valider";
+    public static final String YES_BUTTON = "Oui";
+    public static final String NO_BUTTON = "Non";
 
     // ACHIEVEMENTS
     public static final String GOLD_CUP_ACHIEVEMENT_DESCRIPTION = "Gagnez 5 coupes d'or";
@@ -46,4 +49,31 @@ public class UtilStringStorage
     public static final String GAME_IN = " en ";
     public static final String GAME_MINUTES = "min ";
     public static final String GAME_SECONDES = "sec";
+
+    // PLAYER INFOS
+    public static final String ASK_PLAYER_NAME = "Entrez votre nom et cliquez sur le bouton 'Valider' (10 charactères maximum)";
+    public static final String PLAYER_NAME_INGAME = "Nom : ";
+    public static final String SCORE_LABEL_INGAME = "Score : ";
+
+    // QUESTION INTERFACE
+    public static final String CONFIRM_ALERT_WINDOW = "Fenêtre de confirmation";
+    public static final String ASK_TO_CONFIRM = "Êtes-vous sûr ?";
+    public static final String NEXT_QUESTION_BUTTON = "Question suivante";
+    public static final String GOOD_ANSWER_LABEL = "Bonne réponse !";
+    public static final String BAD_ANSWER_LABEL = "Mauvaise réponse !";
+
+    // RESULT SCENE
+    public static final String RETURN_TO_MENU_BUTTON = "Retour au menu";
+    public static final String TIME_LABEL = "Votre chrono : ";
+    public static final String MIN_LABEL = "min ";
+    public static final String SECONDES_LABEL = "sec";
+    public static final String NO_CUP_LABEL = "Aucune coupe débloqué, retentez votre chance pour gagner une coupe";
+    public static final String GOLD_CUP_LABEL = "Vous avez gagné la coupe d'or !";
+    public static final String SILVER_CUP_LABEL = "Vous avez gagné la coupe d'argent !";
+    public static final String BRONZE_CUP_LABEL = "Vous avez gagné la coupe de bronze !";
+
+    // TROPHY SCENE
+    public static final String GOLD_CUP_TROPHY = "Coupe d'Or : ";
+    public static final String SILVER_CUP_TROPHY = "Coupe d'Argent : ";
+    public static final String BRONZE_CUP_TROPHY = "Coupe de Bronze : ";
 }

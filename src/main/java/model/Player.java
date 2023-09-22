@@ -7,7 +7,7 @@ public class Player
 
     public Player()
     {
-
+        // No need to instantiate or create something
     }
 
     public String getPlayerName()

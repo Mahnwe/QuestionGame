@@ -37,7 +37,6 @@ public class MenuScene extends Scene
     private final File perfectScoreFile10;
     private final File perfectScoreFile15;
     private final File perfectScoreFile20;
-
     public static final String POLICE_LABEL = "Verdana";
 
     public MenuScene(BorderPane pane, Stage stage, AchievementManager achievementManager)
@@ -129,6 +128,7 @@ public class MenuScene extends Scene
             AchievementScene achievementScene = new AchievementScene(new BorderPane(), achievementManager, menuStage, goldCupFile, silverCupFile, bronzeCupFile, perfectScoreFile10, perfectScoreFile15, perfectScoreFile20);
             menuStage.setScene(achievementScene);
         });
+
 
         leaderBoardVBox.getChildren().add(leaderBoardButton);
         leaderBoardVBox.getChildren().add(trophyButton);

@@ -62,11 +62,11 @@ public class QuestionInterface extends BorderPane
         confirmAlert.setGraphic(backgroundImage);
 
         Button confirmButton = (Button) confirmAlert.getDialogPane().lookupButton(ButtonType.OK);
-        confirmButton.setText(UtilStringStorage.YES_BUTTON);
+        confirmButton.setText(UtilStringStorage.yesButton);
         placeButton(confirmButton, -20, -140);
 
         Button cancelButton = (Button) confirmAlert.getDialogPane().lookupButton(ButtonType.CANCEL);
-        cancelButton.setText(UtilStringStorage.NO_BUTTON);
+        cancelButton.setText(UtilStringStorage.noButton);
         placeButton(cancelButton, -20, -40);
     }
 

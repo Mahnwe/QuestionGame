@@ -77,7 +77,7 @@ public class AchievementScene extends Scene
 
         HBox buttonHbox = new HBox();
         buttonHbox.setPrefHeight(50);
-        Button returnToMenu = new Button(UtilStringStorage.RETURN_BUTTON);
+        Button returnToMenu = new Button(UtilStringStorage.returnButton);
         buttonHbox.getChildren().add(returnToMenu);
         pane.setTop(buttonHbox);
         returnToMenu.setOnAction(event -> backToMainMenu());
@@ -216,12 +216,12 @@ public class AchievementScene extends Scene
         String unlockValue;
         if(achievement.isUnlock())
         {
-            unlockValue = UtilStringStorage.SUCCESS_UNLOCK;
+            unlockValue = UtilStringStorage.successUnlock;
             achievement.setLockImageView(achievement.getUnlockImageView());
         }
         else
         {
-            unlockValue = UtilStringStorage.SUCCESS_LOCK;
+            unlockValue = UtilStringStorage.successLock;
         }
         valueOfSuccess.setValue(unlockValue);
         label.setText(unlockValue);

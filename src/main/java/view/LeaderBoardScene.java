@@ -54,7 +54,7 @@ public class LeaderBoardScene extends Scene
 
         HBox buttonHbox = new HBox();
         buttonHbox.setPrefHeight(50);
-        Button returnToMenu = new Button(UtilStringStorage.RETURN_BUTTON);
+        Button returnToMenu = new Button(UtilStringStorage.returnButton);
         buttonHbox.getChildren().add(returnToMenu);
         pane.setTop(buttonHbox);
         returnToMenu.setOnAction(event -> backToMainMenu());

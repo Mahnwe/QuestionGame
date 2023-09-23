@@ -11,4 +11,6 @@ public class PathUtil
     public static final String MAIN_BACKGROUND = RESOURCES_PATH + "Background/MenuSceneBackground.jpg";
     public static final String LOCK_ICON = RESOURCES_PATH + "Icon/LockedAchievement.png";
     public static final String UNLOCK_ICON = RESOURCES_PATH + "Icon/UnlockAchievement.png";
+    public static final String ENG_TRAD_PROPERTIES_FILE = RESOURCES_PATH + "TradFile/EngTradFile.properties";
+    public static final String FR_TRAD_PROPERTIES_FILE = RESOURCES_PATH + "TradFile/FrTradFile.properties";
 }

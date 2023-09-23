@@ -59,7 +59,7 @@ public class PlayerInfoVBox extends VBox
         userInputArea.setBackground(background);
         userInputArea.setMaxHeight(50);
 
-        sendButton = new Button(UtilStringStorage.VALIDATE_BUTTON);
+        sendButton = new Button(UtilStringStorage.validateButton);
         sendButton.setDisable(true);
         sendButton.setBorder(border);
         sendButton.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));

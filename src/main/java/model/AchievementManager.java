@@ -18,22 +18,22 @@ public class AchievementManager
     public AchievementManager()
     {
         createIcons();
-        Achievement goldCupAchievement = new Achievement(lockImageView, 5, false, UtilStringStorage.GOLD_CUP_ACHIEVEMENT_DESCRIPTION);
+        Achievement goldCupAchievement = new Achievement(lockImageView, 5, false, UtilStringStorage.goldCupAchievementDescription);
         achievementsList.add(goldCupAchievement);
 
-        Achievement silverCupAchievement = new Achievement(lockImageView2, 5, false, UtilStringStorage.SILVER_CUP_ACHIEVEMENT_DESCRIPTION);
+        Achievement silverCupAchievement = new Achievement(lockImageView2, 5, false, UtilStringStorage.silverCupAchievementDescription);
         achievementsList.add(silverCupAchievement);
 
-        Achievement bronzeCupAchievement = new Achievement(lockImageView3, 5, false, UtilStringStorage.BRONZE_CUP_ACHIEVEMENT_DESCRIPTION);
+        Achievement bronzeCupAchievement = new Achievement(lockImageView3, 5, false, UtilStringStorage.bronzeCupAchievementDescription);
         achievementsList.add(bronzeCupAchievement);
 
-        Achievement onlyGoodAnswerAchievement = new Achievement(lockImageView4, 10, false, UtilStringStorage.PERFECT_SCORE_ACHIEVEMENT);
+        Achievement onlyGoodAnswerAchievement = new Achievement(lockImageView4, 10, false, UtilStringStorage.perfectScore10Achievement);
         achievementsList.add(onlyGoodAnswerAchievement);
 
-        Achievement onlyGoodAnswerAchievement15 = new Achievement(lockImageView5, 15, false, UtilStringStorage.PERFECT_SCORE15_ACHIEVEMENT);
+        Achievement onlyGoodAnswerAchievement15 = new Achievement(lockImageView5, 15, false, UtilStringStorage.perfectScore15Achievement);
         achievementsList.add(onlyGoodAnswerAchievement15);
 
-        Achievement onlyGoodAnswerAchievement20 = new Achievement(lockImageView6, 20, false, UtilStringStorage.PERFECT_SCORE20_ACHIEVEMENT);
+        Achievement onlyGoodAnswerAchievement20 = new Achievement(lockImageView6, 20, false, UtilStringStorage.perfectScore20Achievement);
         achievementsList.add(onlyGoodAnswerAchievement20);
 
     }

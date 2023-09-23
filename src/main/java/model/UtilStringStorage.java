@@ -3,23 +3,23 @@ package model;
 public class UtilStringStorage
 {
     // TITLE
-    public static final String GAME_TITLE = "Turbo Jeu des Questions";
+    public static String gameTitle = "";
 
     // UTIL
-    public static final String RETURN_BUTTON = "Retour";
-    public static final String VALIDATE_BUTTON = "Valider";
-    public static final String YES_BUTTON = "Oui";
-    public static final String NO_BUTTON = "Non";
+    public static String returnButton = "";
+    public static String validateButton = "";
+    public static String yesButton = "";
+    public static String noButton = "";
 
     // ACHIEVEMENTS
-    public static final String GOLD_CUP_ACHIEVEMENT_DESCRIPTION = "Gagnez 5 coupes d'or";
-    public static final String SILVER_CUP_ACHIEVEMENT_DESCRIPTION = "Gagnez 5 coupes d'argent";
-    public static final String BRONZE_CUP_ACHIEVEMENT_DESCRIPTION = "Gagnez 5 coupes de bronze";
-    public static final String PERFECT_SCORE_ACHIEVEMENT = "Faire un score parfait (10 questions)";
-    public static final String PERFECT_SCORE15_ACHIEVEMENT = "Faire un score parfait (15 questions)";
-    public static final String PERFECT_SCORE20_ACHIEVEMENT = "Faire un score parfait (20 questions)";
-    public static final String SUCCESS_UNLOCK = "Succés obtenu";
-    public static final String SUCCESS_LOCK = "Succés vérouillé";
+    public static String goldCupAchievementDescription = "";
+    public static String silverCupAchievementDescription = "";
+    public static String bronzeCupAchievementDescription = "";
+    public static String perfectScore10Achievement = "";
+    public static String perfectScore15Achievement = "";
+    public static String perfectScore20Achievement = "";
+    public static String successUnlock = "";
+    public static String successLock = "";
 
     // LEADERBOARD
     public static final String LEADERBOARD_LABEL = "Classement :";

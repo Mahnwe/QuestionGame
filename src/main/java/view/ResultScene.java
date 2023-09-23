@@ -55,12 +55,12 @@ public class ResultScene extends VBox
         playerResult = new Label();
         playerResult.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         playerResult.setTextFill(Color.GHOSTWHITE);
-        Button exitToMenuButton = new Button(UtilStringStorage.RETURN_TO_MENU_BUTTON);
+        Button exitToMenuButton = new Button(UtilStringStorage.returnToMenuButton);
 
         Label timeLabel = new Label();
         timeLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         timeLabel.setTextFill(Color.GHOSTWHITE);
-        timeLabel.setText(UtilStringStorage.TIME_LABEL+ GameTimer.getElapsedMinutes() + UtilStringStorage.MIN_LABEL+ GameTimer.getSecondsDisplay() +UtilStringStorage.SECONDES_LABEL);
+        timeLabel.setText(UtilStringStorage.timeLabel + GameTimer.getElapsedMinutes() + UtilStringStorage.minLabel + GameTimer.getSecondsDisplay() +UtilStringStorage.secondesLabel);
 
         gameResult.getChildren().add(congratsLabel);
         gameResult.getChildren().add(playerResult);
@@ -80,7 +80,7 @@ public class ResultScene extends VBox
         }
         if(playerFinalScore < questionCount*40/100)
         {
-            Label cupLabel = new Label(UtilStringStorage.NO_CUP_LABEL);
+            Label cupLabel = new Label(UtilStringStorage.noCupLabel);
             cupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
             cupLabel.setTextFill(Color.GHOSTWHITE);
             gameResult.getChildren().add(cupLabel);
@@ -130,7 +130,7 @@ public class ResultScene extends VBox
         achievementManager.getAchievementsList().get(0).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(0), nbrOfGoldCup);
         trophyHandler.writeInCupFile(goldCupFile, String.valueOf(nbrOfGoldCup), checkIntInFile);
 
-        Label cupLabel = new Label(UtilStringStorage.GOLD_CUP_LABEL);
+        Label cupLabel = new Label(UtilStringStorage.goldCupLabel);
         cupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         cupLabel.setTextFill(Color.GHOSTWHITE);
         vBox.getChildren().add(cupLabel);
@@ -148,7 +148,7 @@ public class ResultScene extends VBox
         achievementManager.getAchievementsList().get(1).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(1), nbrOfSilverCup);
         trophyHandler.writeInCupFile(silverCupFile, String.valueOf(nbrOfSilverCup), checkIntInFile);
 
-        Label cupLabel = new Label(UtilStringStorage.SILVER_CUP_LABEL);
+        Label cupLabel = new Label(UtilStringStorage.silverCupLabel);
         cupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         cupLabel.setTextFill(Color.GHOSTWHITE);
         vBox.getChildren().add(cupLabel);
@@ -166,7 +166,7 @@ public class ResultScene extends VBox
         achievementManager.getAchievementsList().get(2).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(2), nbrOfBronzeCup);
         trophyHandler.writeInCupFile(bronzeCupFile, String.valueOf(nbrOfBronzeCup), checkIntInFile);
 
-        Label cupLabel = new Label(UtilStringStorage.BRONZE_CUP_LABEL);
+        Label cupLabel = new Label(UtilStringStorage.bronzeCupLabel);
         cupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         cupLabel.setTextFill(Color.GHOSTWHITE);
         vBox.getChildren().add(cupLabel);

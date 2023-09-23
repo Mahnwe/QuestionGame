@@ -47,17 +47,17 @@ public class TrophyScene extends Scene
         VBox nbrOfCups = new VBox();
 
         Label nbrOfGoldCupLabel = new Label();
-        nbrOfGoldCupLabel.setText(UtilStringStorage.GOLD_CUP_TROPHY+ trophyHandler.readInCupFile(goldCupFile));
+        nbrOfGoldCupLabel.setText(UtilStringStorage.goldCupTrophy + trophyHandler.readInCupFile(goldCupFile));
         nbrOfGoldCupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
         placeLabel(nbrOfGoldCupLabel, 10, 50);
 
         Label nbrOfSilverCupLabel = new Label();
-        nbrOfSilverCupLabel.setText(UtilStringStorage.SILVER_CUP_TROPHY+ trophyHandler.readInCupFile(silverCupFile));
+        nbrOfSilverCupLabel.setText(UtilStringStorage.silverCupTrophy + trophyHandler.readInCupFile(silverCupFile));
         nbrOfSilverCupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
         placeLabel(nbrOfSilverCupLabel, 10, 150);
 
         Label nbrOfBronzeCupLabel = new Label();
-        nbrOfBronzeCupLabel.setText(UtilStringStorage.BRONZE_CUP_TROPHY+ trophyHandler.readInCupFile(bronzeCupFile));
+        nbrOfBronzeCupLabel.setText(UtilStringStorage.bronzeCupTrophy + trophyHandler.readInCupFile(bronzeCupFile));
         nbrOfBronzeCupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
         placeLabel(nbrOfBronzeCupLabel, 10, 250);
 

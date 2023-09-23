@@ -77,7 +77,7 @@ public class MenuScene extends Scene
     public void createWelcomeArea()
     {
         VBox welcomeArea = new VBox();
-        Label welcomeInGame = new Label(UtilStringStorage.WELCOME_LABEL);
+        Label welcomeInGame = new Label(UtilStringStorage.welcomeLabel);
         welcomeInGame.setTextFill(Color.BLACK);
         welcomeInGame.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         welcomeArea.getChildren().add(createStatArea(welcomeInGame));
@@ -94,22 +94,22 @@ public class MenuScene extends Scene
     {
         VBox leaderBoardVBox = new VBox();
         leaderBoardVBox.setBorder(border);
-        leaderBoardVBox.setPrefWidth(105);
+        leaderBoardVBox.setPrefWidth(150);
 
-        Button leaderBoardButton = new Button(UtilStringStorage.LEADERBOARD_BUTTON);
-        Tooltip leaderBoardTooltip = new Tooltip(UtilStringStorage.LEADERBOARD_TOOLTIP);
+        Button leaderBoardButton = new Button(UtilStringStorage.leaderBoardButton);
+        Tooltip leaderBoardTooltip = new Tooltip(UtilStringStorage.leaderBoardTooltip);
         leaderBoardButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
         placeButtons(leaderBoardButton, 5, 70);
         leaderBoardButton.setTooltip(leaderBoardTooltip);
 
-        Button trophyButton = new Button(UtilStringStorage.TROPHY_BUTTON);
-        Tooltip trophyTooltip = new Tooltip(UtilStringStorage.TROPHY_TOOLTIP);
+        Button trophyButton = new Button(UtilStringStorage.trophyButton);
+        Tooltip trophyTooltip = new Tooltip(UtilStringStorage.trophyTooltip);
         trophyButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
         placeButtons(trophyButton, 10, 150);
         trophyButton.setTooltip(trophyTooltip);
 
-        Button achievementButton = new Button(UtilStringStorage.ACHIEVEMENT_BUTTON);
-        Tooltip achievementTooltip = new Tooltip(UtilStringStorage.ACHIEVEMENT_TOOLTIP);
+        Button achievementButton = new Button(UtilStringStorage.achievementButton);
+        Tooltip achievementTooltip = new Tooltip(UtilStringStorage.achievementTooltip);
         achievementButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
         placeButtons(achievementButton, 10, 230);
         achievementButton.setTooltip(achievementTooltip);
@@ -140,20 +140,20 @@ public class MenuScene extends Scene
     {
         VBox selectModeArea = new VBox();
 
-        Label chooseMode = new Label(UtilStringStorage.CHOOSE_MODE);
+        Label chooseMode = new Label(UtilStringStorage.chooseMode);
         chooseMode.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         chooseMode.setTextFill(Color.BLACK);
         chooseMode.setTranslateX(200);
 
-        tenModeButton = new Button(UtilStringStorage.MODE_10_BUTTON);
+        tenModeButton = new Button(UtilStringStorage.mode10Button);
         tenModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         placeButtons(tenModeButton, 250, 50);
 
-        fifteenModeButton = new Button(UtilStringStorage.MODE_15_BUTTON);
+        fifteenModeButton = new Button(UtilStringStorage.mode15Button);
         fifteenModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         placeButtons(fifteenModeButton, 250, 100);
 
-        twentyModeButton = new Button(UtilStringStorage.MODE_20_BUTTON);
+        twentyModeButton = new Button(UtilStringStorage.mode20Button);
         twentyModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         placeButtons(twentyModeButton, 250, 150);
 

@@ -22,60 +22,60 @@ public class UtilStringStorage
     public static String successLock = "";
 
     // LEADERBOARD
-    public static final String LEADERBOARD_LABEL = "Classement :";
+    public static String leaderBoardLabel = "";
 
     // MENU SCENE
-    public static final String WELCOME_LABEL = "Bienvenue dans le Turbo Jeu des Questions !";
-    public static final String LEADERBOARD_BUTTON = "Classement";
-    public static final String LEADERBOARD_TOOLTIP = "Cliquez sur 'Classement' pour retrouver les scores de vos parties précédentes";
-    public static final String TROPHY_BUTTON = "Trophées";
-    public static final String TROPHY_TOOLTIP = "Cliquez sur 'Trophées' pour voir tout les trophées débloqués";
-    public static final String ACHIEVEMENT_BUTTON = "Succés";
-    public static final String ACHIEVEMENT_TOOLTIP = "Cliquez sur 'Succés' pour voir tout les succés";
-    public static final String CHOOSE_MODE = "Choisissez votre mode de jeu";
-    public static final String MODE_10_BUTTON = "Dix questions";
-    public static final String MODE_15_BUTTON = "Quinze questions";
-    public static final String MODE_20_BUTTON = "Vingt questions";
+    public static String welcomeLabel = "";
+    public static String leaderBoardButton = "";
+    public static String leaderBoardTooltip = "";
+    public static String trophyButton = "";
+    public static String trophyTooltip = "";
+    public static String achievementButton = "";
+    public static String achievementTooltip = "";
+    public static String chooseMode = "";
+    public static String mode10Button = "";
+    public static String mode15Button = "";
+    public static String mode20Button = "";
 
     // MAIN SCENE
-    public static final String SCORE_LABEL = "Score : ";
-    public static final String QUESTION_NUMBER = "Question n°";
-    public static final String CONGRATS_LABEL = "Bravo ";
-    public static final String ANSWER_ALL_QUESTIONS = " vous avez répondu à toutes les questions !";
-    public static final String PLAYER_RESULT = "Votre score : ";
-    public static final String SCORE_ON = " sur ";
-    public static final String PLAYER_NAME_INFILE = "Nom : ";
-    public static final String SCORE_LABEL_INFILE = "Score : ";
-    public static final String GAME_IN = " en ";
-    public static final String GAME_MINUTES = "min ";
-    public static final String GAME_SECONDES = "sec";
+    public static String scoreLabel = "";
+    public static String questionNumber = "";
+    public static String congratsLabel = "";
+    public static String answerAllQuestions = "";
+    public static String playerResult = "";
+    public static String scoreOn = "";
+    public static String playerNameInfile = "";
+    public static String scoreLabelInfile = "";
+    public static String gameIn = "";
+    public static String gameMinutes = "";
+    public static String gameSecondes = "";
 
     // PLAYER INFOS
-    public static final String ASK_PLAYER_NAME = "Entrez votre nom et cliquez sur le bouton 'Valider' (10 charactères maximum)";
-    public static final String PLAYER_NAME_INGAME = "Nom : ";
-    public static final String SCORE_LABEL_INGAME = "Score : ";
+    public static String askPlayerName = "";
+    public static String playerNameIngame = "";
+    public static String scoreLabelIngame = "";
 
     // QUESTION INTERFACE
-    public static final String CONFIRM_ALERT_WINDOW = "Fenêtre de confirmation";
-    public static final String ASK_TO_CONFIRM = "Êtes-vous sûr ?";
-    public static final String NEXT_QUESTION_BUTTON = "Question suivante";
-    public static final String GOOD_ANSWER_LABEL = "Bonne réponse !";
-    public static final String BAD_ANSWER_LABEL = "Mauvaise réponse !";
+    public static String confirmAlertWindow = "";
+    public static String askToConfirm = "";
+    public static String nextQuestionButton = "";
+    public static String goodAnswerLabel = "";
+    public static String badAnswerLabel = "";
 
     // RESULT SCENE
-    public static final String RETURN_TO_MENU_BUTTON = "Retour au menu";
-    public static final String TIME_LABEL = "Votre chrono : ";
-    public static final String MIN_LABEL = "min ";
-    public static final String SECONDES_LABEL = "sec";
-    public static final String NO_CUP_LABEL = "Aucune coupe débloqué, retentez votre chance pour gagner une coupe";
-    public static final String GOLD_CUP_LABEL = "Vous avez gagné la coupe d'or !";
-    public static final String SILVER_CUP_LABEL = "Vous avez gagné la coupe d'argent !";
-    public static final String BRONZE_CUP_LABEL = "Vous avez gagné la coupe de bronze !";
+    public static String returnToMenuButton = "";
+    public static String timeLabel = "";
+    public static String minLabel = "";
+    public static String secondesLabel = "";
+    public static String noCupLabel = "";
+    public static String goldCupLabel = "";
+    public static String silverCupLabel = "";
+    public static String bronzeCupLabel = "";
 
     // TROPHY SCENE
-    public static final String GOLD_CUP_TROPHY = "Coupe d'Or : ";
-    public static final String SILVER_CUP_TROPHY = "Coupe d'Argent : ";
-    public static final String BRONZE_CUP_TROPHY = "Coupe de Bronze : ";
+    public static String goldCupTrophy = "";
+    public static String silverCupTrophy = "";
+    public static String bronzeCupTrophy = "";
 
     // QUESTIONS LABELS
     public static final String QUESTION_1 = "Quelle est la superficie du Brésil ?";

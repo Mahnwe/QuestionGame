@@ -34,7 +34,7 @@ public class PlayerInfoVBox extends VBox
         this.player = player;
 
         getPlayerName = new VBox();
-        Label askPlayerName = new Label(UtilStringStorage.ASK_PLAYER_NAME);
+        Label askPlayerName = new Label(UtilStringStorage.askPlayerName);
         askPlayerName.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         askPlayerName.setTextFill(Color.GHOSTWHITE);
         getPlayerName.getChildren().add(askPlayerName);
@@ -92,13 +92,13 @@ public class PlayerInfoVBox extends VBox
     {
         playerInfos = new VBox();
         player.setPlayerName(userInputArea.getText());
-        Label playerNameLabel = new Label(UtilStringStorage.PLAYER_NAME_INGAME + player.getPlayerName());
+        Label playerNameLabel = new Label(UtilStringStorage.playerNameIngame + player.getPlayerName());
         playerNameLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
         playerNameLabel.setTextFill(Color.GHOSTWHITE);
         playerInfos.getChildren().add(createStatArea(playerNameLabel));
         playerInfos.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 
-        playerScoreLabel = new Label(UtilStringStorage.SCORE_LABEL_INGAME+player.getPlayerScore());
+        playerScoreLabel = new Label(UtilStringStorage.scoreLabelIngame +player.getPlayerScore());
         playerScoreLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
         playerScoreLabel.setTextFill(Color.GHOSTWHITE);
         playerInfos.getChildren().add(createStatArea(playerScoreLabel));

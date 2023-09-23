@@ -40,7 +40,7 @@ public class LeaderBoardScene extends Scene
         leaderBoardVBox.setMinSize(400, 400);
 
         TextArea leaderBoardArea = new TextArea();
-        Label leaderBoardLabel = new Label(UtilStringStorage.LEADERBOARD_LABEL);
+        Label leaderBoardLabel = new Label(UtilStringStorage.leaderBoardLabel);
         leaderBoardLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
 
         leaderBoardArea.setMinSize(400, 400);

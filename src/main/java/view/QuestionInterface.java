@@ -53,8 +53,8 @@ public class QuestionInterface extends BorderPane
 
     public void modifyConfirmAlert()
     {
-        confirmAlert.setTitle(UtilStringStorage.CONFIRM_ALERT_WINDOW);
-        confirmAlert.setHeaderText(UtilStringStorage.ASK_TO_CONFIRM);
+        confirmAlert.setTitle(UtilStringStorage.confirmAlertWindow);
+        confirmAlert.setHeaderText(UtilStringStorage.askToConfirm);
 
         IconCreator iconCreator = new IconCreator(PathUtil.QUESTION_MARK_TEST);
         ImageView backgroundImage = iconCreator.createImage();
@@ -115,7 +115,7 @@ public class QuestionInterface extends BorderPane
             setAnswerButtonOnAction(answerButton4);
             placeButton(answerButton4, 22, 320);
 
-            nextQuestionButton = new Button(UtilStringStorage.NEXT_QUESTION_BUTTON);
+            nextQuestionButton = new Button(UtilStringStorage.nextQuestionButton);
             nextQuestionButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
             placeButton(nextQuestionButton, 70, 180);
             nextQuestionButton.setDisable(true);
@@ -173,7 +173,7 @@ public class QuestionInterface extends BorderPane
         displayResult.setPrefHeight(80);
         displayResult.setBorder(border);
 
-        Label goodResult = new Label(UtilStringStorage.GOOD_ANSWER_LABEL);
+        Label goodResult = new Label(UtilStringStorage.goodAnswerLabel);
         goodResult.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         goodResult.setTextFill(Color.GHOSTWHITE);
 
@@ -190,7 +190,7 @@ public class QuestionInterface extends BorderPane
 
     private void displayBadAnswer()
     {
-        Label badResult = new Label(UtilStringStorage.BAD_ANSWER_LABEL);
+        Label badResult = new Label(UtilStringStorage.badAnswerLabel);
         badResult.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         badResult.setTextFill(Color.GHOSTWHITE);
         badResult.setTranslateY(120);

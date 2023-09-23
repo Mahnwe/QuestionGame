@@ -38,9 +38,9 @@ public class UtilTranslateString {
     {
         UtilStringStorage.gameTitle = engTradFile.getProperty("engGameTitle");
         UtilStringStorage.returnButton = engTradFile.getProperty("returnButton");
-        UtilStringStorage.validateButton = engTradFile.getProperty("Validate");
-        UtilStringStorage.yesButton = engTradFile.getProperty("Yes");
-        UtilStringStorage.noButton = engTradFile.getProperty("No");
+        UtilStringStorage.validateButton = engTradFile.getProperty("validateButton");
+        UtilStringStorage.yesButton = engTradFile.getProperty("yesButton");
+        UtilStringStorage.noButton = engTradFile.getProperty("noButton");
         UtilStringStorage.goldCupAchievementDescription = engTradFile.getProperty("goldCupAchievementDescription");
         UtilStringStorage.silverCupAchievementDescription = engTradFile.getProperty("silverCupAchievementDescription");
         UtilStringStorage.bronzeCupAchievementDescription = engTradFile.getProperty("bronzeCupAchievementDescription");
@@ -55,9 +55,9 @@ public class UtilTranslateString {
     {
         UtilStringStorage.gameTitle = frTradFile.getProperty("frGameTitle");
         UtilStringStorage.returnButton = frTradFile.getProperty("returnButton");
-        UtilStringStorage.validateButton = frTradFile.getProperty("Valider");
-        UtilStringStorage.yesButton = frTradFile.getProperty("Oui");
-        UtilStringStorage.noButton = frTradFile.getProperty("Non");
+        UtilStringStorage.validateButton = frTradFile.getProperty("validateButton");
+        UtilStringStorage.yesButton = frTradFile.getProperty("yesButton");
+        UtilStringStorage.noButton = frTradFile.getProperty("noButton");
         UtilStringStorage.goldCupAchievementDescription = frTradFile.getProperty("goldCupAchievementDescription");
         UtilStringStorage.silverCupAchievementDescription = frTradFile.getProperty("silverCupAchievementDescription");
         UtilStringStorage.bronzeCupAchievementDescription = frTradFile.getProperty("bronzeCupAchievementDescription");

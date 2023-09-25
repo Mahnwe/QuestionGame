@@ -14,44 +14,44 @@ public class QuestionStorage
 
     public void createQuestions()
     {
-        Question question1 = new Question(UtilStringStorage.QUESTION_1,UtilStringStorage.ANSWER_A1,
-                UtilStringStorage.ANSWER_B1, UtilStringStorage.ANSWER_C1, UtilStringStorage.ANSWER_D1, UtilStringStorage.GOOD_ANSWER_1,
-                UtilStringStorage.EXPLANATION_1);
+        Question question1 = new Question(UtilStringStorage.question1,UtilStringStorage.answerA1,
+                UtilStringStorage.answerB1, UtilStringStorage.answerC1, UtilStringStorage.answerD1, UtilStringStorage.goodAnswer1,
+                UtilStringStorage.explanation1);
         questionList.add(question1);
 
-        Question question2 = new Question(UtilStringStorage.QUESTION_2,UtilStringStorage.ANSWER_A2,
-                UtilStringStorage.ANSWER_B2, UtilStringStorage.ANSWER_C2, UtilStringStorage.ANSWER_D2, UtilStringStorage.GOOD_ANSWER_2,
-                UtilStringStorage.EXPLANATION_2);
+        Question question2 = new Question(UtilStringStorage.question2,UtilStringStorage.answerA2,
+                UtilStringStorage.answerB2, UtilStringStorage.answerC2, UtilStringStorage.answerD2, UtilStringStorage.goodAnswer2,
+                UtilStringStorage.explanation2);
         questionList.add(question2);
 
-        Question question3 = new Question(UtilStringStorage.QUESTION_3,UtilStringStorage.ANSWER_A3,
-                UtilStringStorage.ANSWER_B3, UtilStringStorage.ANSWER_C3, UtilStringStorage.ANSWER_D3, UtilStringStorage.GOOD_ANSWER_3,
-                UtilStringStorage.EXPLANATION_3);
+        Question question3 = new Question(UtilStringStorage.question3,UtilStringStorage.answerA3,
+                UtilStringStorage.answerB3, UtilStringStorage.answerC3, UtilStringStorage.answerD3, UtilStringStorage.goodAnswer3,
+                UtilStringStorage.explanation3);
         questionList.add(question3);
 
-        Question question4 = new Question(UtilStringStorage.QUESTION_4,UtilStringStorage.ANSWER_A4,
-                UtilStringStorage.ANSWER_B4, UtilStringStorage.ANSWER_C4, UtilStringStorage.ANSWER_D4, UtilStringStorage.GOOD_ANSWER_4,
-                UtilStringStorage.EXPLANATION_4);
+        Question question4 = new Question(UtilStringStorage.question4,UtilStringStorage.answerA4,
+                UtilStringStorage.answerB4, UtilStringStorage.answerC4, UtilStringStorage.answerD4, UtilStringStorage.goodAnswer4,
+                UtilStringStorage.explanation4);
         questionList.add(question4);
 
-        Question question5 = new Question(UtilStringStorage.QUESTION_5,UtilStringStorage.ANSWER_A5,
-                UtilStringStorage.ANSWER_B5, UtilStringStorage.ANSWER_C5, UtilStringStorage.ANSWER_D5, UtilStringStorage.GOOD_ANSWER_5,
-                UtilStringStorage.EXPLANATION_5);
+        Question question5 = new Question(UtilStringStorage.question5,UtilStringStorage.answerA5,
+                UtilStringStorage.answerB5, UtilStringStorage.answerC5, UtilStringStorage.answerD5, UtilStringStorage.goodAnswer5,
+                UtilStringStorage.explanation5);
         questionList.add(question5);
 
-        Question question6 = new Question(UtilStringStorage.QUESTION_6,UtilStringStorage.ANSWER_A6,
-                UtilStringStorage.ANSWER_B6, UtilStringStorage.ANSWER_C6, UtilStringStorage.ANSWER_D6, UtilStringStorage.GOOD_ANSWER_6,
-                UtilStringStorage.EXPLANATION_6);
+        Question question6 = new Question(UtilStringStorage.question6,UtilStringStorage.answerA6,
+                UtilStringStorage.answerB6, UtilStringStorage.answerC6, UtilStringStorage.answerD6, UtilStringStorage.goodAnswer6,
+                UtilStringStorage.explanation6);
         questionList.add(question6);
 
-        Question question7 = new Question(UtilStringStorage.QUESTION_7,UtilStringStorage.ANSWER_A7,
-                UtilStringStorage.ANSWER_B7, UtilStringStorage.ANSWER_C7, UtilStringStorage.ANSWER_D7, UtilStringStorage.GOOD_ANSWER_7,
-                UtilStringStorage.EXPLANATION_7);
+        Question question7 = new Question(UtilStringStorage.question7,UtilStringStorage.answerA7,
+                UtilStringStorage.answerB7, UtilStringStorage.answerC7, UtilStringStorage.answerD7, UtilStringStorage.goodAnswer7,
+                UtilStringStorage.explanation7);
         questionList.add(question7);
 
-        Question question8 = new Question(UtilStringStorage.QUESTION_8,UtilStringStorage.ANSWER_A8,
-                UtilStringStorage.ANSWER_B8, UtilStringStorage.ANSWER_C8, UtilStringStorage.ANSWER_D8, UtilStringStorage.GOOD_ANSWER_8,
-                UtilStringStorage.EXPLANATION_8);
+        Question question8 = new Question(UtilStringStorage.question8,UtilStringStorage.answerA8,
+                UtilStringStorage.answerB8, UtilStringStorage.answerC8, UtilStringStorage.answerD8, UtilStringStorage.goodAnswer8,
+                UtilStringStorage.explanation8);
         questionList.add(question8);
 
         Question question9 = new Question(UtilStringStorage.QUESTION_9,UtilStringStorage.ANSWER_A9,
@@ -89,26 +89,29 @@ public class QuestionStorage
                 UtilStringStorage.EXPLANATION_15);
         questionList.add(question15);
 
-        Question question16 = new Question("Quel est le plus grand océan du monde en superficie ?", "Océan Indien",
-                "Océan Antarctique", "Océan Pacifique", "Océan Atlantique", "Océan Pacifique",
-                "L'Océan Pacifique est le plus grand océan du monde avec environ 166 millions de km²");
+        Question question16 = new Question(UtilStringStorage.QUESTION_16,UtilStringStorage.ANSWER_A16,
+                UtilStringStorage.ANSWER_B16, UtilStringStorage.ANSWER_C16, UtilStringStorage.ANSWER_D16, UtilStringStorage.GOOD_ANSWER_16,
+                UtilStringStorage.EXPLANATION_16);
         questionList.add(question16);
 
-        Question question17 = new Question("De quand date la construction de la pyramide de Khéops ?", "Vers 2560 av J.C",
-                "Vers 1560 av J.C", "Vers 3800 av J.C", "Vers 720 av J.C", "Vers 2560 av J.C",
-                "La pyramide de Khéops fut édifiée vers 2560 av J.C, il y a plus de 4500ans" +"\n"+"et est la plus grande pyramide de Gizeh");
+        Question question17 = new Question(UtilStringStorage.QUESTION_17,UtilStringStorage.ANSWER_A17,
+                UtilStringStorage.ANSWER_B17, UtilStringStorage.ANSWER_C17, UtilStringStorage.ANSWER_D17, UtilStringStorage.GOOD_ANSWER_17,
+                UtilStringStorage.EXPLANATION_17);
         questionList.add(question17);
 
-        Question question18 = new Question("De combien d'états sont composés les Etats-Unis ?", "37 états", "63 états",
-                "43 états", "50 états", "50 états", "Les Etats-Unis sont composés de 50 états");
+        Question question18 = new Question(UtilStringStorage.QUESTION_18,UtilStringStorage.ANSWER_A18,
+                UtilStringStorage.ANSWER_B18, UtilStringStorage.ANSWER_C18, UtilStringStorage.ANSWER_D18, UtilStringStorage.GOOD_ANSWER_18,
+                UtilStringStorage.EXPLANATION_18);
         questionList.add(question18);
 
-        Question question19 = new Question("Quel animal est un roitelet ?", "Un renard", "Un cheval",
-                "Un oiseau", "Un poisson", "Un oiseau", "Le roitelet est une espèce d'oiseau de l'ordre des passereaux");
+        Question question19 = new Question(UtilStringStorage.QUESTION_19,UtilStringStorage.ANSWER_A19,
+                UtilStringStorage.ANSWER_B19, UtilStringStorage.ANSWER_C19, UtilStringStorage.ANSWER_D19, UtilStringStorage.GOOD_ANSWER_19,
+                UtilStringStorage.EXPLANATION_19);
         questionList.add(question19);
 
-        Question question20 = new Question("Ou est né Mozart ?", "A Venise", "A Salzbourg",
-                "A Vienne", "A Turin", "A Salzbourg", "Wolfgang Amadeus Mozart est né à Salzbourg en 1756");
+        Question question20 = new Question(UtilStringStorage.QUESTION_20,UtilStringStorage.ANSWER_A20,
+                UtilStringStorage.ANSWER_B20, UtilStringStorage.ANSWER_C20, UtilStringStorage.ANSWER_D20, UtilStringStorage.GOOD_ANSWER_20,
+                UtilStringStorage.EXPLANATION_20);
         questionList.add(question20);
 
         Question question21 = new Question("Qui a écrit l'Odyssée ?", "Platon", "Péricles",

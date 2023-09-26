@@ -46,6 +46,7 @@ public class UtilStringStorage
     public static String scoreOn = "";
     public static String playerNameInfile = "";
     public static String scoreLabelInfile = "";
+    public static String timerLabelInfile = "";
     public static String gameIn = "";
     public static String gameMinutes = "";
     public static String gameSecondes = "";

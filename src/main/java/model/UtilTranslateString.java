@@ -69,6 +69,7 @@ public class UtilTranslateString {
         UtilStringStorage.scoreOn = engTradFile.getProperty("scoreOn");
         UtilStringStorage.playerNameInfile = engTradFile.getProperty("playerNameInfile");
         UtilStringStorage.scoreLabelInfile = engTradFile.getProperty("scoreLabelInfile");
+        UtilStringStorage.timerLabelInfile = engTradFile.getProperty("timerLabelInfile");
         UtilStringStorage.gameIn = engTradFile.getProperty("gameIn");
         UtilStringStorage.gameMinutes = engTradFile.getProperty("gameMinutes");
         UtilStringStorage.gameSecondes = engTradFile.getProperty("gameSecondes");
@@ -271,6 +272,7 @@ public class UtilTranslateString {
         UtilStringStorage.scoreOn = frTradFile.getProperty("scoreOn");
         UtilStringStorage.playerNameInfile = frTradFile.getProperty("playerNameInfile");
         UtilStringStorage.scoreLabelInfile = frTradFile.getProperty("scoreLabelInfile");
+        UtilStringStorage.timerLabelInfile = frTradFile.getProperty("timerLabelInfile");
         UtilStringStorage.gameIn = frTradFile.getProperty("gameIn");
         UtilStringStorage.gameMinutes = frTradFile.getProperty("gameMinutes");
         UtilStringStorage.gameSecondes = frTradFile.getProperty("gameSecondes");

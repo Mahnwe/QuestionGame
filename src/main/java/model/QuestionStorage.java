@@ -99,19 +99,19 @@ public class QuestionStorage
                 UtilStringStorage.explanation17);
         questionList.add(question17);
 
-        Question question18 = new Question(UtilStringStorage.QUESTION_18,UtilStringStorage.ANSWER_A18,
-                UtilStringStorage.ANSWER_B18, UtilStringStorage.ANSWER_C18, UtilStringStorage.ANSWER_D18, UtilStringStorage.GOOD_ANSWER_18,
-                UtilStringStorage.EXPLANATION_18);
+        Question question18 = new Question(UtilStringStorage.question18,UtilStringStorage.answerA18,
+                UtilStringStorage.answerB18, UtilStringStorage.answerC18, UtilStringStorage.answerD18, UtilStringStorage.goodAnswer18,
+                UtilStringStorage.explanation18);
         questionList.add(question18);
 
-        Question question19 = new Question(UtilStringStorage.QUESTION_19,UtilStringStorage.ANSWER_A19,
-                UtilStringStorage.ANSWER_B19, UtilStringStorage.ANSWER_C19, UtilStringStorage.ANSWER_D19, UtilStringStorage.GOOD_ANSWER_19,
-                UtilStringStorage.EXPLANATION_19);
+        Question question19 = new Question(UtilStringStorage.question19,UtilStringStorage.answerA19,
+                UtilStringStorage.answerB19, UtilStringStorage.answerC19, UtilStringStorage.answerD19, UtilStringStorage.goodAnswer19,
+                UtilStringStorage.explanation19);
         questionList.add(question19);
 
-        Question question20 = new Question(UtilStringStorage.QUESTION_20,UtilStringStorage.ANSWER_A20,
-                UtilStringStorage.ANSWER_B20, UtilStringStorage.ANSWER_C20, UtilStringStorage.ANSWER_D20, UtilStringStorage.GOOD_ANSWER_20,
-                UtilStringStorage.EXPLANATION_20);
+        Question question20 = new Question(UtilStringStorage.question20,UtilStringStorage.answerA20,
+                UtilStringStorage.answerB20, UtilStringStorage.answerC20, UtilStringStorage.answerD20, UtilStringStorage.goodAnswer20,
+                UtilStringStorage.explanation20);
         questionList.add(question20);
 
         Question question21 = new Question(UtilStringStorage.QUESTION_21,UtilStringStorage.ANSWER_A21,

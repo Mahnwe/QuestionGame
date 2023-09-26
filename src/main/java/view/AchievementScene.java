@@ -252,6 +252,7 @@ public class AchievementScene extends Scene
     }
     public String checkAndGetNumberOfPerfectScore(String stringToCheck)
     {
+        // THIS IS FOR PERFECT SCORE
         String numberGetter;
         numberGetter = stringToCheck;
         return numberGetter;

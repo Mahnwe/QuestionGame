@@ -37,15 +37,16 @@ public class AchievementScene extends Scene
     private int nbrPerfectScore15;
     private int nbrPerfectScore20;
 
+
     private final File goldCupFile;
     private final File silverCupFile;
     private final File bronzeCupFile;
-    private final File perfectScoreFile;
+    private final File perfectScoreFile10;
     private final File perfectScoreFile15;
     private final File perfectScoreFile20;
 
 
-    public AchievementScene(BorderPane pane, AchievementManager achievementManager, Stage stage, File goldCupFile, File silverCupFile, File bronzeCupFile, File perfectScoreFile, File perfectScoreFile15, File perfectScoreFile20)
+    public AchievementScene(BorderPane pane, AchievementManager achievementManager, Stage stage, File goldCupFile, File silverCupFile, File bronzeCupFile, File perfectScoreFile10, File perfectScoreFile15, File perfectScoreFile20)
     {
         super(pane);
         pane.setPrefHeight(500);
@@ -55,10 +56,9 @@ public class AchievementScene extends Scene
         this.goldCupFile = goldCupFile;
         this.silverCupFile = silverCupFile;
         this.bronzeCupFile = bronzeCupFile;
-        this.perfectScoreFile = perfectScoreFile;
+        this.perfectScoreFile10 = perfectScoreFile10;
         this.perfectScoreFile15 = perfectScoreFile15;
         this.perfectScoreFile20 = perfectScoreFile20;
-
         tilePane = new TilePane();
         tilePane.setHgap(10);
         tilePane.setVgap(10);
@@ -181,10 +181,10 @@ public class AchievementScene extends Scene
         achievementManager.getAchievementsList().get(2).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(2), nbrOfBronzeCup);
         checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(2), bronzeCupAchievementInfo);
 
-        String checkPerfectScoreFile = String.valueOf(readInCupFile(perfectScoreFile));
-        if(!checkPerfectScoreFile.isEmpty()) {
-            String numberOfPerfectScore = checkAndGetNumberOfPerfectScore(checkPerfectScoreFile);
-            nbrPerfectScore10 = Integer.parseInt(numberOfPerfectScore);
+        String checkPerfectScoreFile10 = String.valueOf(readInCupFile(perfectScoreFile10));
+        if(!checkPerfectScoreFile10.isEmpty()) {
+            String numberOfPerfectScore10 = checkAndGetNumberOfPerfectScore(checkPerfectScoreFile10);
+            nbrPerfectScore10 = Integer.parseInt(numberOfPerfectScore10);
         }
         achievementManager.getAchievementsList().get(3).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(3), nbrPerfectScore10);
         checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(3), perfectScoreAchievementInfo);
@@ -202,8 +202,8 @@ public class AchievementScene extends Scene
             String numberOfPerfectScore20 = checkAndGetNumberOfPerfectScore(checkPerfectScoreFile20);
             nbrPerfectScore20 = Integer.parseInt(numberOfPerfectScore20);
         }
-        achievementManager.getAchievementsList().get(5).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(5), nbrPerfectScore20);
-        checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(5), perfectScoreAchievement20Info);
+            achievementManager.getAchievementsList().get(5).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(5), nbrPerfectScore20);
+            checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(5), perfectScoreAchievement20Info);
     }
     public void backToMainMenu()
     {
@@ -235,7 +235,7 @@ public class AchievementScene extends Scene
             String line;
             while((line = bufferedReader.readLine()) != null)
             {
-                stringBuilder.append(line).append("\n");
+                stringBuilder.append(line);
             }
             bufferedReader.close();
         } catch (IOException e) {
@@ -247,18 +247,13 @@ public class AchievementScene extends Scene
     public String checkAndGetNumberOfCup(String stringToCheck)
     {
         String numberGetter;
-        if(stringToCheck.length() == 15) {
-            numberGetter = stringToCheck.substring(stringToCheck.length() - 3, stringToCheck.length() - 1);
-        }
-        else {
-            numberGetter = String.valueOf(stringToCheck.charAt(stringToCheck.length() -2));
-        }
+        numberGetter = stringToCheck;
         return numberGetter;
     }
     public String checkAndGetNumberOfPerfectScore(String stringToCheck)
     {
         String numberGetter;
-        numberGetter = stringToCheck.substring(stringToCheck.length() - 3, stringToCheck.length() - 1);
+        numberGetter = stringToCheck;
         return numberGetter;
     }
 

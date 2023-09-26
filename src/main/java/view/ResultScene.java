@@ -126,7 +126,6 @@ public class ResultScene extends VBox
                 writeInPerfectCupFile(perfectScoreFile20, perfectScoreString20, checkIntInPerfectFile20);
             }
         }
-
         achievementManager.getAchievementsList().get(0).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(0), nbrOfGoldCup);
         trophyHandler.writeInCupFile(goldCupFile, String.valueOf(nbrOfGoldCup), checkIntInFile);
 
@@ -176,7 +175,7 @@ public class ResultScene extends VBox
     public String checkAndGetNumberOfCup(String stringToCheck)
     {
         String numberGetter;
-        numberGetter = String.valueOf(stringToCheck.charAt(stringToCheck.length() -2));
+        numberGetter = stringToCheck;
         return numberGetter;
     }
 
@@ -211,7 +210,7 @@ public class ResultScene extends VBox
             String line;
             while((line = bufferedReader.readLine()) != null)
             {
-                stringBuilder.append(line).append("\n");
+                stringBuilder.append(line);
             }
             bufferedReader.close();
         } catch (IOException e) {

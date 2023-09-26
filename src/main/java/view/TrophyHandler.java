@@ -30,7 +30,7 @@ public class TrophyHandler
             String line;
             while((line = bufferedReader.readLine()) != null)
             {
-                stringBuilder.append(line).append("\n");
+                stringBuilder.append(line);
             }
             bufferedReader.close();
         } catch (IOException e) {

@@ -4,7 +4,10 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
-import javafx.scene.layout.*;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.ImagePattern;
 import javafx.stage.Stage;
 import model.*;
@@ -37,7 +40,7 @@ public class MainScene extends Scene
     private final File perfectScoreFile15;
     private final File perfectScoreFile20;
 
-    public MainScene(BorderPane menuPane, Player player, GameHandler gameHandler, Stage stage, File saveFile, TrophyHandler trophyHandler, AchievementManager achievementManager, File perfectScoreFile, File perfectScoreFile15, File perfectScoreFile20, File goldCupFile, File silverCupFile, File bronzeCupFile)
+    public MainScene(BorderPane menuPane, Player player, GameHandler gameHandler, Stage stage, File saveFile, TrophyHandler trophyHandler, AchievementManager achievementManager, File perfectScoreFile10, File perfectScoreFile15, File perfectScoreFile20, File goldCupFile, File silverCupFile, File bronzeCupFile)
     {
         super(menuPane);
         this.stage = stage;
@@ -51,9 +54,10 @@ public class MainScene extends Scene
         this.goldCupFile = goldCupFile;
         this.silverCupFile = silverCupFile;
         this.bronzeCupFile = bronzeCupFile;
-        this.perfectScoreFile10 = perfectScoreFile;
+        this.perfectScoreFile10 = perfectScoreFile10;
         this.perfectScoreFile15 = perfectScoreFile15;
         this.perfectScoreFile20 = perfectScoreFile20;
+
 
         BackgroundCreator mainSceneBackgroundCreator = new BackgroundCreator(PathUtil.MAIN_BACKGROUND);
         Image mainSceneImage = mainSceneBackgroundCreator.createBackground();
@@ -107,7 +111,7 @@ public class MainScene extends Scene
             boolean append = true;
             FileWriter fw = new FileWriter(saveFile.getAbsoluteFile(), append);
             try (BufferedWriter bw = new BufferedWriter(fw)) {
-                bw.write(UtilStringStorage.playerNameInfile + playerInfoVBox.getPlayer().getPlayerName() + "  " + UtilStringStorage.scoreLabelInfile + playerInfoVBox.getPlayer().getPlayerScore() + UtilStringStorage.scoreOn + gameHandler.getQuestionCount() + UtilStringStorage.gameIn + GameTimer.getElapsedMinutes() + UtilStringStorage.gameMinutes + GameTimer.getElapsedSeconds() + UtilStringStorage.gameSecondes + "\n");
+                bw.write(UtilStringStorage.playerNameInfile +" "+playerInfoVBox.getPlayer().getPlayerName() + "  " + UtilStringStorage.scoreLabelInfile +" "+ playerInfoVBox.getPlayer().getPlayerScore() + " "+ UtilStringStorage.scoreOn +" "+gameHandler.getQuestionCount() + " "+UtilStringStorage.gameIn +" "+ GameTimer.getElapsedMinutes() +" "+ UtilStringStorage.gameMinutes +" "+ GameTimer.getElapsedSeconds() +" "+ UtilStringStorage.gameSecondes + "\n");
             }
         }catch (IOException e) {
             e.printStackTrace();

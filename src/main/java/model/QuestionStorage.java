@@ -89,14 +89,14 @@ public class QuestionStorage
                 UtilStringStorage.explanation15);
         questionList.add(question15);
 
-        Question question16 = new Question(UtilStringStorage.QUESTION_16,UtilStringStorage.ANSWER_A16,
-                UtilStringStorage.ANSWER_B16, UtilStringStorage.ANSWER_C16, UtilStringStorage.ANSWER_D16, UtilStringStorage.GOOD_ANSWER_16,
-                UtilStringStorage.EXPLANATION_16);
+        Question question16 = new Question(UtilStringStorage.question16,UtilStringStorage.answerA16,
+                UtilStringStorage.answerB16, UtilStringStorage.answerC16, UtilStringStorage.answerD16, UtilStringStorage.goodAnswer16,
+                UtilStringStorage.explanation16);
         questionList.add(question16);
 
-        Question question17 = new Question(UtilStringStorage.QUESTION_17,UtilStringStorage.ANSWER_A17,
-                UtilStringStorage.ANSWER_B17, UtilStringStorage.ANSWER_C17, UtilStringStorage.ANSWER_D17, UtilStringStorage.GOOD_ANSWER_17,
-                UtilStringStorage.EXPLANATION_17);
+        Question question17 = new Question(UtilStringStorage.question17,UtilStringStorage.answerA17,
+                UtilStringStorage.answerB17, UtilStringStorage.answerC17, UtilStringStorage.answerD17, UtilStringStorage.goodAnswer17,
+                UtilStringStorage.explanation17);
         questionList.add(question17);
 
         Question question18 = new Question(UtilStringStorage.QUESTION_18,UtilStringStorage.ANSWER_A18,
@@ -114,26 +114,29 @@ public class QuestionStorage
                 UtilStringStorage.EXPLANATION_20);
         questionList.add(question20);
 
-        Question question21 = new Question("Qui a écrit l'Odyssée ?", "Platon", "Péricles",
-                "Hérodote", "Homère", "Homère", "L'Odyssée est la deuxième oeuvre de littérature d'Homère après l'Iliade");
+        Question question21 = new Question(UtilStringStorage.QUESTION_21,UtilStringStorage.ANSWER_A21,
+                UtilStringStorage.ANSWER_B21, UtilStringStorage.ANSWER_C21, UtilStringStorage.ANSWER_D21, UtilStringStorage.GOOD_ANSWER_21,
+                UtilStringStorage.EXPLANATION_21);
         questionList.add(question21);
 
-        Question question22 = new Question("Quelle est la deuxième langue la plus parlée en Inde ?", "Le Bengali",
-                "Le Tamoul", "Le Pendjabi", "Le Népalais", "Le Bengali",
-                "Le Bengali est la 2ème langue la plus parlée en Inde, avec 268 millions de locuteurs");
+        Question question22 = new Question(UtilStringStorage.QUESTION_22,UtilStringStorage.ANSWER_A22,
+                UtilStringStorage.ANSWER_B22, UtilStringStorage.ANSWER_C22, UtilStringStorage.ANSWER_D22, UtilStringStorage.GOOD_ANSWER_22,
+                UtilStringStorage.EXPLANATION_22);
         questionList.add(question22);
 
-        Question question23 = new Question("Qu'est ce que la carotide ?", "Un organe", "Une artère",
-                "Une maladie", "Un os", "Une artère", "La carotide est une artère composée de deux parties, interne et externe");
+        Question question23 = new Question(UtilStringStorage.QUESTION_23,UtilStringStorage.ANSWER_A23,
+                UtilStringStorage.ANSWER_B23, UtilStringStorage.ANSWER_C23, UtilStringStorage.ANSWER_D23, UtilStringStorage.GOOD_ANSWER_23,
+                UtilStringStorage.EXPLANATION_23);
         questionList.add(question23);
 
-        Question question24 = new Question("Quelle est la vitesse maximale atteinte par une voiture à roues ?", "560,87 km/h", "447,32 km/h",
-                "633,79 km/h", "398,17 km/h", "633,79 km/h", "Le record de vitesse maximale atteinte par un véhicule a roue est de 633,79km/h"+"\n"+"et à été réalisé en 1947");
+        Question question24 = new Question(UtilStringStorage.QUESTION_24,UtilStringStorage.ANSWER_A24,
+                UtilStringStorage.ANSWER_B24, UtilStringStorage.ANSWER_C24, UtilStringStorage.ANSWER_D24, UtilStringStorage.GOOD_ANSWER_24,
+                UtilStringStorage.EXPLANATION_24);
         questionList.add(question24);
 
-        Question question25 = new Question("Quel est le musée d'art le plus visité au monde ?", "Le Musée du Louvre",
-                "Le Musée national de Chine", "Le British Museum", "Le Musée du Vatican", "Le Musée du Louvre",
-                "Le Musée du Louvre est le musée d'art le plus visité au monde"+"\n"+"avec plus de 10 millions de visiteurs par an");
+        Question question25 = new Question(UtilStringStorage.QUESTION_25,UtilStringStorage.ANSWER_A25,
+                UtilStringStorage.ANSWER_B25, UtilStringStorage.ANSWER_C25, UtilStringStorage.ANSWER_D25, UtilStringStorage.GOOD_ANSWER_25,
+                UtilStringStorage.EXPLANATION_25);
         questionList.add(question25);
 
         Question question26 = new Question("De quand date la plus vieille université du monde ?", "968 après J.C", "132 avant J.C",

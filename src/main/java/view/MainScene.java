@@ -45,7 +45,7 @@ public class MainScene extends Scene
         super(menuPane);
         this.stage = stage;
         this.menuPane = menuPane;
-        menuPane.setPrefWidth(1000);
+        menuPane.setPrefWidth(950);
         menuPane.setPrefHeight(500);
         this.gameHandler = gameHandler;
         this.saveFile = saveFile;

@@ -4,13 +4,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.AchievementManager;
+import model.BackgroundCreator;
+import model.PathUtil;
 import model.UtilStringStorage;
 
 import java.io.BufferedReader;
@@ -58,6 +59,13 @@ public class LeaderBoardScene extends Scene
         buttonHbox.getChildren().add(returnToMenu);
         pane.setTop(buttonHbox);
         returnToMenu.setOnAction(event -> backToMainMenu());
+
+        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
+        BackgroundCreator menuBackground = new BackgroundCreator(PathUtil.MENU_BACKGROUND);
+        Image menuSceneBackground = menuBackground.createBackground();
+        BackgroundImage backgroundImage = new BackgroundImage(menuSceneBackground, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+                backgroundSize);
+        pane.setBackground(new Background(backgroundImage));
     }
 
     public void readFile()

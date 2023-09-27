@@ -5,15 +5,11 @@ import javafx.beans.property.StringProperty;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.TilePane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
-import model.Achievement;
-import model.AchievementManager;
-import model.UtilStringStorage;
+import model.*;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -59,9 +55,10 @@ public class AchievementScene extends Scene
         this.perfectScoreFile10 = perfectScoreFile10;
         this.perfectScoreFile15 = perfectScoreFile15;
         this.perfectScoreFile20 = perfectScoreFile20;
+
         tilePane = new TilePane();
-        tilePane.setHgap(10);
-        tilePane.setVgap(10);
+        tilePane.setHgap(20);
+        tilePane.setVgap(20);
         tilePane.setPrefColumns(4);
         tilePane.setPrefRows(2);
 
@@ -81,6 +78,13 @@ public class AchievementScene extends Scene
         buttonHbox.getChildren().add(returnToMenu);
         pane.setTop(buttonHbox);
         returnToMenu.setOnAction(event -> backToMainMenu());
+
+        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
+        BackgroundCreator menuBackground = new BackgroundCreator(PathUtil.MENU_BACKGROUND);
+        Image menuSceneBackground = menuBackground.createBackground();
+        BackgroundImage backgroundImage = new BackgroundImage(menuSceneBackground, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+                backgroundSize);
+        pane.setBackground(new Background(backgroundImage));
 
     }
 

@@ -139,44 +139,54 @@ public class QuestionStorage
                 UtilStringStorage.EXPLANATION_25);
         questionList.add(question25);
 
-        Question question26 = new Question("De quand date la plus vieille université du monde ?", "968 après J.C", "132 avant J.C",
-                "425 après J.C", "681 après J.C", "425 après J.C", "La plus vieille université du monde est l'université de Constantinople"+"\n"+"sa fondation remonte à 425 après J.C");
+        Question question26 = new Question(UtilStringStorage.QUESTION_26,UtilStringStorage.ANSWER_A26,
+                UtilStringStorage.ANSWER_B26, UtilStringStorage.ANSWER_C26, UtilStringStorage.ANSWER_D26, UtilStringStorage.GOOD_ANSWER_26,
+                UtilStringStorage.EXPLANATION_26);
         questionList.add(question26);
 
-        Question question27 = new Question("De quel pays Mogadiscio est la capital ?", "Le Kenya", "L'Ethiopie",
-                "Le Niger", "La Somalie", "La Somalie", "Mogadiscio est la capitale de la Somalie et compte plus de 2 millions d'habitants");
+        Question question27 = new Question(UtilStringStorage.QUESTION_27,UtilStringStorage.ANSWER_A27,
+                UtilStringStorage.ANSWER_B27, UtilStringStorage.ANSWER_C27, UtilStringStorage.ANSWER_D27, UtilStringStorage.GOOD_ANSWER_27,
+                UtilStringStorage.EXPLANATION_27);
         questionList.add(question27);
 
-        Question question28 = new Question("En quelle année les femmes obtiennent le droit de vote en France ?", "1913", "1927", "1938", "1944",
-                "1944", "En france les femmes obtiennent le droit de vote en 1944, mais il faudra attendre 1945"+"\n"+"pour qu'elles puissent participer à leurs premier vote (OMG c'est beaucoup trop tard)");
+        Question question28 = new Question(UtilStringStorage.QUESTION_28,UtilStringStorage.ANSWER_A28,
+                UtilStringStorage.ANSWER_B28, UtilStringStorage.ANSWER_C28, UtilStringStorage.ANSWER_D28, UtilStringStorage.GOOD_ANSWER_28,
+                UtilStringStorage.EXPLANATION_28);
         questionList.add(question28);
 
-        Question question29 = new Question("Que veux dire 'lantiponner' ?", "Faire cuire lentement",
-                "Plier un métal", "Parler inutilement", "Être à l'opposé", "Parler inutilement", "lantiponner veux dire parler inutilement, de manière frivole ou importun");
+        Question question29 = new Question(UtilStringStorage.QUESTION_29,UtilStringStorage.ANSWER_A29,
+                UtilStringStorage.ANSWER_B29, UtilStringStorage.ANSWER_C29, UtilStringStorage.ANSWER_D29, UtilStringStorage.GOOD_ANSWER_29,
+                UtilStringStorage.EXPLANATION_29);
         questionList.add(question29);
 
-        Question question30 = new Question("Quand se sont éteints les dinosaures ?", "Il y a 46 millions d'années", "Il y a 66 millions d'années",
-                "Il y a 86 millions d'années", "Il y a 106 millions d'années", "Il y a 66 millions d'années", "Les dinosaures ont disparu il y a environ 66 millions d'années");
+        Question question30 = new Question(UtilStringStorage.QUESTION_30,UtilStringStorage.ANSWER_A30,
+                UtilStringStorage.ANSWER_B30, UtilStringStorage.ANSWER_C30, UtilStringStorage.ANSWER_D30, UtilStringStorage.GOOD_ANSWER_30,
+                UtilStringStorage.EXPLANATION_30);
         questionList.add(question30);
 
-        Question question31 = new Question("Quelle est la taille de l'humain le plus grand de l'histoire ?", "2,32 mètres",
-                "2,72 mètres", "2,51 mètres", "2,97 mètres", "2,72 mètres", "Robert Wadlow est l'homme le plus grand de l'histoire et mesurait 2,72 mètres au moment de sa mort en 1940");
+        Question question31 = new Question(UtilStringStorage.QUESTION_31,UtilStringStorage.ANSWER_A31,
+                UtilStringStorage.ANSWER_B31, UtilStringStorage.ANSWER_C31, UtilStringStorage.ANSWER_D31, UtilStringStorage.GOOD_ANSWER_31,
+                UtilStringStorage.EXPLANATION_31);
         questionList.add(question31);
 
-        Question question32 = new Question("Athéna était la déesse de la sagesse, des artisans et des artistes, mais aussi de", "La stratégie militaire", "L'olivier",
-                "L'enfance", "La ruse", "La stratégie militaire", "Dans la mythologie grecque Athéna était la déesse de la sagesse, des artisans et des artistes,"+"\n"+"mais aussi de la stratégie militaire et des maitres d'écoles");
+        Question question32 = new Question(UtilStringStorage.QUESTION_32,UtilStringStorage.ANSWER_A32,
+                UtilStringStorage.ANSWER_B32, UtilStringStorage.ANSWER_C32, UtilStringStorage.ANSWER_D32, UtilStringStorage.GOOD_ANSWER_32,
+                UtilStringStorage.EXPLANATION_32);
         questionList.add(question32);
 
-        Question question33 = new Question("Quel est le fruit le plus consommé en France ?", "La banane", "La poire", "L'orange", "La pomme",
-                "La pomme", "La pomme est le fruit le plus consommé en france, juste devant la banane et l'orange");
+        Question question33 = new Question(UtilStringStorage.QUESTION_33,UtilStringStorage.ANSWER_A33,
+                UtilStringStorage.ANSWER_B33, UtilStringStorage.ANSWER_C33, UtilStringStorage.ANSWER_D33, UtilStringStorage.GOOD_ANSWER_33,
+                UtilStringStorage.EXPLANATION_33);
         questionList.add(question33);
 
-        Question question34 = new Question("Quelle est la vitesse maximale de l'air expiré par un éternuement ?", "17km/h", "35km/h",
-                "55km/h", "45km/h", "55km/h", "L'air expiré par un éternuement peux atteindre 55km/h");
+        Question question34 = new Question(UtilStringStorage.QUESTION_34,UtilStringStorage.ANSWER_A34,
+                UtilStringStorage.ANSWER_B34, UtilStringStorage.ANSWER_C34, UtilStringStorage.ANSWER_D34, UtilStringStorage.GOOD_ANSWER_34,
+                UtilStringStorage.EXPLANATION_34);
         questionList.add(question34);
 
-        Question question35 = new Question("Quelle est la ville avec la plus grande densité de population du monde ?", "Manille", "Dacca",
-                "Le Caire", "Hong Kong", "Manille", "Manille est la ville avec la plus grande densité du monde avec plus de 40 000 habitants/km²");
+        Question question35 = new Question(UtilStringStorage.QUESTION_35,UtilStringStorage.ANSWER_A35,
+                UtilStringStorage.ANSWER_B35, UtilStringStorage.ANSWER_C35, UtilStringStorage.ANSWER_D35, UtilStringStorage.GOOD_ANSWER_35,
+                UtilStringStorage.EXPLANATION_35);
         questionList.add(question35);
     }
 

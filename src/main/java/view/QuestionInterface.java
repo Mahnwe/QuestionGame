@@ -178,7 +178,7 @@ public class QuestionInterface extends BorderPane
         goodResult.setTextFill(Color.GHOSTWHITE);
 
         explanation = new Label(question.getExplanation());
-        explanation.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
+        explanation.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
         explanation.setTextFill(Color.GHOSTWHITE);
         explanation.setTranslateY(20);
 
@@ -196,7 +196,7 @@ public class QuestionInterface extends BorderPane
         badResult.setTranslateY(120);
 
         explanation = new Label(question.getExplanation());
-        explanation.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
+        explanation.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
         explanation.setTextFill(Color.GHOSTWHITE);
         explanation.setTranslateY(140);
 

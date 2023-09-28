@@ -15,7 +15,7 @@ public class App extends Application
         UtilTranslateString utilTranslateString = new UtilTranslateString();
         LanguageScene languageScene = new LanguageScene(new BorderPane());
         stage.setScene(languageScene);
-        stage.setTitle("Turbo Jeu des Questions");
+        stage.setTitle("Launcher");
         stage.show();
         languageScene.getEngButton().setOnAction(event -> {
             utilTranslateString.loadEngTradFile();

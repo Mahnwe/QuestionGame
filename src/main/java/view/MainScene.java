@@ -16,6 +16,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Properties;
 
 
 public class MainScene extends Scene
@@ -36,11 +37,9 @@ public class MainScene extends Scene
     private final File goldCupFile;
     private final File silverCupFile;
     private final File bronzeCupFile;
-    private final File perfectScoreFile10;
-    private final File perfectScoreFile15;
-    private final File perfectScoreFile20;
+    private final Properties perfectScoreFile;
 
-    public MainScene(BorderPane menuPane, Player player, GameHandler gameHandler, Stage stage, File saveFile, TrophyHandler trophyHandler, AchievementManager achievementManager, File perfectScoreFile10, File perfectScoreFile15, File perfectScoreFile20, File goldCupFile, File silverCupFile, File bronzeCupFile)
+    public MainScene(BorderPane menuPane, Player player, GameHandler gameHandler, Stage stage, File saveFile, TrophyHandler trophyHandler, AchievementManager achievementManager, File goldCupFile, File silverCupFile, File bronzeCupFile, Properties perfectScoreFile)
     {
         super(menuPane);
         this.stage = stage;
@@ -54,9 +53,7 @@ public class MainScene extends Scene
         this.goldCupFile = goldCupFile;
         this.silverCupFile = silverCupFile;
         this.bronzeCupFile = bronzeCupFile;
-        this.perfectScoreFile10 = perfectScoreFile10;
-        this.perfectScoreFile15 = perfectScoreFile15;
-        this.perfectScoreFile20 = perfectScoreFile20;
+        this.perfectScoreFile = perfectScoreFile;
 
 
         BackgroundCreator mainSceneBackgroundCreator = new BackgroundCreator(PathUtil.MAIN_BACKGROUND);
@@ -100,7 +97,7 @@ public class MainScene extends Scene
     {
         GameTimer.stopTimer();
         GameTimer.setTimerDisplay();
-        ResultScene resultScene = new ResultScene(menuPane, playerInfoVBox.getPlayer().getPlayerScore(), gameHandler.getQuestionCount(), trophyHandler, achievementManager, stage, perfectScoreFile10, perfectScoreFile15, perfectScoreFile20, goldCupFile, silverCupFile, bronzeCupFile);
+        ResultScene resultScene = new ResultScene(menuPane, playerInfoVBox.getPlayer().getPlayerScore(), gameHandler.getQuestionCount(), trophyHandler, achievementManager, stage, goldCupFile, silverCupFile, bronzeCupFile, perfectScoreFile);
         resultScene.getCongratsLabel().setText(UtilStringStorage.congratsLabel +playerInfoVBox.getPlayer().getPlayerName()+UtilStringStorage.answerAllQuestions);
         resultScene.getPlayerResult().setText(UtilStringStorage.playerResult +playerInfoVBox.getPlayer().getPlayerScore()+UtilStringStorage.scoreOn +gameHandler.getQuestionCount());
     }

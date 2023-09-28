@@ -13,6 +13,9 @@ import javafx.stage.Stage;
 import model.*;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
 
 
 public class MenuScene extends Scene
@@ -34,9 +37,7 @@ public class MenuScene extends Scene
     private final File goldCupFile;
     private final File silverCupFile;
     private final File bronzeCupFile;
-    private final File perfectScoreFile10;
-    private final File perfectScoreFile15;
-    private final File perfectScoreFile20;
+    private final Properties perfectScoreFile = new Properties();
     public static final String POLICE_LABEL = "Verdana";
 
     public MenuScene(BorderPane pane, Stage stage, AchievementManager achievementManager)
@@ -47,15 +48,18 @@ public class MenuScene extends Scene
         pane.setPrefWidth(900);
         pane.setPrefHeight(500);
 
+        try {
+            perfectScoreFile.load(new FileInputStream(PathUtil.PERFECT_SCORE_FILE));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
         this.gameHandler = new GameHandler();
         saveFile = new File("./src/main/resources/SaveFile/saveScoresFile");
 
         goldCupFile = new File("./src/main/resources/SaveFile/GoldCupFile");
         silverCupFile = new File("./src/main/resources/SaveFile/SilverCupFile");
         bronzeCupFile = new File("./src/main/resources/SaveFile/BronzeCupFile");
-        perfectScoreFile10 = new File("./src/main/resources/SaveFile/PerfectScoreFile10");
-        perfectScoreFile15 = new File("./src/main/resources/SaveFile/PerfectScoreFile15");
-        perfectScoreFile20 = new File("./src/main/resources/SaveFile/PerfectScoreFile20");
 
         trophyHandler = new TrophyHandler();
         this.achievementManager = achievementManager;
@@ -125,7 +129,7 @@ public class MenuScene extends Scene
         });
 
         achievementButton.setOnAction(event -> {
-            AchievementScene achievementScene = new AchievementScene(new BorderPane(), achievementManager, menuStage, goldCupFile, silverCupFile, bronzeCupFile, perfectScoreFile10, perfectScoreFile15, perfectScoreFile20);
+            AchievementScene achievementScene = new AchievementScene(new BorderPane(), achievementManager, menuStage, goldCupFile, silverCupFile, bronzeCupFile, perfectScoreFile);
             menuStage.setScene(achievementScene);
         });
 
@@ -186,7 +190,7 @@ public class MenuScene extends Scene
     public void instantiateMainScene()
     {
         Player player = new Player();
-        MainScene mainScene = new MainScene(new BorderPane(), player, gameHandler, menuStage, saveFile, trophyHandler, achievementManager, perfectScoreFile10, perfectScoreFile15, perfectScoreFile20, goldCupFile, silverCupFile, bronzeCupFile);
+        MainScene mainScene = new MainScene(new BorderPane(), player, gameHandler, menuStage, saveFile, trophyHandler, achievementManager, goldCupFile, silverCupFile, bronzeCupFile, perfectScoreFile);
         menuStage.setScene(mainScene);
 
     }

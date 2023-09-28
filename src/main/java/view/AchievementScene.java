@@ -15,12 +15,13 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Properties;
 
 public class AchievementScene extends Scene
 {
     private final StringProperty valueOfSuccess = new SimpleStringProperty();
     private final Stage stage;
-    private final TilePane tilePane;
+    private final GridPane gridPane;
     private final AchievementManager achievementManager;
 
     private Label goldCupAchievementInfo;
@@ -33,16 +34,13 @@ public class AchievementScene extends Scene
     private int nbrPerfectScore15;
     private int nbrPerfectScore20;
 
-
     private final File goldCupFile;
     private final File silverCupFile;
     private final File bronzeCupFile;
-    private final File perfectScoreFile10;
-    private final File perfectScoreFile15;
-    private final File perfectScoreFile20;
+    private final Properties perfectScoreFile;
 
 
-    public AchievementScene(BorderPane pane, AchievementManager achievementManager, Stage stage, File goldCupFile, File silverCupFile, File bronzeCupFile, File perfectScoreFile10, File perfectScoreFile15, File perfectScoreFile20)
+    public AchievementScene(BorderPane pane, AchievementManager achievementManager, Stage stage, File goldCupFile, File silverCupFile, File bronzeCupFile, Properties perfectScoreFile)
     {
         super(pane);
         pane.setPrefHeight(500);
@@ -52,15 +50,20 @@ public class AchievementScene extends Scene
         this.goldCupFile = goldCupFile;
         this.silverCupFile = silverCupFile;
         this.bronzeCupFile = bronzeCupFile;
-        this.perfectScoreFile10 = perfectScoreFile10;
-        this.perfectScoreFile15 = perfectScoreFile15;
-        this.perfectScoreFile20 = perfectScoreFile20;
+        this.perfectScoreFile = perfectScoreFile;
 
-        tilePane = new TilePane();
-        tilePane.setHgap(20);
-        tilePane.setVgap(20);
-        tilePane.setPrefColumns(4);
-        tilePane.setPrefRows(2);
+        gridPane = new GridPane();
+        gridPane.setHgap(30);
+        gridPane.setVgap(40);
+        gridPane.addColumn(4);
+        gridPane.addRow(2);
+
+        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
+        BackgroundCreator menuBackground = new BackgroundCreator(PathUtil.MENU_BACKGROUND);
+        Image menuSceneBackground = menuBackground.createBackground();
+        BackgroundImage backgroundImage = new BackgroundImage(menuSceneBackground, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+                backgroundSize);
+        pane.setBackground(new Background(backgroundImage));
 
         createGoldAchievementArea();
         createSilverAchievementArea();
@@ -70,7 +73,7 @@ public class AchievementScene extends Scene
         createPerfectScore20Area();
         checkAchievements();
 
-        pane.setCenter(tilePane);
+        pane.setCenter(gridPane);
 
         HBox buttonHbox = new HBox();
         buttonHbox.setPrefHeight(50);
@@ -78,13 +81,6 @@ public class AchievementScene extends Scene
         buttonHbox.getChildren().add(returnToMenu);
         pane.setTop(buttonHbox);
         returnToMenu.setOnAction(event -> backToMainMenu());
-
-        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
-        BackgroundCreator menuBackground = new BackgroundCreator(PathUtil.MENU_BACKGROUND);
-        Image menuSceneBackground = menuBackground.createBackground();
-        BackgroundImage backgroundImage = new BackgroundImage(menuSceneBackground, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
-                backgroundSize);
-        pane.setBackground(new Background(backgroundImage));
 
     }
 
@@ -98,7 +94,7 @@ public class AchievementScene extends Scene
         goldCupAchievementVBox.getChildren().add(goldCupAchievementLabel);
         goldCupAchievementVBox.getChildren().add(goldCupImage);
         goldCupAchievementVBox.getChildren().add(goldCupAchievementInfo);
-        tilePane.getChildren().add(goldCupAchievementVBox);
+        gridPane.add(goldCupAchievementVBox, 0, 0);
     }
     public void createSilverAchievementArea()
     {
@@ -110,7 +106,7 @@ public class AchievementScene extends Scene
         silverCupAchievementVBox.getChildren().add(silverCupAchievementLabel);
         silverCupAchievementVBox.getChildren().add(silverCupImage);
         silverCupAchievementVBox.getChildren().add(silverCupAchievementInfo);
-        tilePane.getChildren().add(silverCupAchievementVBox);
+        gridPane.add(silverCupAchievementVBox, 1, 0);
     }
 
     public void createBronzeAchievementArea()
@@ -123,7 +119,7 @@ public class AchievementScene extends Scene
         bronzeCupAchievementVBox.getChildren().add(bronzeCupAchievementLabel);
         bronzeCupAchievementVBox.getChildren().add(bronzeCupImage);
         bronzeCupAchievementVBox.getChildren().add(bronzeCupAchievementInfo);
-        tilePane.getChildren().add(bronzeCupAchievementVBox);
+        gridPane.add(bronzeCupAchievementVBox, 2, 0);
     }
 
     public void createPerfectScore10Area()
@@ -136,7 +132,7 @@ public class AchievementScene extends Scene
         perfectScoreAchievementVBox.getChildren().add(perfectScoreAchievementLabel);
         perfectScoreAchievementVBox.getChildren().add(perfectScoreImage);
         perfectScoreAchievementVBox.getChildren().add(perfectScoreAchievementInfo);
-        tilePane.getChildren().add(perfectScoreAchievementVBox);
+        gridPane.add(perfectScoreAchievementVBox, 3, 0);
     }
 
     public void createPerfectScore15Area()
@@ -149,7 +145,7 @@ public class AchievementScene extends Scene
         perfectScoreAchievement15.getChildren().add(perfectScoreAchievement15Label);
         perfectScoreAchievement15.getChildren().add(perfectScore15Image);
         perfectScoreAchievement15.getChildren().add(perfectScoreAchievement15Info);
-        tilePane.getChildren().add(perfectScoreAchievement15);
+        gridPane.add(perfectScoreAchievement15, 0, 1);
     }
 
     public void createPerfectScore20Area()
@@ -162,7 +158,7 @@ public class AchievementScene extends Scene
         perfectScoreAchievement20.getChildren().add(perfectScoreAchievement20Label);
         perfectScoreAchievement20.getChildren().add(perfectScore20Image);
         perfectScoreAchievement20.getChildren().add(perfectScoreAchievement20Info);
-        tilePane.getChildren().add(perfectScoreAchievement20);
+        gridPane.add(perfectScoreAchievement20, 1, 1);
     }
 
     public void checkAchievements()
@@ -185,7 +181,7 @@ public class AchievementScene extends Scene
         achievementManager.getAchievementsList().get(2).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(2), nbrOfBronzeCup);
         checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(2), bronzeCupAchievementInfo);
 
-        String checkPerfectScoreFile10 = String.valueOf(readInCupFile(perfectScoreFile10));
+        String checkPerfectScoreFile10 = String.valueOf(perfectScoreFile.getProperty("perfectScore10"));
         if(!checkPerfectScoreFile10.isEmpty()) {
             String numberOfPerfectScore10 = checkAndGetNumberOfPerfectScore(checkPerfectScoreFile10);
             nbrPerfectScore10 = Integer.parseInt(numberOfPerfectScore10);
@@ -193,7 +189,7 @@ public class AchievementScene extends Scene
         achievementManager.getAchievementsList().get(3).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(3), nbrPerfectScore10);
         checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(3), perfectScoreAchievementInfo);
 
-        String checkPerfectScoreFile15 = String.valueOf(readInCupFile(perfectScoreFile15));
+        String checkPerfectScoreFile15 = String.valueOf(perfectScoreFile.getProperty("perfectScore15"));
         if(!checkPerfectScoreFile15.isEmpty()) {
             String numberOfPerfectScore15 = checkAndGetNumberOfPerfectScore(checkPerfectScoreFile15);
             nbrPerfectScore15 = Integer.parseInt(numberOfPerfectScore15);
@@ -201,7 +197,7 @@ public class AchievementScene extends Scene
         achievementManager.getAchievementsList().get(4).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(4), nbrPerfectScore15);
         checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(4), perfectScoreAchievement15Info);
 
-        String checkPerfectScoreFile20 = String.valueOf(readInCupFile(perfectScoreFile20));
+        String checkPerfectScoreFile20 = String.valueOf(perfectScoreFile.getProperty("perfectScore20"));
         if(!checkPerfectScoreFile20.isEmpty()) {
             String numberOfPerfectScore20 = checkAndGetNumberOfPerfectScore(checkPerfectScoreFile20);
             nbrPerfectScore20 = Integer.parseInt(numberOfPerfectScore20);

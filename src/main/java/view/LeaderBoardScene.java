@@ -44,7 +44,7 @@ public class LeaderBoardScene extends Scene
         Label leaderBoardLabel = new Label(UtilStringStorage.leaderBoardLabel);
         leaderBoardLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
 
-        leaderBoardArea.setMinSize(400, 400);
+        leaderBoardArea.setMinSize(350, 350);
         leaderBoardArea.setText(String.valueOf(stringBuilder));
         leaderBoardArea.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
 

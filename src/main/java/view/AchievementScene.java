@@ -11,10 +11,6 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import model.*;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.Properties;
 
 public class AchievementScene extends Scene
@@ -33,23 +29,18 @@ public class AchievementScene extends Scene
     private int nbrPerfectScore10;
     private int nbrPerfectScore15;
     private int nbrPerfectScore20;
-
-    private final File goldCupFile;
-    private final File silverCupFile;
-    private final File bronzeCupFile;
     private final Properties perfectScoreFile;
+    private final Properties cupFile;
 
 
-    public AchievementScene(BorderPane pane, AchievementManager achievementManager, Stage stage, File goldCupFile, File silverCupFile, File bronzeCupFile, Properties perfectScoreFile)
+    public AchievementScene(BorderPane pane, AchievementManager achievementManager, Stage stage, Properties cupFile, Properties perfectScoreFile)
     {
         super(pane);
         pane.setPrefHeight(500);
         pane.setPrefWidth(900);
         this.stage = stage;
         this.achievementManager = achievementManager;
-        this.goldCupFile = goldCupFile;
-        this.silverCupFile = silverCupFile;
-        this.bronzeCupFile = bronzeCupFile;
+        this.cupFile = cupFile;
         this.perfectScoreFile = perfectScoreFile;
 
         gridPane = new GridPane();
@@ -163,19 +154,19 @@ public class AchievementScene extends Scene
 
     public void checkAchievements()
     {
-        String checkIntInGoldFile = String.valueOf(readInCupFile(goldCupFile));
+        String checkIntInGoldFile = cupFile.getProperty("goldCup");
         String numberOfGoldCup = checkAndGetNumberOfCup(checkIntInGoldFile);
         int nbrOfGoldCup = Integer.parseInt(numberOfGoldCup);
         achievementManager.getAchievementsList().get(0).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(0), nbrOfGoldCup);
         checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(0), goldCupAchievementInfo);
 
-        String checkIntInSilverFile = String.valueOf(readInCupFile(silverCupFile));
+        String checkIntInSilverFile = cupFile.getProperty("silverCup");
         String numberOfSilverCup = checkAndGetNumberOfCup(checkIntInSilverFile);
         int nbrOfSilverCup = Integer.parseInt(numberOfSilverCup);
         achievementManager.getAchievementsList().get(1).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(1), nbrOfSilverCup);
         checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(1), silverCupAchievementInfo);
 
-        String checkIntInBronzeFile = String.valueOf(readInCupFile(bronzeCupFile));
+        String checkIntInBronzeFile = cupFile.getProperty("bronzeCup");
         String numberOfBronzeCup = checkAndGetNumberOfCup(checkIntInBronzeFile);
         int nbrOfBronzeCup = Integer.parseInt(numberOfBronzeCup);
         achievementManager.getAchievementsList().get(2).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(2), nbrOfBronzeCup);
@@ -225,23 +216,6 @@ public class AchievementScene extends Scene
         }
         valueOfSuccess.setValue(unlockValue);
         label.setText(unlockValue);
-    }
-
-    public StringBuilder readInCupFile(File file)
-    {
-        StringBuilder stringBuilder = new StringBuilder();
-        try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-            String line;
-            while((line = bufferedReader.readLine()) != null)
-            {
-                stringBuilder.append(line);
-            }
-            bufferedReader.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        return stringBuilder;
     }
 
     public String checkAndGetNumberOfCup(String stringToCheck)

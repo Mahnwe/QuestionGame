@@ -14,4 +14,5 @@ public class PathUtil
     public static final String ENG_TRAD_PROPERTIES_FILE = RESOURCES_PATH + "TradFile/EngTradFile.properties";
     public static final String FR_TRAD_PROPERTIES_FILE = RESOURCES_PATH + "TradFile/FrTradFile.properties";
     public static final String PERFECT_SCORE_FILE = RESOURCES_PATH + "SaveFile/PerfectScoreFile.properties";
+    public static final String CUP_FILE = RESOURCES_PATH + "SaveFile/CupFile.properties";
 }

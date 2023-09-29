@@ -11,7 +11,7 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.*;
 
-import java.io.File;
+import java.util.Properties;
 
 public class TrophyScene extends Scene
 {
@@ -21,7 +21,7 @@ public class TrophyScene extends Scene
     private final Stage stage;
     private final AchievementManager achievementManager;
 
-    public TrophyScene(BorderPane pane, TrophyHandler trophyHandler, Stage stage, AchievementManager achievementManager, File goldCupFile, File silverCupFile, File bronzeCupFile)
+    public TrophyScene(BorderPane pane, Stage stage, AchievementManager achievementManager, Properties cupFile)
     {
         super(pane);
         pane.setPrefHeight(500);
@@ -43,17 +43,17 @@ public class TrophyScene extends Scene
         VBox nbrOfCups = new VBox();
 
         Label nbrOfGoldCupLabel = new Label();
-        nbrOfGoldCupLabel.setText(UtilStringStorage.goldCupTrophy + trophyHandler.readInCupFile(goldCupFile));
+        nbrOfGoldCupLabel.setText(UtilStringStorage.goldCupTrophy + cupFile.getProperty("goldCup"));
         nbrOfGoldCupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
         placeLabel(nbrOfGoldCupLabel, 10, 50);
 
         Label nbrOfSilverCupLabel = new Label();
-        nbrOfSilverCupLabel.setText(UtilStringStorage.silverCupTrophy + trophyHandler.readInCupFile(silverCupFile));
+        nbrOfSilverCupLabel.setText(UtilStringStorage.silverCupTrophy + cupFile.getProperty("silverCup"));
         nbrOfSilverCupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
         placeLabel(nbrOfSilverCupLabel, 10, 150);
 
         Label nbrOfBronzeCupLabel = new Label();
-        nbrOfBronzeCupLabel.setText(UtilStringStorage.bronzeCupTrophy + trophyHandler.readInCupFile(bronzeCupFile));
+        nbrOfBronzeCupLabel.setText(UtilStringStorage.bronzeCupTrophy + cupFile.getProperty("bronzeCup"));
         nbrOfBronzeCupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
         placeLabel(nbrOfBronzeCupLabel, 10, 250);
 

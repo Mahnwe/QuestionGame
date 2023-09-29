@@ -31,15 +31,11 @@ public class MainScene extends Scene
     private final Stage stage;
 
     private final File saveFile;
-
-    private final TrophyHandler trophyHandler;
     private final AchievementManager achievementManager;
-    private final File goldCupFile;
-    private final File silverCupFile;
-    private final File bronzeCupFile;
     private final Properties perfectScoreFile;
+    private final Properties cupFile;
 
-    public MainScene(BorderPane menuPane, Player player, GameHandler gameHandler, Stage stage, File saveFile, TrophyHandler trophyHandler, AchievementManager achievementManager, File goldCupFile, File silverCupFile, File bronzeCupFile, Properties perfectScoreFile)
+    public MainScene(BorderPane menuPane, Player player, GameHandler gameHandler, Stage stage, File saveFile, AchievementManager achievementManager, Properties cupFile, Properties perfectScoreFile)
     {
         super(menuPane);
         this.stage = stage;
@@ -48,11 +44,8 @@ public class MainScene extends Scene
         menuPane.setPrefHeight(500);
         this.gameHandler = gameHandler;
         this.saveFile = saveFile;
-        this.trophyHandler = trophyHandler;
         this.achievementManager = achievementManager;
-        this.goldCupFile = goldCupFile;
-        this.silverCupFile = silverCupFile;
-        this.bronzeCupFile = bronzeCupFile;
+        this.cupFile = cupFile;
         this.perfectScoreFile = perfectScoreFile;
 
 
@@ -97,7 +90,7 @@ public class MainScene extends Scene
     {
         GameTimer.stopTimer();
         GameTimer.setTimerDisplay();
-        ResultScene resultScene = new ResultScene(menuPane, playerInfoVBox.getPlayer().getPlayerScore(), gameHandler.getQuestionCount(), trophyHandler, achievementManager, stage, goldCupFile, silverCupFile, bronzeCupFile, perfectScoreFile);
+        ResultScene resultScene = new ResultScene(menuPane, playerInfoVBox.getPlayer().getPlayerScore(), gameHandler.getQuestionCount(), achievementManager, stage, cupFile, perfectScoreFile);
         resultScene.getCongratsLabel().setText(UtilStringStorage.congratsLabel +playerInfoVBox.getPlayer().getPlayerName()+UtilStringStorage.answerAllQuestions);
         resultScene.getPlayerResult().setText(UtilStringStorage.playerResult +playerInfoVBox.getPlayer().getPlayerScore()+UtilStringStorage.scoreOn +gameHandler.getQuestionCount());
     }

@@ -164,14 +164,14 @@ public class QuestionStorage
                 UtilStringStorage.explanation30);
         questionList.add(question30);
 
-        Question question31 = new Question(UtilStringStorage.QUESTION_31,UtilStringStorage.ANSWER_A31,
-                UtilStringStorage.ANSWER_B31, UtilStringStorage.ANSWER_C31, UtilStringStorage.ANSWER_D31, UtilStringStorage.GOOD_ANSWER_31,
-                UtilStringStorage.EXPLANATION_31);
+        Question question31 = new Question(UtilStringStorage.question31,UtilStringStorage.answerA31,
+                UtilStringStorage.answerB31, UtilStringStorage.answerC31, UtilStringStorage.answerD31, UtilStringStorage.goodAnswer31,
+                UtilStringStorage.explanation31);
         questionList.add(question31);
 
-        Question question32 = new Question(UtilStringStorage.QUESTION_32,UtilStringStorage.ANSWER_A32,
-                UtilStringStorage.ANSWER_B32, UtilStringStorage.ANSWER_C32, UtilStringStorage.ANSWER_D32, UtilStringStorage.GOOD_ANSWER_32,
-                UtilStringStorage.EXPLANATION_32);
+        Question question32 = new Question(UtilStringStorage.question32,UtilStringStorage.answerA32,
+                UtilStringStorage.answerB32, UtilStringStorage.answerC32, UtilStringStorage.answerD32, UtilStringStorage.goodAnswer32,
+                UtilStringStorage.explanation32);
         questionList.add(question32);
 
         Question question33 = new Question(UtilStringStorage.QUESTION_33,UtilStringStorage.ANSWER_A33,

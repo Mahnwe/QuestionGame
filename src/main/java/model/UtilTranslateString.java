@@ -232,8 +232,48 @@ public class UtilTranslateString {
         UtilStringStorage.answerD20 = engTradFile.getProperty("answerD20");
         UtilStringStorage.goodAnswer20 = engTradFile.getProperty("goodAnswer20");
         UtilStringStorage.explanation20 = engTradFile.getProperty("explanation20");
-
-
+        UtilStringStorage.question21 = engTradFile.getProperty("question21");
+        UtilStringStorage.answerA21 = engTradFile.getProperty("answerA21");
+        UtilStringStorage.answerB21 = engTradFile.getProperty("answerB21");
+        UtilStringStorage.answerC21 = engTradFile.getProperty("answerC21");
+        UtilStringStorage.answerD21 = engTradFile.getProperty("answerD21");
+        UtilStringStorage.goodAnswer21 = engTradFile.getProperty("goodAnswer21");
+        UtilStringStorage.explanation21 = engTradFile.getProperty("explanation21");
+        UtilStringStorage.question22 = engTradFile.getProperty("question22");
+        UtilStringStorage.answerA22 = engTradFile.getProperty("answerA22");
+        UtilStringStorage.answerB22 = engTradFile.getProperty("answerB22");
+        UtilStringStorage.answerC22 = engTradFile.getProperty("answerC22");
+        UtilStringStorage.answerD22 = engTradFile.getProperty("answerD22");
+        UtilStringStorage.goodAnswer22 = engTradFile.getProperty("goodAnswer22");
+        UtilStringStorage.explanation22 = engTradFile.getProperty("explanation22");
+        UtilStringStorage.question23 = engTradFile.getProperty("question23");
+        UtilStringStorage.answerA23 = engTradFile.getProperty("answerA23");
+        UtilStringStorage.answerB23 = engTradFile.getProperty("answerB23");
+        UtilStringStorage.answerC23 = engTradFile.getProperty("answerC23");
+        UtilStringStorage.answerD23 = engTradFile.getProperty("answerD23");
+        UtilStringStorage.goodAnswer23 = engTradFile.getProperty("goodAnswer23");
+        UtilStringStorage.explanation23 = engTradFile.getProperty("explanation23");
+        UtilStringStorage.question24 = engTradFile.getProperty("question24");
+        UtilStringStorage.answerA24 = engTradFile.getProperty("answerA24");
+        UtilStringStorage.answerB24 = engTradFile.getProperty("answerB24");
+        UtilStringStorage.answerC24 = engTradFile.getProperty("answerC24");
+        UtilStringStorage.answerD24 = engTradFile.getProperty("answerD24");
+        UtilStringStorage.goodAnswer24 = engTradFile.getProperty("goodAnswer24");
+        UtilStringStorage.explanation24 = engTradFile.getProperty("explanation24");
+        UtilStringStorage.question25 = engTradFile.getProperty("question25");
+        UtilStringStorage.answerA25 = engTradFile.getProperty("answerA25");
+        UtilStringStorage.answerB25 = engTradFile.getProperty("answerB25");
+        UtilStringStorage.answerC25 = engTradFile.getProperty("answerC25");
+        UtilStringStorage.answerD25 = engTradFile.getProperty("answerD25");
+        UtilStringStorage.goodAnswer25 = engTradFile.getProperty("goodAnswer25");
+        UtilStringStorage.explanation25 = engTradFile.getProperty("explanation25");
+        UtilStringStorage.question26 = engTradFile.getProperty("question26");
+        UtilStringStorage.answerA26 = engTradFile.getProperty("answerA26");
+        UtilStringStorage.answerB26 = engTradFile.getProperty("answerB26");
+        UtilStringStorage.answerC26 = engTradFile.getProperty("answerC26");
+        UtilStringStorage.answerD26 = engTradFile.getProperty("answerD26");
+        UtilStringStorage.goodAnswer26 = engTradFile.getProperty("goodAnswer26");
+        UtilStringStorage.explanation26 = engTradFile.getProperty("explanation26");
 
     }
 
@@ -435,5 +475,49 @@ public class UtilTranslateString {
         UtilStringStorage.answerD20 = frTradFile.getProperty("answerD20");
         UtilStringStorage.goodAnswer20 = frTradFile.getProperty("goodAnswer20");
         UtilStringStorage.explanation20 = frTradFile.getProperty("explanation20");
+        UtilStringStorage.question21 = frTradFile.getProperty("question21");
+        UtilStringStorage.answerA21 = frTradFile.getProperty("answerA21");
+        UtilStringStorage.answerB21 = frTradFile.getProperty("answerB21");
+        UtilStringStorage.answerC21 = frTradFile.getProperty("answerC21");
+        UtilStringStorage.answerD21 = frTradFile.getProperty("answerD21");
+        UtilStringStorage.goodAnswer21 = frTradFile.getProperty("goodAnswer21");
+        UtilStringStorage.explanation21 = frTradFile.getProperty("explanation21");
+        UtilStringStorage.question22 = frTradFile.getProperty("question22");
+        UtilStringStorage.answerA22 = frTradFile.getProperty("answerA22");
+        UtilStringStorage.answerB22 = frTradFile.getProperty("answerB22");
+        UtilStringStorage.answerC22 = frTradFile.getProperty("answerC22");
+        UtilStringStorage.answerD22 = frTradFile.getProperty("answerD22");
+        UtilStringStorage.goodAnswer22 = frTradFile.getProperty("goodAnswer22");
+        UtilStringStorage.explanation22 = frTradFile.getProperty("explanation22");
+        UtilStringStorage.question23 = frTradFile.getProperty("question23");
+        UtilStringStorage.answerA23 = frTradFile.getProperty("answerA23");
+        UtilStringStorage.answerB23 = frTradFile.getProperty("answerB23");
+        UtilStringStorage.answerC23 = frTradFile.getProperty("answerC23");
+        UtilStringStorage.answerD23 = frTradFile.getProperty("answerD23");
+        UtilStringStorage.goodAnswer23 = frTradFile.getProperty("goodAnswer23");
+        UtilStringStorage.explanation23 = frTradFile.getProperty("explanation23");
+        UtilStringStorage.question24 = frTradFile.getProperty("question24");
+        UtilStringStorage.answerA24 = frTradFile.getProperty("answerA24");
+        UtilStringStorage.answerB24 = frTradFile.getProperty("answerB24");
+        UtilStringStorage.answerC24 = frTradFile.getProperty("answerC24");
+        UtilStringStorage.answerD24 = frTradFile.getProperty("answerD24");
+        UtilStringStorage.goodAnswer24 = frTradFile.getProperty("goodAnswer24");
+        UtilStringStorage.explanation24 = frTradFile.getProperty("explanation24");
+        UtilStringStorage.question25 = frTradFile.getProperty("question25");
+        UtilStringStorage.answerA25 = frTradFile.getProperty("answerA25");
+        UtilStringStorage.answerB25 = frTradFile.getProperty("answerB25");
+        UtilStringStorage.answerC25 = frTradFile.getProperty("answerC25");
+        UtilStringStorage.answerD25 = frTradFile.getProperty("answerD25");
+        UtilStringStorage.goodAnswer25 = frTradFile.getProperty("goodAnswer25");
+        UtilStringStorage.explanation25 = frTradFile.getProperty("explanation25");
+        UtilStringStorage.question26 = frTradFile.getProperty("question26");
+        UtilStringStorage.answerA26 = frTradFile.getProperty("answerA26");
+        UtilStringStorage.answerB26 = frTradFile.getProperty("answerB26");
+        UtilStringStorage.answerC26 = frTradFile.getProperty("answerC26");
+        UtilStringStorage.answerD26 = frTradFile.getProperty("answerD26");
+        UtilStringStorage.goodAnswer26 = frTradFile.getProperty("goodAnswer26");
+        UtilStringStorage.explanation26 = frTradFile.getProperty("explanation26");
+
+
     }
 }

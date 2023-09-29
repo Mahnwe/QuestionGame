@@ -114,34 +114,34 @@ public class QuestionStorage
                 UtilStringStorage.explanation20);
         questionList.add(question20);
 
-        Question question21 = new Question(UtilStringStorage.QUESTION_21,UtilStringStorage.ANSWER_A21,
-                UtilStringStorage.ANSWER_B21, UtilStringStorage.ANSWER_C21, UtilStringStorage.ANSWER_D21, UtilStringStorage.GOOD_ANSWER_21,
-                UtilStringStorage.EXPLANATION_21);
+        Question question21 = new Question(UtilStringStorage.question21,UtilStringStorage.answerA21,
+                UtilStringStorage.answerB21, UtilStringStorage.answerC21, UtilStringStorage.answerD21, UtilStringStorage.goodAnswer21,
+                UtilStringStorage.explanation21);
         questionList.add(question21);
 
-        Question question22 = new Question(UtilStringStorage.QUESTION_22,UtilStringStorage.ANSWER_A22,
-                UtilStringStorage.ANSWER_B22, UtilStringStorage.ANSWER_C22, UtilStringStorage.ANSWER_D22, UtilStringStorage.GOOD_ANSWER_22,
-                UtilStringStorage.EXPLANATION_22);
+        Question question22 = new Question(UtilStringStorage.question22,UtilStringStorage.answerA22,
+                UtilStringStorage.answerB22, UtilStringStorage.answerC22, UtilStringStorage.answerD22, UtilStringStorage.goodAnswer22,
+                UtilStringStorage.explanation22);
         questionList.add(question22);
 
-        Question question23 = new Question(UtilStringStorage.QUESTION_23,UtilStringStorage.ANSWER_A23,
-                UtilStringStorage.ANSWER_B23, UtilStringStorage.ANSWER_C23, UtilStringStorage.ANSWER_D23, UtilStringStorage.GOOD_ANSWER_23,
-                UtilStringStorage.EXPLANATION_23);
+        Question question23 = new Question(UtilStringStorage.question23,UtilStringStorage.answerA23,
+                UtilStringStorage.answerB23, UtilStringStorage.answerC23, UtilStringStorage.answerD23, UtilStringStorage.goodAnswer23,
+                UtilStringStorage.explanation23);
         questionList.add(question23);
 
-        Question question24 = new Question(UtilStringStorage.QUESTION_24,UtilStringStorage.ANSWER_A24,
-                UtilStringStorage.ANSWER_B24, UtilStringStorage.ANSWER_C24, UtilStringStorage.ANSWER_D24, UtilStringStorage.GOOD_ANSWER_24,
-                UtilStringStorage.EXPLANATION_24);
+        Question question24 = new Question(UtilStringStorage.question24,UtilStringStorage.answerA24,
+                UtilStringStorage.answerB24, UtilStringStorage.answerC24, UtilStringStorage.answerD24, UtilStringStorage.goodAnswer24,
+                UtilStringStorage.explanation24);
         questionList.add(question24);
 
-        Question question25 = new Question(UtilStringStorage.QUESTION_25,UtilStringStorage.ANSWER_A25,
-                UtilStringStorage.ANSWER_B25, UtilStringStorage.ANSWER_C25, UtilStringStorage.ANSWER_D25, UtilStringStorage.GOOD_ANSWER_25,
-                UtilStringStorage.EXPLANATION_25);
+        Question question25 = new Question(UtilStringStorage.question25,UtilStringStorage.answerA25,
+                UtilStringStorage.answerB25, UtilStringStorage.answerC25, UtilStringStorage.answerD25, UtilStringStorage.goodAnswer25,
+                UtilStringStorage.explanation25);
         questionList.add(question25);
 
-        Question question26 = new Question(UtilStringStorage.QUESTION_26,UtilStringStorage.ANSWER_A26,
-                UtilStringStorage.ANSWER_B26, UtilStringStorage.ANSWER_C26, UtilStringStorage.ANSWER_D26, UtilStringStorage.GOOD_ANSWER_26,
-                UtilStringStorage.EXPLANATION_26);
+        Question question26 = new Question(UtilStringStorage.question26,UtilStringStorage.answerA26,
+                UtilStringStorage.answerB26, UtilStringStorage.answerC26, UtilStringStorage.answerD26, UtilStringStorage.goodAnswer26,
+                UtilStringStorage.explanation26);
         questionList.add(question26);
 
         Question question27 = new Question(UtilStringStorage.QUESTION_27,UtilStringStorage.ANSWER_A27,

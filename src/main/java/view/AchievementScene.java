@@ -46,7 +46,7 @@ public class AchievementScene extends Scene
         gridPane = new GridPane();
         gridPane.setHgap(30);
         gridPane.setVgap(40);
-        gridPane.addColumn(4);
+        gridPane.addColumn(3);
         gridPane.addRow(2);
 
         BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
@@ -123,7 +123,7 @@ public class AchievementScene extends Scene
         perfectScoreAchievementVBox.getChildren().add(perfectScoreAchievementLabel);
         perfectScoreAchievementVBox.getChildren().add(perfectScoreImage);
         perfectScoreAchievementVBox.getChildren().add(perfectScoreAchievementInfo);
-        gridPane.add(perfectScoreAchievementVBox, 3, 0);
+        gridPane.add(perfectScoreAchievementVBox, 0, 1);
     }
 
     public void createPerfectScore15Area()
@@ -136,7 +136,7 @@ public class AchievementScene extends Scene
         perfectScoreAchievement15.getChildren().add(perfectScoreAchievement15Label);
         perfectScoreAchievement15.getChildren().add(perfectScore15Image);
         perfectScoreAchievement15.getChildren().add(perfectScoreAchievement15Info);
-        gridPane.add(perfectScoreAchievement15, 0, 1);
+        gridPane.add(perfectScoreAchievement15, 1, 1);
     }
 
     public void createPerfectScore20Area()
@@ -149,7 +149,7 @@ public class AchievementScene extends Scene
         perfectScoreAchievement20.getChildren().add(perfectScoreAchievement20Label);
         perfectScoreAchievement20.getChildren().add(perfectScore20Image);
         perfectScoreAchievement20.getChildren().add(perfectScoreAchievement20Info);
-        gridPane.add(perfectScoreAchievement20, 1, 1);
+        gridPane.add(perfectScoreAchievement20, 2, 1);
     }
 
     public void checkAchievements()

@@ -106,6 +106,12 @@ public class MenuScene extends Scene
         placeButtons(achievementButton, 10, 230);
         achievementButton.setTooltip(achievementTooltip);
 
+        Button optionButton = new Button(UtilStringStorage.optionButton);
+        Tooltip optionTooltip = new Tooltip(UtilStringStorage.optionTooltip);
+        optionButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
+        placeButtons(optionButton, 10, 300);
+        optionButton.setTooltip(optionTooltip);
+
         leaderBoardButton.setOnAction(event -> {
             LeaderBoardScene leaderBoardScene = new LeaderBoardScene(new BorderPane(), saveFile, menuStage, achievementManager);
             menuStage.setScene(leaderBoardScene);
@@ -121,10 +127,16 @@ public class MenuScene extends Scene
             menuStage.setScene(achievementScene);
         });
 
+        optionButton.setOnAction(event -> {
+            OptionScene optionScene = new OptionScene(new BorderPane(), menuStage, achievementManager);
+            menuStage.setScene(optionScene);
+        });
+
 
         leaderBoardVBox.getChildren().add(leaderBoardButton);
         leaderBoardVBox.getChildren().add(trophyButton);
         leaderBoardVBox.getChildren().add(achievementButton);
+        leaderBoardVBox.getChildren().add(optionButton);
         pane.setLeft(leaderBoardVBox);
     }
 

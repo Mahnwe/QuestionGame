@@ -57,6 +57,8 @@ public class UtilTranslateString {
         UtilStringStorage.trophyTooltip = engTradFile.getProperty("trophyTooltip");
         UtilStringStorage.achievementButton = engTradFile.getProperty("achievementButton");
         UtilStringStorage.achievementTooltip = engTradFile.getProperty("achievementTooltip");
+        UtilStringStorage.optionButton = engTradFile.getProperty("optionButton");
+        UtilStringStorage.optionTooltip = engTradFile.getProperty("optionTooltip");
         UtilStringStorage.chooseMode = engTradFile.getProperty("chooseMode");
         UtilStringStorage.mode10Button = engTradFile.getProperty("mode10Button");
         UtilStringStorage.mode15Button = engTradFile.getProperty("mode15Button");
@@ -92,6 +94,7 @@ public class UtilTranslateString {
         UtilStringStorage.goldCupTrophy = engTradFile.getProperty("goldCupTrophy");
         UtilStringStorage.silverCupTrophy = engTradFile.getProperty("silverCupTrophy");
         UtilStringStorage.bronzeCupTrophy = engTradFile.getProperty("bronzeCupTrophy");
+        UtilStringStorage.volumeLabel = engTradFile.getProperty("volumeLabel");
         UtilStringStorage.question1 = engTradFile.getProperty("question1");
         UtilStringStorage.answerA1 = engTradFile.getProperty("answerA1");
         UtilStringStorage.answerB1 = engTradFile.getProperty("answerB1");
@@ -364,6 +367,8 @@ public class UtilTranslateString {
         UtilStringStorage.trophyTooltip = frTradFile.getProperty("trophyTooltip");
         UtilStringStorage.achievementButton = frTradFile.getProperty("achievementButton");
         UtilStringStorage.achievementTooltip = frTradFile.getProperty("achievementTooltip");
+        UtilStringStorage.optionButton = frTradFile.getProperty("optionButton");
+        UtilStringStorage.optionTooltip = frTradFile.getProperty("optionTooltip");
         UtilStringStorage.chooseMode = frTradFile.getProperty("chooseMode");
         UtilStringStorage.mode10Button = frTradFile.getProperty("mode10Button");
         UtilStringStorage.mode15Button = frTradFile.getProperty("mode15Button");
@@ -399,6 +404,7 @@ public class UtilTranslateString {
         UtilStringStorage.goldCupTrophy = frTradFile.getProperty("goldCupTrophy");
         UtilStringStorage.silverCupTrophy = frTradFile.getProperty("silverCupTrophy");
         UtilStringStorage.bronzeCupTrophy = frTradFile.getProperty("bronzeCupTrophy");
+        UtilStringStorage.volumeLabel = frTradFile.getProperty("volumeLabel");
         UtilStringStorage.question1 = frTradFile.getProperty("question1");
         UtilStringStorage.answerA1 = frTradFile.getProperty("answerA1");
         UtilStringStorage.answerB1 = frTradFile.getProperty("answerB1");

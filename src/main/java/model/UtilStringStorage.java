@@ -32,6 +32,8 @@ public class UtilStringStorage
     public static String trophyTooltip = "";
     public static String achievementButton = "";
     public static String achievementTooltip = "";
+    public static String optionButton = "";
+    public static String optionTooltip = "";
     public static String chooseMode = "";
     public static String mode10Button = "";
     public static String mode15Button = "";
@@ -77,6 +79,9 @@ public class UtilStringStorage
     public static String goldCupTrophy = "";
     public static String silverCupTrophy = "";
     public static String bronzeCupTrophy = "";
+
+    // OPTION SCENE
+    public static String volumeLabel = "";
 
     // QUESTIONS LABELS
     public static String question1 = "";

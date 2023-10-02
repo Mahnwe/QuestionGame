@@ -70,6 +70,7 @@ public class MainScene extends Scene
         nextQuestionButton.setOnAction(e -> {
             if(questionInterface.isPlayerAnswer())
             {
+                SoundManager.stopMusic(QuestionInterface.soundEffectToStop);
                 playerInfoVBox.increaseScore();
             }
             playerInfoVBox.getPlayerScoreLabel().setText(UtilStringStorage.scoreLabel +playerInfoVBox.getPlayer().getPlayerScore()+"/"+gameHandler.getQuestionCount());
@@ -91,6 +92,7 @@ public class MainScene extends Scene
         GameTimer.stopTimer();
         GameTimer.setTimerDisplay();
         ResultScene resultScene = new ResultScene(menuPane, playerInfoVBox.getPlayer().getPlayerScore(), gameHandler.getQuestionCount(), achievementManager, stage, cupFile, perfectScoreFile);
+        SoundManager.stopMusic(PlayerInfoVBox.musicToStop);
         resultScene.getCongratsLabel().setText(UtilStringStorage.congratsLabel +playerInfoVBox.getPlayer().getPlayerName()+UtilStringStorage.answerAllQuestions);
         resultScene.getPlayerResult().setText(UtilStringStorage.playerResult +playerInfoVBox.getPlayer().getPlayerScore()+UtilStringStorage.scoreOn +gameHandler.getQuestionCount());
     }

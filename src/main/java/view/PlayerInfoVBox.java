@@ -5,13 +5,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.*;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import model.GameTimer;
-import model.Player;
-import model.UtilStringStorage;
+import model.*;
 
 public class PlayerInfoVBox extends VBox
 {
@@ -23,6 +22,7 @@ public class PlayerInfoVBox extends VBox
     private Label playerScoreLabel;
 
     private final Player player;
+    public static MediaPlayer musicToStop;
 
     private final Border border = new Border(new BorderStroke(Color.BLACK,
             BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT));
@@ -81,6 +81,7 @@ public class PlayerInfoVBox extends VBox
                 stage.setMinWidth(900);
                 stage.setMinHeight(500);
                 GameTimer.startTimer();
+                musicToStop = SoundManager.playMusicRepeat(PathUtil.OUTER_WILDS_MUSIC);
             }
             getPlayerName.setMaxHeight(0);
             getPlayerName.setMinHeight(0);

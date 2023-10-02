@@ -3,13 +3,13 @@ package view;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import model.AchievementManager;
-import model.SoundManager;
-import model.UtilStringStorage;
+import model.*;
 
 public class OptionScene extends Scene {
 
@@ -25,14 +25,16 @@ public class OptionScene extends Scene {
         gridPane = new GridPane();
         pane.setCenter(gridPane);
 
-        gridPane.addColumn(10);
+        gridPane.addColumn(9);
         gridPane.addRow(2);
         this.stage = stage;
         this.achievementManager = achievementManager;
 
         Label volumeLabel = new Label(UtilStringStorage.volumeLabel);
+        volumeLabel.setTranslateX(65);
         volumeLabel.setTranslateY(25);
-        volumeLabel.setFont(Font.font(MenuScene.POLICE_LABEL));
+        volumeLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 22));
+        volumeLabel.setTextFill(Color.GHOSTWHITE);
         gridPane.add(volumeLabel, 4, 0);
 
         createVolumeButton(0);
@@ -40,6 +42,14 @@ public class OptionScene extends Scene {
         Button returnButton = new Button(UtilStringStorage.returnButton);
         pane.setTop(returnButton);
         returnButton.setOnAction(event -> backToMainMenu());
+
+
+        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
+        BackgroundCreator menuBackground = new BackgroundCreator(PathUtil.MENU_BACKGROUND);
+        Image menuSceneBackground = menuBackground.createBackground();
+        BackgroundImage backgroundImage = new BackgroundImage(menuSceneBackground, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+                backgroundSize);
+        pane.setBackground(new Background(backgroundImage));
     }
 
     public void createVolumeButton(int columnNumber)
@@ -47,7 +57,9 @@ public class OptionScene extends Scene {
         for(int i = 0; i < 10; i++)
         {
             Button volumeButton = new Button(String.valueOf(buttonNumber));
-            volumeButton.setTranslateY(30);
+            volumeButton.setMinSize(83,93);
+            volumeButton.setTranslateY(70);
+            volumeButton.setTranslateX(25);
             gridPane.add(volumeButton, columnNumber, 1);
             buttonNumber++;
             columnNumber++;
@@ -57,11 +69,15 @@ public class OptionScene extends Scene {
 
     public void setVolumeFromButton(Button button)
     {
-        button.setOnAction(event -> SoundManager.setSoundVolume(Integer.parseInt(button.getText())));
+        button.setOnAction(event -> {
+            SoundManager.handleMenuSceneVolume(MenuScene.menuMusicToStop, Integer.parseInt(button.getText()));
+            SoundManager.setSoundVolume(Integer.parseInt(button.getText()));
+        });
     }
 
     public void backToMainMenu()
     {
+        SoundManager.stopMusic(MenuScene.menuMusicToStop);
         MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
         stage.setScene(menuScene);
     }

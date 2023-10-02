@@ -22,7 +22,7 @@ public class PlayerInfoVBox extends VBox
     private Label playerScoreLabel;
 
     private final Player player;
-    public static MediaPlayer musicToStop;
+    public static MediaPlayer inGameMusicToStop;
 
     private final Border border = new Border(new BorderStroke(Color.BLACK,
             BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT));
@@ -81,7 +81,7 @@ public class PlayerInfoVBox extends VBox
                 stage.setMinWidth(900);
                 stage.setMinHeight(500);
                 GameTimer.startTimer();
-                musicToStop = SoundManager.playMusicRepeat(PathUtil.OUTER_WILDS_MUSIC);
+                inGameMusicToStop = SoundManager.playMusicRepeat(PathUtil.IN_GAME_MUSIC);
             }
             getPlayerName.setMaxHeight(0);
             getPlayerName.setMinHeight(0);

@@ -198,6 +198,7 @@ public class AchievementScene extends Scene
     }
     public void backToMainMenu()
     {
+        SoundManager.stopMusic(MenuScene.menuMusicToStop);
         MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
         stage.setScene(menuScene);
     }

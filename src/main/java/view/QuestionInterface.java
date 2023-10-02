@@ -154,13 +154,13 @@ public class QuestionInterface extends BorderPane
           {
               playerAnswer = true;
               button.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
-              soundEffectToStop = SoundManager.playMusic(PathUtil.APPLAUSE_SOUND_EFFECT);
+              soundEffectToStop = SoundManager.playMusic(PathUtil.GOOD_ANSWER_SOUND_EFFECT);
               displayGoodAnswer();
           }
           else
           {
               playerAnswer = false;
-              soundEffectToStop = SoundManager.playMusic(PathUtil.QUACK_SOUND_EFFECT);
+              soundEffectToStop = SoundManager.playMusic(PathUtil.BAD_ANSWER_SOUND_EFFECT);
               button.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
               showGoodAnswer(answerButton1); showGoodAnswer(answerButton2);
               showGoodAnswer(answerButton3); showGoodAnswer(answerButton4);

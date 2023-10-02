@@ -70,14 +70,13 @@ public class OptionScene extends Scene {
     public void setVolumeFromButton(Button button)
     {
         button.setOnAction(event -> {
-            SoundManager.handleMenuSceneVolume(MenuScene.menuMusicToStop, Integer.parseInt(button.getText()));
+            SoundManager.handleMenuSceneVolume(App.menuMusicToStop, Integer.parseInt(button.getText()));
             SoundManager.setSoundVolume(Integer.parseInt(button.getText()));
         });
     }
 
     public void backToMainMenu()
     {
-        SoundManager.stopMusic(MenuScene.menuMusicToStop);
         MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
         stage.setScene(menuScene);
     }

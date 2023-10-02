@@ -8,6 +8,7 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.CornerRadii;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.ImagePattern;
 import javafx.stage.Stage;
 import model.*;
@@ -34,6 +35,7 @@ public class MainScene extends Scene
     private final AchievementManager achievementManager;
     private final Properties perfectScoreFile;
     private final Properties cupFile;
+    private final MediaPlayer inGameMusicToStop;
 
     public MainScene(BorderPane menuPane, Player player, GameHandler gameHandler, Stage stage, File saveFile, AchievementManager achievementManager, Properties cupFile, Properties perfectScoreFile)
     {
@@ -48,6 +50,7 @@ public class MainScene extends Scene
         this.cupFile = cupFile;
         this.perfectScoreFile = perfectScoreFile;
 
+        inGameMusicToStop = SoundManager.playMusicRepeat(PathUtil.IN_GAME_MUSIC);
 
         BackgroundCreator mainSceneBackgroundCreator = new BackgroundCreator(PathUtil.MAIN_BACKGROUND);
         Image mainSceneImage = mainSceneBackgroundCreator.createBackground();
@@ -92,7 +95,7 @@ public class MainScene extends Scene
         GameTimer.stopTimer();
         GameTimer.setTimerDisplay();
         ResultScene resultScene = new ResultScene(menuPane, playerInfoVBox.getPlayer().getPlayerScore(), gameHandler.getQuestionCount(), achievementManager, stage, cupFile, perfectScoreFile);
-        SoundManager.stopMusic(PlayerInfoVBox.inGameMusicToStop);
+        SoundManager.stopMusic(inGameMusicToStop);
         resultScene.getCongratsLabel().setText(UtilStringStorage.congratsLabel +playerInfoVBox.getPlayer().getPlayerName()+UtilStringStorage.answerAllQuestions);
         resultScene.getPlayerResult().setText(UtilStringStorage.playerResult +playerInfoVBox.getPlayer().getPlayerScore()+UtilStringStorage.scoreOn +gameHandler.getQuestionCount());
     }

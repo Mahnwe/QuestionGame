@@ -6,7 +6,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
-import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -36,7 +35,6 @@ public class MenuScene extends Scene
     private final Properties perfectScoreFile = new Properties();
     private final Properties cupFile = new Properties();
     public static final String POLICE_LABEL = "Verdana";
-    public static MediaPlayer menuMusicToStop;
 
     public MenuScene(BorderPane pane, Stage stage, AchievementManager achievementManager)
     {
@@ -75,7 +73,6 @@ public class MenuScene extends Scene
         welcomeInGame.setTextFill(Color.BLACK);
         welcomeInGame.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         welcomeArea.getChildren().add(createStatArea(welcomeInGame));
-        menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
         pane.setTop(welcomeArea);
     }
 
@@ -194,7 +191,7 @@ public class MenuScene extends Scene
     {
         Player player = new Player();
         MainScene mainScene = new MainScene(new BorderPane(), player, gameHandler, menuStage, saveFile, achievementManager, cupFile, perfectScoreFile);
-        SoundManager.stopMusic(menuMusicToStop);
+        SoundManager.stopMusic(App.menuMusicToStop);
         menuStage.setScene(mainScene);
 
     }

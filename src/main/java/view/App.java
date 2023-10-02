@@ -2,13 +2,13 @@ package view;
 
 import javafx.application.Application;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
-import model.AchievementManager;
-import model.UtilStringStorage;
-import model.UtilTranslateString;
+import model.*;
 
 public class App extends Application
 {
+    public static MediaPlayer menuMusicToStop;
     @Override
     public void start(Stage stage)
     {
@@ -33,6 +33,7 @@ public class App extends Application
             utilTranslateString.loadFrTradFile();
             utilTranslateString.translateFrString();
             AchievementManager achievementManager = new AchievementManager();
+            menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
             MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
             stage.setMinHeight(500);
             stage.setMinWidth(900);

@@ -15,4 +15,6 @@ public class PathUtil
     public static final String FR_TRAD_PROPERTIES_FILE = RESOURCES_PATH + "TradFile/FrTradFile.properties";
     public static final String PERFECT_SCORE_FILE = RESOURCES_PATH + "SaveFile/PerfectScoreFile.properties";
     public static final String CUP_FILE = RESOURCES_PATH + "SaveFile/CupFile.properties";
+    public static final String QUACK_SOUND_EFFECT = RESOURCES_PATH + "SoundEffect/Quack-Sound-Effect.mp3";
+    public static final String APPLAUSE_SOUND_EFFECT = RESOURCES_PATH + "SoundEffect/Applause-Sound-Effect.mp3";
 }

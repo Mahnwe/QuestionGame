@@ -5,6 +5,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -28,6 +29,7 @@ public class ResultScene extends VBox
     private final Properties cupFile;
     private final Properties perfectScoreFile;
     private final int questionCount;
+    private MediaPlayer resultSoundEffect;
 
     public ResultScene(BorderPane pane, int playerFinalScore, int questionCount, AchievementManager achievementManager, Stage stage, Properties cupFile, Properties perfectScoreFile)
     {
@@ -79,7 +81,10 @@ public class ResultScene extends VBox
         }
         gameResult.getChildren().add(exitToMenuButton);
         pane.setCenter(gameResult);
-        exitToMenuButton.setOnAction(event -> backToMainMenu());
+        exitToMenuButton.setOnAction(event -> {
+            SoundManager.stopMusic(resultSoundEffect);
+            backToMainMenu();
+        });
     }
 
     public void goldCupResult(VBox vBox)
@@ -102,6 +107,7 @@ public class ResultScene extends VBox
             throw new RuntimeException(e);
         }
 
+        resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
         Label cupLabel = new Label(UtilStringStorage.goldCupLabel);
         cupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         cupLabel.setTextFill(Color.GHOSTWHITE);
@@ -125,6 +131,7 @@ public class ResultScene extends VBox
             throw new RuntimeException(e);
         }
 
+        resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
         Label cupLabel = new Label(UtilStringStorage.silverCupLabel);
         cupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         cupLabel.setTextFill(Color.GHOSTWHITE);
@@ -148,6 +155,7 @@ public class ResultScene extends VBox
             throw new RuntimeException(e);
         }
 
+        resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
         Label cupLabel = new Label(UtilStringStorage.bronzeCupLabel);
         cupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         cupLabel.setTextFill(Color.GHOSTWHITE);

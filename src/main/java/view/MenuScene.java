@@ -192,6 +192,9 @@ public class MenuScene extends Scene
         Player player = new Player();
         MainScene mainScene = new MainScene(new BorderPane(), player, gameHandler, menuStage, saveFile, achievementManager, cupFile, perfectScoreFile);
         SoundManager.stopMusic(App.menuMusicToStop);
+        if(ResultScene.returnToMenuMusic != null) {
+            SoundManager.stopMusic(ResultScene.returnToMenuMusic);
+        }
         menuStage.setScene(mainScene);
 
     }

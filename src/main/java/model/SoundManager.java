@@ -6,7 +6,7 @@ import java.io.File;
 
 public class SoundManager {
 
-    public static int soundVolume = 1;
+    public static int soundVolume = 3;
     public static MediaPlayer playMusic(String pathSound)
     {
         Media media = new Media(new File(pathSound).toURI().toString());

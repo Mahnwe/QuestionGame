@@ -44,6 +44,7 @@ public class AchievementScene extends Scene
         this.perfectScoreFile = perfectScoreFile;
 
         gridPane = new GridPane();
+        gridPane.setTranslateX(50);
         gridPane.setHgap(30);
         gridPane.setVgap(40);
         gridPane.addColumn(3);

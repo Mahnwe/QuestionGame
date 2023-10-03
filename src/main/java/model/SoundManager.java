@@ -22,6 +22,7 @@ public class SoundManager {
         MediaPlayer mediaPlayer = new MediaPlayer(media);
         mediaPlayer.setVolume((double) soundVolume /10);
         mediaPlayer.setAutoPlay(true);
+        mediaPlayer.setCycleCount(12000);
         return mediaPlayer;
     }
 

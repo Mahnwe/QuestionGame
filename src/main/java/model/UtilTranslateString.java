@@ -368,6 +368,13 @@ public class UtilTranslateString {
         UtilStringStorage.answerD39 = engTradFile.getProperty("answerD39");
         UtilStringStorage.goodAnswer39 = engTradFile.getProperty("goodAnswer39");
         UtilStringStorage.explanation39 = engTradFile.getProperty("explanation39");
+        UtilStringStorage.question40 = engTradFile.getProperty("question40");
+        UtilStringStorage.answerA40 = engTradFile.getProperty("answerA40");
+        UtilStringStorage.answerB40 = engTradFile.getProperty("answerB40");
+        UtilStringStorage.answerC40 = engTradFile.getProperty("answerC40");
+        UtilStringStorage.answerD40 = engTradFile.getProperty("answerD40");
+        UtilStringStorage.goodAnswer40 = engTradFile.getProperty("goodAnswer40");
+        UtilStringStorage.explanation40 = engTradFile.getProperty("explanation40");
 
 
     }
@@ -706,6 +713,13 @@ public class UtilTranslateString {
         UtilStringStorage.answerD39 = frTradFile.getProperty("answerD39");
         UtilStringStorage.goodAnswer39 = frTradFile.getProperty("goodAnswer39");
         UtilStringStorage.explanation39 = frTradFile.getProperty("explanation39");
+        UtilStringStorage.question40 = frTradFile.getProperty("question40");
+        UtilStringStorage.answerA40 = frTradFile.getProperty("answerA40");
+        UtilStringStorage.answerB40 = frTradFile.getProperty("answerB40");
+        UtilStringStorage.answerC40 = frTradFile.getProperty("answerC40");
+        UtilStringStorage.answerD40 = frTradFile.getProperty("answerD40");
+        UtilStringStorage.goodAnswer40 = frTradFile.getProperty("goodAnswer40");
+        UtilStringStorage.explanation40 = frTradFile.getProperty("explanation40");
 
 
     }

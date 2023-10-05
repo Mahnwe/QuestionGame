@@ -357,5 +357,12 @@ public class UtilStringStorage
     public static String answerD39 = "";
     public static String goodAnswer39 = "";
     public static String explanation39 = "";
+    public static String question40 = "";
+    public static String answerA40 = "";
+    public static String answerB40 = "";
+    public static String answerC40 = "";
+    public static String answerD40 = "";
+    public static String goodAnswer40 = "";
+    public static String explanation40 = "";
 
 }

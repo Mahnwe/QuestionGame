@@ -20,13 +20,11 @@ import java.util.Properties;
 
 public class OptionScene extends Scene {
 
-    private final GridPane gridPane;
     private final AchievementManager achievementManager;
     private final Stage stage;
     private final File saveFile;
     private final Properties cupFile;
     private final Properties perfectFile;
-    private int buttonNumber = 1;
 
     private final Alert confirmAlert;
     public OptionScene(BorderPane pane, Stage stage, AchievementManager achievementManager, File saveFile, Properties cupFile, Properties perfectFile)
@@ -34,37 +32,44 @@ public class OptionScene extends Scene {
         super(pane);
         pane.setPrefHeight(500);
         pane.setPrefWidth(900);
-        gridPane = new GridPane();
-        pane.setCenter(gridPane);
+        VBox optionVbox = new VBox();
+        pane.setCenter(optionVbox);
         this.saveFile = saveFile;
         this.cupFile = cupFile;
         this.perfectFile = perfectFile;
         this.confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
         modifyConfirmAlert();
 
-        gridPane.addColumn(9);
-        gridPane.addRow(5);
-        gridPane.setVgap(0);
-        gridPane.setHgap(0);
         this.stage = stage;
         this.achievementManager = achievementManager;
 
         Label volumeLabel = new Label(UtilStringStorage.volumeLabel);
-        volumeLabel.setTranslateX(65);
-        volumeLabel.setTranslateY(25);
-        volumeLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 22));
-        volumeLabel.setTextFill(Color.GHOSTWHITE);
-        gridPane.add(volumeLabel, 4, 0);
+        volumeLabel.setTranslateY(30);
+        volumeLabel.setTranslateX(360);
+        volumeLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 18));
+        volumeLabel.setTextFill(Color.BLACK);
+        optionVbox.getChildren().add(volumeLabel);
 
-        createVolumeButton(0);
+        Slider volumeSlider = new Slider(0, 1, 0.5);
+        volumeSlider.setMaxWidth(400);
+        volumeSlider.setMaxHeight(50);
+        volumeSlider.setTranslateY(50);
+        volumeSlider.setTranslateX(200);
+        volumeSlider.setShowTickMarks(true);
+        volumeSlider.setShowTickLabels(true);
+        volumeSlider.setMajorTickUnit(0.10f);
+        volumeSlider.setBlockIncrement(0.1f);
+        optionVbox.getChildren().add(volumeSlider);
+        volumeSlider.setOnDragDetected(event -> setVolumeFromSlider(volumeSlider.getValue()));
+        volumeSlider.setOnMouseClicked(event -> setVolumeFromSlider(volumeSlider.getValue()));
 
         Button returnButton = new Button(UtilStringStorage.returnButton);
         pane.setTop(returnButton);
         returnButton.setOnAction(event -> backToMainMenu());
 
         Button resetButton = new Button(UtilStringStorage.resetButton);
-        resetButton.setTranslateY(200);
-        resetButton.setTranslateX(-20);
+        resetButton.setTranslateY(150);
+        resetButton.setTranslateX(350);
         resetButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         Tooltip resetTooltip = new Tooltip(UtilStringStorage.resetTooltip);
         resetButton.setTooltip(resetTooltip);
@@ -78,10 +83,10 @@ public class OptionScene extends Scene {
 
         Label adviceResetLabel = new Label(UtilStringStorage.adviceResetLabel);
         adviceResetLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
-        adviceResetLabel.setTranslateY(230);
-        adviceResetLabel.setTranslateX(-130);
-        gridPane.add(resetButton, 5, 5);
-        gridPane.add(adviceResetLabel, 5, 5);
+        adviceResetLabel.setTranslateY(170);
+        adviceResetLabel.setTranslateX(200);
+        optionVbox.getChildren().add(resetButton);
+        optionVbox.getChildren().add(adviceResetLabel);
 
 
         BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
@@ -93,27 +98,10 @@ public class OptionScene extends Scene {
 
     }
 
-    public void createVolumeButton(int columnNumber)
+    public void setVolumeFromSlider(Double sliderValue)
     {
-        for(int i = 0; i < 10; i++)
-        {
-            Button volumeButton = new Button(String.valueOf(buttonNumber));
-            volumeButton.setMinSize(83,93);
-            volumeButton.setTranslateY(70);
-            volumeButton.setTranslateX(25);
-            gridPane.add(volumeButton, columnNumber, 1);
-            buttonNumber++;
-            columnNumber++;
-            setVolumeFromButton(volumeButton);
-        }
-    }
-
-    public void setVolumeFromButton(Button button)
-    {
-        button.setOnAction(event -> {
-            SoundManager.handleMenuSceneVolume(App.menuMusicToStop, Integer.parseInt(button.getText()));
-            SoundManager.setSoundVolume(Integer.parseInt(button.getText()));
-        });
+        SoundManager.handleMenuSceneVolume(App.menuMusicToStop, sliderValue);
+        SoundManager.setSoundVolume(sliderValue);
     }
 
     public void modifyConfirmAlert()

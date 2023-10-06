@@ -7,15 +7,13 @@ public class Achievement
     private final int condition;
     private boolean isUnlock;
     private final String conditionDescription;
-
-    private final ImageView achievementImage;
     private ImageView lockImageView;
     private ImageView unlockImageView;
 
     public Achievement(ImageView achievementImage, int condition, boolean isUnlock, String conditionDescription)
     {
         createIcons();
-        this.achievementImage = achievementImage;
+        this.lockImageView = achievementImage;
         this.condition = condition;
         this.isUnlock = isUnlock;
         this.conditionDescription = conditionDescription;
@@ -62,12 +60,9 @@ public class Achievement
         return lockImageView;
     }
 
-    public void setLockImageView(ImageView lockImageView) {
-        this.lockImageView = lockImageView;
-    }
-
     public ImageView getUnlockImageView()
     {
         return unlockImageView;
     }
+
 }

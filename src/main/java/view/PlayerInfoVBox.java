@@ -5,12 +5,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.*;
-import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import model.*;
+import model.GameTimer;
+import model.Player;
+import model.UtilStringStorage;
 
 public class PlayerInfoVBox extends VBox
 {

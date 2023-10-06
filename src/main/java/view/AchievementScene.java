@@ -200,12 +200,12 @@ public class AchievementScene extends Scene
         if(achievement.isUnlock())
         {
             unlockValue = UtilStringStorage.successUnlock;
-            achievement.setLockImageView(achievement.getUnlockImageView());
+            achievement.getLockImageView().setImage(achievement.getUnlockImageView().getImage());
         }
         else
         {
             unlockValue = UtilStringStorage.successLock;
-            achievement.setLockImageView(achievement.getLockImageView());
+            achievement.getLockImageView().setImage(achievement.getLockImageView().getImage());
         }
         valueOfSuccess.setValue(unlockValue);
         label.setText(unlockValue);

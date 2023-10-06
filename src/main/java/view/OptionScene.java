@@ -25,6 +25,7 @@ public class OptionScene extends Scene {
     private final File saveFile;
     private final Properties cupFile;
     private final Properties perfectFile;
+    private final VBox optionVbox;
 
     private final Alert confirmAlert;
     public OptionScene(BorderPane pane, Stage stage, AchievementManager achievementManager, File saveFile, Properties cupFile, Properties perfectFile)
@@ -32,7 +33,7 @@ public class OptionScene extends Scene {
         super(pane);
         pane.setPrefHeight(500);
         pane.setPrefWidth(900);
-        VBox optionVbox = new VBox();
+        optionVbox = new VBox();
         pane.setCenter(optionVbox);
         this.saveFile = saveFile;
         this.cupFile = cupFile;
@@ -43,6 +44,25 @@ public class OptionScene extends Scene {
         this.stage = stage;
         this.achievementManager = achievementManager;
 
+        createSliderArea();
+
+        Button returnButton = new Button(UtilStringStorage.returnButton);
+        pane.setTop(returnButton);
+        returnButton.setOnAction(event -> backToMainMenu());
+
+        createResetButtonArea();
+
+        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
+        BackgroundCreator menuBackground = new BackgroundCreator(PathUtil.MENU_BACKGROUND);
+        Image menuSceneBackground = menuBackground.createBackground();
+        BackgroundImage backgroundImage = new BackgroundImage(menuSceneBackground, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+                backgroundSize);
+        pane.setBackground(new Background(backgroundImage));
+
+    }
+
+    public void createSliderArea()
+    {
         Label volumeLabel = new Label(UtilStringStorage.volumeLabel);
         volumeLabel.setTranslateY(30);
         volumeLabel.setTranslateX(360);
@@ -62,11 +82,10 @@ public class OptionScene extends Scene {
         optionVbox.getChildren().add(volumeSlider);
         volumeSlider.setOnDragDetected(event -> setVolumeFromSlider(volumeSlider.getValue()));
         volumeSlider.setOnMouseClicked(event -> setVolumeFromSlider(volumeSlider.getValue()));
+    }
 
-        Button returnButton = new Button(UtilStringStorage.returnButton);
-        pane.setTop(returnButton);
-        returnButton.setOnAction(event -> backToMainMenu());
-
+    public void createResetButtonArea()
+    {
         Button resetButton = new Button(UtilStringStorage.resetButton);
         resetButton.setTranslateY(150);
         resetButton.setTranslateX(350);
@@ -87,15 +106,6 @@ public class OptionScene extends Scene {
         adviceResetLabel.setTranslateX(200);
         optionVbox.getChildren().add(resetButton);
         optionVbox.getChildren().add(adviceResetLabel);
-
-
-        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
-        BackgroundCreator menuBackground = new BackgroundCreator(PathUtil.MENU_BACKGROUND);
-        Image menuSceneBackground = menuBackground.createBackground();
-        BackgroundImage backgroundImage = new BackgroundImage(menuSceneBackground, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
-                backgroundSize);
-        pane.setBackground(new Background(backgroundImage));
-
     }
 
     public void setVolumeFromSlider(Double sliderValue)

@@ -97,6 +97,8 @@ public class OptionScene extends Scene {
             if(result.orElse(null) == ButtonType.OK)
             {
                 resetSave();
+                MenuScene menuScene = new MenuScene(new BorderPane(), stage, new AchievementManager());
+                stage.setScene(menuScene);
             }
         });
 

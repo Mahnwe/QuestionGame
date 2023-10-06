@@ -18,13 +18,13 @@ public class AchievementManager
     public AchievementManager()
     {
         createIcons();
-        Achievement goldCupAchievement = new Achievement(lockImageView, 5, false, UtilStringStorage.goldCupAchievementDescription);
+        Achievement goldCupAchievement = new Achievement(lockImageView, 3, false, UtilStringStorage.goldCupAchievementDescription);
         achievementsList.add(goldCupAchievement);
 
-        Achievement silverCupAchievement = new Achievement(lockImageView2, 5, false, UtilStringStorage.silverCupAchievementDescription);
+        Achievement silverCupAchievement = new Achievement(lockImageView2, 3, false, UtilStringStorage.silverCupAchievementDescription);
         achievementsList.add(silverCupAchievement);
 
-        Achievement bronzeCupAchievement = new Achievement(lockImageView3, 5, false, UtilStringStorage.bronzeCupAchievementDescription);
+        Achievement bronzeCupAchievement = new Achievement(lockImageView3, 3, false, UtilStringStorage.bronzeCupAchievementDescription);
         achievementsList.add(bronzeCupAchievement);
 
         Achievement onlyGoodAnswerAchievement = new Achievement(lockImageView4, 10, false, UtilStringStorage.perfectScore10Achievement);

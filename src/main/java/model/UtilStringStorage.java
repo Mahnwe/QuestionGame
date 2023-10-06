@@ -82,6 +82,10 @@ public class UtilStringStorage
 
     // OPTION SCENE
     public static String volumeLabel = "";
+    public static String resetButton = "";
+    public static String resetTooltip = "";
+    public static String askConfirmReset = "";
+    public static String adviceResetLabel = "";
 
     // QUESTIONS LABELS
     public static String question1 = "";

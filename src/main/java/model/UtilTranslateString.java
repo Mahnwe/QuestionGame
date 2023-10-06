@@ -95,6 +95,10 @@ public class UtilTranslateString {
         UtilStringStorage.silverCupTrophy = engTradFile.getProperty("silverCupTrophy");
         UtilStringStorage.bronzeCupTrophy = engTradFile.getProperty("bronzeCupTrophy");
         UtilStringStorage.volumeLabel = engTradFile.getProperty("volumeLabel");
+        UtilStringStorage.resetButton = engTradFile.getProperty("resetButton");
+        UtilStringStorage.resetTooltip = engTradFile.getProperty("resetTooltip");
+        UtilStringStorage.askConfirmReset = engTradFile.getProperty("askToReset");
+        UtilStringStorage.adviceResetLabel = engTradFile.getProperty("adviceResetLabel");
         UtilStringStorage.question1 = engTradFile.getProperty("question1");
         UtilStringStorage.answerA1 = engTradFile.getProperty("answerA1");
         UtilStringStorage.answerB1 = engTradFile.getProperty("answerB1");
@@ -454,6 +458,10 @@ public class UtilTranslateString {
         UtilStringStorage.silverCupTrophy = frTradFile.getProperty("silverCupTrophy");
         UtilStringStorage.bronzeCupTrophy = frTradFile.getProperty("bronzeCupTrophy");
         UtilStringStorage.volumeLabel = frTradFile.getProperty("volumeLabel");
+        UtilStringStorage.resetButton = frTradFile.getProperty("resetButton");
+        UtilStringStorage.resetTooltip = frTradFile.getProperty("resetTooltip");
+        UtilStringStorage.askConfirmReset = frTradFile.getProperty("askToReset");
+        UtilStringStorage.adviceResetLabel = frTradFile.getProperty("adviceResetLabel");
         UtilStringStorage.question1 = frTradFile.getProperty("question1");
         UtilStringStorage.answerA1 = frTradFile.getProperty("answerA1");
         UtilStringStorage.answerB1 = frTradFile.getProperty("answerB1");

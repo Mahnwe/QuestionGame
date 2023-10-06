@@ -26,9 +26,6 @@ public class AchievementScene extends Scene
     private Label perfectScoreAchievementInfo;
     private Label perfectScoreAchievement15Info;
     private Label perfectScoreAchievement20Info;
-    private int nbrPerfectScore10;
-    private int nbrPerfectScore15;
-    private int nbrPerfectScore20;
     private final Properties perfectScoreFile;
     private final Properties cupFile;
 
@@ -174,28 +171,22 @@ public class AchievementScene extends Scene
         checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(2), bronzeCupAchievementInfo);
 
         String checkPerfectScoreFile10 = String.valueOf(perfectScoreFile.getProperty("perfectScore10"));
-        if(!checkPerfectScoreFile10.isEmpty()) {
-            String numberOfPerfectScore10 = checkAndGetNumberOfPerfectScore(checkPerfectScoreFile10);
-            nbrPerfectScore10 = Integer.parseInt(numberOfPerfectScore10);
-        }
+        String numberOfPerfectScore10 = checkAndGetNumberOfPerfectScore(checkPerfectScoreFile10);
+        int nbrPerfectScore10 = Integer.parseInt(numberOfPerfectScore10);
         achievementManager.getAchievementsList().get(3).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(3), nbrPerfectScore10);
         checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(3), perfectScoreAchievementInfo);
 
         String checkPerfectScoreFile15 = String.valueOf(perfectScoreFile.getProperty("perfectScore15"));
-        if(!checkPerfectScoreFile15.isEmpty()) {
-            String numberOfPerfectScore15 = checkAndGetNumberOfPerfectScore(checkPerfectScoreFile15);
-            nbrPerfectScore15 = Integer.parseInt(numberOfPerfectScore15);
-        }
+        String numberOfPerfectScore15 = checkAndGetNumberOfPerfectScore(checkPerfectScoreFile15);
+        int nbrPerfectScore15 = Integer.parseInt(numberOfPerfectScore15);
         achievementManager.getAchievementsList().get(4).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(4), nbrPerfectScore15);
         checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(4), perfectScoreAchievement15Info);
 
         String checkPerfectScoreFile20 = String.valueOf(perfectScoreFile.getProperty("perfectScore20"));
-        if(!checkPerfectScoreFile20.isEmpty()) {
-            String numberOfPerfectScore20 = checkAndGetNumberOfPerfectScore(checkPerfectScoreFile20);
-            nbrPerfectScore20 = Integer.parseInt(numberOfPerfectScore20);
-        }
-            achievementManager.getAchievementsList().get(5).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(5), nbrPerfectScore20);
-            checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(5), perfectScoreAchievement20Info);
+        String numberOfPerfectScore20 = checkAndGetNumberOfPerfectScore(checkPerfectScoreFile20);
+        int nbrPerfectScore20 = Integer.parseInt(numberOfPerfectScore20);
+        achievementManager.getAchievementsList().get(5).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(5), nbrPerfectScore20);
+        checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(5), perfectScoreAchievement20Info);
     }
     public void backToMainMenu()
     {
@@ -214,6 +205,7 @@ public class AchievementScene extends Scene
         else
         {
             unlockValue = UtilStringStorage.successLock;
+            achievement.setLockImageView(achievement.getLockImageView());
         }
         valueOfSuccess.setValue(unlockValue);
         label.setText(unlockValue);

@@ -85,7 +85,6 @@ public class UtilStringStorage
     public static String resetButton = "";
     public static String resetTooltip = "";
     public static String askConfirmReset = "";
-    public static String adviceResetLabel = "";
 
     // QUESTIONS LABELS
     public static String question1 = "";
@@ -396,5 +395,12 @@ public class UtilStringStorage
     public static String answerD44 = "";
     public static String goodAnswer44 = "";
     public static String explanation44 = "";
+    public static String question45 = "";
+    public static String answerA45 = "";
+    public static String answerB45 = "";
+    public static String answerC45 = "";
+    public static String answerD45= "";
+    public static String goodAnswer45 = "";
+    public static String explanation45 = "";
 
 }

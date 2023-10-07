@@ -43,19 +43,13 @@ public class TrophyScene extends Scene
         VBox nbrOfCups = new VBox();
 
         Label nbrOfGoldCupLabel = new Label();
-        nbrOfGoldCupLabel.setText(UtilStringStorage.goldCupTrophy + cupFile.getProperty("goldCup"));
-        nbrOfGoldCupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
-        placeLabel(nbrOfGoldCupLabel, 10, 50);
+        stylizeLabel(nbrOfGoldCupLabel, UtilStringStorage.goldCupTrophy, cupFile, "goldCup", 10, 50);
 
         Label nbrOfSilverCupLabel = new Label();
-        nbrOfSilverCupLabel.setText(UtilStringStorage.silverCupTrophy + cupFile.getProperty("silverCup"));
-        nbrOfSilverCupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
-        placeLabel(nbrOfSilverCupLabel, 10, 150);
+        stylizeLabel(nbrOfSilverCupLabel, UtilStringStorage.silverCupTrophy, cupFile, "silverCup", 10, 150);
 
         Label nbrOfBronzeCupLabel = new Label();
-        nbrOfBronzeCupLabel.setText(UtilStringStorage.bronzeCupTrophy + cupFile.getProperty("bronzeCup"));
-        nbrOfBronzeCupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
-        placeLabel(nbrOfBronzeCupLabel, 10, 250);
+        stylizeLabel(nbrOfBronzeCupLabel, UtilStringStorage.bronzeCupTrophy, cupFile, "bronzeCup", 10, 250);
 
         nbrOfCups.getChildren().add(nbrOfGoldCupLabel);
         nbrOfCups.getChildren().add(nbrOfSilverCupLabel);
@@ -83,6 +77,13 @@ public class TrophyScene extends Scene
     {
         label.setTranslateX(x);
         label.setTranslateY(y);
+    }
+
+    public void stylizeLabel(Label label, String string, Properties properties, String propertyKey, int translateX, int translateY)
+    {
+        label.setText(string + properties.getProperty(propertyKey));
+        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
+        placeLabel(label, translateX, translateY);
     }
 
     public void createIcons()

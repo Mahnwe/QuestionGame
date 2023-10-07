@@ -233,6 +233,11 @@ public class QuestionStorage
                 UtilStringStorage.answerB44, UtilStringStorage.answerC44, UtilStringStorage.answerD44, UtilStringStorage.goodAnswer44,
                 UtilStringStorage.explanation44);
         questionList.add(question44);
+
+        Question question45 = new Question(UtilStringStorage.question45,UtilStringStorage.answerA45,
+                UtilStringStorage.answerB45, UtilStringStorage.answerC45, UtilStringStorage.answerD45, UtilStringStorage.goodAnswer45,
+                UtilStringStorage.explanation45);
+        questionList.add(question45);
     }
 
     public List<Question> getQuestionList() {

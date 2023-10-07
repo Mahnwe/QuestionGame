@@ -111,7 +111,7 @@ public class MainScene extends Scene
             boolean append = true;
             FileWriter fw = new FileWriter(saveFile.getAbsoluteFile(), append);
             try (BufferedWriter bw = new BufferedWriter(fw)) {
-                bw.write(UtilStringStorage.playerNameInfile +" "+ playerInfoScene.getPlayer().getPlayerName() + "  " + UtilStringStorage.scoreLabelInfile +" "+ playerInfoScene.getPlayer().getPlayerScore() + " "+ UtilStringStorage.scoreOn +" "+gameHandler.getQuestionCount() + " "+UtilStringStorage.timerLabelInfile +" "+ GameTimer.getElapsedMinutes() +" "+ UtilStringStorage.gameMinutes +" "+ GameTimer.getElapsedSeconds() +" "+ UtilStringStorage.gameSecondes + "\n");
+                bw.write(UtilStringStorage.playerNameInfile +" "+ playerInfoScene.getPlayer().getPlayerName() + "  " + UtilStringStorage.scoreLabelInfile +" "+ playerInfoScene.getPlayer().getPlayerScore() + " "+ UtilStringStorage.scoreOn +" "+gameHandler.getQuestionCount() + " "+UtilStringStorage.timerLabelInfile +" "+ GameTimer.getElapsedMinutes() +" "+ UtilStringStorage.gameMinutes +" "+ GameTimer.getSecondsDisplay() +" "+ UtilStringStorage.gameSecondes + "\n");
             }
         }catch (IOException e) {
             e.printStackTrace();

@@ -399,8 +399,22 @@ public class UtilStringStorage
     public static String answerA45 = "";
     public static String answerB45 = "";
     public static String answerC45 = "";
-    public static String answerD45= "";
+    public static String answerD45 = "";
     public static String goodAnswer45 = "";
     public static String explanation45 = "";
+    public static String question46 = "";
+    public static String answerA46 = "";
+    public static String answerB46 = "";
+    public static String answerC46 = "";
+    public static String answerD46 = "";
+    public static String goodAnswer46 = "";
+    public static String explanation46 = "";
+    public static String question47 = "";
+    public static String answerA47 = "";
+    public static String answerB47 = "";
+    public static String answerC47 = "";
+    public static String answerD47 = "";
+    public static String goodAnswer47 = "";
+    public static String explanation47 = "";
 
 }

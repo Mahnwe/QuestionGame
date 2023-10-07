@@ -47,6 +47,7 @@ public class OptionScene extends Scene {
         createSliderArea();
 
         Button returnButton = new Button(UtilStringStorage.returnButton);
+        returnButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
         pane.setTop(returnButton);
         returnButton.setOnAction(event -> backToMainMenu());
 
@@ -64,8 +65,8 @@ public class OptionScene extends Scene {
     public void createSliderArea()
     {
         Label volumeLabel = new Label(UtilStringStorage.volumeLabel);
-        volumeLabel.setTranslateY(30);
-        volumeLabel.setTranslateX(360);
+        volumeLabel.setTranslateY(40);
+        volumeLabel.setTranslateX(365);
         volumeLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 18));
         volumeLabel.setTextFill(Color.BLACK);
         optionVbox.getChildren().add(volumeLabel);
@@ -73,7 +74,7 @@ public class OptionScene extends Scene {
         Slider volumeSlider = new Slider(0, 1, 0.5);
         volumeSlider.setMaxWidth(400);
         volumeSlider.setMaxHeight(50);
-        volumeSlider.setTranslateY(50);
+        volumeSlider.setTranslateY(60);
         volumeSlider.setTranslateX(200);
         volumeSlider.setShowTickMarks(true);
         volumeSlider.setShowTickLabels(true);
@@ -87,7 +88,7 @@ public class OptionScene extends Scene {
     public void createResetButtonArea()
     {
         Button resetButton = new Button(UtilStringStorage.resetButton);
-        resetButton.setTranslateY(150);
+        resetButton.setTranslateY(170);
         resetButton.setTranslateX(350);
         resetButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         Tooltip resetTooltip = new Tooltip(UtilStringStorage.resetTooltip);
@@ -102,12 +103,7 @@ public class OptionScene extends Scene {
             }
         });
 
-        Label adviceResetLabel = new Label(UtilStringStorage.adviceResetLabel);
-        adviceResetLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
-        adviceResetLabel.setTranslateY(170);
-        adviceResetLabel.setTranslateX(200);
         optionVbox.getChildren().add(resetButton);
-        optionVbox.getChildren().add(adviceResetLabel);
     }
 
     public void setVolumeFromSlider(Double sliderValue)

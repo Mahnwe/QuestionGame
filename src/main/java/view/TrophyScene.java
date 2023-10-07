@@ -65,6 +65,7 @@ public class TrophyScene extends Scene
         HBox buttonHbox = new HBox();
         buttonHbox.setPrefHeight(50);
         Button returnToMenu = new Button(UtilStringStorage.returnButton);
+        returnToMenu.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
         buttonHbox.getChildren().add(returnToMenu);
         pane.setTop(buttonHbox);
         returnToMenu.setOnAction(event -> backToMainMenu());

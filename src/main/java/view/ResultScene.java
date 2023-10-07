@@ -54,6 +54,7 @@ public class ResultScene extends VBox
         playerResult.setTextFill(Color.GHOSTWHITE);
 
         Button exitToMenuButton = new Button(UtilStringStorage.returnToMenuButton);
+        exitToMenuButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
         exitToMenuButton.setTranslateY(70);
 
         Label timeLabel = new Label();

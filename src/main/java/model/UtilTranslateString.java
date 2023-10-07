@@ -98,7 +98,6 @@ public class UtilTranslateString {
         UtilStringStorage.resetButton = engTradFile.getProperty("resetButton");
         UtilStringStorage.resetTooltip = engTradFile.getProperty("resetTooltip");
         UtilStringStorage.askConfirmReset = engTradFile.getProperty("askToReset");
-        UtilStringStorage.adviceResetLabel = engTradFile.getProperty("adviceResetLabel");
         UtilStringStorage.question1 = engTradFile.getProperty("question1");
         UtilStringStorage.answerA1 = engTradFile.getProperty("answerA1");
         UtilStringStorage.answerB1 = engTradFile.getProperty("answerB1");
@@ -393,6 +392,20 @@ public class UtilTranslateString {
         UtilStringStorage.answerD42 = engTradFile.getProperty("answerD42");
         UtilStringStorage.goodAnswer42 = engTradFile.getProperty("goodAnswer42");
         UtilStringStorage.explanation42 = engTradFile.getProperty("explanation42");
+        UtilStringStorage.question43 = engTradFile.getProperty("question43");
+        UtilStringStorage.answerA43 = engTradFile.getProperty("answerA43");
+        UtilStringStorage.answerB43 = engTradFile.getProperty("answerB43");
+        UtilStringStorage.answerC43 = engTradFile.getProperty("answerC43");
+        UtilStringStorage.answerD43 = engTradFile.getProperty("answerD43");
+        UtilStringStorage.goodAnswer43= engTradFile.getProperty("goodAnswer43");
+        UtilStringStorage.explanation43 = engTradFile.getProperty("explanation43");
+        UtilStringStorage.question44 = engTradFile.getProperty("question44");
+        UtilStringStorage.answerA44 = engTradFile.getProperty("answerA44");
+        UtilStringStorage.answerB44 = engTradFile.getProperty("answerB44");
+        UtilStringStorage.answerC44 = engTradFile.getProperty("answerC44");
+        UtilStringStorage.answerD44 = engTradFile.getProperty("answerD44");
+        UtilStringStorage.goodAnswer44 = engTradFile.getProperty("goodAnswer44");
+        UtilStringStorage.explanation44 = engTradFile.getProperty("explanation44");
 
 
     }
@@ -461,7 +474,6 @@ public class UtilTranslateString {
         UtilStringStorage.resetButton = frTradFile.getProperty("resetButton");
         UtilStringStorage.resetTooltip = frTradFile.getProperty("resetTooltip");
         UtilStringStorage.askConfirmReset = frTradFile.getProperty("askToReset");
-        UtilStringStorage.adviceResetLabel = frTradFile.getProperty("adviceResetLabel");
         UtilStringStorage.question1 = frTradFile.getProperty("question1");
         UtilStringStorage.answerA1 = frTradFile.getProperty("answerA1");
         UtilStringStorage.answerB1 = frTradFile.getProperty("answerB1");
@@ -756,6 +768,20 @@ public class UtilTranslateString {
         UtilStringStorage.answerD42 = frTradFile.getProperty("answerD42");
         UtilStringStorage.goodAnswer42 = frTradFile.getProperty("goodAnswer42");
         UtilStringStorage.explanation42 = frTradFile.getProperty("explanation42");
+        UtilStringStorage.question43 = frTradFile.getProperty("question43");
+        UtilStringStorage.answerA43 = frTradFile.getProperty("answerA43");
+        UtilStringStorage.answerB43 = frTradFile.getProperty("answerB43");
+        UtilStringStorage.answerC43 = frTradFile.getProperty("answerC43");
+        UtilStringStorage.answerD43 = frTradFile.getProperty("answerD43");
+        UtilStringStorage.goodAnswer43 = frTradFile.getProperty("goodAnswer43");
+        UtilStringStorage.explanation43 = frTradFile.getProperty("explanation43");
+        UtilStringStorage.question44 = frTradFile.getProperty("question44");
+        UtilStringStorage.answerA44 = frTradFile.getProperty("answerA44");
+        UtilStringStorage.answerB44 = frTradFile.getProperty("answerB44");
+        UtilStringStorage.answerC44 = frTradFile.getProperty("answerC44");
+        UtilStringStorage.answerD44 = frTradFile.getProperty("answerD44");
+        UtilStringStorage.goodAnswer44 = frTradFile.getProperty("goodAnswer44");
+        UtilStringStorage.explanation44 = frTradFile.getProperty("explanation44");
 
 
     }

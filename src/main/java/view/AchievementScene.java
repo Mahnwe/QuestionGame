@@ -8,6 +8,8 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.*;
 
@@ -67,6 +69,7 @@ public class AchievementScene extends Scene
         HBox buttonHbox = new HBox();
         buttonHbox.setPrefHeight(50);
         Button returnToMenu = new Button(UtilStringStorage.returnButton);
+        returnToMenu.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
         buttonHbox.getChildren().add(returnToMenu);
         pane.setTop(buttonHbox);
         returnToMenu.setOnAction(event -> backToMainMenu());

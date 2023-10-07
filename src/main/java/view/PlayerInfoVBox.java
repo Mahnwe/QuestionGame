@@ -60,6 +60,7 @@ public class PlayerInfoVBox extends VBox
         userInputArea.setMaxHeight(50);
 
         sendButton = new Button(UtilStringStorage.validateButton);
+        sendButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
         sendButton.setDisable(true);
         sendButton.setBorder(border);
         sendButton.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));

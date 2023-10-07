@@ -1,19 +1,20 @@
 package view;
 
 import javafx.geometry.Insets;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import model.GameTimer;
-import model.Player;
-import model.UtilStringStorage;
+import model.*;
 
-public class PlayerInfoVBox extends VBox
+public class PlayerInfoScene extends Scene
 {
     private final VBox getPlayerName;
     private Button sendButton;
@@ -29,18 +30,27 @@ public class PlayerInfoVBox extends VBox
     private final Background background = new Background(new BackgroundFill(Color.SADDLEBROWN,
             CornerRadii.EMPTY, Insets.EMPTY));
 
-    public PlayerInfoVBox(Player player)
+    public PlayerInfoScene(BorderPane pane, Player player)
     {
+        super(pane);
         this.player = player;
+
+        BackgroundCreator mainSceneBackgroundCreator = new BackgroundCreator(PathUtil.MAIN_BACKGROUND);
+        Image mainSceneImage = mainSceneBackgroundCreator.createBackground();
+        BackgroundFill backgroundFill = new BackgroundFill(new ImagePattern(mainSceneImage), CornerRadii.EMPTY, Insets.EMPTY);
+        pane.setBackground(new Background(backgroundFill));
 
         getPlayerName = new VBox();
         Label askPlayerName = new Label(UtilStringStorage.askPlayerName);
         askPlayerName.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         askPlayerName.setTextFill(Color.GHOSTWHITE);
+        askPlayerName.setTranslateY(40);
         getPlayerName.getChildren().add(askPlayerName);
+        createUserInputArea();
+        pane.setCenter(getPlayerName);
     }
 
-    public VBox createUserInputArea()
+    public void createUserInputArea()
     {
         userInputArea = new TextArea();
         userInputArea.setOnKeyTyped(event -> {
@@ -58,6 +68,7 @@ public class PlayerInfoVBox extends VBox
         userInputArea.setBorder(border);
         userInputArea.setBackground(background);
         userInputArea.setMaxHeight(50);
+        userInputArea.setTranslateY(60);
 
         sendButton = new Button(UtilStringStorage.validateButton);
         sendButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
@@ -66,26 +77,24 @@ public class PlayerInfoVBox extends VBox
         sendButton.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
         sendButton.setTextFill(Color.GHOSTWHITE);
         sendButton.setMinWidth(80);
+        sendButton.setTranslateY(60);
         getPlayerName.getChildren().add(userInputArea);
         getPlayerName.getChildren().add(sendButton);
-        return getPlayerName;
     }
 
-    public void setOnActionSendButton(BorderPane pane, QuestionInterface questionInterface, Stage stage)
+    public void setOnActionSendButton(BorderPane pane, QuestionInterface questionInterface, Stage stage, Stage popUpStage)
     {
         sendButton.setOnAction(event -> {
             if (!userInputArea.getText().isEmpty())
             {
                 createPlayerInfoArea();
                 pane.setLeft(playerInfos);
-                questionInterface.setVisible(true);
+                questionInterface.setDisable(false);
                 stage.setMinWidth(900);
                 stage.setMinHeight(500);
                 GameTimer.startTimer();
+                popUpStage.close();
             }
-            getPlayerName.setMaxHeight(0);
-            getPlayerName.setMinHeight(0);
-            getPlayerName.setVisible(false);
         });
     }
 

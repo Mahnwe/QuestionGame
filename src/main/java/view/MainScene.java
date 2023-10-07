@@ -1,13 +1,11 @@
 package view;
 
+import javafx.event.Event;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.*;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.ImagePattern;
 import javafx.stage.Stage;
@@ -25,7 +23,7 @@ public class MainScene extends Scene
     private final BorderPane menuPane;
     private QuestionInterface questionInterface;
 
-    private final PlayerInfoVBox playerInfoVBox;
+    private final PlayerInfoScene playerInfoScene;
 
     private final GameHandler gameHandler;
 
@@ -59,11 +57,18 @@ public class MainScene extends Scene
 
         createNewQuestionInterface();
         setAnswersButtonListeners();
-        questionInterface.setVisible(false);
+        questionInterface.setDisable(true);
 
-        playerInfoVBox = new PlayerInfoVBox(player);
-        menuPane.setTop(playerInfoVBox.createUserInputArea());
-        playerInfoVBox.setOnActionSendButton(menuPane, questionInterface, stage);
+        playerInfoScene = new PlayerInfoScene(new BorderPane(), player);
+        Stage popUpStage = new Stage();
+        popUpStage.setOnCloseRequest(Event::consume);
+        popUpStage.setMinHeight(300);
+        popUpStage.setMinWidth(550);
+        popUpStage.setResizable(false);
+        popUpStage.setTitle("Pop up");
+        popUpStage.setScene(playerInfoScene);
+        popUpStage.show();
+        playerInfoScene.setOnActionSendButton(menuPane, questionInterface, stage, popUpStage);
 
     }
 
@@ -74,9 +79,9 @@ public class MainScene extends Scene
             if(questionInterface.isPlayerAnswer())
             {
                 SoundManager.stopMusic(QuestionInterface.soundEffectToStop);
-                playerInfoVBox.increaseScore();
+                playerInfoScene.increaseScore();
             }
-            playerInfoVBox.getPlayerScoreLabel().setText(UtilStringStorage.scoreLabel +playerInfoVBox.getPlayer().getPlayerScore()+"/"+gameHandler.getQuestionCount());
+            playerInfoScene.getPlayerScoreLabel().setText(UtilStringStorage.scoreLabel + playerInfoScene.getPlayer().getPlayerScore()+"/"+gameHandler.getQuestionCount());
             checkGameEnding();
         });
     }
@@ -94,10 +99,10 @@ public class MainScene extends Scene
     {
         GameTimer.stopTimer();
         GameTimer.setTimerDisplay();
-        ResultScene resultScene = new ResultScene(menuPane, playerInfoVBox.getPlayer().getPlayerScore(), gameHandler.getQuestionCount(), achievementManager, stage, cupFile, perfectScoreFile);
+        ResultScene resultScene = new ResultScene(menuPane, playerInfoScene.getPlayer().getPlayerScore(), gameHandler.getQuestionCount(), achievementManager, stage, cupFile, perfectScoreFile);
         SoundManager.stopMusic(inGameMusicToStop);
-        resultScene.getCongratsLabel().setText(UtilStringStorage.congratsLabel +" "+playerInfoVBox.getPlayer().getPlayerName()+" "+UtilStringStorage.answerAllQuestions);
-        resultScene.getPlayerResult().setText(UtilStringStorage.playerResult +playerInfoVBox.getPlayer().getPlayerScore()+UtilStringStorage.scoreOn +gameHandler.getQuestionCount());
+        resultScene.getCongratsLabel().setText(UtilStringStorage.congratsLabel +" "+ playerInfoScene.getPlayer().getPlayerName()+" "+UtilStringStorage.answerAllQuestions);
+        resultScene.getPlayerResult().setText(UtilStringStorage.playerResult + playerInfoScene.getPlayer().getPlayerScore()+UtilStringStorage.scoreOn +gameHandler.getQuestionCount());
     }
 
     public void saveScoreInFile()
@@ -106,7 +111,7 @@ public class MainScene extends Scene
             boolean append = true;
             FileWriter fw = new FileWriter(saveFile.getAbsoluteFile(), append);
             try (BufferedWriter bw = new BufferedWriter(fw)) {
-                bw.write(UtilStringStorage.playerNameInfile +" "+playerInfoVBox.getPlayer().getPlayerName() + "  " + UtilStringStorage.scoreLabelInfile +" "+ playerInfoVBox.getPlayer().getPlayerScore() + " "+ UtilStringStorage.scoreOn +" "+gameHandler.getQuestionCount() + " "+UtilStringStorage.timerLabelInfile +" "+ GameTimer.getElapsedMinutes() +" "+ UtilStringStorage.gameMinutes +" "+ GameTimer.getElapsedSeconds() +" "+ UtilStringStorage.gameSecondes + "\n");
+                bw.write(UtilStringStorage.playerNameInfile +" "+ playerInfoScene.getPlayer().getPlayerName() + "  " + UtilStringStorage.scoreLabelInfile +" "+ playerInfoScene.getPlayer().getPlayerScore() + " "+ UtilStringStorage.scoreOn +" "+gameHandler.getQuestionCount() + " "+UtilStringStorage.timerLabelInfile +" "+ GameTimer.getElapsedMinutes() +" "+ UtilStringStorage.gameMinutes +" "+ GameTimer.getElapsedSeconds() +" "+ UtilStringStorage.gameSecondes + "\n");
             }
         }catch (IOException e) {
             e.printStackTrace();

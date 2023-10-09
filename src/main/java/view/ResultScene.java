@@ -17,8 +17,10 @@ import java.util.Properties;
 
 public class ResultScene extends VBox
 {
-    private final Label congratsLabel;
-    private final Label playerResult;
+    private final VBox gameResult;
+    private Button exitToMenuButton;
+    private Label congratsLabel;
+    private Label playerResult;
 
     private ImageView goldCup;
     private ImageView bronzeCup;
@@ -40,32 +42,10 @@ public class ResultScene extends VBox
         this.stage = stage;
         this.cupFile = cupFile;
         this.perfectScoreFile = perfectScoreFile;
-        VBox gameResult = new VBox();
+        gameResult = new VBox();
+
         createIcons();
-
-        congratsLabel = new Label();
-        placeLabels(congratsLabel, 120, 10);
-        congratsLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
-        congratsLabel.setTextFill(Color.GHOSTWHITE);
-
-        playerResult = new Label();
-        placeLabels(playerResult, 200, 30);
-        playerResult.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
-        playerResult.setTextFill(Color.GHOSTWHITE);
-
-        Button exitToMenuButton = new Button(UtilStringStorage.returnToMenuButton);
-        exitToMenuButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
-        exitToMenuButton.setTranslateY(70);
-
-        Label timeLabel = new Label();
-        placeLabels(timeLabel, 200, 30);
-        timeLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
-        timeLabel.setTextFill(Color.GHOSTWHITE);
-        timeLabel.setText(UtilStringStorage.timeLabel + GameTimer.getElapsedMinutes() + UtilStringStorage.minLabel + GameTimer.getSecondsDisplay() +UtilStringStorage.secondesLabel);
-
-        gameResult.getChildren().add(congratsLabel);
-        gameResult.getChildren().add(playerResult);
-        gameResult.getChildren().add(timeLabel);
+        setUpLabelAndTimer();
 
         if(playerFinalScore >= questionCount*90/100)
         {
@@ -93,6 +73,33 @@ public class ResultScene extends VBox
             SoundManager.stopMusic(resultSoundEffect);
             backToMainMenu();
         });
+    }
+
+    public void setUpLabelAndTimer()
+    {
+        congratsLabel = new Label();
+        placeLabels(congratsLabel, 120, 10);
+        congratsLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
+        congratsLabel.setTextFill(Color.GHOSTWHITE);
+
+        playerResult = new Label();
+        placeLabels(playerResult, 200, 30);
+        playerResult.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
+        playerResult.setTextFill(Color.GHOSTWHITE);
+
+        exitToMenuButton = new Button(UtilStringStorage.returnToMenuButton);
+        exitToMenuButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
+        exitToMenuButton.setTranslateY(70);
+
+        Label timeLabel = new Label();
+        placeLabels(timeLabel, 200, 30);
+        timeLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
+        timeLabel.setTextFill(Color.GHOSTWHITE);
+        timeLabel.setText(UtilStringStorage.timeLabel + GameTimer.getElapsedMinutes() + UtilStringStorage.minLabel + GameTimer.getSecondsDisplay() +UtilStringStorage.secondesLabel);
+
+        gameResult.getChildren().add(congratsLabel);
+        gameResult.getChildren().add(playerResult);
+        gameResult.getChildren().add(timeLabel);
     }
 
     public void goldCupResult(VBox vBox)

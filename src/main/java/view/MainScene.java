@@ -8,6 +8,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.ImagePattern;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.*;
 
@@ -67,6 +68,7 @@ public class MainScene extends Scene
         popUpStage.setResizable(false);
         popUpStage.setTitle("Pop up");
         popUpStage.setScene(playerInfoScene);
+        popUpStage.initModality(Modality.APPLICATION_MODAL);
         popUpStage.show();
         playerInfoScene.setOnActionSendButton(menuPane, questionInterface, stage, popUpStage);
 

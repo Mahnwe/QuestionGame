@@ -36,11 +36,16 @@ public class UtilTranslateString {
 
     public void translateEngString()
     {
+        // TITLE
         UtilStringStorage.gameTitle = engTradFile.getProperty("engGameTitle");
+
+        // UTIL
         UtilStringStorage.returnButton = engTradFile.getProperty("returnButton");
         UtilStringStorage.validateButton = engTradFile.getProperty("validateButton");
         UtilStringStorage.yesButton = engTradFile.getProperty("yesButton");
         UtilStringStorage.noButton = engTradFile.getProperty("noButton");
+
+        // ACHIEVEMENTS
         UtilStringStorage.goldCupAchievementDescription = engTradFile.getProperty("goldCupAchievementDescription");
         UtilStringStorage.silverCupAchievementDescription = engTradFile.getProperty("silverCupAchievementDescription");
         UtilStringStorage.bronzeCupAchievementDescription = engTradFile.getProperty("bronzeCupAchievementDescription");
@@ -49,10 +54,14 @@ public class UtilTranslateString {
         UtilStringStorage.perfectScore20Achievement = engTradFile.getProperty("perfectScore20Achievement");
         UtilStringStorage.successUnlock = engTradFile.getProperty("successUnlock");
         UtilStringStorage.successLock = engTradFile.getProperty("successLock");
+
+        // LEADERBOARD
         UtilStringStorage.leaderBoardLabel = engTradFile.getProperty("leaderBoardLabel");
         UtilStringStorage.welcomeLabel = engTradFile.getProperty("welcomeLabel");
         UtilStringStorage.leaderBoardButton = engTradFile.getProperty("leaderBoardButton");
         UtilStringStorage.leaderBoardTooltip = engTradFile.getProperty("leaderBoardTooltip");
+
+        // MENU SCENE
         UtilStringStorage.trophyButton = engTradFile.getProperty("trophyButton");
         UtilStringStorage.trophyTooltip = engTradFile.getProperty("trophyTooltip");
         UtilStringStorage.achievementButton = engTradFile.getProperty("achievementButton");
@@ -63,6 +72,8 @@ public class UtilTranslateString {
         UtilStringStorage.mode10Button = engTradFile.getProperty("mode10Button");
         UtilStringStorage.mode15Button = engTradFile.getProperty("mode15Button");
         UtilStringStorage.mode20Button = engTradFile.getProperty("mode20Button");
+
+        // MAIN SCENE
         UtilStringStorage.scoreLabel = engTradFile.getProperty("scoreLabel");
         UtilStringStorage.questionNumber = engTradFile.getProperty("questionNumber");
         UtilStringStorage.congratsLabel = engTradFile.getProperty("congratsLabel");
@@ -75,9 +86,13 @@ public class UtilTranslateString {
         UtilStringStorage.gameIn = engTradFile.getProperty("gameIn");
         UtilStringStorage.gameMinutes = engTradFile.getProperty("gameMinutes");
         UtilStringStorage.gameSecondes = engTradFile.getProperty("gameSecondes");
+
+        // PLAYER INFO
         UtilStringStorage.askPlayerName = engTradFile.getProperty("askPlayerName");
         UtilStringStorage.playerNameIngame = engTradFile.getProperty("playerNameIngame");
         UtilStringStorage.scoreLabelIngame = engTradFile.getProperty("scoreLabelIngame");
+
+        // RESULT SCENE
         UtilStringStorage.confirmAlertWindow = engTradFile.getProperty("confirmAlertWindow");
         UtilStringStorage.askToConfirm = engTradFile.getProperty("askToConfirm");
         UtilStringStorage.nextQuestionButton = engTradFile.getProperty("nextQuestionButton");
@@ -91,13 +106,19 @@ public class UtilTranslateString {
         UtilStringStorage.goldCupLabel = engTradFile.getProperty("goldCupLabel");
         UtilStringStorage.silverCupLabel = engTradFile.getProperty("silverCupLabel");
         UtilStringStorage.bronzeCupLabel = engTradFile.getProperty("bronzeCupLabel");
+
+        // TROPHY
         UtilStringStorage.goldCupTrophy = engTradFile.getProperty("goldCupTrophy");
         UtilStringStorage.silverCupTrophy = engTradFile.getProperty("silverCupTrophy");
         UtilStringStorage.bronzeCupTrophy = engTradFile.getProperty("bronzeCupTrophy");
+
+        // OPTION SCENE
         UtilStringStorage.volumeLabel = engTradFile.getProperty("volumeLabel");
         UtilStringStorage.resetButton = engTradFile.getProperty("resetButton");
         UtilStringStorage.resetTooltip = engTradFile.getProperty("resetTooltip");
         UtilStringStorage.askConfirmReset = engTradFile.getProperty("askToReset");
+
+        // QUESTIONS
         UtilStringStorage.question1 = engTradFile.getProperty("question1");
         UtilStringStorage.answerA1 = engTradFile.getProperty("answerA1");
         UtilStringStorage.answerB1 = engTradFile.getProperty("answerB1");
@@ -469,17 +490,36 @@ public class UtilTranslateString {
         UtilStringStorage.answerD53 = engTradFile.getProperty("answerD53");
         UtilStringStorage.goodAnswer53 = engTradFile.getProperty("goodAnswer53");
         UtilStringStorage.explanation53 = engTradFile.getProperty("explanation53");
+        UtilStringStorage.question54 = engTradFile.getProperty("question54");
+        UtilStringStorage.answerA54 = engTradFile.getProperty("answerA54");
+        UtilStringStorage.answerB54 = engTradFile.getProperty("answerB54");
+        UtilStringStorage.answerC54 = engTradFile.getProperty("answerC54");
+        UtilStringStorage.answerD54 = engTradFile.getProperty("answerD54");
+        UtilStringStorage.goodAnswer54 = engTradFile.getProperty("goodAnswer54");
+        UtilStringStorage.explanation54 = engTradFile.getProperty("explanation54");
+        UtilStringStorage.question55 = engTradFile.getProperty("question55");
+        UtilStringStorage.answerA55 = engTradFile.getProperty("answerA55");
+        UtilStringStorage.answerB55 = engTradFile.getProperty("answerB55");
+        UtilStringStorage.answerC55 = engTradFile.getProperty("answerC55");
+        UtilStringStorage.answerD55 = engTradFile.getProperty("answerD55");
+        UtilStringStorage.goodAnswer55 = engTradFile.getProperty("goodAnswer55");
+        UtilStringStorage.explanation55 = engTradFile.getProperty("explanation55");
 
 
     }
 
     public void translateFrString()
     {
+        // TITLE
         UtilStringStorage.gameTitle = frTradFile.getProperty("frGameTitle");
+
+        // UTIL
         UtilStringStorage.returnButton = frTradFile.getProperty("returnButton");
         UtilStringStorage.validateButton = frTradFile.getProperty("validateButton");
         UtilStringStorage.yesButton = frTradFile.getProperty("yesButton");
         UtilStringStorage.noButton = frTradFile.getProperty("noButton");
+
+        // ACHIEVEMENTS
         UtilStringStorage.goldCupAchievementDescription = frTradFile.getProperty("goldCupAchievementDescription");
         UtilStringStorage.silverCupAchievementDescription = frTradFile.getProperty("silverCupAchievementDescription");
         UtilStringStorage.bronzeCupAchievementDescription = frTradFile.getProperty("bronzeCupAchievementDescription");
@@ -488,6 +528,8 @@ public class UtilTranslateString {
         UtilStringStorage.perfectScore20Achievement = frTradFile.getProperty("perfectScore20Achievement");
         UtilStringStorage.successUnlock = frTradFile.getProperty("successUnlock");
         UtilStringStorage.successLock = frTradFile.getProperty("successLock");
+
+        // MENU SCENE
         UtilStringStorage.leaderBoardLabel = frTradFile.getProperty("leaderBoardLabel");
         UtilStringStorage.welcomeLabel = frTradFile.getProperty("welcomeLabel");
         UtilStringStorage.leaderBoardButton = frTradFile.getProperty("leaderBoardButton");
@@ -502,6 +544,8 @@ public class UtilTranslateString {
         UtilStringStorage.mode10Button = frTradFile.getProperty("mode10Button");
         UtilStringStorage.mode15Button = frTradFile.getProperty("mode15Button");
         UtilStringStorage.mode20Button = frTradFile.getProperty("mode20Button");
+
+        // MAIN SCENE
         UtilStringStorage.scoreLabel = frTradFile.getProperty("scoreLabel");
         UtilStringStorage.questionNumber = frTradFile.getProperty("questionNumber");
         UtilStringStorage.congratsLabel = frTradFile.getProperty("congratsLabel");
@@ -514,9 +558,13 @@ public class UtilTranslateString {
         UtilStringStorage.gameIn = frTradFile.getProperty("gameIn");
         UtilStringStorage.gameMinutes = frTradFile.getProperty("gameMinutes");
         UtilStringStorage.gameSecondes = frTradFile.getProperty("gameSecondes");
+
+        // PLAYER INFO
         UtilStringStorage.askPlayerName = frTradFile.getProperty("askPlayerName");
         UtilStringStorage.playerNameIngame = frTradFile.getProperty("playerNameIngame");
         UtilStringStorage.scoreLabelIngame = frTradFile.getProperty("scoreLabelIngame");
+
+        // RESULT SCENE
         UtilStringStorage.confirmAlertWindow = frTradFile.getProperty("confirmAlertWindow");
         UtilStringStorage.askToConfirm = frTradFile.getProperty("askToConfirm");
         UtilStringStorage.nextQuestionButton = frTradFile.getProperty("nextQuestionButton");
@@ -530,13 +578,19 @@ public class UtilTranslateString {
         UtilStringStorage.goldCupLabel = frTradFile.getProperty("goldCupLabel");
         UtilStringStorage.silverCupLabel = frTradFile.getProperty("silverCupLabel");
         UtilStringStorage.bronzeCupLabel = frTradFile.getProperty("bronzeCupLabel");
+
+        // TROPHY SCENE
         UtilStringStorage.goldCupTrophy = frTradFile.getProperty("goldCupTrophy");
         UtilStringStorage.silverCupTrophy = frTradFile.getProperty("silverCupTrophy");
         UtilStringStorage.bronzeCupTrophy = frTradFile.getProperty("bronzeCupTrophy");
+
+        // OPTION SCENE
         UtilStringStorage.volumeLabel = frTradFile.getProperty("volumeLabel");
         UtilStringStorage.resetButton = frTradFile.getProperty("resetButton");
         UtilStringStorage.resetTooltip = frTradFile.getProperty("resetTooltip");
         UtilStringStorage.askConfirmReset = frTradFile.getProperty("askToReset");
+
+        // QUESTIONS
         UtilStringStorage.question1 = frTradFile.getProperty("question1");
         UtilStringStorage.answerA1 = frTradFile.getProperty("answerA1");
         UtilStringStorage.answerB1 = frTradFile.getProperty("answerB1");
@@ -908,6 +962,20 @@ public class UtilTranslateString {
         UtilStringStorage.answerD53 = frTradFile.getProperty("answerD53");
         UtilStringStorage.goodAnswer53 = frTradFile.getProperty("goodAnswer53");
         UtilStringStorage.explanation53 = frTradFile.getProperty("explanation53");
+        UtilStringStorage.question54 = frTradFile.getProperty("question54");
+        UtilStringStorage.answerA54 = frTradFile.getProperty("answerA54");
+        UtilStringStorage.answerB54 = frTradFile.getProperty("answerB54");
+        UtilStringStorage.answerC54 = frTradFile.getProperty("answerC54");
+        UtilStringStorage.answerD54 = frTradFile.getProperty("answerD54");
+        UtilStringStorage.goodAnswer54 = frTradFile.getProperty("goodAnswer54");
+        UtilStringStorage.explanation54 = frTradFile.getProperty("explanation54");
+        UtilStringStorage.question55 = frTradFile.getProperty("question55");
+        UtilStringStorage.answerA55 = frTradFile.getProperty("answerA55");
+        UtilStringStorage.answerB55 = frTradFile.getProperty("answerB55");
+        UtilStringStorage.answerC55 = frTradFile.getProperty("answerC55");
+        UtilStringStorage.answerD55 = frTradFile.getProperty("answerD55");
+        UtilStringStorage.goodAnswer55 = frTradFile.getProperty("goodAnswer55");
+        UtilStringStorage.explanation55 = frTradFile.getProperty("explanation55");
 
     }
 }

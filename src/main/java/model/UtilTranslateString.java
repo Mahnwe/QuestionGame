@@ -114,6 +114,7 @@ public class UtilTranslateString {
 
         // OPTION SCENE
         UtilStringStorage.volumeLabel = engTradFile.getProperty("volumeLabel");
+        UtilStringStorage.languageLabel = engTradFile.getProperty("languageLabel");
         UtilStringStorage.resetButton = engTradFile.getProperty("resetButton");
         UtilStringStorage.resetTooltip = engTradFile.getProperty("resetTooltip");
         UtilStringStorage.askConfirmReset = engTradFile.getProperty("askToReset");
@@ -586,6 +587,7 @@ public class UtilTranslateString {
 
         // OPTION SCENE
         UtilStringStorage.volumeLabel = frTradFile.getProperty("volumeLabel");
+        UtilStringStorage.languageLabel = frTradFile.getProperty("languageLabel");
         UtilStringStorage.resetButton = frTradFile.getProperty("resetButton");
         UtilStringStorage.resetTooltip = frTradFile.getProperty("resetTooltip");
         UtilStringStorage.askConfirmReset = frTradFile.getProperty("askToReset");

@@ -10,7 +10,8 @@ import javafx.scene.text.FontWeight;
 import model.BackgroundCreator;
 import model.PathUtil;
 
-public class LanguageScene extends Scene {
+public class LanguageScene extends Scene
+{
 
     private final Button engButton;
     private final Button frButton;

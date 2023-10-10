@@ -21,6 +21,7 @@ public class App extends Application
             utilTranslateString.loadEngTradFile();
             utilTranslateString.translateEngString();
             AchievementManager achievementManager = new AchievementManager();
+            menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
             MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
             stage.setMinHeight(500);
             stage.setMinWidth(900);

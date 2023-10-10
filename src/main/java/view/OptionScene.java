@@ -27,6 +27,7 @@ public class OptionScene extends Scene {
     private final Properties perfectFile;
     private final VBox optionVbox;
 
+
     private final Alert confirmAlert;
     public OptionScene(BorderPane pane, Stage stage, AchievementManager achievementManager, File saveFile, Properties cupFile, Properties perfectFile)
     {
@@ -50,6 +51,8 @@ public class OptionScene extends Scene {
         returnButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
         pane.setTop(returnButton);
         returnButton.setOnAction(event -> backToMainMenu());
+
+        createLanguageButton();
 
         createResetButtonArea();
 
@@ -85,10 +88,55 @@ public class OptionScene extends Scene {
         volumeSlider.setOnMouseClicked(event -> setVolumeFromSlider(volumeSlider.getValue()));
     }
 
+    public void createLanguageButton()
+    {
+        LanguageScene languageScene;
+        languageScene = new LanguageScene(new BorderPane());
+        Button languageButton = new Button(UtilStringStorage.languageLabel);
+        languageButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
+        languageButton.setTranslateY(150);
+        languageButton.setTranslateX(350);
+        optionVbox.getChildren().add(languageButton);
+        languageButton.setOnAction(event -> {
+            stage.setMinWidth(400);
+            stage.setMinHeight(400);
+            stage.setTitle(UtilStringStorage.languageLabel);
+            stage.setScene(languageScene);
+        });
+
+        UtilTranslateString utilTranslateString = new UtilTranslateString();
+
+        languageScene.getEngButton().setOnAction(event -> {
+            utilTranslateString.loadEngTradFile();
+            utilTranslateString.translateEngString();
+            App.menuMusicToStop.stop();
+            App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
+            MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
+            stage.setMinHeight(500);
+            stage.setMinWidth(900);
+            stage.setScene(menuScene);
+            stage.setTitle(UtilStringStorage.gameTitle);
+            stage.show();
+        });
+
+        languageScene.getFrButton().setOnAction(event -> {
+            utilTranslateString.loadFrTradFile();
+            utilTranslateString.translateFrString();
+            App.menuMusicToStop.stop();
+            App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
+            MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
+            stage.setMinHeight(500);
+            stage.setMinWidth(900);
+            stage.setScene(menuScene);
+            stage.setTitle(UtilStringStorage.gameTitle);
+            stage.show();
+        });
+    }
+
     public void createResetButtonArea()
     {
         Button resetButton = new Button(UtilStringStorage.resetButton);
-        resetButton.setTranslateY(170);
+        resetButton.setTranslateY(250);
         resetButton.setTranslateX(350);
         resetButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         Tooltip resetTooltip = new Tooltip(UtilStringStorage.resetTooltip);

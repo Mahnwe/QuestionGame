@@ -76,7 +76,7 @@ public class OptionScene extends Scene {
 
         Slider volumeSlider = new Slider(0, 1, 0.5);
         volumeSlider.setMaxWidth(400);
-        volumeSlider.setMaxHeight(50);
+        volumeSlider.setMaxHeight(70);
         volumeSlider.setTranslateY(60);
         volumeSlider.setTranslateX(200);
         volumeSlider.setShowTickMarks(true);
@@ -86,6 +86,7 @@ public class OptionScene extends Scene {
         optionVbox.getChildren().add(volumeSlider);
         volumeSlider.setOnDragDetected(event -> setVolumeFromSlider(volumeSlider.getValue()));
         volumeSlider.setOnMouseClicked(event -> setVolumeFromSlider(volumeSlider.getValue()));
+        volumeSlider.setOnMouseReleased(event -> setVolumeFromSlider(volumeSlider.getValue()));
     }
 
     public void createLanguageButton()
@@ -93,6 +94,8 @@ public class OptionScene extends Scene {
         LanguageScene languageScene;
         languageScene = new LanguageScene(new BorderPane());
         Button languageButton = new Button(UtilStringStorage.languageLabel);
+        Tooltip languageTooltip = new Tooltip(UtilStringStorage.languageTooltip);
+        languageButton.setTooltip(languageTooltip);
         languageButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         languageButton.setTranslateY(150);
         languageButton.setTranslateX(350);
@@ -105,7 +108,6 @@ public class OptionScene extends Scene {
         });
 
         UtilTranslateString utilTranslateString = new UtilTranslateString();
-
         languageScene.getEngButton().setOnAction(event -> {
             utilTranslateString.loadEngTradFile();
             utilTranslateString.translateEngString();

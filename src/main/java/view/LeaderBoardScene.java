@@ -38,10 +38,13 @@ public class LeaderBoardScene extends Scene
         this.stage = stage;
         this.achievementManager = achievementManager;
         readFile();
+
         pane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
         pane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         pane.setFitToHeight(true);
         pane.setFitToWidth(true);
+
+        BorderPane borderPane = new BorderPane();
 
         VBox leaderBoardVBox = new VBox();
         leaderBoardVBox.setMinSize(900, 500);
@@ -69,7 +72,8 @@ public class LeaderBoardScene extends Scene
 
         leaderBoardVBox.getChildren().add(leaderBoardLabel);
         leaderBoardVBox.getChildren().add(leaderBoardArea);
-        pane.setContent(leaderBoardVBox);
+        borderPane.setCenter(leaderBoardVBox);
+        pane.setContent(borderPane);
         pane.setPrefViewportHeight(leaderBoardArea.getHeight());
 
         BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
@@ -77,7 +81,7 @@ public class LeaderBoardScene extends Scene
         Image menuSceneBackground = menuBackground.createBackground();
         BackgroundImage backgroundImage = new BackgroundImage(menuSceneBackground, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
                 backgroundSize);
-        leaderBoardVBox.setBackground(new Background(backgroundImage));
+        borderPane.setBackground(new Background(backgroundImage));
     }
 
     public void readFile()

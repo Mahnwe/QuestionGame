@@ -474,5 +474,12 @@ public class UtilStringStorage
     public static String answerD55 = "";
     public static String goodAnswer55 = "";
     public static String explanation55 = "";
+    public static String question56 = "";
+    public static String answerA56 = "";
+    public static String answerB56 = "";
+    public static String answerC56 = "";
+    public static String answerD56 = "";
+    public static String goodAnswer56 = "";
+    public static String explanation56 = "";
 
 }

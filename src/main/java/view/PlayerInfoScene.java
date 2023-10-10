@@ -101,16 +101,19 @@ public class PlayerInfoScene extends Scene
     public void createPlayerInfoArea()
     {
         playerInfos = new VBox();
+        playerInfos.setTranslateY(50);
         player.setPlayerName(userInputArea.getText());
         Label playerNameLabel = new Label(UtilStringStorage.playerNameIngame + player.getPlayerName());
         playerNameLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
         playerNameLabel.setTextFill(Color.GHOSTWHITE);
+        playerNameLabel.setTranslateX(-11);
         playerInfos.getChildren().add(createStatArea(playerNameLabel));
         playerInfos.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 
         playerScoreLabel = new Label(UtilStringStorage.scoreLabelIngame +player.getPlayerScore());
         playerScoreLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
         playerScoreLabel.setTextFill(Color.GHOSTWHITE);
+        playerScoreLabel.setTranslateX(-11);
         playerInfos.getChildren().add(createStatArea(playerScoreLabel));
         playerInfos.setMinWidth(150);
         playerInfos.setMaxWidth(150);

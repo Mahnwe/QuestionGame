@@ -60,6 +60,7 @@ public class LeaderBoardScene extends Scene
         leaderBoardLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 16));
 
         Label leaderBoardArea = new Label();
+        leaderBoardArea.setMinHeight(500);
         leaderBoardArea.setTranslateX(10);
         leaderBoardArea.setTranslateY(40);
         leaderBoardArea.setText(String.valueOf(stringBuilder));
@@ -69,7 +70,7 @@ public class LeaderBoardScene extends Scene
         leaderBoardVBox.getChildren().add(leaderBoardLabel);
         leaderBoardVBox.getChildren().add(leaderBoardArea);
         pane.setContent(leaderBoardVBox);
-        pane.setVvalue(leaderBoardVBox.getMaxHeight());
+        pane.setPrefViewportHeight(leaderBoardArea.getHeight());
 
         BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
         BackgroundCreator menuBackground = new BackgroundCreator(PathUtil.MENU_BACKGROUND);

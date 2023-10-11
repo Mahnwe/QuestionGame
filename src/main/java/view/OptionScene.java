@@ -74,15 +74,15 @@ public class OptionScene extends Scene {
         volumeLabel.setTextFill(Color.BLACK);
         optionVbox.getChildren().add(volumeLabel);
 
-        Slider volumeSlider = new Slider(0, 1, 0.5);
+        Slider volumeSlider = new Slider(0, 10, 5);
         volumeSlider.setMaxWidth(400);
         volumeSlider.setMaxHeight(70);
         volumeSlider.setTranslateY(60);
         volumeSlider.setTranslateX(200);
         volumeSlider.setShowTickMarks(true);
         volumeSlider.setShowTickLabels(true);
-        volumeSlider.setMajorTickUnit(0.10f);
-        volumeSlider.setBlockIncrement(0.1f);
+        volumeSlider.setMajorTickUnit(1f);
+        volumeSlider.setBlockIncrement(1f);
         optionVbox.getChildren().add(volumeSlider);
         volumeSlider.setOnDragDetected(event -> setVolumeFromSlider(volumeSlider.getValue()));
         volumeSlider.setOnMouseClicked(event -> setVolumeFromSlider(volumeSlider.getValue()));

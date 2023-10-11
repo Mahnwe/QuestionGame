@@ -6,12 +6,12 @@ import java.io.File;
 
 public class SoundManager {
 
-    public static Double soundVolume = 0.5;
+    public static Double soundVolume = 5.0;
     public static MediaPlayer playMusic(String pathSound)
     {
         Media media = new Media(new File(pathSound).toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(media);
-        mediaPlayer.setVolume(soundVolume);
+        mediaPlayer.setVolume(soundVolume /10);
         mediaPlayer.play();
         return mediaPlayer;
     }
@@ -20,7 +20,7 @@ public class SoundManager {
     {
         Media media = new Media(new File(pathSound).toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(media);
-        mediaPlayer.setVolume(soundVolume);
+        mediaPlayer.setVolume(soundVolume /10);
         mediaPlayer.setAutoPlay(true);
         mediaPlayer.setCycleCount(12000);
         return mediaPlayer;
@@ -28,7 +28,7 @@ public class SoundManager {
 
     public static void handleMenuSceneVolume(MediaPlayer mediaPlayer, Double mediaVolume)
     {
-        mediaPlayer.setVolume(mediaVolume);
+        mediaPlayer.setVolume(mediaVolume/10);
     }
 
     public static void stopMusic(MediaPlayer mediaPlayer)

@@ -32,8 +32,6 @@ public class LeaderBoardScene extends Scene
     public LeaderBoardScene(ScrollPane pane, File saveFile, Stage stage, AchievementManager achievementManager)
     {
         super(pane);
-        pane.setMinHeight(500);
-        pane.setMinWidth(900);
         this.saveFile = saveFile;
         this.stage = stage;
         this.achievementManager = achievementManager;
@@ -41,16 +39,14 @@ public class LeaderBoardScene extends Scene
 
         pane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
         pane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-        pane.setFitToHeight(true);
         pane.setFitToWidth(true);
 
         BorderPane borderPane = new BorderPane();
 
         VBox leaderBoardVBox = new VBox();
-        leaderBoardVBox.setMinSize(900, 500);
+        VBox.setVgrow(leaderBoardVBox, Priority.ALWAYS);
 
         HBox buttonHbox = new HBox();
-        buttonHbox.setPrefHeight(50);
         Button returnToMenu = new Button(UtilStringStorage.returnButton);
         returnToMenu.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
         buttonHbox.getChildren().add(returnToMenu);
@@ -63,7 +59,6 @@ public class LeaderBoardScene extends Scene
         leaderBoardLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 16));
 
         Label leaderBoardArea = new Label();
-        leaderBoardArea.setMinHeight(500);
         leaderBoardArea.setTranslateX(10);
         leaderBoardArea.setTranslateY(40);
         leaderBoardArea.setText(String.valueOf(stringBuilder));
@@ -74,7 +69,6 @@ public class LeaderBoardScene extends Scene
         leaderBoardVBox.getChildren().add(leaderBoardArea);
         borderPane.setCenter(leaderBoardVBox);
         pane.setContent(borderPane);
-        pane.setPrefViewportHeight(leaderBoardArea.getHeight());
 
         BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
         BackgroundCreator menuBackground = new BackgroundCreator(PathUtil.MENU_BACKGROUND);
@@ -82,6 +76,7 @@ public class LeaderBoardScene extends Scene
         BackgroundImage backgroundImage = new BackgroundImage(menuSceneBackground, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
                 backgroundSize);
         borderPane.setBackground(new Background(backgroundImage));
+
     }
 
     public void readFile()

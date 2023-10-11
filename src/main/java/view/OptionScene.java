@@ -91,8 +91,7 @@ public class OptionScene extends Scene {
 
     public void createLanguageButton()
     {
-        LanguageScene languageScene;
-        languageScene = new LanguageScene(new BorderPane());
+        LanguageScene languageScene = new LanguageScene(new BorderPane());
         Button languageButton = new Button(UtilStringStorage.languageLabel);
         Tooltip languageTooltip = new Tooltip(UtilStringStorage.languageTooltip);
         languageButton.setTooltip(languageTooltip);

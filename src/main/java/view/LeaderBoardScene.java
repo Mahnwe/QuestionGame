@@ -44,6 +44,7 @@ public class LeaderBoardScene extends Scene
         BorderPane borderPane = new BorderPane();
 
         VBox leaderBoardVBox = new VBox();
+        leaderBoardVBox.setMinHeight(500);
         VBox.setVgrow(leaderBoardVBox, Priority.ALWAYS);
 
         HBox buttonHbox = new HBox();

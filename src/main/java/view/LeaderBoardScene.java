@@ -42,10 +42,9 @@ public class LeaderBoardScene extends Scene
         pane.setFitToWidth(true);
 
         BorderPane borderPane = new BorderPane();
+        borderPane.setMinHeight(1080);
 
         VBox leaderBoardVBox = new VBox();
-        leaderBoardVBox.setMinHeight(500);
-        VBox.setVgrow(leaderBoardVBox, Priority.ALWAYS);
 
         HBox buttonHbox = new HBox();
         Button returnToMenu = new Button(UtilStringStorage.returnButton);

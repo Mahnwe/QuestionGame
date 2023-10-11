@@ -294,6 +294,11 @@ public class QuestionStorage
                 UtilStringStorage.explanation56);
         questionList.add(question56);
 
+        Question question57 = new Question(UtilStringStorage.question57,UtilStringStorage.answerA57,
+                UtilStringStorage.answerB57, UtilStringStorage.answerC57, UtilStringStorage.answerD57, UtilStringStorage.goodAnswer57,
+                UtilStringStorage.explanation57);
+        questionList.add(question57);
+
     }
 
     public List<Question> getQuestionList() {

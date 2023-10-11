@@ -481,5 +481,13 @@ public class UtilStringStorage
     public static String answerD56 = "";
     public static String goodAnswer56 = "";
     public static String explanation56 = "";
+    public static String question57 = "";
+    public static String answerA57 = "";
+    public static String answerB57 = "";
+    public static String answerC57 = "";
+    public static String answerD57 = "";
+    public static String goodAnswer57 = "";
+    public static String explanation57 = "";
+
 
 }

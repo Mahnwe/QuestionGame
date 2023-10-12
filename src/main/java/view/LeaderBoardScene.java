@@ -45,6 +45,7 @@ public class LeaderBoardScene extends Scene
         borderPane.setMinHeight(1080);
 
         VBox leaderBoardVBox = new VBox();
+        VBox.setVgrow(leaderBoardVBox, Priority.ALWAYS);
 
         HBox buttonHbox = new HBox();
         Button returnToMenu = new Button(UtilStringStorage.returnButton);

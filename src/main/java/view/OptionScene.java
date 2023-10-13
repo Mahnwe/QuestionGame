@@ -47,8 +47,17 @@ public class OptionScene extends Scene {
 
         createSliderArea();
 
-        Button returnButton = new Button(UtilStringStorage.returnButton);
-        returnButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
+        IconCreator returnArrow = new IconCreator(PathUtil.BACK_ARROW);
+        Image backArrow = returnArrow.createImage().getImage();
+
+        Button returnButton = new Button();
+        Tooltip returnTooltip = new Tooltip(UtilStringStorage.returnButton);
+        returnButton.setTooltip(returnTooltip);
+        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
+        returnButton.setBackground(new Background(new BackgroundImage(backArrow, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+                backgroundSize)));
+        returnButton.setPrefHeight(50);
+        returnButton.setPrefWidth(50);
         pane.setTop(returnButton);
         returnButton.setOnAction(event -> backToMainMenu());
 
@@ -56,7 +65,6 @@ public class OptionScene extends Scene {
 
         createResetButtonArea();
 
-        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
         BackgroundCreator menuBackground = new BackgroundCreator(PathUtil.MENU_BACKGROUND);
         Image menuSceneBackground = menuBackground.createBackground();
         BackgroundImage backgroundImage = new BackgroundImage(menuSceneBackground, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
@@ -96,8 +104,15 @@ public class OptionScene extends Scene {
         Tooltip languageTooltip = new Tooltip(UtilStringStorage.languageTooltip);
         languageButton.setTooltip(languageTooltip);
         languageButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
-        languageButton.setTranslateY(150);
-        languageButton.setTranslateX(350);
+        if(languageButton.getText().equals("Langues"))
+        {
+            languageButton.setTranslateY(150);
+            languageButton.setTranslateX(360);
+        }
+        else {
+            languageButton.setTranslateY(150);
+            languageButton.setTranslateX(350);
+        }
         optionVbox.getChildren().add(languageButton);
         languageButton.setOnAction(event -> {
             stage.setMinWidth(400);
@@ -137,8 +152,15 @@ public class OptionScene extends Scene {
     public void createResetButtonArea()
     {
         Button resetButton = new Button(UtilStringStorage.resetButton);
-        resetButton.setTranslateY(250);
-        resetButton.setTranslateX(350);
+        if(resetButton.getText().equals("Réinitialiser sauvegarde"))
+        {
+            resetButton.setTranslateY(250);
+            resetButton.setTranslateX(310);
+        }
+        else {
+            resetButton.setTranslateY(250);
+            resetButton.setTranslateX(350);
+        }
         resetButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         Tooltip resetTooltip = new Tooltip(UtilStringStorage.resetTooltip);
         resetButton.setTooltip(resetTooltip);

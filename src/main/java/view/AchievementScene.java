@@ -5,11 +5,10 @@ import javafx.beans.property.StringProperty;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.*;
 
@@ -43,7 +42,8 @@ public class AchievementScene extends Scene
         this.perfectScoreFile = perfectScoreFile;
 
         gridPane = new GridPane();
-        gridPane.setTranslateX(50);
+        gridPane.setTranslateX(60);
+        gridPane.setTranslateY(40);
         gridPane.setHgap(30);
         gridPane.setVgap(40);
         gridPane.addColumn(3);
@@ -66,10 +66,17 @@ public class AchievementScene extends Scene
 
         pane.setCenter(gridPane);
 
+        IconCreator returnArrow = new IconCreator(PathUtil.BACK_ARROW);
+        Image backArrow = returnArrow.createImage().getImage();
+
         HBox buttonHbox = new HBox();
-        buttonHbox.setPrefHeight(50);
-        Button returnToMenu = new Button(UtilStringStorage.returnButton);
-        returnToMenu.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
+        Button returnToMenu = new Button();
+        Tooltip returnTooltip = new Tooltip(UtilStringStorage.returnButton);
+        returnToMenu.setTooltip(returnTooltip);
+        returnToMenu.setBackground(new Background(new BackgroundImage(backArrow, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+                backgroundSize)));
+        returnToMenu.setPrefHeight(50);
+        returnToMenu.setPrefWidth(50);
         buttonHbox.getChildren().add(returnToMenu);
         pane.setTop(buttonHbox);
         returnToMenu.setOnAction(event -> backToMainMenu());

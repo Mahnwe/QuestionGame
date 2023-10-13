@@ -3,6 +3,7 @@ package view;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -33,38 +34,48 @@ public class TrophyScene extends Scene
         VBox cupsImages = new VBox();
         cupsImages.getChildren().add(goldCup);
         goldCup.setTranslateY(10);
+        goldCup.setTranslateX(80);
         cupsImages.getChildren().add(silverCup);
         silverCup.setTranslateY(30);
+        silverCup.setTranslateX(80);
         cupsImages.getChildren().add(bronzeCup);
         bronzeCup.setTranslateY(50);
+        bronzeCup.setTranslateX(80);
 
         pane.setLeft(cupsImages);
 
         VBox nbrOfCups = new VBox();
 
         Label nbrOfGoldCupLabel = new Label();
-        stylizeLabel(nbrOfGoldCupLabel, UtilStringStorage.goldCupTrophy, cupFile, "goldCup", 20, 50);
+        stylizeLabel(nbrOfGoldCupLabel, UtilStringStorage.goldCupTrophy, cupFile, "goldCup", 110, 50);
 
         Label nbrOfSilverCupLabel = new Label();
-        stylizeLabel(nbrOfSilverCupLabel, UtilStringStorage.silverCupTrophy, cupFile, "silverCup", 20, 150);
+        stylizeLabel(nbrOfSilverCupLabel, UtilStringStorage.silverCupTrophy, cupFile, "silverCup", 110, 150);
 
         Label nbrOfBronzeCupLabel = new Label();
-        stylizeLabel(nbrOfBronzeCupLabel, UtilStringStorage.bronzeCupTrophy, cupFile, "bronzeCup", 20, 250);
+        stylizeLabel(nbrOfBronzeCupLabel, UtilStringStorage.bronzeCupTrophy, cupFile, "bronzeCup", 110, 250);
 
         nbrOfCups.getChildren().add(nbrOfGoldCupLabel);
         nbrOfCups.getChildren().add(nbrOfSilverCupLabel);
         nbrOfCups.getChildren().add(nbrOfBronzeCupLabel);
         pane.setCenter(nbrOfCups);
 
+        IconCreator returnArrow = new IconCreator(PathUtil.BACK_ARROW);
+        Image backArrow = returnArrow.createImage().getImage();
+
         HBox buttonHbox = new HBox();
-        buttonHbox.setPrefHeight(50);
-        Button returnToMenu = new Button(UtilStringStorage.returnButton);
-        returnToMenu.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
+        Button returnToMenu = new Button();
+        Tooltip returnTooltip = new Tooltip(UtilStringStorage.returnButton);
+        returnToMenu.setTooltip(returnTooltip);
+        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
+        returnToMenu.setBackground(new Background(new BackgroundImage(backArrow, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+                backgroundSize)));
+        returnToMenu.setPrefHeight(50);
+        returnToMenu.setPrefWidth(50);
         buttonHbox.getChildren().add(returnToMenu);
         pane.setTop(buttonHbox);
         returnToMenu.setOnAction(event -> backToMainMenu());
 
-        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
         BackgroundCreator menuBackground = new BackgroundCreator(PathUtil.MENU_BACKGROUND);
         Image menuSceneBackground = menuBackground.createBackground();
         BackgroundImage backgroundImage = new BackgroundImage(menuSceneBackground, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,

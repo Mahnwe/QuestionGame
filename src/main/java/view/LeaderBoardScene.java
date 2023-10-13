@@ -4,16 +4,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import model.AchievementManager;
-import model.BackgroundCreator;
-import model.PathUtil;
-import model.UtilStringStorage;
+import model.*;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -47,9 +45,19 @@ public class LeaderBoardScene extends Scene
         VBox leaderBoardVBox = new VBox();
         VBox.setVgrow(leaderBoardVBox, Priority.ALWAYS);
 
+        IconCreator returnArrow = new IconCreator(PathUtil.BACK_ARROW);
+        Image backArrow = returnArrow.createImage().getImage();
+
         HBox buttonHbox = new HBox();
-        Button returnToMenu = new Button(UtilStringStorage.returnButton);
-        returnToMenu.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
+        Button returnToMenu = new Button();
+        Tooltip returnTooltip = new Tooltip(UtilStringStorage.returnButton);
+        returnToMenu.setTooltip(returnTooltip);
+
+        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
+        returnToMenu.setBackground(new Background(new BackgroundImage(backArrow, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+                backgroundSize)));
+        returnToMenu.setPrefHeight(50);
+        returnToMenu.setPrefWidth(50);
         buttonHbox.getChildren().add(returnToMenu);
         leaderBoardVBox.getChildren().add(buttonHbox);
         returnToMenu.setOnAction(event -> backToMainMenu());
@@ -57,7 +65,7 @@ public class LeaderBoardScene extends Scene
         Label leaderBoardLabel = new Label(UtilStringStorage.leaderBoardLabel);
         leaderBoardLabel.setTranslateX(300);
         leaderBoardLabel.setTranslateY(10);
-        leaderBoardLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 16));
+        leaderBoardLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 23));
 
         Label leaderBoardArea = new Label();
         leaderBoardArea.setTranslateX(10);
@@ -71,7 +79,6 @@ public class LeaderBoardScene extends Scene
         borderPane.setCenter(leaderBoardVBox);
         pane.setContent(borderPane);
 
-        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
         BackgroundCreator menuBackground = new BackgroundCreator(PathUtil.MENU_BACKGROUND);
         Image menuSceneBackground = menuBackground.createBackground();
         BackgroundImage backgroundImage = new BackgroundImage(menuSceneBackground, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,

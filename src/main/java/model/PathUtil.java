@@ -12,6 +12,7 @@ public class PathUtil
     public static final String LOCK_ICON = RESOURCES_PATH + "Icon/LockedAchievement.png";
     public static final String UNLOCK_ICON = RESOURCES_PATH + "Icon/UnlockAchievement.png";
     public static final String BACK_ARROW = RESOURCES_PATH + "Icon/Back-Arrow.png";
+    public static final String MUTE_ICON = RESOURCES_PATH + "Icon/Mute-Icon.png";
 
     // BACKGROUNDS
     public static final String MENU_BACKGROUND = RESOURCES_PATH + "Background/Background-Test.jpg";

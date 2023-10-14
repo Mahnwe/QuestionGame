@@ -26,9 +26,8 @@ public class OptionScene extends Scene {
     private final Properties cupFile;
     private final Properties perfectFile;
     private final VBox optionVbox;
-
-
     private final Alert confirmAlert;
+    private boolean isMute;
     public OptionScene(BorderPane pane, Stage stage, AchievementManager achievementManager, File saveFile, Properties cupFile, Properties perfectFile)
     {
         super(pane);
@@ -82,10 +81,22 @@ public class OptionScene extends Scene {
         volumeLabel.setTextFill(Color.BLACK);
         optionVbox.getChildren().add(volumeLabel);
 
+        IconCreator muteIcon = new IconCreator(PathUtil.MUTE_ICON);
+        Image muteImage = muteIcon.createImage().getImage();
+        Button muteButton = new Button();
+        muteButton.setPrefSize(30,30);
+        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
+        muteButton.setBackground(new Background(new BackgroundImage(muteImage, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+                backgroundSize)));
+        optionVbox.getChildren().add(muteButton);
+        muteButton.setTranslateY(67);
+        muteButton.setTranslateX(160);
+
+
         Slider volumeSlider = new Slider(0, 10, 5);
         volumeSlider.setMaxWidth(400);
         volumeSlider.setMaxHeight(70);
-        volumeSlider.setTranslateY(60);
+        volumeSlider.setTranslateY(45);
         volumeSlider.setTranslateX(200);
         volumeSlider.setShowTickMarks(true);
         volumeSlider.setShowTickLabels(true);
@@ -95,6 +106,21 @@ public class OptionScene extends Scene {
         volumeSlider.setOnDragDetected(event -> setVolumeFromSlider(volumeSlider.getValue()));
         volumeSlider.setOnMouseClicked(event -> setVolumeFromSlider(volumeSlider.getValue()));
         volumeSlider.setOnMouseReleased(event -> setVolumeFromSlider(volumeSlider.getValue()));
+
+        muteButton.setOnAction(event -> {
+            if(!isMute)
+            {
+                SoundManager.soundVolume = 0.0;
+                SoundManager.handleMenuSceneVolume(App.menuMusicToStop, 0.0);
+                isMute = true;
+                volumeSlider.setDisable(true);
+            }
+            else {
+                volumeSlider.setDisable(false);
+                setVolumeFromSlider(volumeSlider.getValue());
+                isMute = false;
+            }
+        });
     }
 
     public void createLanguageButton()
@@ -106,11 +132,11 @@ public class OptionScene extends Scene {
         languageButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         if(languageButton.getText().equals("Langues"))
         {
-            languageButton.setTranslateY(150);
+            languageButton.setTranslateY(140);
             languageButton.setTranslateX(360);
         }
         else {
-            languageButton.setTranslateY(150);
+            languageButton.setTranslateY(140);
             languageButton.setTranslateX(350);
         }
         optionVbox.getChildren().add(languageButton);
@@ -154,11 +180,11 @@ public class OptionScene extends Scene {
         Button resetButton = new Button(UtilStringStorage.resetButton);
         if(resetButton.getText().equals("Réinitialiser sauvegarde"))
         {
-            resetButton.setTranslateY(250);
+            resetButton.setTranslateY(240);
             resetButton.setTranslateX(310);
         }
         else {
-            resetButton.setTranslateY(250);
+            resetButton.setTranslateY(240);
             resetButton.setTranslateX(350);
         }
         resetButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));

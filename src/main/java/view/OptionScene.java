@@ -27,6 +27,8 @@ public class OptionScene extends Scene {
     private final Properties perfectFile;
     private final VBox optionVbox;
     private final Alert confirmAlert;
+    private Slider volumeSlider;
+    private Button muteButton;
     private boolean isMute;
     public OptionScene(BorderPane pane, Stage stage, AchievementManager achievementManager, File saveFile, Properties cupFile, Properties perfectFile)
     {
@@ -83,7 +85,7 @@ public class OptionScene extends Scene {
 
         IconCreator muteIcon = new IconCreator(PathUtil.MUTE_ICON);
         Image muteImage = muteIcon.createImage().getImage();
-        Button muteButton = new Button();
+        muteButton = new Button();
         muteButton.setPrefSize(30,30);
         BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
         muteButton.setBackground(new Background(new BackgroundImage(muteImage, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
@@ -93,7 +95,7 @@ public class OptionScene extends Scene {
         muteButton.setTranslateX(160);
 
 
-        Slider volumeSlider = new Slider(0, 10, 5);
+        volumeSlider = new Slider(0, 10, 5);
         volumeSlider.setMaxWidth(400);
         volumeSlider.setMaxHeight(70);
         volumeSlider.setTranslateY(45);
@@ -102,14 +104,23 @@ public class OptionScene extends Scene {
         volumeSlider.setShowTickLabels(true);
         volumeSlider.setMajorTickUnit(1f);
         volumeSlider.setBlockIncrement(1f);
+        if(SoundManager.soundVolume == 0.0) {
+            isMute = true;
+            volumeSlider.setDisable(true);
+        }
+        setUpMuteButton();
         optionVbox.getChildren().add(volumeSlider);
         volumeSlider.setOnDragDetected(event -> setVolumeFromSlider(volumeSlider.getValue()));
         volumeSlider.setOnMouseClicked(event -> setVolumeFromSlider(volumeSlider.getValue()));
         volumeSlider.setOnMouseReleased(event -> setVolumeFromSlider(volumeSlider.getValue()));
 
+
+    }
+
+    public void setUpMuteButton()
+    {
         muteButton.setOnAction(event -> {
-            if(!isMute)
-            {
+            if (!isMute) {
                 SoundManager.soundVolume = 0.0;
                 SoundManager.handleMenuSceneVolume(App.menuMusicToStop, 0.0);
                 isMute = true;

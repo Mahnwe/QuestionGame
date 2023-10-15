@@ -38,6 +38,7 @@ public class UtilStringStorage
     public static String mode10Button = "";
     public static String mode15Button = "";
     public static String mode20Button = "";
+    public static String launchGameButton = "";
 
     // MAIN SCENE
     public static String scoreLabel = "";

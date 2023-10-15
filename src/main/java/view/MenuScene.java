@@ -1,10 +1,7 @@
 package view;
 
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.Tooltip;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
@@ -25,11 +22,10 @@ public class MenuScene extends Scene
 
     private final Stage menuStage;
 
-    private Button twentyModeButton;
-    private Button tenModeButton;
-    private Button fifteenModeButton;
+    private Button launchGameButton;
     private final GameHandler gameHandler;
     private final File saveFile;
+    private ComboBox<String> comboBox;
     private final Border border = new Border(new BorderStroke(Color.BLACK,
             BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT));
     private final AchievementManager achievementManager;
@@ -143,6 +139,9 @@ public class MenuScene extends Scene
 
     public void createButtonArea()
     {
+        Label fifteenModeButton;
+        Label tenModeButton;
+        Label twentyModeButton;
         VBox selectModeArea = new VBox();
 
         Label chooseMode = new Label(UtilStringStorage.chooseMode);
@@ -150,41 +149,59 @@ public class MenuScene extends Scene
         chooseMode.setTextFill(Color.BLACK);
         chooseMode.setTranslateX(200);
 
-        tenModeButton = new Button(UtilStringStorage.mode10Button);
-        tenModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
-        placeButtons(tenModeButton, 250, 50);
+        tenModeButton = new Label(UtilStringStorage.mode10Button);
+        tenModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 16));
+        tenModeButton.setTextFill(Color.BLACK);
 
-        fifteenModeButton = new Button(UtilStringStorage.mode15Button);
-        fifteenModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
-        placeButtons(fifteenModeButton, 250, 100);
+        fifteenModeButton = new Label(UtilStringStorage.mode15Button);
+        fifteenModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 16));
+        fifteenModeButton.setTextFill(Color.BLACK);
 
-        twentyModeButton = new Button(UtilStringStorage.mode20Button);
-        twentyModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
-        placeButtons(twentyModeButton, 250, 150);
+        twentyModeButton = new Label(UtilStringStorage.mode20Button);
+        twentyModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 16));
+        twentyModeButton.setTextFill(Color.BLACK);
 
+
+        comboBox = new ComboBox<>();
+        comboBox.setMinHeight(30);
+        comboBox.setMinWidth(90);
+        comboBox.setTranslateX(260);
+        comboBox.setTranslateY(100);
+        comboBox.getItems().add(tenModeButton.getText());
+        comboBox.getItems().add(fifteenModeButton.getText());
+        comboBox.getItems().add(twentyModeButton.getText());
+
+        launchGameButton = new Button(UtilStringStorage.launchGameButton);
+        launchGameButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 16));
+        launchGameButton.setTranslateX(260);
+        launchGameButton.setTranslateY(105);
 
         selectModeArea.getChildren().add(createStatArea(chooseMode));
-        selectModeArea.getChildren().add(tenModeButton);
-        selectModeArea.getChildren().add(fifteenModeButton);
-        selectModeArea.getChildren().add(twentyModeButton);
+        selectModeArea.getChildren().add(comboBox);
+        selectModeArea.getChildren().add(launchGameButton);
         pane.setCenter(selectModeArea);
     }
 
     public void setButtonOnAction()
     {
-        tenModeButton.setOnAction(event -> {
-            gameHandler.setupQuestionList(10);
-            instantiateMainScene();
-        });
+        launchGameButton.setOnAction(event -> {
+            if(comboBox.getSelectionModel().getSelectedItem().equals(comboBox.getItems().get(0)))
+            {
+                gameHandler.setupQuestionList(10);
+                instantiateMainScene();
+            }
 
-        fifteenModeButton.setOnAction(event -> {
-            gameHandler.setupQuestionList(15);
-            instantiateMainScene();
-        });
+            if(comboBox.getSelectionModel().getSelectedItem().equals(comboBox.getItems().get(1)))
+            {
+                gameHandler.setupQuestionList(15);
+                instantiateMainScene();
+            }
 
-        twentyModeButton.setOnAction(event -> {
+            if(comboBox.getSelectionModel().getSelectedItem().equals(comboBox.getItems().get(2)))
+            {
             gameHandler.setupQuestionList(20);
             instantiateMainScene();
+            }
         });
     }
 

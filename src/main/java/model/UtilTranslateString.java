@@ -72,6 +72,7 @@ public class UtilTranslateString {
         UtilStringStorage.mode10Button = engTradFile.getProperty("mode10Button");
         UtilStringStorage.mode15Button = engTradFile.getProperty("mode15Button");
         UtilStringStorage.mode20Button = engTradFile.getProperty("mode20Button");
+        UtilStringStorage.launchGameButton = engTradFile.getProperty("launchGameButton");
 
         // MAIN SCENE
         UtilStringStorage.scoreLabel = engTradFile.getProperty("scoreLabel");
@@ -581,6 +582,7 @@ public class UtilTranslateString {
         UtilStringStorage.mode10Button = frTradFile.getProperty("mode10Button");
         UtilStringStorage.mode15Button = frTradFile.getProperty("mode15Button");
         UtilStringStorage.mode20Button = frTradFile.getProperty("mode20Button");
+        UtilStringStorage.launchGameButton = frTradFile.getProperty("launchGameButton");
 
         // MAIN SCENE
         UtilStringStorage.scoreLabel = frTradFile.getProperty("scoreLabel");

@@ -179,7 +179,7 @@ public class MenuScene extends Scene
         comboBox.setStyle("-fx-font: 20px \"Verdana\";");
         comboBox.setMinHeight(30);
         comboBox.setMinWidth(90);
-        comboBox.setTranslateX(220);
+        comboBox.setTranslateX(230);
         comboBox.setTranslateY(120);
         comboBox.getItems().add(tenModeButton.getText());
         comboBox.getItems().add(fifteenModeButton.getText());
@@ -188,7 +188,7 @@ public class MenuScene extends Scene
 
         launchGameButton = new Button(UtilStringStorage.launchGameButton);
         launchGameButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 20));
-        launchGameButton.setTranslateX(260);
+        launchGameButton.setTranslateX(270);
         launchGameButton.setTranslateY(135);
 
         selectModeArea.getChildren().add(createStatArea(chooseMode));

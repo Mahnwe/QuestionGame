@@ -488,6 +488,27 @@ public class UtilStringStorage
     public static String answerD57 = "";
     public static String goodAnswer57 = "";
     public static String explanation57 = "";
+    public static String question58 = "";
+    public static String answerA58 = "";
+    public static String answerB58 = "";
+    public static String answerC58 = "";
+    public static String answerD58 = "";
+    public static String goodAnswer58 = "";
+    public static String explanation58 = "";
+    public static String question59 = "";
+    public static String answerA59 = "";
+    public static String answerB59 = "";
+    public static String answerC59 = "";
+    public static String answerD59 = "";
+    public static String goodAnswer59 = "";
+    public static String explanation59 = "";
+    public static String question60 = "";
+    public static String answerA60 = "";
+    public static String answerB60 = "";
+    public static String answerC60 = "";
+    public static String answerD60 = "";
+    public static String goodAnswer60 = "";
+    public static String explanation60 = "";
 
 
 }

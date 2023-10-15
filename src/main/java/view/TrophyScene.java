@@ -21,17 +21,35 @@ public class TrophyScene extends Scene
     private ImageView silverCup;
     private final Stage stage;
     private final AchievementManager achievementManager;
+    private final BorderPane pane;
+
+    private final Properties cupFile;
 
     public TrophyScene(BorderPane pane, Stage stage, AchievementManager achievementManager, Properties cupFile)
     {
         super(pane);
+        this.pane = pane;
+        this.cupFile = cupFile;
         pane.setPrefHeight(500);
         pane.setPrefWidth(900);
         this.stage = stage;
         this.achievementManager = achievementManager;
         createIcons();
 
+        createCupboardTrophy();
+        createReturnButton();
 
+        BackgroundCreator menuBackground = new BackgroundCreator(PathUtil.MENU_BACKGROUND);
+        Image menuSceneBackground = menuBackground.createBackground();
+        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
+        BackgroundImage backgroundImage = new BackgroundImage(menuSceneBackground, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+                backgroundSize);
+        pane.setBackground(new Background(backgroundImage));
+
+    }
+
+    public void createCupboardTrophy()
+    {
         VBox centralVbox = new VBox();
         GridPane gridPane = new GridPane();
         gridPane.setHgap(90);
@@ -73,7 +91,10 @@ public class TrophyScene extends Scene
         centralVbox.getChildren().add(gridPane);
 
         pane.setCenter(centralVbox);
+    }
 
+    public void createReturnButton()
+    {
         IconCreator returnArrow = new IconCreator(PathUtil.BACK_ARROW);
         Image backArrow = returnArrow.createImage().getImage();
 
@@ -89,13 +110,6 @@ public class TrophyScene extends Scene
         buttonHbox.getChildren().add(returnToMenu);
         pane.setTop(buttonHbox);
         returnToMenu.setOnAction(event -> backToMainMenu());
-
-        BackgroundCreator menuBackground = new BackgroundCreator(PathUtil.MENU_BACKGROUND);
-        Image menuSceneBackground = menuBackground.createBackground();
-        BackgroundImage backgroundImage = new BackgroundImage(menuSceneBackground, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
-                backgroundSize);
-        pane.setBackground(new Background(backgroundImage));
-
     }
 
     public void stylizeLabel(Label label, String string, Properties properties, String propertyKey)

@@ -27,8 +27,12 @@ public class AchievementScene extends Scene
     private Label perfectScoreAchievementInfo;
     private Label perfectScoreAchievement15Info;
     private Label perfectScoreAchievement20Info;
+    private Label secretAchievementInfo;
     private final Properties perfectScoreFile;
     private final Properties cupFile;
+    private VBox secretAchievementBox;
+    private Label secretAchievementLabel;
+    private ImageView secretAchievementImage;
 
 
     public AchievementScene(BorderPane pane, AchievementManager achievementManager, Stage stage, Properties cupFile, Properties perfectScoreFile)
@@ -42,7 +46,7 @@ public class AchievementScene extends Scene
         this.perfectScoreFile = perfectScoreFile;
 
         gridPane = new GridPane();
-        gridPane.setTranslateX(60);
+        gridPane.setTranslateX(80);
         gridPane.setTranslateY(40);
         gridPane.setHgap(30);
         gridPane.setVgap(40);
@@ -62,6 +66,7 @@ public class AchievementScene extends Scene
         createPerfectScore10Area();
         createPerfectScore15Area();
         createPerfectScore20Area();
+        createSecretAchievementArea();
         checkAchievements();
 
         pane.setCenter(gridPane);
@@ -160,6 +165,22 @@ public class AchievementScene extends Scene
         gridPane.add(perfectScoreAchievement20, 2, 1);
     }
 
+    public void createSecretAchievementArea()
+    {
+        secretAchievementBox = new VBox();
+        secretAchievementLabel = new Label();
+        secretAchievementImage = achievementManager.getAchievementsList().get(6).getLockImageView();
+        secretAchievementInfo = new Label();
+        secretAchievementLabel.setText(UtilStringStorage.secretLabel);
+        secretAchievementBox.getChildren().add(secretAchievementLabel);
+        secretAchievementBox.getChildren().add(secretAchievementImage);
+        secretAchievementBox.getChildren().add(secretAchievementInfo);
+        gridPane.add(secretAchievementBox, 1,2);
+        secretAchievementImage.setVisible(false);
+        secretAchievementInfo.setVisible(false);
+
+    }
+
     public void checkAchievements()
     {
         String checkIntInGoldFile = cupFile.getProperty("goldCup");
@@ -197,6 +218,30 @@ public class AchievementScene extends Scene
         int nbrPerfectScore20 = Integer.parseInt(numberOfPerfectScore20);
         achievementManager.getAchievementsList().get(5).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(5), nbrPerfectScore20);
         checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(5), perfectScoreAchievement20Info);
+
+        int checkNbrOfAchievementUnlock = checkSecretAchievement();
+        achievementManager.getAchievementsList().get(6).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(6), checkNbrOfAchievementUnlock);
+        checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(6), secretAchievementInfo);
+        if(checkNbrOfAchievementUnlock == 6)
+        {
+            secretAchievementLabel.setText(achievementManager.getAchievementsList().get(6).getConditionDescription());
+            secretAchievementBox.setVisible(true);
+            secretAchievementImage.setVisible(true);
+            secretAchievementInfo.setVisible(true);
+        }
+    }
+
+    public int checkSecretAchievement()
+    {
+        int numberOfAchievementUnlock = 0;
+        for(int i = 0; i < achievementManager.getAchievementsList().size(); i++)
+        {
+            if (achievementManager.getAchievementsList().get(i).isUnlock())
+            {
+                numberOfAchievementUnlock++;
+            }
+        }
+        return numberOfAchievementUnlock;
     }
     public void backToMainMenu()
     {

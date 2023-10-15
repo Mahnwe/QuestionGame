@@ -14,6 +14,7 @@ public class AchievementManager
     private ImageView lockImageView4;
     private ImageView lockImageView5;
     private ImageView lockImageView6;
+    private ImageView lockImageView7;
 
     public AchievementManager()
     {
@@ -35,6 +36,9 @@ public class AchievementManager
 
         Achievement onlyGoodAnswerAchievement20 = new Achievement(lockImageView6, 20, false, UtilStringStorage.perfectScore20Achievement);
         achievementsList.add(onlyGoodAnswerAchievement20);
+
+        Achievement secretAchievement = new Achievement(lockImageView7, 6, false, UtilStringStorage.secretAchievement);
+        achievementsList.add(secretAchievement);
 
     }
 
@@ -68,6 +72,11 @@ public class AchievementManager
         lockImageView6 = lockIcon6.createImage();
         lockImageView6.setFitHeight(50);
         lockImageView6.setFitWidth(60);
+
+        IconCreator lockIcon7 = new IconCreator(PathUtil.LOCK_ICON);
+        lockImageView7 = lockIcon7.createImage();
+        lockImageView7.setFitHeight(50);
+        lockImageView7.setFitWidth(60);
     }
 
     public List<Achievement> getAchievementsList() {

@@ -68,7 +68,7 @@ public class MenuScene extends Scene
         VBox welcomeArea = new VBox();
         Label welcomeInGame = new Label(UtilStringStorage.welcomeLabel);
         welcomeInGame.setTextFill(Color.BLACK);
-        welcomeInGame.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
+        welcomeInGame.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 17));
         welcomeArea.getChildren().add(createStatArea(welcomeInGame));
         pane.setTop(welcomeArea);
     }
@@ -145,7 +145,7 @@ public class MenuScene extends Scene
         VBox selectModeArea = new VBox();
 
         Label chooseMode = new Label(UtilStringStorage.chooseMode);
-        chooseMode.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
+        chooseMode.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 17));
         chooseMode.setTextFill(Color.BLACK);
         chooseMode.setTranslateX(200);
 
@@ -163,18 +163,20 @@ public class MenuScene extends Scene
 
 
         comboBox = new ComboBox<>();
+        comboBox.setStyle("-fx-font: 20px \"Verdana\";");
         comboBox.setMinHeight(30);
         comboBox.setMinWidth(90);
-        comboBox.setTranslateX(260);
-        comboBox.setTranslateY(100);
+        comboBox.setTranslateX(220);
+        comboBox.setTranslateY(120);
         comboBox.getItems().add(tenModeButton.getText());
         comboBox.getItems().add(fifteenModeButton.getText());
         comboBox.getItems().add(twentyModeButton.getText());
+        comboBox.getSelectionModel().selectFirst();
 
         launchGameButton = new Button(UtilStringStorage.launchGameButton);
-        launchGameButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 16));
+        launchGameButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 20));
         launchGameButton.setTranslateX(260);
-        launchGameButton.setTranslateY(105);
+        launchGameButton.setTranslateY(135);
 
         selectModeArea.getChildren().add(createStatArea(chooseMode));
         selectModeArea.getChildren().add(comboBox);

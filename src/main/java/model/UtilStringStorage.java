@@ -34,6 +34,8 @@ public class UtilStringStorage
     public static String achievementTooltip = "";
     public static String optionButton = "";
     public static String optionTooltip = "";
+    public static String creditButton = "";
+    public static String creditTooltip = "";
     public static String chooseMode = "";
     public static String mode10Button = "";
     public static String mode15Button = "";
@@ -88,6 +90,18 @@ public class UtilStringStorage
     public static String resetButton = "";
     public static String resetTooltip = "";
     public static String askConfirmReset = "";
+
+    // CREDIT SCENE
+    public static String generalThank = "";
+    public static String kebabThank = "";
+    public static String pandaThank = "";
+    public static String satanThank = "";
+    public static String givrThank = "";
+    public static String yukiThank = "";
+    public static String darkwestThank = "";
+    public static String darkantThank = "";
+    public static String loveLabel = "";
+
 
     // QUESTIONS LABELS
     public static String question1 = "";

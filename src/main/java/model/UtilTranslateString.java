@@ -68,6 +68,8 @@ public class UtilTranslateString {
         UtilStringStorage.achievementTooltip = engTradFile.getProperty("achievementTooltip");
         UtilStringStorage.optionButton = engTradFile.getProperty("optionButton");
         UtilStringStorage.optionTooltip = engTradFile.getProperty("optionTooltip");
+        UtilStringStorage.creditButton = engTradFile.getProperty("creditButton");
+        UtilStringStorage.creditTooltip = engTradFile.getProperty("creditTooltip");
         UtilStringStorage.chooseMode = engTradFile.getProperty("chooseMode");
         UtilStringStorage.mode10Button = engTradFile.getProperty("mode10Button");
         UtilStringStorage.mode15Button = engTradFile.getProperty("mode15Button");
@@ -120,6 +122,17 @@ public class UtilTranslateString {
         UtilStringStorage.resetButton = engTradFile.getProperty("resetButton");
         UtilStringStorage.resetTooltip = engTradFile.getProperty("resetTooltip");
         UtilStringStorage.askConfirmReset = engTradFile.getProperty("askToReset");
+
+        // CREDIT SCENE
+        UtilStringStorage.generalThank = engTradFile.getProperty("generalThank");
+        UtilStringStorage.kebabThank = engTradFile.getProperty("kebabThank");
+        UtilStringStorage.pandaThank = engTradFile.getProperty("pandaThank");
+        UtilStringStorage.satanThank = engTradFile.getProperty("satanThank");
+        UtilStringStorage.givrThank = engTradFile.getProperty("givrThank");
+        UtilStringStorage.yukiThank = engTradFile.getProperty("yukiThank");
+        UtilStringStorage.darkwestThank = engTradFile.getProperty("darkwestThank");
+        UtilStringStorage.darkantThank = engTradFile.getProperty("darkantThank");
+        UtilStringStorage.loveLabel = engTradFile.getProperty("loveLabel");
 
         // QUESTIONS
         UtilStringStorage.question1 = engTradFile.getProperty("question1");
@@ -578,6 +591,8 @@ public class UtilTranslateString {
         UtilStringStorage.achievementTooltip = frTradFile.getProperty("achievementTooltip");
         UtilStringStorage.optionButton = frTradFile.getProperty("optionButton");
         UtilStringStorage.optionTooltip = frTradFile.getProperty("optionTooltip");
+        UtilStringStorage.creditButton = frTradFile.getProperty("creditButton");
+        UtilStringStorage.creditTooltip = frTradFile.getProperty("creditTooltip");
         UtilStringStorage.chooseMode = frTradFile.getProperty("chooseMode");
         UtilStringStorage.mode10Button = frTradFile.getProperty("mode10Button");
         UtilStringStorage.mode15Button = frTradFile.getProperty("mode15Button");
@@ -630,6 +645,17 @@ public class UtilTranslateString {
         UtilStringStorage.resetButton = frTradFile.getProperty("resetButton");
         UtilStringStorage.resetTooltip = frTradFile.getProperty("resetTooltip");
         UtilStringStorage.askConfirmReset = frTradFile.getProperty("askToReset");
+
+        // CREDIT SCENE
+        UtilStringStorage.generalThank = frTradFile.getProperty("generalThank");
+        UtilStringStorage.kebabThank = frTradFile.getProperty("kebabThank");
+        UtilStringStorage.pandaThank = frTradFile.getProperty("pandaThank");
+        UtilStringStorage.satanThank = frTradFile.getProperty("satanThank");
+        UtilStringStorage.givrThank = frTradFile.getProperty("givrThank");
+        UtilStringStorage.yukiThank = frTradFile.getProperty("yukiThank");
+        UtilStringStorage.darkwestThank = frTradFile.getProperty("darkwestThank");
+        UtilStringStorage.darkantThank = frTradFile.getProperty("darkantThank");
+        UtilStringStorage.loveLabel = frTradFile.getProperty("loveLabel");
 
         // QUESTIONS
         UtilStringStorage.question1 = frTradFile.getProperty("question1");

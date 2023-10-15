@@ -88,26 +88,33 @@ public class MenuScene extends Scene
         Button leaderBoardButton = new Button(UtilStringStorage.leaderBoardButton);
         Tooltip leaderBoardTooltip = new Tooltip(UtilStringStorage.leaderBoardTooltip);
         leaderBoardButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
-        placeButtons(leaderBoardButton, 5, 70);
+        placeButtons(leaderBoardButton, 5, 50);
         leaderBoardButton.setTooltip(leaderBoardTooltip);
 
         Button trophyButton = new Button(UtilStringStorage.trophyButton);
         Tooltip trophyTooltip = new Tooltip(UtilStringStorage.trophyTooltip);
         trophyButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
-        placeButtons(trophyButton, 10, 150);
+        placeButtons(trophyButton, 10, 110);
         trophyButton.setTooltip(trophyTooltip);
 
         Button achievementButton = new Button(UtilStringStorage.achievementButton);
         Tooltip achievementTooltip = new Tooltip(UtilStringStorage.achievementTooltip);
         achievementButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
-        placeButtons(achievementButton, 10, 230);
+        placeButtons(achievementButton, 10, 170);
         achievementButton.setTooltip(achievementTooltip);
 
         Button optionButton = new Button(UtilStringStorage.optionButton);
         Tooltip optionTooltip = new Tooltip(UtilStringStorage.optionTooltip);
         optionButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
-        placeButtons(optionButton, 10, 300);
+        placeButtons(optionButton, 10, 230);
         optionButton.setTooltip(optionTooltip);
+
+        Button creditButton = new Button(UtilStringStorage.creditButton);
+        Tooltip creditTooltip = new Tooltip(UtilStringStorage.creditTooltip);
+        creditButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
+        placeButtons(creditButton, 10, 290);
+        creditButton.setTooltip(creditTooltip);
+
 
         leaderBoardButton.setOnAction(event -> {
             LeaderBoardScene leaderBoardScene = new LeaderBoardScene(new ScrollPane(), saveFile, menuStage, achievementManager);
@@ -129,11 +136,17 @@ public class MenuScene extends Scene
             menuStage.setScene(optionScene);
         });
 
+        creditButton.setOnAction(event -> {
+            CreditScene creditScene = new CreditScene(new BorderPane(), menuStage, achievementManager);
+            menuStage.setScene(creditScene);
+        });
+
 
         leaderBoardVBox.getChildren().add(leaderBoardButton);
         leaderBoardVBox.getChildren().add(trophyButton);
         leaderBoardVBox.getChildren().add(achievementButton);
         leaderBoardVBox.getChildren().add(optionButton);
+        leaderBoardVBox.getChildren().add(creditButton);
         pane.setLeft(leaderBoardVBox);
     }
 

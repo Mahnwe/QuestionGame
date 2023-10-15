@@ -113,6 +113,7 @@ public class UtilTranslateString {
         UtilStringStorage.bronzeCupLabel = engTradFile.getProperty("bronzeCupLabel");
 
         // TROPHY
+        UtilStringStorage.trophyLabel = engTradFile.getProperty("trophyLabel");
         UtilStringStorage.goldCupTrophy = engTradFile.getProperty("goldCupTrophy");
         UtilStringStorage.silverCupTrophy = engTradFile.getProperty("silverCupTrophy");
         UtilStringStorage.bronzeCupTrophy = engTradFile.getProperty("bronzeCupTrophy");
@@ -638,6 +639,7 @@ public class UtilTranslateString {
         UtilStringStorage.bronzeCupLabel = frTradFile.getProperty("bronzeCupLabel");
 
         // TROPHY SCENE
+        UtilStringStorage.trophyLabel = frTradFile.getProperty("trophyLabel");
         UtilStringStorage.goldCupTrophy = frTradFile.getProperty("goldCupTrophy");
         UtilStringStorage.silverCupTrophy = frTradFile.getProperty("silverCupTrophy");
         UtilStringStorage.bronzeCupTrophy = frTradFile.getProperty("bronzeCupTrophy");

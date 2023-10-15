@@ -31,34 +31,48 @@ public class TrophyScene extends Scene
         this.achievementManager = achievementManager;
         createIcons();
 
-        VBox cupsImages = new VBox();
-        cupsImages.getChildren().add(goldCup);
-        goldCup.setTranslateY(10);
-        goldCup.setTranslateX(80);
-        cupsImages.getChildren().add(silverCup);
-        silverCup.setTranslateY(30);
-        silverCup.setTranslateX(80);
-        cupsImages.getChildren().add(bronzeCup);
-        bronzeCup.setTranslateY(50);
-        bronzeCup.setTranslateX(80);
 
-        pane.setLeft(cupsImages);
+        VBox centralVbox = new VBox();
+        GridPane gridPane = new GridPane();
+        gridPane.setHgap(90);
+        gridPane.setVgap(50);
+        gridPane.setTranslateY(110);
+        gridPane.setTranslateX(135);
 
-        VBox nbrOfCups = new VBox();
+        Label trophyLabel = new Label();
+        trophyLabel.setText(UtilStringStorage.trophyLabel);
+        trophyLabel.setFont(Font.font("Impact", FontWeight.EXTRA_LIGHT, 25));
+        trophyLabel.setTranslateX(310);
+        trophyLabel.setTranslateY(20);
 
+        VBox goldCupImages = new VBox();
         Label nbrOfGoldCupLabel = new Label();
-        stylizeLabel(nbrOfGoldCupLabel, UtilStringStorage.goldCupTrophy, cupFile, "goldCup", 110, 50);
+        nbrOfGoldCupLabel.setTranslateX(-12);
+        stylizeLabel(nbrOfGoldCupLabel, UtilStringStorage.goldCupTrophy, cupFile, "goldCup");
+        goldCupImages.getChildren().add(goldCup);
+        goldCupImages.getChildren().add(nbrOfGoldCupLabel);
 
+        VBox silverCupImages = new VBox();
         Label nbrOfSilverCupLabel = new Label();
-        stylizeLabel(nbrOfSilverCupLabel, UtilStringStorage.silverCupTrophy, cupFile, "silverCup", 110, 150);
+        nbrOfSilverCupLabel.setTranslateX(-20);
+        stylizeLabel(nbrOfSilverCupLabel, UtilStringStorage.silverCupTrophy, cupFile, "silverCup");
+        silverCupImages.getChildren().add(silverCup);
+        silverCupImages.getChildren().add(nbrOfSilverCupLabel);
 
+        VBox bronzeCupImages = new VBox();
         Label nbrOfBronzeCupLabel = new Label();
-        stylizeLabel(nbrOfBronzeCupLabel, UtilStringStorage.bronzeCupTrophy, cupFile, "bronzeCup", 110, 250);
+        nbrOfBronzeCupLabel.setTranslateX(-20);
+        stylizeLabel(nbrOfBronzeCupLabel, UtilStringStorage.bronzeCupTrophy, cupFile, "bronzeCup");
+        bronzeCupImages.getChildren().add(bronzeCup);
+        bronzeCupImages.getChildren().add(nbrOfBronzeCupLabel);
 
-        nbrOfCups.getChildren().add(nbrOfGoldCupLabel);
-        nbrOfCups.getChildren().add(nbrOfSilverCupLabel);
-        nbrOfCups.getChildren().add(nbrOfBronzeCupLabel);
-        pane.setCenter(nbrOfCups);
+        gridPane.add(goldCupImages, 0, 0);
+        gridPane.add(silverCupImages, 1, 0);
+        gridPane.add(bronzeCupImages, 2, 0);
+        centralVbox.getChildren().add(trophyLabel);
+        centralVbox.getChildren().add(gridPane);
+
+        pane.setCenter(centralVbox);
 
         IconCreator returnArrow = new IconCreator(PathUtil.BACK_ARROW);
         Image backArrow = returnArrow.createImage().getImage();
@@ -84,35 +98,28 @@ public class TrophyScene extends Scene
 
     }
 
-    public void placeLabel(Label label, int x, int y)
-    {
-        label.setTranslateX(x);
-        label.setTranslateY(y);
-    }
-
-    public void stylizeLabel(Label label, String string, Properties properties, String propertyKey, int translateX, int translateY)
+    public void stylizeLabel(Label label, String string, Properties properties, String propertyKey)
     {
         label.setText(string +" "+ properties.getProperty(propertyKey));
-        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
-        placeLabel(label, translateX, translateY);
+        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 17));
     }
 
     public void createIcons()
     {
         IconCreator goldCupImage = new IconCreator(PathUtil.GOLD_CUP_PATH);
         goldCup = goldCupImage.createImage();
-        goldCup.setFitHeight(100);
-        goldCup.setFitWidth(80);
+        goldCup.setFitHeight(120);
+        goldCup.setFitWidth(100);
 
         IconCreator bronzeCupImage = new IconCreator(PathUtil.BRONZE_CUP_PATH);
         bronzeCup = bronzeCupImage.createImage();
-        bronzeCup.setFitHeight(100);
-        bronzeCup.setFitWidth(80);
+        bronzeCup.setFitHeight(120);
+        bronzeCup.setFitWidth(100);
 
         IconCreator silverCupImage = new IconCreator(PathUtil.SILVER_CUP_PATH);
         silverCup = silverCupImage.createImage();
-        silverCup.setFitHeight(100);
-        silverCup.setFitWidth(80);
+        silverCup.setFitHeight(120);
+        silverCup.setFitWidth(100);
     }
     public void backToMainMenu()
     {

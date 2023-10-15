@@ -81,6 +81,8 @@ public class UtilStringStorage
     public static String bronzeCupLabel = "";
 
     // TROPHY SCENE
+
+    public static String trophyLabel;
     public static String goldCupTrophy = "";
     public static String silverCupTrophy = "";
     public static String bronzeCupTrophy = "";

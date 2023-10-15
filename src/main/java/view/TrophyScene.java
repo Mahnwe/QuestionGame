@@ -34,8 +34,8 @@ public class TrophyScene extends Scene
         pane.setPrefWidth(900);
         this.stage = stage;
         this.achievementManager = achievementManager;
-        createIcons();
 
+        createIcons();
         createCupboardTrophy();
         createReturnButton();
 

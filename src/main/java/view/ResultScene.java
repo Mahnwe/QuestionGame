@@ -70,8 +70,10 @@ public class ResultScene extends VBox
         gameResult.getChildren().add(exitToMenuButton);
         pane.setCenter(gameResult);
         exitToMenuButton.setOnAction(event -> {
-            SoundManager.stopMusic(resultSoundEffect);
-            backToMainMenu();
+            if(resultSoundEffect != null) {
+                SoundManager.stopMusic(resultSoundEffect);
+            }
+                backToMainMenu();
         });
     }
 

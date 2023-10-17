@@ -85,6 +85,13 @@ public class MenuScene extends Scene
         button.setTranslateY(translateY);
     }
 
+    public void createButton(Button button, Tooltip tooltip, int x, int y)
+    {
+        button.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
+        placeButtons(button, x, y);
+        button.setTooltip(tooltip);
+    }
+
     public void createLeaderBoardButtonArea()
     {
         VBox leaderBoardVBox = new VBox();
@@ -93,33 +100,23 @@ public class MenuScene extends Scene
 
         Button leaderBoardButton = new Button(UtilStringStorage.leaderBoardButton);
         Tooltip leaderBoardTooltip = new Tooltip(UtilStringStorage.leaderBoardTooltip);
-        leaderBoardButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
-        placeButtons(leaderBoardButton, 5, 50);
-        leaderBoardButton.setTooltip(leaderBoardTooltip);
+        createButton(leaderBoardButton, leaderBoardTooltip, 5, 50);
 
         Button trophyButton = new Button(UtilStringStorage.trophyButton);
         Tooltip trophyTooltip = new Tooltip(UtilStringStorage.trophyTooltip);
-        trophyButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
-        placeButtons(trophyButton, 10, 110);
-        trophyButton.setTooltip(trophyTooltip);
+        createButton(trophyButton, trophyTooltip, 10, 110);
 
         Button achievementButton = new Button(UtilStringStorage.achievementButton);
         Tooltip achievementTooltip = new Tooltip(UtilStringStorage.achievementTooltip);
-        achievementButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
-        placeButtons(achievementButton, 10, 170);
-        achievementButton.setTooltip(achievementTooltip);
+        createButton(achievementButton, achievementTooltip, 10, 170);
 
         Button optionButton = new Button(UtilStringStorage.optionButton);
         Tooltip optionTooltip = new Tooltip(UtilStringStorage.optionTooltip);
-        optionButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
-        placeButtons(optionButton, 10, 230);
-        optionButton.setTooltip(optionTooltip);
+        createButton(optionButton, optionTooltip, 10, 230);
 
         Button creditButton = new Button(UtilStringStorage.creditButton);
         Tooltip creditTooltip = new Tooltip(UtilStringStorage.creditTooltip);
-        creditButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
-        placeButtons(creditButton, 10, 290);
-        creditButton.setTooltip(creditTooltip);
+        createButton(creditButton, creditTooltip, 10, 290);
 
 
         leaderBoardButton.setOnAction(event -> {
@@ -158,9 +155,6 @@ public class MenuScene extends Scene
 
     public void createButtonArea()
     {
-        Label fifteenModeButton;
-        Label tenModeButton;
-        Label twentyModeButton;
         VBox selectModeArea = new VBox();
 
         Label chooseMode = new Label(UtilStringStorage.chooseMode);
@@ -168,15 +162,15 @@ public class MenuScene extends Scene
         chooseMode.setTextFill(Color.BLACK);
         chooseMode.setTranslateX(200);
 
-        tenModeButton = new Label(UtilStringStorage.mode10Button);
+        Label tenModeButton = new Label(UtilStringStorage.mode10Button);
         tenModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 16));
         tenModeButton.setTextFill(Color.BLACK);
 
-        fifteenModeButton = new Label(UtilStringStorage.mode15Button);
+        Label fifteenModeButton = new Label(UtilStringStorage.mode15Button);
         fifteenModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 16));
         fifteenModeButton.setTextFill(Color.BLACK);
 
-        twentyModeButton = new Label(UtilStringStorage.mode20Button);
+        Label twentyModeButton = new Label(UtilStringStorage.mode20Button);
         twentyModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 16));
         twentyModeButton.setTextFill(Color.BLACK);
 

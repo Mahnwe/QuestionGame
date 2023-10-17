@@ -57,6 +57,11 @@ public class MenuScene extends Scene
 
         createBackground();
 
+        if(Achievement.notificationAlert != null) {
+            NotificationAlert notificationAlert = Achievement.notificationAlert;
+            notificationAlert.showAlert();
+        }
+
     }
 
     public void createBackground()

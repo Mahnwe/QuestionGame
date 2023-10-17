@@ -79,6 +79,8 @@ public class UtilStringStorage
     public static String goldCupLabel = "";
     public static String silverCupLabel = "";
     public static String bronzeCupLabel = "";
+    public static String notificationTitle = "";
+    public static String notificationText = "";
 
     // TROPHY SCENE
 

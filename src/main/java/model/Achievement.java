@@ -1,6 +1,8 @@
 package model;
 
+import javafx.scene.control.Alert;
 import javafx.scene.image.ImageView;
+import view.NotificationAlert;
 
 public class Achievement
 {
@@ -9,6 +11,7 @@ public class Achievement
     private final String conditionDescription;
     private ImageView lockImageView;
     private ImageView unlockImageView;
+    public static NotificationAlert notificationAlert;
 
     public Achievement(ImageView achievementImage, int condition, boolean isUnlock, String conditionDescription)
     {
@@ -25,6 +28,7 @@ public class Achievement
         {
             achievement.isUnlock = true;
             achievement.getLockImageView().setImage(unlockImageView.getImage());
+            notificationAlert = new NotificationAlert(Alert.AlertType.INFORMATION);
         }
         else {
             achievement.isUnlock = false;
@@ -64,5 +68,4 @@ public class Achievement
     {
         return unlockImageView;
     }
-
 }

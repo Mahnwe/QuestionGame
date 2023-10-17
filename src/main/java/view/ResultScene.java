@@ -12,7 +12,8 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.*;
 
-import java.io.*;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Properties;
 
 public class ResultScene extends VBox

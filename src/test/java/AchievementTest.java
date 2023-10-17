@@ -10,7 +10,7 @@ public class AchievementTest
     {
         AchievementManager achievementManager = new AchievementManager();
         assertFalse(achievementManager.getAchievementsList().isEmpty());
-        assertEquals(6, achievementManager.getAchievementsList().size());
+        assertEquals(7, achievementManager.getAchievementsList().size());
         assertFalse(achievementManager.getAchievementsList().get(0).isUnlock());
     }
 

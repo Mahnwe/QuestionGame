@@ -9,8 +9,8 @@ public class PathUtil
     public static final String BRONZE_CUP_PATH = RESOURCES_PATH + "Icon/Bronze-Cup.png";
     public static final String SILVER_CUP_PATH = RESOURCES_PATH + "Icon/Silver-Cup.png";
     public static final String QUESTION_MARK_TEST = RESOURCES_PATH + "Background/HelpV1.png";
-    public static final String LOCK_ICON = RESOURCES_PATH + "Icon/LockedAchievement.png";
-    public static final String UNLOCK_ICON = RESOURCES_PATH + "Icon/UnlockAchievement.png";
+    public static final String LOCK_ICON = RESOURCES_PATH + "Icon/Locked-Achievement.png";
+    public static final String UNLOCK_ICON = RESOURCES_PATH + "Icon/Unlock-Achievement.png";
     public static final String BACK_ARROW = RESOURCES_PATH + "Icon/Back-Arrow.png";
     public static final String MUTE_ICON = RESOURCES_PATH + "Icon/Mute-Icon.png";
 

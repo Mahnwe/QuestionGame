@@ -33,9 +33,7 @@ public class AchievementScene extends Scene
     private Label secretAchievementInfo;
     private final Properties perfectScoreFile;
     private final Properties cupFile;
-    private VBox secretAchievementBox;
     private Label secretAchievementLabel;
-    private ImageView secretAchievementImage;
 
 
     public AchievementScene(BorderPane pane, AchievementManager achievementManager, Stage stage, Properties cupFile, Properties perfectScoreFile)
@@ -219,6 +217,8 @@ public class AchievementScene extends Scene
 
     public void createSecretAchievementArea()
     {
+        VBox secretAchievementBox;
+        ImageView secretAchievementImage;
         secretAchievementBox = new VBox();
 
         secretAchievementLabel = new Label();
@@ -234,9 +234,6 @@ public class AchievementScene extends Scene
         secretAchievementBox.getChildren().add(secretAchievementImage);
         secretAchievementBox.getChildren().add(secretAchievementInfo);
         gridPane.add(secretAchievementBox, 1,2);
-
-        secretAchievementImage.setVisible(false);
-        secretAchievementInfo.setVisible(false);
 
     }
 
@@ -284,9 +281,6 @@ public class AchievementScene extends Scene
         if(checkNbrOfAchievementUnlock == 6)
         {
             secretAchievementLabel.setText(achievementManager.getAchievementsList().get(6).getConditionDescription());
-            secretAchievementBox.setVisible(true);
-            secretAchievementImage.setVisible(true);
-            secretAchievementInfo.setVisible(true);
         }
     }
 

@@ -30,9 +30,11 @@ public class OptionScene extends Scene {
     private Slider volumeSlider;
     private Button muteButton;
     private boolean isMute;
+    private final BorderPane pane;
     public OptionScene(BorderPane pane, Stage stage, AchievementManager achievementManager, File saveFile, Properties cupFile, Properties perfectFile)
     {
         super(pane);
+        this.pane = pane;
         pane.setPrefHeight(500);
         pane.setPrefWidth(900);
         optionVbox = new VBox();
@@ -48,6 +50,28 @@ public class OptionScene extends Scene {
 
         createSliderArea();
 
+        createReturnButton();
+
+        createLanguageButton();
+
+        createResetButtonArea();
+
+        createBackground();
+
+    }
+
+    public void createBackground()
+    {
+        BackgroundCreator menuBackground = new BackgroundCreator(PathUtil.MENU_BACKGROUND);
+        Image menuSceneBackground = menuBackground.createBackground();
+        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
+        BackgroundImage backgroundImage = new BackgroundImage(menuSceneBackground, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+                backgroundSize);
+        pane.setBackground(new Background(backgroundImage));
+    }
+
+    public void createReturnButton()
+    {
         IconCreator returnArrow = new IconCreator(PathUtil.BACK_ARROW);
         Image backArrow = returnArrow.createImage().getImage();
 
@@ -61,17 +85,6 @@ public class OptionScene extends Scene {
         returnButton.setPrefWidth(50);
         pane.setTop(returnButton);
         returnButton.setOnAction(event -> backToMainMenu());
-
-        createLanguageButton();
-
-        createResetButtonArea();
-
-        BackgroundCreator menuBackground = new BackgroundCreator(PathUtil.MENU_BACKGROUND);
-        Image menuSceneBackground = menuBackground.createBackground();
-        BackgroundImage backgroundImage = new BackgroundImage(menuSceneBackground, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
-                backgroundSize);
-        pane.setBackground(new Background(backgroundImage));
-
     }
 
     public void createSliderArea()

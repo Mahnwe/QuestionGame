@@ -24,7 +24,7 @@ public class MainScene extends Scene
     private final BorderPane menuPane;
     private QuestionInterface questionInterface;
 
-    private final PlayerInfoScene playerInfoScene;
+    private PlayerInfoScene playerInfoScene;
 
     private final GameHandler gameHandler;
 
@@ -35,12 +35,14 @@ public class MainScene extends Scene
     private final Properties perfectScoreFile;
     private final Properties cupFile;
     private final MediaPlayer inGameMusicToStop;
+    private final Player player;
 
     public MainScene(BorderPane menuPane, Player player, GameHandler gameHandler, Stage stage, File saveFile, AchievementManager achievementManager, Properties cupFile, Properties perfectScoreFile)
     {
         super(menuPane);
         this.stage = stage;
         this.menuPane = menuPane;
+        this.player = player;
         menuPane.setPrefWidth(1000);
         menuPane.setPrefHeight(500);
         this.gameHandler = gameHandler;
@@ -51,15 +53,26 @@ public class MainScene extends Scene
 
         inGameMusicToStop = SoundManager.playMusicRepeat(PathUtil.IN_GAME_MUSIC);
 
-        BackgroundCreator mainSceneBackgroundCreator = new BackgroundCreator(PathUtil.MAIN_BACKGROUND);
-        Image mainSceneImage = mainSceneBackgroundCreator.createBackground();
-        BackgroundFill backgroundFill = new BackgroundFill(new ImagePattern(mainSceneImage), CornerRadii.EMPTY, Insets.EMPTY);
-        menuPane.setBackground(new Background(backgroundFill));
+        createBackground();
 
         createNewQuestionInterface();
         setAnswersButtonListeners();
         questionInterface.setDisable(true);
 
+        createPopup();
+
+    }
+
+    public void createBackground()
+    {
+        BackgroundCreator mainSceneBackgroundCreator = new BackgroundCreator(PathUtil.MAIN_BACKGROUND);
+        Image mainSceneImage = mainSceneBackgroundCreator.createBackground();
+        BackgroundFill backgroundFill = new BackgroundFill(new ImagePattern(mainSceneImage), CornerRadii.EMPTY, Insets.EMPTY);
+        menuPane.setBackground(new Background(backgroundFill));
+    }
+
+    public void createPopup()
+    {
         playerInfoScene = new PlayerInfoScene(new BorderPane(), player);
         Stage popUpStage = new Stage();
         popUpStage.setOnCloseRequest(Event::consume);
@@ -71,7 +84,6 @@ public class MainScene extends Scene
         popUpStage.initModality(Modality.APPLICATION_MODAL);
         popUpStage.show();
         playerInfoScene.setOnActionSendButton(menuPane, questionInterface, stage, popUpStage);
-
     }
 
     private void setAnswersButtonListeners()

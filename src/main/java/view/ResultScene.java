@@ -47,6 +47,21 @@ public class ResultScene extends VBox
         createIcons();
         setUpLabelAndTimer();
 
+        checkPlayerResult();
+
+        gameResult.getChildren().add(exitToMenuButton);
+        pane.setCenter(gameResult);
+
+        exitToMenuButton.setOnAction(event -> {
+            if(resultSoundEffect != null) {
+                SoundManager.stopMusic(resultSoundEffect);
+            }
+                backToMainMenu();
+        });
+    }
+
+    public void checkPlayerResult()
+    {
         if(playerFinalScore >= questionCount*90/100)
         {
             goldCupResult(gameResult);
@@ -67,14 +82,6 @@ public class ResultScene extends VBox
             cupLabel.setTextFill(Color.GHOSTWHITE);
             gameResult.getChildren().add(cupLabel);
         }
-        gameResult.getChildren().add(exitToMenuButton);
-        pane.setCenter(gameResult);
-        exitToMenuButton.setOnAction(event -> {
-            if(resultSoundEffect != null) {
-                SoundManager.stopMusic(resultSoundEffect);
-            }
-                backToMainMenu();
-        });
     }
 
     public void setUpLabelAndTimer()

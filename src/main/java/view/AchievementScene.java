@@ -18,6 +18,7 @@ public class AchievementScene extends Scene
 {
     private final StringProperty valueOfSuccess = new SimpleStringProperty();
     private final Stage stage;
+    private final BorderPane pane;
     private final GridPane gridPane;
     private final AchievementManager achievementManager;
 
@@ -38,6 +39,7 @@ public class AchievementScene extends Scene
     public AchievementScene(BorderPane pane, AchievementManager achievementManager, Stage stage, Properties cupFile, Properties perfectScoreFile)
     {
         super(pane);
+        this.pane = pane;
         pane.setPrefHeight(500);
         pane.setPrefWidth(900);
         this.stage = stage;
@@ -53,13 +55,6 @@ public class AchievementScene extends Scene
         gridPane.addColumn(3);
         gridPane.addRow(2);
 
-        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
-        BackgroundCreator menuBackground = new BackgroundCreator(PathUtil.MENU_BACKGROUND);
-        Image menuSceneBackground = menuBackground.createBackground();
-        BackgroundImage backgroundImage = new BackgroundImage(menuSceneBackground, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
-                backgroundSize);
-        pane.setBackground(new Background(backgroundImage));
-
         createGoldAchievementArea();
         createSilverAchievementArea();
         createBronzeAchievementArea();
@@ -71,6 +66,23 @@ public class AchievementScene extends Scene
 
         pane.setCenter(gridPane);
 
+        createReturnButton();
+
+        createBackground();
+    }
+
+    public void createBackground()
+    {
+        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
+        BackgroundCreator menuBackground = new BackgroundCreator(PathUtil.MENU_BACKGROUND);
+        Image menuSceneBackground = menuBackground.createBackground();
+        BackgroundImage backgroundImage = new BackgroundImage(menuSceneBackground, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+                backgroundSize);
+        pane.setBackground(new Background(backgroundImage));
+    }
+
+    public void createReturnButton()
+    {
         IconCreator returnArrow = new IconCreator(PathUtil.BACK_ARROW);
         Image backArrow = returnArrow.createImage().getImage();
 
@@ -78,6 +90,7 @@ public class AchievementScene extends Scene
         Button returnToMenu = new Button();
         Tooltip returnTooltip = new Tooltip(UtilStringStorage.returnButton);
         returnToMenu.setTooltip(returnTooltip);
+        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
         returnToMenu.setBackground(new Background(new BackgroundImage(backArrow, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
                 backgroundSize)));
         returnToMenu.setPrefHeight(50);
@@ -85,7 +98,6 @@ public class AchievementScene extends Scene
         buttonHbox.getChildren().add(returnToMenu);
         pane.setTop(buttonHbox);
         returnToMenu.setOnAction(event -> backToMainMenu());
-
     }
 
     public void createGoldAchievementArea()

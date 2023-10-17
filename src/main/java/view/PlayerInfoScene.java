@@ -19,6 +19,7 @@ public class PlayerInfoScene extends Scene
     private final VBox getPlayerName;
     private Button sendButton;
     private TextArea userInputArea;
+    private final BorderPane pane;
 
     private VBox playerInfos;
     private Label playerScoreLabel;
@@ -33,12 +34,10 @@ public class PlayerInfoScene extends Scene
     public PlayerInfoScene(BorderPane pane, Player player)
     {
         super(pane);
+        this.pane = pane;
         this.player = player;
 
-        BackgroundCreator mainSceneBackgroundCreator = new BackgroundCreator(PathUtil.MAIN_BACKGROUND);
-        Image mainSceneImage = mainSceneBackgroundCreator.createBackground();
-        BackgroundFill backgroundFill = new BackgroundFill(new ImagePattern(mainSceneImage), CornerRadii.EMPTY, Insets.EMPTY);
-        pane.setBackground(new Background(backgroundFill));
+        createBackground();
 
         getPlayerName = new VBox();
         Label askPlayerName = new Label(UtilStringStorage.askPlayerName);
@@ -48,6 +47,14 @@ public class PlayerInfoScene extends Scene
         getPlayerName.getChildren().add(askPlayerName);
         createUserInputArea();
         pane.setCenter(getPlayerName);
+    }
+
+    public void createBackground()
+    {
+        BackgroundCreator mainSceneBackgroundCreator = new BackgroundCreator(PathUtil.MAIN_BACKGROUND);
+        Image mainSceneImage = mainSceneBackgroundCreator.createBackground();
+        BackgroundFill backgroundFill = new BackgroundFill(new ImagePattern(mainSceneImage), CornerRadii.EMPTY, Insets.EMPTY);
+        pane.setBackground(new Background(backgroundFill));
     }
 
     public void createUserInputArea()

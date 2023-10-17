@@ -39,13 +39,18 @@ public class TrophyScene extends Scene
         createCupboardTrophy();
         createReturnButton();
 
+        createBackground();
+
+    }
+
+    public void createBackground()
+    {
         BackgroundCreator menuBackground = new BackgroundCreator(PathUtil.MENU_BACKGROUND);
         Image menuSceneBackground = menuBackground.createBackground();
         BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
         BackgroundImage backgroundImage = new BackgroundImage(menuSceneBackground, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
                 backgroundSize);
         pane.setBackground(new Background(backgroundImage));
-
     }
 
     public void createCupboardTrophy()

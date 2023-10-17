@@ -31,6 +31,6 @@ public class PathUtil
     public static final String BAD_ANSWER_SOUND_EFFECT = RESOURCES_PATH + "SoundEffect/Quack-Sound-Effect.mp3";
     public static final String GOOD_ANSWER_SOUND_EFFECT = RESOURCES_PATH + "SoundEffect/Applause-Sound-Effect.mp3";
     public static final String IN_GAME_MUSIC = RESOURCES_PATH + "SoundEffect/Outer-Wilds-Music.mp3";
-    public static final String MENU_MUSIC = RESOURCES_PATH + "SoundEffect/Game-Dev-Tycoon-Music.mp3";
+    public static final String MENU_MUSIC = RESOURCES_PATH + "SoundEffect/Menu-Music.wav";
     public static final String RESULT_SOUND_EFFECT = RESOURCES_PATH + "SoundEffect/Yay-Sound-Effect.mp3";
 }

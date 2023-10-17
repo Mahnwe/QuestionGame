@@ -9,6 +9,8 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.*;
 
@@ -88,13 +90,15 @@ public class AchievementScene extends Scene
 
         HBox buttonHbox = new HBox();
         Button returnToMenu = new Button();
+        returnToMenu.setPrefHeight(50);
+        returnToMenu.setPrefWidth(50);
         Tooltip returnTooltip = new Tooltip(UtilStringStorage.returnButton);
         returnToMenu.setTooltip(returnTooltip);
+
         BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
         returnToMenu.setBackground(new Background(new BackgroundImage(backArrow, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
                 backgroundSize)));
-        returnToMenu.setPrefHeight(50);
-        returnToMenu.setPrefWidth(50);
+
         buttonHbox.getChildren().add(returnToMenu);
         pane.setTop(buttonHbox);
         returnToMenu.setOnAction(event -> backToMainMenu());
@@ -103,10 +107,16 @@ public class AchievementScene extends Scene
     public void createGoldAchievementArea()
     {
         VBox goldCupAchievementVBox = new VBox();
+
         Label goldCupAchievementLabel = new Label();
+        goldCupAchievementLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
+
         ImageView goldCupImage = achievementManager.getAchievementsList().get(0).getLockImageView();
+
         goldCupAchievementInfo = new Label();
+        goldCupAchievementInfo.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
         goldCupAchievementLabel.setText(achievementManager.getAchievementsList().get(0).getConditionDescription());
+
         goldCupAchievementVBox.getChildren().add(goldCupAchievementLabel);
         goldCupAchievementVBox.getChildren().add(goldCupImage);
         goldCupAchievementVBox.getChildren().add(goldCupAchievementInfo);
@@ -115,10 +125,16 @@ public class AchievementScene extends Scene
     public void createSilverAchievementArea()
     {
         VBox silverCupAchievementVBox = new VBox();
+
         Label silverCupAchievementLabel = new Label();
+        silverCupAchievementLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
+
         ImageView silverCupImage = achievementManager.getAchievementsList().get(1).getLockImageView();
+
         silverCupAchievementInfo = new Label();
+        silverCupAchievementInfo.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
         silverCupAchievementLabel.setText(achievementManager.getAchievementsList().get(1).getConditionDescription());
+
         silverCupAchievementVBox.getChildren().add(silverCupAchievementLabel);
         silverCupAchievementVBox.getChildren().add(silverCupImage);
         silverCupAchievementVBox.getChildren().add(silverCupAchievementInfo);
@@ -128,10 +144,16 @@ public class AchievementScene extends Scene
     public void createBronzeAchievementArea()
     {
         VBox bronzeCupAchievementVBox = new VBox();
+
         Label bronzeCupAchievementLabel = new Label();
+        bronzeCupAchievementLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
+
         ImageView bronzeCupImage = achievementManager.getAchievementsList().get(2).getLockImageView();
+
         bronzeCupAchievementInfo = new Label();
+        bronzeCupAchievementInfo.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
         bronzeCupAchievementLabel.setText(achievementManager.getAchievementsList().get(2).getConditionDescription());
+
         bronzeCupAchievementVBox.getChildren().add(bronzeCupAchievementLabel);
         bronzeCupAchievementVBox.getChildren().add(bronzeCupImage);
         bronzeCupAchievementVBox.getChildren().add(bronzeCupAchievementInfo);
@@ -141,10 +163,16 @@ public class AchievementScene extends Scene
     public void createPerfectScore10Area()
     {
         VBox perfectScoreAchievementVBox = new VBox();
+
         Label perfectScoreAchievementLabel = new Label();
+        perfectScoreAchievementLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
+
         ImageView perfectScoreImage = achievementManager.getAchievementsList().get(3).getLockImageView();
+
         perfectScoreAchievementInfo = new Label();
+        perfectScoreAchievementInfo.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
         perfectScoreAchievementLabel.setText(achievementManager.getAchievementsList().get(3).getConditionDescription());
+
         perfectScoreAchievementVBox.getChildren().add(perfectScoreAchievementLabel);
         perfectScoreAchievementVBox.getChildren().add(perfectScoreImage);
         perfectScoreAchievementVBox.getChildren().add(perfectScoreAchievementInfo);
@@ -154,10 +182,16 @@ public class AchievementScene extends Scene
     public void createPerfectScore15Area()
     {
         VBox perfectScoreAchievement15 = new VBox();
+
         Label perfectScoreAchievement15Label = new Label();
+        perfectScoreAchievement15Label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
+
         ImageView perfectScore15Image = achievementManager.getAchievementsList().get(4).getLockImageView();
+
         perfectScoreAchievement15Info = new Label();
+        perfectScoreAchievement15Info.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
         perfectScoreAchievement15Label.setText(achievementManager.getAchievementsList().get(4).getConditionDescription());
+
         perfectScoreAchievement15.getChildren().add(perfectScoreAchievement15Label);
         perfectScoreAchievement15.getChildren().add(perfectScore15Image);
         perfectScoreAchievement15.getChildren().add(perfectScoreAchievement15Info);
@@ -167,10 +201,16 @@ public class AchievementScene extends Scene
     public void createPerfectScore20Area()
     {
         VBox perfectScoreAchievement20 = new VBox();
+
         Label perfectScoreAchievement20Label = new Label();
+        perfectScoreAchievement20Label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
+
         ImageView perfectScore20Image = achievementManager.getAchievementsList().get(5).getLockImageView();
+
         perfectScoreAchievement20Info = new Label();
+        perfectScoreAchievement20Info.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
         perfectScoreAchievement20Label.setText(achievementManager.getAchievementsList().get(5).getConditionDescription());
+
         perfectScoreAchievement20.getChildren().add(perfectScoreAchievement20Label);
         perfectScoreAchievement20.getChildren().add(perfectScore20Image);
         perfectScoreAchievement20.getChildren().add(perfectScoreAchievement20Info);
@@ -180,14 +220,21 @@ public class AchievementScene extends Scene
     public void createSecretAchievementArea()
     {
         secretAchievementBox = new VBox();
+
         secretAchievementLabel = new Label();
+        secretAchievementLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
+
         secretAchievementImage = achievementManager.getAchievementsList().get(6).getLockImageView();
+
         secretAchievementInfo = new Label();
+        secretAchievementInfo.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
         secretAchievementLabel.setText(UtilStringStorage.secretLabel);
+
         secretAchievementBox.getChildren().add(secretAchievementLabel);
         secretAchievementBox.getChildren().add(secretAchievementImage);
         secretAchievementBox.getChildren().add(secretAchievementInfo);
         gridPane.add(secretAchievementBox, 1,2);
+
         secretAchievementImage.setVisible(false);
         secretAchievementInfo.setVisible(false);
 

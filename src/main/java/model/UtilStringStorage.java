@@ -105,7 +105,9 @@ public class UtilStringStorage
     public static String darkwestThank = "";
     public static String darkantThank = "";
     public static String loveLabel = "";
-
+    public static String linkLabel = "";
+    public static String iconLink = "";
+    public static String backgroundLink = "";
 
     // QUESTIONS LABELS
     public static String question1 = "";

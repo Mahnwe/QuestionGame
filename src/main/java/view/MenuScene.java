@@ -57,11 +57,6 @@ public class MenuScene extends Scene
 
         createBackground();
 
-        if(Achievement.notificationAlert != null) {
-            NotificationAlert notificationAlert = Achievement.notificationAlert;
-            notificationAlert.showAlert();
-        }
-
     }
 
     public void createBackground()
@@ -79,8 +74,10 @@ public class MenuScene extends Scene
         VBox welcomeArea = new VBox();
         Label welcomeInGame = new Label(UtilStringStorage.welcomeLabel);
         welcomeInGame.setTextFill(Color.BLACK);
-        welcomeInGame.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 17));
+        welcomeInGame.setFont(Font.font("Impact", FontWeight.EXTRA_LIGHT, 20));
+        welcomeInGame.setTranslateX(250);
         welcomeArea.getChildren().add(createStatArea(welcomeInGame));
+        welcomeInGame.setTranslateY(10);
         pane.setTop(welcomeArea);
     }
 
@@ -105,23 +102,23 @@ public class MenuScene extends Scene
 
         Button leaderBoardButton = new Button(UtilStringStorage.leaderBoardButton);
         Tooltip leaderBoardTooltip = new Tooltip(UtilStringStorage.leaderBoardTooltip);
-        createButton(leaderBoardButton, leaderBoardTooltip, 5, 50);
+        createButton(leaderBoardButton, leaderBoardTooltip, 5, 35);
 
         Button trophyButton = new Button(UtilStringStorage.trophyButton);
         Tooltip trophyTooltip = new Tooltip(UtilStringStorage.trophyTooltip);
-        createButton(trophyButton, trophyTooltip, 10, 110);
+        createButton(trophyButton, trophyTooltip, 10, 95);
 
         Button achievementButton = new Button(UtilStringStorage.achievementButton);
         Tooltip achievementTooltip = new Tooltip(UtilStringStorage.achievementTooltip);
-        createButton(achievementButton, achievementTooltip, 10, 170);
+        createButton(achievementButton, achievementTooltip, 10, 155);
 
         Button optionButton = new Button(UtilStringStorage.optionButton);
         Tooltip optionTooltip = new Tooltip(UtilStringStorage.optionTooltip);
-        createButton(optionButton, optionTooltip, 10, 230);
+        createButton(optionButton, optionTooltip, 10, 215);
 
         Button creditButton = new Button(UtilStringStorage.creditButton);
         Tooltip creditTooltip = new Tooltip(UtilStringStorage.creditTooltip);
-        createButton(creditButton, creditTooltip, 10, 290);
+        createButton(creditButton, creditTooltip, 10, 275);
 
 
         leaderBoardButton.setOnAction(event -> {
@@ -163,9 +160,10 @@ public class MenuScene extends Scene
         VBox selectModeArea = new VBox();
 
         Label chooseMode = new Label(UtilStringStorage.chooseMode);
-        chooseMode.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 17));
+        chooseMode.setFont(Font.font("Impact", FontWeight.EXTRA_LIGHT, 20));
         chooseMode.setTextFill(Color.BLACK);
-        chooseMode.setTranslateX(200);
+        chooseMode.setTranslateX(225);
+        chooseMode.setTranslateY(100);
 
         Label tenModeButton = new Label(UtilStringStorage.mode10Button);
         tenModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 16));
@@ -185,7 +183,7 @@ public class MenuScene extends Scene
         comboBox.setMinHeight(30);
         comboBox.setMinWidth(90);
         comboBox.setTranslateX(230);
-        comboBox.setTranslateY(120);
+        comboBox.setTranslateY(140);
         comboBox.getItems().add(tenModeButton.getText());
         comboBox.getItems().add(fifteenModeButton.getText());
         comboBox.getItems().add(twentyModeButton.getText());
@@ -193,10 +191,10 @@ public class MenuScene extends Scene
 
         launchGameButton = new Button(UtilStringStorage.launchGameButton);
         launchGameButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 20));
-        launchGameButton.setTranslateX(270);
-        launchGameButton.setTranslateY(135);
+        launchGameButton.setTranslateX(275);
+        launchGameButton.setTranslateY(155);
 
-        selectModeArea.getChildren().add(createStatArea(chooseMode));
+        selectModeArea.getChildren().add(chooseMode);
         selectModeArea.getChildren().add(comboBox);
         selectModeArea.getChildren().add(launchGameButton);
         pane.setCenter(selectModeArea);
@@ -257,7 +255,7 @@ public class MenuScene extends Scene
         label.setTranslateY(3);
 
         HBox area = new HBox();
-        area.setPrefHeight(30);
+        area.setPrefHeight(50);
         area.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 
         Label emptySpace = new Label();

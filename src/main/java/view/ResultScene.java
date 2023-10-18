@@ -78,7 +78,7 @@ public class ResultScene extends VBox
         if(playerFinalScore < questionCount*40/100)
         {
             Label cupLabel = new Label(UtilStringStorage.noCupLabel);
-            placeLabels(cupLabel, 200, 50);
+            placeLabels(cupLabel, 200, 70);
             cupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
             cupLabel.setTextFill(Color.GHOSTWHITE);
             gameResult.getChildren().add(cupLabel);
@@ -98,8 +98,9 @@ public class ResultScene extends VBox
         playerResult.setTextFill(Color.GHOSTWHITE);
 
         exitToMenuButton = new Button(UtilStringStorage.returnToMenuButton);
-        exitToMenuButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
-        exitToMenuButton.setTranslateY(70);
+        exitToMenuButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
+        exitToMenuButton.setTranslateY(150);
+        exitToMenuButton.setTranslateX(230);
 
         Label timeLabel = new Label();
         placeLabels(timeLabel, 200, 30);
@@ -134,7 +135,7 @@ public class ResultScene extends VBox
 
         resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
         Label cupLabel = new Label(UtilStringStorage.goldCupLabel);
-        placeLabels(cupLabel, 200, 50);
+        placeLabels(cupLabel, 200, 70);
         cupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         cupLabel.setTextFill(Color.GHOSTWHITE);
         vBox.getChildren().add(cupLabel);
@@ -159,7 +160,7 @@ public class ResultScene extends VBox
 
         resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
         Label cupLabel = new Label(UtilStringStorage.silverCupLabel);
-        placeLabels(cupLabel, 200, 50);
+        placeLabels(cupLabel, 200, 70);
         cupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         cupLabel.setTextFill(Color.GHOSTWHITE);
         vBox.getChildren().add(cupLabel);
@@ -184,7 +185,7 @@ public class ResultScene extends VBox
 
         resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
         Label cupLabel = new Label(UtilStringStorage.bronzeCupLabel);
-        placeLabels(cupLabel, 200, 50);
+        placeLabels(cupLabel, 200, 70);
         cupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         cupLabel.setTextFill(Color.GHOSTWHITE);
         vBox.getChildren().add(cupLabel);
@@ -223,21 +224,21 @@ public class ResultScene extends VBox
         goldCup = goldCupImage.createImage();
         goldCup.setFitHeight(100);
         goldCup.setFitWidth(80);
-        goldCup.setTranslateY(50);
+        goldCup.setTranslateY(70);
         goldCup.setTranslateX(260);
 
         IconCreator bronzeCupImage = new IconCreator(PathUtil.BRONZE_CUP_PATH);
         bronzeCup = bronzeCupImage.createImage();
         bronzeCup.setFitHeight(100);
         bronzeCup.setFitWidth(80);
-        bronzeCup.setTranslateY(50);
+        bronzeCup.setTranslateY(70);
         bronzeCup.setTranslateX(260);
 
         IconCreator silverCupImage = new IconCreator(PathUtil.SILVER_CUP_PATH);
         silverCup = silverCupImage.createImage();
         silverCup.setFitHeight(100);
         silverCup.setFitWidth(80);
-        silverCup.setTranslateY(50);
+        silverCup.setTranslateY(70);
         silverCup.setTranslateX(260);
     }
 
@@ -246,6 +247,10 @@ public class ResultScene extends VBox
         MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
         stage.setScene(menuScene);
         returnToMenuMusic = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
+        if(Achievement.notificationAlert != null) {
+            NotificationAlert notificationAlert = Achievement.notificationAlert;
+            notificationAlert.showAlert();
+        }
     }
 
     public void placeLabels(Label label, int x, int y)

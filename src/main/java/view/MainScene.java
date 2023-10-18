@@ -34,7 +34,7 @@ public class MainScene extends Scene
     private final AchievementManager achievementManager;
     private final Properties perfectScoreFile;
     private final Properties cupFile;
-    private final MediaPlayer inGameMusicToStop;
+    public static MediaPlayer inGameMusicToStop = SoundManager.playMusicRepeat(PathUtil.IN_GAME_MUSIC);
     private final Player player;
 
     public MainScene(BorderPane menuPane, Player player, GameHandler gameHandler, Stage stage, File saveFile, AchievementManager achievementManager, Properties cupFile, Properties perfectScoreFile)
@@ -50,8 +50,6 @@ public class MainScene extends Scene
         this.achievementManager = achievementManager;
         this.cupFile = cupFile;
         this.perfectScoreFile = perfectScoreFile;
-
-        inGameMusicToStop = SoundManager.playMusicRepeat(PathUtil.IN_GAME_MUSIC);
 
         createBackground();
 

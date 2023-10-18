@@ -11,6 +11,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.*;
 
@@ -25,6 +26,7 @@ public class PlayerInfoScene extends Scene
     private Label playerScoreLabel;
 
     private final Player player;
+
 
     private final Border border = new Border(new BorderStroke(Color.BLACK,
             BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT));
@@ -124,6 +126,25 @@ public class PlayerInfoScene extends Scene
         playerInfos.getChildren().add(createStatArea(playerScoreLabel));
         playerInfos.setMinWidth(150);
         playerInfos.setMaxWidth(150);
+
+        Button volumeInGameButton = new Button("Volume");
+        volumeInGameButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
+        playerInfos.getChildren().add(volumeInGameButton);
+        volumeInGameButton.setTranslateY(250);
+        volumeInGameButton.setTranslateX(35);
+        volumeInGameButton.setOnAction(event -> {
+            Stage volumeStage = new Stage();
+            volumeStage.setTitle("Volume");
+            volumeStage.setMinHeight(300);
+            volumeStage.setMinWidth(800);
+            volumeStage.setMaxHeight(300);
+            volumeStage.setMaxWidth(800);
+            VolumeInGameScene volumeInGameScene = new VolumeInGameScene(new BorderPane(), volumeStage);
+            volumeStage.setScene(volumeInGameScene);
+            volumeStage.initModality(Modality.APPLICATION_MODAL);
+            volumeStage.show();
+        });
+
     }
 
     public void increaseScore()

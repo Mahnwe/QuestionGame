@@ -10,6 +10,7 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.stage.Stage;
 import model.*;
 
 public class VolumeInGameScene extends Scene
@@ -19,11 +20,13 @@ public class VolumeInGameScene extends Scene
     private Button muteButton;
     private boolean isMute;
     private final BorderPane pane;
+    private final Stage volumeStage;
 
-    public VolumeInGameScene(BorderPane pane)
+    public VolumeInGameScene(BorderPane pane, Stage volumeStage)
     {
         super(pane);
         this.pane = pane;
+        this.volumeStage = volumeStage;
         optionVbox = new VBox();
         pane.setCenter(optionVbox);
 
@@ -34,7 +37,7 @@ public class VolumeInGameScene extends Scene
 
     public void createBackground()
     {
-        BackgroundCreator menuBackground = new BackgroundCreator(PathUtil.MAIN_BACKGROUND);
+        BackgroundCreator menuBackground = new BackgroundCreator(PathUtil.MENU_BACKGROUND);
         Image menuSceneBackground = menuBackground.createBackground();
         BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
         BackgroundImage backgroundImage = new BackgroundImage(menuSceneBackground, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
@@ -57,7 +60,7 @@ public class VolumeInGameScene extends Scene
         returnButton.setPrefHeight(50);
         returnButton.setPrefWidth(50);
         pane.setTop(returnButton);
-        returnButton.setOnAction(event -> backToMainMenu());
+        returnButton.setOnAction(event -> volumeStage.close());
     }
 
     public void createSliderArea()
@@ -106,7 +109,7 @@ public class VolumeInGameScene extends Scene
         muteButton.setOnAction(event -> {
             if (!isMute) {
                 SoundManager.soundVolume = 0.0;
-                SoundManager.handleMenuSceneVolume(App.menuMusicToStop, 0.0);
+                SoundManager.handleMenuSceneVolume(MainScene.inGameMusicToStop, 0.0);
                 isMute = true;
                 volumeSlider.setDisable(true);
             }
@@ -120,14 +123,8 @@ public class VolumeInGameScene extends Scene
 
     public void setVolumeFromSlider(Double sliderValue)
     {
-        SoundManager.handleMenuSceneVolume(App.menuMusicToStop, sliderValue);
+        SoundManager.handleMenuSceneVolume(MainScene.inGameMusicToStop, sliderValue);
         SoundManager.setSoundVolume(sliderValue);
-    }
-
-    public void backToMainMenu()
-    {
-       //MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
-       //stage.setScene(menuScene);
     }
 
 

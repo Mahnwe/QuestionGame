@@ -149,7 +149,7 @@ public class OptionScene extends Scene {
 
     public void createLanguageButton()
     {
-        LanguageScene languageScene = new LanguageScene(new BorderPane());
+        OptionLanguageScene optionLanguageScene = new OptionLanguageScene(new BorderPane(), stage, achievementManager, saveFile, cupFile, perfectFile);
         Button languageButton = new Button(UtilStringStorage.languageLabel);
         Tooltip languageTooltip = new Tooltip(UtilStringStorage.languageTooltip);
         languageButton.setTooltip(languageTooltip);
@@ -168,11 +168,11 @@ public class OptionScene extends Scene {
             stage.setMinWidth(400);
             stage.setMinHeight(400);
             stage.setTitle(UtilStringStorage.languageLabel);
-            stage.setScene(languageScene);
+            stage.setScene(optionLanguageScene);
         });
 
         UtilTranslateString utilTranslateString = new UtilTranslateString();
-        languageScene.getEngButton().setOnAction(event -> {
+        optionLanguageScene.getEngButton().setOnAction(event -> {
             utilTranslateString.loadEngTradFile();
             utilTranslateString.translateEngString();
             App.menuMusicToStop.stop();
@@ -185,7 +185,7 @@ public class OptionScene extends Scene {
             stage.show();
         });
 
-        languageScene.getFrButton().setOnAction(event -> {
+        optionLanguageScene.getFrButton().setOnAction(event -> {
             utilTranslateString.loadFrTradFile();
             utilTranslateString.translateFrString();
             App.menuMusicToStop.stop();

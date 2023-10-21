@@ -8,18 +8,16 @@ public class Achievement
 {
     private final int condition;
     private boolean isUnlock;
-    private final String conditionDescription;
     private ImageView lockImageView;
     private ImageView unlockImageView;
     public static NotificationAlert notificationAlert;
 
-    public Achievement(ImageView achievementImage, int condition, boolean isUnlock, String conditionDescription)
+    public Achievement(ImageView achievementImage, int condition, boolean isUnlock)
     {
         createIcons();
         this.lockImageView = achievementImage;
         this.condition = condition;
         this.isUnlock = isUnlock;
-        this.conditionDescription = conditionDescription;
     }
 
     public void checkIfAchievementIsUnlock(Achievement achievement, int numberToCompareWithCondition)
@@ -54,10 +52,6 @@ public class Achievement
 
     public boolean isUnlock() {
         return isUnlock;
-    }
-
-    public String getConditionDescription() {
-        return conditionDescription;
     }
 
     public ImageView getLockImageView() {

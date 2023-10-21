@@ -19,25 +19,25 @@ public class AchievementManager
     public AchievementManager()
     {
         createIcons();
-        Achievement goldCupAchievement = new Achievement(lockImageView, 3, false, UtilStringStorage.goldCupAchievementDescription);
+        Achievement goldCupAchievement = new Achievement(lockImageView, 3, false);
         achievementsList.add(goldCupAchievement);
 
-        Achievement silverCupAchievement = new Achievement(lockImageView2, 3, false, UtilStringStorage.silverCupAchievementDescription);
+        Achievement silverCupAchievement = new Achievement(lockImageView2, 3, false);
         achievementsList.add(silverCupAchievement);
 
-        Achievement bronzeCupAchievement = new Achievement(lockImageView3, 3, false, UtilStringStorage.bronzeCupAchievementDescription);
+        Achievement bronzeCupAchievement = new Achievement(lockImageView3, 3, false);
         achievementsList.add(bronzeCupAchievement);
 
-        Achievement onlyGoodAnswerAchievement = new Achievement(lockImageView4, 10, false, UtilStringStorage.perfectScore10Achievement);
+        Achievement onlyGoodAnswerAchievement = new Achievement(lockImageView4, 10, false);
         achievementsList.add(onlyGoodAnswerAchievement);
 
-        Achievement onlyGoodAnswerAchievement15 = new Achievement(lockImageView5, 15, false, UtilStringStorage.perfectScore15Achievement);
+        Achievement onlyGoodAnswerAchievement15 = new Achievement(lockImageView5, 15, false);
         achievementsList.add(onlyGoodAnswerAchievement15);
 
-        Achievement onlyGoodAnswerAchievement20 = new Achievement(lockImageView6, 20, false, UtilStringStorage.perfectScore20Achievement);
+        Achievement onlyGoodAnswerAchievement20 = new Achievement(lockImageView6, 20, false);
         achievementsList.add(onlyGoodAnswerAchievement20);
 
-        Achievement secretAchievement = new Achievement(lockImageView7, 6, false, UtilStringStorage.secretAchievement);
+        Achievement secretAchievement = new Achievement(lockImageView7, 6, false);
         achievementsList.add(secretAchievement);
 
     }

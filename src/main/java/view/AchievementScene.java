@@ -108,7 +108,7 @@ public class AchievementScene extends Scene
 
         Label goldCupAchievementLabel = new Label();
         goldCupAchievementLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
-        goldCupAchievementLabel.setText(achievementManager.getAchievementsList().get(0).getConditionDescription());
+        goldCupAchievementLabel.setText(UtilStringStorage.goldCupAchievementDescription);
 
         ImageView goldCupImage = achievementManager.getAchievementsList().get(0).getLockImageView();
 
@@ -126,7 +126,7 @@ public class AchievementScene extends Scene
 
         Label silverCupAchievementLabel = new Label();
         silverCupAchievementLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
-        silverCupAchievementLabel.setText(achievementManager.getAchievementsList().get(1).getConditionDescription());
+        silverCupAchievementLabel.setText(UtilStringStorage.silverCupAchievementDescription);
 
         ImageView silverCupImage = achievementManager.getAchievementsList().get(1).getLockImageView();
 
@@ -145,7 +145,7 @@ public class AchievementScene extends Scene
 
         Label bronzeCupAchievementLabel = new Label();
         bronzeCupAchievementLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
-        bronzeCupAchievementLabel.setText(achievementManager.getAchievementsList().get(2).getConditionDescription());
+        bronzeCupAchievementLabel.setText(UtilStringStorage.bronzeCupAchievementDescription);
 
         ImageView bronzeCupImage = achievementManager.getAchievementsList().get(2).getLockImageView();
 
@@ -164,7 +164,7 @@ public class AchievementScene extends Scene
 
         Label perfectScoreAchievementLabel = new Label();
         perfectScoreAchievementLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
-        perfectScoreAchievementLabel.setText(achievementManager.getAchievementsList().get(3).getConditionDescription());
+        perfectScoreAchievementLabel.setText(UtilStringStorage.perfectScore10Achievement);
 
         ImageView perfectScoreImage = achievementManager.getAchievementsList().get(3).getLockImageView();
 
@@ -183,7 +183,7 @@ public class AchievementScene extends Scene
 
         Label perfectScoreAchievement15Label = new Label();
         perfectScoreAchievement15Label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
-        perfectScoreAchievement15Label.setText(achievementManager.getAchievementsList().get(4).getConditionDescription());
+        perfectScoreAchievement15Label.setText(UtilStringStorage.perfectScore15Achievement);
 
         ImageView perfectScore15Image = achievementManager.getAchievementsList().get(4).getLockImageView();
 
@@ -202,7 +202,7 @@ public class AchievementScene extends Scene
 
         Label perfectScoreAchievement20Label = new Label();
         perfectScoreAchievement20Label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
-        perfectScoreAchievement20Label.setText(achievementManager.getAchievementsList().get(5).getConditionDescription());
+        perfectScoreAchievement20Label.setText(UtilStringStorage.perfectScore20Achievement);
 
         ImageView perfectScore20Image = achievementManager.getAchievementsList().get(5).getLockImageView();
 
@@ -280,7 +280,7 @@ public class AchievementScene extends Scene
         checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(6), secretAchievementInfo);
         if(checkNbrOfAchievementUnlock == 6)
         {
-            secretAchievementLabel.setText(achievementManager.getAchievementsList().get(6).getConditionDescription());
+            secretAchievementLabel.setText(UtilStringStorage.secretAchievement);
         }
     }
 

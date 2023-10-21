@@ -100,26 +100,26 @@ public class QuestionInterface extends BorderPane
             answerButton1 = new Button(question.getAnswerList().get(0));
             answerButton1.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
             setAnswerButtonOnAction(answerButton1);
-            placeButton(answerButton1, 40, 80);
+            placeButton(answerButton1, 50, 90);
 
             answerButton2 = new Button(question.getAnswerList().get(1));
             answerButton2.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
             setAnswerButtonOnAction(answerButton2);
-            placeButton(answerButton2, 75, 80);
+            placeButton(answerButton2, 85, 90);
 
             answerButton3 = new Button(question.getAnswerList().get(2));
             answerButton3.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
             setAnswerButtonOnAction(answerButton3);
-            placeButton(answerButton3, -14, 330);
+            placeButton(answerButton3, -4, 350);
 
             answerButton4 = new Button(question.getAnswerList().get(3));
             answerButton4.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
             setAnswerButtonOnAction(answerButton4);
-            placeButton(answerButton4, 22, 330);
+            placeButton(answerButton4, 32, 350);
 
             nextQuestionButton = new Button(UtilStringStorage.nextQuestionButton);
             nextQuestionButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
-            placeButton(nextQuestionButton, 70, 180);
+            placeButton(nextQuestionButton, 80, 200);
             nextQuestionButton.setDisable(true);
     }
 

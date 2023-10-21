@@ -48,33 +48,27 @@ public class AchievementManager
         lockImageView.setFitHeight(50);
         lockImageView.setFitWidth(60);
 
-        IconCreator lockIcon2 = new IconCreator(PathUtil.LOCK_ICON);
-        lockImageView2 = lockIcon2.createImage();
+        lockImageView2 = lockIcon.createImage();
         lockImageView2.setFitHeight(50);
         lockImageView2.setFitWidth(60);
 
-        IconCreator lockIcon3 = new IconCreator(PathUtil.LOCK_ICON);
-        lockImageView3 = lockIcon3.createImage();
+        lockImageView3 = lockIcon.createImage();
         lockImageView3.setFitHeight(50);
         lockImageView3.setFitWidth(60);
 
-        IconCreator lockIcon4 = new IconCreator(PathUtil.LOCK_ICON);
-        lockImageView4 = lockIcon4.createImage();
+        lockImageView4 = lockIcon.createImage();
         lockImageView4.setFitHeight(50);
         lockImageView4.setFitWidth(60);
 
-        IconCreator lockIcon5 = new IconCreator(PathUtil.LOCK_ICON);
-        lockImageView5 = lockIcon5.createImage();
+        lockImageView5 = lockIcon.createImage();
         lockImageView5.setFitHeight(50);
         lockImageView5.setFitWidth(60);
 
-        IconCreator lockIcon6 = new IconCreator(PathUtil.LOCK_ICON);
-        lockImageView6 = lockIcon6.createImage();
+        lockImageView6 = lockIcon.createImage();
         lockImageView6.setFitHeight(50);
         lockImageView6.setFitWidth(60);
 
-        IconCreator lockIcon7 = new IconCreator(PathUtil.LOCK_ICON);
-        lockImageView7 = lockIcon7.createImage();
+        lockImageView7 = lockIcon.createImage();
         lockImageView7.setFitHeight(50);
         lockImageView7.setFitWidth(60);
     }

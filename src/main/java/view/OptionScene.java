@@ -31,22 +31,27 @@ public class OptionScene extends Scene {
     private Button muteButton;
     private boolean isMute;
     private final BorderPane pane;
+
+    private Button engButton;
+    private Button frButton;
+
+    public static final String OPTION_POLICE_LABEL = "Impact";
     public OptionScene(BorderPane pane, Stage stage, AchievementManager achievementManager, File saveFile, Properties cupFile, Properties perfectFile)
     {
         super(pane);
         this.pane = pane;
+        this.stage = stage;
+        this.achievementManager = achievementManager;
         pane.setPrefHeight(500);
         pane.setPrefWidth(900);
-        optionVbox = new VBox();
-        pane.setCenter(optionVbox);
         this.saveFile = saveFile;
         this.cupFile = cupFile;
         this.perfectFile = perfectFile;
         this.confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
         modifyConfirmAlert();
 
-        this.stage = stage;
-        this.achievementManager = achievementManager;
+        optionVbox = new VBox();
+        pane.setCenter(optionVbox);
 
         createSliderArea();
 
@@ -90,9 +95,9 @@ public class OptionScene extends Scene {
     public void createSliderArea()
     {
         Label volumeLabel = new Label(UtilStringStorage.volumeLabel);
-        volumeLabel.setTranslateY(40);
-        volumeLabel.setTranslateX(365);
-        volumeLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 18));
+        volumeLabel.setTranslateY(20);
+        volumeLabel.setTranslateX(368);
+        volumeLabel.setFont(Font.font(OPTION_POLICE_LABEL, FontWeight.EXTRA_BOLD, 16));
         volumeLabel.setTextFill(Color.BLACK);
         optionVbox.getChildren().add(volumeLabel);
 
@@ -104,15 +109,15 @@ public class OptionScene extends Scene {
         muteButton.setBackground(new Background(new BackgroundImage(muteImage, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
                 backgroundSize)));
         optionVbox.getChildren().add(muteButton);
-        muteButton.setTranslateY(67);
-        muteButton.setTranslateX(160);
+        muteButton.setTranslateY(35);
+        muteButton.setTranslateX(212);
 
 
         volumeSlider = new Slider(0, 10, 5);
-        volumeSlider.setMaxWidth(400);
-        volumeSlider.setMaxHeight(70);
-        volumeSlider.setTranslateY(45);
-        volumeSlider.setTranslateX(200);
+        volumeSlider.setMaxWidth(305);
+        volumeSlider.setMaxHeight(60);
+        volumeSlider.setTranslateY(10);
+        volumeSlider.setTranslateX(250);
         volumeSlider.setShowTickMarks(true);
         volumeSlider.setShowTickLabels(true);
         volumeSlider.setMajorTickUnit(1f);
@@ -147,32 +152,64 @@ public class OptionScene extends Scene {
         });
     }
 
+    public void createButtons()
+    {
+        VBox englishVbox = new VBox();
+        Label englishLabel = new Label("Choose a language");
+        englishLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
+        engButton = new Button();
+        IconCreator englishIcon = new IconCreator(PathUtil.ENGLISH_FLAG);
+        Image englishFlag = englishIcon.createImage().getImage();
+        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
+        engButton.setBackground(new Background(new BackgroundImage(englishFlag, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+                backgroundSize)));
+        engButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
+        engButton.setMinWidth(60);
+        engButton.setMinHeight(35);
+        engButton.setTranslateX(40);
+        engButton.setTranslateY(10);
+        englishVbox.getChildren().add(englishLabel);
+        englishVbox.getChildren().add(engButton);
+        englishVbox.setTranslateY(70);
+        englishVbox.setTranslateX(200);
+
+
+        VBox frenchVbox = new VBox();
+        Label frenchLabel = new Label("Choisissez une langue");
+        frenchLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
+        frButton = new Button();
+        IconCreator frenchIcon = new IconCreator(PathUtil.FRENCH_FLAG);
+        Image frenchFlag = frenchIcon.createImage().getImage();
+        frButton.setBackground(new Background(new BackgroundImage(frenchFlag, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+                backgroundSize)));
+        frButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
+        frButton.setMinWidth(60);
+        frButton.setMinHeight(35);
+        frButton.setTranslateX(40);
+        frButton.setTranslateY(10);
+        frenchVbox.getChildren().add(frenchLabel);
+        frenchVbox.getChildren().add(frButton);
+        frenchVbox.setTranslateX(450);
+        frenchVbox.setTranslateY(17);
+
+
+        Label languageLabel = new Label(UtilStringStorage.languageLabel);
+        languageLabel.setFont(Font.font(OPTION_POLICE_LABEL, FontWeight.EXTRA_BOLD, 16));
+        languageLabel.setTextFill(Color.BLACK);
+        languageLabel.setTranslateY(60);
+        languageLabel.setTranslateX(365);
+
+        optionVbox.getChildren().add(languageLabel);
+        optionVbox.getChildren().add(englishVbox);
+        optionVbox.getChildren().add(frenchVbox);
+    }
+
     public void createLanguageButton()
     {
-        OptionLanguageScene optionLanguageScene = new OptionLanguageScene(new BorderPane(), stage, achievementManager, saveFile, cupFile, perfectFile);
-        Button languageButton = new Button(UtilStringStorage.languageLabel);
-        Tooltip languageTooltip = new Tooltip(UtilStringStorage.languageTooltip);
-        languageButton.setTooltip(languageTooltip);
-        languageButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
-        if(languageButton.getText().equals("Langues"))
-        {
-            languageButton.setTranslateY(140);
-            languageButton.setTranslateX(360);
-        }
-        else {
-            languageButton.setTranslateY(140);
-            languageButton.setTranslateX(350);
-        }
-        optionVbox.getChildren().add(languageButton);
-        languageButton.setOnAction(event -> {
-            stage.setMinWidth(400);
-            stage.setMinHeight(400);
-            stage.setTitle(UtilStringStorage.languageLabel);
-            stage.setScene(optionLanguageScene);
-        });
+        createButtons();
 
         UtilTranslateString utilTranslateString = new UtilTranslateString();
-        optionLanguageScene.getEngButton().setOnAction(event -> {
+        engButton.setOnAction(event -> {
             utilTranslateString.loadEngTradFile();
             utilTranslateString.translateEngString();
             App.menuMusicToStop.stop();
@@ -185,7 +222,7 @@ public class OptionScene extends Scene {
             stage.show();
         });
 
-        optionLanguageScene.getFrButton().setOnAction(event -> {
+        frButton.setOnAction(event -> {
             utilTranslateString.loadFrTradFile();
             utilTranslateString.translateFrString();
             App.menuMusicToStop.stop();
@@ -204,12 +241,12 @@ public class OptionScene extends Scene {
         Button resetButton = new Button(UtilStringStorage.resetButton);
         if(resetButton.getText().equals("Réinitialiser sauvegarde"))
         {
-            resetButton.setTranslateY(240);
-            resetButton.setTranslateX(310);
+            resetButton.setTranslateY(100);
+            resetButton.setTranslateX(290);
         }
         else {
-            resetButton.setTranslateY(240);
-            resetButton.setTranslateX(350);
+            resetButton.setTranslateY(120);
+            resetButton.setTranslateX(340);
         }
         resetButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         Tooltip resetTooltip = new Tooltip(UtilStringStorage.resetTooltip);
@@ -224,6 +261,12 @@ public class OptionScene extends Scene {
             }
         });
 
+        Label resetLabel = new Label(UtilStringStorage.resetLabel);
+        resetLabel.setFont(Font.font(OPTION_POLICE_LABEL, FontWeight.EXTRA_BOLD, 16));
+        resetLabel.setTextFill(Color.BLACK);
+        resetLabel.setTranslateY(70);
+        resetLabel.setTranslateX(355);
+        optionVbox.getChildren().add(resetLabel);
         optionVbox.getChildren().add(resetButton);
     }
 

@@ -93,6 +93,7 @@ public class UtilStringStorage
     public static String volumeLabel = "";
     public static String languageLabel = "";
     public static String languageTooltip = "";
+    public static String resetLabel = "";
     public static String resetButton = "";
     public static String resetTooltip = "";
     public static String askConfirmReset = "";

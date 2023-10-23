@@ -45,32 +45,32 @@ public class AchievementManager
     public void createIcons() {
         IconCreator lockIcon = new IconCreator(PathUtil.LOCK_ICON);
         lockImageView = lockIcon.createImage();
-        lockImageView.setFitHeight(50);
-        lockImageView.setFitWidth(60);
+        lockImageView.setFitHeight(40);
+        lockImageView.setFitWidth(50);
 
         lockImageView2 = lockIcon.createImage();
-        lockImageView2.setFitHeight(50);
-        lockImageView2.setFitWidth(60);
+        lockImageView2.setFitHeight(40);
+        lockImageView2.setFitWidth(50);
 
         lockImageView3 = lockIcon.createImage();
-        lockImageView3.setFitHeight(50);
-        lockImageView3.setFitWidth(60);
+        lockImageView3.setFitHeight(40);
+        lockImageView3.setFitWidth(50);
 
         lockImageView4 = lockIcon.createImage();
-        lockImageView4.setFitHeight(50);
-        lockImageView4.setFitWidth(60);
+        lockImageView4.setFitHeight(40);
+        lockImageView4.setFitWidth(50);
 
         lockImageView5 = lockIcon.createImage();
-        lockImageView5.setFitHeight(50);
-        lockImageView5.setFitWidth(60);
+        lockImageView5.setFitHeight(40);
+        lockImageView5.setFitWidth(50);
 
         lockImageView6 = lockIcon.createImage();
-        lockImageView6.setFitHeight(50);
-        lockImageView6.setFitWidth(60);
+        lockImageView6.setFitHeight(40);
+        lockImageView6.setFitWidth(50);
 
         lockImageView7 = lockIcon.createImage();
-        lockImageView7.setFitHeight(50);
-        lockImageView7.setFitWidth(60);
+        lockImageView7.setFitHeight(40);
+        lockImageView7.setFitWidth(50);
     }
 
     public List<Achievement> getAchievementsList() {

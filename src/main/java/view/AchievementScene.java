@@ -49,7 +49,7 @@ public class AchievementScene extends Scene
 
         gridPane = new GridPane();
         gridPane.setTranslateX(80);
-        gridPane.setTranslateY(40);
+        gridPane.setTranslateY(80);
         gridPane.setHgap(30);
         gridPane.setVgap(40);
         gridPane.addColumn(3);
@@ -107,13 +107,13 @@ public class AchievementScene extends Scene
         VBox goldCupAchievementVBox = new VBox();
 
         Label goldCupAchievementLabel = new Label();
-        goldCupAchievementLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
+        goldCupAchievementLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));
         goldCupAchievementLabel.setText(UtilStringStorage.goldCupAchievementDescription);
 
         ImageView goldCupImage = achievementManager.getAchievementsList().get(0).getLockImageView();
 
         goldCupAchievementInfo = new Label();
-        goldCupAchievementInfo.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
+        goldCupAchievementInfo.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));
 
         goldCupAchievementVBox.getChildren().add(goldCupAchievementLabel);
         goldCupAchievementVBox.getChildren().add(goldCupImage);
@@ -125,13 +125,13 @@ public class AchievementScene extends Scene
         VBox silverCupAchievementVBox = new VBox();
 
         Label silverCupAchievementLabel = new Label();
-        silverCupAchievementLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
+        silverCupAchievementLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));
         silverCupAchievementLabel.setText(UtilStringStorage.silverCupAchievementDescription);
 
         ImageView silverCupImage = achievementManager.getAchievementsList().get(1).getLockImageView();
 
         silverCupAchievementInfo = new Label();
-        silverCupAchievementInfo.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
+        silverCupAchievementInfo.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));
 
         silverCupAchievementVBox.getChildren().add(silverCupAchievementLabel);
         silverCupAchievementVBox.getChildren().add(silverCupImage);
@@ -144,13 +144,13 @@ public class AchievementScene extends Scene
         VBox bronzeCupAchievementVBox = new VBox();
 
         Label bronzeCupAchievementLabel = new Label();
-        bronzeCupAchievementLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
+        bronzeCupAchievementLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));
         bronzeCupAchievementLabel.setText(UtilStringStorage.bronzeCupAchievementDescription);
 
         ImageView bronzeCupImage = achievementManager.getAchievementsList().get(2).getLockImageView();
 
         bronzeCupAchievementInfo = new Label();
-        bronzeCupAchievementInfo.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
+        bronzeCupAchievementInfo.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));
 
         bronzeCupAchievementVBox.getChildren().add(bronzeCupAchievementLabel);
         bronzeCupAchievementVBox.getChildren().add(bronzeCupImage);
@@ -163,13 +163,13 @@ public class AchievementScene extends Scene
         VBox perfectScoreAchievementVBox = new VBox();
 
         Label perfectScoreAchievementLabel = new Label();
-        perfectScoreAchievementLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
+        perfectScoreAchievementLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));
         perfectScoreAchievementLabel.setText(UtilStringStorage.perfectScore10Achievement);
 
         ImageView perfectScoreImage = achievementManager.getAchievementsList().get(3).getLockImageView();
 
         perfectScoreAchievementInfo = new Label();
-        perfectScoreAchievementInfo.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
+        perfectScoreAchievementInfo.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));
 
         perfectScoreAchievementVBox.getChildren().add(perfectScoreAchievementLabel);
         perfectScoreAchievementVBox.getChildren().add(perfectScoreImage);
@@ -182,13 +182,13 @@ public class AchievementScene extends Scene
         VBox perfectScoreAchievement15 = new VBox();
 
         Label perfectScoreAchievement15Label = new Label();
-        perfectScoreAchievement15Label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
+        perfectScoreAchievement15Label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));
         perfectScoreAchievement15Label.setText(UtilStringStorage.perfectScore15Achievement);
 
         ImageView perfectScore15Image = achievementManager.getAchievementsList().get(4).getLockImageView();
 
         perfectScoreAchievement15Info = new Label();
-        perfectScoreAchievement15Info.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
+        perfectScoreAchievement15Info.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));
 
         perfectScoreAchievement15.getChildren().add(perfectScoreAchievement15Label);
         perfectScoreAchievement15.getChildren().add(perfectScore15Image);
@@ -201,13 +201,13 @@ public class AchievementScene extends Scene
         VBox perfectScoreAchievement20 = new VBox();
 
         Label perfectScoreAchievement20Label = new Label();
-        perfectScoreAchievement20Label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
+        perfectScoreAchievement20Label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));
         perfectScoreAchievement20Label.setText(UtilStringStorage.perfectScore20Achievement);
 
         ImageView perfectScore20Image = achievementManager.getAchievementsList().get(5).getLockImageView();
 
         perfectScoreAchievement20Info = new Label();
-        perfectScoreAchievement20Info.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
+        perfectScoreAchievement20Info.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));
 
         perfectScoreAchievement20.getChildren().add(perfectScoreAchievement20Label);
         perfectScoreAchievement20.getChildren().add(perfectScore20Image);
@@ -222,12 +222,12 @@ public class AchievementScene extends Scene
         secretAchievementBox = new VBox();
 
         secretAchievementLabel = new Label();
-        secretAchievementLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
+        secretAchievementLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));
 
         secretAchievementImage = achievementManager.getAchievementsList().get(6).getLockImageView();
 
         secretAchievementInfo = new Label();
-        secretAchievementInfo.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
+        secretAchievementInfo.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));
         secretAchievementLabel.setText(UtilStringStorage.secretLabel);
 
         secretAchievementBox.getChildren().add(secretAchievementLabel);

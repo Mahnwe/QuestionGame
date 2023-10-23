@@ -97,12 +97,14 @@ public class UtilTranslateString {
         UtilStringStorage.playerNameIngame = engTradFile.getProperty("playerNameIngame");
         UtilStringStorage.scoreLabelIngame = engTradFile.getProperty("scoreLabelIngame");
 
-        // RESULT SCENE
+        // QUESTION INTERFACE
         UtilStringStorage.confirmAlertWindow = engTradFile.getProperty("confirmAlertWindow");
         UtilStringStorage.askToConfirm = engTradFile.getProperty("askToConfirm");
         UtilStringStorage.nextQuestionButton = engTradFile.getProperty("nextQuestionButton");
         UtilStringStorage.goodAnswerLabel = engTradFile.getProperty("goodAnswerLabel");
         UtilStringStorage.badAnswerLabel = engTradFile.getProperty("badAnswerLabel");
+
+        // RESULT SCENE
         UtilStringStorage.returnToMenuButton = engTradFile.getProperty("returnToMenuButton");
         UtilStringStorage.timeLabel = engTradFile.getProperty("timeLabel");
         UtilStringStorage.minLabel = engTradFile.getProperty("minLabel");

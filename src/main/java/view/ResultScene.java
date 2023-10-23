@@ -35,6 +35,8 @@ public class ResultScene extends VBox
     private MediaPlayer resultSoundEffect;
     public static MediaPlayer returnToMenuMusic;
 
+    private static final String EXCEPTION_STRING = "Cup File in ResultScene";
+
     public ResultScene(BorderPane pane, int playerFinalScore, int questionCount, AchievementManager achievementManager, Stage stage, Properties cupFile, Properties perfectScoreFile)
     {
         this.achievementManager = achievementManager;
@@ -130,7 +132,11 @@ public class ResultScene extends VBox
         try {
             cupFile.store(new FileWriter(PathUtil.CUP_FILE), "");
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            try {
+                throw new FilesException(EXCEPTION_STRING, "Gold cup can't be write in file");
+            } catch (FilesException ex) {
+                throw new RuntimeException(ex);
+            }
         }
 
         resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
@@ -155,7 +161,11 @@ public class ResultScene extends VBox
         try {
             cupFile.store(new FileWriter(PathUtil.CUP_FILE), "");
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            try {
+                throw new FilesException(EXCEPTION_STRING, "Silver cup can't be write in file");
+            } catch (FilesException ex) {
+                throw new RuntimeException(ex);
+            }
         }
 
         resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
@@ -180,7 +190,11 @@ public class ResultScene extends VBox
         try {
             cupFile.store(new FileWriter(PathUtil.CUP_FILE), "");
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            try {
+                throw new FilesException(EXCEPTION_STRING, "Bronze cup can't be write in file");
+            } catch (FilesException ex) {
+                throw new RuntimeException(ex);
+            }
         }
 
         resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
@@ -204,7 +218,11 @@ public class ResultScene extends VBox
                 try {
                     perfectScoreFile.store(new FileWriter(PathUtil.PERFECT_SCORE_FILE), "");
                 } catch (IOException e) {
-                    throw new RuntimeException(e);
+                    try {
+                        throw new FilesException("Perfect score File in ResultScene", "Perfect score can't be write in file");
+                    } catch (FilesException ex) {
+                        throw new RuntimeException(ex);
+                    }
                 }
             }
 

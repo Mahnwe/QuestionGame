@@ -24,7 +24,11 @@ public class IconCreator
         try {
             stream = new FileInputStream(imagePath);
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            try {
+                throw new FilesException("Image Exception in Icon creator", "Image can't be create");
+            } catch (FilesException ex) {
+                throw new RuntimeException(ex);
+            }
         }
         Image image = new Image(stream);
         imageView.setImage(image);

@@ -13,10 +13,7 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.*;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class LeaderBoardScene extends Scene
 {
@@ -119,7 +116,11 @@ public class LeaderBoardScene extends Scene
             }
             bufferedReader.close();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            try {
+                throw new FilesException("Save file in LeaderboardScene", "Save file not found");
+            } catch (FilesException ex) {
+                throw new RuntimeException(ex);
+            }
         }
     }
 

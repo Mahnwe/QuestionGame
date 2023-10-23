@@ -239,7 +239,11 @@ public class MenuScene extends Scene
         try {
             perfectScoreFile.load(new FileInputStream(PathUtil.PERFECT_SCORE_FILE));
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            try {
+                throw new FilesException("Perfect Score File in MenuScene", "Perfect score file not found");
+            } catch (FilesException ex) {
+                throw new RuntimeException(ex);
+            }
         }
     }
     public void loadCupFile()
@@ -247,7 +251,11 @@ public class MenuScene extends Scene
         try {
             cupFile.load(new FileInputStream(PathUtil.CUP_FILE));
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            try {
+                throw new FilesException("Cup File in MenuScene", "Cup file not found");
+            } catch (FilesException ex) {
+                throw new RuntimeException(ex);
+            }
         }
     }
 

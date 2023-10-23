@@ -21,7 +21,11 @@ public class UtilTranslateString {
         try {
             engTradFile.load(Files.newInputStream(Path.of(PathUtil.ENG_TRAD_PROPERTIES_FILE)));
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            try {
+                throw new FilesException("Eng file not load in UtilTranslateString", "Eng file not found and loaded");
+            } catch (FilesException ex) {
+                throw new RuntimeException(ex);
+            }
         }
     }
 
@@ -30,8 +34,13 @@ public class UtilTranslateString {
         try {
             frTradFile.load(Files.newInputStream(Path.of(PathUtil.FR_TRAD_PROPERTIES_FILE)));
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            try {
+                throw new FilesException("Fr file not load in UtilTranslateString", "Fr file not found and loaded");
+            } catch (FilesException ex) {
+                throw new RuntimeException(ex);
+            }
         }
+
     }
 
     public void translateEngString()

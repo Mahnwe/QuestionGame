@@ -118,7 +118,7 @@ public class MainScene extends Scene
         ResultScene resultScene = new ResultScene(menuPane, playerInfoScene.getPlayer().getPlayerScore(), gameHandler.getQuestionCount(), achievementManager, stage, cupFile, perfectScoreFile);
         SoundManager.stopMusic(inGameMusicToStop);
         resultScene.getCongratsLabel().setText(UtilStringStorage.congratsLabel +" "+ playerInfoScene.getPlayer().getPlayerName()+" "+UtilStringStorage.answerAllQuestions);
-        resultScene.getPlayerResult().setText(UtilStringStorage.playerResult + playerInfoScene.getPlayer().getPlayerScore()+UtilStringStorage.scoreOn +gameHandler.getQuestionCount());
+        resultScene.getPlayerResult().setText(UtilStringStorage.playerResult + playerInfoScene.getPlayer().getPlayerScore()+" "+UtilStringStorage.scoreOn +" "+gameHandler.getQuestionCount());
     }
 
     public void saveScoreInFile()

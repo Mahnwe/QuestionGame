@@ -12,6 +12,7 @@ public class UtilStringStorage
     public static String noButton = "";
 
     // ACHIEVEMENTS
+    public static String achievementLabel = "";
     public static String goldCupAchievementDescription = "";
     public static String silverCupAchievementDescription = "";
     public static String bronzeCupAchievementDescription = "";

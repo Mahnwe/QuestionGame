@@ -53,7 +53,7 @@ public class AchievementScene extends Scene
 
         gridPane = new GridPane();
         gridPane.setTranslateX(80);
-        gridPane.setTranslateY(80);
+        gridPane.setTranslateY(60);
         gridPane.setHgap(30);
         gridPane.setVgap(40);
         gridPane.addColumn(3);
@@ -68,7 +68,15 @@ public class AchievementScene extends Scene
         createSecretAchievementArea();
         checkAchievements();
 
-        pane.setCenter(gridPane);
+        BorderPane multiPane = new BorderPane();
+
+        Label achievementLabel = new Label(UtilStringStorage.achievementLabel);
+        achievementLabel.setFont(Font.font("Impact", FontWeight.BOLD, 23));
+        multiPane.setTop(achievementLabel);
+        achievementLabel.setTranslateX(350);
+        achievementLabel.setTranslateY(5);
+        multiPane.setCenter(gridPane);
+        pane.setCenter(multiPane);
 
         createReturnButton();
 

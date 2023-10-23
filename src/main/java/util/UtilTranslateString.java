@@ -47,6 +47,7 @@ public class UtilTranslateString {
         UtilStringStorage.noButton = engTradFile.getProperty("noButton");
 
         // ACHIEVEMENTS
+        UtilStringStorage.achievementLabel = engTradFile.getProperty("achievementLabel");
         UtilStringStorage.goldCupAchievementDescription = engTradFile.getProperty("goldCupAchievementDescription");
         UtilStringStorage.silverCupAchievementDescription = engTradFile.getProperty("silverCupAchievementDescription");
         UtilStringStorage.bronzeCupAchievementDescription = engTradFile.getProperty("bronzeCupAchievementDescription");
@@ -583,6 +584,7 @@ public class UtilTranslateString {
         UtilStringStorage.noButton = frTradFile.getProperty("noButton");
 
         // ACHIEVEMENTS
+        UtilStringStorage.achievementLabel = frTradFile.getProperty("achievementLabel");
         UtilStringStorage.goldCupAchievementDescription = frTradFile.getProperty("goldCupAchievementDescription");
         UtilStringStorage.silverCupAchievementDescription = frTradFile.getProperty("silverCupAchievementDescription");
         UtilStringStorage.bronzeCupAchievementDescription = frTradFile.getProperty("bronzeCupAchievementDescription");

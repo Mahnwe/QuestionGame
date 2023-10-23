@@ -25,7 +25,6 @@ public class App extends Application
         stage.setTitle("Launcher");
         stage.show();
         languageScene.getEngButton().setOnAction(event -> {
-            utilTranslateString.loadEngTradFile();
             utilTranslateString.translateEngString();
             AchievementManager achievementManager = new AchievementManager();
             menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
@@ -38,7 +37,6 @@ public class App extends Application
         });
 
         languageScene.getFrButton().setOnAction(event -> {
-            utilTranslateString.loadFrTradFile();
             utilTranslateString.translateFrString();
             AchievementManager achievementManager = new AchievementManager();
             menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);

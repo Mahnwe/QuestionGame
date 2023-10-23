@@ -142,6 +142,9 @@ public class OptionScene extends Scene {
             if (!isMute) {
                 SoundManager.soundVolume = 0.0;
                 SoundManager.handleMenuSceneVolume(App.menuMusicToStop, 0.0);
+                if(ResultScene.returnToMenuMusic != null) {
+                    SoundManager.handleMenuSceneVolume(ResultScene.returnToMenuMusic, 0.0);
+                }
                 isMute = true;
                 volumeSlider.setDisable(true);
             }
@@ -211,9 +214,12 @@ public class OptionScene extends Scene {
 
         UtilTranslateString utilTranslateString = new UtilTranslateString();
         engButton.setOnAction(event -> {
-            utilTranslateString.loadEngTradFile();
             utilTranslateString.translateEngString();
             App.menuMusicToStop.stop();
+            if(ResultScene.returnToMenuMusic != null)
+            {
+                ResultScene.returnToMenuMusic.stop();
+            }
             App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
             MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
             stage.setMinHeight(500);
@@ -224,9 +230,12 @@ public class OptionScene extends Scene {
         });
 
         frButton.setOnAction(event -> {
-            utilTranslateString.loadFrTradFile();
             utilTranslateString.translateFrString();
             App.menuMusicToStop.stop();
+            if(ResultScene.returnToMenuMusic != null)
+            {
+                ResultScene.returnToMenuMusic.stop();
+            }
             App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
             MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
             stage.setMinHeight(500);
@@ -274,6 +283,10 @@ public class OptionScene extends Scene {
     public void setVolumeFromSlider(Double sliderValue)
     {
         SoundManager.handleMenuSceneVolume(App.menuMusicToStop, sliderValue);
+        if(ResultScene.returnToMenuMusic != null)
+        {
+            SoundManager.handleMenuSceneVolume(ResultScene.returnToMenuMusic, sliderValue);
+        }
         SoundManager.setSoundVolume(sliderValue);
     }
 

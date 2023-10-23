@@ -14,6 +14,10 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.*;
+import util.BackgroundCreator;
+import util.GameTimer;
+import util.PathUtil;
+import util.UtilStringStorage;
 
 public class PlayerInfoScene extends Scene
 {
@@ -93,7 +97,6 @@ public class PlayerInfoScene extends Scene
 
     public void setOnActionSendButton(BorderPane pane, QuestionInterface questionInterface, Stage stage, Stage popUpStage)
     {
-        sendButton.setOnAction(event -> {
             if (!userInputArea.getText().isEmpty())
             {
                 createPlayerInfoArea();
@@ -104,7 +107,6 @@ public class PlayerInfoScene extends Scene
                 GameTimer.startTimer();
                 popUpStage.close();
             }
-        });
     }
 
     public void createPlayerInfoArea()
@@ -175,5 +177,8 @@ public class PlayerInfoScene extends Scene
         return player;
     }
 
+    public Button getSendButton() {
+        return sendButton;
+    }
 }
 

@@ -2,9 +2,9 @@ package view;
 
 import javafx.scene.control.Alert;
 import javafx.scene.image.ImageView;
-import model.IconCreator;
-import model.PathUtil;
-import model.UtilStringStorage;
+import util.IconCreator;
+import util.PathUtil;
+import util.UtilStringStorage;
 
 public class NotificationAlert extends Alert
 {

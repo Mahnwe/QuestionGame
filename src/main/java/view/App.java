@@ -4,7 +4,12 @@ import javafx.application.Application;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
-import model.*;
+import model.AchievementManager;
+import model.SoundManager;
+import util.FileUtil;
+import util.PathUtil;
+import util.UtilStringStorage;
+import util.UtilTranslateString;
 
 public class App extends Application
 {
@@ -13,6 +18,8 @@ public class App extends Application
     public void start(Stage stage)
     {
         UtilTranslateString utilTranslateString = new UtilTranslateString();
+        FileUtil.loadFile(FileUtil.perfectScoreFile, PathUtil.PERFECT_SCORE_FILE);
+        FileUtil.loadFile(FileUtil.cupFile, PathUtil.CUP_FILE);
         LanguageScene languageScene = new LanguageScene(new BorderPane());
         stage.setScene(languageScene);
         stage.setTitle("Launcher");

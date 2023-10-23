@@ -11,6 +11,10 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.*;
+import util.BackgroundCreator;
+import util.IconCreator;
+import util.PathUtil;
+import util.UtilStringStorage;
 
 import java.util.Properties;
 

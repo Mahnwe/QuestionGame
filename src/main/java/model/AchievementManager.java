@@ -1,6 +1,8 @@
 package model;
 
 import javafx.scene.image.ImageView;
+import util.IconCreator;
+import util.PathUtil;
 
 import java.util.ArrayList;
 import java.util.List;

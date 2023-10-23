@@ -8,12 +8,16 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import model.*;
+import model.AchievementManager;
+import model.GameHandler;
+import model.Player;
+import model.SoundManager;
+import util.BackgroundCreator;
+import util.FileUtil;
+import util.PathUtil;
+import util.UtilStringStorage;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.Properties;
 
 
 public class MenuScene extends Scene
@@ -29,8 +33,7 @@ public class MenuScene extends Scene
     private final Border border = new Border(new BorderStroke(Color.BLACK,
             BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT));
     private final AchievementManager achievementManager;
-    private final Properties perfectScoreFile = new Properties();
-    private final Properties cupFile = new Properties();
+
     public static final String POLICE_LABEL = "Verdana";
 
     public MenuScene(BorderPane pane, Stage stage, AchievementManager achievementManager)
@@ -41,8 +44,7 @@ public class MenuScene extends Scene
         pane.setPrefWidth(900);
         pane.setPrefHeight(500);
 
-        loadPerfectScoreFile();
-        loadCupFile();
+
 
         this.gameHandler = new GameHandler();
         saveFile = new File("./src/main/resources/SaveFile/saveScoresFile");
@@ -127,17 +129,17 @@ public class MenuScene extends Scene
         });
 
         trophyButton.setOnAction(event -> {
-            TrophyScene trophyScene = new TrophyScene(new BorderPane(), menuStage, achievementManager, cupFile);
+            TrophyScene trophyScene = new TrophyScene(new BorderPane(), menuStage, achievementManager, FileUtil.cupFile);
             menuStage.setScene(trophyScene);
         });
 
         achievementButton.setOnAction(event -> {
-            AchievementScene achievementScene = new AchievementScene(new BorderPane(), achievementManager, menuStage, cupFile, perfectScoreFile);
+            AchievementScene achievementScene = new AchievementScene(new BorderPane(), achievementManager, menuStage, FileUtil.cupFile, FileUtil.perfectScoreFile);
             menuStage.setScene(achievementScene);
         });
 
         optionButton.setOnAction(event -> {
-            OptionScene optionScene = new OptionScene(new BorderPane(), menuStage, achievementManager, saveFile, cupFile, perfectScoreFile);
+            OptionScene optionScene = new OptionScene(new BorderPane(), menuStage, achievementManager, saveFile, FileUtil.cupFile, FileUtil.perfectScoreFile);
             menuStage.setScene(optionScene);
         });
 
@@ -226,37 +228,13 @@ public class MenuScene extends Scene
     public void instantiateMainScene()
     {
         Player player = new Player();
-        MainScene mainScene = new MainScene(new BorderPane(), player, gameHandler, menuStage, saveFile, achievementManager, cupFile, perfectScoreFile);
+        MainScene mainScene = new MainScene(player, gameHandler, menuStage, saveFile, achievementManager, FileUtil.cupFile, FileUtil.perfectScoreFile);
         SoundManager.stopMusic(App.menuMusicToStop);
         if(ResultScene.returnToMenuMusic != null) {
             SoundManager.stopMusic(ResultScene.returnToMenuMusic);
         }
         menuStage.setScene(mainScene);
 
-    }
-    public void loadPerfectScoreFile()
-    {
-        try {
-            perfectScoreFile.load(new FileInputStream(PathUtil.PERFECT_SCORE_FILE));
-        } catch (IOException e) {
-            try {
-                throw new FilesException("Perfect Score File in MenuScene", "Perfect score file not found");
-            } catch (FilesException ex) {
-                throw new RuntimeException(ex);
-            }
-        }
-    }
-    public void loadCupFile()
-    {
-        try {
-            cupFile.load(new FileInputStream(PathUtil.CUP_FILE));
-        } catch (IOException e) {
-            try {
-                throw new FilesException("Cup File in MenuScene", "Cup file not found");
-            } catch (FilesException ex) {
-                throw new RuntimeException(ex);
-            }
-        }
     }
 
     public HBox createStatArea(Label label) {

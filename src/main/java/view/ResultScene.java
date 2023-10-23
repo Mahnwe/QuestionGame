@@ -10,7 +10,13 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import model.*;
+import model.Achievement;
+import model.AchievementManager;
+import model.SoundManager;
+import util.GameTimer;
+import util.IconCreator;
+import util.PathUtil;
+import util.UtilStringStorage;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -34,8 +40,6 @@ public class ResultScene extends VBox
     private final int questionCount;
     private MediaPlayer resultSoundEffect;
     public static MediaPlayer returnToMenuMusic;
-
-    private static final String EXCEPTION_STRING = "Cup File in ResultScene";
 
     public ResultScene(BorderPane pane, int playerFinalScore, int questionCount, AchievementManager achievementManager, Stage stage, Properties cupFile, Properties perfectScoreFile)
     {
@@ -129,15 +133,6 @@ public class ResultScene extends VBox
 
         achievementManager.getAchievementsList().get(0).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(0), nbrOfGoldCup);
         cupFile.setProperty("goldCup", String.valueOf(nbrOfGoldCup));
-        try {
-            cupFile.store(new FileWriter(PathUtil.CUP_FILE), "");
-        } catch (IOException e) {
-            try {
-                throw new FilesException(EXCEPTION_STRING, "Gold cup can't be write in file");
-            } catch (FilesException ex) {
-                throw new RuntimeException(ex);
-            }
-        }
 
         resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
         Label cupLabel = new Label(UtilStringStorage.goldCupLabel);
@@ -158,15 +153,6 @@ public class ResultScene extends VBox
 
         achievementManager.getAchievementsList().get(1).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(1), nbrOfSilverCup);
         cupFile.setProperty("silverCup", String.valueOf(nbrOfSilverCup));
-        try {
-            cupFile.store(new FileWriter(PathUtil.CUP_FILE), "");
-        } catch (IOException e) {
-            try {
-                throw new FilesException(EXCEPTION_STRING, "Silver cup can't be write in file");
-            } catch (FilesException ex) {
-                throw new RuntimeException(ex);
-            }
-        }
 
         resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
         Label cupLabel = new Label(UtilStringStorage.silverCupLabel);
@@ -187,15 +173,6 @@ public class ResultScene extends VBox
 
         achievementManager.getAchievementsList().get(2).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(2), nbrOfBronzeCup);
         cupFile.setProperty("bronzeCup", String.valueOf(nbrOfBronzeCup));
-        try {
-            cupFile.store(new FileWriter(PathUtil.CUP_FILE), "");
-        } catch (IOException e) {
-            try {
-                throw new FilesException(EXCEPTION_STRING, "Bronze cup can't be write in file");
-            } catch (FilesException ex) {
-                throw new RuntimeException(ex);
-            }
-        }
 
         resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
         Label cupLabel = new Label(UtilStringStorage.bronzeCupLabel);
@@ -215,15 +192,6 @@ public class ResultScene extends VBox
             } else {
                 String perfectScoreString = String.valueOf(playerFinalScore);
                 perfectScoreFile.setProperty(propertyKey, perfectScoreString);
-                try {
-                    perfectScoreFile.store(new FileWriter(PathUtil.PERFECT_SCORE_FILE), "");
-                } catch (IOException e) {
-                    try {
-                        throw new FilesException("Perfect score File in ResultScene", "Perfect score can't be write in file");
-                    } catch (FilesException ex) {
-                        throw new RuntimeException(ex);
-                    }
-                }
             }
 
         }
@@ -262,6 +230,16 @@ public class ResultScene extends VBox
 
     public void backToMainMenu()
     {
+        try {
+            perfectScoreFile.store(new FileWriter(PathUtil.PERFECT_SCORE_FILE), "");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            cupFile.store(new FileWriter(PathUtil.CUP_FILE), "");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
         stage.setScene(menuScene);
         returnToMenuMusic = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);

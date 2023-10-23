@@ -11,6 +11,10 @@ import javafx.scene.paint.ImagePattern;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.*;
+import util.BackgroundCreator;
+import util.GameTimer;
+import util.PathUtil;
+import util.UtilStringStorage;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -37,11 +41,11 @@ public class MainScene extends Scene
     public static MediaPlayer inGameMusicToStop = SoundManager.playMusicRepeat(PathUtil.IN_GAME_MUSIC);
     private final Player player;
 
-    public MainScene(BorderPane menuPane, Player player, GameHandler gameHandler, Stage stage, File saveFile, AchievementManager achievementManager, Properties cupFile, Properties perfectScoreFile)
+    public MainScene(Player player, GameHandler gameHandler, Stage stage, File saveFile, AchievementManager achievementManager, Properties cupFile, Properties perfectScoreFile)
     {
-        super(menuPane);
+        super(new BorderPane());
         this.stage = stage;
-        this.menuPane = menuPane;
+        this.menuPane = (BorderPane) this.getRoot();
         this.player = player;
         menuPane.setPrefWidth(1000);
         menuPane.setPrefHeight(500);
@@ -81,7 +85,7 @@ public class MainScene extends Scene
         popUpStage.setScene(playerInfoScene);
         popUpStage.initModality(Modality.APPLICATION_MODAL);
         popUpStage.show();
-        playerInfoScene.setOnActionSendButton(menuPane, questionInterface, stage, popUpStage);
+        playerInfoScene.getSendButton().setOnAction(event -> playerInfoScene.setOnActionSendButton(menuPane, questionInterface, stage, popUpStage));
     }
 
     private void setAnswersButtonListeners()

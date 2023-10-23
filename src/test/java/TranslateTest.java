@@ -1,5 +1,5 @@
-import model.UtilStringStorage;
-import model.UtilTranslateString;
+import util.UtilStringStorage;
+import util.UtilTranslateString;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

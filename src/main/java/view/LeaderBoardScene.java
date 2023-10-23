@@ -12,6 +12,10 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.*;
+import util.BackgroundCreator;
+import util.IconCreator;
+import util.PathUtil;
+import util.UtilStringStorage;
 
 import java.io.*;
 
@@ -116,11 +120,7 @@ public class LeaderBoardScene extends Scene
             }
             bufferedReader.close();
         } catch (IOException e) {
-            try {
-                throw new FilesException("Save file in LeaderboardScene", "Save file not found");
-            } catch (FilesException ex) {
-                throw new RuntimeException(ex);
-            }
+
         }
     }
 

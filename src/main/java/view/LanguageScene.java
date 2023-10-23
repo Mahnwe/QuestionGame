@@ -7,9 +7,9 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import model.BackgroundCreator;
-import model.IconCreator;
-import model.PathUtil;
+import util.BackgroundCreator;
+import util.IconCreator;
+import util.PathUtil;
 
 public class LanguageScene extends Scene
 {

@@ -10,6 +10,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.*;
+import util.*;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -334,11 +335,7 @@ public class OptionScene extends Scene {
         try {
             cupFile.store(new FileWriter(PathUtil.CUP_FILE), "");
         } catch (IOException e) {
-            try {
-                throw new FilesException("Cup File in OptionScene", "Cup file can't be reset");
-            } catch (FilesException ex) {
-                throw new RuntimeException(ex);
-            }
+
         }
     }
 
@@ -350,11 +347,7 @@ public class OptionScene extends Scene {
         try {
             perfectFile.store(new FileWriter(PathUtil.PERFECT_SCORE_FILE), "");
         } catch (IOException e) {
-            try {
-                throw new FilesException("Perfect score file in OptionScene", "Perfect score file can't be reset");
-            } catch (FilesException ex) {
-                throw new RuntimeException(ex);
-            }
+
         }
     }
 }

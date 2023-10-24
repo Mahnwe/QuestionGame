@@ -34,6 +34,12 @@ public class MenuScene extends Scene
 
     public static final String POLICE_LABEL = "Verdana";
 
+    private Button leaderBoardButton;
+    private Button trophyButton;
+    private Button achievementButton;
+    private Button optionButton;
+    private Button creditButton;
+
     public MenuScene(BorderPane pane, Stage stage, AchievementManager achievementManager)
     {
         super(pane);
@@ -94,27 +100,43 @@ public class MenuScene extends Scene
         leaderBoardVBox.setBorder(border);
         leaderBoardVBox.setPrefWidth(150);
 
-        Button leaderBoardButton = new Button(UtilStringStorage.leaderBoardButton);
+        createLeftButtons();
+
+        setLeftButtonOnAction();
+
+        leaderBoardVBox.getChildren().add(leaderBoardButton);
+        leaderBoardVBox.getChildren().add(trophyButton);
+        leaderBoardVBox.getChildren().add(achievementButton);
+        leaderBoardVBox.getChildren().add(optionButton);
+        leaderBoardVBox.getChildren().add(creditButton);
+        pane.setLeft(leaderBoardVBox);
+    }
+
+    public void createLeftButtons()
+    {
+        leaderBoardButton = new Button(UtilStringStorage.leaderBoardButton);
         Tooltip leaderBoardTooltip = new Tooltip(UtilStringStorage.leaderBoardTooltip);
         createButton(leaderBoardButton, leaderBoardTooltip, 5, 35);
 
-        Button trophyButton = new Button(UtilStringStorage.trophyButton);
+        trophyButton = new Button(UtilStringStorage.trophyButton);
         Tooltip trophyTooltip = new Tooltip(UtilStringStorage.trophyTooltip);
         createButton(trophyButton, trophyTooltip, 10, 95);
 
-        Button achievementButton = new Button(UtilStringStorage.achievementButton);
+        achievementButton = new Button(UtilStringStorage.achievementButton);
         Tooltip achievementTooltip = new Tooltip(UtilStringStorage.achievementTooltip);
         createButton(achievementButton, achievementTooltip, 10, 155);
 
-        Button optionButton = new Button(UtilStringStorage.optionButton);
+        optionButton = new Button(UtilStringStorage.optionButton);
         Tooltip optionTooltip = new Tooltip(UtilStringStorage.optionTooltip);
         createButton(optionButton, optionTooltip, 10, 215);
 
-        Button creditButton = new Button(UtilStringStorage.creditButton);
+        creditButton = new Button(UtilStringStorage.creditButton);
         Tooltip creditTooltip = new Tooltip(UtilStringStorage.creditTooltip);
         createButton(creditButton, creditTooltip, 10, 275);
+    }
 
-
+    public void setLeftButtonOnAction()
+    {
         leaderBoardButton.setOnAction(event -> {
             LeaderBoardScene leaderBoardScene = new LeaderBoardScene(new ScrollPane(), saveFile, menuStage, achievementManager);
             menuStage.setScene(leaderBoardScene);
@@ -139,14 +161,6 @@ public class MenuScene extends Scene
             CreditScene creditScene = new CreditScene(new BorderPane(), menuStage, achievementManager);
             menuStage.setScene(creditScene);
         });
-
-
-        leaderBoardVBox.getChildren().add(leaderBoardButton);
-        leaderBoardVBox.getChildren().add(trophyButton);
-        leaderBoardVBox.getChildren().add(achievementButton);
-        leaderBoardVBox.getChildren().add(optionButton);
-        leaderBoardVBox.getChildren().add(creditButton);
-        pane.setLeft(leaderBoardVBox);
     }
 
     public void createButtonArea()
@@ -173,7 +187,7 @@ public class MenuScene extends Scene
 
 
         comboBox = new ComboBox<>();
-        comboBox.setStyle("-fx-font: 20px \"Verdana\";");
+        comboBox.setStyle("-fx-font: 20px \"Verdana\"");
         comboBox.setMinHeight(30);
         comboBox.setMinWidth(90);
         comboBox.setTranslateX(230);

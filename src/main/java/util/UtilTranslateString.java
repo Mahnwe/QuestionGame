@@ -144,8 +144,6 @@ public class UtilTranslateString {
         UtilStringStorage.darkantThank = engTradFile.getProperty("darkantThank");
         UtilStringStorage.loveLabel = engTradFile.getProperty("loveLabel");
         UtilStringStorage.linkLabel = engTradFile.getProperty("linkLabel");
-        UtilStringStorage.iconLink = engTradFile.getProperty("iconLink");
-        UtilStringStorage.backgroundLink = engTradFile.getProperty("backgroundLink");
 
         // QUESTIONS
         UtilStringStorage.question1 = engTradFile.getProperty("question1");
@@ -677,8 +675,6 @@ public class UtilTranslateString {
         UtilStringStorage.darkantThank = frTradFile.getProperty("darkantThank");
         UtilStringStorage.loveLabel = frTradFile.getProperty("loveLabel");
         UtilStringStorage.linkLabel = frTradFile.getProperty("linkLabel");
-        UtilStringStorage.iconLink = frTradFile.getProperty("iconLink");
-        UtilStringStorage.backgroundLink = frTradFile.getProperty("backgroundLink");
 
         // QUESTIONS
         UtilStringStorage.question1 = frTradFile.getProperty("question1");

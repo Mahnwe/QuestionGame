@@ -110,8 +110,8 @@ public class UtilStringStorage
     public static String darkantThank = "";
     public static String loveLabel = "";
     public static String linkLabel = "";
-    public static String iconLink = "";
-    public static String backgroundLink = "";
+    public static String iconLink = "https://www.freeicons.io";
+    public static String backgroundLink = "https://www.freepik.com";
 
     // QUESTIONS LABELS
     public static String question1 = "";

@@ -20,6 +20,11 @@ public class App extends Application
     @Override
     public void start(Stage stage)
     {
+        hyperLinkIcon = new Hyperlink(UtilStringStorage.iconLink);
+        hyperLinkBackground = new Hyperlink(UtilStringStorage.backgroundLink);
+        hyperLinkIcon.setOnAction(linkEvent -> getHostServices().showDocument(hyperLinkIcon.getText()));
+        hyperLinkBackground.setOnAction(linkEvent -> getHostServices().showDocument(hyperLinkBackground.getText()));
+
         UtilTranslateString utilTranslateString = new UtilTranslateString();
         FileUtil.createSaveFile();
         FileUtil.loadFile(FileUtil.perfectScoreFile, PathUtil.PERFECT_SCORE_FILE);
@@ -33,10 +38,6 @@ public class App extends Application
             AchievementManager achievementManager = new AchievementManager();
             menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
             MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
-            hyperLinkIcon = new Hyperlink(UtilStringStorage.iconLink);
-            hyperLinkBackground = new Hyperlink(UtilStringStorage.backgroundLink);
-            hyperLinkIcon.setOnAction(linkEvent -> getHostServices().showDocument(hyperLinkIcon.getText()));
-            hyperLinkBackground.setOnAction(linkEvent -> getHostServices().showDocument(hyperLinkBackground.getText()));
             stage.setMinHeight(500);
             stage.setMinWidth(900);
             stage.setScene(menuScene);
@@ -49,10 +50,6 @@ public class App extends Application
             AchievementManager achievementManager = new AchievementManager();
             menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
             MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
-            hyperLinkIcon = new Hyperlink(UtilStringStorage.iconLink);
-            hyperLinkBackground = new Hyperlink(UtilStringStorage.backgroundLink);
-            hyperLinkIcon.setOnAction(linkEvent -> getHostServices().showDocument(hyperLinkIcon.getText()));
-            hyperLinkBackground.setOnAction(linkEvent -> getHostServices().showDocument(hyperLinkBackground.getText()));
             stage.setMinHeight(500);
             stage.setMinWidth(900);
             stage.setScene(menuScene);

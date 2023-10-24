@@ -1,18 +1,17 @@
 package view;
 
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.Tooltip;
-import javafx.scene.image.Image;
-import javafx.scene.layout.*;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import model.*;
+import model.AchievementManager;
 import util.BackgroundCreator;
-import util.IconCreator;
-import util.PathUtil;
+import util.ReturnButton;
 import util.UtilStringStorage;
 
 public class CreditScene extends Scene
@@ -36,17 +35,7 @@ public class CreditScene extends Scene
 
     public void createReturnButton()
     {
-        IconCreator returnArrow = new IconCreator(PathUtil.BACK_ARROW);
-        Image backArrow = returnArrow.createImage().getImage();
-
-        Button returnButton = new Button();
-        Tooltip returnTooltip = new Tooltip(UtilStringStorage.returnButton);
-        returnButton.setTooltip(returnTooltip);
-        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
-        returnButton.setBackground(new Background(new BackgroundImage(backArrow, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
-                backgroundSize)));
-        returnButton.setPrefHeight(50);
-        returnButton.setPrefWidth(50);
+        ReturnButton returnButton = new ReturnButton();
         pane.setTop(returnButton);
         returnButton.setOnAction(event -> backToMainMenu());
 
@@ -125,11 +114,7 @@ public class CreditScene extends Scene
 
     public void createBackground()
     {
-        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
-        BackgroundCreator menuBackground = new BackgroundCreator(PathUtil.MENU_BACKGROUND);
-        Image menuSceneBackground = menuBackground.createBackground();
-        BackgroundImage backgroundImage = new BackgroundImage(menuSceneBackground, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
-                backgroundSize);
+        BackgroundImage backgroundImage = BackgroundCreator.createMenuBackground();
         pane.setBackground(new Background(backgroundImage));
     }
 

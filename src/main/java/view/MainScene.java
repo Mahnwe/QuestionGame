@@ -1,16 +1,12 @@
 package view;
 
 import javafx.event.Event;
-import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.CornerRadii;
 import javafx.scene.media.MediaPlayer;
-import javafx.scene.paint.ImagePattern;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.AchievementManager;
@@ -67,9 +63,7 @@ public class MainScene extends Scene
 
     public void createBackground()
     {
-        BackgroundCreator mainSceneBackgroundCreator = new BackgroundCreator(PathUtil.MAIN_BACKGROUND);
-        Image mainSceneImage = mainSceneBackgroundCreator.createBackground();
-        BackgroundFill backgroundFill = new BackgroundFill(new ImagePattern(mainSceneImage), CornerRadii.EMPTY, Insets.EMPTY);
+        BackgroundFill backgroundFill = BackgroundCreator.createGameBackground();
         menuPane.setBackground(new Background(backgroundFill));
     }
 

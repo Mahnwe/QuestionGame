@@ -43,11 +43,7 @@ public class LanguageScene extends Scene
 
     public void createBackground()
     {
-        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
-        BackgroundCreator menuBackground = new BackgroundCreator(PathUtil.MENU_BACKGROUND);
-        Image menuSceneBackground = menuBackground.createBackground();
-        BackgroundImage backgroundImage = new BackgroundImage(menuSceneBackground, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
-                backgroundSize);
+        BackgroundImage backgroundImage = BackgroundCreator.createMenuBackground();
         pane.setBackground(new Background(backgroundImage));
     }
 

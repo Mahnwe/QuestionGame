@@ -5,18 +5,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.ImagePattern;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import model.*;
+import model.Player;
 import util.BackgroundCreator;
 import util.GameTimer;
-import util.PathUtil;
 import util.UtilStringStorage;
 
 public class PlayerInfoScene extends Scene
@@ -57,9 +54,7 @@ public class PlayerInfoScene extends Scene
 
     public void createBackground()
     {
-        BackgroundCreator mainSceneBackgroundCreator = new BackgroundCreator(PathUtil.MAIN_BACKGROUND);
-        Image mainSceneImage = mainSceneBackgroundCreator.createBackground();
-        BackgroundFill backgroundFill = new BackgroundFill(new ImagePattern(mainSceneImage), CornerRadii.EMPTY, Insets.EMPTY);
+        BackgroundFill backgroundFill = BackgroundCreator.createGameBackground();
         pane.setBackground(new Background(backgroundFill));
     }
 

@@ -3,19 +3,16 @@ package view;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.Tooltip;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import model.*;
+import model.Achievement;
+import model.AchievementManager;
 import util.BackgroundCreator;
-import util.IconCreator;
-import util.PathUtil;
+import util.ReturnButton;
 import util.UtilStringStorage;
 
 import java.util.Properties;
@@ -25,7 +22,7 @@ public class AchievementScene extends Scene
     private final StringProperty valueOfSuccess = new SimpleStringProperty();
     private final Stage stage;
     private final BorderPane pane;
-    private final GridPane gridPane;
+    private GridPane gridPane;
     private final AchievementManager achievementManager;
 
     private Label goldCupAchievementInfo;
@@ -51,13 +48,7 @@ public class AchievementScene extends Scene
         this.cupFile = cupFile;
         this.perfectScoreFile = perfectScoreFile;
 
-        gridPane = new GridPane();
-        gridPane.setTranslateX(80);
-        gridPane.setTranslateY(60);
-        gridPane.setHgap(30);
-        gridPane.setVgap(40);
-        gridPane.addColumn(3);
-        gridPane.addRow(2);
+        createGridPane();
 
         createGoldAchievementArea();
         createSilverAchievementArea();
@@ -83,35 +74,31 @@ public class AchievementScene extends Scene
         createBackground();
     }
 
+    public void createGridPane()
+    {
+        gridPane = new GridPane();
+        gridPane.setTranslateX(80);
+        gridPane.setTranslateY(60);
+        gridPane.setHgap(30);
+        gridPane.setVgap(40);
+        gridPane.addColumn(3);
+        gridPane.addRow(2);
+    }
+
     public void createBackground()
     {
-        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
-        BackgroundCreator menuBackground = new BackgroundCreator(PathUtil.MENU_BACKGROUND);
-        Image menuSceneBackground = menuBackground.createBackground();
-        BackgroundImage backgroundImage = new BackgroundImage(menuSceneBackground, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
-                backgroundSize);
+        BackgroundImage backgroundImage = BackgroundCreator.createMenuBackground();
         pane.setBackground(new Background(backgroundImage));
     }
 
     public void createReturnButton()
     {
-        IconCreator returnArrow = new IconCreator(PathUtil.BACK_ARROW);
-        Image backArrow = returnArrow.createImage().getImage();
-
         HBox buttonHbox = new HBox();
-        Button returnToMenu = new Button();
-        returnToMenu.setPrefHeight(50);
-        returnToMenu.setPrefWidth(50);
-        Tooltip returnTooltip = new Tooltip(UtilStringStorage.returnButton);
-        returnToMenu.setTooltip(returnTooltip);
+        ReturnButton returnButton = new ReturnButton();
 
-        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
-        returnToMenu.setBackground(new Background(new BackgroundImage(backArrow, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
-                backgroundSize)));
-
-        buttonHbox.getChildren().add(returnToMenu);
+        buttonHbox.getChildren().add(returnButton);
         pane.setTop(buttonHbox);
-        returnToMenu.setOnAction(event -> backToMainMenu());
+        returnButton.setOnAction(event -> backToMainMenu());
     }
 
     public void createGoldAchievementArea()
@@ -229,14 +216,12 @@ public class AchievementScene extends Scene
 
     public void createSecretAchievementArea()
     {
-        VBox secretAchievementBox;
-        ImageView secretAchievementImage;
-        secretAchievementBox = new VBox();
+        VBox secretAchievementBox = new VBox();
 
         secretAchievementLabel = new Label();
         secretAchievementLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));
 
-        secretAchievementImage = achievementManager.getAchievementsList().get(6).getLockImageView();
+        ImageView secretAchievementImage = achievementManager.getAchievementsList().get(6).getLockImageView();
 
         secretAchievementInfo = new Label();
         secretAchievementInfo.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));

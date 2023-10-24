@@ -1,20 +1,14 @@
 package view;
 
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.Tooltip;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import model.*;
-import util.BackgroundCreator;
-import util.IconCreator;
-import util.PathUtil;
-import util.UtilStringStorage;
+import model.AchievementManager;
+import util.*;
 
 import java.util.Properties;
 
@@ -49,11 +43,7 @@ public class TrophyScene extends Scene
 
     public void createBackground()
     {
-        BackgroundCreator menuBackground = new BackgroundCreator(PathUtil.MENU_BACKGROUND);
-        Image menuSceneBackground = menuBackground.createBackground();
-        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
-        BackgroundImage backgroundImage = new BackgroundImage(menuSceneBackground, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
-                backgroundSize);
+        BackgroundImage backgroundImage = BackgroundCreator.createMenuBackground();
         pane.setBackground(new Background(backgroundImage));
     }
 
@@ -104,21 +94,12 @@ public class TrophyScene extends Scene
 
     public void createReturnButton()
     {
-        IconCreator returnArrow = new IconCreator(PathUtil.BACK_ARROW);
-        Image backArrow = returnArrow.createImage().getImage();
 
         HBox buttonHbox = new HBox();
-        Button returnToMenu = new Button();
-        Tooltip returnTooltip = new Tooltip(UtilStringStorage.returnButton);
-        returnToMenu.setTooltip(returnTooltip);
-        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
-        returnToMenu.setBackground(new Background(new BackgroundImage(backArrow, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
-                backgroundSize)));
-        returnToMenu.setPrefHeight(50);
-        returnToMenu.setPrefWidth(50);
-        buttonHbox.getChildren().add(returnToMenu);
+        ReturnButton returnButton = new ReturnButton();
+        buttonHbox.getChildren().add(returnButton);
         pane.setTop(buttonHbox);
-        returnToMenu.setOnAction(event -> backToMainMenu());
+        returnButton.setOnAction(event -> backToMainMenu());
     }
 
     public void stylizeLabel(Label label, String string, Properties properties, String propertyKey)

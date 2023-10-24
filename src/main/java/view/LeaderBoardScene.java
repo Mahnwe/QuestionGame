@@ -1,20 +1,20 @@
 package view;
 
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.control.Tooltip;
-import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import model.*;
-import util.*;
+import model.AchievementManager;
+import util.BackgroundCreator;
+import util.FileUtil;
+import util.ReturnButton;
+import util.UtilStringStorage;
 
-import java.io.*;
+import java.io.File;
 
 public class LeaderBoardScene extends Scene
 {
@@ -72,34 +72,18 @@ public class LeaderBoardScene extends Scene
 
     public void createBackground()
     {
-        BackgroundCreator menuBackground = new BackgroundCreator(PathUtil.MENU_BACKGROUND);
-        Image menuSceneBackground = menuBackground.createBackground();
-        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
-        BackgroundImage backgroundImage = new BackgroundImage(menuSceneBackground, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
-                backgroundSize);
+        BackgroundImage backgroundImage = BackgroundCreator.createMenuBackground();
         borderPane.setBackground(new Background(backgroundImage));
     }
 
     public void createReturnButton()
     {
-        IconCreator returnArrow = new IconCreator(PathUtil.BACK_ARROW);
-        Image backArrow = returnArrow.createImage().getImage();
-
         HBox buttonHbox = new HBox();
-        Button returnToMenu = new Button();
-        returnToMenu.setPrefHeight(50);
-        returnToMenu.setPrefWidth(50);
+        ReturnButton returnButton = new ReturnButton();
 
-        Tooltip returnTooltip = new Tooltip(UtilStringStorage.returnButton);
-        returnToMenu.setTooltip(returnTooltip);
-
-        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
-        returnToMenu.setBackground(new Background(new BackgroundImage(backArrow, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
-                backgroundSize)));
-
-        buttonHbox.getChildren().add(returnToMenu);
+        buttonHbox.getChildren().add(returnButton);
         leaderBoardVBox.getChildren().add(buttonHbox);
-        returnToMenu.setOnAction(event -> backToMainMenu());
+        returnButton.setOnAction(event -> backToMainMenu());
     }
 
     public void backToMainMenu()

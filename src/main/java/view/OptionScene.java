@@ -345,11 +345,7 @@ public class OptionScene extends Scene {
         cupFile.setProperty("goldCup", "0");
         cupFile.setProperty("silverCup", "0");
         cupFile.setProperty("bronzeCup", "0");
-        try {
-            cupFile.store(new FileWriter(PathUtil.CUP_FILE), "");
-        } catch (IOException e) {
-
-        }
+        FileUtil.storeCupFile();
     }
 
     public void resetPerfectFile()
@@ -357,10 +353,6 @@ public class OptionScene extends Scene {
         perfectFile.setProperty("perfectScore10", "0");
         perfectFile.setProperty("perfectScore15", "0");
         perfectFile.setProperty("perfectScore20", "0");
-        try {
-            perfectFile.store(new FileWriter(PathUtil.PERFECT_SCORE_FILE), "");
-        } catch (IOException e) {
-
-        }
+        FileUtil.storePerfectFile();
     }
 }

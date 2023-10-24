@@ -13,13 +13,8 @@ import javafx.stage.Stage;
 import model.Achievement;
 import model.AchievementManager;
 import model.SoundManager;
-import util.GameTimer;
-import util.IconCreator;
-import util.PathUtil;
-import util.UtilStringStorage;
+import util.*;
 
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Properties;
 
 public class ResultScene extends VBox
@@ -89,6 +84,8 @@ public class ResultScene extends VBox
             cupLabel.setTextFill(Color.GHOSTWHITE);
             gameResult.getChildren().add(cupLabel);
         }
+        FileUtil.storePerfectFile();
+        FileUtil.storeCupFile();
     }
 
     public void setUpLabelAndTimer()
@@ -230,16 +227,7 @@ public class ResultScene extends VBox
 
     public void backToMainMenu()
     {
-        try {
-            perfectScoreFile.store(new FileWriter(PathUtil.PERFECT_SCORE_FILE), "");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        try {
-            cupFile.store(new FileWriter(PathUtil.CUP_FILE), "");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+
         MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
         stage.setScene(menuScene);
         returnToMenuMusic = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);

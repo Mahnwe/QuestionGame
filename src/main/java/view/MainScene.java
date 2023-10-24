@@ -5,21 +5,21 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
-import javafx.scene.layout.*;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.ImagePattern;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import model.*;
-import util.BackgroundCreator;
-import util.GameTimer;
-import util.PathUtil;
-import util.UtilStringStorage;
+import model.AchievementManager;
+import model.GameHandler;
+import model.Player;
+import model.SoundManager;
+import util.*;
 
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Properties;
 
 
@@ -123,15 +123,7 @@ public class MainScene extends Scene
 
     public void saveScoreInFile()
     {
-        try {
-            boolean append = true;
-            FileWriter fw = new FileWriter(saveFile.getAbsoluteFile(), append);
-            try (BufferedWriter bw = new BufferedWriter(fw)) {
-                bw.write(UtilStringStorage.playerNameInfile +" "+ playerInfoScene.getPlayer().getPlayerName() + "  " + UtilStringStorage.scoreLabelInfile +" "+ playerInfoScene.getPlayer().getPlayerScore() + " "+ UtilStringStorage.scoreOn +" "+gameHandler.getQuestionCount() + " "+UtilStringStorage.timerLabelInfile +" "+ GameTimer.getElapsedMinutes() +" "+ UtilStringStorage.gameMinutes +" "+ GameTimer.getSecondsDisplay() +" "+ UtilStringStorage.gameSecondes + "\n");
-            }
-        }catch (IOException e) {
-            e.printStackTrace();
-        }
+        FileUtil.writeInSaveFile(saveFile,UtilStringStorage.playerNameInfile +" "+ playerInfoScene.getPlayer().getPlayerName() + "  " + UtilStringStorage.scoreLabelInfile +" "+ playerInfoScene.getPlayer().getPlayerScore() + " "+ UtilStringStorage.scoreOn +" "+gameHandler.getQuestionCount() + " "+UtilStringStorage.timerLabelInfile +" "+ GameTimer.getElapsedMinutes() +" "+ UtilStringStorage.gameMinutes +" "+ GameTimer.getSecondsDisplay() +" "+ UtilStringStorage.gameSecondes + "\n");
     }
 
     public void checkGameEnding()

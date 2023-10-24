@@ -12,19 +12,14 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.*;
-import util.BackgroundCreator;
-import util.IconCreator;
-import util.PathUtil;
-import util.UtilStringStorage;
+import util.*;
 
 import java.io.*;
 
 public class LeaderBoardScene extends Scene
 {
 
-    private final File saveFile;
-
-    private StringBuilder stringBuilder;
+    private final StringBuilder stringBuilder;
     private final Stage stage;
     private final AchievementManager achievementManager;
     private final VBox leaderBoardVBox;
@@ -33,10 +28,9 @@ public class LeaderBoardScene extends Scene
     public LeaderBoardScene(ScrollPane pane, File saveFile, Stage stage, AchievementManager achievementManager)
     {
         super(pane);
-        this.saveFile = saveFile;
         this.stage = stage;
         this.achievementManager = achievementManager;
-        readFile();
+        stringBuilder = FileUtil.readSaveFile(saveFile);
 
         pane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
         pane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
@@ -106,22 +100,6 @@ public class LeaderBoardScene extends Scene
         buttonHbox.getChildren().add(returnToMenu);
         leaderBoardVBox.getChildren().add(buttonHbox);
         returnToMenu.setOnAction(event -> backToMainMenu());
-    }
-
-    public void readFile()
-    {
-        stringBuilder = new StringBuilder();
-        try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(saveFile));
-            String line;
-            while((line = bufferedReader.readLine()) != null)
-            {
-                stringBuilder.append(line).append("\n");
-            }
-            bufferedReader.close();
-        } catch (IOException e) {
-
-        }
     }
 
     public void backToMainMenu()

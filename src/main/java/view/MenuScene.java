@@ -44,10 +44,8 @@ public class MenuScene extends Scene
         pane.setPrefWidth(900);
         pane.setPrefHeight(500);
 
-
-
         this.gameHandler = new GameHandler();
-        saveFile = new File("./src/main/resources/SaveFile/saveScoresFile");
+        saveFile = FileUtil.saveFile;
 
         this.achievementManager = achievementManager;
 

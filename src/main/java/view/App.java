@@ -18,6 +18,7 @@ public class App extends Application
     public void start(Stage stage)
     {
         UtilTranslateString utilTranslateString = new UtilTranslateString();
+        FileUtil.createSaveFile();
         FileUtil.loadFile(FileUtil.perfectScoreFile, PathUtil.PERFECT_SCORE_FILE);
         FileUtil.loadFile(FileUtil.cupFile, PathUtil.CUP_FILE);
         LanguageScene languageScene = new LanguageScene(new BorderPane());

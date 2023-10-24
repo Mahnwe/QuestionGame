@@ -33,6 +33,7 @@ public class QuestionInterface extends BorderPane
             BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT));
     private Label explanation;
     public static MediaPlayer soundEffectToStop;
+    private GridPane gridPane;
 
     public QuestionInterface(BorderPane questionPane, Question question)
     {
@@ -44,7 +45,19 @@ public class QuestionInterface extends BorderPane
 
         modifyConfirmAlert();
 
+        createGridPane();
         createView();
+    }
+
+    public void createGridPane()
+    {
+        gridPane = new GridPane();
+        gridPane.setHgap(10);
+        gridPane.setVgap(40);
+        gridPane.addColumn(5);
+        gridPane.addRow(4);
+        gridPane.setTranslateY(40);
+        gridPane.setTranslateX(100);
     }
 
     public void createGameSpace()
@@ -103,26 +116,26 @@ public class QuestionInterface extends BorderPane
             answerButton1 = new Button(question.getAnswerList().get(0));
             answerButton1.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
             setAnswerButtonOnAction(answerButton1);
-            placeButton(answerButton1, 50, 90);
+            gridPane.add(answerButton1, 1, 1);
 
             answerButton2 = new Button(question.getAnswerList().get(1));
             answerButton2.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
             setAnswerButtonOnAction(answerButton2);
-            placeButton(answerButton2, 85, 90);
+            gridPane.add(answerButton2, 1, 2);
 
             answerButton3 = new Button(question.getAnswerList().get(2));
             answerButton3.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
             setAnswerButtonOnAction(answerButton3);
-            placeButton(answerButton3, -4, 350);
+            gridPane.add(answerButton3, 5, 1);
 
             answerButton4 = new Button(question.getAnswerList().get(3));
             answerButton4.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
             setAnswerButtonOnAction(answerButton4);
-            placeButton(answerButton4, 32, 350);
+            gridPane.add(answerButton4, 5, 2);
 
             nextQuestionButton = new Button(UtilStringStorage.nextQuestionButton);
             nextQuestionButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
-            placeButton(nextQuestionButton, 80, 200);
+            gridPane.add(nextQuestionButton, 3, 3);
             nextQuestionButton.setDisable(true);
     }
 
@@ -135,11 +148,7 @@ public class QuestionInterface extends BorderPane
     public void initGameSpace()
     {
         game.getChildren().add(createStatArea(questionToAsk));
-        game.getChildren().add(answerButton1);
-        game.getChildren().add(answerButton2);
-        game.getChildren().add(answerButton3);
-        game.getChildren().add(answerButton4);
-        game.getChildren().add(nextQuestionButton);
+        game.getChildren().add(gridPane);
         questionPane.setCenter(game);
     }
 
@@ -176,7 +185,7 @@ public class QuestionInterface extends BorderPane
     private void displayGoodAnswer()
     {
         VBox displayResult = new VBox();
-        displayResult.setTranslateY(180);
+        displayResult.setTranslateY(160);
         displayResult.setPrefHeight(80);
         displayResult.setBorder(border);
 
@@ -200,12 +209,12 @@ public class QuestionInterface extends BorderPane
         Label badResult = new Label(UtilStringStorage.badAnswerLabel);
         badResult.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         badResult.setTextFill(Color.GHOSTWHITE);
-        badResult.setTranslateY(120);
+        badResult.setTranslateY(100);
 
         explanation = new Label(question.getExplanation());
         explanation.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
         explanation.setTextFill(Color.GHOSTWHITE);
-        explanation.setTranslateY(140);
+        explanation.setTranslateY(120);
 
         game.getChildren().add(badResult);
         game.getChildren().add(explanation);

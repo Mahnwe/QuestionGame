@@ -1,10 +1,15 @@
 package util;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.*;
 import java.util.Properties;
 
+
 public class FileUtil {
 
+    private static final Logger logger = LogManager.getLogger(FileUtil.class);
     public static Properties perfectScoreFile = new Properties();
     public static Properties cupFile = new Properties();
     public static File saveFile;
@@ -14,7 +19,8 @@ public class FileUtil {
         try {
             properties.load(new FileInputStream(filePath));
         } catch (IOException e) {
-            System.err.println("File not found"+ properties+ filePath);
+            logger.error("File not found");
+            logger.error(filePath);
 
         }
     }
@@ -36,7 +42,7 @@ public class FileUtil {
             }
             bufferedReader.close();
         } catch (IOException e) {
-
+                logger.error("Save file can't be read");
         }
         return stringBuilder;
     }
@@ -59,6 +65,7 @@ public class FileUtil {
         try {
             perfectScoreFile.store(new FileWriter(PathUtil.PERFECT_SCORE_FILE), "");
         } catch (IOException e) {
+            logger.error("Perfect score file can't be store");
         }
     }
 
@@ -67,6 +74,7 @@ public class FileUtil {
         try {
             cupFile.store(new FileWriter(PathUtil.CUP_FILE), "");
         } catch (IOException e) {
+            logger.error("Cup file can't be store");
         }
     }
 }

@@ -4,17 +4,17 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Player;
-import util.BackgroundCreator;
-import util.GameTimer;
-import util.UtilStringStorage;
+import model.SoundManager;
+import util.*;
 
 public class PlayerInfoScene extends Scene
 {
@@ -124,26 +124,52 @@ public class PlayerInfoScene extends Scene
         playerInfos.setMinWidth(150);
         playerInfos.setMaxWidth(150);
 
-        Button volumeInGameButton = new Button("Volume");
-        volumeInGameButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
-        playerInfos.getChildren().add(volumeInGameButton);
-        volumeInGameButton.setTranslateY(250);
-        volumeInGameButton.setTranslateX(35);
-        volumeInGameButton.setOnAction(event -> {
-            Stage volumeStage = new Stage();
-            volumeStage.setTitle("Volume");
-            volumeStage.setMinHeight(300);
-            volumeStage.setMinWidth(800);
-            volumeStage.setMaxHeight(300);
-            volumeStage.setMaxWidth(800);
-            VolumeInGameScene volumeInGameScene = new VolumeInGameScene(new BorderPane(), volumeStage);
-            volumeStage.setScene(volumeInGameScene);
-            volumeStage.initModality(Modality.APPLICATION_MODAL);
-            volumeStage.show();
-        });
+        createSliderArea();
 
     }
 
+    public void createSliderArea()
+    {
+
+        Label volumeLabel = new Label(UtilStringStorage.volumeLabel);
+        volumeLabel.setTranslateY(120);
+        volumeLabel.setTranslateX(40);
+        volumeLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 18));
+        volumeLabel.setTextFill(Color.GHOSTWHITE);
+        playerInfos.getChildren().add(volumeLabel);
+
+        IconCreator muteIcon = new IconCreator(PathUtil.WHITE_MUTE_ICON);
+        Image muteImage = muteIcon.createImage().getImage();
+
+        Button muteButton = new Button();
+        muteButton.setPrefSize(30,30);
+        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
+        muteButton.setBackground(new Background(new BackgroundImage(muteImage, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+                backgroundSize)));
+        playerInfos.getChildren().add(muteButton);
+        muteButton.setTranslateY(187);
+        muteButton.setTranslateX(55);
+
+
+        Slider volumeSlider = new Slider(0, 10, 5);
+        volumeSlider.setMaxWidth(200);
+        volumeSlider.setMaxHeight(40);
+        volumeSlider.setTranslateY(105);
+        volumeSlider.setShowTickMarks(true);
+        volumeSlider.setShowTickLabels(true);
+        volumeSlider.setMajorTickUnit(1f);
+        volumeSlider.setBlockIncrement(1f);
+        if(SoundManager.soundVolume == 0.0) {
+            VolumeInGameHandler.isMute = true;
+            volumeSlider.setDisable(true);
+        }
+        VolumeInGameHandler.setUpMuteButton(muteButton, volumeSlider);
+        playerInfos.getChildren().add(volumeSlider);
+        volumeSlider.setOnDragDetected(event -> VolumeInGameHandler.setVolumeFromSlider(volumeSlider.getValue()));
+        volumeSlider.setOnMouseClicked(event -> VolumeInGameHandler.setVolumeFromSlider(volumeSlider.getValue()));
+        volumeSlider.setOnMouseReleased(event -> VolumeInGameHandler.setVolumeFromSlider(volumeSlider.getValue()));
+
+    }
     public void increaseScore()
     {
         player.setPlayerScore(player.getPlayerScore()+1);

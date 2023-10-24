@@ -1,6 +1,7 @@
 package view;
 
 import javafx.scene.Scene;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
@@ -49,6 +50,13 @@ public class CreditScene extends Scene
         label.setTranslateY(translateY);
     }
 
+    public void setUpLinkLabels(Hyperlink hyperlink, int labelSize, int translateX, int translateY)
+    {
+        hyperlink.setFont(Font.font("Impact", FontWeight.EXTRA_LIGHT, labelSize));
+        hyperlink.setTranslateX(translateX);
+        hyperlink.setTranslateY(translateY);
+    }
+
     public void createCreditArea()
     {
         creditVbox = new VBox();
@@ -85,15 +93,15 @@ public class CreditScene extends Scene
         Label linkLabel = new Label();
         setUpLabels(linkLabel, UtilStringStorage.linkLabel, 19, 630, -100);
 
-        Label iconLinkLabel = new Label();
-        setUpLabels(iconLinkLabel, UtilStringStorage.iconLink, 16, 550, -70);
+        Hyperlink hyperLinkIcon = App.hyperLinkIcon;
+        setUpLinkLabels(hyperLinkIcon, 16, 570, -70);
 
-        Label backgroundLinkLabel = new Label();
-        setUpLabels(backgroundLinkLabel, UtilStringStorage.backgroundLink, 16, 550, -50);
+        Hyperlink hyperlinkBackground = App.hyperLinkBackground;
+        setUpLinkLabels(hyperlinkBackground, 16, 570, -50);
 
         creditVbox.getChildren().add(linkLabel);
-        creditVbox.getChildren().add(iconLinkLabel);
-        creditVbox.getChildren().add(backgroundLinkLabel);
+        creditVbox.getChildren().add(hyperLinkIcon);
+        creditVbox.getChildren().add(hyperlinkBackground);
 
         pane.setCenter(creditVbox);
 

@@ -10,6 +10,8 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import util.*;
 
 import java.io.BufferedWriter;
@@ -21,6 +23,7 @@ import java.util.Properties;
 
 public class OptionScene extends Scene {
 
+    private static final Logger logger = LogManager.getLogger(FileUtil.class);
     private final AchievementManager achievementManager;
     private final Stage stage;
     private final File saveFile;
@@ -323,6 +326,7 @@ public class OptionScene extends Scene {
             }
         }catch (IOException e) {
             e.printStackTrace();
+            logger.error("Save file can't be reset");
         }
     }
 

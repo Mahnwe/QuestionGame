@@ -4,6 +4,8 @@ import javafx.geometry.Insets;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.ImagePattern;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -11,6 +13,7 @@ import java.io.InputStream;
 
 public class BackgroundCreator
 {
+    private static final Logger logger = LogManager.getLogger(BackgroundCreator.class);
     private final String backgroundImagePath;
     private Image image;
     private InputStream stream;
@@ -30,6 +33,7 @@ public class BackgroundCreator
         } catch (FileNotFoundException fileNotFound)
         {
             fileNotFound.printStackTrace();
+            logger.error("Background can't be create");
         }
         return image;
     }

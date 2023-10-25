@@ -21,7 +21,6 @@ public class FileUtil {
         } catch (IOException e) {
             logger.error("File not found");
             logger.error(filePath);
-
         }
     }
 
@@ -57,6 +56,7 @@ public class FileUtil {
             }
         }catch (IOException e) {
             e.printStackTrace();
+            logger.error("Can't write in save file");
         }
     }
 

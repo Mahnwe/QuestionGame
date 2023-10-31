@@ -2,6 +2,7 @@ package model;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import util.QuestionException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +33,8 @@ public class GameHandler
                     Question question = questionBank.getQuestionList().remove(randomQuestionIndex);
                     questionList.add(question);
                 }
-        } catch (IndexOutOfBoundsException i) {
+                throw new QuestionException();
+        } catch (QuestionException questionException){
             logger.error("Question list can't be set");
         }
     }

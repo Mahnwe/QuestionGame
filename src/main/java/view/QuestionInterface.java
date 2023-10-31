@@ -34,7 +34,7 @@ public class QuestionInterface extends BorderPane
     private Boolean playerAnswer;
     private final Border border = new Border(new BorderStroke(Color.BLACK,
             BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT));
-    private Label explanation;
+
     public static MediaPlayer soundEffectToStop;
     private GridPane gridPane;
 
@@ -95,30 +95,30 @@ public class QuestionInterface extends BorderPane
 
     public void createAnswerButton()
     {
-            answerButton1 = new Button(question.getAnswerList().get(0));
-            answerButton1.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
-            setAnswerButtonOnAction(answerButton1);
+            answerButton1 = setUpAnswerButton(0);
             gridPane.add(answerButton1, 1, 1);
 
-            answerButton2 = new Button(question.getAnswerList().get(1));
-            answerButton2.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
-            setAnswerButtonOnAction(answerButton2);
+            answerButton2 = setUpAnswerButton(1);
             gridPane.add(answerButton2, 1, 2);
 
-            answerButton3 = new Button(question.getAnswerList().get(2));
-            answerButton3.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
-            setAnswerButtonOnAction(answerButton3);
+            answerButton3 = setUpAnswerButton(2);
             gridPane.add(answerButton3, 3, 1);
 
-            answerButton4 = new Button(question.getAnswerList().get(3));
-            answerButton4.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
-            setAnswerButtonOnAction(answerButton4);
+            answerButton4 = setUpAnswerButton(3);
             gridPane.add(answerButton4, 3, 2);
 
             nextQuestionButton = new Button(UtilStringStorage.nextQuestionButton);
             nextQuestionButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
             gridPane.add(nextQuestionButton, 2, 3);
             nextQuestionButton.setDisable(true);
+    }
+
+    public Button setUpAnswerButton(int questionIndex)
+    {
+        Button button = new Button(question.getAnswerList().get(questionIndex));
+        button.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
+        setAnswerButtonOnAction(button);
+        return button;
     }
 
     public void initGameSpace()
@@ -143,7 +143,7 @@ public class QuestionInterface extends BorderPane
               playerAnswer = true;
               button.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
               soundEffectToStop = SoundManager.playMusic(PathUtil.GOOD_ANSWER_SOUND_EFFECT);
-              displayGoodAnswer();
+              displayAnswer(UtilStringStorage.goodAnswerLabel);
           }
           else
           {
@@ -152,47 +152,25 @@ public class QuestionInterface extends BorderPane
               button.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
               showGoodAnswer(answerButton1); showGoodAnswer(answerButton2);
               showGoodAnswer(answerButton3); showGoodAnswer(answerButton4);
-              displayBadAnswer();
+              displayAnswer(UtilStringStorage.badAnswerLabel);
           }
           nextQuestionButton.setDisable(false);
           disableButtons();
     }
 
-    private void displayGoodAnswer()
+    private void displayAnswer(String answerLabel)
     {
-        VBox displayResult = new VBox();
-        displayResult.setTranslateY(160);
-        displayResult.setPrefHeight(80);
-        displayResult.setBorder(border);
-
-        Label goodResult = new Label(UtilStringStorage.goodAnswerLabel);
+        Label goodResult = new Label(answerLabel);
         goodResult.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         goodResult.setTextFill(Color.GHOSTWHITE);
+        goodResult.setTranslateY(100);
 
-        explanation = new Label(question.getExplanation());
-        explanation.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
-        explanation.setTextFill(Color.GHOSTWHITE);
-        explanation.setTranslateY(20);
-
-        displayResult.getChildren().add(goodResult);
-        displayResult.getChildren().add(explanation);
-        game.getChildren().add(displayResult);
-
-    }
-
-    private void displayBadAnswer()
-    {
-        Label badResult = new Label(UtilStringStorage.badAnswerLabel);
-        badResult.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
-        badResult.setTextFill(Color.GHOSTWHITE);
-        badResult.setTranslateY(100);
-
-        explanation = new Label(question.getExplanation());
+        Label explanation = new Label(question.getExplanation());
         explanation.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
         explanation.setTextFill(Color.GHOSTWHITE);
         explanation.setTranslateY(120);
 
-        game.getChildren().add(badResult);
+        game.getChildren().add(goodResult);
         game.getChildren().add(explanation);
     }
 

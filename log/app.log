@@ -1,2 +1,2 @@
-2023-10-25 02:49:30.577 ERROR [JavaFX Application Thread] [util.FileUtil.readSaveFile(FileUtil.java:45)] - Save file can't be read
-2023-10-25 02:52:39.396 ERROR [JavaFX Application Thread] [util.UtilTranslateString.loadFrTradFile(UtilTranslateString.java:37)] - French trad file can't be load
+2023-10-31 03:16:33.945 ERROR [JavaFX Application Thread] [util.UtilTranslateString.loadFrTradFile(UtilTranslateString.java:37)] - French trad file can't be load
+2023-10-31 03:21:41.335 ERROR [JavaFX Application Thread] [util.UtilTranslateString.loadFrTradFile(UtilTranslateString.java:37)] - French trad file can't be load

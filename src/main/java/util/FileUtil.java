@@ -16,11 +16,26 @@ public class FileUtil {
 
     public static void loadFile(Properties properties, final String filePath)
     {
+        FileInputStream fileInputStream = null;
         try {
-            properties.load(new FileInputStream(filePath));
+            fileInputStream = new FileInputStream(filePath);
+        } catch (FileNotFoundException e) {
+            logger.error("Stream can't be create");
+        }
+        try {
+            properties.load(fileInputStream);
         } catch (IOException e) {
             logger.error("File not found");
             logger.error(filePath);
+        }
+        finally {
+            if(fileInputStream != null) {
+                try {
+                    fileInputStream.close();
+                } catch (IOException e) {
+                    logger.error("Stream can't be close");
+                }
+            }
         }
     }
 

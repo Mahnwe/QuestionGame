@@ -4,13 +4,13 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.Achievement;
 import model.AchievementManager;
+import util.AchievementVbox;
 import util.BackgroundCreator;
 import util.ReturnButton;
 import util.UtilStringStorage;
@@ -106,17 +106,12 @@ public class AchievementScene extends Scene
         VBox goldCupAchievementVBox = new VBox();
 
         Label goldCupAchievementLabel = new Label();
-        goldCupAchievementLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));
         goldCupAchievementLabel.setText(UtilStringStorage.goldCupAchievementDescription);
 
-        ImageView goldCupImage = achievementManager.getAchievementsList().get(0).getLockImageView();
-
         goldCupAchievementInfo = new Label();
-        goldCupAchievementInfo.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));
 
-        goldCupAchievementVBox.getChildren().add(goldCupAchievementLabel);
-        goldCupAchievementVBox.getChildren().add(goldCupImage);
-        goldCupAchievementVBox.getChildren().add(goldCupAchievementInfo);
+        AchievementVbox.setAchievementVbox(goldCupAchievementVBox, goldCupAchievementLabel, achievementManager, 0, goldCupAchievementInfo);
+
         gridPane.add(goldCupAchievementVBox, 0, 0);
     }
     public void createSilverAchievementArea()
@@ -124,17 +119,12 @@ public class AchievementScene extends Scene
         VBox silverCupAchievementVBox = new VBox();
 
         Label silverCupAchievementLabel = new Label();
-        silverCupAchievementLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));
         silverCupAchievementLabel.setText(UtilStringStorage.silverCupAchievementDescription);
 
-        ImageView silverCupImage = achievementManager.getAchievementsList().get(1).getLockImageView();
-
         silverCupAchievementInfo = new Label();
-        silverCupAchievementInfo.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));
 
-        silverCupAchievementVBox.getChildren().add(silverCupAchievementLabel);
-        silverCupAchievementVBox.getChildren().add(silverCupImage);
-        silverCupAchievementVBox.getChildren().add(silverCupAchievementInfo);
+        AchievementVbox.setAchievementVbox(silverCupAchievementVBox, silverCupAchievementLabel, achievementManager, 1, silverCupAchievementInfo);
+
         gridPane.add(silverCupAchievementVBox, 1, 0);
     }
 
@@ -143,17 +133,12 @@ public class AchievementScene extends Scene
         VBox bronzeCupAchievementVBox = new VBox();
 
         Label bronzeCupAchievementLabel = new Label();
-        bronzeCupAchievementLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));
         bronzeCupAchievementLabel.setText(UtilStringStorage.bronzeCupAchievementDescription);
 
-        ImageView bronzeCupImage = achievementManager.getAchievementsList().get(2).getLockImageView();
-
         bronzeCupAchievementInfo = new Label();
-        bronzeCupAchievementInfo.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));
 
-        bronzeCupAchievementVBox.getChildren().add(bronzeCupAchievementLabel);
-        bronzeCupAchievementVBox.getChildren().add(bronzeCupImage);
-        bronzeCupAchievementVBox.getChildren().add(bronzeCupAchievementInfo);
+        AchievementVbox.setAchievementVbox(bronzeCupAchievementVBox, bronzeCupAchievementLabel, achievementManager, 2, bronzeCupAchievementInfo);
+
         gridPane.add(bronzeCupAchievementVBox, 2, 0);
     }
 
@@ -162,17 +147,12 @@ public class AchievementScene extends Scene
         VBox perfectScoreAchievementVBox = new VBox();
 
         Label perfectScoreAchievementLabel = new Label();
-        perfectScoreAchievementLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));
         perfectScoreAchievementLabel.setText(UtilStringStorage.perfectScore10Achievement);
 
-        ImageView perfectScoreImage = achievementManager.getAchievementsList().get(3).getLockImageView();
-
         perfectScoreAchievementInfo = new Label();
-        perfectScoreAchievementInfo.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));
 
-        perfectScoreAchievementVBox.getChildren().add(perfectScoreAchievementLabel);
-        perfectScoreAchievementVBox.getChildren().add(perfectScoreImage);
-        perfectScoreAchievementVBox.getChildren().add(perfectScoreAchievementInfo);
+        AchievementVbox.setAchievementVbox(perfectScoreAchievementVBox, perfectScoreAchievementLabel, achievementManager, 3, perfectScoreAchievementInfo);
+
         gridPane.add(perfectScoreAchievementVBox, 0, 1);
     }
 
@@ -181,17 +161,12 @@ public class AchievementScene extends Scene
         VBox perfectScoreAchievement15 = new VBox();
 
         Label perfectScoreAchievement15Label = new Label();
-        perfectScoreAchievement15Label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));
         perfectScoreAchievement15Label.setText(UtilStringStorage.perfectScore15Achievement);
 
-        ImageView perfectScore15Image = achievementManager.getAchievementsList().get(4).getLockImageView();
-
         perfectScoreAchievement15Info = new Label();
-        perfectScoreAchievement15Info.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));
 
-        perfectScoreAchievement15.getChildren().add(perfectScoreAchievement15Label);
-        perfectScoreAchievement15.getChildren().add(perfectScore15Image);
-        perfectScoreAchievement15.getChildren().add(perfectScoreAchievement15Info);
+        AchievementVbox.setAchievementVbox(perfectScoreAchievement15, perfectScoreAchievement15Label, achievementManager, 4, perfectScoreAchievement15Info);
+
         gridPane.add(perfectScoreAchievement15, 1, 1);
     }
 
@@ -200,17 +175,12 @@ public class AchievementScene extends Scene
         VBox perfectScoreAchievement20 = new VBox();
 
         Label perfectScoreAchievement20Label = new Label();
-        perfectScoreAchievement20Label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));
         perfectScoreAchievement20Label.setText(UtilStringStorage.perfectScore20Achievement);
 
-        ImageView perfectScore20Image = achievementManager.getAchievementsList().get(5).getLockImageView();
-
         perfectScoreAchievement20Info = new Label();
-        perfectScoreAchievement20Info.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));
 
-        perfectScoreAchievement20.getChildren().add(perfectScoreAchievement20Label);
-        perfectScoreAchievement20.getChildren().add(perfectScore20Image);
-        perfectScoreAchievement20.getChildren().add(perfectScoreAchievement20Info);
+        AchievementVbox.setAchievementVbox(perfectScoreAchievement20, perfectScoreAchievement20Label, achievementManager, 5, perfectScoreAchievement20Info);
+
         gridPane.add(perfectScoreAchievement20, 2, 1);
     }
 
@@ -219,17 +189,12 @@ public class AchievementScene extends Scene
         VBox secretAchievementBox = new VBox();
 
         secretAchievementLabel = new Label();
-        secretAchievementLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));
-
-        ImageView secretAchievementImage = achievementManager.getAchievementsList().get(6).getLockImageView();
-
-        secretAchievementInfo = new Label();
-        secretAchievementInfo.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));
         secretAchievementLabel.setText(UtilStringStorage.secretLabel);
 
-        secretAchievementBox.getChildren().add(secretAchievementLabel);
-        secretAchievementBox.getChildren().add(secretAchievementImage);
-        secretAchievementBox.getChildren().add(secretAchievementInfo);
+        secretAchievementInfo = new Label();
+
+        AchievementVbox.setAchievementVbox(secretAchievementBox, secretAchievementLabel, achievementManager, 6, secretAchievementInfo);
+
         gridPane.add(secretAchievementBox, 1,2);
 
     }

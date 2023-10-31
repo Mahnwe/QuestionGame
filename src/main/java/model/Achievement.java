@@ -14,10 +14,9 @@ public class Achievement
     private ImageView unlockImageView;
     public static NotificationAlert notificationAlert;
 
-    public Achievement(ImageView achievementImage, int condition, boolean isUnlock)
+    public Achievement(int condition, boolean isUnlock)
     {
         createIcons();
-        this.lockImageView = achievementImage;
         this.condition = condition;
         this.isUnlock = isUnlock;
     }

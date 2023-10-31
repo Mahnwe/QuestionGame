@@ -6,6 +6,9 @@ public class UtilStringStorage
     public static String gameTitle = "";
 
     // UTIL
+    public static String englishLanguageTooltip = "English";
+    public static String frenchLanguageTooltip = "Français";
+
     public static String returnButton = "";
     public static String validateButton = "";
     public static String yesButton = "";

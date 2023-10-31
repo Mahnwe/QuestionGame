@@ -74,7 +74,7 @@ public class OptionScene extends Scene {
         Label volumeLabel = new Label(UtilStringStorage.volumeLabel);
         volumeLabel.setTranslateY(20);
         volumeLabel.setTranslateX(368);
-        volumeLabel.setFont(Font.font(OPTION_POLICE_LABEL, FontWeight.EXTRA_BOLD, 16));
+        volumeLabel.setFont(Font.font(OPTION_POLICE_LABEL, FontWeight.EXTRA_BOLD, 17));
         volumeLabel.setTextFill(Color.BLACK);
         optionVbox.getChildren().add(volumeLabel);
 
@@ -136,31 +136,31 @@ public class OptionScene extends Scene {
     {
         VBox englishVbox = new VBox();
         Label englishLabel = new Label("Choose a language");
-        englishLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
+        englishLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 15));
 
-        engButton = new LanguageButton(PathUtil.ENGLISH_FLAG);
+        engButton = new LanguageButton(PathUtil.ENGLISH_FLAG, UtilStringStorage.englishLanguageTooltip);
 
         englishVbox.getChildren().add(englishLabel);
         englishVbox.getChildren().add(engButton);
-        englishVbox.setTranslateY(70);
+        englishVbox.setTranslateY(50);
         englishVbox.setTranslateX(200);
 
 
         VBox frenchVbox = new VBox();
         Label frenchLabel = new Label("Choisissez une langue");
-        frenchLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
+        frenchLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 15));
 
-        frButton = new LanguageButton(PathUtil.FRENCH_FLAG);
+        frButton = new LanguageButton(PathUtil.FRENCH_FLAG, UtilStringStorage.frenchLanguageTooltip);
 
         frenchVbox.getChildren().add(frenchLabel);
         frenchVbox.getChildren().add(frButton);
         frenchVbox.setTranslateX(450);
-        frenchVbox.setTranslateY(17);
+        frenchVbox.setTranslateY(-20);
 
         Label languageLabel = new Label(UtilStringStorage.languageLabel);
-        languageLabel.setFont(Font.font(OPTION_POLICE_LABEL, FontWeight.EXTRA_BOLD, 16));
+        languageLabel.setFont(Font.font(OPTION_POLICE_LABEL, FontWeight.EXTRA_BOLD, 17));
         languageLabel.setTextFill(Color.BLACK);
-        languageLabel.setTranslateY(60);
+        languageLabel.setTranslateY(40);
         languageLabel.setTranslateX(365);
 
         optionVbox.getChildren().add(languageLabel);
@@ -210,7 +210,7 @@ public class OptionScene extends Scene {
     {
         Button resetButton = new Button(UtilStringStorage.resetButton);
         placeButtonWithTranslation(resetButton);
-        resetButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
+        resetButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 15));
         Tooltip resetTooltip = new Tooltip(UtilStringStorage.resetTooltip);
         resetButton.setTooltip(resetTooltip);
 
@@ -225,7 +225,7 @@ public class OptionScene extends Scene {
         });
 
         Label resetLabel = new Label(UtilStringStorage.resetLabel);
-        resetLabel.setFont(Font.font(OPTION_POLICE_LABEL, FontWeight.EXTRA_BOLD, 16));
+        resetLabel.setFont(Font.font(OPTION_POLICE_LABEL, FontWeight.EXTRA_BOLD, 17));
         resetLabel.setTextFill(Color.BLACK);
         placeLabelWithTranslation(resetLabel);
 
@@ -237,11 +237,11 @@ public class OptionScene extends Scene {
     {
         if(button.getText().equals("Réinitialiser sauvegarde"))
         {
-            button.setTranslateY(100);
-            button.setTranslateX(295);
+            button.setTranslateY(70);
+            button.setTranslateX(290);
         }
         else {
-            button.setTranslateY(120);
+            button.setTranslateY(90);
             button.setTranslateX(345);
         }
     }
@@ -249,11 +249,11 @@ public class OptionScene extends Scene {
     public void placeLabelWithTranslation(Label label)
     {
         if(label.getText().equals("Sauvegarde")) {
-            label.setTranslateY(70);
+            label.setTranslateY(50);
             label.setTranslateX(355);
         }
         else {
-            label.setTranslateY(70);
+            label.setTranslateY(50);
             label.setTranslateX(380);
         }
     }

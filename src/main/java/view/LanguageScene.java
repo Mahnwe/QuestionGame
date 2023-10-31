@@ -12,6 +12,7 @@ import javafx.scene.text.FontWeight;
 import util.BackgroundCreator;
 import util.LanguageButton;
 import util.PathUtil;
+import util.UtilStringStorage;
 
 public class LanguageScene extends Scene
 {
@@ -42,7 +43,7 @@ public class LanguageScene extends Scene
         vBox.setTranslateX(100);
         vBox.setTranslateY(100);
         Label launcherLabel = new Label("Launcher");
-        launcherLabel.setFont(Font.font("Impact", FontWeight.EXTRA_LIGHT, 25));
+        launcherLabel.setFont(Font.font("Impact", FontWeight.BOLD, 25));
         launcherLabel.setTranslateX(85);
         vBox.getChildren().add(launcherLabel);
         pane.setCenter(vBox);
@@ -58,9 +59,9 @@ public class LanguageScene extends Scene
     {
         VBox englishVbox = new VBox();
         Label englishLabel = new Label("Choose a language");
-        englishLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
+        englishLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 15));
 
-        engButton = new LanguageButton(PathUtil.ENGLISH_FLAG);
+        engButton = new LanguageButton(PathUtil.ENGLISH_FLAG, UtilStringStorage.englishLanguageTooltip);
 
         englishVbox.getChildren().add(englishLabel);
         englishVbox.getChildren().add(engButton);
@@ -69,14 +70,14 @@ public class LanguageScene extends Scene
 
         VBox frenchVbox = new VBox();
         Label frenchLabel = new Label("Choisissez une langue");
-        frenchLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
+        frenchLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 15));
 
-        frButton = new LanguageButton(PathUtil.FRENCH_FLAG);
+        frButton = new LanguageButton(PathUtil.FRENCH_FLAG, UtilStringStorage.frenchLanguageTooltip);
 
         frenchVbox.getChildren().add(frenchLabel);
         frenchVbox.getChildren().add(frButton);
         frenchVbox.setTranslateX(170);
-        frenchVbox.setTranslateY(27);
+        frenchVbox.setTranslateY(12.5);
 
         vBox.getChildren().add(englishVbox);
         vBox.getChildren().add(frenchVbox);

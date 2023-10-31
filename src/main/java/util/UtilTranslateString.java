@@ -45,6 +45,8 @@ public class UtilTranslateString {
         UtilStringStorage.gameTitle = engTradFile.getProperty("engGameTitle");
 
         // UTIL
+        UtilStringStorage.englishLanguageTooltip = engTradFile.getProperty("englishLanguageTooltip");
+        UtilStringStorage.frenchLanguageTooltip = engTradFile.getProperty("frenchLanguageTooltip");
         UtilStringStorage.returnButton = engTradFile.getProperty("returnButton");
         UtilStringStorage.validateButton = engTradFile.getProperty("validateButton");
         UtilStringStorage.yesButton = engTradFile.getProperty("yesButton");
@@ -580,6 +582,8 @@ public class UtilTranslateString {
         UtilStringStorage.gameTitle = frTradFile.getProperty("frGameTitle");
 
         // UTIL
+        UtilStringStorage.englishLanguageTooltip = frTradFile.getProperty("englishLanguageTooltip");
+        UtilStringStorage.frenchLanguageTooltip = frTradFile.getProperty("frenchLanguageTooltip");
         UtilStringStorage.returnButton = frTradFile.getProperty("returnButton");
         UtilStringStorage.validateButton = frTradFile.getProperty("validateButton");
         UtilStringStorage.yesButton = frTradFile.getProperty("yesButton");

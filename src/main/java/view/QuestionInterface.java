@@ -1,15 +1,18 @@
 package view;
 
 import javafx.geometry.Insets;
-import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import model.*;
-import util.IconCreator;
+import model.Question;
+import model.QuestionStorage;
+import model.SoundManager;
 import util.PathUtil;
 import util.UtilStringStorage;
 
@@ -22,7 +25,7 @@ public class QuestionInterface extends BorderPane
     private VBox game;
     private final Question question;
     private Label questionToAsk;
-    private final Alert confirmAlert;
+    private final ConfirmAlert confirmAlert;
     private Button answerButton1;
     private Button answerButton2;
     private Button answerButton3;
@@ -41,9 +44,7 @@ public class QuestionInterface extends BorderPane
         this.questionPane = questionPane;
         this.question = question;
         this.questionList = new QuestionStorage();
-        this.confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
-
-        modifyConfirmAlert();
+        this.confirmAlert = new ConfirmAlert(Alert.AlertType.CONFIRMATION);
 
         createGridPane();
         createView();
@@ -67,25 +68,6 @@ public class QuestionInterface extends BorderPane
         game.setBorder(new Border(new BorderStroke(Color.BLACK,BorderStrokeStyle.SOLID,CornerRadii.EMPTY,BorderWidths.DEFAULT)));
         game.setPrefWidth(750);
         game.setPrefHeight(250);
-    }
-
-    public void modifyConfirmAlert()
-    {
-        confirmAlert.setTitle(UtilStringStorage.confirmAlertWindow);
-        confirmAlert.setHeaderText(UtilStringStorage.askToConfirm);
-
-        IconCreator iconCreator = new IconCreator(PathUtil.QUESTION_MARK_TEST);
-        ImageView backgroundImage = iconCreator.createImage();
-        backgroundImage.setFitHeight(150);
-        confirmAlert.setGraphic(backgroundImage);
-
-        Button confirmButton = (Button) confirmAlert.getDialogPane().lookupButton(ButtonType.OK);
-        confirmButton.setText(UtilStringStorage.yesButton);
-        placeButton(confirmButton, -20, -140);
-
-        Button cancelButton = (Button) confirmAlert.getDialogPane().lookupButton(ButtonType.CANCEL);
-        cancelButton.setText(UtilStringStorage.noButton);
-        placeButton(cancelButton, -20, -40);
     }
 
     public void createQuestionLabel()
@@ -137,12 +119,6 @@ public class QuestionInterface extends BorderPane
             nextQuestionButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
             gridPane.add(nextQuestionButton, 2, 3);
             nextQuestionButton.setDisable(true);
-    }
-
-    public void placeButton(Button button, int translateY, int translateX)
-    {
-        button.setTranslateY(translateY);
-        button.setTranslateX(translateX);
     }
 
     public void initGameSpace()

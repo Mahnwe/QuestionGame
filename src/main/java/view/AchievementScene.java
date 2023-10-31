@@ -199,43 +199,28 @@ public class AchievementScene extends Scene
 
     }
 
+    public void checkPropertyKeyNumber(Properties properties, String propertyKey, int achievementIndex, Label achievementInfo)
+    {
+        String checkIntInFile = properties.getProperty(propertyKey);
+        String numberInKey = checkAndGetNumberInPropertyKey(checkIntInFile);
+        int nbrOfCup = Integer.parseInt(numberInKey);
+        achievementManager.getAchievementsList().get(achievementIndex).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(achievementIndex), nbrOfCup);
+        checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(achievementIndex), achievementInfo);
+    }
+
     public void checkAchievements()
     {
-        String checkIntInGoldFile = cupFile.getProperty("goldCup");
-        String numberOfGoldCup = checkAndGetNumberOfCup(checkIntInGoldFile);
-        int nbrOfGoldCup = Integer.parseInt(numberOfGoldCup);
-        achievementManager.getAchievementsList().get(0).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(0), nbrOfGoldCup);
-        checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(0), goldCupAchievementInfo);
+        checkPropertyKeyNumber(cupFile, "goldCup", 0, goldCupAchievementInfo);
 
-        String checkIntInSilverFile = cupFile.getProperty("silverCup");
-        String numberOfSilverCup = checkAndGetNumberOfCup(checkIntInSilverFile);
-        int nbrOfSilverCup = Integer.parseInt(numberOfSilverCup);
-        achievementManager.getAchievementsList().get(1).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(1), nbrOfSilverCup);
-        checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(1), silverCupAchievementInfo);
+        checkPropertyKeyNumber(cupFile,"silverCup", 1, silverCupAchievementInfo);
 
-        String checkIntInBronzeFile = cupFile.getProperty("bronzeCup");
-        String numberOfBronzeCup = checkAndGetNumberOfCup(checkIntInBronzeFile);
-        int nbrOfBronzeCup = Integer.parseInt(numberOfBronzeCup);
-        achievementManager.getAchievementsList().get(2).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(2), nbrOfBronzeCup);
-        checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(2), bronzeCupAchievementInfo);
+        checkPropertyKeyNumber(cupFile,"bronzeCup", 2, bronzeCupAchievementInfo);
 
-        String checkPerfectScoreFile10 = String.valueOf(perfectScoreFile.getProperty("perfectScore10"));
-        String numberOfPerfectScore10 = checkAndGetNumberOfPerfectScore(checkPerfectScoreFile10);
-        int nbrPerfectScore10 = Integer.parseInt(numberOfPerfectScore10);
-        achievementManager.getAchievementsList().get(3).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(3), nbrPerfectScore10);
-        checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(3), perfectScoreAchievementInfo);
+        checkPropertyKeyNumber(perfectScoreFile, "perfectScore10", 3, perfectScoreAchievementInfo);
 
-        String checkPerfectScoreFile15 = String.valueOf(perfectScoreFile.getProperty("perfectScore15"));
-        String numberOfPerfectScore15 = checkAndGetNumberOfPerfectScore(checkPerfectScoreFile15);
-        int nbrPerfectScore15 = Integer.parseInt(numberOfPerfectScore15);
-        achievementManager.getAchievementsList().get(4).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(4), nbrPerfectScore15);
-        checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(4), perfectScoreAchievement15Info);
+        checkPropertyKeyNumber(perfectScoreFile, "perfectScore15", 4, perfectScoreAchievement15Info);
 
-        String checkPerfectScoreFile20 = String.valueOf(perfectScoreFile.getProperty("perfectScore20"));
-        String numberOfPerfectScore20 = checkAndGetNumberOfPerfectScore(checkPerfectScoreFile20);
-        int nbrPerfectScore20 = Integer.parseInt(numberOfPerfectScore20);
-        achievementManager.getAchievementsList().get(5).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(5), nbrPerfectScore20);
-        checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(5), perfectScoreAchievement20Info);
+        checkPropertyKeyNumber(perfectScoreFile, "perfectScore20", 5, perfectScoreAchievement20Info);
 
         int checkNbrOfAchievementUnlock = checkSecretAchievement();
         achievementManager.getAchievementsList().get(6).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(6), checkNbrOfAchievementUnlock);
@@ -281,15 +266,8 @@ public class AchievementScene extends Scene
         label.setText(unlockValue);
     }
 
-    public String checkAndGetNumberOfCup(String stringToCheck)
+    public String checkAndGetNumberInPropertyKey(String stringToCheck)
     {
-        String numberGetter;
-        numberGetter = stringToCheck;
-        return numberGetter;
-    }
-    public String checkAndGetNumberOfPerfectScore(String stringToCheck)
-    {
-        // THIS IS FOR PERFECT SCORE
         String numberGetter;
         numberGetter = stringToCheck;
         return numberGetter;

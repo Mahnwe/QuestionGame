@@ -18,7 +18,7 @@ import util.*;
 
 public class PlayerInfoScene extends Scene
 {
-    private final VBox getPlayerName;
+    private VBox getPlayerName;
     private Button sendButton;
     private TextArea userInputArea;
     private final BorderPane pane;
@@ -42,6 +42,12 @@ public class PlayerInfoScene extends Scene
 
         createBackground();
 
+        createVBoxGetPlayerName();
+
+    }
+
+    public void createVBoxGetPlayerName()
+    {
         getPlayerName = new VBox();
         Label askPlayerName = new Label(UtilStringStorage.askPlayerName);
         askPlayerName.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
@@ -86,6 +92,7 @@ public class PlayerInfoScene extends Scene
         sendButton.setTextFill(Color.GHOSTWHITE);
         sendButton.setMinWidth(80);
         sendButton.setTranslateY(60);
+
         getPlayerName.getChildren().add(userInputArea);
         getPlayerName.getChildren().add(sendButton);
     }

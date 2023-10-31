@@ -205,24 +205,23 @@ public class ResultScene extends VBox
     {
         IconCreator goldCupImage = new IconCreator(PathUtil.GOLD_CUP_PATH);
         goldCup = goldCupImage.createImage();
-        goldCup.setFitHeight(100);
-        goldCup.setFitWidth(80);
-        goldCup.setTranslateY(70);
-        goldCup.setTranslateX(260);
+        stylizeIcon(goldCup);
 
         IconCreator bronzeCupImage = new IconCreator(PathUtil.BRONZE_CUP_PATH);
         bronzeCup = bronzeCupImage.createImage();
-        bronzeCup.setFitHeight(100);
-        bronzeCup.setFitWidth(80);
-        bronzeCup.setTranslateY(70);
-        bronzeCup.setTranslateX(260);
+        stylizeIcon(bronzeCup);
 
         IconCreator silverCupImage = new IconCreator(PathUtil.SILVER_CUP_PATH);
         silverCup = silverCupImage.createImage();
-        silverCup.setFitHeight(100);
-        silverCup.setFitWidth(80);
-        silverCup.setTranslateY(70);
-        silverCup.setTranslateX(260);
+        stylizeIcon(silverCup);
+    }
+
+    public void stylizeIcon (ImageView imageView)
+    {
+        imageView.setFitHeight(100);
+        imageView.setFitWidth(80);
+        imageView.setTranslateY(70);
+        imageView.setTranslateX(260);
     }
 
     public void backToMainMenu()

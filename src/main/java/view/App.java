@@ -33,6 +33,7 @@ public class App extends Application
         stage.setScene(languageScene);
         stage.setTitle("Launcher");
         stage.show();
+
         languageScene.getEngButton().setOnAction(event -> {
             utilTranslateString.translateEngString();
             AchievementManager achievementManager = new AchievementManager();

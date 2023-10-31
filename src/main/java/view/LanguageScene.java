@@ -14,7 +14,7 @@ import util.PathUtil;
 public class LanguageScene extends Scene
 {
 
-    private final VBox vBox;
+    private VBox vBox;
     private Button engButton;
     private Button frButton;
     private final BorderPane pane;
@@ -26,6 +26,16 @@ public class LanguageScene extends Scene
         pane.setPrefWidth(500);
         pane.setPrefHeight(400);
 
+        createTitleArea();
+
+        createButtons();
+
+        createBackground();
+
+    }
+
+    public void createTitleArea()
+    {
         vBox = new VBox();
         vBox.setTranslateX(100);
         vBox.setTranslateY(100);
@@ -33,11 +43,6 @@ public class LanguageScene extends Scene
         launcherLabel.setFont(Font.font("Impact", FontWeight.EXTRA_LIGHT, 25));
         launcherLabel.setTranslateX(85);
         vBox.getChildren().add(launcherLabel);
-
-        createButtons();
-
-        createBackground();
-
         pane.setCenter(vBox);
     }
 

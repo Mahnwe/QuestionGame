@@ -23,7 +23,7 @@ import java.util.Properties;
 
 public class OptionScene extends Scene {
 
-    private static final Logger logger = LogManager.getLogger(FileUtil.class);
+    private static final Logger logger = LogManager.getLogger(OptionScene.class);
     private final AchievementManager achievementManager;
     private final Stage stage;
     private final File saveFile;
@@ -238,18 +238,11 @@ public class OptionScene extends Scene {
     public void createResetButtonArea()
     {
         Button resetButton = new Button(UtilStringStorage.resetButton);
-        if(resetButton.getText().equals("Réinitialiser sauvegarde"))
-        {
-            resetButton.setTranslateY(100);
-            resetButton.setTranslateX(290);
-        }
-        else {
-            resetButton.setTranslateY(120);
-            resetButton.setTranslateX(340);
-        }
+        placeButtonWithTranslation(resetButton);
         resetButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
         Tooltip resetTooltip = new Tooltip(UtilStringStorage.resetTooltip);
         resetButton.setTooltip(resetTooltip);
+
         resetButton.setOnAction(event -> {
             Optional<ButtonType> result = confirmAlert.showAndWait();
             if(result.orElse(null) == ButtonType.OK)
@@ -263,10 +256,35 @@ public class OptionScene extends Scene {
         Label resetLabel = new Label(UtilStringStorage.resetLabel);
         resetLabel.setFont(Font.font(OPTION_POLICE_LABEL, FontWeight.EXTRA_BOLD, 16));
         resetLabel.setTextFill(Color.BLACK);
-        resetLabel.setTranslateY(70);
-        resetLabel.setTranslateX(355);
+        placeLabelWithTranslation(resetLabel);
+
         optionVbox.getChildren().add(resetLabel);
         optionVbox.getChildren().add(resetButton);
+    }
+
+    public void placeButtonWithTranslation(Button button)
+    {
+        if(button.getText().equals("Réinitialiser sauvegarde"))
+        {
+            button.setTranslateY(100);
+            button.setTranslateX(295);
+        }
+        else {
+            button.setTranslateY(120);
+            button.setTranslateX(345);
+        }
+    }
+
+    public void placeLabelWithTranslation(Label label)
+    {
+        if(label.getText().equals("Sauvegarde")) {
+            label.setTranslateY(70);
+            label.setTranslateX(355);
+        }
+        else {
+            label.setTranslateY(70);
+            label.setTranslateX(380);
+        }
     }
 
     public void setVolumeFromSlider(Double sliderValue)

@@ -54,7 +54,7 @@ public class QuestionInterface extends BorderPane
         gridPane = new GridPane();
         gridPane.setHgap(10);
         gridPane.setVgap(40);
-        gridPane.addColumn(5);
+        gridPane.addColumn(3);
         gridPane.addRow(4);
         gridPane.setTranslateY(40);
         gridPane.setTranslateX(100);
@@ -126,16 +126,16 @@ public class QuestionInterface extends BorderPane
             answerButton3 = new Button(question.getAnswerList().get(2));
             answerButton3.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
             setAnswerButtonOnAction(answerButton3);
-            gridPane.add(answerButton3, 5, 1);
+            gridPane.add(answerButton3, 3, 1);
 
             answerButton4 = new Button(question.getAnswerList().get(3));
             answerButton4.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
             setAnswerButtonOnAction(answerButton4);
-            gridPane.add(answerButton4, 5, 2);
+            gridPane.add(answerButton4, 3, 2);
 
             nextQuestionButton = new Button(UtilStringStorage.nextQuestionButton);
             nextQuestionButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
-            gridPane.add(nextQuestionButton, 3, 3);
+            gridPane.add(nextQuestionButton, 2, 3);
             nextQuestionButton.setDisable(true);
     }
 

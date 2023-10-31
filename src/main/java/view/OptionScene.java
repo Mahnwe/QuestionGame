@@ -9,26 +9,16 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import model.*;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import model.AchievementManager;
+import model.SoundManager;
 import util.*;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Optional;
-import java.util.Properties;
 
 public class OptionScene extends Scene {
 
-    private static final Logger logger = LogManager.getLogger(OptionScene.class);
     private final AchievementManager achievementManager;
     private final Stage stage;
-    private final File saveFile;
-    private final Properties cupFile;
-    private final Properties perfectFile;
     private final VBox optionVbox;
     private final Alert confirmAlert;
     private Slider volumeSlider;
@@ -36,11 +26,11 @@ public class OptionScene extends Scene {
     private boolean isMute;
     private final BorderPane pane;
 
-    private Button engButton;
-    private Button frButton;
+    private LanguageButton engButton;
+    private LanguageButton frButton;
 
     public static final String OPTION_POLICE_LABEL = "Impact";
-    public OptionScene(BorderPane pane, Stage stage, AchievementManager achievementManager, File saveFile, Properties cupFile, Properties perfectFile)
+    public OptionScene(BorderPane pane, Stage stage, AchievementManager achievementManager)
     {
         super(pane);
         this.pane = pane;
@@ -48,9 +38,6 @@ public class OptionScene extends Scene {
         this.achievementManager = achievementManager;
         pane.setPrefHeight(500);
         pane.setPrefWidth(900);
-        this.saveFile = saveFile;
-        this.cupFile = cupFile;
-        this.perfectFile = perfectFile;
         this.confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
         modifyConfirmAlert();
 
@@ -150,17 +137,9 @@ public class OptionScene extends Scene {
         VBox englishVbox = new VBox();
         Label englishLabel = new Label("Choose a language");
         englishLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
-        engButton = new Button();
-        IconCreator englishIcon = new IconCreator(PathUtil.ENGLISH_FLAG);
-        Image englishFlag = englishIcon.createImage().getImage();
-        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
-        engButton.setBackground(new Background(new BackgroundImage(englishFlag, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
-                backgroundSize)));
-        engButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
-        engButton.setMinWidth(60);
-        engButton.setMinHeight(35);
-        engButton.setTranslateX(40);
-        engButton.setTranslateY(10);
+
+        engButton = new LanguageButton(PathUtil.ENGLISH_FLAG);
+
         englishVbox.getChildren().add(englishLabel);
         englishVbox.getChildren().add(engButton);
         englishVbox.setTranslateY(70);
@@ -169,22 +148,14 @@ public class OptionScene extends Scene {
 
         VBox frenchVbox = new VBox();
         Label frenchLabel = new Label("Choisissez une langue");
-        frenchLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
-        frButton = new Button();
-        IconCreator frenchIcon = new IconCreator(PathUtil.FRENCH_FLAG);
-        Image frenchFlag = frenchIcon.createImage().getImage();
-        frButton.setBackground(new Background(new BackgroundImage(frenchFlag, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
-                backgroundSize)));
-        frButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
-        frButton.setMinWidth(60);
-        frButton.setMinHeight(35);
-        frButton.setTranslateX(40);
-        frButton.setTranslateY(10);
+        frenchLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
+
+        frButton = new LanguageButton(PathUtil.FRENCH_FLAG);
+
         frenchVbox.getChildren().add(frenchLabel);
         frenchVbox.getChildren().add(frButton);
         frenchVbox.setTranslateX(450);
         frenchVbox.setTranslateY(17);
-
 
         Label languageLabel = new Label(UtilStringStorage.languageLabel);
         languageLabel.setFont(Font.font(OPTION_POLICE_LABEL, FontWeight.EXTRA_BOLD, 16));
@@ -324,9 +295,9 @@ public class OptionScene extends Scene {
 
     public void resetSave()
     {
-       resetSaveFile();
-       resetCupFile();
-       resetPerfectFile();
+       FileUtil.resetSaveFile();
+       FileUtil.resetCupFile();
+       FileUtil.resetPerfectFile();
     }
 
     public void backToMainMenu()
@@ -335,32 +306,5 @@ public class OptionScene extends Scene {
         stage.setScene(menuScene);
     }
 
-    public void resetSaveFile()
-    {
-        try {
-            FileWriter fw = new FileWriter(saveFile.getAbsoluteFile());
-            try (BufferedWriter bw = new BufferedWriter(fw)) {
-                bw.write("");
-            }
-        }catch (IOException e) {
-            e.printStackTrace();
-            logger.error("Save file can't be reset");
-        }
-    }
 
-    public void resetCupFile()
-    {
-        cupFile.setProperty("goldCup", "0");
-        cupFile.setProperty("silverCup", "0");
-        cupFile.setProperty("bronzeCup", "0");
-        FileUtil.storeCupFile();
-    }
-
-    public void resetPerfectFile()
-    {
-        perfectFile.setProperty("perfectScore10", "0");
-        perfectFile.setProperty("perfectScore15", "0");
-        perfectFile.setProperty("perfectScore20", "0");
-        FileUtil.storePerfectFile();
-    }
 }

@@ -92,4 +92,34 @@ public class FileUtil {
             logger.error("Cup file can't be store");
         }
     }
+
+    public static void resetSaveFile()
+    {
+        try {
+            FileWriter fw = new FileWriter(saveFile.getAbsoluteFile());
+            try (BufferedWriter bw = new BufferedWriter(fw)) {
+                bw.write("");
+            }
+        }catch (IOException e) {
+            e.printStackTrace();
+            logger.error("Save file can't be reset");
+        }
+    }
+
+    public static void resetCupFile()
+    {
+        cupFile.setProperty("goldCup", "0");
+        cupFile.setProperty("silverCup", "0");
+        cupFile.setProperty("bronzeCup", "0");
+        FileUtil.storeCupFile();
+    }
+
+    public static void resetPerfectFile()
+    {
+        perfectScoreFile.setProperty("perfectScore10", "0");
+        perfectScoreFile.setProperty("perfectScore15", "0");
+        perfectScoreFile.setProperty("perfectScore20", "0");
+        FileUtil.storePerfectFile();
+    }
+
 }

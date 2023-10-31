@@ -153,7 +153,7 @@ public class MenuScene extends Scene
         });
 
         optionButton.setOnAction(event -> {
-            OptionScene optionScene = new OptionScene(new BorderPane(), menuStage, achievementManager, saveFile, FileUtil.cupFile, FileUtil.perfectScoreFile);
+            OptionScene optionScene = new OptionScene(new BorderPane(), menuStage, achievementManager);
             menuStage.setScene(optionScene);
         });
 

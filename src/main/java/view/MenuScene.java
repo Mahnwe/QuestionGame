@@ -3,6 +3,7 @@ package view;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -13,6 +14,7 @@ import model.Player;
 import model.SoundManager;
 import util.BackgroundCreator;
 import util.FileUtil;
+import util.PathUtil;
 import util.UtilStringStorage;
 
 import java.io.File;
@@ -39,6 +41,7 @@ public class MenuScene extends Scene
     private Button achievementButton;
     private Button optionButton;
     private Button creditButton;
+    public static MediaPlayer relaunchGame;
 
     public MenuScene(BorderPane pane, Stage stage, AchievementManager achievementManager)
     {
@@ -238,6 +241,7 @@ public class MenuScene extends Scene
         SoundManager.stopMusic(App.menuMusicToStop);
         if(ResultScene.returnToMenuMusic != null) {
             SoundManager.stopMusic(ResultScene.returnToMenuMusic);
+            relaunchGame = SoundManager.playMusicRepeat(PathUtil.IN_GAME_MUSIC);
         }
         menuStage.setScene(mainScene);
 

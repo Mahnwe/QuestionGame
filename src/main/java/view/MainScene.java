@@ -110,6 +110,9 @@ public class MainScene extends Scene
         GameTimer.stopTimer();
         GameTimer.setTimerDisplay();
         ResultScene resultScene = new ResultScene(menuPane, playerInfoScene.getPlayer().getPlayerScore(), gameHandler.getQuestionCount(), achievementManager, stage, cupFile, perfectScoreFile);
+        if(MenuScene.relaunchGame !=null) {
+            SoundManager.stopMusic(MenuScene.relaunchGame);
+        }
         SoundManager.stopMusic(inGameMusicToStop);
         resultScene.getCongratsLabel().setText(UtilStringStorage.congratsLabel +" "+ playerInfoScene.getPlayer().getPlayerName()+" "+UtilStringStorage.answerAllQuestions);
         resultScene.getPlayerResult().setText(UtilStringStorage.playerResult + playerInfoScene.getPlayer().getPlayerScore()+" "+UtilStringStorage.scoreOn +" "+gameHandler.getQuestionCount());

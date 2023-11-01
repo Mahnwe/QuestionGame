@@ -77,7 +77,7 @@ public class MenuScene extends Scene
         VBox welcomeArea = new VBox();
         Label welcomeInGame = new Label(UtilStringStorage.welcomeLabel);
         welcomeInGame.setTextFill(Color.BLACK);
-        welcomeInGame.setFont(Font.font("Impact", FontWeight.EXTRA_LIGHT, 20));
+        welcomeInGame.setFont(Font.font("Impact", FontWeight.BOLD, 20));
         welcomeInGame.setTranslateX(250);
         welcomeArea.getChildren().add(createStatArea(welcomeInGame));
         welcomeInGame.setTranslateY(10);
@@ -92,7 +92,7 @@ public class MenuScene extends Scene
 
     public void createButton(Button button, Tooltip tooltip, int x, int y)
     {
-        button.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
+        button.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 14));
         placeButtons(button, x, y);
         button.setTooltip(tooltip);
     }
@@ -119,23 +119,23 @@ public class MenuScene extends Scene
     {
         leaderBoardButton = new Button(UtilStringStorage.leaderBoardButton);
         Tooltip leaderBoardTooltip = new Tooltip(UtilStringStorage.leaderBoardTooltip);
-        createButton(leaderBoardButton, leaderBoardTooltip, 5, 35);
+        createButton(leaderBoardButton, leaderBoardTooltip, 5, 25);
 
         trophyButton = new Button(UtilStringStorage.trophyButton);
         Tooltip trophyTooltip = new Tooltip(UtilStringStorage.trophyTooltip);
-        createButton(trophyButton, trophyTooltip, 10, 95);
+        createButton(trophyButton, trophyTooltip, 10, 85);
 
         achievementButton = new Button(UtilStringStorage.achievementButton);
         Tooltip achievementTooltip = new Tooltip(UtilStringStorage.achievementTooltip);
-        createButton(achievementButton, achievementTooltip, 10, 155);
+        createButton(achievementButton, achievementTooltip, 10, 145);
 
         optionButton = new Button(UtilStringStorage.optionButton);
         Tooltip optionTooltip = new Tooltip(UtilStringStorage.optionTooltip);
-        createButton(optionButton, optionTooltip, 10, 215);
+        createButton(optionButton, optionTooltip, 10, 205);
 
         creditButton = new Button(UtilStringStorage.creditButton);
         Tooltip creditTooltip = new Tooltip(UtilStringStorage.creditTooltip);
-        createButton(creditButton, creditTooltip, 10, 275);
+        createButton(creditButton, creditTooltip, 10, 265);
     }
 
     public void setLeftButtonOnAction()
@@ -171,21 +171,21 @@ public class MenuScene extends Scene
         VBox selectModeArea = new VBox();
 
         Label chooseMode = new Label(UtilStringStorage.chooseMode);
-        chooseMode.setFont(Font.font("Impact", FontWeight.EXTRA_LIGHT, 20));
+        chooseMode.setFont(Font.font("Impact", FontWeight.BOLD, 20));
         chooseMode.setTextFill(Color.BLACK);
         chooseMode.setTranslateX(225);
         chooseMode.setTranslateY(100);
 
         Label tenModeButton = new Label(UtilStringStorage.mode10Button);
-        tenModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 16));
+        tenModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 16));
         tenModeButton.setTextFill(Color.BLACK);
 
         Label fifteenModeButton = new Label(UtilStringStorage.mode15Button);
-        fifteenModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 16));
+        fifteenModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 16));
         fifteenModeButton.setTextFill(Color.BLACK);
 
         Label twentyModeButton = new Label(UtilStringStorage.mode20Button);
-        twentyModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 16));
+        twentyModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 16));
         twentyModeButton.setTextFill(Color.BLACK);
 
 
@@ -201,7 +201,7 @@ public class MenuScene extends Scene
         comboBox.getSelectionModel().selectFirst();
 
         launchGameButton = new Button(UtilStringStorage.launchGameButton);
-        launchGameButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 20));
+        launchGameButton.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 20));
         launchGameButton.setTranslateX(275);
         launchGameButton.setTranslateY(155);
 

@@ -42,7 +42,7 @@ public class LanguageScene extends Scene
         vBox = new VBox();
         vBox.setTranslateX(100);
         vBox.setTranslateY(100);
-        Label launcherLabel = new Label("Launcher");
+        Label launcherLabel = new Label("LOGO");
         launcherLabel.setFont(Font.font("Impact", FontWeight.BOLD, 25));
         launcherLabel.setTranslateX(85);
         vBox.getChildren().add(launcherLabel);

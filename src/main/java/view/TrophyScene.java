@@ -58,27 +58,27 @@ public class TrophyScene extends Scene
 
         Label trophyLabel = new Label();
         trophyLabel.setText(UtilStringStorage.trophyLabel);
-        trophyLabel.setFont(Font.font("Impact", FontWeight.EXTRA_LIGHT, 25));
+        trophyLabel.setFont(Font.font("Impact", FontWeight.BOLD, 25));
         trophyLabel.setTranslateX(310);
         trophyLabel.setTranslateY(20);
 
         VBox goldCupImages = new VBox();
         Label nbrOfGoldCupLabel = new Label();
-        nbrOfGoldCupLabel.setTranslateX(-12);
+        placeLabel(nbrOfGoldCupLabel, -12, 5);
         stylizeLabel(nbrOfGoldCupLabel, UtilStringStorage.goldCupTrophy, cupFile, "goldCup");
         goldCupImages.getChildren().add(goldCup);
         goldCupImages.getChildren().add(nbrOfGoldCupLabel);
 
         VBox silverCupImages = new VBox();
         Label nbrOfSilverCupLabel = new Label();
-        nbrOfSilverCupLabel.setTranslateX(-20);
+        placeLabel(nbrOfSilverCupLabel, -20, 5);
         stylizeLabel(nbrOfSilverCupLabel, UtilStringStorage.silverCupTrophy, cupFile, "silverCup");
         silverCupImages.getChildren().add(silverCup);
         silverCupImages.getChildren().add(nbrOfSilverCupLabel);
 
         VBox bronzeCupImages = new VBox();
         Label nbrOfBronzeCupLabel = new Label();
-        nbrOfBronzeCupLabel.setTranslateX(-20);
+        placeLabel(nbrOfBronzeCupLabel, -20, 5);
         stylizeLabel(nbrOfBronzeCupLabel, UtilStringStorage.bronzeCupTrophy, cupFile, "bronzeCup");
         bronzeCupImages.getChildren().add(bronzeCup);
         bronzeCupImages.getChildren().add(nbrOfBronzeCupLabel);
@@ -102,10 +102,16 @@ public class TrophyScene extends Scene
         returnButton.setOnAction(event -> backToMainMenu());
     }
 
+    public void placeLabel(Label label, int translateX, int translateY)
+    {
+        label.setTranslateX(translateX);
+        label.setTranslateY(translateY);
+    }
+
     public void stylizeLabel(Label label, String string, Properties properties, String propertyKey)
     {
         label.setText(string +" "+ properties.getProperty(propertyKey));
-        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 17));
+        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 17));
     }
 
     public void createIcons()

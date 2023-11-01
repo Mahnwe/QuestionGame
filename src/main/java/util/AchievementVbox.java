@@ -12,11 +12,11 @@ public class AchievementVbox {
 
     public static void setAchievementVbox (VBox vBox, Label titleLabel, AchievementManager achievementManager, int indexAchievement, Label infoLabel)
     {
-        titleLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));
+        titleLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
 
         ImageView achievementImage = achievementManager.getAchievementsList().get(indexAchievement).getLockImageView();
 
-        infoLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 12));
+        infoLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
 
         vBox.getChildren().add(titleLabel);
         vBox.getChildren().add(achievementImage);

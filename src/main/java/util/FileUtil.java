@@ -52,7 +52,7 @@ public class FileUtil {
             String line;
             while((line = bufferedReader.readLine()) != null)
             {
-                stringBuilder.append(line).append("\n");
+                stringBuilder.append(line).append("\n").append("\n");
             }
             bufferedReader.close();
         } catch (IOException e) {

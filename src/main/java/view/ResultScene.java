@@ -80,7 +80,7 @@ public class ResultScene extends VBox
         {
             Label cupLabel = new Label(UtilStringStorage.noCupLabel);
             placeLabels(cupLabel, 200, 70);
-            cupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
+            cupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 16));
             cupLabel.setTextFill(Color.GHOSTWHITE);
             gameResult.getChildren().add(cupLabel);
         }
@@ -92,22 +92,22 @@ public class ResultScene extends VBox
     {
         congratsLabel = new Label();
         placeLabels(congratsLabel, 120, 10);
-        congratsLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
+        congratsLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 16));
         congratsLabel.setTextFill(Color.GHOSTWHITE);
 
         playerResult = new Label();
-        placeLabels(playerResult, 200, 30);
-        playerResult.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
+        placeLabels(playerResult, 225, 30);
+        playerResult.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 16));
         playerResult.setTextFill(Color.GHOSTWHITE);
 
         exitToMenuButton = new Button(UtilStringStorage.returnToMenuButton);
-        exitToMenuButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
-        exitToMenuButton.setTranslateY(150);
-        exitToMenuButton.setTranslateX(230);
+        exitToMenuButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 16));
+        exitToMenuButton.setTranslateY(160);
+        exitToMenuButton.setTranslateX(240);
 
         Label timeLabel = new Label();
-        placeLabels(timeLabel, 200, 30);
-        timeLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
+        placeLabels(timeLabel, 225, 35);
+        timeLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 16));
         timeLabel.setTextFill(Color.GHOSTWHITE);
         timeLabel.setText(UtilStringStorage.timeLabel + GameTimer.getElapsedMinutes() + UtilStringStorage.minLabel + GameTimer.getSecondsDisplay() +UtilStringStorage.secondesLabel);
 
@@ -134,7 +134,7 @@ public class ResultScene extends VBox
         resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
         Label cupLabel = new Label(UtilStringStorage.goldCupLabel);
         placeLabels(cupLabel, 200, 70);
-        cupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
+        cupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 16));
         cupLabel.setTextFill(Color.GHOSTWHITE);
         vBox.getChildren().add(cupLabel);
         vBox.getChildren().add(goldCup);
@@ -154,7 +154,7 @@ public class ResultScene extends VBox
         resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
         Label cupLabel = new Label(UtilStringStorage.silverCupLabel);
         placeLabels(cupLabel, 200, 70);
-        cupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
+        cupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 16));
         cupLabel.setTextFill(Color.GHOSTWHITE);
         vBox.getChildren().add(cupLabel);
         vBox.getChildren().add(silverCup);
@@ -174,7 +174,7 @@ public class ResultScene extends VBox
         resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
         Label cupLabel = new Label(UtilStringStorage.bronzeCupLabel);
         placeLabels(cupLabel, 200, 70);
-        cupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
+        cupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 16));
         cupLabel.setTextFill(Color.GHOSTWHITE);
         vBox.getChildren().add(cupLabel);
         vBox.getChildren().add(bronzeCup);
@@ -220,8 +220,8 @@ public class ResultScene extends VBox
     {
         imageView.setFitHeight(100);
         imageView.setFitWidth(80);
-        imageView.setTranslateY(70);
-        imageView.setTranslateX(260);
+        imageView.setTranslateY(80);
+        imageView.setTranslateX(280);
     }
 
     public void backToMainMenu()

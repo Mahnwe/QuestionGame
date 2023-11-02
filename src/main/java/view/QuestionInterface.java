@@ -66,7 +66,7 @@ public class QuestionInterface extends BorderPane
         game = new VBox();
         game.setBorder(border);
         game.setBorder(new Border(new BorderStroke(Color.BLACK,BorderStrokeStyle.SOLID,CornerRadii.EMPTY,BorderWidths.DEFAULT)));
-        game.setPrefWidth(750);
+        game.setPrefWidth(800);
         game.setPrefHeight(250);
     }
 
@@ -75,7 +75,7 @@ public class QuestionInterface extends BorderPane
         for(int i = 0; i<questionList.getQuestionList().size(); i++)
         {
             questionToAsk = new Label();
-            questionToAsk.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
+            questionToAsk.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
             questionToAsk.setTextFill(Color.GHOSTWHITE);
             questionToAsk.setTranslateX(25);
             questionToAsk.setTranslateY(5);

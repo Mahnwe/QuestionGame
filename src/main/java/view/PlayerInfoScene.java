@@ -27,6 +27,7 @@ public class PlayerInfoScene extends Scene
     private Label playerScoreLabel;
 
     private final Player player;
+    private Button muteButton;
 
 
     private final Border border = new Border(new BorderStroke(Color.BLACK,
@@ -85,6 +86,15 @@ public class PlayerInfoScene extends Scene
         userInputArea.setTranslateY(60);
 
         sendButton = new Button(UtilStringStorage.validateButton);
+        stylizeSendButton(sendButton);
+
+
+        getPlayerName.getChildren().add(userInputArea);
+        getPlayerName.getChildren().add(sendButton);
+    }
+
+    public void stylizeSendButton(Button sendButton)
+    {
         sendButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
         sendButton.setDisable(true);
         sendButton.setBorder(border);
@@ -92,9 +102,6 @@ public class PlayerInfoScene extends Scene
         sendButton.setTextFill(Color.GHOSTWHITE);
         sendButton.setMinWidth(80);
         sendButton.setTranslateY(60);
-
-        getPlayerName.getChildren().add(userInputArea);
-        getPlayerName.getChildren().add(sendButton);
     }
 
     public void setOnActionSendButton(BorderPane pane, QuestionInterface questionInterface, Stage stage, Stage popUpStage)
@@ -115,24 +122,30 @@ public class PlayerInfoScene extends Scene
     {
         playerInfos = new VBox();
         playerInfos.setTranslateY(50);
+
         player.setPlayerName(userInputArea.getText());
         Label playerNameLabel = new Label(UtilStringStorage.playerNameIngame + player.getPlayerName());
-        playerNameLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
-        playerNameLabel.setTextFill(Color.GHOSTWHITE);
-        playerNameLabel.setTranslateX(-11);
+        stylizeLabel(playerNameLabel);
+
         playerInfos.getChildren().add(createStatArea(playerNameLabel));
         playerInfos.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 
         playerScoreLabel = new Label(UtilStringStorage.scoreLabelIngame +player.getPlayerScore());
-        playerScoreLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
-        playerScoreLabel.setTextFill(Color.GHOSTWHITE);
-        playerScoreLabel.setTranslateX(-11);
+        stylizeLabel(playerScoreLabel);
+
         playerInfos.getChildren().add(createStatArea(playerScoreLabel));
-        playerInfos.setMinWidth(150);
+        playerInfos.setMinWidth(200);
         playerInfos.setMaxWidth(150);
 
         createSliderArea();
 
+    }
+
+    public void stylizeLabel(Label label)
+    {
+        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
+        label.setTextFill(Color.GHOSTWHITE);
+        label.setTranslateX(-11);
     }
 
     public void createSliderArea()
@@ -140,32 +153,16 @@ public class PlayerInfoScene extends Scene
 
         Label volumeLabel = new Label(UtilStringStorage.volumeLabel);
         volumeLabel.setTranslateY(120);
-        volumeLabel.setTranslateX(40);
+        volumeLabel.setTranslateX(60);
         volumeLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 18));
         volumeLabel.setTextFill(Color.GHOSTWHITE);
         playerInfos.getChildren().add(volumeLabel);
 
-        IconCreator muteIcon = new IconCreator(PathUtil.WHITE_MUTE_ICON);
-        Image muteImage = muteIcon.createImage().getImage();
-
-        Button muteButton = new Button();
-        muteButton.setPrefSize(30,30);
-        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
-        muteButton.setBackground(new Background(new BackgroundImage(muteImage, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
-                backgroundSize)));
-        playerInfos.getChildren().add(muteButton);
-        muteButton.setTranslateY(187);
-        muteButton.setTranslateX(55);
-
+        stylizeMuteButton();
 
         Slider volumeSlider = new Slider(0, 10, 5);
-        volumeSlider.setMaxWidth(200);
-        volumeSlider.setMaxHeight(40);
-        volumeSlider.setTranslateY(105);
-        volumeSlider.setShowTickMarks(true);
-        volumeSlider.setShowTickLabels(true);
-        volumeSlider.setMajorTickUnit(1f);
-        volumeSlider.setBlockIncrement(1f);
+        stylizeVolumeSlider(volumeSlider);
+
         if(SoundManager.soundVolume == 0.0) {
             VolumeInGameHandler.isMute = true;
             volumeSlider.setDisable(true);
@@ -176,6 +173,33 @@ public class PlayerInfoScene extends Scene
         volumeSlider.setOnMouseClicked(event -> VolumeInGameHandler.setVolumeFromSlider(volumeSlider.getValue()));
         volumeSlider.setOnMouseReleased(event -> VolumeInGameHandler.setVolumeFromSlider(volumeSlider.getValue()));
 
+    }
+
+    public void stylizeMuteButton()
+    {
+        IconCreator muteIcon = new IconCreator(PathUtil.WHITE_MUTE_ICON);
+        Image muteImage = muteIcon.createImage().getImage();
+
+        muteButton = new Button();
+
+        muteButton.setPrefSize(30,30);
+        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
+        muteButton.setBackground(new Background(new BackgroundImage(muteImage, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+                backgroundSize)));
+        playerInfos.getChildren().add(muteButton);
+        muteButton.setTranslateY(187);
+        muteButton.setTranslateX(75);
+    }
+
+    public void stylizeVolumeSlider(Slider volumeSlider)
+    {
+        volumeSlider.setMaxWidth(200);
+        volumeSlider.setMaxHeight(40);
+        volumeSlider.setTranslateY(105);
+        volumeSlider.setShowTickMarks(true);
+        volumeSlider.setShowTickLabels(true);
+        volumeSlider.setMajorTickUnit(1f);
+        volumeSlider.setBlockIncrement(1f);
     }
     public void increaseScore()
     {

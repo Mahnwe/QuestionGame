@@ -225,10 +225,10 @@ public class ResultScene extends VBox
 
     public void backToMainMenu()
     {
-
         MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
         stage.setScene(menuScene);
         returnToMenuMusic = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
+
         if(AchievementManager.notificationAlert != null) {
             NotificationAlert notificationAlert = AchievementManager.notificationAlert;
             notificationAlert.showAlert();

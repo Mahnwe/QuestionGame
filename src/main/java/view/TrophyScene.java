@@ -29,7 +29,7 @@ public class TrophyScene extends Scene
         this.pane = pane;
         this.cupFile = cupFile;
         pane.setPrefHeight(500);
-        pane.setPrefWidth(900);
+        pane.setPrefWidth(1000);
         this.stage = stage;
         this.achievementManager = achievementManager;
 

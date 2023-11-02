@@ -40,7 +40,7 @@ public class App extends Application
             menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
             MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
             stage.setMinHeight(500);
-            stage.setMinWidth(900);
+            stage.setMinWidth(1000);
             stage.setScene(menuScene);
             stage.setTitle(UtilStringStorage.gameTitle);
             stage.show();
@@ -52,7 +52,7 @@ public class App extends Application
             menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
             MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
             stage.setMinHeight(500);
-            stage.setMinWidth(900);
+            stage.setMinWidth(1000);
             stage.setScene(menuScene);
             stage.setTitle(UtilStringStorage.gameTitle);
             stage.show();

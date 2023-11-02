@@ -48,7 +48,7 @@ public class MenuScene extends Scene
         super(pane);
         this.pane = pane;
         this.menuStage = stage;
-        pane.setPrefWidth(900);
+        pane.setPrefWidth(1000);
         pane.setPrefHeight(500);
 
         this.gameHandler = new GameHandler();
@@ -78,22 +78,17 @@ public class MenuScene extends Scene
         Label welcomeInGame = new Label(UtilStringStorage.welcomeLabel);
         welcomeInGame.setTextFill(Color.BLACK);
         welcomeInGame.setFont(Font.font("Impact", FontWeight.BOLD, 20));
-        welcomeInGame.setTranslateX(250);
+        welcomeInGame.setTranslateX(300);
         welcomeArea.getChildren().add(createStatArea(welcomeInGame));
         welcomeInGame.setTranslateY(10);
         pane.setTop(welcomeArea);
     }
 
-    public void placeButtons(Button button, int translateX, int translateY)
-    {
-        button.setTranslateX(translateX);
-        button.setTranslateY(translateY);
-    }
-
-    public void createButton(Button button, Tooltip tooltip, int x, int y)
+    public void createButton(Button button, Tooltip tooltip, int translateX, int translateY)
     {
         button.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 14));
-        placeButtons(button, x, y);
+        button.setTranslateX(translateX);
+        button.setTranslateY(translateY);
         button.setTooltip(tooltip);
     }
 
@@ -119,23 +114,23 @@ public class MenuScene extends Scene
     {
         leaderBoardButton = new Button(UtilStringStorage.leaderBoardButton);
         Tooltip leaderBoardTooltip = new Tooltip(UtilStringStorage.leaderBoardTooltip);
-        createButton(leaderBoardButton, leaderBoardTooltip, 5, 25);
+        createButton(leaderBoardButton, leaderBoardTooltip, 15, 25);
 
         trophyButton = new Button(UtilStringStorage.trophyButton);
         Tooltip trophyTooltip = new Tooltip(UtilStringStorage.trophyTooltip);
-        createButton(trophyButton, trophyTooltip, 10, 85);
+        createButton(trophyButton, trophyTooltip, 20, 85);
 
         achievementButton = new Button(UtilStringStorage.achievementButton);
         Tooltip achievementTooltip = new Tooltip(UtilStringStorage.achievementTooltip);
-        createButton(achievementButton, achievementTooltip, 10, 145);
+        createButton(achievementButton, achievementTooltip, 20, 145);
 
         optionButton = new Button(UtilStringStorage.optionButton);
         Tooltip optionTooltip = new Tooltip(UtilStringStorage.optionTooltip);
-        createButton(optionButton, optionTooltip, 10, 205);
+        createButton(optionButton, optionTooltip, 20, 205);
 
         creditButton = new Button(UtilStringStorage.creditButton);
         Tooltip creditTooltip = new Tooltip(UtilStringStorage.creditTooltip);
-        createButton(creditButton, creditTooltip, 10, 265);
+        createButton(creditButton, creditTooltip, 20, 265);
     }
 
     public void setLeftButtonOnAction()

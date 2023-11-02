@@ -54,17 +54,17 @@ public class TrophyScene extends Scene
         gridPane.setHgap(90);
         gridPane.setVgap(50);
         gridPane.setTranslateY(110);
-        gridPane.setTranslateX(135);
+        gridPane.setTranslateX(155);
 
         Label trophyLabel = new Label();
         trophyLabel.setText(UtilStringStorage.trophyLabel);
         trophyLabel.setFont(Font.font("Impact", FontWeight.BOLD, 25));
-        trophyLabel.setTranslateX(310);
+        trophyLabel.setTranslateX(330);
         trophyLabel.setTranslateY(20);
 
         VBox goldCupImages = new VBox();
         Label nbrOfGoldCupLabel = new Label();
-        placeLabel(nbrOfGoldCupLabel, -12, 5);
+        placeLabel(nbrOfGoldCupLabel, -10, 5);
         stylizeLabel(nbrOfGoldCupLabel, UtilStringStorage.goldCupTrophy, cupFile, "goldCup");
         goldCupImages.getChildren().add(goldCup);
         goldCupImages.getChildren().add(nbrOfGoldCupLabel);

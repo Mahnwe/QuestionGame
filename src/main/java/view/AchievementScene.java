@@ -64,7 +64,7 @@ public class AchievementScene extends Scene
         Label achievementLabel = new Label(UtilStringStorage.achievementLabel);
         achievementLabel.setFont(Font.font("Impact", FontWeight.BOLD, 23));
         multiPane.setTop(achievementLabel);
-        achievementLabel.setTranslateX(350);
+        achievementLabel.setTranslateX(400);
         achievementLabel.setTranslateY(5);
         multiPane.setCenter(gridPane);
         pane.setCenter(multiPane);
@@ -77,7 +77,7 @@ public class AchievementScene extends Scene
     public void createGridPane()
     {
         gridPane = new GridPane();
-        gridPane.setTranslateX(80);
+        gridPane.setTranslateX(100);
         gridPane.setTranslateY(60);
         gridPane.setHgap(30);
         gridPane.setVgap(40);

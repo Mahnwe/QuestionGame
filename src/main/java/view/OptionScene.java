@@ -73,7 +73,7 @@ public class OptionScene extends Scene {
     {
         Label volumeLabel = new Label(UtilStringStorage.volumeLabel);
         volumeLabel.setTranslateY(20);
-        volumeLabel.setTranslateX(368);
+        volumeLabel.setTranslateX(388);
         volumeLabel.setFont(Font.font(OPTION_POLICE_LABEL, FontWeight.EXTRA_BOLD, 17));
         volumeLabel.setTextFill(Color.BLACK);
         optionVbox.getChildren().add(volumeLabel);
@@ -87,14 +87,14 @@ public class OptionScene extends Scene {
                 backgroundSize)));
         optionVbox.getChildren().add(muteButton);
         muteButton.setTranslateY(35);
-        muteButton.setTranslateX(212);
+        muteButton.setTranslateX(232);
 
 
         volumeSlider = new Slider(0, 10, 5);
         volumeSlider.setMaxWidth(305);
         volumeSlider.setMaxHeight(60);
         volumeSlider.setTranslateY(10);
-        volumeSlider.setTranslateX(250);
+        volumeSlider.setTranslateX(270);
         volumeSlider.setShowTickMarks(true);
         volumeSlider.setShowTickLabels(true);
         volumeSlider.setMajorTickUnit(1f);
@@ -143,7 +143,7 @@ public class OptionScene extends Scene {
         englishVbox.getChildren().add(englishLabel);
         englishVbox.getChildren().add(engButton);
         englishVbox.setTranslateY(50);
-        englishVbox.setTranslateX(200);
+        englishVbox.setTranslateX(220);
 
 
         VBox frenchVbox = new VBox();
@@ -154,14 +154,14 @@ public class OptionScene extends Scene {
 
         frenchVbox.getChildren().add(frenchLabel);
         frenchVbox.getChildren().add(frButton);
-        frenchVbox.setTranslateX(450);
+        frenchVbox.setTranslateX(470);
         frenchVbox.setTranslateY(-20);
 
         Label languageLabel = new Label(UtilStringStorage.languageLabel);
         languageLabel.setFont(Font.font(OPTION_POLICE_LABEL, FontWeight.EXTRA_BOLD, 17));
         languageLabel.setTextFill(Color.BLACK);
         languageLabel.setTranslateY(40);
-        languageLabel.setTranslateX(365);
+        languageLabel.setTranslateX(390);
 
         optionVbox.getChildren().add(languageLabel);
         optionVbox.getChildren().add(englishVbox);
@@ -238,11 +238,11 @@ public class OptionScene extends Scene {
         if(button.getText().equals("Réinitialiser sauvegarde"))
         {
             button.setTranslateY(70);
-            button.setTranslateX(290);
+            button.setTranslateX(310);
         }
         else {
             button.setTranslateY(90);
-            button.setTranslateX(345);
+            button.setTranslateX(365);
         }
     }
 
@@ -250,11 +250,11 @@ public class OptionScene extends Scene {
     {
         if(label.getText().equals("Sauvegarde")) {
             label.setTranslateY(50);
-            label.setTranslateX(355);
+            label.setTranslateX(375);
         }
         else {
             label.setTranslateY(50);
-            label.setTranslateX(380);
+            label.setTranslateX(400);
         }
     }
 
@@ -280,11 +280,11 @@ public class OptionScene extends Scene {
 
         Button confirmButton = (Button) confirmAlert.getDialogPane().lookupButton(ButtonType.OK);
         confirmButton.setText(UtilStringStorage.yesButton);
-        placeButton(confirmButton, -20, -140);
+        placeButton(confirmButton, -20, -120);
 
         Button cancelButton = (Button) confirmAlert.getDialogPane().lookupButton(ButtonType.CANCEL);
         cancelButton.setText(UtilStringStorage.noButton);
-        placeButton(cancelButton, -20, -40);
+        placeButton(cancelButton, -20, -20);
     }
 
     public void placeButton(Button button, int translateY, int translateX)

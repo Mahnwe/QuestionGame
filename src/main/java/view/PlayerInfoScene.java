@@ -106,15 +106,15 @@ public class PlayerInfoScene extends Scene
 
     public void setOnActionSendButton(BorderPane pane, QuestionInterface questionInterface, Stage stage, Stage popUpStage)
     {
-            if (!userInputArea.getText().isEmpty())
+            if(!userInputArea.getText().isEmpty())
             {
-                createPlayerInfoArea();
-                pane.setLeft(playerInfos);
-                questionInterface.setDisable(false);
-                stage.setMinWidth(900);
-                stage.setMinHeight(500);
-                GameTimer.startTimer();
-                popUpStage.close();
+                    createPlayerInfoArea();
+                    pane.setLeft(playerInfos);
+                    questionInterface.setDisable(false);
+                    stage.setMinWidth(900);
+                    stage.setMinHeight(500);
+                    GameTimer.startTimer();
+                    popUpStage.close();
             }
     }
 
@@ -231,6 +231,10 @@ public class PlayerInfoScene extends Scene
 
     public Button getSendButton() {
         return sendButton;
+    }
+
+    public TextArea getUserInputArea() {
+        return userInputArea;
     }
 }
 

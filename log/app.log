@@ -1,6 +1,3 @@
-2023-11-02 14:21:33.780 ERROR [JavaFX Application Thread] [util.UtilTranslateString.loadFrTradFile(UtilTranslateString.java:37)] - French trad file can't be load
-2023-11-02 14:30:15.333 ERROR [JavaFX Application Thread] [model.GameHandler.setupQuestionList(GameHandler.java:39)] - Question list can't be set
-2023-11-02 14:30:38.329 ERROR [JavaFX Application Thread] [model.GameHandler.setupQuestionList(GameHandler.java:39)] - Question list can't be set
-2023-11-02 14:33:17.578 ERROR [JavaFX Application Thread] [model.GameHandler.setupQuestionList(GameHandler.java:39)] - Question list can't be set
-2023-11-02 14:44:48.561 ERROR [JavaFX Application Thread] [model.GameHandler.setupQuestionList(GameHandler.java:39)] - Question list can't be set
-2023-11-02 14:45:16.288 ERROR [JavaFX Application Thread] [model.GameHandler.setupQuestionList(GameHandler.java:39)] - Question list can't be set
+2023-11-03 00:02:52.758 ERROR [JavaFX Application Thread] [model.GameHandler.setupQuestionList(GameHandler.java:39)] - Question list can't be set
+2023-11-03 00:03:06.509 ERROR [JavaFX Application Thread] [model.GameHandler.setupQuestionList(GameHandler.java:39)] - Question list can't be set
+2023-11-03 00:03:55.078 ERROR [JavaFX Application Thread] [model.GameHandler.setupQuestionList(GameHandler.java:39)] - Question list can't be set

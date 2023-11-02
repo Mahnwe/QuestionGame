@@ -26,17 +26,18 @@ public class GameHandler
 
     public void setupQuestionList(int listSize)
     {
-        //try {
+        try {
                 for(int i = listSize; i > 0; i--)
                 {
                     int randomQuestionIndex = generateRandomIndex();
                     Question question = questionBank.getQuestionList().remove(randomQuestionIndex);
                     questionList.add(question);
                 }
-                //throw new QuestionException();
-       // } catch (QuestionException questionException){
-        //    logger.error("Question list can't be set");
-        //}
+            throw new QuestionException("Question list can't be set, index out of bounds exception");
+        } catch (QuestionException e)
+        {
+            logger.error("Question list can't be set");
+        }
     }
 
     public boolean isGameEnding()

@@ -204,7 +204,7 @@ public class AchievementScene extends Scene
         String checkIntInFile = properties.getProperty(propertyKey);
         String numberInKey = checkAndGetNumberInPropertyKey(checkIntInFile);
         int nbrOfCup = Integer.parseInt(numberInKey);
-        achievementManager.getAchievementsList().get(achievementIndex).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(achievementIndex), nbrOfCup);
+        achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(achievementIndex), nbrOfCup);
         checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(achievementIndex), achievementInfo);
     }
 
@@ -223,7 +223,7 @@ public class AchievementScene extends Scene
         checkPropertyKeyNumber(perfectScoreFile, "perfectScore20", 5, perfectScoreAchievement20Info);
 
         int checkNbrOfAchievementUnlock = checkSecretAchievement();
-        achievementManager.getAchievementsList().get(6).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(6), checkNbrOfAchievementUnlock);
+        achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(6), checkNbrOfAchievementUnlock);
         checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(6), secretAchievementInfo);
         if(checkNbrOfAchievementUnlock == 6)
         {

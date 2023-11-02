@@ -10,7 +10,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import model.Achievement;
 import model.AchievementManager;
 import model.SoundManager;
 import util.*;
@@ -128,7 +127,7 @@ public class ResultScene extends VBox
         checkPerfectScoreAchievement(15, perfectScoreFile, "perfectScore15", "15", 4);
         checkPerfectScoreAchievement(20, perfectScoreFile, "perfectScore20", "20", 5);
 
-        achievementManager.getAchievementsList().get(0).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(0), nbrOfGoldCup);
+        achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(0), nbrOfGoldCup);
         cupFile.setProperty("goldCup", String.valueOf(nbrOfGoldCup));
 
         resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
@@ -148,7 +147,7 @@ public class ResultScene extends VBox
         int nbrOfSilverCup = Integer.parseInt(numberOfSilverCup);
         nbrOfSilverCup++;
 
-        achievementManager.getAchievementsList().get(1).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(1), nbrOfSilverCup);
+        achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(1), nbrOfSilverCup);
         cupFile.setProperty("silverCup", String.valueOf(nbrOfSilverCup));
 
         resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
@@ -168,7 +167,7 @@ public class ResultScene extends VBox
         int nbrOfBronzeCup = Integer.parseInt(numberOfBronzeCup);
         nbrOfBronzeCup++;
 
-        achievementManager.getAchievementsList().get(2).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(2), nbrOfBronzeCup);
+        achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(2), nbrOfBronzeCup);
         cupFile.setProperty("bronzeCup", String.valueOf(nbrOfBronzeCup));
 
         resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
@@ -185,7 +184,7 @@ public class ResultScene extends VBox
         if(questionCount == numberOfQuestion) {
             String checkIntInPerfectFile = String.valueOf(perfectScoreFile.getProperty(propertyKey));
             if(checkIntInPerfectFile.equals(numberToCompare)) {
-                achievementManager.getAchievementsList().get(achievementIndex).checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(achievementIndex), playerFinalScore);
+                achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(achievementIndex), playerFinalScore);
             } else {
                 String perfectScoreString = String.valueOf(playerFinalScore);
                 perfectScoreFile.setProperty(propertyKey, perfectScoreString);
@@ -230,8 +229,8 @@ public class ResultScene extends VBox
         MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
         stage.setScene(menuScene);
         returnToMenuMusic = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
-        if(Achievement.notificationAlert != null) {
-            NotificationAlert notificationAlert = Achievement.notificationAlert;
+        if(AchievementManager.notificationAlert != null) {
+            NotificationAlert notificationAlert = AchievementManager.notificationAlert;
             notificationAlert.showAlert();
         }
     }

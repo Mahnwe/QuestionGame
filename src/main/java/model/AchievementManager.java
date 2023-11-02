@@ -1,10 +1,14 @@
 package model;
 
+import javafx.scene.control.Alert;
+import view.NotificationAlert;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class AchievementManager
 {
+    public static NotificationAlert notificationAlert;
     private final List<Achievement> achievementsList = new ArrayList<>();
 
     public AchievementManager()
@@ -30,6 +34,20 @@ public class AchievementManager
         Achievement secretAchievement = new Achievement(6, false);
         achievementsList.add(secretAchievement);
 
+    }
+
+    public void checkIfAchievementIsUnlock(Achievement achievement, int numberToCompareWithCondition)
+    {
+        if(achievement.getCondition() <= numberToCompareWithCondition)
+        {
+            achievement.setUnlock(true);
+            achievement.getLockImageView().setImage(achievement.getUnlockImageView().getImage());
+            notificationAlert = new NotificationAlert(Alert.AlertType.INFORMATION);
+        }
+        else {
+            achievement.setUnlock(false);
+            achievement.getLockImageView().setImage(achievement.getLockImageView().getImage());
+        }
     }
 
     public List<Achievement> getAchievementsList() {

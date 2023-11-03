@@ -3,7 +3,6 @@ package view;
 import javafx.event.Event;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
@@ -81,13 +80,8 @@ public class MainScene extends Scene
         popUpStage.initModality(Modality.APPLICATION_MODAL);
         popUpStage.show();
         playerInfoScene.getSendButton().setOnAction(event -> playerInfoScene.setOnActionSendButton(menuPane, questionInterface, stage, popUpStage));
-        if(!playerInfoScene.getUserInputArea().getText().isEmpty()) {
-            playerInfoScene.getUserInputArea().setOnKeyPressed(keyEvent -> {
-                if (keyEvent.getCode().equals(KeyCode.ENTER)) {
-                    playerInfoScene.setOnActionSendButton(menuPane, questionInterface, stage, popUpStage);
-                }
-            });
-        }
+        playerInfoScene.getUserInputArea().setOnKeyPressed(event -> playerInfoScene.setOnKeyTypedSendButton(menuPane, questionInterface, stage, popUpStage));
+
     }
 
     private void setAnswersButtonListeners()

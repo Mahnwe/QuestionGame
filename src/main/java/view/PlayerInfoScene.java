@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -116,6 +117,21 @@ public class PlayerInfoScene extends Scene
                     GameTimer.startTimer();
                     popUpStage.close();
             }
+    }
+
+    public void setOnKeyTypedSendButton(BorderPane pane, QuestionInterface questionInterface, Stage stage, Stage popUpStage)
+    {
+        userInputArea.setOnKeyPressed(keyEvent -> {
+            if (keyEvent.getCode().equals(KeyCode.ENTER) && (!userInputArea.getText().isEmpty())) {
+                createPlayerInfoArea();
+                pane.setLeft(playerInfos);
+                questionInterface.setDisable(false);
+                stage.setMinWidth(900);
+                stage.setMinHeight(500);
+                GameTimer.startTimer();
+                popUpStage.close();
+            }
+        });
     }
 
     public void createPlayerInfoArea()

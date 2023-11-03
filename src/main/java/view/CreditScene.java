@@ -45,14 +45,14 @@ public class CreditScene extends Scene
     public void setUpLabels(Label label, String string, int labelSize, int translateX, int translateY)
     {
         label.setText(string);
-        label.setFont(Font.font("Impact", FontWeight.EXTRA_LIGHT, labelSize));
+        label.setFont(Font.font("Impact", FontWeight.BOLD, labelSize));
         label.setTranslateX(translateX);
         label.setTranslateY(translateY);
     }
 
     public void setUpLinkLabels(Hyperlink hyperlink, int labelSize, int translateX, int translateY)
     {
-        hyperlink.setFont(Font.font("Impact", FontWeight.EXTRA_LIGHT, labelSize));
+        hyperlink.setFont(Font.font("Impact", FontWeight.BOLD, labelSize));
         hyperlink.setTranslateX(translateX);
         hyperlink.setTranslateY(translateY);
     }

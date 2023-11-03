@@ -35,6 +35,9 @@ public class MenuScene extends Scene
     private final AchievementManager achievementManager;
 
     public static final String POLICE_LABEL = "Verdana";
+    private Label tenModeButton;
+    private Label fifteenModeButton;
+    private Label twentyModeButton;
 
     private Button leaderBoardButton;
     private Button trophyButton;
@@ -122,7 +125,12 @@ public class MenuScene extends Scene
 
         achievementButton = new Button(UtilStringStorage.achievementButton);
         Tooltip achievementTooltip = new Tooltip(UtilStringStorage.achievementTooltip);
-        createButton(achievementButton, achievementTooltip, 20, 145);
+        if(achievementButton.getText().equals("Achievements"))
+        {
+            createButton(achievementButton, achievementTooltip, 5, 145);
+        } else {
+            createButton(achievementButton, achievementTooltip, 20, 145);
+        }
 
         optionButton = new Button(UtilStringStorage.optionButton);
         Tooltip optionTooltip = new Tooltip(UtilStringStorage.optionTooltip);
@@ -161,6 +169,21 @@ public class MenuScene extends Scene
         });
     }
 
+    public void createLabel()
+    {
+        tenModeButton = new Label(UtilStringStorage.mode10Button);
+        tenModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 16));
+        tenModeButton.setTextFill(Color.BLACK);
+
+        fifteenModeButton = new Label(UtilStringStorage.mode15Button);
+        fifteenModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 16));
+        fifteenModeButton.setTextFill(Color.BLACK);
+
+        twentyModeButton = new Label(UtilStringStorage.mode20Button);
+        twentyModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 16));
+        twentyModeButton.setTextFill(Color.BLACK);
+    }
+
     public void createButtonArea()
     {
         VBox selectModeArea = new VBox();
@@ -171,29 +194,10 @@ public class MenuScene extends Scene
         chooseMode.setTranslateX(225);
         chooseMode.setTranslateY(100);
 
-        Label tenModeButton = new Label(UtilStringStorage.mode10Button);
-        tenModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 16));
-        tenModeButton.setTextFill(Color.BLACK);
-
-        Label fifteenModeButton = new Label(UtilStringStorage.mode15Button);
-        fifteenModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 16));
-        fifteenModeButton.setTextFill(Color.BLACK);
-
-        Label twentyModeButton = new Label(UtilStringStorage.mode20Button);
-        twentyModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 16));
-        twentyModeButton.setTextFill(Color.BLACK);
-
+        createLabel();
 
         comboBox = new ComboBox<>();
-        comboBox.setStyle("-fx-font: 20px \"Verdana\"");
-        comboBox.setMinHeight(30);
-        comboBox.setMinWidth(90);
-        comboBox.setTranslateX(230);
-        comboBox.setTranslateY(140);
-        comboBox.getItems().add(tenModeButton.getText());
-        comboBox.getItems().add(fifteenModeButton.getText());
-        comboBox.getItems().add(twentyModeButton.getText());
-        comboBox.getSelectionModel().selectFirst();
+        setUpComboBox();
 
         launchGameButton = new Button(UtilStringStorage.launchGameButton);
         launchGameButton.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 20));
@@ -204,6 +208,19 @@ public class MenuScene extends Scene
         selectModeArea.getChildren().add(comboBox);
         selectModeArea.getChildren().add(launchGameButton);
         pane.setCenter(selectModeArea);
+    }
+
+    public void setUpComboBox()
+    {
+        comboBox.setStyle("-fx-font: 20px \"Verdana\"");
+        comboBox.setMinHeight(30);
+        comboBox.setMinWidth(90);
+        comboBox.setTranslateX(230);
+        comboBox.setTranslateY(140);
+        comboBox.getItems().add(tenModeButton.getText());
+        comboBox.getItems().add(fifteenModeButton.getText());
+        comboBox.getItems().add(twentyModeButton.getText());
+        comboBox.getSelectionModel().selectFirst();
     }
 
     public void setButtonOnAction()

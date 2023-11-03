@@ -1,7 +1,6 @@
 package view;
 
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
@@ -9,10 +8,10 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import util.BackgroundCreator;
-import util.LanguageButton;
-import util.PathUtil;
-import util.UtilStringStorage;
+import javafx.stage.Stage;
+import model.AchievementManager;
+import model.SoundManager;
+import util.*;
 
 public class LanguageScene extends Scene
 {
@@ -21,17 +20,22 @@ public class LanguageScene extends Scene
     private LanguageButton engButton;
     private LanguageButton frButton;
     private final BorderPane pane;
+    private final Stage stage;
+    private final AchievementManager achievementManager;
 
-    public LanguageScene(BorderPane pane)
+    public LanguageScene(BorderPane pane, Stage stage, AchievementManager achievementManager)
     {
         super(pane);
         this.pane = pane;
+        this.stage = stage;
+        this.achievementManager = achievementManager;
         pane.setPrefWidth(500);
         pane.setPrefHeight(400);
 
         createTitleArea();
 
         createButtons();
+        setUpButton();
 
         createBackground();
 
@@ -83,11 +87,30 @@ public class LanguageScene extends Scene
         vBox.getChildren().add(frenchVbox);
     }
 
-    public Button getEngButton() {
-        return engButton;
-    }
+    public void setUpButton()
+    {
+        UtilTranslateString utilTranslateString = new UtilTranslateString();
+        engButton.setOnAction(event -> {
+            utilTranslateString.translateEngString();
 
-    public Button getFrButton() {
-        return frButton;
+            App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
+            MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
+            stage.setMinHeight(500);
+            stage.setMinWidth(1000);
+            stage.setScene(menuScene);
+            stage.setTitle(UtilStringStorage.gameTitle);
+            stage.show();
+        });
+
+        frButton.setOnAction(event -> {
+            utilTranslateString.translateFrString();
+            App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
+            MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
+            stage.setMinHeight(500);
+            stage.setMinWidth(1000);
+            stage.setScene(menuScene);
+            stage.setTitle(UtilStringStorage.gameTitle);
+            stage.show();
+        });
     }
 }

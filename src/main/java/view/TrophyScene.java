@@ -23,6 +23,7 @@ public class TrophyScene extends Scene
 
     private final Properties cupFile;
 
+
     public TrophyScene(BorderPane pane, Stage stage, AchievementManager achievementManager, Properties cupFile)
     {
         super(pane);
@@ -64,24 +65,15 @@ public class TrophyScene extends Scene
 
         VBox goldCupImages = new VBox();
         Label nbrOfGoldCupLabel = new Label();
-        placeLabel(nbrOfGoldCupLabel, -10, 5);
-        stylizeLabel(nbrOfGoldCupLabel, UtilStringStorage.goldCupTrophy, cupFile, "goldCup");
-        goldCupImages.getChildren().add(goldCup);
-        goldCupImages.getChildren().add(nbrOfGoldCupLabel);
+        setUpVbox(goldCup, goldCupImages, nbrOfGoldCupLabel, -10, 5, UtilStringStorage.goldCupTrophy, cupFile, "goldCup");
 
         VBox silverCupImages = new VBox();
         Label nbrOfSilverCupLabel = new Label();
-        placeLabel(nbrOfSilverCupLabel, -20, 5);
-        stylizeLabel(nbrOfSilverCupLabel, UtilStringStorage.silverCupTrophy, cupFile, "silverCup");
-        silverCupImages.getChildren().add(silverCup);
-        silverCupImages.getChildren().add(nbrOfSilverCupLabel);
+        setUpVbox(silverCup, silverCupImages, nbrOfSilverCupLabel, -20, 5, UtilStringStorage.silverCupTrophy, cupFile, "silverCup");
 
         VBox bronzeCupImages = new VBox();
         Label nbrOfBronzeCupLabel = new Label();
-        placeLabel(nbrOfBronzeCupLabel, -20, 5);
-        stylizeLabel(nbrOfBronzeCupLabel, UtilStringStorage.bronzeCupTrophy, cupFile, "bronzeCup");
-        bronzeCupImages.getChildren().add(bronzeCup);
-        bronzeCupImages.getChildren().add(nbrOfBronzeCupLabel);
+        setUpVbox(bronzeCup, bronzeCupImages, nbrOfBronzeCupLabel, -20, 5, UtilStringStorage.bronzeCupTrophy, cupFile, "bronzeCup");
 
         gridPane.add(goldCupImages, 0, 0);
         gridPane.add(silverCupImages, 1, 0);
@@ -90,6 +82,14 @@ public class TrophyScene extends Scene
         centralVbox.getChildren().add(gridPane);
 
         pane.setCenter(centralVbox);
+    }
+
+    public void setUpVbox(ImageView imageView, VBox vbox, Label label, int translateX, int translateY, String string, Properties properties, String propertyKey)
+    {
+        placeLabel(label, translateX, translateY);
+        stylizeLabel(label, string, properties, propertyKey);
+        vbox.getChildren().add(imageView);
+        vbox.getChildren().add(label);
     }
 
     public void createReturnButton()

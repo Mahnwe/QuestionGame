@@ -21,3 +21,11 @@
 2023-11-03 14:21:11.858 ERROR [JavaFX Application Thread] [model.GameHandler.setupQuestionList(GameHandler.java:39)] - Question list can't be set
 2023-11-03 14:21:25.128 ERROR [JavaFX Application Thread] [model.GameHandler.setupQuestionList(GameHandler.java:39)] - Question list can't be set
 2023-11-03 14:21:40.569 ERROR [JavaFX Application Thread] [model.GameHandler.setupQuestionList(GameHandler.java:39)] - Question list can't be set
+2023-11-03 14:28:23.508 ERROR [JavaFX Application Thread] [model.GameHandler.setupQuestionList(GameHandler.java:39)] - Question list can't be set
+2023-11-03 14:30:09.844 ERROR [JavaFX Application Thread] [model.GameHandler.setupQuestionList(GameHandler.java:39)] - Question list can't be set
+2023-11-03 14:30:22.744 ERROR [JavaFX Application Thread] [model.GameHandler.setupQuestionList(GameHandler.java:39)] - Question list can't be set
+2023-11-03 14:30:34.925 ERROR [JavaFX Application Thread] [model.GameHandler.setupQuestionList(GameHandler.java:39)] - Question list can't be set
+2023-11-03 14:31:17.394 ERROR [JavaFX Application Thread] [model.GameHandler.setupQuestionList(GameHandler.java:39)] - Question list can't be set
+2023-11-03 14:34:17.915 ERROR [JavaFX Application Thread] [model.GameHandler.setupQuestionList(GameHandler.java:39)] - Question list can't be set
+2023-11-03 14:34:35.843 ERROR [JavaFX Application Thread] [model.GameHandler.setupQuestionList(GameHandler.java:39)] - Question list can't be set
+2023-11-03 14:34:58.121 ERROR [JavaFX Application Thread] [model.GameHandler.setupQuestionList(GameHandler.java:39)] - Question list can't be set

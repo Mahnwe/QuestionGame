@@ -79,6 +79,7 @@ public class PlayerInfoScene extends Scene
             {
                 userInputArea.deletePreviousChar();
             }
+
         });
 
         userInputArea.setBorder(border);
@@ -122,7 +123,7 @@ public class PlayerInfoScene extends Scene
     public void setOnKeyTypedSendButton(BorderPane pane, QuestionInterface questionInterface, Stage stage, Stage popUpStage)
     {
         userInputArea.setOnKeyPressed(keyEvent -> {
-            if (keyEvent.getCode().equals(KeyCode.ENTER) && (!userInputArea.getText().isEmpty())) {
+            if (keyEvent.getCode().equals(KeyCode.ENTER) && (!userInputArea.getText().substring(0,1).isBlank())) {
                 createPlayerInfoArea();
                 pane.setLeft(playerInfos);
                 questionInterface.setDisable(false);
@@ -130,6 +131,9 @@ public class PlayerInfoScene extends Scene
                 stage.setMinHeight(500);
                 GameTimer.startTimer();
                 popUpStage.close();
+            }
+            if (keyEvent.getCode().equals(KeyCode.ENTER) && (userInputArea.getText().isBlank())) {
+                userInputArea.clear();
             }
         });
     }

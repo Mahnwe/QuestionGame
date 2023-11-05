@@ -2,6 +2,8 @@ package model;
 
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import view.ResultScene;
+
 import java.io.File;
 
 public class SoundManager {
@@ -34,6 +36,14 @@ public class SoundManager {
     public static void stopMusic(MediaPlayer mediaPlayer)
     {
         mediaPlayer.stop();
+    }
+
+    public static void checkIfMusicIsPlayed(MediaPlayer mediaPlayer)
+    {
+        if(mediaPlayer != null)
+        {
+            mediaPlayer.stop();
+        }
     }
 
 

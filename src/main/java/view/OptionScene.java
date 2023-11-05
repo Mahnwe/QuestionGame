@@ -176,14 +176,11 @@ public class OptionScene extends Scene {
         engButton.setOnAction(event -> {
             utilTranslateString.translateEngString();
             App.menuMusicToStop.stop();
-            if(ResultScene.returnToMenuMusic != null)
-            {
-                ResultScene.returnToMenuMusic.stop();
-            }
+            SoundManager.checkIfMusicIsPlayed(App.menuMusicToStop);
             App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
             MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
             stage.setMinHeight(500);
-            stage.setMinWidth(950);
+            stage.setMinWidth(1000);
             stage.setScene(menuScene);
             stage.setTitle(UtilStringStorage.gameTitle);
             stage.show();
@@ -192,10 +189,7 @@ public class OptionScene extends Scene {
         frButton.setOnAction(event -> {
             utilTranslateString.translateFrString();
             App.menuMusicToStop.stop();
-            if(ResultScene.returnToMenuMusic != null)
-            {
-                ResultScene.returnToMenuMusic.stop();
-            }
+            SoundManager.checkIfMusicIsPlayed(App.menuMusicToStop);
             App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
             MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
             stage.setMinHeight(500);

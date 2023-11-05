@@ -92,7 +92,6 @@ public class LanguageScene extends Scene
         UtilTranslateString utilTranslateString = new UtilTranslateString();
         engButton.setOnAction(event -> {
             utilTranslateString.translateEngString();
-
             App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
             MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
             stage.setMinHeight(500);

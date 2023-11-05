@@ -44,6 +44,7 @@ public class ResultScene extends VBox
         this.cupFile = cupFile;
         this.perfectScoreFile = perfectScoreFile;
         gameResult = new VBox();
+        AchievementManager.notificationAlert = null;
 
         createIcons();
         setUpLabelAndTimer();
@@ -63,7 +64,6 @@ public class ResultScene extends VBox
 
     public void checkPlayerResult()
     {
-        AchievementManager.notificationAlert = null;
         if(playerFinalScore >= questionCount*90/100)
         {
             goldCupResult(gameResult);
@@ -218,8 +218,8 @@ public class ResultScene extends VBox
 
     public void stylizeIcon (ImageView imageView)
     {
-        imageView.setFitHeight(100);
-        imageView.setFitWidth(80);
+        imageView.setFitHeight(120);
+        imageView.setFitWidth(100);
         imageView.setTranslateY(80);
         imageView.setTranslateX(280);
     }

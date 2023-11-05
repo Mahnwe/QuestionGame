@@ -38,7 +38,7 @@ public class AchievementManager
 
     public void checkIfAchievementIsUnlock(Achievement achievement, int numberToCompareWithCondition)
     {
-        if(achievement.getCondition() <= numberToCompareWithCondition && achievement.getNotificationAlert() == null)
+        if(achievement.getCondition() <= numberToCompareWithCondition)
         {
             achievement.setUnlock(true);
             achievement.getLockImageView().setImage(achievement.getUnlockImageView().getImage());

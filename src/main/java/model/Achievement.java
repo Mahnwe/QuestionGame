@@ -3,6 +3,7 @@ package model;
 import javafx.scene.image.ImageView;
 import util.IconCreator;
 import util.PathUtil;
+import view.NotificationAlert;
 
 public class Achievement
 {
@@ -10,12 +11,14 @@ public class Achievement
     private boolean isUnlock;
     private ImageView lockImageView;
     private ImageView unlockImageView;
+    private NotificationAlert notificationAlert;
 
-    public Achievement(int condition, boolean isUnlock)
+    public Achievement(int condition, boolean isUnlock, NotificationAlert notificationAlert)
     {
         createIcons();
         this.condition = condition;
         this.isUnlock = isUnlock;
+        this.notificationAlert = notificationAlert;
     }
 
     public void createIcons() {
@@ -49,5 +52,13 @@ public class Achievement
 
     public void setUnlock(boolean unlock) {
         isUnlock = unlock;
+    }
+
+    public NotificationAlert getNotificationAlert() {
+        return notificationAlert;
+    }
+
+    public void setNotificationAlert(NotificationAlert notificationAlert) {
+        this.notificationAlert = notificationAlert;
     }
 }

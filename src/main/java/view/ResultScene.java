@@ -63,6 +63,7 @@ public class ResultScene extends VBox
 
     public void checkPlayerResult()
     {
+        AchievementManager.notificationAlert = null;
         if(playerFinalScore >= questionCount*90/100)
         {
             goldCupResult(gameResult);

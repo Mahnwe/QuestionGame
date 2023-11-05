@@ -154,7 +154,7 @@ public class PlayerInfoScene extends Scene
         stylizeLabel(playerScoreLabel);
 
         playerInfos.getChildren().add(createStatArea(playerScoreLabel));
-        playerInfos.setMinWidth(200);
+        playerInfos.setMinWidth(170);
         playerInfos.setMaxWidth(150);
 
         createSliderArea();

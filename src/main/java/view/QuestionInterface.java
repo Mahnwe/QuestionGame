@@ -58,7 +58,7 @@ public class QuestionInterface extends BorderPane
         gridPane.addColumn(3);
         gridPane.addRow(4);
         gridPane.setTranslateY(40);
-        gridPane.setTranslateX(100);
+        gridPane.setTranslateX(90);
     }
 
     public void createGameSpace()
@@ -66,7 +66,7 @@ public class QuestionInterface extends BorderPane
         game = new VBox();
         game.setBorder(border);
         game.setBorder(new Border(new BorderStroke(Color.BLACK,BorderStrokeStyle.SOLID,CornerRadii.EMPTY,BorderWidths.DEFAULT)));
-        game.setPrefWidth(800);
+        game.setPrefWidth(830);
         game.setPrefHeight(250);
     }
 

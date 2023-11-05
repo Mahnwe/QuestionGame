@@ -116,24 +116,11 @@ public class TrophyScene extends Scene
 
     public void createIcons()
     {
-        IconCreator goldCupImage = new IconCreator(PathUtil.GOLD_CUP_PATH);
-        goldCup = goldCupImage.createImage();
-        stylizeIcon(goldCup);
+        goldCup = IconCreator.createCupIcon(PathUtil.GOLD_CUP_PATH);
 
-        IconCreator bronzeCupImage = new IconCreator(PathUtil.BRONZE_CUP_PATH);
-        bronzeCup = bronzeCupImage.createImage();
-        stylizeIcon(bronzeCup);
+        bronzeCup = IconCreator.createCupIcon(PathUtil.BRONZE_CUP_PATH);
 
-        IconCreator silverCupImage = new IconCreator(PathUtil.SILVER_CUP_PATH);
-        silverCup = silverCupImage.createImage();
-        stylizeIcon(silverCup);
-
-    }
-
-    public void stylizeIcon(ImageView imageView)
-    {
-        imageView.setFitHeight(120);
-        imageView.setFitWidth(100);
+        silverCup = IconCreator.createCupIcon(PathUtil.SILVER_CUP_PATH);
     }
     public void backToMainMenu()
     {

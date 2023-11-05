@@ -33,4 +33,18 @@ public class IconCreator
         imageView.setImage(image);
         return imageView;
     }
+
+    public static ImageView createCupIcon(String pathIcon)
+    {
+        IconCreator goldCupImage = new IconCreator(pathIcon);
+        ImageView imageView = goldCupImage.createImage();
+        stylizeIcon(imageView);
+        return imageView;
+    }
+
+    public static void stylizeIcon(ImageView imageView)
+    {
+        imageView.setFitHeight(120);
+        imageView.setFitWidth(100);
+    }
 }

@@ -13,25 +13,25 @@ public class AchievementManager
 
     public AchievementManager()
     {
-        Achievement goldCupAchievement = new Achievement(3, false, null);
+        Achievement goldCupAchievement = new Achievement(3, false);
         achievementsList.add(goldCupAchievement);
 
-        Achievement silverCupAchievement = new Achievement(3, false, null);
+        Achievement silverCupAchievement = new Achievement(3, false);
         achievementsList.add(silverCupAchievement);
 
-        Achievement bronzeCupAchievement = new Achievement(3, false, null);
+        Achievement bronzeCupAchievement = new Achievement(3, false);
         achievementsList.add(bronzeCupAchievement);
 
-        Achievement onlyGoodAnswerAchievement = new Achievement(10, false, null);
+        Achievement onlyGoodAnswerAchievement = new Achievement(10, false);
         achievementsList.add(onlyGoodAnswerAchievement);
 
-        Achievement onlyGoodAnswerAchievement15 = new Achievement(15, false, null);
+        Achievement onlyGoodAnswerAchievement15 = new Achievement(15, false);
         achievementsList.add(onlyGoodAnswerAchievement15);
 
-        Achievement onlyGoodAnswerAchievement20 = new Achievement(20, false, null);
+        Achievement onlyGoodAnswerAchievement20 = new Achievement(20, false);
         achievementsList.add(onlyGoodAnswerAchievement20);
 
-        Achievement secretAchievement = new Achievement(6, false, null);
+        Achievement secretAchievement = new Achievement(6, false);
         achievementsList.add(secretAchievement);
 
     }
@@ -42,7 +42,6 @@ public class AchievementManager
         {
             achievement.setUnlock(true);
             achievement.getLockImageView().setImage(achievement.getUnlockImageView().getImage());
-            achievement.setNotificationAlert(new NotificationAlert(Alert.AlertType.INFORMATION));
             notificationAlert = new NotificationAlert(Alert.AlertType.INFORMATION);
         }
         else {

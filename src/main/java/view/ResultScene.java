@@ -12,12 +12,15 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.AchievementManager;
 import model.SoundManager;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import util.*;
 
 import java.util.Properties;
 
 public class ResultScene extends VBox
 {
+    private static final Logger logger = LogManager.getLogger(ResultScene.class);
     private final VBox gameResult;
     private Button exitToMenuButton;
     private Label congratsLabel;
@@ -124,9 +127,15 @@ public class ResultScene extends VBox
         int nbrOfGoldCup = Integer.parseInt(numberOfGoldCup);
         nbrOfGoldCup++;
 
-        checkPerfectScoreAchievement(10, perfectScoreFile, "perfectScore10", "10", 3);
-        checkPerfectScoreAchievement(15, perfectScoreFile, "perfectScore15", "15", 4);
-        checkPerfectScoreAchievement(20, perfectScoreFile, "perfectScore20", "20", 5);
+        switch (questionCount) {
+            case 10 -> checkPerfectScoreAchievement(10, perfectScoreFile, "perfectScore10", "10", 3);
+            case 15 -> checkPerfectScoreAchievement(15, perfectScoreFile, "perfectScore15", "15", 4);
+            case 20 -> checkPerfectScoreAchievement(20, perfectScoreFile, "perfectScore20", "20", 5);
+            default -> logger.error("Question count bug");
+        }
+
+
+
 
         achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(0), nbrOfGoldCup);
         cupFile.setProperty("goldCup", String.valueOf(nbrOfGoldCup));
@@ -180,18 +189,15 @@ public class ResultScene extends VBox
         vBox.getChildren().add(bronzeCup);
     }
 
-    public void checkPerfectScoreAchievement(int numberOfQuestion, Properties perfectScoreFile, String propertyKey, String numberToCompare, int achievementIndex)
+    public void checkPerfectScoreAchievement(int playerFinalScore, Properties perfectScoreFile, String propertyKey, String numberToCompare, int achievementIndex)
     {
-        if(questionCount == numberOfQuestion) {
-            String checkIntInPerfectFile = String.valueOf(perfectScoreFile.getProperty(propertyKey));
-            if(checkIntInPerfectFile.equals(numberToCompare)) {
-                achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(achievementIndex), playerFinalScore);
-            } else {
+        if(playerFinalScore == Integer.parseInt(numberToCompare)) {
                 String perfectScoreString = String.valueOf(playerFinalScore);
                 perfectScoreFile.setProperty(propertyKey, perfectScoreString);
-            }
-
+                achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(achievementIndex), playerFinalScore);
         }
+
+
     }
 
     public String checkAndGetNumberOfCup(String stringToCheck)

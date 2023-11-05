@@ -2,7 +2,6 @@ package model;
 
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import view.ResultScene;
 
 import java.io.File;
 

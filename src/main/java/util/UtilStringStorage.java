@@ -558,6 +558,13 @@ public class UtilStringStorage
     public static String answerD63 = "";
     public static String goodAnswer63 = "";
     public static String explanation63 = "";
+    public static String question64 = "";
+    public static String answerA64 = "";
+    public static String answerB64 = "";
+    public static String answerC64 = "";
+    public static String answerD64 = "";
+    public static String goodAnswer64 = "";
+    public static String explanation64 = "";
 
 
 }

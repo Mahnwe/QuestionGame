@@ -1,13 +1,27 @@
 package model;
 
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import util.PathUtil;
+import util.UtilStringStorage;
+import view.MenuScene;
 import view.NotificationAlert;
+import view.ResultScene;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 public class AchievementManager
 {
+    private static final Logger logger = LogManager.getLogger(AchievementManager.class);
     public static NotificationAlert notificationAlert = null;
     private final List<Achievement> achievementsList = new ArrayList<>();
 
@@ -46,6 +60,95 @@ public class AchievementManager
             achievement.setUnlock(false);
             achievement.getLockImageView().setImage(achievement.getLockImageView().getImage());
         }
+    }
+    public void checkPerfectScoreAchievement(AchievementManager achievementManager, int playerFinalScore, Properties perfectScoreFile, String propertyKey, String numberToCompare, int achievementIndex)
+    {
+        if(playerFinalScore == Integer.parseInt(numberToCompare)) {
+            String perfectScoreString = String.valueOf(playerFinalScore);
+            perfectScoreFile.setProperty(propertyKey, perfectScoreString);
+            achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(achievementIndex), playerFinalScore);
+        }
+    }
+
+    public void goldCupResult(int questionCount, VBox vBox, Properties perfectScoreFile, Properties cupFile, AchievementManager achievementManager, ImageView imageView)
+    {
+        switch (questionCount) {
+            case 10 -> checkPerfectScoreAchievement(achievementManager,10, perfectScoreFile, "perfectScore10", "10", 3);
+            case 15 -> checkPerfectScoreAchievement(achievementManager,15, perfectScoreFile, "perfectScore15", "15", 4);
+            case 20 -> checkPerfectScoreAchievement(achievementManager,20, perfectScoreFile, "perfectScore20", "20", 5);
+            default -> logger.error("Question count bug");
+        }
+
+        String checkIntInFile = cupFile.getProperty("goldCup");
+        String numberOfGoldCup = checkAndGetNumberOfCup(checkIntInFile);
+
+        int nbrOfGoldCup = Integer.parseInt(numberOfGoldCup);
+        nbrOfGoldCup++;
+
+        achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(0), nbrOfGoldCup);
+        cupFile.setProperty("goldCup", String.valueOf(nbrOfGoldCup));
+
+        Label cupLabel = new Label(UtilStringStorage.goldCupLabel);
+        setUpResultLabel(cupLabel);
+
+        vBox.getChildren().add(cupLabel);
+        vBox.getChildren().add(imageView);
+    }
+
+    public void silverCupResult(VBox vBox, Properties cupFile, AchievementManager achievementManager, ImageView imageView)
+    {
+        String checkIntInFile = cupFile.getProperty("silverCup");
+        String numberOfSilverCup = checkAndGetNumberOfCup(checkIntInFile);
+
+        int nbrOfSilverCup = Integer.parseInt(numberOfSilverCup);
+        nbrOfSilverCup++;
+
+        achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(1), nbrOfSilverCup);
+        cupFile.setProperty("silverCup", String.valueOf(nbrOfSilverCup));
+
+        Label cupLabel = new Label(UtilStringStorage.silverCupLabel);
+        setUpResultLabel(cupLabel);
+
+        vBox.getChildren().add(cupLabel);
+        vBox.getChildren().add(imageView);
+    }
+
+    public void bronzeCupResult(VBox vBox, Properties cupFile, AchievementManager achievementManager, ImageView imageView)
+    {
+        String checkIntInFile = cupFile.getProperty("bronzeCup");
+        String numberOfBronzeCup = checkAndGetNumberOfCup(checkIntInFile);
+
+        int nbrOfBronzeCup = Integer.parseInt(numberOfBronzeCup);
+        nbrOfBronzeCup++;
+
+        achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(2), nbrOfBronzeCup);
+        cupFile.setProperty("bronzeCup", String.valueOf(nbrOfBronzeCup));
+
+        Label cupLabel = new Label(UtilStringStorage.bronzeCupLabel);
+        setUpResultLabel(cupLabel);
+
+        vBox.getChildren().add(cupLabel);
+        vBox.getChildren().add(imageView);
+    }
+
+    public String checkAndGetNumberOfCup(String stringToCheck)
+    {
+        String numberGetter;
+        numberGetter = stringToCheck;
+        return numberGetter;
+    }
+
+    public void setUpResultLabel(Label label)
+    {
+        ResultScene.resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
+        stylizeLabel(label, 200, 70);
+    }
+    public void stylizeLabel(Label label, int translateX, int translateY)
+    {
+        label.setTranslateX(translateX);
+        label.setTranslateY(translateY);
+        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 16));
+        label.setTextFill(Color.GHOSTWHITE);
     }
 
     public List<Achievement> getAchievementsList() {

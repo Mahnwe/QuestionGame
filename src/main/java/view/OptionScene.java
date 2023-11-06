@@ -99,6 +99,7 @@ public class OptionScene extends Scene {
         volumeSlider.setShowTickLabels(true);
         volumeSlider.setMajorTickUnit(1f);
         volumeSlider.setBlockIncrement(1f);
+        volumeSlider.setValue(SoundManager.soundVolume);
         if(SoundManager.soundVolume == 0.0) {
             isMute = true;
             volumeSlider.setDisable(true);

@@ -47,14 +47,12 @@ public class FileUtil {
     public static StringBuilder readSaveFile(File saveFile)
     {
         StringBuilder stringBuilder = new StringBuilder();
-        try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(saveFile));
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(saveFile))){
             String line;
             while((line = bufferedReader.readLine()) != null)
             {
                 stringBuilder.append(line).append("\n").append("\n");
             }
-            bufferedReader.close();
         } catch (IOException e) {
                 logger.error("Save file can't be read");
         }
@@ -77,8 +75,8 @@ public class FileUtil {
 
     public static void storePerfectFile()
     {
-        try {
-            perfectScoreFile.store(new FileWriter(PathUtil.PERFECT_SCORE_FILE), "");
+        try (FileWriter fileWriter = new FileWriter(PathUtil.PERFECT_SCORE_FILE)) {
+            perfectScoreFile.store(fileWriter, "");
         } catch (IOException e) {
             logger.error("Perfect score file can't be store");
         }
@@ -86,8 +84,8 @@ public class FileUtil {
 
     public static void storeCupFile()
     {
-        try {
-            cupFile.store(new FileWriter(PathUtil.CUP_FILE), "");
+        try (FileWriter fileWriter = new FileWriter(PathUtil.CUP_FILE)){
+            cupFile.store(fileWriter, "");
         } catch (IOException e) {
             logger.error("Cup file can't be store");
         }

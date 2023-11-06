@@ -64,6 +64,14 @@ public class ResultScene extends VBox
         });
     }
 
+    public void stylizeLabel(Label label, int translateX, int translateY)
+    {
+        label.setTranslateX(translateX);
+        label.setTranslateY(translateY);
+        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 16));
+        label.setTextFill(Color.GHOSTWHITE);
+    }
+
     public void checkPlayerResult()
     {
         AchievementManager.notificationAlert = null;
@@ -82,9 +90,7 @@ public class ResultScene extends VBox
         if(playerFinalScore < questionCount*40/100)
         {
             Label cupLabel = new Label(UtilStringStorage.noCupLabel);
-            placeLabels(cupLabel, 200, 70);
-            cupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 16));
-            cupLabel.setTextFill(Color.GHOSTWHITE);
+            stylizeLabel(cupLabel, 200, 70);
             gameResult.getChildren().add(cupLabel);
         }
         FileUtil.storePerfectFile();
@@ -94,14 +100,10 @@ public class ResultScene extends VBox
     public void setUpLabelAndTimer()
     {
         congratsLabel = new Label();
-        placeLabels(congratsLabel, 120, 10);
-        congratsLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 16));
-        congratsLabel.setTextFill(Color.GHOSTWHITE);
+        stylizeLabel(congratsLabel, 120, 10);
 
         playerResult = new Label();
-        placeLabels(playerResult, 225, 30);
-        playerResult.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 16));
-        playerResult.setTextFill(Color.GHOSTWHITE);
+        stylizeLabel(playerResult, 225, 30);
 
         exitToMenuButton = new Button(UtilStringStorage.returnToMenuButton);
         exitToMenuButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 16));
@@ -109,9 +111,7 @@ public class ResultScene extends VBox
         exitToMenuButton.setTranslateX(240);
 
         Label timeLabel = new Label();
-        placeLabels(timeLabel, 225, 35);
-        timeLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 16));
-        timeLabel.setTextFill(Color.GHOSTWHITE);
+        stylizeLabel(timeLabel, 225, 35);
         timeLabel.setText(UtilStringStorage.timeLabel + GameTimer.getElapsedMinutes() + UtilStringStorage.minLabel + GameTimer.getSecondsDisplay() +UtilStringStorage.secondesLabel);
 
         gameResult.getChildren().add(congratsLabel);
@@ -119,14 +119,14 @@ public class ResultScene extends VBox
         gameResult.getChildren().add(timeLabel);
     }
 
+    public void setUpResultLabel(Label label)
+    {
+        resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
+        stylizeLabel(label, 200, 70);
+    }
+
     public void goldCupResult(VBox vBox)
     {
-        String checkIntInFile = cupFile.getProperty("goldCup");
-        String numberOfGoldCup = checkAndGetNumberOfCup(checkIntInFile);
-
-        int nbrOfGoldCup = Integer.parseInt(numberOfGoldCup);
-        nbrOfGoldCup++;
-
         switch (questionCount) {
             case 10 -> checkPerfectScoreAchievement(10, perfectScoreFile, "perfectScore10", "10", 3);
             case 15 -> checkPerfectScoreAchievement(15, perfectScoreFile, "perfectScore15", "15", 4);
@@ -134,17 +134,18 @@ public class ResultScene extends VBox
             default -> logger.error("Question count bug");
         }
 
+        String checkIntInFile = cupFile.getProperty("goldCup");
+        String numberOfGoldCup = checkAndGetNumberOfCup(checkIntInFile);
 
-
+        int nbrOfGoldCup = Integer.parseInt(numberOfGoldCup);
+        nbrOfGoldCup++;
 
         achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(0), nbrOfGoldCup);
         cupFile.setProperty("goldCup", String.valueOf(nbrOfGoldCup));
 
-        resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
         Label cupLabel = new Label(UtilStringStorage.goldCupLabel);
-        placeLabels(cupLabel, 200, 70);
-        cupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 16));
-        cupLabel.setTextFill(Color.GHOSTWHITE);
+        setUpResultLabel(cupLabel);
+
         vBox.getChildren().add(cupLabel);
         vBox.getChildren().add(goldCup);
     }
@@ -160,11 +161,9 @@ public class ResultScene extends VBox
         achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(1), nbrOfSilverCup);
         cupFile.setProperty("silverCup", String.valueOf(nbrOfSilverCup));
 
-        resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
         Label cupLabel = new Label(UtilStringStorage.silverCupLabel);
-        placeLabels(cupLabel, 200, 70);
-        cupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 16));
-        cupLabel.setTextFill(Color.GHOSTWHITE);
+        setUpResultLabel(cupLabel);
+
         vBox.getChildren().add(cupLabel);
         vBox.getChildren().add(silverCup);
     }
@@ -180,11 +179,9 @@ public class ResultScene extends VBox
         achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(2), nbrOfBronzeCup);
         cupFile.setProperty("bronzeCup", String.valueOf(nbrOfBronzeCup));
 
-        resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
         Label cupLabel = new Label(UtilStringStorage.bronzeCupLabel);
-        placeLabels(cupLabel, 200, 70);
-        cupLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 16));
-        cupLabel.setTextFill(Color.GHOSTWHITE);
+        setUpResultLabel(cupLabel);
+
         vBox.getChildren().add(cupLabel);
         vBox.getChildren().add(bronzeCup);
     }
@@ -196,8 +193,6 @@ public class ResultScene extends VBox
                 perfectScoreFile.setProperty(propertyKey, perfectScoreString);
                 achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(achievementIndex), playerFinalScore);
         }
-
-
     }
 
     public String checkAndGetNumberOfCup(String stringToCheck)
@@ -235,12 +230,6 @@ public class ResultScene extends VBox
             NotificationAlert notificationAlert = AchievementManager.notificationAlert;
             notificationAlert.showAlert();
         }
-    }
-
-    public void placeLabels(Label label, int x, int y)
-    {
-        label.setTranslateX(x);
-        label.setTranslateY(y);
     }
 
     public Label getPlayerResult() {

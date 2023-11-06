@@ -22,6 +22,7 @@ public class TrophyScene extends Scene
     private final BorderPane pane;
 
     private final Properties cupFile;
+    private GridPane gridPane;
 
 
     public TrophyScene(BorderPane pane, Stage stage, AchievementManager achievementManager, Properties cupFile)
@@ -51,17 +52,11 @@ public class TrophyScene extends Scene
     public void createCupboardTrophy()
     {
         VBox centralVbox = new VBox();
-        GridPane gridPane = new GridPane();
-        gridPane.setHgap(90);
-        gridPane.setVgap(50);
-        gridPane.setTranslateY(110);
-        gridPane.setTranslateX(155);
+
+        createGridPane();
 
         Label trophyLabel = new Label();
-        trophyLabel.setText(UtilStringStorage.trophyLabel);
-        trophyLabel.setFont(Font.font("Impact", FontWeight.BOLD, 25));
-        trophyLabel.setTranslateX(330);
-        trophyLabel.setTranslateY(20);
+        stylizeTitleLabel(trophyLabel);
 
         VBox goldCupImages = new VBox();
         Label nbrOfGoldCupLabel = new Label();
@@ -78,10 +73,28 @@ public class TrophyScene extends Scene
         gridPane.add(goldCupImages, 0, 0);
         gridPane.add(silverCupImages, 1, 0);
         gridPane.add(bronzeCupImages, 2, 0);
+
         centralVbox.getChildren().add(trophyLabel);
         centralVbox.getChildren().add(gridPane);
 
         pane.setCenter(centralVbox);
+    }
+
+    public void createGridPane()
+    {
+        gridPane = new GridPane();
+        gridPane.setHgap(90);
+        gridPane.setVgap(50);
+        gridPane.setTranslateY(110);
+        gridPane.setTranslateX(155);
+    }
+
+    public void stylizeTitleLabel(Label label)
+    {
+        label.setText(UtilStringStorage.trophyLabel);
+        label.setFont(Font.font("Impact", FontWeight.BOLD, 25));
+        label.setTranslateX(330);
+        label.setTranslateY(20);
     }
 
     public void setUpVbox(ImageView imageView, VBox vbox, Label label, int translateX, int translateY, String string, Properties properties, String propertyKey)

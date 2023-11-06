@@ -45,7 +45,6 @@ public class SoundManager {
         }
     }
 
-
     public static void setSoundVolume(Double soundVolume) {
         SoundManager.soundVolume = soundVolume;
     }

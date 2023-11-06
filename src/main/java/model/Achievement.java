@@ -18,7 +18,8 @@ public class Achievement
         this.isUnlock = isUnlock;
     }
 
-    public void createIcons() {
+    public void createIcons()
+    {
         IconCreator lockIcon = new IconCreator(PathUtil.LOCK_ICON);
         lockImageView = lockIcon.createImage();
         lockImageView.setFitHeight(40);

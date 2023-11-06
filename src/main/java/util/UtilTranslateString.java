@@ -3,9 +3,8 @@ package util;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.FileInputStream;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.Properties;
 
 public class UtilTranslateString {
@@ -22,8 +21,8 @@ public class UtilTranslateString {
 
     public void loadEngTradFile()
     {
-        try {
-            engTradFile.load(Files.newInputStream(Path.of(PathUtil.ENG_TRAD_PROPERTIES_FILE)));
+        try (FileInputStream fileInputStream = new FileInputStream(PathUtil.ENG_TRAD_PROPERTIES_FILE)) {
+            engTradFile.load(fileInputStream);
         } catch (IOException e) {
             logger.error("English trad file can't be load");
         }
@@ -31,12 +30,11 @@ public class UtilTranslateString {
 
     public void loadFrTradFile()
     {
-        try {
-            frTradFile.load(Files.newInputStream(Path.of(PathUtil.FR_TRAD_PROPERTIES_FILE)));
+        try (FileInputStream fileInputStream = new FileInputStream(PathUtil.FR_TRAD_PROPERTIES_FILE)){
+            frTradFile.load(fileInputStream);
         } catch (IOException e) {
             logger.error("French trad file can't be load");
         }
-
     }
 
     public void translateEngString()

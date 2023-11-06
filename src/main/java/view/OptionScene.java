@@ -3,7 +3,6 @@ package view;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -20,7 +19,7 @@ public class OptionScene extends Scene {
     private final AchievementManager achievementManager;
     private final Stage stage;
     private final VBox optionVbox;
-    private final Alert confirmAlert;
+    private final ConfirmAlert confirmAlert;
     private Slider volumeSlider;
     private Button muteButton;
     private boolean isMute;
@@ -38,8 +37,7 @@ public class OptionScene extends Scene {
         this.achievementManager = achievementManager;
         pane.setPrefHeight(500);
         pane.setPrefWidth(1000);
-        this.confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
-        modifyConfirmAlert();
+        this.confirmAlert = new ConfirmAlert(Alert.AlertType.CONFIRMATION);
 
         optionVbox = new VBox();
         pane.setCenter(optionVbox);
@@ -69,13 +67,18 @@ public class OptionScene extends Scene {
         returnButton.setOnAction(event -> backToMainMenu());
     }
 
+    public void stylizeLabel(Label label, int translateY, int translateX)
+    {
+        label.setFont(Font.font(OPTION_POLICE_LABEL, FontWeight.EXTRA_BOLD, 17));
+        label.setTextFill(Color.BLACK);
+        label.setTranslateY(translateY);
+        label.setTranslateX(translateX);
+    }
+
     public void createSliderArea()
     {
         Label volumeLabel = new Label(UtilStringStorage.volumeLabel);
-        volumeLabel.setTranslateY(20);
-        volumeLabel.setTranslateX(388);
-        volumeLabel.setFont(Font.font(OPTION_POLICE_LABEL, FontWeight.EXTRA_BOLD, 17));
-        volumeLabel.setTextFill(Color.BLACK);
+        stylizeLabel(volumeLabel, 20, 388);
         optionVbox.getChildren().add(volumeLabel);
 
         IconCreator muteIcon = new IconCreator(PathUtil.MUTE_ICON);
@@ -88,7 +91,6 @@ public class OptionScene extends Scene {
         optionVbox.getChildren().add(muteButton);
         muteButton.setTranslateY(35);
         muteButton.setTranslateX(232);
-
 
         volumeSlider = new Slider(0, 10, 5);
         volumeSlider.setMaxWidth(305);
@@ -109,7 +111,6 @@ public class OptionScene extends Scene {
         volumeSlider.setOnDragDetected(event -> setVolumeFromSlider(volumeSlider.getValue()));
         volumeSlider.setOnMouseClicked(event -> setVolumeFromSlider(volumeSlider.getValue()));
         volumeSlider.setOnMouseReleased(event -> setVolumeFromSlider(volumeSlider.getValue()));
-
 
     }
 
@@ -146,7 +147,6 @@ public class OptionScene extends Scene {
         englishVbox.setTranslateY(50);
         englishVbox.setTranslateX(220);
 
-
         VBox frenchVbox = new VBox();
         Label frenchLabel = new Label("Choisissez une langue");
         frenchLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 15));
@@ -159,10 +159,7 @@ public class OptionScene extends Scene {
         frenchVbox.setTranslateY(-20);
 
         Label languageLabel = new Label(UtilStringStorage.languageLabel);
-        languageLabel.setFont(Font.font(OPTION_POLICE_LABEL, FontWeight.EXTRA_BOLD, 17));
-        languageLabel.setTextFill(Color.BLACK);
-        languageLabel.setTranslateY(40);
-        languageLabel.setTranslateX(390);
+        stylizeLabel(languageLabel, 40, 390);
 
         optionVbox.getChildren().add(languageLabel);
         optionVbox.getChildren().add(englishVbox);
@@ -220,8 +217,7 @@ public class OptionScene extends Scene {
         });
 
         Label resetLabel = new Label(UtilStringStorage.resetLabel);
-        resetLabel.setFont(Font.font(OPTION_POLICE_LABEL, FontWeight.EXTRA_BOLD, 17));
-        resetLabel.setTextFill(Color.BLACK);
+        stylizeLabel(resetLabel, 0, 0);
         placeLabelWithTranslation(resetLabel);
 
         optionVbox.getChildren().add(resetLabel);
@@ -262,44 +258,15 @@ public class OptionScene extends Scene {
         }
         SoundManager.setSoundVolume(sliderValue);
     }
-
-    public void modifyConfirmAlert()
-    {
-        confirmAlert.setTitle(UtilStringStorage.confirmAlertWindow);
-        confirmAlert.setHeaderText(UtilStringStorage.askConfirmReset);
-
-        IconCreator iconCreator = new IconCreator(PathUtil.QUESTION_MARK_TEST);
-        ImageView backgroundImage = iconCreator.createImage();
-        backgroundImage.setFitHeight(150);
-        confirmAlert.setGraphic(backgroundImage);
-
-        Button confirmButton = (Button) confirmAlert.getDialogPane().lookupButton(ButtonType.OK);
-        confirmButton.setText(UtilStringStorage.yesButton);
-        placeButton(confirmButton, -20, -120);
-
-        Button cancelButton = (Button) confirmAlert.getDialogPane().lookupButton(ButtonType.CANCEL);
-        cancelButton.setText(UtilStringStorage.noButton);
-        placeButton(cancelButton, -20, -20);
-    }
-
-    public void placeButton(Button button, int translateY, int translateX)
-    {
-        button.setTranslateY(translateY);
-        button.setTranslateX(translateX);
-    }
-
     public void resetSave()
     {
        FileUtil.resetSaveFile();
        FileUtil.resetCupFile();
        FileUtil.resetPerfectFile();
     }
-
     public void backToMainMenu()
     {
         MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
         stage.setScene(menuScene);
     }
-
-
 }

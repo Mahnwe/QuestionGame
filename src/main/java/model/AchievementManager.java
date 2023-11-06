@@ -38,13 +38,11 @@ public class AchievementManager
 
     public void checkIfAchievementIsUnlock(Achievement achievement, int numberToCompareWithCondition)
     {
-        if(achievement.getCondition() <= numberToCompareWithCondition)
-        {
+        if (!achievement.isUnlock() && achievement.getCondition() <= numberToCompareWithCondition) {
             achievement.setUnlock(true);
             achievement.getLockImageView().setImage(achievement.getUnlockImageView().getImage());
             notificationAlert = new NotificationAlert(Alert.AlertType.INFORMATION);
-        }
-        else {
+        } else {
             achievement.setUnlock(false);
             achievement.getLockImageView().setImage(achievement.getLockImageView().getImage());
         }

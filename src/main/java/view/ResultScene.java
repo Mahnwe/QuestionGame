@@ -47,7 +47,6 @@ public class ResultScene extends VBox
         this.cupFile = cupFile;
         this.perfectScoreFile = perfectScoreFile;
         gameResult = new VBox();
-        AchievementManager.notificationAlert = null;
 
         createIcons();
         setUpLabelAndTimer();
@@ -67,6 +66,7 @@ public class ResultScene extends VBox
 
     public void checkPlayerResult()
     {
+        AchievementManager.notificationAlert = null;
         if(playerFinalScore >= questionCount*90/100)
         {
             goldCupResult(gameResult);

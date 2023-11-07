@@ -1,9 +1,7 @@
 package view;
 
 import javafx.geometry.Insets;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.scene.media.MediaPlayer;
@@ -16,8 +14,6 @@ import model.SoundManager;
 import util.PathUtil;
 import util.UtilStringStorage;
 
-import java.util.Optional;
-
 public class QuestionInterface extends BorderPane
 {
     private final QuestionStorage questionList;
@@ -25,7 +21,6 @@ public class QuestionInterface extends BorderPane
     private VBox game;
     private final Question question;
     private Label questionToAsk;
-    private final ConfirmAlert confirmAlert;
     private Button answerButton1;
     private Button answerButton2;
     private Button answerButton3;
@@ -44,7 +39,6 @@ public class QuestionInterface extends BorderPane
         this.questionPane = questionPane;
         this.question = question;
         this.questionList = new QuestionStorage();
-        this.confirmAlert = new ConfirmAlert(Alert.AlertType.CONFIRMATION);
 
         createGridPane();
         createView();
@@ -82,17 +76,6 @@ public class QuestionInterface extends BorderPane
         }
     }
 
-    public void setAnswerButtonOnAction(Button button)
-    {
-        button.setOnAction(event -> {
-            Optional<ButtonType> result = confirmAlert.showAndWait();
-            if(result.orElse(null) == ButtonType.OK)
-            {
-                checkAnswer(button);
-            }
-        });
-    }
-
     public void createAnswerButton()
     {
             answerButton1 = setUpAnswerButton(0);
@@ -117,7 +100,7 @@ public class QuestionInterface extends BorderPane
     {
         Button button = new Button(question.getAnswerList().get(questionIndex));
         button.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
-        setAnswerButtonOnAction(button);
+        button.setOnAction(event -> checkAnswer(button));
         return button;
     }
 

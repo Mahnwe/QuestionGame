@@ -1,13 +1,11 @@
 package view;
 
-import javafx.event.Event;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.media.MediaPlayer;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.AchievementManager;
 import model.GameHandler;
@@ -70,18 +68,7 @@ public class MainScene extends Scene
     public void createPopup()
     {
         playerInfoScene = new PlayerInfoScene(new BorderPane(), player);
-        Stage popUpStage = new Stage();
-        popUpStage.setOnCloseRequest(Event::consume);
-        popUpStage.setMinHeight(300);
-        popUpStage.setMinWidth(550);
-        popUpStage.setResizable(false);
-        popUpStage.setTitle("Pop up");
-        popUpStage.setScene(playerInfoScene);
-        popUpStage.initModality(Modality.APPLICATION_MODAL);
-        popUpStage.show();
-        playerInfoScene.getSendButton().setOnAction(event -> playerInfoScene.setOnActionSendButton(menuPane, questionInterface, stage, popUpStage));
-        playerInfoScene.getUserInputArea().setOnKeyPressed(event -> playerInfoScene.setOnKeyTypedSendButton(menuPane, questionInterface, stage, popUpStage));
-
+        playerInfoScene = PopUp.createPopup(player, menuPane, questionInterface, stage);
     }
 
     private void setAnswersButtonListeners()

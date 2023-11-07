@@ -76,15 +76,15 @@ public class ResultScene extends VBox
         {
             achievementManager.goldCupResult(questionCount, gameResult, perfectScoreFile, cupFile, achievementManager, goldCup);
         }
-        if(playerFinalScore >= questionCount*60/100 && playerFinalScore <= questionCount*80/100)
+        if(playerFinalScore > questionCount*60/100 && playerFinalScore <= questionCount*80/100)
         {
             achievementManager.silverCupResult(gameResult, cupFile, achievementManager, silverCup);
         }
-        if(playerFinalScore >= questionCount*40/100 && playerFinalScore <= questionCount*50/100)
+        if(playerFinalScore >= questionCount*50/100 && playerFinalScore < questionCount*60/100)
         {
             achievementManager.bronzeCupResult(gameResult, cupFile, achievementManager, bronzeCup);
         }
-        if(playerFinalScore < questionCount*40/100)
+        if(playerFinalScore < questionCount*50/100)
         {
             Label cupLabel = new Label(UtilStringStorage.noCupLabel);
             stylizeLabel(cupLabel, 200, 70);

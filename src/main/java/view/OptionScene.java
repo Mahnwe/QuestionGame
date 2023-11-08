@@ -2,8 +2,10 @@ package view;
 
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
-import javafx.scene.layout.*;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -20,9 +22,8 @@ public class OptionScene extends Scene {
     private final Stage stage;
     private final VBox optionVbox;
     private final ConfirmAlert confirmAlert;
-    private Slider volumeSlider;
-    private Button muteButton;
-    private boolean isMute;
+
+
     private final BorderPane pane;
 
     private LanguageButton engButton;
@@ -77,62 +78,32 @@ public class OptionScene extends Scene {
 
     public void createSliderArea()
     {
+        Button muteButton;
+        Slider volumeSlider;
         Label volumeLabel = new Label(UtilStringStorage.volumeLabel);
         stylizeLabel(volumeLabel, 20, 388);
         optionVbox.getChildren().add(volumeLabel);
 
-        IconCreator muteIcon = new IconCreator(PathUtil.MUTE_ICON);
-        Image muteImage = muteIcon.createImage().getImage();
         muteButton = new Button();
-        muteButton.setPrefSize(30,30);
-        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
-        muteButton.setBackground(new Background(new BackgroundImage(muteImage, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
-                backgroundSize)));
+        CustomOption.customMuteButton(muteButton, PathUtil.MUTE_ICON, 35, 232);
         optionVbox.getChildren().add(muteButton);
-        muteButton.setTranslateY(35);
-        muteButton.setTranslateX(232);
 
         volumeSlider = new Slider(0, 10, 5);
-        volumeSlider.setMaxWidth(305);
-        volumeSlider.setMaxHeight(60);
-        volumeSlider.setTranslateY(10);
-        volumeSlider.setTranslateX(270);
-        volumeSlider.setShowTickMarks(true);
-        volumeSlider.setShowTickLabels(true);
-        volumeSlider.setMajorTickUnit(1f);
-        volumeSlider.setBlockIncrement(1f);
+        CustomOption.customSlider(volumeSlider, 305, 60, 10, 270);
         volumeSlider.setValue(SoundManager.soundVolume);
+
         if(SoundManager.soundVolume == 0.0) {
-            isMute = true;
+            SoundManager.isMute = true;
             volumeSlider.setDisable(true);
         }
-        setUpMuteButton();
+        SoundManager.setUpMuteButton(muteButton, volumeSlider);
+
         optionVbox.getChildren().add(volumeSlider);
         volumeSlider.setOnDragDetected(event -> setVolumeFromSlider(volumeSlider.getValue()));
         volumeSlider.setOnMouseClicked(event -> setVolumeFromSlider(volumeSlider.getValue()));
         volumeSlider.setOnMouseReleased(event -> setVolumeFromSlider(volumeSlider.getValue()));
-
     }
 
-    public void setUpMuteButton()
-    {
-        muteButton.setOnAction(event -> {
-            if (!isMute) {
-                SoundManager.soundVolume = 0.0;
-                SoundManager.handleMenuSceneVolume(App.menuMusicToStop, 0.0);
-                if(ResultScene.returnToMenuMusic != null) {
-                    SoundManager.handleMenuSceneVolume(ResultScene.returnToMenuMusic, 0.0);
-                }
-                isMute = true;
-                volumeSlider.setDisable(true);
-            }
-            else {
-                volumeSlider.setDisable(false);
-                setVolumeFromSlider(volumeSlider.getValue());
-                isMute = false;
-            }
-        });
-    }
 
     public void createButtons()
     {

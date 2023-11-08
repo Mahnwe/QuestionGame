@@ -74,7 +74,7 @@ public class ResultScene extends VBox
         AchievementManager.notificationAlert = null;
         if(playerFinalScore >= questionCount*90/100)
         {
-            achievementManager.goldCupResult(questionCount, gameResult, perfectScoreFile, cupFile, achievementManager, goldCup);
+            achievementManager.goldCupResult(questionCount, playerFinalScore, gameResult, perfectScoreFile, cupFile, achievementManager, goldCup);
         }
         if(playerFinalScore > questionCount*60/100 && playerFinalScore <= questionCount*80/100)
         {

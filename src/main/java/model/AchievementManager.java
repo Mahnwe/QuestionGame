@@ -61,21 +61,21 @@ public class AchievementManager
             achievement.getLockImageView().setImage(achievement.getLockImageView().getImage());
         }
     }
-    public void checkPerfectScoreAchievement(AchievementManager achievementManager, int playerFinalScore, Properties perfectScoreFile, String propertyKey, String numberToCompare, int achievementIndex)
+    public void checkPerfectScoreAchievement(AchievementManager achievementManager, int playerFinalScore, Properties perfectScoreFile, String propertyKey, int numberToCompare, int achievementIndex)
     {
-        if(playerFinalScore == Integer.parseInt(numberToCompare)) {
+        if(playerFinalScore == numberToCompare) {
             String perfectScoreString = String.valueOf(playerFinalScore);
             perfectScoreFile.setProperty(propertyKey, perfectScoreString);
             achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(achievementIndex), playerFinalScore);
         }
     }
 
-    public void goldCupResult(int questionCount, VBox vBox, Properties perfectScoreFile, Properties cupFile, AchievementManager achievementManager, ImageView imageView)
+    public void goldCupResult(int questionCount, int playerScore, VBox vBox, Properties perfectScoreFile, Properties cupFile, AchievementManager achievementManager, ImageView imageView)
     {
         switch (questionCount) {
-            case 10 -> checkPerfectScoreAchievement(achievementManager,10, perfectScoreFile, "perfectScore10", "10", 3);
-            case 15 -> checkPerfectScoreAchievement(achievementManager,15, perfectScoreFile, "perfectScore15", "15", 4);
-            case 20 -> checkPerfectScoreAchievement(achievementManager,20, perfectScoreFile, "perfectScore20", "20", 5);
+            case 10 -> checkPerfectScoreAchievement(achievementManager, playerScore, perfectScoreFile, "perfectScore10", 10, 3);
+            case 15 -> checkPerfectScoreAchievement(achievementManager, playerScore, perfectScoreFile, "perfectScore15", 15, 4);
+            case 20 -> checkPerfectScoreAchievement(achievementManager, playerScore, perfectScoreFile, "perfectScore20", 20, 5);
             default -> logger.error("Question count bug");
         }
 

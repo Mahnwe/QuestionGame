@@ -6,7 +6,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextArea;
-import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
@@ -28,7 +27,6 @@ public class PlayerInfoScene extends Scene
     private Label playerScoreLabel;
 
     private final Player player;
-    private Button muteButton;
 
 
     private final Border border = new Border(new BorderStroke(Color.BLACK,
@@ -170,6 +168,7 @@ public class PlayerInfoScene extends Scene
 
     public void createSliderArea()
     {
+        Button muteButton;
 
         Label volumeLabel = new Label(UtilStringStorage.volumeLabel);
         volumeLabel.setTranslateY(120);
@@ -178,48 +177,24 @@ public class PlayerInfoScene extends Scene
         volumeLabel.setTextFill(Color.GHOSTWHITE);
         playerInfos.getChildren().add(volumeLabel);
 
-        stylizeMuteButton();
+        muteButton = new Button();
+        CustomOption.customMuteButton(muteButton, PathUtil.WHITE_MUTE_ICON, 187, 75);
+        playerInfos.getChildren().add(muteButton);
 
         Slider volumeSlider = new Slider(0, 10, 5);
-        stylizeVolumeSlider(volumeSlider);
+        CustomOption.customSlider(volumeSlider, 200, 40, 105, 0);
 
         if(SoundManager.soundVolume == 0.0) {
             VolumeInGameHandler.isMute = true;
             volumeSlider.setDisable(true);
         }
+        volumeSlider.setValue(SoundManager.soundVolume);
         VolumeInGameHandler.setUpMuteButton(muteButton, volumeSlider);
         playerInfos.getChildren().add(volumeSlider);
         volumeSlider.setOnDragDetected(event -> VolumeInGameHandler.setVolumeFromSlider(volumeSlider.getValue()));
         volumeSlider.setOnMouseClicked(event -> VolumeInGameHandler.setVolumeFromSlider(volumeSlider.getValue()));
         volumeSlider.setOnMouseReleased(event -> VolumeInGameHandler.setVolumeFromSlider(volumeSlider.getValue()));
 
-    }
-
-    public void stylizeMuteButton()
-    {
-        IconCreator muteIcon = new IconCreator(PathUtil.WHITE_MUTE_ICON);
-        Image muteImage = muteIcon.createImage().getImage();
-
-        muteButton = new Button();
-
-        muteButton.setPrefSize(30,30);
-        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
-        muteButton.setBackground(new Background(new BackgroundImage(muteImage, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
-                backgroundSize)));
-        playerInfos.getChildren().add(muteButton);
-        muteButton.setTranslateY(187);
-        muteButton.setTranslateX(75);
-    }
-
-    public void stylizeVolumeSlider(Slider volumeSlider)
-    {
-        volumeSlider.setMaxWidth(200);
-        volumeSlider.setMaxHeight(40);
-        volumeSlider.setTranslateY(105);
-        volumeSlider.setShowTickMarks(true);
-        volumeSlider.setShowTickLabels(true);
-        volumeSlider.setMajorTickUnit(1f);
-        volumeSlider.setBlockIncrement(1f);
     }
     public void increaseScore()
     {

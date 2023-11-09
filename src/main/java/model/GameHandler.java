@@ -1,7 +1,5 @@
 package model;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import util.QuestionException;
 
 import java.util.ArrayList;
@@ -10,7 +8,6 @@ import java.util.Random;
 
 public class GameHandler
 {
-    private static final Logger logger = LogManager.getLogger(GameHandler.class);
    private final QuestionStorage questionBank;
    private final ArrayList<Question> questionList;
    private final Random randomIndex;
@@ -26,18 +23,19 @@ public class GameHandler
 
     public void setupQuestionList(int listSize)
     {
-        //try {
-                for(int i = listSize; i > 0; i--)
-                {
-                    int randomQuestionIndex = generateRandomIndex();
-                    Question question = questionBank.getQuestionList().remove(randomQuestionIndex);
-                    questionList.add(question);
-                }
-            /*throw new QuestionException("Question list can't be set, index out of bounds exception");
-        } catch (QuestionException e)
+        for (int i = listSize; i > 150; i--) {
+            int randomQuestionIndex = generateRandomIndex();
+            Question question = questionBank.getQuestionList().remove(randomQuestionIndex);
+            questionList.add(question);
+        }
+        if(questionList.size() != listSize)
         {
-            logger.error("Question list can't be set");
-        }*/
+            try {
+                throw new QuestionException("Question list can't be create, may be Out of bounds exception, GameHandler.setupQuestionList");
+            } catch (QuestionException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
     public boolean isGameEnding()

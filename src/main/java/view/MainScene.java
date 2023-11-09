@@ -42,7 +42,7 @@ public class MainScene extends Scene
         this.menuPane = (BorderPane) this.getRoot();
         this.player = player;
         menuPane.setPrefWidth(1000);
-        menuPane.setPrefHeight(500);
+        menuPane.setPrefHeight(550);
         this.gameHandler = gameHandler;
         this.saveFile = saveFile;
         this.achievementManager = achievementManager;
@@ -73,14 +73,22 @@ public class MainScene extends Scene
 
     private void setAnswersButtonListeners()
     {
-        Button nextQuestionButton = questionInterface.getNextQuestionButton();
-        nextQuestionButton.setOnAction(e -> {
+        Button validateAnswerButton = questionInterface.getValidateAnswerButton();
+        validateAnswerButton.setOnAction(e -> {
+            questionInterface.checkAnswer();
             if(questionInterface.isPlayerAnswer())
             {
-                SoundManager.stopMusic(QuestionInterface.soundEffectToStop);
                 playerInfoScene.increaseScore();
             }
             playerInfoScene.getPlayerScoreLabel().setText(UtilStringStorage.scoreLabel + playerInfoScene.getPlayer().getPlayerScore()+"/"+gameHandler.getQuestionCount());
+            setNextQuestionButton();
+        });
+    }
+
+    private void setNextQuestionButton()
+    {
+        questionInterface.getNextQuestionButton().setOnAction(event -> {
+            SoundManager.stopMusic(QuestionInterface.soundEffectToStop);
             checkGameEnding();
         });
     }

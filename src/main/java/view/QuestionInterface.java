@@ -11,8 +11,12 @@ import javafx.scene.text.FontWeight;
 import model.Question;
 import model.QuestionStorage;
 import model.SoundManager;
+import util.AnswerButton;
 import util.PathUtil;
 import util.UtilStringStorage;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class QuestionInterface extends BorderPane
 {
@@ -21,10 +25,12 @@ public class QuestionInterface extends BorderPane
     private VBox game;
     private final Question question;
     private Label questionToAsk;
-    private Button answerButton1;
-    private Button answerButton2;
-    private Button answerButton3;
-    private Button answerButton4;
+    private AnswerButton answerButton1;
+    private AnswerButton answerButton2;
+    private AnswerButton answerButton3;
+    private AnswerButton answerButton4;
+    private Button validateAnswerButton;
+    private final List<AnswerButton> answerButtonList;
     private Button nextQuestionButton;
     private Boolean playerAnswer;
     private final Border border = new Border(new BorderStroke(Color.BLACK,
@@ -39,6 +45,7 @@ public class QuestionInterface extends BorderPane
         this.questionPane = questionPane;
         this.question = question;
         this.questionList = new QuestionStorage();
+        answerButtonList = new ArrayList<>();
 
         createGridPane();
         createView();
@@ -49,8 +56,8 @@ public class QuestionInterface extends BorderPane
         gridPane = new GridPane();
         gridPane.setHgap(10);
         gridPane.setVgap(40);
-        gridPane.addColumn(3);
-        gridPane.addRow(4);
+        gridPane.addColumn(4);
+        gridPane.addRow(5);
         gridPane.setTranslateY(40);
         gridPane.setTranslateX(90);
     }
@@ -61,7 +68,7 @@ public class QuestionInterface extends BorderPane
         game.setBorder(border);
         game.setBorder(new Border(new BorderStroke(Color.BLACK,BorderStrokeStyle.SOLID,CornerRadii.EMPTY,BorderWidths.DEFAULT)));
         game.setPrefWidth(830);
-        game.setPrefHeight(250);
+        game.setPrefHeight(300);
     }
 
     public void createQuestionLabel()
@@ -78,30 +85,35 @@ public class QuestionInterface extends BorderPane
 
     public void createAnswerButton()
     {
-            answerButton1 = setUpAnswerButton(0);
-            gridPane.add(answerButton1, 1, 1);
+        validateAnswerButton = new Button(UtilStringStorage.validateAnswerButton);
+        validateAnswerButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
+        gridPane.add(validateAnswerButton, 2, 3);
+        validateAnswerButton.setDisable(true);
 
-            answerButton2 = setUpAnswerButton(1);
-            gridPane.add(answerButton2, 1, 2);
+        answerButton1 = new AnswerButton(false, question.getAnswerList().get(0));
+        answerButton1.setAnswerButtonOnAction(answerButton1, answerButtonList, validateAnswerButton);
+        gridPane.add(answerButton1, 1, 1);
+        answerButtonList.add(answerButton1);
 
-            answerButton3 = setUpAnswerButton(2);
-            gridPane.add(answerButton3, 3, 1);
+        answerButton2 = new AnswerButton(false, question.getAnswerList().get(1));
+        answerButton2.setAnswerButtonOnAction(answerButton2, answerButtonList, validateAnswerButton);
+        gridPane.add(answerButton2, 1, 2);
+        answerButtonList.add(answerButton2);
 
-            answerButton4 = setUpAnswerButton(3);
-            gridPane.add(answerButton4, 3, 2);
+        answerButton3 = new AnswerButton(false, question.getAnswerList().get(2));
+        answerButton3.setAnswerButtonOnAction(answerButton3, answerButtonList, validateAnswerButton);
+        gridPane.add(answerButton3, 3, 1);
+        answerButtonList.add(answerButton3);
 
-            nextQuestionButton = new Button(UtilStringStorage.nextQuestionButton);
-            nextQuestionButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
-            gridPane.add(nextQuestionButton, 2, 3);
-            nextQuestionButton.setDisable(true);
-    }
+        answerButton4 = new AnswerButton(false, question.getAnswerList().get(3));
+        answerButton4.setAnswerButtonOnAction(answerButton4, answerButtonList, validateAnswerButton);
+        gridPane.add(answerButton4, 3, 2);
+        answerButtonList.add(answerButton4);
 
-    public Button setUpAnswerButton(int questionIndex)
-    {
-        Button button = new Button(question.getAnswerList().get(questionIndex));
-        button.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
-        button.setOnAction(event -> checkAnswer(button));
-        return button;
+        nextQuestionButton = new Button(UtilStringStorage.nextQuestionButton);
+        nextQuestionButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
+        gridPane.add(nextQuestionButton, 5, 4);
+        nextQuestionButton.setDisable(true);
     }
 
     public void initGameSpace()
@@ -119,12 +131,19 @@ public class QuestionInterface extends BorderPane
         initGameSpace();
     }
 
-    public void checkAnswer(Button button)
+    public void checkAnswer()
     {
-          if(button.getText().equals(question.getGoodAnswer()))
+        validateAnswerButton.setDisable(true);
+        Button answerButtonClicked = new Button();
+        for (AnswerButton answerButton : answerButtonList) {
+            if (answerButton.isClicked()) {
+                answerButtonClicked = answerButton;
+            }
+        }
+          if(answerButtonClicked.getText().equals(question.getGoodAnswer()))
           {
               playerAnswer = true;
-              button.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
+              answerButtonClicked.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
               soundEffectToStop = SoundManager.playMusic(PathUtil.GOOD_ANSWER_SOUND_EFFECT);
               displayAnswer(UtilStringStorage.goodAnswerLabel);
           }
@@ -132,7 +151,7 @@ public class QuestionInterface extends BorderPane
           {
               playerAnswer = false;
               soundEffectToStop = SoundManager.playMusic(PathUtil.BAD_ANSWER_SOUND_EFFECT);
-              button.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
+              answerButtonClicked.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
               showGoodAnswer(answerButton1); showGoodAnswer(answerButton2);
               showGoodAnswer(answerButton3); showGoodAnswer(answerButton4);
               displayAnswer(UtilStringStorage.badAnswerLabel);
@@ -157,7 +176,7 @@ public class QuestionInterface extends BorderPane
         game.getChildren().add(explanation);
     }
 
-    public void showGoodAnswer(Button button)
+    public void showGoodAnswer(AnswerButton button)
     {
         if(button.getText().equals(question.getGoodAnswer()))
         {
@@ -204,4 +223,7 @@ public class QuestionInterface extends BorderPane
         return question;
     }
 
+    public Button getValidateAnswerButton() {
+        return validateAnswerButton;
+    }
 }

@@ -73,6 +73,7 @@ public class UtilStringStorage
     public static String nextQuestionButton = "";
     public static String goodAnswerLabel = "";
     public static String badAnswerLabel = "";
+    public static String validateAnswerButton = "";
 
     // RESULT SCENE
     public static String returnToMenuButton = "";

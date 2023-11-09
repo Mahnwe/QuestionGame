@@ -94,7 +94,7 @@ public class LanguageScene extends Scene
             utilTranslateString.translateEngString();
             App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
             MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
-            stage.setMinHeight(500);
+            stage.setMinHeight(550);
             stage.setMinWidth(1000);
             stage.setScene(menuScene);
             stage.setTitle(UtilStringStorage.gameTitle);
@@ -105,7 +105,7 @@ public class LanguageScene extends Scene
             utilTranslateString.translateFrString();
             App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
             MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
-            stage.setMinHeight(500);
+            stage.setMinHeight(550);
             stage.setMinWidth(1000);
             stage.setScene(menuScene);
             stage.setTitle(UtilStringStorage.gameTitle);

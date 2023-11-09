@@ -52,7 +52,7 @@ public class MenuScene extends Scene
         this.pane = pane;
         this.menuStage = stage;
         pane.setPrefWidth(1000);
-        pane.setPrefHeight(500);
+        pane.setPrefHeight(550);
 
         this.gameHandler = new GameHandler();
         saveFile = FileUtil.saveFile;

@@ -36,7 +36,7 @@ public class OptionScene extends Scene {
         this.pane = pane;
         this.stage = stage;
         this.achievementManager = achievementManager;
-        pane.setPrefHeight(500);
+        pane.setPrefHeight(550);
         pane.setPrefWidth(1000);
         this.confirmAlert = new ConfirmAlert(Alert.AlertType.CONFIRMATION);
 
@@ -148,7 +148,7 @@ public class OptionScene extends Scene {
             SoundManager.checkIfMusicIsPlayed(App.menuMusicToStop);
             App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
             MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
-            stage.setMinHeight(500);
+            stage.setMinHeight(550);
             stage.setMinWidth(1000);
             stage.setScene(menuScene);
             stage.setTitle(UtilStringStorage.gameTitle);
@@ -161,7 +161,7 @@ public class OptionScene extends Scene {
             SoundManager.checkIfMusicIsPlayed(App.menuMusicToStop);
             App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
             MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
-            stage.setMinHeight(500);
+            stage.setMinHeight(550);
             stage.setMinWidth(1000);
             stage.setScene(menuScene);
             stage.setTitle(UtilStringStorage.gameTitle);

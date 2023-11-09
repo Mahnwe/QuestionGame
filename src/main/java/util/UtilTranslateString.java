@@ -109,6 +109,7 @@ public class UtilTranslateString {
         UtilStringStorage.nextQuestionButton = engTradFile.getProperty("nextQuestionButton");
         UtilStringStorage.goodAnswerLabel = engTradFile.getProperty("goodAnswerLabel");
         UtilStringStorage.badAnswerLabel = engTradFile.getProperty("badAnswerLabel");
+        UtilStringStorage.validateAnswerButton = engTradFile.getProperty("validateAnswerButton");
 
         // RESULT SCENE
         UtilStringStorage.returnToMenuButton = engTradFile.getProperty("returnToMenuButton");
@@ -665,12 +666,15 @@ public class UtilTranslateString {
         UtilStringStorage.playerNameIngame = frTradFile.getProperty("playerNameIngame");
         UtilStringStorage.scoreLabelIngame = frTradFile.getProperty("scoreLabelIngame");
 
-        // RESULT SCENE
+        // QUESTION INTERFACE
         UtilStringStorage.confirmAlertWindow = frTradFile.getProperty("confirmAlertWindow");
         UtilStringStorage.askToConfirm = frTradFile.getProperty("askToConfirm");
         UtilStringStorage.nextQuestionButton = frTradFile.getProperty("nextQuestionButton");
         UtilStringStorage.goodAnswerLabel = frTradFile.getProperty("goodAnswerLabel");
         UtilStringStorage.badAnswerLabel = frTradFile.getProperty("badAnswerLabel");
+        UtilStringStorage.validateAnswerButton = frTradFile.getProperty("validateAnswerButton");
+
+        // RESULT SCENE
         UtilStringStorage.returnToMenuButton = frTradFile.getProperty("returnToMenuButton");
         UtilStringStorage.timeLabel = frTradFile.getProperty("timeLabel");
         UtilStringStorage.minLabel = frTradFile.getProperty("minLabel");

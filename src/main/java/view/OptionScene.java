@@ -173,10 +173,7 @@ public class OptionScene extends Scene {
     {
         Button resetButton = new Button(UtilStringStorage.resetButton);
         placeButtonWithTranslation(resetButton);
-        resetButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 15));
-        Tooltip resetTooltip = new Tooltip(UtilStringStorage.resetTooltip);
-        resetButton.setTooltip(resetTooltip);
-
+        CustomOption.customResetSaveButton(resetButton);
         resetButton.setOnAction(event -> {
             Optional<ButtonType> result = confirmAlert.showAndWait();
             if(result.orElse(null) == ButtonType.OK)

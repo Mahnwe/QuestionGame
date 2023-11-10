@@ -60,15 +60,15 @@ public class TrophyScene extends Scene
 
         VBox goldCupImages = new VBox();
         Label nbrOfGoldCupLabel = new Label();
-        setUpVbox(goldCup, goldCupImages, nbrOfGoldCupLabel, -10, 5, UtilStringStorage.goldCupTrophy, cupFile, "goldCup");
+        setUpVbox(goldCup, goldCupImages, nbrOfGoldCupLabel, 0, 25, UtilStringStorage.goldCupTrophy, cupFile, "goldCup");
 
         VBox silverCupImages = new VBox();
         Label nbrOfSilverCupLabel = new Label();
-        setUpVbox(silverCup, silverCupImages, nbrOfSilverCupLabel, -20, 5, UtilStringStorage.silverCupTrophy, cupFile, "silverCup");
+        setUpVbox(silverCup, silverCupImages, nbrOfSilverCupLabel, -10, 25, UtilStringStorage.silverCupTrophy, cupFile, "silverCup");
 
         VBox bronzeCupImages = new VBox();
         Label nbrOfBronzeCupLabel = new Label();
-        setUpVbox(bronzeCup, bronzeCupImages, nbrOfBronzeCupLabel, -20, 5, UtilStringStorage.bronzeCupTrophy, cupFile, "bronzeCup");
+        setUpVbox(bronzeCup, bronzeCupImages, nbrOfBronzeCupLabel, -10, 25, UtilStringStorage.bronzeCupTrophy, cupFile, "bronzeCup");
 
         gridPane.add(goldCupImages, 0, 0);
         gridPane.add(silverCupImages, 1, 0);
@@ -85,7 +85,7 @@ public class TrophyScene extends Scene
         gridPane = new GridPane();
         gridPane.setHgap(90);
         gridPane.setVgap(50);
-        gridPane.setTranslateY(110);
+        gridPane.setTranslateY(130);
         gridPane.setTranslateX(155);
     }
 
@@ -93,8 +93,8 @@ public class TrophyScene extends Scene
     {
         label.setText(UtilStringStorage.trophyLabel);
         label.setFont(Font.font("Impact", FontWeight.BOLD, 25));
-        label.setTranslateX(330);
-        label.setTranslateY(20);
+        label.setTranslateX(355);
+        label.setTranslateY(40);
     }
 
     public void setUpVbox(ImageView imageView, VBox vbox, Label label, int translateX, int translateY, String string, Properties properties, String propertyKey)
@@ -124,16 +124,22 @@ public class TrophyScene extends Scene
     public void stylizeLabel(Label label, String string, Properties properties, String propertyKey)
     {
         label.setText(string +" "+ properties.getProperty(propertyKey));
-        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 17));
+        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 18));
     }
 
     public void createIcons()
     {
         goldCup = IconCreator.createCupIcon(PathUtil.GOLD_CUP_PATH);
+        goldCup.setTranslateY(10);
+        goldCup.setTranslateX(5);
 
         bronzeCup = IconCreator.createCupIcon(PathUtil.BRONZE_CUP_PATH);
+        bronzeCup.setTranslateY(10);
+        bronzeCup.setTranslateX(5);
 
         silverCup = IconCreator.createCupIcon(PathUtil.SILVER_CUP_PATH);
+        silverCup.setTranslateY(10);
+        silverCup.setTranslateX(5);
     }
     public void backToMainMenu()
     {

@@ -1,7 +1,10 @@
 package view;
 
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.*;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
@@ -12,10 +15,7 @@ import model.AchievementManager;
 import model.GameHandler;
 import model.Player;
 import model.SoundManager;
-import util.BackgroundCreator;
-import util.FileUtil;
-import util.PathUtil;
-import util.UtilStringStorage;
+import util.*;
 
 import java.io.File;
 
@@ -39,11 +39,11 @@ public class MenuScene extends Scene
     private Label fifteenModeButton;
     private Label twentyModeButton;
 
-    private Button leaderBoardButton;
-    private Button trophyButton;
-    private Button achievementButton;
-    private Button optionButton;
-    private Button creditButton;
+    private MenuSideButton leaderBoardButton;
+    private MenuSideButton trophyButton;
+    private MenuSideButton achievementButton;
+    private MenuSideButton optionButton;
+    private MenuSideButton creditButton;
     public static MediaPlayer relaunchGame;
 
     public MenuScene(BorderPane pane, Stage stage, AchievementManager achievementManager)
@@ -87,14 +87,6 @@ public class MenuScene extends Scene
         pane.setTop(welcomeArea);
     }
 
-    public void createButton(Button button, Tooltip tooltip, int translateX, int translateY)
-    {
-        button.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 14));
-        button.setTranslateX(translateX);
-        button.setTranslateY(translateY);
-        button.setTooltip(tooltip);
-    }
-
     public void createLeaderBoardButtonArea()
     {
         VBox leaderBoardVBox = new VBox();
@@ -115,30 +107,25 @@ public class MenuScene extends Scene
 
     public void createLeftButtons()
     {
-        leaderBoardButton = new Button(UtilStringStorage.leaderBoardButton);
-        Tooltip leaderBoardTooltip = new Tooltip(UtilStringStorage.leaderBoardTooltip);
-        createButton(leaderBoardButton, leaderBoardTooltip, 15, 25);
-
-        trophyButton = new Button(UtilStringStorage.trophyButton);
-        Tooltip trophyTooltip = new Tooltip(UtilStringStorage.trophyTooltip);
-        createButton(trophyButton, trophyTooltip, 20, 85);
-
-        achievementButton = new Button(UtilStringStorage.achievementButton);
-        Tooltip achievementTooltip = new Tooltip(UtilStringStorage.achievementTooltip);
-        if(achievementButton.getText().equals("Achievements"))
+        leaderBoardButton = new MenuSideButton(UtilStringStorage.leaderBoardButton, UtilStringStorage.leaderBoardTooltip, 18, 25);
+        if(leaderBoardButton.getText().equals("Leaderboard"))
         {
-            createButton(achievementButton, achievementTooltip, 5, 145);
-        } else {
-            createButton(achievementButton, achievementTooltip, 20, 145);
+            leaderBoardButton.setTranslateX(12);
+            leaderBoardButton.setTranslateY(25);
         }
 
-        optionButton = new Button(UtilStringStorage.optionButton);
-        Tooltip optionTooltip = new Tooltip(UtilStringStorage.optionTooltip);
-        createButton(optionButton, optionTooltip, 20, 205);
+        trophyButton = new MenuSideButton(UtilStringStorage.trophyButton, UtilStringStorage.trophyTooltip, 26, 85);
 
-        creditButton = new Button(UtilStringStorage.creditButton);
-        Tooltip creditTooltip = new Tooltip(UtilStringStorage.creditTooltip);
-        createButton(creditButton, creditTooltip, 20, 265);
+        achievementButton = new MenuSideButton(UtilStringStorage.achievementButton, UtilStringStorage.achievementTooltip, 33, 145);
+        if(achievementButton.getText().equals("Achievements"))
+        {
+            achievementButton.setTranslateX(7);
+            achievementButton.setTranslateY(145);
+        }
+
+        optionButton = new MenuSideButton(UtilStringStorage.optionButton, UtilStringStorage.optionTooltip, 30, 205);
+
+        creditButton = new MenuSideButton(UtilStringStorage.creditButton, UtilStringStorage.creditTooltip, 33, 265);
     }
 
     public void setLeftButtonOnAction()
@@ -191,36 +178,25 @@ public class MenuScene extends Scene
         Label chooseMode = new Label(UtilStringStorage.chooseMode);
         chooseMode.setFont(Font.font("Impact", FontWeight.BOLD, 20));
         chooseMode.setTextFill(Color.BLACK);
-        chooseMode.setTranslateX(225);
-        chooseMode.setTranslateY(100);
+        chooseMode.setTranslateX(250);
+        chooseMode.setTranslateY(125);
 
         createLabel();
 
         comboBox = new ComboBox<>();
-        setUpComboBox();
+        CustomOption.customComboBox(comboBox);
+        comboBox.getItems().add(tenModeButton.getText());
+        comboBox.getItems().add(fifteenModeButton.getText());
+        comboBox.getItems().add(twentyModeButton.getText());
+        comboBox.getSelectionModel().selectFirst();
 
         launchGameButton = new Button(UtilStringStorage.launchGameButton);
-        launchGameButton.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 20));
-        launchGameButton.setTranslateX(275);
-        launchGameButton.setTranslateY(155);
+        CustomOption.customValidateButton(launchGameButton);
 
         selectModeArea.getChildren().add(chooseMode);
         selectModeArea.getChildren().add(comboBox);
         selectModeArea.getChildren().add(launchGameButton);
         pane.setCenter(selectModeArea);
-    }
-
-    public void setUpComboBox()
-    {
-        comboBox.setStyle("-fx-font: 20px \"Verdana\"");
-        comboBox.setMinHeight(30);
-        comboBox.setMinWidth(90);
-        comboBox.setTranslateX(230);
-        comboBox.setTranslateY(140);
-        comboBox.getItems().add(tenModeButton.getText());
-        comboBox.getItems().add(fifteenModeButton.getText());
-        comboBox.getItems().add(twentyModeButton.getText());
-        comboBox.getSelectionModel().selectFirst();
     }
 
     public void setButtonOnAction()

@@ -12,6 +12,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
+import model.GameTimer;
 import model.Player;
 import model.SoundManager;
 import util.*;
@@ -172,7 +173,7 @@ public class PlayerInfoScene extends Scene
 
         Label volumeLabel = new Label(UtilStringStorage.volumeLabel);
         volumeLabel.setTranslateY(120);
-        volumeLabel.setTranslateX(60);
+        volumeLabel.setTranslateX(50);
         volumeLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 18));
         volumeLabel.setTextFill(Color.GHOSTWHITE);
         playerInfos.getChildren().add(volumeLabel);

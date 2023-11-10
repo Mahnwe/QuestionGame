@@ -72,7 +72,7 @@ public class CustomOption {
     {
         button.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 16));
         button.setTranslateY(160);
-        button.setTranslateX(250);
+        button.setTranslateX(260);
         setGlowEffectOnButton(button);
     }
 

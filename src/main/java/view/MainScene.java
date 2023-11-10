@@ -7,10 +7,7 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
-import model.AchievementManager;
-import model.GameHandler;
-import model.Player;
-import model.SoundManager;
+import model.*;
 import util.*;
 
 import java.io.File;

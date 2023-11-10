@@ -89,6 +89,10 @@ public class QuestionInterface extends BorderPane
         validateAnswerButton = new Button(UtilStringStorage.validateAnswerButton);
         validateAnswerButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
         validateAnswerButton.setTranslateX(35);
+        if(validateAnswerButton.getText().equals("Validate"))
+        {
+            validateAnswerButton.setTranslateX(20);
+        }
         CustomOption.setGlowEffectOnButton(validateAnswerButton);
         validateAnswerButton.setDisable(true);
         gridPane.add(validateAnswerButton, 2, 3);

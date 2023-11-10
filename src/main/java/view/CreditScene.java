@@ -62,42 +62,43 @@ public class CreditScene extends Scene
         creditVbox = new VBox();
 
         Label generalThankLabel = new Label();
-        setUpLabels(generalThankLabel, UtilStringStorage.generalThank,  20, 180, 20);
+        setUpLabels(generalThankLabel, UtilStringStorage.generalThank,  20, 190, 40);
 
         Label kebabThank = new Label();
-        setUpLabels(kebabThank, UtilStringStorage.kebabThank, 17, 130, 40);
+        setUpLabels(kebabThank, UtilStringStorage.kebabThank, 17, 140, 60);
 
         Label pandaThank = new Label();
-        setUpLabels(pandaThank, UtilStringStorage.pandaThank, 17, 130, 60);
+        setUpLabels(pandaThank, UtilStringStorage.pandaThank, 17, 140, 80);
 
         Label satanThank = new Label();
-        setUpLabels(satanThank, UtilStringStorage.satanThank, 17, 130, 80);
+        setUpLabels(satanThank, UtilStringStorage.satanThank, 17, 140, 100);
 
         Label givrThank = new Label();
-        setUpLabels(givrThank, UtilStringStorage.givrThank, 17, 130, 100);
+        setUpLabels(givrThank, UtilStringStorage.givrThank, 17, 140, 120);
 
         Label yukiThank = new Label();
-        setUpLabels(yukiThank, UtilStringStorage.yukiThank, 17, 130, 120);
+        setUpLabels(yukiThank, UtilStringStorage.yukiThank, 17, 140, 140);
 
         Label darkwestThank = new Label();
-        setUpLabels(darkwestThank, UtilStringStorage.darkwestThank, 17, 130, 140);
+        setUpLabels(darkwestThank, UtilStringStorage.darkwestThank, 17, 140, 160);
 
         Label darkantThank = new Label();
-        setUpLabels(darkantThank, UtilStringStorage.darkantThank, 17, 130, 160);
+        setUpLabels(darkantThank, UtilStringStorage.darkantThank, 17, 140, 180);
 
-        Label loveLabel = new Label();
-        setUpLabels(loveLabel, UtilStringStorage.loveLabel, 20, 180, 180);
+        Label bestLabel = new Label();
+        setUpLabels(bestLabel, UtilStringStorage.loveLabel, 20, 190, 200);
 
-        addLabelInVbox(generalThankLabel, kebabThank, pandaThank, satanThank, givrThank, yukiThank, darkwestThank, darkantThank, loveLabel);
+        addLabelInVbox(generalThankLabel, kebabThank, pandaThank, satanThank, givrThank);
+        addLabelInVboxPart2(yukiThank, darkwestThank, darkantThank, bestLabel);
 
         Label linkLabel = new Label();
-        setUpLabels(linkLabel, UtilStringStorage.linkLabel, 20, 660, -90);
+        setUpLabels(linkLabel, UtilStringStorage.linkLabel, 20, 670, -80);
 
         Hyperlink hyperLinkIcon = App.hyperLinkIcon;
-        setUpLinkLabels(hyperLinkIcon, 17, 600, -60);
+        setUpLinkLabels(hyperLinkIcon, 17, 610, -50);
 
         Hyperlink hyperlinkBackground = App.hyperLinkBackground;
-        setUpLinkLabels(hyperlinkBackground, 17, 600, -40);
+        setUpLinkLabels(hyperlinkBackground, 17, 610, -30);
 
         creditVbox.getChildren().add(linkLabel);
         creditVbox.getChildren().add(hyperLinkIcon);
@@ -107,13 +108,17 @@ public class CreditScene extends Scene
 
     }
 
-    public void addLabelInVbox(Label label1, Label label2, Label label3, Label label4, Label label5, Label label6, Label label7, Label label8, Label label9)
+    public void addLabelInVbox(Label label1, Label label2, Label label3, Label label4, Label label5)
     {
         creditVbox.getChildren().add(label1);
         creditVbox.getChildren().add(label2);
         creditVbox.getChildren().add(label3);
         creditVbox.getChildren().add(label4);
         creditVbox.getChildren().add(label5);
+    }
+
+    public void addLabelInVboxPart2(Label label6, Label label7, Label label8, Label label9)
+    {
         creditVbox.getChildren().add(label6);
         creditVbox.getChildren().add(label7);
         creditVbox.getChildren().add(label8);

@@ -181,7 +181,7 @@ public class MenuScene extends Scene
         chooseMode.setTranslateY(135);
         if(chooseMode.getText().equals("Choose your game mod"))
         {
-            chooseMode.setTranslateX(275);
+            chooseMode.setTranslateX(265);
         }
 
         createLabel();

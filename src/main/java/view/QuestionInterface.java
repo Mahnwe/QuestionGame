@@ -12,6 +12,7 @@ import model.Question;
 import model.QuestionStorage;
 import model.SoundManager;
 import util.AnswerButton;
+import util.CustomOption;
 import util.PathUtil;
 import util.UtilStringStorage;
 
@@ -87,8 +88,10 @@ public class QuestionInterface extends BorderPane
     {
         validateAnswerButton = new Button(UtilStringStorage.validateAnswerButton);
         validateAnswerButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
-        gridPane.add(validateAnswerButton, 2, 3);
+        validateAnswerButton.setTranslateX(35);
+        CustomOption.setGlowEffectOnButton(validateAnswerButton);
         validateAnswerButton.setDisable(true);
+        gridPane.add(validateAnswerButton, 2, 3);
 
         answerButton1 = new AnswerButton(false, question.getAnswerList().get(0));
         answerButton1.setAnswerButtonOnAction(answerButton1, answerButtonList, validateAnswerButton);
@@ -112,7 +115,8 @@ public class QuestionInterface extends BorderPane
 
         nextQuestionButton = new Button(UtilStringStorage.nextQuestionButton);
         nextQuestionButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
-        gridPane.add(nextQuestionButton, 5, 4);
+        CustomOption.setGlowEffectOnButton(nextQuestionButton);
+        gridPane.add(nextQuestionButton, 2, 4);
         nextQuestionButton.setDisable(true);
     }
 

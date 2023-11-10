@@ -17,6 +17,7 @@ public class PathUtil
     public static final String NOTIF_ICON = RESOURCES_PATH + "Icon/Notif-Icon.png";
     public static final String ENGLISH_FLAG = RESOURCES_PATH + "Icon/English-Flag.png";
     public static final String FRENCH_FLAG = RESOURCES_PATH + "Icon/French-Flag.png";
+    public static final String DEV_LURK = RESOURCES_PATH + "Icon/Dev-Lurk.png";
 
     // BACKGROUNDS
     public static final String MENU_BACKGROUND = RESOURCES_PATH + "Background/Background-Test.jpg";
@@ -36,4 +37,7 @@ public class PathUtil
     public static final String IN_GAME_MUSIC = RESOURCES_PATH + "SoundEffect/INGAME-Music.mp3";
     public static final String MENU_MUSIC = RESOURCES_PATH + "SoundEffect/Menu-Music.wav";
     public static final String RESULT_SOUND_EFFECT = RESOURCES_PATH + "SoundEffect/RESULT-SOUND-EFFECT.wav";
+
+    // GIFS
+    public static final String VIBE_GIF = RESOURCES_PATH + "Gifs/VIBE.gif";
 }

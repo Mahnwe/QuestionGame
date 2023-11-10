@@ -47,4 +47,14 @@ public class IconCreator
         imageView.setFitHeight(140);
         imageView.setFitWidth(120);
     }
+
+    public static ImageView createDevImage()
+    {
+        IconCreator iconCreator = new IconCreator(PathUtil.DEV_LURK);
+        ImageView imageView = iconCreator.createImage();
+        imageView.setFitWidth(40);
+        imageView.setFitHeight(40);
+        imageView.setTranslateX(35);
+        return imageView;
+    }
 }

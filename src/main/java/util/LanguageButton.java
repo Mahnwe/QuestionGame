@@ -25,7 +25,13 @@ public class LanguageButton extends Button {
         this.setTranslateY(30);
         Tooltip buttonTooltip = new Tooltip(tooltipLanguage);
         this.setTooltip(buttonTooltip);
-        this.setOnMouseEntered(event -> this.setBorder(border));
-        this.setOnMouseExited(event -> this.setBorder(null));
+        this.setOnMouseEntered(event -> {
+            this.setEffect(CustomOption.glow);
+            this.setBorder(border);
+        });
+        this.setOnMouseExited(event -> {
+            this.setEffect(null);
+            this.setBorder(null);
+        });
     }
 }

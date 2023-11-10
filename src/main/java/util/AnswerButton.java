@@ -32,6 +32,7 @@ public class AnswerButton extends Button
         answerButton.setBorder(border);
         validateButton.setDisable(false);
         });
+        CustomOption.setGlowEffectOnButton(answerButton);
     }
 
     public void checkOthersButtonClicked(List<AnswerButton> buttonList)

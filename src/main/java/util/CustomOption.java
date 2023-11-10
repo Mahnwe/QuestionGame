@@ -4,21 +4,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Slider;
 import javafx.scene.control.Tooltip;
+import javafx.scene.effect.Glow;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import view.MenuScene;
 
 public class CustomOption {
-
-    public static final BorderWidths borderWidths = new BorderWidths(0.5);
-    public static final CornerRadii cornerRadii = new CornerRadii(3.0);
-    public static final Border blackBorder = new Border(new BorderStroke(Color.BLACK,
-            BorderStrokeStyle.SOLID, cornerRadii, borderWidths));
-    public static final Border whiteBorder = new Border(new BorderStroke(Color.GHOSTWHITE,
-            BorderStrokeStyle.SOLID, cornerRadii, new BorderWidths(1.0)));
+    public static final Glow glow = new Glow(0.3);
 
     public static void customSlider(Slider slider, int width, int height, int translateY, int translateX)
     {
@@ -43,17 +37,15 @@ public class CustomOption {
                 backgroundSize)));
         button.setTranslateY(translateY);
         button.setTranslateX(translateX);
-        button.setOnMouseEntered(event -> button.setBorder(whiteBorder));
-        button.setOnMouseExited(event -> button.setBorder(null));
+        setGlowEffectOnButton(button);
     }
 
-    public static void customValidateButton(Button button)
+    public static void customLaunchButton(Button button)
     {
         button.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 20));
-        button.setTranslateX(300);
-        button.setTranslateY(180);
-        button.setOnMouseEntered(event -> button.setBorder(blackBorder));
-        button.setOnMouseExited(event -> button.setBorder(null));
+        button.setTranslateX(295);
+        button.setTranslateY(190);
+        setGlowEffectOnButton(button);
     }
 
     public static void customComboBox(ComboBox<String> comboBox)
@@ -63,8 +55,8 @@ public class CustomOption {
         comboBox.setMinWidth(90);
         comboBox.setTranslateX(255);
         comboBox.setTranslateY(165);
-        comboBox.setOnMouseEntered(event -> comboBox.setBorder(blackBorder));
-        comboBox.setOnMouseExited(event -> comboBox.setBorder(null));
+        comboBox.setOnMouseEntered(event -> comboBox.setEffect(glow));
+        comboBox.setOnMouseExited(event -> comboBox.setEffect(null));
     }
 
     public static void customResetSaveButton(Button button)
@@ -72,8 +64,21 @@ public class CustomOption {
         button.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 15));
         Tooltip resetTooltip = new Tooltip(UtilStringStorage.resetTooltip);
         button.setTooltip(resetTooltip);
-        button.setOnMouseEntered(event -> button.setBorder(blackBorder));
-        button.setOnMouseExited(event -> button.setBorder(null));
+        setGlowEffectOnButton(button);
 
+    }
+
+    public static void customExitToMenuButton(Button button)
+    {
+        button.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 16));
+        button.setTranslateY(160);
+        button.setTranslateX(250);
+        setGlowEffectOnButton(button);
+    }
+
+    public static void setGlowEffectOnButton(Button button)
+    {
+        button.setOnMouseEntered(event -> button.setEffect(glow));
+        button.setOnMouseExited(event -> button.setEffect(null));
     }
 }

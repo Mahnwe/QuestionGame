@@ -53,12 +53,6 @@ public class ResultScene extends VBox
         gameResult.getChildren().add(exitToMenuButton);
         pane.setCenter(gameResult);
 
-        exitToMenuButton.setOnAction(event -> {
-            if(resultSoundEffect != null) {
-                SoundManager.stopMusic(resultSoundEffect);
-            }
-                backToMainMenu();
-        });
     }
 
     public void stylizeLabel(Label label, int translateX, int translateY)
@@ -103,9 +97,13 @@ public class ResultScene extends VBox
         stylizeLabel(playerResult, 225, 30);
 
         exitToMenuButton = new Button(UtilStringStorage.returnToMenuButton);
-        exitToMenuButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 16));
-        exitToMenuButton.setTranslateY(160);
-        exitToMenuButton.setTranslateX(240);
+        CustomOption.customExitToMenuButton(exitToMenuButton);
+        exitToMenuButton.setOnAction(event -> {
+            if(resultSoundEffect != null) {
+                SoundManager.stopMusic(resultSoundEffect);
+            }
+            backToMainMenu();
+        });
 
         Label timeLabel = new Label();
         stylizeLabel(timeLabel, 225, 35);

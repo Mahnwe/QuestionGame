@@ -16,7 +16,6 @@ public class MenuSideButton extends Button
         this.setTranslateX(translateX);
         this.setTranslateY(translateY);
         this.setTooltip(tooltip);
-        this.setOnMouseEntered(event -> this.setBorder(CustomOption.blackBorder));
-        this.setOnMouseExited(event -> this.setBorder(null));
+        CustomOption.setGlowEffectOnButton(this);
     }
 }

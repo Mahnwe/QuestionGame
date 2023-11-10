@@ -81,15 +81,15 @@ public class OptionScene extends Scene {
         Button muteButton;
         Slider volumeSlider;
         Label volumeLabel = new Label(UtilStringStorage.volumeLabel);
-        stylizeLabel(volumeLabel, 20, 388);
+        stylizeLabel(volumeLabel, 30, 405);
         optionVbox.getChildren().add(volumeLabel);
 
         muteButton = new Button();
-        CustomOption.customMuteButton(muteButton, PathUtil.MUTE_ICON, 35, 232);
+        CustomOption.customMuteButton(muteButton, PathUtil.MUTE_ICON, 45, 242);
         optionVbox.getChildren().add(muteButton);
 
         volumeSlider = new Slider(0, 10, 5);
-        CustomOption.customSlider(volumeSlider, 305, 60, 10, 270);
+        CustomOption.customSlider(volumeSlider, 305, 60, 20, 280);
         volumeSlider.setValue(SoundManager.soundVolume);
 
         if(SoundManager.soundVolume == 0.0) {
@@ -115,8 +115,8 @@ public class OptionScene extends Scene {
 
         englishVbox.getChildren().add(englishLabel);
         englishVbox.getChildren().add(engButton);
-        englishVbox.setTranslateY(50);
-        englishVbox.setTranslateX(220);
+        englishVbox.setTranslateY(65);
+        englishVbox.setTranslateX(230);
 
         VBox frenchVbox = new VBox();
         Label frenchLabel = new Label("Choisissez une langue");
@@ -126,11 +126,15 @@ public class OptionScene extends Scene {
 
         frenchVbox.getChildren().add(frenchLabel);
         frenchVbox.getChildren().add(frButton);
-        frenchVbox.setTranslateX(470);
-        frenchVbox.setTranslateY(-20);
+        frenchVbox.setTranslateX(480);
+        frenchVbox.setTranslateY(-5);
 
         Label languageLabel = new Label(UtilStringStorage.languageLabel);
-        stylizeLabel(languageLabel, 40, 390);
+        stylizeLabel(languageLabel, 55, 405);
+        if(languageLabel.getText().equals("Languages"))
+        {
+            stylizeLabel(languageLabel, 55, 395);
+        }
 
         optionVbox.getChildren().add(languageLabel);
         optionVbox.getChildren().add(englishVbox);
@@ -185,7 +189,7 @@ public class OptionScene extends Scene {
         });
 
         Label resetLabel = new Label(UtilStringStorage.resetLabel);
-        stylizeLabel(resetLabel, 0, 0);
+        stylizeLabel(resetLabel, 15, 10);
         placeLabelWithTranslation(resetLabel);
 
         optionVbox.getChildren().add(resetLabel);
@@ -196,24 +200,24 @@ public class OptionScene extends Scene {
     {
         if(button.getText().equals("Réinitialiser sauvegarde"))
         {
-            button.setTranslateY(70);
-            button.setTranslateX(310);
+            button.setTranslateY(85);
+            button.setTranslateX(325);
         }
         else {
-            button.setTranslateY(90);
-            button.setTranslateX(365);
+            button.setTranslateY(105);
+            button.setTranslateX(382);
         }
     }
 
     public void placeLabelWithTranslation(Label label)
     {
         if(label.getText().equals("Sauvegarde")) {
-            label.setTranslateY(50);
-            label.setTranslateX(375);
+            label.setTranslateY(65);
+            label.setTranslateX(394);
         }
         else {
-            label.setTranslateY(50);
-            label.setTranslateX(400);
+            label.setTranslateY(65);
+            label.setTranslateX(417);
         }
     }
 

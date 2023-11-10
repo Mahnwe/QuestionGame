@@ -1,3 +1,1 @@
-2023-11-09 21:32:22.496 ERROR [JavaFX Application Thread] [util.QuestionException.<init>(QuestionException.java:13)] - Question list can't be create, may be Out of bounds exception
-2023-11-09 21:38:50.006 ERROR [JavaFX Application Thread] [util.QuestionException.<init>(QuestionException.java:13)] - Question list can't be create, may be Out of bounds exception
-2023-11-09 21:45:28.515 ERROR [JavaFX Application Thread] [util.QuestionException.<init>(QuestionException.java:13)] - Question list can't be create, may be Out of bounds exception, GameHandler.setupQuestionList
+2023-11-10 13:55:20.415 ERROR [JavaFX Application Thread] [util.QuestionException.<init>(QuestionException.java:13)] - Question list can't be create, may be Out of bounds exception, GameHandler.setupQuestionList

@@ -29,11 +29,10 @@ public class PlayerInfoScene extends Scene
 
     private final Player player;
 
-
+    private final BorderWidths borderWidths = new BorderWidths(1.5);
+    private final CornerRadii cornerRadii = new CornerRadii(1.0);
     private final Border border = new Border(new BorderStroke(Color.BLACK,
-            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT));
-    private final Background background = new Background(new BackgroundFill(Color.SADDLEBROWN,
-            CornerRadii.EMPTY, Insets.EMPTY));
+            BorderStrokeStyle.SOLID, cornerRadii, borderWidths));
 
     public PlayerInfoScene(BorderPane pane, Player player)
     {
@@ -82,7 +81,6 @@ public class PlayerInfoScene extends Scene
         });
 
         userInputArea.setBorder(border);
-        userInputArea.setBackground(background);
         userInputArea.setMaxHeight(50);
         userInputArea.setTranslateY(60);
 

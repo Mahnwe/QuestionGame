@@ -68,8 +68,6 @@ public class UtilStringStorage
     public static String scoreLabelIngame = "";
 
     // QUESTION INTERFACE
-    public static String confirmAlertWindow = "";
-    public static String askToConfirm = "";
     public static String nextQuestionButton = "";
     public static String goodAnswerLabel = "";
     public static String badAnswerLabel = "";
@@ -101,7 +99,9 @@ public class UtilStringStorage
     public static String resetLabel = "";
     public static String resetButton = "";
     public static String resetTooltip = "";
+    public static String confirmAlertWindow = "";
     public static String askConfirmReset = "";
+    public static String resetInfo = "";
 
     // CREDIT SCENE
     public static String generalThank = "";

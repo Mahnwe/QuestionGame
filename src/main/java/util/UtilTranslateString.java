@@ -104,8 +104,6 @@ public class UtilTranslateString {
         UtilStringStorage.scoreLabelIngame = engTradFile.getProperty("scoreLabelIngame");
 
         // QUESTION INTERFACE
-        UtilStringStorage.confirmAlertWindow = engTradFile.getProperty("confirmAlertWindow");
-        UtilStringStorage.askToConfirm = engTradFile.getProperty("askToConfirm");
         UtilStringStorage.nextQuestionButton = engTradFile.getProperty("nextQuestionButton");
         UtilStringStorage.goodAnswerLabel = engTradFile.getProperty("goodAnswerLabel");
         UtilStringStorage.badAnswerLabel = engTradFile.getProperty("badAnswerLabel");
@@ -136,7 +134,9 @@ public class UtilTranslateString {
         UtilStringStorage.resetLabel = engTradFile.getProperty("resetLabel");
         UtilStringStorage.resetButton = engTradFile.getProperty("resetButton");
         UtilStringStorage.resetTooltip = engTradFile.getProperty("resetTooltip");
+        UtilStringStorage.confirmAlertWindow = engTradFile.getProperty("confirmAlertWindow");
         UtilStringStorage.askConfirmReset = engTradFile.getProperty("askToReset");
+        UtilStringStorage.resetInfo = engTradFile.getProperty("resetInfo");
 
         // CREDIT SCENE
         UtilStringStorage.generalThank = engTradFile.getProperty("generalThank");
@@ -667,8 +667,6 @@ public class UtilTranslateString {
         UtilStringStorage.scoreLabelIngame = frTradFile.getProperty("scoreLabelIngame");
 
         // QUESTION INTERFACE
-        UtilStringStorage.confirmAlertWindow = frTradFile.getProperty("confirmAlertWindow");
-        UtilStringStorage.askToConfirm = frTradFile.getProperty("askToConfirm");
         UtilStringStorage.nextQuestionButton = frTradFile.getProperty("nextQuestionButton");
         UtilStringStorage.goodAnswerLabel = frTradFile.getProperty("goodAnswerLabel");
         UtilStringStorage.badAnswerLabel = frTradFile.getProperty("badAnswerLabel");
@@ -699,7 +697,9 @@ public class UtilTranslateString {
         UtilStringStorage.resetLabel = frTradFile.getProperty("resetLabel");
         UtilStringStorage.resetButton = frTradFile.getProperty("resetButton");
         UtilStringStorage.resetTooltip = frTradFile.getProperty("resetTooltip");
+        UtilStringStorage.confirmAlertWindow = frTradFile.getProperty("confirmAlertWindow");
         UtilStringStorage.askConfirmReset = frTradFile.getProperty("askToReset");
+        UtilStringStorage.resetInfo = frTradFile.getProperty("resetInfo");
 
         // CREDIT SCENE
         UtilStringStorage.generalThank = frTradFile.getProperty("generalThank");

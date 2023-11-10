@@ -5,6 +5,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Player;
+import util.CustomOption;
 
 public class PopUp {
 
@@ -21,6 +22,7 @@ public class PopUp {
         popUpStage.setScene(playerInfoScene);
         popUpStage.initModality(Modality.APPLICATION_MODAL);
         popUpStage.show();
+        CustomOption.setGlowEffectOnButton(playerInfoScene.getSendButton());
         playerInfoScene.getSendButton().setOnAction(event -> playerInfoScene.setOnActionSendButton(menuPane, questionInterface, stage, popUpStage));
         playerInfoScene.getUserInputArea().setOnKeyPressed(event -> playerInfoScene.setOnKeyTypedSendButton(menuPane, questionInterface, stage, popUpStage));
         return playerInfoScene;

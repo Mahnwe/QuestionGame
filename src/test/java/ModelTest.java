@@ -17,5 +17,8 @@ public class ModelTest
 
         TranslateTest translateTest = new TranslateTest();
         translateTest.testTranslate();
+
+        TimerTest timerTest = new TimerTest();
+        timerTest.testTimer();
     }
 }

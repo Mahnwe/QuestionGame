@@ -6,7 +6,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import model.AchievementManager;
-import view.MenuScene;
 
 public class AchievementVbox {
 

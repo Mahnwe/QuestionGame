@@ -2,7 +2,6 @@ package model;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
-import model.SoundManager;
 import view.MainScene;
 
 public class VolumeInGameHandler

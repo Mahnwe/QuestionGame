@@ -1,9 +1,12 @@
-package util;
+package view;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
+import util.IconCreator;
+import util.PathUtil;
+import util.UtilStringStorage;
 
 public class ReturnButton  extends Button {
 

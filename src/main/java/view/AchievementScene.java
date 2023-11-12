@@ -10,9 +10,7 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.Achievement;
 import model.AchievementManager;
-import util.AchievementVbox;
 import util.BackgroundCreator;
-import util.ReturnButton;
 import util.UtilStringStorage;
 
 import java.util.Properties;

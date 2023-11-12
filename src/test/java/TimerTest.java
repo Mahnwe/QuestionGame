@@ -1,3 +1,4 @@
+import junit.framework.TestCase;
 import model.GameTimer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,7 +19,7 @@ public class TimerTest {
             TimeUnit.SECONDS.sleep(5);
         } catch (InterruptedException e) {
             logger.error("Timer error");
-            throw new RuntimeException(e);
+            TestCase.fail();
         }
         GameTimer.stopTimer();
         GameTimer.setTimerDisplay();

@@ -12,7 +12,6 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.AchievementManager;
 import util.BackgroundCreator;
-import util.ReturnButton;
 import util.UtilStringStorage;
 
 public class CreditScene extends Scene

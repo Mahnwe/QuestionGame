@@ -1,10 +1,12 @@
-package util;
+package view;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import util.CustomOption;
+import util.IconCreator;
 
 public class LanguageButton extends Button {
 

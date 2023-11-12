@@ -11,7 +11,6 @@ import javafx.stage.Stage;
 import model.AchievementManager;
 import util.BackgroundCreator;
 import util.FileUtil;
-import util.ReturnButton;
 import util.UtilStringStorage;
 
 import java.io.File;

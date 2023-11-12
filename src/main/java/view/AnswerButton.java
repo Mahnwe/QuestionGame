@@ -1,11 +1,11 @@
-package util;
+package view;
 
 import javafx.scene.control.Button;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import view.MenuScene;
+import util.CustomOption;
 
 import java.util.List;
 

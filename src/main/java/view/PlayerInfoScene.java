@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import model.GameTimer;
 import model.Player;
 import model.SoundManager;
+import model.VolumeInGameHandler;
 import util.*;
 
 public class PlayerInfoScene extends Scene
@@ -141,7 +142,7 @@ public class PlayerInfoScene extends Scene
         playerInfos.setTranslateY(50);
 
         player.setPlayerName(userInputArea.getText());
-        Label playerNameLabel = new Label(UtilStringStorage.playerNameIngame + player.getPlayerName());
+        Label playerNameLabel = new Label(UtilStringStorage.playerNameIngame +" "+ player.getPlayerName());
         stylizeLabel(playerNameLabel);
 
         playerInfos.getChildren().add(createStatArea(playerNameLabel));

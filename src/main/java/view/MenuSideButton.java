@@ -1,9 +1,10 @@
-package util;
+package view;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import util.CustomOption;
 import view.MenuScene;
 
 public class MenuSideButton extends Button

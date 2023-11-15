@@ -41,8 +41,8 @@ public class GameHandler
 
     public void setUpSurvivalMode()
     {
-        int questionBankNumber = 69;
-        for (int i = questionBankNumber; i > 0; i--) {
+        int questionBankNumber = questionBank.getQuestionList().size();
+        for (int i = questionBank.getQuestionList().size(); i > 0; i--) {
             int randomQuestionIndex = generateRandomIndex();
             Question question = questionBank.getQuestionList().remove(randomQuestionIndex);
             questionList.add(question);

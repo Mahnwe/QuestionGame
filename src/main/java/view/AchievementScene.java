@@ -4,6 +4,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -11,6 +12,7 @@ import javafx.stage.Stage;
 import model.Achievement;
 import model.AchievementManager;
 import util.BackgroundCreator;
+import util.FileUtil;
 import util.UtilStringStorage;
 
 import java.util.Properties;
@@ -19,28 +21,30 @@ public class AchievementScene extends Scene
 {
     private final StringProperty valueOfSuccess = new SimpleStringProperty();
     private final Stage stage;
-    private final BorderPane pane;
     private GridPane gridPane;
+    private final BorderPane takeMultiPane;
     private final AchievementManager achievementManager;
-
     private Label goldCupAchievementInfo;
     private Label silverCupAchievementInfo;
     private Label bronzeCupAchievementInfo;
     private Label perfectScoreAchievementInfo;
     private Label perfectScoreAchievement15Info;
     private Label perfectScoreAchievement20Info;
+    private Label survivalAchievement20Info;
+    private Label survivalAchievement30Info;
+    private Label survivalAchievement50Info;
     private Label secretAchievementInfo;
     private final Properties perfectScoreFile;
     private final Properties cupFile;
     private Label secretAchievementLabel;
 
 
-    public AchievementScene(BorderPane pane, AchievementManager achievementManager, Stage stage, Properties cupFile, Properties perfectScoreFile)
+    public AchievementScene(ScrollPane scrollPane, AchievementManager achievementManager, Stage stage, Properties cupFile, Properties perfectScoreFile)
     {
-        super(pane);
-        this.pane = pane;
-        pane.setPrefHeight(550);
-        pane.setPrefWidth(1000);
+        super(scrollPane);
+        scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+        scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        scrollPane.setFitToWidth(true);
         this.stage = stage;
         this.achievementManager = achievementManager;
         this.cupFile = cupFile;
@@ -54,10 +58,16 @@ public class AchievementScene extends Scene
         createPerfectScore10Area();
         createPerfectScore15Area();
         createPerfectScore20Area();
+        createSurvive20AchievementArea();
+        createSurvive30AchievementArea();
+        createSurvive50AchievementArea();
         createSecretAchievementArea();
         checkAchievements();
 
         BorderPane multiPane = new BorderPane();
+        multiPane.setMinHeight(1080);
+
+        takeMultiPane = new BorderPane();
 
         Label achievementLabel = new Label(UtilStringStorage.achievementLabel);
         achievementLabel.setFont(Font.font("Impact", FontWeight.BOLD, 23));
@@ -65,7 +75,8 @@ public class AchievementScene extends Scene
         achievementLabel.setTranslateX(400);
         achievementLabel.setTranslateY(5);
         multiPane.setCenter(gridPane);
-        pane.setCenter(multiPane);
+        takeMultiPane.setCenter(multiPane);
+        scrollPane.setContent(takeMultiPane);
 
         createReturnButton();
 
@@ -80,13 +91,13 @@ public class AchievementScene extends Scene
         gridPane.setHgap(30);
         gridPane.setVgap(40);
         gridPane.addColumn(3);
-        gridPane.addRow(2);
+        gridPane.addRow(3);
     }
 
     public void createBackground()
     {
         BackgroundImage backgroundImage = BackgroundCreator.createMenuBackground();
-        pane.setBackground(new Background(backgroundImage));
+        takeMultiPane.setBackground(new Background(backgroundImage));
     }
 
     public void createReturnButton()
@@ -95,7 +106,7 @@ public class AchievementScene extends Scene
         ReturnButton returnButton = new ReturnButton();
 
         buttonHbox.getChildren().add(returnButton);
-        pane.setTop(buttonHbox);
+        takeMultiPane.setTop(buttonHbox);
         returnButton.setOnAction(event -> backToMainMenu());
     }
 
@@ -182,6 +193,47 @@ public class AchievementScene extends Scene
         gridPane.add(perfectScoreAchievement20, 2, 1);
     }
 
+    public void createSurvive20AchievementArea()
+    {
+        VBox survive20AchievementVBox = new VBox();
+
+        Label survive20AchievementLabel = new Label();
+        survive20AchievementLabel.setText(UtilStringStorage.survivalAchievement20Description);
+
+        survivalAchievement20Info = new Label();
+
+        AchievementVbox.setAchievementVbox(survive20AchievementVBox, survive20AchievementLabel, achievementManager, 6, survivalAchievement20Info);
+
+        gridPane.add(survive20AchievementVBox, 0, 2);
+    }
+    public void createSurvive30AchievementArea()
+    {
+        VBox survive30AchievementVBox = new VBox();
+
+        Label survive30AchievementLabel = new Label();
+        survive30AchievementLabel.setText(UtilStringStorage.survivalAchievement30Description);
+
+        survivalAchievement30Info = new Label();
+
+        AchievementVbox.setAchievementVbox(survive30AchievementVBox, survive30AchievementLabel, achievementManager, 7, survivalAchievement30Info);
+
+        gridPane.add(survive30AchievementVBox, 1, 2);
+    }
+
+    public void createSurvive50AchievementArea()
+    {
+        VBox survive50AchievementVBox = new VBox();
+
+        Label survive50AchievementLabel = new Label();
+        survive50AchievementLabel.setText(UtilStringStorage.survivalAchievement50Description);
+
+        survivalAchievement50Info = new Label();
+
+        AchievementVbox.setAchievementVbox(survive50AchievementVBox, survive50AchievementLabel, achievementManager, 8, survivalAchievement50Info);
+
+        gridPane.add(survive50AchievementVBox, 2, 2);
+    }
+
     public void createSecretAchievementArea()
     {
         VBox secretAchievementBox = new VBox();
@@ -191,17 +243,15 @@ public class AchievementScene extends Scene
 
         secretAchievementInfo = new Label();
 
-        AchievementVbox.setAchievementVbox(secretAchievementBox, secretAchievementLabel, achievementManager, 6, secretAchievementInfo);
+        AchievementVbox.setAchievementVbox(secretAchievementBox, secretAchievementLabel, achievementManager, 9, secretAchievementInfo);
 
-        gridPane.add(secretAchievementBox, 1,2);
+        gridPane.add(secretAchievementBox, 1,3);
 
     }
 
     public void checkPropertyKeyNumber(Properties properties, String propertyKey, int achievementIndex, Label achievementInfo)
     {
-        String checkIntInFile = properties.getProperty(propertyKey);
-        String numberInKey = checkAndGetNumberInPropertyKey(checkIntInFile);
-        int nbrOfCup = Integer.parseInt(numberInKey);
+        int nbrOfCup = Integer.parseInt(properties.getProperty(propertyKey));
         achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(achievementIndex), nbrOfCup);
         checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(achievementIndex), achievementInfo);
     }
@@ -209,21 +259,21 @@ public class AchievementScene extends Scene
     public void checkAchievements()
     {
         checkPropertyKeyNumber(cupFile, "goldCup", 0, goldCupAchievementInfo);
-
         checkPropertyKeyNumber(cupFile,"silverCup", 1, silverCupAchievementInfo);
-
         checkPropertyKeyNumber(cupFile,"bronzeCup", 2, bronzeCupAchievementInfo);
 
         checkPropertyKeyNumber(perfectScoreFile, "perfectScore10", 3, perfectScoreAchievementInfo);
-
         checkPropertyKeyNumber(perfectScoreFile, "perfectScore15", 4, perfectScoreAchievement15Info);
-
         checkPropertyKeyNumber(perfectScoreFile, "perfectScore20", 5, perfectScoreAchievement20Info);
 
+        checkPropertyKeyNumber(FileUtil.survivalFile, "survivalScore20", 6, survivalAchievement20Info);
+        checkPropertyKeyNumber(FileUtil.survivalFile, "survivalScore30", 7, survivalAchievement30Info);
+        checkPropertyKeyNumber(FileUtil.survivalFile, "survivalScore50", 8, survivalAchievement50Info);
+
         int checkNbrOfAchievementUnlock = checkSecretAchievement();
-        achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(6), checkNbrOfAchievementUnlock);
-        checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(6), secretAchievementInfo);
-        if(checkNbrOfAchievementUnlock == 6)
+        achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(9), checkNbrOfAchievementUnlock);
+        checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(9), secretAchievementInfo);
+        if(checkNbrOfAchievementUnlock == 9)
         {
             secretAchievementLabel.setText(UtilStringStorage.secretAchievement);
         }
@@ -262,13 +312,6 @@ public class AchievementScene extends Scene
         }
         valueOfSuccess.setValue(unlockValue);
         label.setText(unlockValue);
-    }
-
-    public String checkAndGetNumberInPropertyKey(String stringToCheck)
-    {
-        String numberGetter;
-        numberGetter = stringToCheck;
-        return numberGetter;
     }
 
 }

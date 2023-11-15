@@ -26,6 +26,7 @@ public class App extends Application
         FileUtil.createSaveFile();
         FileUtil.loadFile(FileUtil.perfectScoreFile, PathUtil.PERFECT_SCORE_FILE);
         FileUtil.loadFile(FileUtil.cupFile, PathUtil.CUP_FILE);
+        FileUtil.loadFile(FileUtil.survivalFile, PathUtil.SURVIVAL_FILE);
 
         AchievementManager achievementManager = new AchievementManager();
         LanguageScene languageScene = new LanguageScene(new BorderPane(), stage, achievementManager);

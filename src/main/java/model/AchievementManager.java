@@ -45,7 +45,16 @@ public class AchievementManager
         Achievement onlyGoodAnswerAchievement20 = new Achievement(20, false);
         achievementsList.add(onlyGoodAnswerAchievement20);
 
-        Achievement secretAchievement = new Achievement(6, false);
+        Achievement survivalAchievement20 = new Achievement(20, false);
+        achievementsList.add(survivalAchievement20);
+
+        Achievement survivalAchievement30 = new Achievement(30, false);
+        achievementsList.add(survivalAchievement30);
+
+        Achievement survivalAchievement50 = new Achievement(50, false);
+        achievementsList.add(survivalAchievement50);
+
+        Achievement secretAchievement = new Achievement(9, false);
         achievementsList.add(secretAchievement);
 
     }
@@ -67,6 +76,34 @@ public class AchievementManager
             String perfectScoreString = String.valueOf(playerFinalScore);
             perfectScoreFile.setProperty(propertyKey, perfectScoreString);
             achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(achievementIndex), playerFinalScore);
+        }
+    }
+
+    public void checkSurvivalScoreAchievement(AchievementManager achievementManager, int playerFinalScore, Properties survivalScoreFile, String propertyKey, int numberToCompare, int achievementIndex)
+    {
+        if(playerFinalScore >= numberToCompare) {
+            String perfectScoreString = String.valueOf(playerFinalScore);
+            survivalScoreFile.setProperty(propertyKey, perfectScoreString);
+            achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(achievementIndex), playerFinalScore);
+        }
+    }
+
+    public void survivalModeResult(int questionCount, int playerScore, Properties survivalScoreFile, AchievementManager achievementManager)
+    {
+        if(questionCount >= 20)
+        {
+            ResultScene.resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
+            checkSurvivalScoreAchievement(achievementManager, playerScore, survivalScoreFile, "survivalScore20", 20, 6);
+        }
+        if(questionCount >= 30)
+        {
+            ResultScene.resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
+            checkSurvivalScoreAchievement(achievementManager, playerScore, survivalScoreFile, "survivalScore30", 30, 7);
+        }
+        if(questionCount >= 50)
+        {
+            ResultScene.resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
+            checkSurvivalScoreAchievement(achievementManager, playerScore, survivalScoreFile, "survivalScore50", 50, 8);
         }
     }
 

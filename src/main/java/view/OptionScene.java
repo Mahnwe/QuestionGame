@@ -22,13 +22,9 @@ public class OptionScene extends Scene {
     private final Stage stage;
     private final VBox optionVbox;
     private final ConfirmAlert confirmAlert;
-
-
     private final BorderPane pane;
-
     private LanguageButton engButton;
     private LanguageButton frButton;
-
     public static final String OPTION_POLICE_LABEL = "Impact";
     public OptionScene(BorderPane pane, Stage stage, AchievementManager achievementManager)
     {
@@ -235,6 +231,7 @@ public class OptionScene extends Scene {
        FileUtil.resetSaveFile();
        FileUtil.resetCupFile();
        FileUtil.resetPerfectFile();
+       FileUtil.resetSurvivalFile();
     }
     public void backToMainMenu()
     {

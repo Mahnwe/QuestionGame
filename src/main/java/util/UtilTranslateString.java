@@ -58,6 +58,9 @@ public class UtilTranslateString {
         UtilStringStorage.perfectScore10Achievement = engTradFile.getProperty("perfectScore10Achievement");
         UtilStringStorage.perfectScore15Achievement = engTradFile.getProperty("perfectScore15Achievement");
         UtilStringStorage.perfectScore20Achievement = engTradFile.getProperty("perfectScore20Achievement");
+        UtilStringStorage.survivalAchievement20Description = engTradFile.getProperty("survival20Achievement");
+        UtilStringStorage.survivalAchievement30Description = engTradFile.getProperty("survival30Achievement");
+        UtilStringStorage.survivalAchievement50Description = engTradFile.getProperty("survival50Achievement");
         UtilStringStorage.secretAchievement = engTradFile.getProperty("secretAchievement");
         UtilStringStorage.secretLabel = engTradFile.getProperty("secretLabel");
         UtilStringStorage.successUnlock = engTradFile.getProperty("successUnlock");
@@ -661,6 +664,9 @@ public class UtilTranslateString {
         UtilStringStorage.perfectScore10Achievement = frTradFile.getProperty("perfectScore10Achievement");
         UtilStringStorage.perfectScore15Achievement = frTradFile.getProperty("perfectScore15Achievement");
         UtilStringStorage.perfectScore20Achievement = frTradFile.getProperty("perfectScore20Achievement");
+        UtilStringStorage.survivalAchievement20Description = frTradFile.getProperty("survival20Achievement");
+        UtilStringStorage.survivalAchievement30Description = frTradFile.getProperty("survival30Achievement");
+        UtilStringStorage.survivalAchievement50Description = frTradFile.getProperty("survival50Achievement");
         UtilStringStorage.secretAchievement = frTradFile.getProperty("secretAchievement");
         UtilStringStorage.secretLabel = frTradFile.getProperty("secretLabel");
         UtilStringStorage.successUnlock = frTradFile.getProperty("successUnlock");

@@ -140,7 +140,7 @@ public class MenuScene extends Scene
         });
 
         achievementButton.setOnAction(event -> {
-            AchievementScene achievementScene = new AchievementScene(new BorderPane(), achievementManager, menuStage, FileUtil.cupFile, FileUtil.perfectScoreFile);
+            AchievementScene achievementScene = new AchievementScene(new ScrollPane(), achievementManager, menuStage, FileUtil.cupFile, FileUtil.perfectScoreFile);
             menuStage.setScene(achievementScene);
         });
 

@@ -11,6 +11,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.AchievementManager;
+import model.GameHandler;
 import model.GameTimer;
 import model.SoundManager;
 import util.*;
@@ -49,7 +50,12 @@ public class ResultScene extends VBox
         createIcons();
         setUpLabelAndTimer();
 
-        checkPlayerResult();
+        if(GameHandler.gameMode == null) {
+            checkPlayerResult();
+        } else if (GameHandler.gameMode.equals("survival"))
+        {
+            checkSurvivalModeResult();
+        }
 
         gameResult.getChildren().add(exitToMenuButton);
         pane.setCenter(gameResult);
@@ -61,6 +67,18 @@ public class ResultScene extends VBox
         label.setTranslateY(translateY);
         label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 16));
         label.setTextFill(Color.GHOSTWHITE);
+    }
+
+    public void checkSurvivalModeResult()
+    {
+        AchievementManager.notificationAlert = null;
+        if(playerFinalScore < 50) {
+            Label cupLabel = new Label(UtilStringStorage.noCupLabel);
+            stylizeLabel(cupLabel, 100, 70);
+            gameResult.getChildren().add(cupLabel);
+        }
+        achievementManager.survivalModeResult(questionCount, playerFinalScore, FileUtil.survivalFile, achievementManager);
+        FileUtil.storeSurvivalFile();
     }
 
     public void checkPlayerResult()
@@ -81,7 +99,7 @@ public class ResultScene extends VBox
         if(playerFinalScore < questionCount*50/100)
         {
             Label cupLabel = new Label(UtilStringStorage.noCupLabel);
-            stylizeLabel(cupLabel, 200, 70);
+            stylizeLabel(cupLabel, 100, 70);
             gameResult.getChildren().add(cupLabel);
         }
         FileUtil.storePerfectFile();

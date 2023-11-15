@@ -9,10 +9,9 @@ import java.util.Random;
 public class GameHandler
 {
    private final QuestionStorage questionBank;
-   private ArrayList<Question> questionList;
+   private final ArrayList<Question> questionList;
    private final Random randomIndex;
-   private boolean isPlayerSurvive;
-   private String gameMode;
+    public static String gameMode;
 
    private int questionCount;
 
@@ -42,8 +41,20 @@ public class GameHandler
 
     public void setUpSurvivalMode()
     {
-        questionList = (ArrayList<Question>) questionBank.getQuestionList();
-        isPlayerSurvive = true;
+        int questionBankNumber = 69;
+        for (int i = questionBankNumber; i > 0; i--) {
+            int randomQuestionIndex = generateRandomIndex();
+            Question question = questionBank.getQuestionList().remove(randomQuestionIndex);
+            questionList.add(question);
+        }
+        if(questionList.size() != questionBankNumber)
+        {
+            try {
+                throw new QuestionException("Question list can't be create, may be Out of bounds exception, GameHandler.setupQuestionList");
+            } catch (QuestionException e) {
+                throw new RuntimeException(e);
+            }
+        }
         gameMode = "survival";
     }
 
@@ -72,11 +83,4 @@ public class GameHandler
         return questionCount;
     }
 
-    public boolean isPlayerSurvive() {
-        return isPlayerSurvive;
-    }
-
-    public String getGameMode() {
-        return gameMode;
-    }
 }

@@ -12,6 +12,7 @@ public class FileUtil {
     private static final Logger logger = LogManager.getLogger(FileUtil.class);
     public static Properties perfectScoreFile = new Properties();
     public static Properties cupFile = new Properties();
+    public static Properties survivalFile = new Properties();
     public static File saveFile;
 
     public static void loadFile(Properties properties, final String filePath)
@@ -103,6 +104,14 @@ public class FileUtil {
             logger.error("Save file can't be reset");
         }
     }
+    public static void storeSurvivalFile()
+    {
+        try (FileWriter fileWriter = new FileWriter(PathUtil.SURVIVAL_FILE)){
+            survivalFile.store(fileWriter, "");
+        } catch (IOException e) {
+            logger.error("Survival file can't be store");
+        }
+    }
 
     public static void resetCupFile()
     {
@@ -118,6 +127,14 @@ public class FileUtil {
         perfectScoreFile.setProperty("perfectScore15", "0");
         perfectScoreFile.setProperty("perfectScore20", "0");
         FileUtil.storePerfectFile();
+    }
+
+    public static void resetSurvivalFile()
+    {
+        survivalFile.setProperty("survivalScore20", "0");
+        survivalFile.setProperty("survivalScore30", "0");
+        survivalFile.setProperty("survivalScore50", "0");
+        FileUtil.storeSurvivalFile();
     }
 
 }

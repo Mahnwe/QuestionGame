@@ -30,6 +30,7 @@ public class PathUtil
     // SAVES
     public static final String PERFECT_SCORE_FILE = RESOURCES_PATH + "SaveFile/PerfectScoreFile.properties";
     public static final String CUP_FILE = RESOURCES_PATH + "SaveFile/CupFile.properties";
+    public static final String SURVIVAL_FILE = RESOURCES_PATH + "SaveFile/SurvivalFile.properties";
 
     // MUSICS SOUND EFFECTS
     public static final String BAD_ANSWER_SOUND_EFFECT = RESOURCES_PATH + "SoundEffect/Quack-Sound-Effect.wav";

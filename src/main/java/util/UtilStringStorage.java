@@ -22,6 +22,9 @@ public class UtilStringStorage
     public static String perfectScore10Achievement = "";
     public static String perfectScore15Achievement = "";
     public static String perfectScore20Achievement = "";
+    public static String survivalAchievement20Description = "";
+    public static String survivalAchievement30Description = "";
+    public static String survivalAchievement50Description = "";
     public static String secretAchievement = "";
     public static String secretLabel = "";
     public static String successUnlock = "";

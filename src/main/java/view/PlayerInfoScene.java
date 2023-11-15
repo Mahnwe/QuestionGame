@@ -139,19 +139,18 @@ public class PlayerInfoScene extends Scene
         playerInfos.setTranslateY(60);
 
         player.setPlayerName(userInputArea.getText());
-        Label playerNameLabel = new Label(UtilStringStorage.playerNameIngame +" "+ player.getPlayerName());
+        Label playerNameLabel = new Label(UtilStringStorage.playerNameIngame + " " + player.getPlayerName());
         stylizeLabel(playerNameLabel);
 
         playerInfos.getChildren().add(createStatArea(playerNameLabel));
         playerInfos.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 
-        playerScoreLabel = new Label(UtilStringStorage.scoreLabelIngame + " "+player.getPlayerScore());
+        playerScoreLabel = new Label(UtilStringStorage.scoreLabelIngame + " " + player.getPlayerScore());
         stylizeLabel(playerScoreLabel);
 
         playerInfos.getChildren().add(createStatArea(playerScoreLabel));
 
-        if(GameHandler.gameMode.equals("survival"))
-        {
+        if(GameHandler.gameMode != null) {
             playerLivesLabel = new Label(UtilStringStorage.playerLivesIngame + " "+ player.getNbrOfLives());
             stylizeLabel(playerLivesLabel);
             playerInfos.getChildren().add(createStatArea(playerLivesLabel));

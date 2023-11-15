@@ -70,7 +70,9 @@ public class MainScene extends Scene
             }
             else {
                 playerInfoScene.removePlayerLife();
-                playerInfoScene.getPlayerLivesLabel().setText(UtilStringStorage.playerLivesIngame+ " "+playerInfoScene.getPlayer().getNbrOfLives());
+                if(playerInfoScene.getPlayerLivesLabel() != null) {
+                    playerInfoScene.getPlayerLivesLabel().setText(UtilStringStorage.playerLivesIngame + " " + playerInfoScene.getPlayer().getNbrOfLives());
+                }
             }
             playerInfoScene.getPlayerScoreLabel().setText(UtilStringStorage.scoreLabel + " " +playerInfoScene.getPlayer().getPlayerScore()+"/"+gameHandler.getQuestionCount());
             setNextQuestionButton();
@@ -115,11 +117,12 @@ public class MainScene extends Scene
     public void saveScoreInFile()
     {
         if(GameHandler.gameMode == null) {
-            FileUtil.writeInSaveFile(FileUtil.saveFile, UtilStringStorage.playerNameInfile + " " + playerInfoScene.getPlayer().getPlayerName() + "   " + UtilStringStorage.scoreLabelInfile + " " + playerInfoScene.getPlayer().getPlayerScore() + " " + UtilStringStorage.scoreOn + " " + gameHandler.getQuestionCount() +
+            FileUtil.writeInSaveFile(FileUtil.saveFile, UtilStringStorage.classicModeLabelInfile+ " "+UtilStringStorage.playerNameInfile + " " + playerInfoScene.getPlayer().getPlayerName() + "   " + UtilStringStorage.scoreLabelInfile + " " + playerInfoScene.getPlayer().getPlayerScore() + " " + UtilStringStorage.scoreOn + " " + gameHandler.getQuestionCount() +
                     "  " + UtilStringStorage.timerLabelInfile + " " + GameTimer.getElapsedMinutes() + " " + UtilStringStorage.gameMinutes + " " + GameTimer.getSecondsDisplay() + " " + UtilStringStorage.gameSecondes + "\n");
         }
         else if(GameHandler.gameMode.equals(SURVIVAL_MODE)) {
-            FileUtil.writeInSaveFile(FileUtil.saveFile,  UtilStringStorage.survivalLabelInfile +"  "+ UtilStringStorage.playerNameInfile +" "+ playerInfoScene.getPlayer().getPlayerName() +"  "+ UtilStringStorage.scoreLabelInfile +" "+ playerInfoScene.getPlayer().getPlayerScore()+ " questions"+ "\n");
+            FileUtil.writeInSaveFile(FileUtil.saveFile,  UtilStringStorage.survivalLabelInfile +"  "+ UtilStringStorage.playerNameInfile +" "+ playerInfoScene.getPlayer().getPlayerName() +"  "+ UtilStringStorage.scoreLabelInfile +" "+ playerInfoScene.getPlayer().getPlayerScore()+ " questions"+
+                    "  " + UtilStringStorage.timerLabelInfile + " " + GameTimer.getElapsedMinutes() + " " + UtilStringStorage.gameMinutes + " " + GameTimer.getSecondsDisplay() + " " + UtilStringStorage.gameSecondes +"\n");
         }
     }
 

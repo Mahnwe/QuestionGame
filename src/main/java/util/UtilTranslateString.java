@@ -96,6 +96,7 @@ public class UtilTranslateString {
         UtilStringStorage.playerResult = engTradFile.getProperty("playerResult");
         UtilStringStorage.scoreOn = engTradFile.getProperty("scoreOn");
         UtilStringStorage.survivalLabel = engTradFile.getProperty("survivalLabel");
+        UtilStringStorage.classicModeLabelInfile = engTradFile.getProperty("classicModeLabelInfile");
         UtilStringStorage.survivalLabelInfile = engTradFile.getProperty("survivalLabelInfile");
         UtilStringStorage.playerNameInfile = engTradFile.getProperty("playerNameInfile");
         UtilStringStorage.scoreLabelInfile = engTradFile.getProperty("scoreLabelInfile");
@@ -121,6 +122,8 @@ public class UtilTranslateString {
         UtilStringStorage.timeLabel = engTradFile.getProperty("timeLabel");
         UtilStringStorage.minLabel = engTradFile.getProperty("minLabel");
         UtilStringStorage.secondesLabel = engTradFile.getProperty("secondesLabel");
+        UtilStringStorage.noSurviveLabel = engTradFile.getProperty("noSurviveLabel");
+        UtilStringStorage.surviveEnoughLabel = engTradFile.getProperty("surviveEnoughLabel");
         UtilStringStorage.noCupLabel = engTradFile.getProperty("noCupLabel");
         UtilStringStorage.goldCupLabel = engTradFile.getProperty("goldCupLabel");
         UtilStringStorage.silverCupLabel = engTradFile.getProperty("silverCupLabel");
@@ -701,6 +704,7 @@ public class UtilTranslateString {
         UtilStringStorage.playerResult = frTradFile.getProperty("playerResult");
         UtilStringStorage.scoreOn = frTradFile.getProperty("scoreOn");
         UtilStringStorage.survivalLabel = frTradFile.getProperty("survivalLabel");
+        UtilStringStorage.classicModeLabelInfile = frTradFile.getProperty("classicModeLabelInfile");
         UtilStringStorage.survivalLabelInfile = frTradFile.getProperty("survivalLabelInfile");
         UtilStringStorage.playerNameInfile = frTradFile.getProperty("playerNameInfile");
         UtilStringStorage.scoreLabelInfile = frTradFile.getProperty("scoreLabelInfile");
@@ -726,6 +730,8 @@ public class UtilTranslateString {
         UtilStringStorage.timeLabel = frTradFile.getProperty("timeLabel");
         UtilStringStorage.minLabel = frTradFile.getProperty("minLabel");
         UtilStringStorage.secondesLabel = frTradFile.getProperty("secondesLabel");
+        UtilStringStorage.noSurviveLabel = frTradFile.getProperty("noSurviveLabel");
+        UtilStringStorage.surviveEnoughLabel = frTradFile.getProperty("surviveEnoughLabel");
         UtilStringStorage.noCupLabel = frTradFile.getProperty("noCupLabel");
         UtilStringStorage.goldCupLabel = frTradFile.getProperty("goldCupLabel");
         UtilStringStorage.silverCupLabel = frTradFile.getProperty("silverCupLabel");

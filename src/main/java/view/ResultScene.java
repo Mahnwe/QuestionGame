@@ -66,14 +66,18 @@ public class ResultScene extends VBox
     public void checkSurvivalModeResult()
     {
         AchievementManager.notificationAlert = null;
-        if(playerFinalScore < 50) {
-            Label cupLabel = new Label(UtilStringStorage.noCupLabel);
-            stylizeLabel(cupLabel, 100, 70);
-            gameResult.getChildren().add(cupLabel);
+        Label cupLabel;
+        if(playerFinalScore >= 20)
+        {
+            cupLabel = new Label(UtilStringStorage.surviveEnoughLabel);
+        } else {
+            cupLabel = new Label(UtilStringStorage.noSurviveLabel);
         }
+        stylizeLabel(cupLabel, 100, 70);
+        gameResult.getChildren().add(cupLabel);
+
         achievementManager.survivalModeResult(questionCount, playerFinalScore, FileUtil.survivalFile, achievementManager);
         FileUtil.storeSurvivalFile();
-        GameHandler.gameMode = "";
     }
 
     public void checkPlayerResult()
@@ -116,6 +120,7 @@ public class ResultScene extends VBox
                 SoundManager.stopMusic(resultSoundEffect);
             }
             backToMainMenu();
+            GameHandler.gameMode = null;
         });
 
         Label timeLabel = new Label();

@@ -60,6 +60,7 @@ public class UtilStringStorage
     public static String playerResult = "";
     public static String scoreOn = "";
     public static String survivalLabel = "";
+    public static String classicModeLabelInfile = "";
     public static String survivalLabelInfile = "";
     public static String playerNameInfile = "";
     public static String scoreLabelInfile = "";
@@ -85,6 +86,8 @@ public class UtilStringStorage
     public static String timeLabel = "";
     public static String minLabel = "";
     public static String secondesLabel = "";
+    public static String noSurviveLabel = "";
+    public static String surviveEnoughLabel = "";
     public static String noCupLabel = "";
     public static String goldCupLabel = "";
     public static String silverCupLabel = "";

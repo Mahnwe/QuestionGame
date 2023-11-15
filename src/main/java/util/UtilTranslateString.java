@@ -108,6 +108,7 @@ public class UtilTranslateString {
         UtilStringStorage.askPlayerName = engTradFile.getProperty("askPlayerName");
         UtilStringStorage.playerNameIngame = engTradFile.getProperty("playerNameIngame");
         UtilStringStorage.scoreLabelIngame = engTradFile.getProperty("scoreLabelIngame");
+        UtilStringStorage.playerLivesIngame = engTradFile.getProperty("playerLivesLabel");
 
         // QUESTION INTERFACE
         UtilStringStorage.nextQuestionButton = engTradFile.getProperty("nextQuestionButton");
@@ -712,6 +713,7 @@ public class UtilTranslateString {
         UtilStringStorage.askPlayerName = frTradFile.getProperty("askPlayerName");
         UtilStringStorage.playerNameIngame = frTradFile.getProperty("playerNameIngame");
         UtilStringStorage.scoreLabelIngame = frTradFile.getProperty("scoreLabelIngame");
+        UtilStringStorage.playerLivesIngame = frTradFile.getProperty("playerLivesLabel");
 
         // QUESTION INTERFACE
         UtilStringStorage.nextQuestionButton = frTradFile.getProperty("nextQuestionButton");

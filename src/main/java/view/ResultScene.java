@@ -73,6 +73,7 @@ public class ResultScene extends VBox
         }
         achievementManager.survivalModeResult(questionCount, playerFinalScore, FileUtil.survivalFile, achievementManager);
         FileUtil.storeSurvivalFile();
+        GameHandler.gameMode = "";
     }
 
     public void checkPlayerResult()

@@ -68,7 +68,11 @@ public class MainScene extends Scene
             {
                 playerInfoScene.increaseScore();
             }
-            playerInfoScene.getPlayerScoreLabel().setText(UtilStringStorage.scoreLabel + playerInfoScene.getPlayer().getPlayerScore()+"/"+gameHandler.getQuestionCount());
+            else {
+                playerInfoScene.removePlayerLife();
+                playerInfoScene.getPlayerLivesLabel().setText(UtilStringStorage.playerLivesIngame+ " "+playerInfoScene.getPlayer().getNbrOfLives());
+            }
+            playerInfoScene.getPlayerScoreLabel().setText(UtilStringStorage.scoreLabel + " " +playerInfoScene.getPlayer().getPlayerScore()+"/"+gameHandler.getQuestionCount());
             setNextQuestionButton();
         });
     }
@@ -136,8 +140,12 @@ public class MainScene extends Scene
                 createNewQuestionInterface();
             }
             else {
-                setDisplayResult();
-                saveScoreInFile();
+                if(playerInfoScene.getPlayer().getNbrOfLives() == 0) {
+                    setDisplayResult();
+                    saveScoreInFile();
+                } else {
+                    createNewQuestionInterface();
+                }
             }
         }
     }

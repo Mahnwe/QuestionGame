@@ -12,10 +12,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import model.GameTimer;
-import model.Player;
-import model.SoundManager;
-import model.VolumeInGameHandler;
+import model.*;
 import util.*;
 
 public class PlayerInfoScene extends Scene
@@ -27,7 +24,7 @@ public class PlayerInfoScene extends Scene
 
     private VBox playerInfos;
     private Label playerScoreLabel;
-
+    private Label playerLivesLabel;
     private final Player player;
 
     private final BorderWidths borderWidths = new BorderWidths(1.5);
@@ -139,7 +136,7 @@ public class PlayerInfoScene extends Scene
     public void createPlayerInfoArea()
     {
         playerInfos = new VBox();
-        playerInfos.setTranslateY(50);
+        playerInfos.setTranslateY(60);
 
         player.setPlayerName(userInputArea.getText());
         Label playerNameLabel = new Label(UtilStringStorage.playerNameIngame +" "+ player.getPlayerName());
@@ -148,10 +145,17 @@ public class PlayerInfoScene extends Scene
         playerInfos.getChildren().add(createStatArea(playerNameLabel));
         playerInfos.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 
-        playerScoreLabel = new Label(UtilStringStorage.scoreLabelIngame +player.getPlayerScore());
+        playerScoreLabel = new Label(UtilStringStorage.scoreLabelIngame + " "+player.getPlayerScore());
         stylizeLabel(playerScoreLabel);
 
         playerInfos.getChildren().add(createStatArea(playerScoreLabel));
+
+        if(GameHandler.gameMode.equals("survival"))
+        {
+            playerLivesLabel = new Label(UtilStringStorage.playerLivesIngame + " "+ player.getNbrOfLives());
+            stylizeLabel(playerLivesLabel);
+            playerInfos.getChildren().add(createStatArea(playerLivesLabel));
+        }
         playerInfos.setMinWidth(170);
         playerInfos.setMaxWidth(150);
 
@@ -201,6 +205,11 @@ public class PlayerInfoScene extends Scene
         player.setPlayerScore(player.getPlayerScore()+1);
     }
 
+    public void removePlayerLife()
+    {
+        player.setNbrOfLives(player.getNbrOfLives()-1);
+    }
+
     public HBox createStatArea(Label label) {
         label.setTranslateY(3);
 
@@ -230,6 +239,10 @@ public class PlayerInfoScene extends Scene
 
     public TextArea getUserInputArea() {
         return userInputArea;
+    }
+
+    public Label getPlayerLivesLabel() {
+        return playerLivesLabel;
     }
 }
 

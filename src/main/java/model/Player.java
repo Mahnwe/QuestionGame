@@ -5,6 +5,8 @@ public class Player
     private String playerName;
     private int playerScore;
 
+    private int nbrOfLives = 3;
+
     public Player()
     {
         // No need to instantiate or create something
@@ -28,5 +30,13 @@ public class Player
     public void setPlayerScore(int playerScore)
     {
         this.playerScore = playerScore;
+    }
+
+    public int getNbrOfLives() {
+        return nbrOfLives;
+    }
+
+    public void setNbrOfLives(int nbrOfLives) {
+        this.nbrOfLives = nbrOfLives;
     }
 }

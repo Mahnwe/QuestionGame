@@ -72,6 +72,7 @@ public class UtilStringStorage
     public static String askPlayerName = "";
     public static String playerNameIngame = "";
     public static String scoreLabelIngame = "";
+    public static String playerLivesIngame = "";
 
     // QUESTION INTERFACE
     public static String nextQuestionButton = "";

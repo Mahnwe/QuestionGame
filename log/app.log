@@ -1,1 +1,2 @@
-2023-11-10 13:55:20.415 ERROR [JavaFX Application Thread] [util.QuestionException.<init>(QuestionException.java:13)] - Question list can't be create, may be Out of bounds exception, GameHandler.setupQuestionList
+2023-11-15 00:44:56.076 ERROR [JavaFX Application Thread] [model.AchievementManager.goldCupResult(AchievementManager.java:79)] - Question count bug
+2023-11-15 01:08:00.392 ERROR [JavaFX Application Thread] [model.AchievementManager.goldCupResult(AchievementManager.java:79)] - Question count bug

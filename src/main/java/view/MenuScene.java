@@ -39,7 +39,7 @@ public class MenuScene extends Scene
     private Label tenModeButton;
     private Label fifteenModeButton;
     private Label twentyModeButton;
-
+    private Label survivalModeButton;
     private MenuSideButton leaderBoardButton;
     private MenuSideButton trophyButton;
     private MenuSideButton achievementButton;
@@ -168,6 +168,10 @@ public class MenuScene extends Scene
         twentyModeButton = new Label(UtilStringStorage.mode20Button);
         twentyModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 16));
         twentyModeButton.setTextFill(Color.BLACK);
+
+        survivalModeButton = new Label(UtilStringStorage.modeSurvivalButton);
+        survivalModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 16));
+        survivalModeButton.setTextFill(Color.BLACK);
     }
 
     public void createButtonArea()
@@ -191,6 +195,7 @@ public class MenuScene extends Scene
         comboBox.getItems().add(tenModeButton.getText());
         comboBox.getItems().add(fifteenModeButton.getText());
         comboBox.getItems().add(twentyModeButton.getText());
+        comboBox.getItems().add(survivalModeButton.getText());
         comboBox.getSelectionModel().selectFirst();
 
         launchGameButton = new Button(UtilStringStorage.launchGameButton);
@@ -231,6 +236,11 @@ public class MenuScene extends Scene
             {
             gameHandler.setupQuestionList(20);
             instantiateMainScene();
+            }
+            if(comboBox.getSelectionModel().getSelectedItem().equals(comboBox.getItems().get(3)))
+            {
+                gameHandler.setUpSurvivalMode();
+                instantiateMainScene();
             }
         });
     }

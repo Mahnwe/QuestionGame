@@ -82,6 +82,7 @@ public class UtilTranslateString {
         UtilStringStorage.mode10Button = engTradFile.getProperty("mode10Button");
         UtilStringStorage.mode15Button = engTradFile.getProperty("mode15Button");
         UtilStringStorage.mode20Button = engTradFile.getProperty("mode20Button");
+        UtilStringStorage.modeSurvivalButton = engTradFile.getProperty("modeSurvivalButton");
         UtilStringStorage.launchGameButton = engTradFile.getProperty("launchGameButton");
 
         // MAIN SCENE
@@ -91,6 +92,8 @@ public class UtilTranslateString {
         UtilStringStorage.answerAllQuestions = engTradFile.getProperty("answerAllQuestions");
         UtilStringStorage.playerResult = engTradFile.getProperty("playerResult");
         UtilStringStorage.scoreOn = engTradFile.getProperty("scoreOn");
+        UtilStringStorage.survivalLabel = engTradFile.getProperty("survivalLabel");
+        UtilStringStorage.survivalLabelInfile = engTradFile.getProperty("survivalLabelInfile");
         UtilStringStorage.playerNameInfile = engTradFile.getProperty("playerNameInfile");
         UtilStringStorage.scoreLabelInfile = engTradFile.getProperty("scoreLabelInfile");
         UtilStringStorage.timerLabelInfile = engTradFile.getProperty("timerLabelInfile");
@@ -680,6 +683,7 @@ public class UtilTranslateString {
         UtilStringStorage.mode10Button = frTradFile.getProperty("mode10Button");
         UtilStringStorage.mode15Button = frTradFile.getProperty("mode15Button");
         UtilStringStorage.mode20Button = frTradFile.getProperty("mode20Button");
+        UtilStringStorage.modeSurvivalButton = frTradFile.getProperty("modeSurvivalButton");
         UtilStringStorage.launchGameButton = frTradFile.getProperty("launchGameButton");
 
         // MAIN SCENE
@@ -689,6 +693,8 @@ public class UtilTranslateString {
         UtilStringStorage.answerAllQuestions = frTradFile.getProperty("answerAllQuestions");
         UtilStringStorage.playerResult = frTradFile.getProperty("playerResult");
         UtilStringStorage.scoreOn = frTradFile.getProperty("scoreOn");
+        UtilStringStorage.survivalLabel = frTradFile.getProperty("survivalLabel");
+        UtilStringStorage.survivalLabelInfile = frTradFile.getProperty("survivalLabelInfile");
         UtilStringStorage.playerNameInfile = frTradFile.getProperty("playerNameInfile");
         UtilStringStorage.scoreLabelInfile = frTradFile.getProperty("scoreLabelInfile");
         UtilStringStorage.timerLabelInfile = frTradFile.getProperty("timerLabelInfile");

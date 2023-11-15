@@ -56,8 +56,7 @@ public class ResultScene extends VBox
 
     }
 
-    public void stylizeLabel(Label label, int translateX, int translateY)
-    {
+    public void stylizeLabel(Label label, int translateX, int translateY) {
         label.setTranslateX(translateX);
         label.setTranslateY(translateY);
         label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 16));

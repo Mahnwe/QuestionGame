@@ -9,8 +9,10 @@ import java.util.Random;
 public class GameHandler
 {
    private final QuestionStorage questionBank;
-   private final ArrayList<Question> questionList;
+   private ArrayList<Question> questionList;
    private final Random randomIndex;
+   private boolean isPlayerSurvive;
+   private String gameMode;
 
    private int questionCount;
 
@@ -38,6 +40,13 @@ public class GameHandler
         }
     }
 
+    public void setUpSurvivalMode()
+    {
+        questionList = (ArrayList<Question>) questionBank.getQuestionList();
+        isPlayerSurvive = true;
+        gameMode = "survival";
+    }
+
     public boolean isGameEnding()
     {
         return questionCount >= questionList.size();
@@ -63,4 +72,11 @@ public class GameHandler
         return questionCount;
     }
 
+    public boolean isPlayerSurvive() {
+        return isPlayerSurvive;
+    }
+
+    public String getGameMode() {
+        return gameMode;
+    }
 }

@@ -79,10 +79,7 @@ public class AchievementManager
             default -> logger.error("Question count bug");
         }
 
-        String checkIntInFile = cupFile.getProperty("goldCup");
-        String numberOfGoldCup = checkAndGetNumberOfCup(checkIntInFile);
-
-        int nbrOfGoldCup = Integer.parseInt(numberOfGoldCup);
+        int nbrOfGoldCup = Integer.parseInt(cupFile.getProperty("goldCup"));
         nbrOfGoldCup++;
 
         achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(0), nbrOfGoldCup);
@@ -97,10 +94,7 @@ public class AchievementManager
 
     public void silverCupResult(VBox vBox, Properties cupFile, AchievementManager achievementManager, ImageView imageView)
     {
-        String checkIntInFile = cupFile.getProperty("silverCup");
-        String numberOfSilverCup = checkAndGetNumberOfCup(checkIntInFile);
-
-        int nbrOfSilverCup = Integer.parseInt(numberOfSilverCup);
+        int nbrOfSilverCup = Integer.parseInt(cupFile.getProperty("silverCup"));
         nbrOfSilverCup++;
 
         achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(1), nbrOfSilverCup);
@@ -115,10 +109,7 @@ public class AchievementManager
 
     public void bronzeCupResult(VBox vBox, Properties cupFile, AchievementManager achievementManager, ImageView imageView)
     {
-        String checkIntInFile = cupFile.getProperty("bronzeCup");
-        String numberOfBronzeCup = checkAndGetNumberOfCup(checkIntInFile);
-
-        int nbrOfBronzeCup = Integer.parseInt(numberOfBronzeCup);
+        int nbrOfBronzeCup = Integer.parseInt(cupFile.getProperty("bronzeCup"));
         nbrOfBronzeCup++;
 
         achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(2), nbrOfBronzeCup);
@@ -129,13 +120,6 @@ public class AchievementManager
 
         vBox.getChildren().add(cupLabel);
         vBox.getChildren().add(imageView);
-    }
-
-    public String checkAndGetNumberOfCup(String stringToCheck)
-    {
-        String numberGetter;
-        numberGetter = stringToCheck;
-        return numberGetter;
     }
 
     public void setUpResultLabel(Label label)

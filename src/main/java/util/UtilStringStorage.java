@@ -46,6 +46,7 @@ public class UtilStringStorage
     public static String mode10Button = "";
     public static String mode15Button = "";
     public static String mode20Button = "";
+    public static String modeSurvivalButton = "";
     public static String launchGameButton = "";
 
     // MAIN SCENE
@@ -55,6 +56,8 @@ public class UtilStringStorage
     public static String answerAllQuestions = "";
     public static String playerResult = "";
     public static String scoreOn = "";
+    public static String survivalLabel = "";
+    public static String survivalLabelInfile = "";
     public static String playerNameInfile = "";
     public static String scoreLabelInfile = "";
     public static String timerLabelInfile = "";

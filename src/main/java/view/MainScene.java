@@ -31,6 +31,7 @@ public class MainScene extends Scene
     private final Properties cupFile;
     public static MediaPlayer inGameMusicToStop = SoundManager.playMusicRepeat(PathUtil.IN_GAME_MUSIC);
     private final Player player;
+    private static final String SURVIVAL_MODE = "survival";
 
     public MainScene(Player player, GameHandler gameHandler, Stage stage, File saveFile, AchievementManager achievementManager, Properties cupFile, Properties perfectScoreFile)
     {
@@ -109,25 +110,45 @@ public class MainScene extends Scene
         }
         SoundManager.stopMusic(inGameMusicToStop);
         resultScene.getCongratsLabel().setText(UtilStringStorage.congratsLabel +" "+ playerInfoScene.getPlayer().getPlayerName()+" "+UtilStringStorage.answerAllQuestions);
-        resultScene.getPlayerResult().setText(UtilStringStorage.playerResult + playerInfoScene.getPlayer().getPlayerScore()+" "+UtilStringStorage.scoreOn +" "+gameHandler.getQuestionCount());
+        if(gameHandler.getGameMode() == null) {
+            resultScene.getPlayerResult().setText(UtilStringStorage.playerResult + playerInfoScene.getPlayer().getPlayerScore() + " " + UtilStringStorage.scoreOn + " " + gameHandler.getQuestionCount());
+        }
+        else if(gameHandler.getGameMode().equals(SURVIVAL_MODE)) {
+            resultScene.getPlayerResult().setText(UtilStringStorage.survivalLabel +" "+playerInfoScene.getPlayer().getPlayerScore() + " question");
+        }
     }
 
     public void saveScoreInFile()
     {
-        FileUtil.writeInSaveFile(saveFile,UtilStringStorage.playerNameInfile +" "+ playerInfoScene.getPlayer().getPlayerName() + "   " + UtilStringStorage.scoreLabelInfile +" "+ playerInfoScene.getPlayer().getPlayerScore() + " "+ UtilStringStorage.scoreOn +" "+gameHandler.getQuestionCount() +
-                "  "+UtilStringStorage.timerLabelInfile +" "+ GameTimer.getElapsedMinutes() +" "+ UtilStringStorage.gameMinutes +" "+ GameTimer.getSecondsDisplay() +" "+ UtilStringStorage.gameSecondes + "\n");
+        if(gameHandler.getGameMode() == null) {
+            FileUtil.writeInSaveFile(saveFile, UtilStringStorage.playerNameInfile + " " + playerInfoScene.getPlayer().getPlayerName() + "   " + UtilStringStorage.scoreLabelInfile + " " + playerInfoScene.getPlayer().getPlayerScore() + " " + UtilStringStorage.scoreOn + " " + gameHandler.getQuestionCount() +
+                    "  " + UtilStringStorage.timerLabelInfile + " " + GameTimer.getElapsedMinutes() + " " + UtilStringStorage.gameMinutes + " " + GameTimer.getSecondsDisplay() + " " + UtilStringStorage.gameSecondes + "\n");
+        }
+        else if(gameHandler.getGameMode().equals(SURVIVAL_MODE)) {
+            FileUtil.writeInSaveFile(saveFile,  UtilStringStorage.survivalLabelInfile +"  "+ UtilStringStorage.playerNameInfile +" "+ playerInfoScene.getPlayer().getPlayerName() +"  "+ UtilStringStorage.scoreLabelInfile +" "+ playerInfoScene.getPlayer().getPlayerScore()+ " questions");
+        }
     }
 
     public void checkGameEnding()
     {
-        if(gameHandler.isGameEnding())
-        {
-            setDisplayResult();
-            saveScoreInFile();
+        if(gameHandler.getGameMode() == null) {
+            if (gameHandler.isGameEnding()) {
+                setDisplayResult();
+                saveScoreInFile();
+            } else {
+                createNewQuestionInterface();
+            }
         }
-        else
+        else if(gameHandler.getGameMode().equals(SURVIVAL_MODE))
         {
-            createNewQuestionInterface();
+            if(questionInterface.isPlayerAnswer())
+            {
+                createNewQuestionInterface();
+            }
+            else {
+                setDisplayResult();
+                saveScoreInFile();
+            }
         }
     }
 

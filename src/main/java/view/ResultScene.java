@@ -16,8 +16,6 @@ import model.GameTimer;
 import model.SoundManager;
 import util.*;
 
-import java.util.Properties;
-
 public class ResultScene extends VBox
 {
     private final VBox gameResult;
@@ -31,20 +29,16 @@ public class ResultScene extends VBox
     private final AchievementManager achievementManager;
     private final int playerFinalScore;
     private final Stage stage;
-    private final Properties cupFile;
-    private final Properties perfectScoreFile;
     private final int questionCount;
     public static MediaPlayer resultSoundEffect;
     public static MediaPlayer returnToMenuMusic;
 
-    public ResultScene(BorderPane pane, int playerFinalScore, int questionCount, AchievementManager achievementManager, Stage stage, Properties cupFile, Properties perfectScoreFile)
+    public ResultScene(BorderPane pane, int playerFinalScore, int questionCount, AchievementManager achievementManager, Stage stage)
     {
         this.achievementManager = achievementManager;
         this.playerFinalScore = playerFinalScore;
         this.questionCount = questionCount;
         this.stage = stage;
-        this.cupFile = cupFile;
-        this.perfectScoreFile = perfectScoreFile;
         gameResult = new VBox();
 
         createIcons();
@@ -86,15 +80,15 @@ public class ResultScene extends VBox
         AchievementManager.notificationAlert = null;
         if(playerFinalScore >= questionCount*90/100)
         {
-            achievementManager.goldCupResult(questionCount, playerFinalScore, gameResult, perfectScoreFile, cupFile, achievementManager, goldCup);
+            achievementManager.goldCupResult(questionCount, playerFinalScore, gameResult, FileUtil.perfectScoreFile, FileUtil.cupFile, achievementManager, goldCup);
         }
         if(playerFinalScore > questionCount*60/100 && playerFinalScore <= questionCount*80/100)
         {
-            achievementManager.silverCupResult(gameResult, cupFile, achievementManager, silverCup);
+            achievementManager.silverCupResult(gameResult, FileUtil.cupFile, achievementManager, silverCup);
         }
         if(playerFinalScore >= questionCount*50/100 && playerFinalScore < questionCount*60/100)
         {
-            achievementManager.bronzeCupResult(gameResult, cupFile, achievementManager, bronzeCup);
+            achievementManager.bronzeCupResult(gameResult, FileUtil.cupFile, achievementManager, bronzeCup);
         }
         if(playerFinalScore < questionCount*50/100)
         {

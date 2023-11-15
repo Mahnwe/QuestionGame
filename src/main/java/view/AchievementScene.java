@@ -34,12 +34,10 @@ public class AchievementScene extends Scene
     private Label survivalAchievement30Info;
     private Label survivalAchievement50Info;
     private Label secretAchievementInfo;
-    private final Properties perfectScoreFile;
-    private final Properties cupFile;
     private Label secretAchievementLabel;
 
 
-    public AchievementScene(ScrollPane scrollPane, AchievementManager achievementManager, Stage stage, Properties cupFile, Properties perfectScoreFile)
+    public AchievementScene(ScrollPane scrollPane, AchievementManager achievementManager, Stage stage)
     {
         super(scrollPane);
         scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
@@ -47,8 +45,6 @@ public class AchievementScene extends Scene
         scrollPane.setFitToWidth(true);
         this.stage = stage;
         this.achievementManager = achievementManager;
-        this.cupFile = cupFile;
-        this.perfectScoreFile = perfectScoreFile;
 
         createGridPane();
 
@@ -66,7 +62,6 @@ public class AchievementScene extends Scene
 
         BorderPane multiPane = new BorderPane();
         multiPane.setMinHeight(1080);
-
         takeMultiPane = new BorderPane();
 
         Label achievementLabel = new Label(UtilStringStorage.achievementLabel);
@@ -79,7 +74,6 @@ public class AchievementScene extends Scene
         scrollPane.setContent(takeMultiPane);
 
         createReturnButton();
-
         createBackground();
     }
 
@@ -104,7 +98,6 @@ public class AchievementScene extends Scene
     {
         HBox buttonHbox = new HBox();
         ReturnButton returnButton = new ReturnButton();
-
         buttonHbox.getChildren().add(returnButton);
         takeMultiPane.setTop(buttonHbox);
         returnButton.setOnAction(event -> backToMainMenu());
@@ -113,138 +106,98 @@ public class AchievementScene extends Scene
     public void createGoldAchievementArea()
     {
         VBox goldCupAchievementVBox = new VBox();
-
         Label goldCupAchievementLabel = new Label();
         goldCupAchievementLabel.setText(UtilStringStorage.goldCupAchievementDescription);
-
         goldCupAchievementInfo = new Label();
-
         AchievementVbox.setAchievementVbox(goldCupAchievementVBox, goldCupAchievementLabel, achievementManager, 0, goldCupAchievementInfo);
-
         gridPane.add(goldCupAchievementVBox, 0, 0);
     }
     public void createSilverAchievementArea()
     {
         VBox silverCupAchievementVBox = new VBox();
-
         Label silverCupAchievementLabel = new Label();
         silverCupAchievementLabel.setText(UtilStringStorage.silverCupAchievementDescription);
-
         silverCupAchievementInfo = new Label();
-
         AchievementVbox.setAchievementVbox(silverCupAchievementVBox, silverCupAchievementLabel, achievementManager, 1, silverCupAchievementInfo);
-
         gridPane.add(silverCupAchievementVBox, 1, 0);
     }
 
     public void createBronzeAchievementArea()
     {
         VBox bronzeCupAchievementVBox = new VBox();
-
         Label bronzeCupAchievementLabel = new Label();
         bronzeCupAchievementLabel.setText(UtilStringStorage.bronzeCupAchievementDescription);
-
         bronzeCupAchievementInfo = new Label();
-
         AchievementVbox.setAchievementVbox(bronzeCupAchievementVBox, bronzeCupAchievementLabel, achievementManager, 2, bronzeCupAchievementInfo);
-
         gridPane.add(bronzeCupAchievementVBox, 2, 0);
     }
 
     public void createPerfectScore10Area()
     {
         VBox perfectScoreAchievementVBox = new VBox();
-
         Label perfectScoreAchievementLabel = new Label();
         perfectScoreAchievementLabel.setText(UtilStringStorage.perfectScore10Achievement);
-
         perfectScoreAchievementInfo = new Label();
-
         AchievementVbox.setAchievementVbox(perfectScoreAchievementVBox, perfectScoreAchievementLabel, achievementManager, 3, perfectScoreAchievementInfo);
-
         gridPane.add(perfectScoreAchievementVBox, 0, 1);
     }
 
     public void createPerfectScore15Area()
     {
         VBox perfectScoreAchievement15 = new VBox();
-
         Label perfectScoreAchievement15Label = new Label();
         perfectScoreAchievement15Label.setText(UtilStringStorage.perfectScore15Achievement);
-
         perfectScoreAchievement15Info = new Label();
-
         AchievementVbox.setAchievementVbox(perfectScoreAchievement15, perfectScoreAchievement15Label, achievementManager, 4, perfectScoreAchievement15Info);
-
         gridPane.add(perfectScoreAchievement15, 1, 1);
     }
 
     public void createPerfectScore20Area()
     {
         VBox perfectScoreAchievement20 = new VBox();
-
         Label perfectScoreAchievement20Label = new Label();
         perfectScoreAchievement20Label.setText(UtilStringStorage.perfectScore20Achievement);
-
         perfectScoreAchievement20Info = new Label();
-
         AchievementVbox.setAchievementVbox(perfectScoreAchievement20, perfectScoreAchievement20Label, achievementManager, 5, perfectScoreAchievement20Info);
-
         gridPane.add(perfectScoreAchievement20, 2, 1);
     }
 
     public void createSurvive20AchievementArea()
     {
         VBox survive20AchievementVBox = new VBox();
-
         Label survive20AchievementLabel = new Label();
         survive20AchievementLabel.setText(UtilStringStorage.survivalAchievement20Description);
-
         survivalAchievement20Info = new Label();
-
         AchievementVbox.setAchievementVbox(survive20AchievementVBox, survive20AchievementLabel, achievementManager, 6, survivalAchievement20Info);
-
         gridPane.add(survive20AchievementVBox, 0, 2);
     }
     public void createSurvive30AchievementArea()
     {
         VBox survive30AchievementVBox = new VBox();
-
         Label survive30AchievementLabel = new Label();
         survive30AchievementLabel.setText(UtilStringStorage.survivalAchievement30Description);
-
         survivalAchievement30Info = new Label();
-
         AchievementVbox.setAchievementVbox(survive30AchievementVBox, survive30AchievementLabel, achievementManager, 7, survivalAchievement30Info);
-
         gridPane.add(survive30AchievementVBox, 1, 2);
     }
 
     public void createSurvive50AchievementArea()
     {
         VBox survive50AchievementVBox = new VBox();
-
         Label survive50AchievementLabel = new Label();
         survive50AchievementLabel.setText(UtilStringStorage.survivalAchievement50Description);
-
         survivalAchievement50Info = new Label();
-
         AchievementVbox.setAchievementVbox(survive50AchievementVBox, survive50AchievementLabel, achievementManager, 8, survivalAchievement50Info);
-
         gridPane.add(survive50AchievementVBox, 2, 2);
     }
 
     public void createSecretAchievementArea()
     {
         VBox secretAchievementBox = new VBox();
-
         secretAchievementLabel = new Label();
         secretAchievementLabel.setText(UtilStringStorage.secretLabel);
-
         secretAchievementInfo = new Label();
-
         AchievementVbox.setAchievementVbox(secretAchievementBox, secretAchievementLabel, achievementManager, 9, secretAchievementInfo);
-
         gridPane.add(secretAchievementBox, 1,3);
 
     }
@@ -258,13 +211,13 @@ public class AchievementScene extends Scene
 
     public void checkAchievements()
     {
-        checkPropertyKeyNumber(cupFile, "goldCup", 0, goldCupAchievementInfo);
-        checkPropertyKeyNumber(cupFile,"silverCup", 1, silverCupAchievementInfo);
-        checkPropertyKeyNumber(cupFile,"bronzeCup", 2, bronzeCupAchievementInfo);
+        checkPropertyKeyNumber(FileUtil.cupFile, "goldCup", 0, goldCupAchievementInfo);
+        checkPropertyKeyNumber(FileUtil.cupFile,"silverCup", 1, silverCupAchievementInfo);
+        checkPropertyKeyNumber(FileUtil.cupFile,"bronzeCup", 2, bronzeCupAchievementInfo);
 
-        checkPropertyKeyNumber(perfectScoreFile, "perfectScore10", 3, perfectScoreAchievementInfo);
-        checkPropertyKeyNumber(perfectScoreFile, "perfectScore15", 4, perfectScoreAchievement15Info);
-        checkPropertyKeyNumber(perfectScoreFile, "perfectScore20", 5, perfectScoreAchievement20Info);
+        checkPropertyKeyNumber(FileUtil.perfectScoreFile, "perfectScore10", 3, perfectScoreAchievementInfo);
+        checkPropertyKeyNumber(FileUtil.perfectScoreFile, "perfectScore15", 4, perfectScoreAchievement15Info);
+        checkPropertyKeyNumber(FileUtil.perfectScoreFile, "perfectScore20", 5, perfectScoreAchievement20Info);
 
         checkPropertyKeyNumber(FileUtil.survivalFile, "survivalScore20", 6, survivalAchievement20Info);
         checkPropertyKeyNumber(FileUtil.survivalFile, "survivalScore30", 7, survivalAchievement30Info);

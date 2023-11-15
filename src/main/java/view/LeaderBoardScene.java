@@ -13,23 +13,20 @@ import util.BackgroundCreator;
 import util.FileUtil;
 import util.UtilStringStorage;
 
-import java.io.File;
-
 public class LeaderBoardScene extends Scene
 {
-
     private final StringBuilder stringBuilder;
     private final Stage stage;
     private final AchievementManager achievementManager;
     private final VBox leaderBoardVBox;
     private final BorderPane borderPane;
 
-    public LeaderBoardScene(ScrollPane pane, File saveFile, Stage stage, AchievementManager achievementManager)
+    public LeaderBoardScene(ScrollPane pane, Stage stage, AchievementManager achievementManager)
     {
         super(pane);
         this.stage = stage;
         this.achievementManager = achievementManager;
-        stringBuilder = FileUtil.readSaveFile(saveFile);
+        stringBuilder = FileUtil.readSaveFile(FileUtil.saveFile);
 
         pane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
         pane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);

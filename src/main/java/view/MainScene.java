@@ -8,32 +8,25 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import model.*;
-import util.*;
-
-import java.io.File;
-import java.util.Properties;
+import util.BackgroundCreator;
+import util.FileUtil;
+import util.PathUtil;
+import util.UtilStringStorage;
 
 
 public class MainScene extends Scene
 {
     private final BorderPane menuPane;
     private QuestionInterface questionInterface;
-
     private PlayerInfoScene playerInfoScene;
-
     private final GameHandler gameHandler;
-
     private final Stage stage;
-
-    private final File saveFile;
     private final AchievementManager achievementManager;
-    private final Properties perfectScoreFile;
-    private final Properties cupFile;
     public static MediaPlayer inGameMusicToStop = SoundManager.playMusicRepeat(PathUtil.IN_GAME_MUSIC);
     private final Player player;
     private static final String SURVIVAL_MODE = "survival";
 
-    public MainScene(Player player, GameHandler gameHandler, Stage stage, File saveFile, AchievementManager achievementManager, Properties cupFile, Properties perfectScoreFile)
+    public MainScene(Player player, GameHandler gameHandler, Stage stage, AchievementManager achievementManager)
     {
         super(new BorderPane());
         this.stage = stage;
@@ -42,10 +35,7 @@ public class MainScene extends Scene
         menuPane.setPrefWidth(1000);
         menuPane.setPrefHeight(550);
         this.gameHandler = gameHandler;
-        this.saveFile = saveFile;
         this.achievementManager = achievementManager;
-        this.cupFile = cupFile;
-        this.perfectScoreFile = perfectScoreFile;
 
         createBackground();
 
@@ -104,7 +94,7 @@ public class MainScene extends Scene
     {
         GameTimer.stopTimer();
         GameTimer.setTimerDisplay();
-        ResultScene resultScene = new ResultScene(menuPane, playerInfoScene.getPlayer().getPlayerScore(), gameHandler.getQuestionCount(), achievementManager, stage, cupFile, perfectScoreFile);
+        ResultScene resultScene = new ResultScene(menuPane, playerInfoScene.getPlayer().getPlayerScore(), gameHandler.getQuestionCount(), achievementManager, stage);
         if(MenuScene.relaunchGame !=null) {
             SoundManager.stopMusic(MenuScene.relaunchGame);
         }
@@ -121,11 +111,11 @@ public class MainScene extends Scene
     public void saveScoreInFile()
     {
         if(GameHandler.gameMode == null) {
-            FileUtil.writeInSaveFile(saveFile, UtilStringStorage.playerNameInfile + " " + playerInfoScene.getPlayer().getPlayerName() + "   " + UtilStringStorage.scoreLabelInfile + " " + playerInfoScene.getPlayer().getPlayerScore() + " " + UtilStringStorage.scoreOn + " " + gameHandler.getQuestionCount() +
+            FileUtil.writeInSaveFile(FileUtil.saveFile, UtilStringStorage.playerNameInfile + " " + playerInfoScene.getPlayer().getPlayerName() + "   " + UtilStringStorage.scoreLabelInfile + " " + playerInfoScene.getPlayer().getPlayerScore() + " " + UtilStringStorage.scoreOn + " " + gameHandler.getQuestionCount() +
                     "  " + UtilStringStorage.timerLabelInfile + " " + GameTimer.getElapsedMinutes() + " " + UtilStringStorage.gameMinutes + " " + GameTimer.getSecondsDisplay() + " " + UtilStringStorage.gameSecondes + "\n");
         }
         else if(GameHandler.gameMode.equals(SURVIVAL_MODE)) {
-            FileUtil.writeInSaveFile(saveFile,  UtilStringStorage.survivalLabelInfile +"  "+ UtilStringStorage.playerNameInfile +" "+ playerInfoScene.getPlayer().getPlayerName() +"  "+ UtilStringStorage.scoreLabelInfile +" "+ playerInfoScene.getPlayer().getPlayerScore()+ " questions"+ "\n");
+            FileUtil.writeInSaveFile(FileUtil.saveFile,  UtilStringStorage.survivalLabelInfile +"  "+ UtilStringStorage.playerNameInfile +" "+ playerInfoScene.getPlayer().getPlayerName() +"  "+ UtilStringStorage.scoreLabelInfile +" "+ playerInfoScene.getPlayer().getPlayerScore()+ " questions"+ "\n");
         }
     }
 

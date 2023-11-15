@@ -18,8 +18,6 @@ import model.Player;
 import model.SoundManager;
 import util.*;
 
-import java.io.File;
-
 
 public class MenuScene extends Scene
 {
@@ -29,7 +27,6 @@ public class MenuScene extends Scene
 
     private Button launchGameButton;
     private final GameHandler gameHandler;
-    private final File saveFile;
     private ComboBox<String> comboBox;
     private final Border border = new Border(new BorderStroke(Color.BLACK,
             BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT));
@@ -56,7 +53,6 @@ public class MenuScene extends Scene
         pane.setPrefHeight(550);
 
         this.gameHandler = new GameHandler();
-        saveFile = FileUtil.saveFile;
 
         this.achievementManager = achievementManager;
 
@@ -130,17 +126,17 @@ public class MenuScene extends Scene
     public void setLeftButtonOnAction()
     {
         leaderBoardButton.setOnAction(event -> {
-            LeaderBoardScene leaderBoardScene = new LeaderBoardScene(new ScrollPane(), saveFile, menuStage, achievementManager);
+            LeaderBoardScene leaderBoardScene = new LeaderBoardScene(new ScrollPane(), menuStage, achievementManager);
             menuStage.setScene(leaderBoardScene);
         });
 
         trophyButton.setOnAction(event -> {
-            TrophyScene trophyScene = new TrophyScene(new BorderPane(), menuStage, achievementManager, FileUtil.cupFile);
+            TrophyScene trophyScene = new TrophyScene(new BorderPane(), menuStage, achievementManager);
             menuStage.setScene(trophyScene);
         });
 
         achievementButton.setOnAction(event -> {
-            AchievementScene achievementScene = new AchievementScene(new ScrollPane(), achievementManager, menuStage, FileUtil.cupFile, FileUtil.perfectScoreFile);
+            AchievementScene achievementScene = new AchievementScene(new ScrollPane(), achievementManager, menuStage);
             menuStage.setScene(achievementScene);
         });
 
@@ -248,7 +244,7 @@ public class MenuScene extends Scene
     public void instantiateMainScene()
     {
         Player player = new Player();
-        MainScene mainScene = new MainScene(player, gameHandler, menuStage, saveFile, achievementManager, FileUtil.cupFile, FileUtil.perfectScoreFile);
+        MainScene mainScene = new MainScene(player, gameHandler, menuStage, achievementManager);
         SoundManager.stopMusic(App.menuMusicToStop);
 
         if(ResultScene.returnToMenuMusic != null) {

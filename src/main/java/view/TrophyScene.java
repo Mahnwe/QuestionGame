@@ -20,15 +20,12 @@ public class TrophyScene extends Scene
     private final Stage stage;
     private final AchievementManager achievementManager;
     private final BorderPane pane;
-
-    private final Properties cupFile;
     private GridPane gridPane;
 
-    public TrophyScene(BorderPane pane, Stage stage, AchievementManager achievementManager, Properties cupFile)
+    public TrophyScene(BorderPane pane, Stage stage, AchievementManager achievementManager)
     {
         super(pane);
         this.pane = pane;
-        this.cupFile = cupFile;
         pane.setPrefHeight(550);
         pane.setPrefWidth(1000);
         this.stage = stage;
@@ -60,17 +57,17 @@ public class TrophyScene extends Scene
         VBox goldCupImages = new VBox();
         Label nbrOfGoldCupLabel = new Label();
         goldCupImages.getChildren().add(goldCup);
-        setUpVbox(goldCupImages, nbrOfGoldCupLabel, 5, 25, UtilStringStorage.goldCupTrophy, cupFile, "goldCup");
+        setUpVbox(goldCupImages, nbrOfGoldCupLabel, 5, 25, UtilStringStorage.goldCupTrophy, FileUtil.cupFile, "goldCup");
 
         VBox silverCupImages = new VBox();
         Label nbrOfSilverCupLabel = new Label();
         silverCupImages.getChildren().add(silverCup);
-        setUpVbox(silverCupImages, nbrOfSilverCupLabel, -15, 25, UtilStringStorage.silverCupTrophy, cupFile, "silverCup");
+        setUpVbox(silverCupImages, nbrOfSilverCupLabel, -15, 25, UtilStringStorage.silverCupTrophy, FileUtil.cupFile, "silverCup");
 
         VBox bronzeCupImages = new VBox();
         Label nbrOfBronzeCupLabel = new Label();
         bronzeCupImages.getChildren().add(bronzeCup);
-        setUpVbox(bronzeCupImages, nbrOfBronzeCupLabel, -20, 25, UtilStringStorage.bronzeCupTrophy, cupFile, "bronzeCup");
+        setUpVbox(bronzeCupImages, nbrOfBronzeCupLabel, -20, 25, UtilStringStorage.bronzeCupTrophy, FileUtil.cupFile, "bronzeCup");
 
         gridPane.add(goldCupImages, 0, 0);
         gridPane.add(silverCupImages, 1, 0);

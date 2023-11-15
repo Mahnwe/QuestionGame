@@ -211,17 +211,17 @@ public class AchievementScene extends Scene
 
     public void checkAchievements()
     {
-        checkPropertyKeyNumber(FileUtil.cupFile, "goldCup", 0, goldCupAchievementInfo);
-        checkPropertyKeyNumber(FileUtil.cupFile,"silverCup", 1, silverCupAchievementInfo);
-        checkPropertyKeyNumber(FileUtil.cupFile,"bronzeCup", 2, bronzeCupAchievementInfo);
+        checkPropertyKeyNumber(FileUtil.generalSavesFile, "goldCup", 0, goldCupAchievementInfo);
+        checkPropertyKeyNumber(FileUtil.generalSavesFile,"silverCup", 1, silverCupAchievementInfo);
+        checkPropertyKeyNumber(FileUtil.generalSavesFile,"bronzeCup", 2, bronzeCupAchievementInfo);
 
-        checkPropertyKeyNumber(FileUtil.perfectScoreFile, "perfectScore10", 3, perfectScoreAchievementInfo);
-        checkPropertyKeyNumber(FileUtil.perfectScoreFile, "perfectScore15", 4, perfectScoreAchievement15Info);
-        checkPropertyKeyNumber(FileUtil.perfectScoreFile, "perfectScore20", 5, perfectScoreAchievement20Info);
+        checkPropertyKeyNumber(FileUtil.generalSavesFile, "perfectScore10", 3, perfectScoreAchievementInfo);
+        checkPropertyKeyNumber(FileUtil.generalSavesFile, "perfectScore15", 4, perfectScoreAchievement15Info);
+        checkPropertyKeyNumber(FileUtil.generalSavesFile, "perfectScore20", 5, perfectScoreAchievement20Info);
 
-        checkPropertyKeyNumber(FileUtil.survivalFile, "survivalScore20", 6, survivalAchievement20Info);
-        checkPropertyKeyNumber(FileUtil.survivalFile, "survivalScore30", 7, survivalAchievement30Info);
-        checkPropertyKeyNumber(FileUtil.survivalFile, "survivalScore50", 8, survivalAchievement50Info);
+        checkPropertyKeyNumber(FileUtil.generalSavesFile, "survivalScore20", 6, survivalAchievement20Info);
+        checkPropertyKeyNumber(FileUtil.generalSavesFile, "survivalScore30", 7, survivalAchievement30Info);
+        checkPropertyKeyNumber(FileUtil.generalSavesFile, "survivalScore50", 8, survivalAchievement50Info);
 
         int checkNbrOfAchievementUnlock = checkSecretAchievement();
         achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(9), checkNbrOfAchievementUnlock);

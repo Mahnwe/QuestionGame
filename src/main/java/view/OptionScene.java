@@ -229,9 +229,7 @@ public class OptionScene extends Scene {
     public void resetSave()
     {
        FileUtil.resetSaveFile();
-       FileUtil.resetCupFile();
-       FileUtil.resetPerfectFile();
-       FileUtil.resetSurvivalFile();
+       FileUtil.resetGeneralSavesFile();
     }
     public void backToMainMenu()
     {

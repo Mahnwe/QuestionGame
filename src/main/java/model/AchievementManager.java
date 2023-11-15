@@ -70,57 +70,57 @@ public class AchievementManager
             achievement.getLockImageView().setImage(achievement.getLockImageView().getImage());
         }
     }
-    public void checkPerfectScoreAchievement(AchievementManager achievementManager, int playerFinalScore, Properties perfectScoreFile, String propertyKey, int numberToCompare, int achievementIndex)
+    public void checkPerfectScoreAchievement(AchievementManager achievementManager, int playerFinalScore, Properties generalSavesFile, String propertyKey, int numberToCompare, int achievementIndex)
     {
         if(playerFinalScore == numberToCompare) {
             String perfectScoreString = String.valueOf(playerFinalScore);
-            perfectScoreFile.setProperty(propertyKey, perfectScoreString);
+            generalSavesFile.setProperty(propertyKey, perfectScoreString);
             achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(achievementIndex), playerFinalScore);
         }
     }
 
-    public void checkSurvivalScoreAchievement(AchievementManager achievementManager, int playerFinalScore, Properties survivalScoreFile, String propertyKey, int numberToCompare, int achievementIndex)
+    public void checkSurvivalScoreAchievement(AchievementManager achievementManager, int playerFinalScore, Properties generalSavesFile, String propertyKey, int numberToCompare, int achievementIndex)
     {
         if(playerFinalScore >= numberToCompare) {
             String perfectScoreString = String.valueOf(playerFinalScore);
-            survivalScoreFile.setProperty(propertyKey, perfectScoreString);
+            generalSavesFile.setProperty(propertyKey, perfectScoreString);
             achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(achievementIndex), playerFinalScore);
         }
     }
 
-    public void survivalModeResult(int questionCount, int playerScore, Properties survivalScoreFile, AchievementManager achievementManager)
+    public void survivalModeResult(int questionCount, Properties generalSavesFile, AchievementManager achievementManager)
     {
         if(questionCount >= 20)
         {
             ResultScene.resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
-            checkSurvivalScoreAchievement(achievementManager, playerScore, survivalScoreFile, "survivalScore20", 20, 6);
+            checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "survivalScore20", achievementsList.get(6).getCondition(), 6);
         }
         if(questionCount >= 30)
         {
             ResultScene.resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
-            checkSurvivalScoreAchievement(achievementManager, playerScore, survivalScoreFile, "survivalScore30", 30, 7);
+            checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "survivalScore30", achievementsList.get(7).getCondition(), 7);
         }
         if(questionCount >= 50)
         {
             ResultScene.resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
-            checkSurvivalScoreAchievement(achievementManager, playerScore, survivalScoreFile, "survivalScore50", 50, 8);
+            checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "survivalScore50", achievementsList.get(8).getCondition(), 8);
         }
     }
 
-    public void goldCupResult(int questionCount, int playerScore, VBox vBox, Properties perfectScoreFile, Properties cupFile, AchievementManager achievementManager, ImageView imageView)
+    public void goldCupResult(int questionCount, int playerScore, VBox vBox, Properties generalSavesFile, AchievementManager achievementManager, ImageView imageView)
     {
         switch (questionCount) {
-            case 10 -> checkPerfectScoreAchievement(achievementManager, playerScore, perfectScoreFile, "perfectScore10", 10, 3);
-            case 15 -> checkPerfectScoreAchievement(achievementManager, playerScore, perfectScoreFile, "perfectScore15", 15, 4);
-            case 20 -> checkPerfectScoreAchievement(achievementManager, playerScore, perfectScoreFile, "perfectScore20", 20, 5);
+            case 10 -> checkPerfectScoreAchievement(achievementManager, playerScore, generalSavesFile, "perfectScore10", achievementsList.get(3).getCondition(), 3);
+            case 15 -> checkPerfectScoreAchievement(achievementManager, playerScore, generalSavesFile, "perfectScore15", achievementsList.get(4).getCondition(), 4);
+            case 20 -> checkPerfectScoreAchievement(achievementManager, playerScore, generalSavesFile, "perfectScore20", achievementsList.get(5).getCondition(), 5);
             default -> logger.error("Question count bug");
         }
 
-        int nbrOfGoldCup = Integer.parseInt(cupFile.getProperty("goldCup"));
+        int nbrOfGoldCup = Integer.parseInt(generalSavesFile.getProperty("goldCup"));
         nbrOfGoldCup++;
 
         achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(0), nbrOfGoldCup);
-        cupFile.setProperty("goldCup", String.valueOf(nbrOfGoldCup));
+        generalSavesFile.setProperty("goldCup", String.valueOf(nbrOfGoldCup));
 
         Label cupLabel = new Label(UtilStringStorage.goldCupLabel);
         setUpResultLabel(cupLabel);
@@ -129,13 +129,13 @@ public class AchievementManager
         vBox.getChildren().add(imageView);
     }
 
-    public void silverCupResult(VBox vBox, Properties cupFile, AchievementManager achievementManager, ImageView imageView)
+    public void silverCupResult(VBox vBox, Properties generalSavesFile, AchievementManager achievementManager, ImageView imageView)
     {
-        int nbrOfSilverCup = Integer.parseInt(cupFile.getProperty("silverCup"));
+        int nbrOfSilverCup = Integer.parseInt(generalSavesFile.getProperty("silverCup"));
         nbrOfSilverCup++;
 
         achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(1), nbrOfSilverCup);
-        cupFile.setProperty("silverCup", String.valueOf(nbrOfSilverCup));
+        generalSavesFile.setProperty("silverCup", String.valueOf(nbrOfSilverCup));
 
         Label cupLabel = new Label(UtilStringStorage.silverCupLabel);
         setUpResultLabel(cupLabel);
@@ -144,13 +144,13 @@ public class AchievementManager
         vBox.getChildren().add(imageView);
     }
 
-    public void bronzeCupResult(VBox vBox, Properties cupFile, AchievementManager achievementManager, ImageView imageView)
+    public void bronzeCupResult(VBox vBox, Properties generalSavesFile, AchievementManager achievementManager, ImageView imageView)
     {
-        int nbrOfBronzeCup = Integer.parseInt(cupFile.getProperty("bronzeCup"));
+        int nbrOfBronzeCup = Integer.parseInt(generalSavesFile.getProperty("bronzeCup"));
         nbrOfBronzeCup++;
 
         achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(2), nbrOfBronzeCup);
-        cupFile.setProperty("bronzeCup", String.valueOf(nbrOfBronzeCup));
+        generalSavesFile.setProperty("bronzeCup", String.valueOf(nbrOfBronzeCup));
 
         Label cupLabel = new Label(UtilStringStorage.bronzeCupLabel);
         setUpResultLabel(cupLabel);

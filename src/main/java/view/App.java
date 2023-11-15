@@ -24,9 +24,7 @@ public class App extends Application
         hyperLinkBackground.setOnAction(linkEvent -> getHostServices().showDocument(hyperLinkBackground.getText()));
 
         FileUtil.createSaveFile();
-        FileUtil.loadFile(FileUtil.perfectScoreFile, PathUtil.PERFECT_SCORE_FILE);
-        FileUtil.loadFile(FileUtil.cupFile, PathUtil.CUP_FILE);
-        FileUtil.loadFile(FileUtil.survivalFile, PathUtil.SURVIVAL_FILE);
+        FileUtil.loadFile(FileUtil.generalSavesFile, PathUtil.GENERAL_SAVES_FILE);
 
         AchievementManager achievementManager = new AchievementManager();
         LanguageScene languageScene = new LanguageScene(new BorderPane(), stage, achievementManager);

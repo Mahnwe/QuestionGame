@@ -67,7 +67,7 @@ public class ResultScene extends VBox
     {
         AchievementManager.notificationAlert = null;
         Label cupLabel;
-        if(playerFinalScore >= 20)
+        if(questionCount >= 20)
         {
             cupLabel = new Label(UtilStringStorage.surviveEnoughLabel);
         } else {
@@ -76,8 +76,8 @@ public class ResultScene extends VBox
         stylizeLabel(cupLabel, 100, 70);
         gameResult.getChildren().add(cupLabel);
 
-        achievementManager.survivalModeResult(questionCount, playerFinalScore, FileUtil.survivalFile, achievementManager);
-        FileUtil.storeSurvivalFile();
+        achievementManager.survivalModeResult(questionCount, FileUtil.generalSavesFile, achievementManager);
+        FileUtil.storeGeneralSavesFile();
     }
 
     public void checkPlayerResult()
@@ -85,15 +85,15 @@ public class ResultScene extends VBox
         AchievementManager.notificationAlert = null;
         if(playerFinalScore >= questionCount*90/100)
         {
-            achievementManager.goldCupResult(questionCount, playerFinalScore, gameResult, FileUtil.perfectScoreFile, FileUtil.cupFile, achievementManager, goldCup);
+            achievementManager.goldCupResult(questionCount, playerFinalScore, gameResult, FileUtil.generalSavesFile, achievementManager, goldCup);
         }
         if(playerFinalScore > questionCount*60/100 && playerFinalScore <= questionCount*80/100)
         {
-            achievementManager.silverCupResult(gameResult, FileUtil.cupFile, achievementManager, silverCup);
+            achievementManager.silverCupResult(gameResult, FileUtil.generalSavesFile, achievementManager, silverCup);
         }
         if(playerFinalScore >= questionCount*50/100 && playerFinalScore < questionCount*60/100)
         {
-            achievementManager.bronzeCupResult(gameResult, FileUtil.cupFile, achievementManager, bronzeCup);
+            achievementManager.bronzeCupResult(gameResult, FileUtil.generalSavesFile, achievementManager, bronzeCup);
         }
         if(playerFinalScore < questionCount*50/100)
         {
@@ -101,8 +101,7 @@ public class ResultScene extends VBox
             stylizeLabel(cupLabel, 100, 70);
             gameResult.getChildren().add(cupLabel);
         }
-        FileUtil.storePerfectFile();
-        FileUtil.storeCupFile();
+        FileUtil.storeGeneralSavesFile();
     }
 
     public void setUpLabelAndTimer()

@@ -57,17 +57,17 @@ public class TrophyScene extends Scene
         VBox goldCupImages = new VBox();
         Label nbrOfGoldCupLabel = new Label();
         goldCupImages.getChildren().add(goldCup);
-        setUpVbox(goldCupImages, nbrOfGoldCupLabel, 5, 25, UtilStringStorage.goldCupTrophy, FileUtil.cupFile, "goldCup");
+        setUpVbox(goldCupImages, nbrOfGoldCupLabel, 5, 25, UtilStringStorage.goldCupTrophy, FileUtil.generalSavesFile, "goldCup");
 
         VBox silverCupImages = new VBox();
         Label nbrOfSilverCupLabel = new Label();
         silverCupImages.getChildren().add(silverCup);
-        setUpVbox(silverCupImages, nbrOfSilverCupLabel, -15, 25, UtilStringStorage.silverCupTrophy, FileUtil.cupFile, "silverCup");
+        setUpVbox(silverCupImages, nbrOfSilverCupLabel, -15, 25, UtilStringStorage.silverCupTrophy, FileUtil.generalSavesFile, "silverCup");
 
         VBox bronzeCupImages = new VBox();
         Label nbrOfBronzeCupLabel = new Label();
         bronzeCupImages.getChildren().add(bronzeCup);
-        setUpVbox(bronzeCupImages, nbrOfBronzeCupLabel, -20, 25, UtilStringStorage.bronzeCupTrophy, FileUtil.cupFile, "bronzeCup");
+        setUpVbox(bronzeCupImages, nbrOfBronzeCupLabel, -20, 25, UtilStringStorage.bronzeCupTrophy, FileUtil.generalSavesFile, "bronzeCup");
 
         gridPane.add(goldCupImages, 0, 0);
         gridPane.add(silverCupImages, 1, 0);

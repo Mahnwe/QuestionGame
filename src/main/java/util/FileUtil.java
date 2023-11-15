@@ -10,9 +10,7 @@ import java.util.Properties;
 public class FileUtil {
 
     private static final Logger logger = LogManager.getLogger(FileUtil.class);
-    public static Properties perfectScoreFile = new Properties();
-    public static Properties cupFile = new Properties();
-    public static Properties survivalFile = new Properties();
+    public static Properties generalSavesFile = new Properties();
     public static File saveFile;
 
     public static void loadFile(Properties properties, final String filePath)
@@ -74,21 +72,12 @@ public class FileUtil {
         }
     }
 
-    public static void storePerfectFile()
+    public static void storeGeneralSavesFile()
     {
-        try (FileWriter fileWriter = new FileWriter(PathUtil.PERFECT_SCORE_FILE)) {
-            perfectScoreFile.store(fileWriter, "");
+        try (FileWriter fileWriter = new FileWriter(PathUtil.GENERAL_SAVES_FILE)){
+            generalSavesFile.store(fileWriter, "");
         } catch (IOException e) {
-            logger.error("Perfect score file can't be store");
-        }
-    }
-
-    public static void storeCupFile()
-    {
-        try (FileWriter fileWriter = new FileWriter(PathUtil.CUP_FILE)){
-            cupFile.store(fileWriter, "");
-        } catch (IOException e) {
-            logger.error("Cup file can't be store");
+            logger.error("Survival file can't be store");
         }
     }
 
@@ -104,37 +93,21 @@ public class FileUtil {
             logger.error("Save file can't be reset");
         }
     }
-    public static void storeSurvivalFile()
-    {
-        try (FileWriter fileWriter = new FileWriter(PathUtil.SURVIVAL_FILE)){
-            survivalFile.store(fileWriter, "");
-        } catch (IOException e) {
-            logger.error("Survival file can't be store");
-        }
-    }
 
-    public static void resetCupFile()
+    public static void resetGeneralSavesFile()
     {
-        cupFile.setProperty("goldCup", "0");
-        cupFile.setProperty("silverCup", "0");
-        cupFile.setProperty("bronzeCup", "0");
-        FileUtil.storeCupFile();
-    }
+        generalSavesFile.setProperty("goldCup", "0");
+        generalSavesFile.setProperty("silverCup", "0");
+        generalSavesFile.setProperty("bronzeCup", "0");
 
-    public static void resetPerfectFile()
-    {
-        perfectScoreFile.setProperty("perfectScore10", "0");
-        perfectScoreFile.setProperty("perfectScore15", "0");
-        perfectScoreFile.setProperty("perfectScore20", "0");
-        FileUtil.storePerfectFile();
-    }
+        generalSavesFile.setProperty("perfectScore10", "0");
+        generalSavesFile.setProperty("perfectScore15", "0");
+        generalSavesFile.setProperty("perfectScore20", "0");
 
-    public static void resetSurvivalFile()
-    {
-        survivalFile.setProperty("survivalScore20", "0");
-        survivalFile.setProperty("survivalScore30", "0");
-        survivalFile.setProperty("survivalScore50", "0");
-        FileUtil.storeSurvivalFile();
+        generalSavesFile.setProperty("survivalScore20", "0");
+        generalSavesFile.setProperty("survivalScore30", "0");
+        generalSavesFile.setProperty("survivalScore50", "0");
+        FileUtil.storeGeneralSavesFile();
     }
 
 }

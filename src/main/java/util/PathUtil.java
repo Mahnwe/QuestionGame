@@ -18,6 +18,7 @@ public class PathUtil
     public static final String ENGLISH_FLAG = RESOURCES_PATH + "Icon/English-Flag.png";
     public static final String FRENCH_FLAG = RESOURCES_PATH + "Icon/French-Flag.png";
     public static final String DEV_LURK = RESOURCES_PATH + "Icon/Dev-Lurk.png";
+    public static final String TRASH_ICON = RESOURCES_PATH + "Icon/Trash-Icon.png";
 
     // BACKGROUNDS
     public static final String MENU_BACKGROUND = RESOURCES_PATH + "Background/Background-Test.jpg";

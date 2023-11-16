@@ -68,11 +68,12 @@ public class UtilTranslateString {
 
         // LEADERBOARD
         UtilStringStorage.leaderBoardLabel = engTradFile.getProperty("leaderBoardLabel");
+        UtilStringStorage.eraseTooltipLabel = engTradFile.getProperty("eraseTooltipLabel");
+
+        // MENU SCENE
         UtilStringStorage.welcomeLabel = engTradFile.getProperty("welcomeLabel");
         UtilStringStorage.leaderBoardButton = engTradFile.getProperty("leaderBoardButton");
         UtilStringStorage.leaderBoardTooltip = engTradFile.getProperty("leaderBoardTooltip");
-
-        // MENU SCENE
         UtilStringStorage.trophyButton = engTradFile.getProperty("trophyButton");
         UtilStringStorage.trophyTooltip = engTradFile.getProperty("trophyTooltip");
         UtilStringStorage.achievementButton = engTradFile.getProperty("achievementButton");
@@ -706,8 +707,11 @@ public class UtilTranslateString {
         UtilStringStorage.successUnlock = frTradFile.getProperty("successUnlock");
         UtilStringStorage.successLock = frTradFile.getProperty("successLock");
 
-        // MENU SCENE
+        //LEADERBOARD SCENE
         UtilStringStorage.leaderBoardLabel = frTradFile.getProperty("leaderBoardLabel");
+        UtilStringStorage.eraseTooltipLabel = frTradFile.getProperty("eraseTooltipLabel");
+
+        // MENU SCENE
         UtilStringStorage.welcomeLabel = frTradFile.getProperty("welcomeLabel");
         UtilStringStorage.leaderBoardButton = frTradFile.getProperty("leaderBoardButton");
         UtilStringStorage.leaderBoardTooltip = frTradFile.getProperty("leaderBoardTooltip");

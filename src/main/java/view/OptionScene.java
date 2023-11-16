@@ -145,6 +145,10 @@ public class OptionScene extends Scene {
         engButton.setOnAction(event -> {
             utilTranslateString.translateEngString();
             App.menuMusicToStop.stop();
+            if(ResultScene.returnToMenuMusic != null)
+            {
+                ResultScene.returnToMenuMusic.stop();
+            }
             SoundManager.checkIfMusicIsPlayed(App.menuMusicToStop);
             App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
             MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
@@ -158,6 +162,10 @@ public class OptionScene extends Scene {
         frButton.setOnAction(event -> {
             utilTranslateString.translateFrString();
             App.menuMusicToStop.stop();
+            if(ResultScene.returnToMenuMusic != null)
+            {
+                ResultScene.returnToMenuMusic.stop();
+            }
             SoundManager.checkIfMusicIsPlayed(App.menuMusicToStop);
             App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
             MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
@@ -171,9 +179,10 @@ public class OptionScene extends Scene {
 
     public void createResetButtonArea()
     {
-        Button resetButton = new Button(UtilStringStorage.resetButton);
-        placeButtonWithTranslation(resetButton);
-        CustomOption.customResetSaveButton(resetButton);
+        Button resetButton = new Button();
+        resetButton.setTranslateY(85);
+        resetButton.setTranslateX(405);
+        CustomOption.setUpTrashButton(resetButton);
         resetButton.setOnAction(event -> {
             Optional<ButtonType> result = confirmAlert.showAndWait();
             if(result.orElse(null) == ButtonType.OK)
@@ -190,19 +199,6 @@ public class OptionScene extends Scene {
 
         optionVbox.getChildren().add(resetLabel);
         optionVbox.getChildren().add(resetButton);
-    }
-
-    public void placeButtonWithTranslation(Button button)
-    {
-        if(button.getText().equals("Réinitialiser sauvegarde"))
-        {
-            button.setTranslateY(85);
-            button.setTranslateX(325);
-        }
-        else {
-            button.setTranslateY(105);
-            button.setTranslateX(382);
-        }
     }
 
     public void placeLabelWithTranslation(Label label)

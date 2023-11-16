@@ -59,15 +59,6 @@ public class CustomOption {
         comboBox.setOnMouseExited(event -> comboBox.setEffect(null));
     }
 
-    public static void customResetSaveButton(Button button)
-    {
-        button.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 15));
-        Tooltip resetTooltip = new Tooltip(UtilStringStorage.resetTooltip);
-        button.setTooltip(resetTooltip);
-        setGlowEffectOnButton(button);
-
-    }
-
     public static void customExitToMenuButton(Button button)
     {
         button.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 16));
@@ -80,5 +71,19 @@ public class CustomOption {
     {
         button.setOnMouseEntered(event -> button.setEffect(glow));
         button.setOnMouseExited(event -> button.setEffect(null));
+    }
+
+    public static void setUpTrashButton(Button button)
+    {
+        IconCreator trashIcon = new IconCreator(PathUtil.TRASH_ICON);
+        Image trashImage = trashIcon.createImage().getImage();
+
+        button.setPrefSize(60,60);
+        Tooltip resetTooltip = new Tooltip(UtilStringStorage.resetTooltip);
+        button.setTooltip(resetTooltip);
+        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
+        button.setBackground(new Background(new BackgroundImage(trashImage, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+                backgroundSize)));
+        setGlowEffectOnButton(button);
     }
 }

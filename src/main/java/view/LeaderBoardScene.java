@@ -1,8 +1,10 @@
 package view;
 
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.Tooltip;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -10,6 +12,7 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.AchievementManager;
 import util.BackgroundCreator;
+import util.CustomOption;
 import util.FileUtil;
 import util.UtilStringStorage;
 
@@ -21,16 +24,16 @@ public class LeaderBoardScene extends Scene
     private final VBox leaderBoardVBox;
     private final GridPane gridpane;
 
-    public LeaderBoardScene(ScrollPane pane, Stage stage, AchievementManager achievementManager)
+    public LeaderBoardScene(ScrollPane scrollPane, Stage stage, AchievementManager achievementManager)
     {
-        super(pane);
+        super(scrollPane);
         this.stage = stage;
         this.achievementManager = achievementManager;
         stringBuilder = FileUtil.readSaveFile(FileUtil.saveFile);
 
-        pane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
-        pane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-        pane.setFitToWidth(true);
+        scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+        scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        scrollPane.setFitToWidth(true);
 
         gridpane = new GridPane();
         gridpane.setMinHeight(1080);
@@ -44,7 +47,7 @@ public class LeaderBoardScene extends Scene
         createLeaderBoard();
 
         gridpane.add(leaderBoardVBox, 0, 0);
-        pane.setContent(gridpane);
+        scrollPane.setContent(gridpane);
 
         createBackground();
 
@@ -58,13 +61,26 @@ public class LeaderBoardScene extends Scene
         leaderBoardLabel.setFont(Font.font("Impact", FontWeight.BOLD, 23));
 
         Label leaderBoardArea = new Label();
-        leaderBoardArea.setTranslateX(300);
-        leaderBoardArea.setTranslateY(40);
+        leaderBoardArea.setTranslateX(250);
         leaderBoardArea.setText(String.valueOf(stringBuilder));
         leaderBoardArea.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 14));
         leaderBoardArea.setTextFill(Color.BLACK);
 
+        Button eraseSaveFileButton = new Button();
+        eraseSaveFileButton.setTranslateX(10);
+        eraseSaveFileButton.setTranslateY(60);
+        CustomOption.setUpTrashButton(eraseSaveFileButton);
+        eraseSaveFileButton.setTooltip(null);
+        Tooltip eraseTooltip = new Tooltip(UtilStringStorage.eraseTooltipLabel);
+        eraseSaveFileButton.setTooltip(eraseTooltip);
+        eraseSaveFileButton.setOnAction(event -> {
+            FileUtil.resetSaveFile();
+            LeaderBoardScene leaderBoardScene = new LeaderBoardScene(new ScrollPane(), stage, achievementManager);
+            stage.setScene(leaderBoardScene);
+        });
+
         leaderBoardVBox.getChildren().add(leaderBoardLabel);
+        leaderBoardVBox.getChildren().add(eraseSaveFileButton);
         leaderBoardVBox.getChildren().add(leaderBoardArea);
     }
 

@@ -32,6 +32,7 @@ public class UtilStringStorage
 
     // LEADERBOARD
     public static String leaderBoardLabel = "";
+    public static String eraseTooltipLabel = "";
 
     // MENU SCENE
     public static String welcomeLabel = "";

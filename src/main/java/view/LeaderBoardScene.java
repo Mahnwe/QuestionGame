@@ -19,7 +19,7 @@ public class LeaderBoardScene extends Scene
     private final Stage stage;
     private final AchievementManager achievementManager;
     private final VBox leaderBoardVBox;
-    private final BorderPane borderPane;
+    private final GridPane gridpane;
 
     public LeaderBoardScene(ScrollPane pane, Stage stage, AchievementManager achievementManager)
     {
@@ -32,8 +32,9 @@ public class LeaderBoardScene extends Scene
         pane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         pane.setFitToWidth(true);
 
-        borderPane = new BorderPane();
-        borderPane.setMinHeight(1080);
+        gridpane = new GridPane();
+        gridpane.setMinHeight(1080);
+        GridPane.setVgrow(gridpane, Priority.ALWAYS);
 
         leaderBoardVBox = new VBox();
         VBox.setVgrow(leaderBoardVBox, Priority.ALWAYS);
@@ -42,8 +43,8 @@ public class LeaderBoardScene extends Scene
 
         createLeaderBoard();
 
-        borderPane.setCenter(leaderBoardVBox);
-        pane.setContent(borderPane);
+        gridpane.add(leaderBoardVBox, 0, 0);
+        pane.setContent(gridpane);
 
         createBackground();
 
@@ -62,6 +63,7 @@ public class LeaderBoardScene extends Scene
         leaderBoardArea.setText(String.valueOf(stringBuilder));
         leaderBoardArea.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 14));
         leaderBoardArea.setTextFill(Color.BLACK);
+
         leaderBoardVBox.getChildren().add(leaderBoardLabel);
         leaderBoardVBox.getChildren().add(leaderBoardArea);
     }
@@ -69,7 +71,7 @@ public class LeaderBoardScene extends Scene
     public void createBackground()
     {
         BackgroundImage backgroundImage = BackgroundCreator.createMenuBackground();
-        borderPane.setBackground(new Background(backgroundImage));
+        gridpane.setBackground(new Background(backgroundImage));
     }
 
     public void createReturnButton()

@@ -181,7 +181,7 @@ public class PlayerInfoScene extends Scene
         playerInfos.getChildren().add(volumeLabel);
 
         muteButton = new Button();
-        CustomOption.customMuteButton(muteButton, PathUtil.WHITE_MUTE_ICON, 187, 75);
+        CustomOption.customMuteButton(muteButton, PathUtil.WHITE_MUTE_ICON, 185, 75);
         playerInfos.getChildren().add(muteButton);
 
         Slider volumeSlider = new Slider(0, 10, 5);

@@ -14,13 +14,16 @@ public class App extends Application
 {
     public static MediaPlayer menuMusicToStop;
     public static Hyperlink hyperLinkIcon;
+    public static Hyperlink hyperLinkIcon2;
     public static Hyperlink hyperLinkBackground;
     @Override
     public void start(Stage stage)
     {
         hyperLinkIcon = new Hyperlink(UtilStringStorage.iconLink);
+        hyperLinkIcon2 = new Hyperlink(UtilStringStorage.iconLink2);
         hyperLinkBackground = new Hyperlink(UtilStringStorage.backgroundLink);
         hyperLinkIcon.setOnAction(linkEvent -> getHostServices().showDocument(hyperLinkIcon.getText()));
+        hyperLinkIcon2.setOnAction(linkEvent -> getHostServices().showDocument(hyperLinkIcon2.getText()));
         hyperLinkBackground.setOnAction(linkEvent -> getHostServices().showDocument(hyperLinkBackground.getText()));
 
         FileUtil.createSaveFile();

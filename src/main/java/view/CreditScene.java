@@ -91,16 +91,20 @@ public class CreditScene extends Scene
         addLabelInVboxPart2(yukiThank, darkwestThank, darkantThank, bestLabel);
 
         Label linkLabel = new Label();
-        setUpLabels(linkLabel, UtilStringStorage.linkLabel, 20, 670, -80);
+        setUpLabels(linkLabel, UtilStringStorage.linkLabel, 20, 700, -80);
 
         Hyperlink hyperLinkIcon = App.hyperLinkIcon;
-        setUpLinkLabels(hyperLinkIcon, 17, 610, -50);
+        setUpLinkLabels(hyperLinkIcon, 17, 640, -50);
+
+        Hyperlink hyperLinkIcon2 = App.hyperLinkIcon2;
+        setUpLinkLabels(hyperLinkIcon2, 17, 640, -30);
 
         Hyperlink hyperlinkBackground = App.hyperLinkBackground;
-        setUpLinkLabels(hyperlinkBackground, 17, 610, -30);
+        setUpLinkLabels(hyperlinkBackground, 17, 640, -10);
 
         creditVbox.getChildren().add(linkLabel);
         creditVbox.getChildren().add(hyperLinkIcon);
+        creditVbox.getChildren().add(hyperLinkIcon2);
         creditVbox.getChildren().add(hyperlinkBackground);
 
         pane.setCenter(creditVbox);

@@ -123,7 +123,9 @@ public class UtilTranslateString {
         UtilStringStorage.minLabel = engTradFile.getProperty("minLabel");
         UtilStringStorage.secondesLabel = engTradFile.getProperty("secondesLabel");
         UtilStringStorage.noSurviveLabel = engTradFile.getProperty("noSurviveLabel");
-        UtilStringStorage.surviveEnoughLabel = engTradFile.getProperty("surviveEnoughLabel");
+        UtilStringStorage.surviveEnoughGoldLabel = engTradFile.getProperty("surviveEnoughGoldLabel");
+        UtilStringStorage.surviveEnoughSilverLabel = engTradFile.getProperty("surviveEnoughSilverLabel");
+        UtilStringStorage.surviveEnoughBronzeLabel = engTradFile.getProperty("surviveEnoughBronzeLabel");
         UtilStringStorage.noCupLabel = engTradFile.getProperty("noCupLabel");
         UtilStringStorage.goldCupLabel = engTradFile.getProperty("goldCupLabel");
         UtilStringStorage.silverCupLabel = engTradFile.getProperty("silverCupLabel");
@@ -759,7 +761,9 @@ public class UtilTranslateString {
         UtilStringStorage.minLabel = frTradFile.getProperty("minLabel");
         UtilStringStorage.secondesLabel = frTradFile.getProperty("secondesLabel");
         UtilStringStorage.noSurviveLabel = frTradFile.getProperty("noSurviveLabel");
-        UtilStringStorage.surviveEnoughLabel = frTradFile.getProperty("surviveEnoughLabel");
+        UtilStringStorage.surviveEnoughGoldLabel = frTradFile.getProperty("surviveEnoughGoldLabel");
+        UtilStringStorage.surviveEnoughSilverLabel = frTradFile.getProperty("surviveEnoughSilverLabel");
+        UtilStringStorage.surviveEnoughBronzeLabel = frTradFile.getProperty("surviveEnoughBronzeLabel");
         UtilStringStorage.noCupLabel = frTradFile.getProperty("noCupLabel");
         UtilStringStorage.goldCupLabel = frTradFile.getProperty("goldCupLabel");
         UtilStringStorage.silverCupLabel = frTradFile.getProperty("silverCupLabel");

@@ -66,17 +66,29 @@ public class ResultScene extends VBox
     public void checkSurvivalModeResult()
     {
         AchievementManager.notificationAlert = null;
-        Label cupLabel;
-        if(questionCount >= 20)
+        if(questionCount >= 20 && questionCount < 30)
         {
-            cupLabel = new Label(UtilStringStorage.surviveEnoughLabel);
-        } else {
-            cupLabel = new Label(UtilStringStorage.noSurviveLabel);
+            achievementManager.survivalModeResult(questionCount, FileUtil.generalSavesFile, achievementManager);
+            achievementManager.bronzeCupResult(gameResult, FileUtil.generalSavesFile, achievementManager, bronzeCup);
+            FileUtil.storeGeneralSavesFile();
         }
-        stylizeLabel(cupLabel, 100, 70);
-        gameResult.getChildren().add(cupLabel);
-
-        achievementManager.survivalModeResult(questionCount, FileUtil.generalSavesFile, achievementManager);
+        if(questionCount >= 30 && questionCount < 50)
+        {
+            achievementManager.survivalModeResult(questionCount, FileUtil.generalSavesFile, achievementManager);
+            achievementManager.silverCupResult(gameResult, FileUtil.generalSavesFile, achievementManager, silverCup);
+            FileUtil.storeGeneralSavesFile();
+        }
+        if(questionCount >= 50)
+        {
+            achievementManager.survivalModeResult(questionCount, FileUtil.generalSavesFile, achievementManager);
+            achievementManager.goldCupResult(questionCount, playerFinalScore, gameResult, FileUtil.generalSavesFile, achievementManager, goldCup);
+            FileUtil.storeGeneralSavesFile();
+        }
+        if(questionCount < 20) {
+            Label cupLabel = new Label(UtilStringStorage.noSurviveLabel);
+            stylizeLabel(cupLabel, 100, 70);
+            gameResult.getChildren().add(cupLabel);
+        }
         FileUtil.storeGeneralSavesFile();
     }
 

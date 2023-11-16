@@ -92,28 +92,27 @@ public class AchievementManager
     {
         if(questionCount >= 20)
         {
-            ResultScene.resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
             checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "survivalScore20", achievementsList.get(6).getCondition(), 6);
         }
         if(questionCount >= 30)
         {
-            ResultScene.resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
             checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "survivalScore30", achievementsList.get(7).getCondition(), 7);
         }
         if(questionCount >= 50)
         {
-            ResultScene.resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
             checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "survivalScore50", achievementsList.get(8).getCondition(), 8);
         }
     }
 
     public void goldCupResult(int questionCount, int playerScore, VBox vBox, Properties generalSavesFile, AchievementManager achievementManager, ImageView imageView)
     {
-        switch (questionCount) {
-            case 10 -> checkPerfectScoreAchievement(achievementManager, playerScore, generalSavesFile, "perfectScore10", achievementsList.get(3).getCondition(), 3);
-            case 15 -> checkPerfectScoreAchievement(achievementManager, playerScore, generalSavesFile, "perfectScore15", achievementsList.get(4).getCondition(), 4);
-            case 20 -> checkPerfectScoreAchievement(achievementManager, playerScore, generalSavesFile, "perfectScore20", achievementsList.get(5).getCondition(), 5);
-            default -> logger.error("Question count bug");
+        if(GameHandler.gameMode == null) {
+            switch (questionCount) {
+                case 10 -> checkPerfectScoreAchievement(achievementManager, playerScore, generalSavesFile, "perfectScore10", achievementsList.get(3).getCondition(), 3);
+                case 15 -> checkPerfectScoreAchievement(achievementManager, playerScore, generalSavesFile, "perfectScore15", achievementsList.get(4).getCondition(), 4);
+                case 20 -> checkPerfectScoreAchievement(achievementManager, playerScore, generalSavesFile, "perfectScore20", achievementsList.get(5).getCondition(), 5);
+                default -> logger.error("Question count bug");
+            }
         }
 
         int nbrOfGoldCup = Integer.parseInt(generalSavesFile.getProperty("goldCup"));
@@ -122,8 +121,14 @@ public class AchievementManager
         achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(0), nbrOfGoldCup);
         generalSavesFile.setProperty("goldCup", String.valueOf(nbrOfGoldCup));
 
-        Label cupLabel = new Label(UtilStringStorage.goldCupLabel);
-        setUpResultLabel(cupLabel);
+        Label cupLabel;
+        if(GameHandler.gameMode == null) {
+            cupLabel = new Label(UtilStringStorage.goldCupLabel);
+            setUpCupResultLabel(cupLabel);
+        } else {
+            cupLabel = new Label(UtilStringStorage.surviveEnoughGoldLabel);
+            setUpSurviveResultLabel(cupLabel);
+        }
 
         vBox.getChildren().add(cupLabel);
         vBox.getChildren().add(imageView);
@@ -137,8 +142,14 @@ public class AchievementManager
         achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(1), nbrOfSilverCup);
         generalSavesFile.setProperty("silverCup", String.valueOf(nbrOfSilverCup));
 
-        Label cupLabel = new Label(UtilStringStorage.silverCupLabel);
-        setUpResultLabel(cupLabel);
+        Label cupLabel;
+        if(GameHandler.gameMode == null) {
+            cupLabel = new Label(UtilStringStorage.silverCupLabel);
+            setUpCupResultLabel(cupLabel);
+        } else {
+            cupLabel = new Label(UtilStringStorage.surviveEnoughSilverLabel);
+            setUpSurviveResultLabel(cupLabel);
+        }
 
         vBox.getChildren().add(cupLabel);
         vBox.getChildren().add(imageView);
@@ -152,17 +163,28 @@ public class AchievementManager
         achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(2), nbrOfBronzeCup);
         generalSavesFile.setProperty("bronzeCup", String.valueOf(nbrOfBronzeCup));
 
-        Label cupLabel = new Label(UtilStringStorage.bronzeCupLabel);
-        setUpResultLabel(cupLabel);
+        Label cupLabel;
+        if(GameHandler.gameMode == null) {
+            cupLabel = new Label(UtilStringStorage.bronzeCupLabel);
+            setUpCupResultLabel(cupLabel);
+        } else {
+            cupLabel = new Label(UtilStringStorage.surviveEnoughBronzeLabel);
+            setUpSurviveResultLabel(cupLabel);
+        }
 
         vBox.getChildren().add(cupLabel);
         vBox.getChildren().add(imageView);
     }
 
-    public void setUpResultLabel(Label label)
+    public void setUpCupResultLabel(Label label)
     {
         ResultScene.resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
         stylizeLabel(label, 200, 70);
+    }
+    public void setUpSurviveResultLabel(Label label)
+    {
+        ResultScene.resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
+        stylizeLabel(label, 100, 70);
     }
     public void stylizeLabel(Label label, int translateX, int translateY)
     {

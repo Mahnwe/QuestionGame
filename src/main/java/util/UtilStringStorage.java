@@ -87,7 +87,9 @@ public class UtilStringStorage
     public static String minLabel = "";
     public static String secondesLabel = "";
     public static String noSurviveLabel = "";
-    public static String surviveEnoughLabel = "";
+    public static String surviveEnoughGoldLabel = "";
+    public static String surviveEnoughSilverLabel = "";
+    public static String surviveEnoughBronzeLabel = "";
     public static String noCupLabel = "";
     public static String goldCupLabel = "";
     public static String silverCupLabel = "";

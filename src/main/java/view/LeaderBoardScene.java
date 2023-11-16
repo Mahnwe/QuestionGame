@@ -58,7 +58,7 @@ public class LeaderBoardScene extends Scene
         leaderBoardLabel.setFont(Font.font("Impact", FontWeight.BOLD, 23));
 
         Label leaderBoardArea = new Label();
-        leaderBoardArea.setTranslateX(180);
+        leaderBoardArea.setTranslateX(300);
         leaderBoardArea.setTranslateY(40);
         leaderBoardArea.setText(String.valueOf(stringBuilder));
         leaderBoardArea.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 14));

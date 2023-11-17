@@ -1,7 +1,11 @@
-2023-11-15 00:44:56.076 ERROR [JavaFX Application Thread] [model.AchievementManager.goldCupResult(AchievementManager.java:79)] - Question count bug
-2023-11-15 01:08:00.392 ERROR [JavaFX Application Thread] [model.AchievementManager.goldCupResult(AchievementManager.java:79)] - Question count bug
-2023-11-15 16:00:30.103 ERROR [JavaFX Application Thread] [util.QuestionException.<init>(QuestionException.java:13)] - Question list can't be create, may be Out of bounds exception, GameHandler.setupQuestionList
-2023-11-15 16:03:02.765 ERROR [JavaFX Application Thread] [util.QuestionException.<init>(QuestionException.java:13)] - Question list can't be create, may be Out of bounds exception, GameHandler.setupQuestionList
-2023-11-15 16:03:15.561 ERROR [JavaFX Application Thread] [util.QuestionException.<init>(QuestionException.java:13)] - Question list can't be create, may be Out of bounds exception, GameHandler.setupQuestionList
-2023-11-15 16:04:49.912 ERROR [JavaFX Application Thread] [util.QuestionException.<init>(QuestionException.java:13)] - Question list can't be create, may be Out of bounds exception, GameHandler.setupQuestionList
-2023-11-15 17:31:14.232 ERROR [JavaFX Application Thread] [util.QuestionException.<init>(QuestionException.java:13)] - Question list can't be create, may be Out of bounds exception, GameHandler.setupQuestionList
+2023-11-17 18:55:43.517 ERROR [main] [util.QuestionException.<init>(QuestionException.java:13)] - Question list can't be create, may be Out of bounds exception, GameHandler.setupQuestionList
+2023-11-17 18:57:41.515 ERROR [main] [util.QuestionException.<init>(QuestionException.java:13)] - Question list can't be create, may be Out of bounds exception, GameHandler.setupQuestionList
+2023-11-17 18:59:15.510 ERROR [main] [util.QuestionException.<init>(QuestionException.java:13)] - Question list can't be create, may be Out of bounds exception, GameHandler.setupQuestionList
+2023-11-17 19:00:18.581 ERROR [main] [util.QuestionException.<init>(QuestionException.java:13)] - Question list can't be create, may be Out of bounds exception, GameHandler.setupQuestionList
+2023-11-17 19:00:53.233 ERROR [main] [util.QuestionException.<init>(QuestionException.java:13)] - Question list can't be create, may be Out of bounds exception, GameHandler.setupQuestionList
+2023-11-17 19:01:25.403 ERROR [main] [util.QuestionException.<init>(QuestionException.java:13)] - Question list can't be create, may be Out of bounds exception, GameHandler.setupQuestionList
+2023-11-17 19:02:17.037 ERROR [main] [util.QuestionException.<init>(QuestionException.java:13)] - Question list can't be create, may be Out of bounds exception, GameHandler.setupQuestionList
+2023-11-17 19:02:38.672 ERROR [main] [util.QuestionException.<init>(QuestionException.java:13)] - Question list can't be create, may be Out of bounds exception, GameHandler.setupQuestionList
+2023-11-17 19:04:31.530 ERROR [main] [util.QuestionException.<init>(QuestionException.java:13)] - Question list can't be create, may be Out of bounds exception, GameHandler.setupQuestionList
+2023-11-17 19:06:36.563 ERROR [main] [util.QuestionException.<init>(QuestionException.java:13)] - Question list can't be create, may be Out of bounds exception, GameHandler.setupQuestionList
+2023-11-17 19:08:25.197 ERROR [main] [util.QuestionException.<init>(QuestionException.java:13)] - Question list can't be create, may be Out of bounds exception, GameHandler.setupQuestionList

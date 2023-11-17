@@ -1,5 +1,6 @@
 import model.GameHandler;
 import model.QuestionStorage;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -8,11 +9,19 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 
  class QuestionTest
 {
+    private QuestionStorage questionStorage;
+    private GameHandler gameHandler;
+    private int questionBankSize;
+    @BeforeEach
+    void createElements()
+    {
+       questionStorage = new QuestionStorage();
+       gameHandler = new GameHandler();
+       questionBankSize = questionStorage.getQuestionList().size();
+    }
     @Test
     void testQuestion()
     {
-        QuestionStorage questionStorage = new QuestionStorage();
-
         assertFalse(questionStorage.getQuestionList().isEmpty());
         assertEquals(questionStorage.getQuestionList().size(), questionStorage.getQuestionList().size());
     }
@@ -20,9 +29,6 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
     @Test
     void testSetUpQuestionInNormalMod()
     {
-        QuestionStorage questionStorage = new QuestionStorage();
-        GameHandler gameHandler = new GameHandler();
-
         assertFalse(questionStorage.getQuestionList().isEmpty());
 
         gameHandler.setupQuestionList(15);
@@ -33,11 +39,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
     @Test
     void testSetUpSurvivalMod()
     {
-        QuestionStorage questionStorage = new QuestionStorage();
-        GameHandler gameHandler = new GameHandler();
-
         gameHandler.setUpSurvivalMode();
-
-        assertThat(gameHandler.getQuestionList()).hasSize(questionStorage.getQuestionList().size());
+        assertThat(gameHandler.getQuestionList()).hasSize(questionBankSize);
     }
 }

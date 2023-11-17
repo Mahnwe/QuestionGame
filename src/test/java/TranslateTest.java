@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import util.UtilStringStorage;
 import util.UtilTranslateString;
@@ -6,19 +7,28 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class TranslateTest
 {
-    @Test
-    void testTranslate()
+    private UtilTranslateString utilTranslateString;
+
+    @BeforeEach
+    void createTranslateElement()
     {
-        UtilTranslateString utilFrTranslateString = new UtilTranslateString();
-        utilFrTranslateString.loadFrTradFile();
-        utilFrTranslateString.translateFrString();
+        utilTranslateString = new UtilTranslateString();
+    }
+
+    @Test
+    void testFrTranslate()
+    {
+        utilTranslateString.loadFrTradFile();
+        utilTranslateString.translateFrString();
 
         assertThat(UtilStringStorage.gameTitle).isEqualTo("Turbo Jeu des Questions");
+    }
 
-
-        UtilTranslateString utilEngTranslateString = new UtilTranslateString();
-        utilEngTranslateString.loadEngTradFile();
-        utilEngTranslateString.translateEngString();
+    @Test
+    void testEngTranslate()
+    {
+        utilTranslateString.loadEngTradFile();
+        utilTranslateString.translateEngString();
 
         assertThat(UtilStringStorage.gameTitle).isEqualTo("Turbo Questions Game");
     }

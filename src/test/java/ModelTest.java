@@ -1,9 +1,9 @@
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class ModelTest
+ class ModelTest
 {
     @Test
-    public void testModel()
+     void testModel()
     {
         AchievementTest achievementTest = new AchievementTest();
         achievementTest.testAchievement();

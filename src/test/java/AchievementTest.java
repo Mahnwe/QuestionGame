@@ -1,16 +1,18 @@
 import model.AchievementManager;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
-public class AchievementTest
+class AchievementTest
 {
     @Test
-    public void testAchievement()
+    void testAchievement()
     {
         AchievementManager achievementManager = new AchievementManager();
+
         assertFalse(achievementManager.getAchievementsList().isEmpty());
-        assertEquals(7, achievementManager.getAchievementsList().size());
+        assertThat(achievementManager.getAchievementsList()).hasSize(10);
         assertFalse(achievementManager.getAchievementsList().get(0).isUnlock());
     }
 

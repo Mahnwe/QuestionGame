@@ -1,22 +1,25 @@
+import org.junit.jupiter.api.Test;
 import util.UtilStringStorage;
 import util.UtilTranslateString;
-import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
-public class TranslateTest
+class TranslateTest
 {
     @Test
-    public void testTranslate()
+    void testTranslate()
     {
         UtilTranslateString utilFrTranslateString = new UtilTranslateString();
         utilFrTranslateString.loadFrTradFile();
         utilFrTranslateString.translateFrString();
-        assertEquals("Turbo Jeu des Questions", UtilStringStorage.gameTitle);
+
+        assertThat(UtilStringStorage.gameTitle).isEqualTo("Turbo Jeu des Questions");
+
 
         UtilTranslateString utilEngTranslateString = new UtilTranslateString();
         utilEngTranslateString.loadEngTradFile();
         utilEngTranslateString.translateEngString();
-        assertEquals("Turbo Questions Game", UtilStringStorage.gameTitle);
+
+        assertThat(UtilStringStorage.gameTitle).isEqualTo("Turbo Questions Game");
     }
 }

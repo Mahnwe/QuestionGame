@@ -1,26 +1,32 @@
 import model.GameHandler;
 import model.QuestionStorage;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
-public class QuestionTest
+ class QuestionTest
 {
     @Test
-    public void testQuestion()
+    void testQuestion()
     {
         QuestionStorage questionStorage = new QuestionStorage();
+
         assertFalse(questionStorage.getQuestionList().isEmpty());
         assertEquals(questionStorage.getQuestionList().size(), questionStorage.getQuestionList().size());
     }
 
     @Test
-    public void testSetUpQuestion()
+    void testSetUpQuestion()
     {
         QuestionStorage questionStorage = new QuestionStorage();
-        assertFalse(questionStorage.getQuestionList().isEmpty());
         GameHandler gameHandler = new GameHandler();
+
+        assertFalse(questionStorage.getQuestionList().isEmpty());
+
         gameHandler.setupQuestionList(15);
-        assertEquals(15, gameHandler.getQuestionList().size());
+
+        assertThat(gameHandler.getQuestionList()).hasSize(15);
     }
 }

@@ -1,19 +1,21 @@
 import model.Player;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class PlayerTest
+class PlayerTest
 {
     @Test
-    public void testPlayer()
+     void testPlayer()
     {
         Player player = new Player();
-
         player.setPlayerName("Thierry");
-        assertEquals("Thierry", player.getPlayerName());
-
         player.setPlayerScore(9);
+
+        assertEquals("Thierry", player.getPlayerName());
+        assertThat(player.getPlayerName()).isEqualTo("Thierry");
+
         assertEquals(9, player.getPlayerScore());
     }
 }

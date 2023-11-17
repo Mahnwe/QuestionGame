@@ -13,7 +13,8 @@ import org.junit.jupiter.api.Test;
 
         QuestionTest questionTest = new QuestionTest();
         questionTest.testQuestion();
-        questionTest.testSetUpQuestion();
+        questionTest.testSetUpQuestionInNormalMod();
+        questionTest.testSetUpSurvivalMod();
 
         TranslateTest translateTest = new TranslateTest();
         translateTest.testTranslate();

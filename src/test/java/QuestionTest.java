@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
     }
 
     @Test
-    void testSetUpQuestion()
+    void testSetUpQuestionInNormalMod()
     {
         QuestionStorage questionStorage = new QuestionStorage();
         GameHandler gameHandler = new GameHandler();
@@ -28,5 +28,16 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
         gameHandler.setupQuestionList(15);
 
         assertThat(gameHandler.getQuestionList()).hasSize(15);
+    }
+
+    @Test
+    void testSetUpSurvivalMod()
+    {
+        QuestionStorage questionStorage = new QuestionStorage();
+        GameHandler gameHandler = new GameHandler();
+
+        gameHandler.setUpSurvivalMode();
+
+        assertThat(gameHandler.getQuestionList()).hasSize(questionStorage.getQuestionList().size());
     }
 }

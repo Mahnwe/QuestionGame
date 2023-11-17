@@ -69,6 +69,8 @@ public class UtilTranslateString {
         // LEADERBOARD
         UtilStringStorage.leaderBoardLabel = engTradFile.getProperty("leaderBoardLabel");
         UtilStringStorage.eraseTooltipLabel = engTradFile.getProperty("eraseTooltipLabel");
+        UtilStringStorage.askToResetScore = engTradFile.getProperty("askToResetScore");
+        UtilStringStorage.resetScoreInfo = engTradFile.getProperty("resetScoreInfo");
 
         // MENU SCENE
         UtilStringStorage.welcomeLabel = engTradFile.getProperty("welcomeLabel");
@@ -710,6 +712,8 @@ public class UtilTranslateString {
         //LEADERBOARD SCENE
         UtilStringStorage.leaderBoardLabel = frTradFile.getProperty("leaderBoardLabel");
         UtilStringStorage.eraseTooltipLabel = frTradFile.getProperty("eraseTooltipLabel");
+        UtilStringStorage.askToResetScore = frTradFile.getProperty("askToResetScore");
+        UtilStringStorage.resetScoreInfo = frTradFile.getProperty("resetScoreInfo");
 
         // MENU SCENE
         UtilStringStorage.welcomeLabel = frTradFile.getProperty("welcomeLabel");

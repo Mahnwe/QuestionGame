@@ -1,10 +1,7 @@
 package view;
 
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.Tooltip;
+import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -16,6 +13,8 @@ import util.CustomOption;
 import util.FileUtil;
 import util.UtilStringStorage;
 
+import java.util.Optional;
+
 public class LeaderBoardScene extends Scene
 {
     private final StringBuilder stringBuilder;
@@ -23,12 +22,15 @@ public class LeaderBoardScene extends Scene
     private final AchievementManager achievementManager;
     private final VBox leaderBoardVBox;
     private final GridPane gridpane;
+    private final ConfirmAlert confirmAlert;
 
     public LeaderBoardScene(ScrollPane scrollPane, Stage stage, AchievementManager achievementManager)
     {
         super(scrollPane);
         this.stage = stage;
         this.achievementManager = achievementManager;
+        confirmAlert = new ConfirmAlert(Alert.AlertType.CONFIRMATION);
+        confirmAlert.modifyConfirmAlertForSaveDelete(confirmAlert);
         stringBuilder = FileUtil.readSaveFile(FileUtil.saveFile);
 
         scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
@@ -74,9 +76,12 @@ public class LeaderBoardScene extends Scene
         Tooltip eraseTooltip = new Tooltip(UtilStringStorage.eraseTooltipLabel);
         eraseSaveFileButton.setTooltip(eraseTooltip);
         eraseSaveFileButton.setOnAction(event -> {
-            FileUtil.resetSaveFile();
-            LeaderBoardScene leaderBoardScene = new LeaderBoardScene(new ScrollPane(), stage, achievementManager);
-            stage.setScene(leaderBoardScene);
+            Optional<ButtonType> result = confirmAlert.showAndWait();
+            if(result.orElse(null) == ButtonType.OK) {
+                FileUtil.resetSaveFile();
+                LeaderBoardScene leaderBoardScene = new LeaderBoardScene(new ScrollPane(), stage, achievementManager);
+                stage.setScene(leaderBoardScene);
+            }
         });
 
         leaderBoardVBox.getChildren().add(leaderBoardLabel);

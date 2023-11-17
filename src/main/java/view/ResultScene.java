@@ -127,9 +127,7 @@ public class ResultScene extends VBox
         exitToMenuButton = new Button(UtilStringStorage.returnToMenuButton);
         CustomOption.customExitToMenuButton(exitToMenuButton);
         exitToMenuButton.setOnAction(event -> {
-            if(resultSoundEffect != null) {
-                SoundManager.stopMusic(resultSoundEffect);
-            }
+            SoundManager.checkIfMusicIsPlayed(resultSoundEffect);
             backToMainMenu();
             GameHandler.gameMode = null;
         });

@@ -145,10 +145,7 @@ public class OptionScene extends Scene {
         engButton.setOnAction(event -> {
             utilTranslateString.translateEngString();
             App.menuMusicToStop.stop();
-            if(ResultScene.returnToMenuMusic != null)
-            {
-                ResultScene.returnToMenuMusic.stop();
-            }
+            SoundManager.checkIfMusicIsPlayed(ResultScene.returnToMenuMusic);
             SoundManager.checkIfMusicIsPlayed(App.menuMusicToStop);
             App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
             MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
@@ -162,10 +159,7 @@ public class OptionScene extends Scene {
         frButton.setOnAction(event -> {
             utilTranslateString.translateFrString();
             App.menuMusicToStop.stop();
-            if(ResultScene.returnToMenuMusic != null)
-            {
-                ResultScene.returnToMenuMusic.stop();
-            }
+            SoundManager.checkIfMusicIsPlayed(ResultScene.returnToMenuMusic);
             SoundManager.checkIfMusicIsPlayed(App.menuMusicToStop);
             App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
             MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);

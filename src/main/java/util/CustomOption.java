@@ -43,7 +43,7 @@ public class CustomOption {
     public static void customLaunchButton(Button button)
     {
         button.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 20));
-        button.setTranslateX(295);
+        button.setTranslateX(325);
         button.setTranslateY(190);
         setGlowEffectOnButton(button);
     }
@@ -53,7 +53,7 @@ public class CustomOption {
         comboBox.setStyle("-fx-font: 20px \"Verdana\"");
         comboBox.setMinHeight(30);
         comboBox.setMinWidth(90);
-        comboBox.setTranslateX(255);
+        comboBox.setTranslateX(285);
         comboBox.setTranslateY(165);
         comboBox.setOnMouseEntered(event -> comboBox.setEffect(glow));
         comboBox.setOnMouseExited(event -> comboBox.setEffect(null));

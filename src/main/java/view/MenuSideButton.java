@@ -12,7 +12,7 @@ public class MenuSideButton extends Button
     {
         this.setText(buttonText);
         Tooltip tooltip = new Tooltip(tooltipText);
-        this.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 14));
+        this.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 15));
         this.setTranslateX(translateX);
         this.setTranslateY(translateY);
         this.setTooltip(tooltip);

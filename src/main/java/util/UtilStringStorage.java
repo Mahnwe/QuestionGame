@@ -666,5 +666,26 @@ public class UtilStringStorage
     public static String answerD76 = "";
     public static String goodAnswer76 = "";
     public static String explanation76 = "";
+    public static String question77 = "";
+    public static String answerA77 = "";
+    public static String answerB77 = "";
+    public static String answerC77 = "";
+    public static String answerD77 = "";
+    public static String goodAnswer77 = "";
+    public static String explanation77 = "";
+    public static String question78 = "";
+    public static String answerA78 = "";
+    public static String answerB78 = "";
+    public static String answerC78 = "";
+    public static String answerD78 = "";
+    public static String goodAnswer78 = "";
+    public static String explanation78 = "";
+    public static String question79 = "";
+    public static String answerA79 = "";
+    public static String answerB79 = "";
+    public static String answerC79 = "";
+    public static String answerD79 = "";
+    public static String goodAnswer79 = "";
+    public static String explanation79 = "";
 
 }

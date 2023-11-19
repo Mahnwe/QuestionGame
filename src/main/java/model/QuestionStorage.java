@@ -396,6 +396,21 @@ public class QuestionStorage
                 UtilStringStorage.explanation76);
         questionList.add(question76);
 
+        Question question77 = new Question(UtilStringStorage.question77,UtilStringStorage.answerA77,
+                UtilStringStorage.answerB77, UtilStringStorage.answerC77, UtilStringStorage.answerD77, UtilStringStorage.goodAnswer77,
+                UtilStringStorage.explanation77);
+        questionList.add(question77);
+
+        Question question78 = new Question(UtilStringStorage.question78,UtilStringStorage.answerA78,
+                UtilStringStorage.answerB78, UtilStringStorage.answerC78, UtilStringStorage.answerD78, UtilStringStorage.goodAnswer78,
+                UtilStringStorage.explanation78);
+        questionList.add(question78);
+
+        Question question79 = new Question(UtilStringStorage.question79,UtilStringStorage.answerA79,
+                UtilStringStorage.answerB79, UtilStringStorage.answerC79, UtilStringStorage.answerD79, UtilStringStorage.goodAnswer79,
+                UtilStringStorage.explanation79);
+        questionList.add(question79);
+
     }
 
     public List<Question> getQuestionList() {

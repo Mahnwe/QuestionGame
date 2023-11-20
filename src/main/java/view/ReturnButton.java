@@ -16,8 +16,8 @@ public class ReturnButton  extends Button {
         IconCreator returnArrow = new IconCreator(PathUtil.BACK_ARROW);
         Image backArrow = returnArrow.createImage().getImage();
 
-        this.setPrefHeight(50);
-        this.setPrefWidth(50);
+        this.setPrefHeight(60);
+        this.setPrefWidth(60);
         Tooltip returnTooltip = new Tooltip(UtilStringStorage.returnButton);
         this.setTooltip(returnTooltip);
         BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);

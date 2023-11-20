@@ -58,19 +58,19 @@ public class LeaderBoardScene extends Scene
     public void createLeaderBoard()
     {
         Label leaderBoardLabel = new Label(UtilStringStorage.leaderBoardLabel);
-        leaderBoardLabel.setTranslateX(350);
+        leaderBoardLabel.setTranslateX(550);
         leaderBoardLabel.setTranslateY(10);
-        leaderBoardLabel.setFont(Font.font("Impact", FontWeight.BOLD, 23));
+        leaderBoardLabel.setFont(Font.font("Impact", FontWeight.BOLD, 30));
 
         Label leaderBoardArea = new Label();
-        leaderBoardArea.setTranslateX(250);
+        leaderBoardArea.setTranslateX(280);
         leaderBoardArea.setText(String.valueOf(stringBuilder));
-        leaderBoardArea.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 14));
+        leaderBoardArea.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 17));
         leaderBoardArea.setTextFill(Color.BLACK);
 
         Button eraseSaveFileButton = new Button();
-        eraseSaveFileButton.setTranslateX(10);
-        eraseSaveFileButton.setTranslateY(60);
+        eraseSaveFileButton.setTranslateX(50);
+        eraseSaveFileButton.setTranslateY(80);
         CustomOption.setUpTrashButton(eraseSaveFileButton);
         eraseSaveFileButton.setTooltip(null);
         Tooltip eraseTooltip = new Tooltip(UtilStringStorage.eraseTooltipLabel);

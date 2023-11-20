@@ -78,7 +78,7 @@ public class CustomOption {
         IconCreator trashIcon = new IconCreator(PathUtil.TRASH_ICON);
         Image trashImage = trashIcon.createImage().getImage();
 
-        button.setPrefSize(60,60);
+        button.setPrefSize(70,70);
         Tooltip resetTooltip = new Tooltip(UtilStringStorage.resetTooltip);
         button.setTooltip(resetTooltip);
         BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);

@@ -26,29 +26,29 @@ public class ConfirmAlert extends Alert {
         this.setTitle(UtilStringStorage.confirmAlertWindow);
 
         Label confirmReset = new Label(UtilStringStorage.askConfirmReset);
-        confirmReset.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 17));
+        confirmReset.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 23));
 
         Label resetInfo = new Label(UtilStringStorage.resetInfo);
         resetInfo.setTranslateY(3);
-        resetInfo.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 17));
+        resetInfo.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 23));
 
         this.setHeaderText(confirmReset.getText()+"\n"+resetInfo.getText());
 
         IconCreator iconCreator = new IconCreator(PathUtil.QUESTION_MARK_TEST);
         ImageView backgroundImage = iconCreator.createImage();
-        backgroundImage.setFitHeight(150);
+        backgroundImage.setFitHeight(160);
         this.setGraphic(backgroundImage);
 
         Button confirmButton = (Button) this.getDialogPane().lookupButton(ButtonType.OK);
         CustomOption.setGlowEffectOnButton(confirmButton);
         confirmButton.setText(UtilStringStorage.yesButton);
-        confirmButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 16));
+        confirmButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 19));
         placeButton(confirmButton, -20, -250);
 
         Button cancelButton = (Button) this.getDialogPane().lookupButton(ButtonType.CANCEL);
         CustomOption.setGlowEffectOnButton(cancelButton);
         cancelButton.setText(UtilStringStorage.noButton);
-        cancelButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 16));
+        cancelButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 19));
         placeButton(cancelButton, -20, -100);
 
     }
@@ -58,11 +58,11 @@ public class ConfirmAlert extends Alert {
         confirmAlert.setTitle(UtilStringStorage.confirmAlertWindow);
 
         Label confirmReset = new Label(UtilStringStorage.askToResetScore);
-        confirmReset.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 17));
+        confirmReset.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 23));
 
         Label resetInfo = new Label(UtilStringStorage.resetScoreInfo);
         resetInfo.setTranslateY(3);
-        resetInfo.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 17));
+        resetInfo.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 23));
 
         confirmAlert.setHeaderText(confirmReset.getText()+"\n"+resetInfo.getText());
 
@@ -74,13 +74,13 @@ public class ConfirmAlert extends Alert {
         Button confirmButton = (Button) confirmAlert.getDialogPane().lookupButton(ButtonType.OK);
         CustomOption.setGlowEffectOnButton(confirmButton);
         confirmButton.setText(UtilStringStorage.yesButton);
-        confirmButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 16));
+        confirmButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 19));
         placeButton(confirmButton, -20, -250);
 
         Button cancelButton = (Button) confirmAlert.getDialogPane().lookupButton(ButtonType.CANCEL);
         CustomOption.setGlowEffectOnButton(cancelButton);
         cancelButton.setText(UtilStringStorage.noButton);
-        cancelButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 16));
+        cancelButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 19));
         placeButton(cancelButton, -20, -100);
 
     }

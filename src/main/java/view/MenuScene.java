@@ -115,7 +115,7 @@ public class MenuScene extends Scene
         achievementButton = new MenuSideButton(UtilStringStorage.achievementButton, UtilStringStorage.achievementTooltip, 55, 220);
         if(achievementButton.getText().equals("Achievements"))
         {
-            achievementButton.setTranslateX(26);
+            achievementButton.setTranslateX(23);
         }
 
         optionButton = new MenuSideButton(UtilStringStorage.optionButton, UtilStringStorage.optionTooltip, 50, 290);

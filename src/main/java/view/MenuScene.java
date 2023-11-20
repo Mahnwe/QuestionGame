@@ -77,10 +77,10 @@ public class MenuScene extends Scene
         VBox welcomeArea = new VBox();
         Label welcomeInGame = new Label(UtilStringStorage.welcomeLabel);
         welcomeInGame.setTextFill(Color.BLACK);
-        welcomeInGame.setFont(Font.font("Futura", FontWeight.BOLD, 23));
+        welcomeInGame.setFont(Font.font("Futura", FontWeight.BOLD, 30));
         welcomeInGame.setTranslateX(350);
         welcomeArea.getChildren().add(createStatArea(welcomeInGame));
-        welcomeInGame.setTranslateY(10);
+        welcomeInGame.setTranslateY(20);
         pane.setTop(welcomeArea);
     }
 
@@ -88,7 +88,7 @@ public class MenuScene extends Scene
     {
         VBox leaderBoardVBox = new VBox();
         leaderBoardVBox.setBorder(border);
-        leaderBoardVBox.setPrefWidth(170);
+        leaderBoardVBox.setPrefWidth(220);
 
         createLeftButtons();
 
@@ -104,23 +104,23 @@ public class MenuScene extends Scene
 
     public void createLeftButtons()
     {
-        leaderBoardButton = new MenuSideButton(UtilStringStorage.leaderBoardButton, UtilStringStorage.leaderBoardTooltip, 25, 30);
+        leaderBoardButton = new MenuSideButton(UtilStringStorage.leaderBoardButton, UtilStringStorage.leaderBoardTooltip, 35, 80);
         if(leaderBoardButton.getText().equals("Leaderboard"))
         {
-            leaderBoardButton.setTranslateX(21);
+            leaderBoardButton.setTranslateX(31);
         }
 
-        trophyButton = new MenuSideButton(UtilStringStorage.trophyButton, UtilStringStorage.trophyTooltip, 35, 90);
+        trophyButton = new MenuSideButton(UtilStringStorage.trophyButton, UtilStringStorage.trophyTooltip, 45, 150);
 
-        achievementButton = new MenuSideButton(UtilStringStorage.achievementButton, UtilStringStorage.achievementTooltip, 42, 150);
+        achievementButton = new MenuSideButton(UtilStringStorage.achievementButton, UtilStringStorage.achievementTooltip, 55, 220);
         if(achievementButton.getText().equals("Achievements"))
         {
-            achievementButton.setTranslateX(16);
+            achievementButton.setTranslateX(26);
         }
 
-        optionButton = new MenuSideButton(UtilStringStorage.optionButton, UtilStringStorage.optionTooltip, 39, 210);
+        optionButton = new MenuSideButton(UtilStringStorage.optionButton, UtilStringStorage.optionTooltip, 50, 290);
 
-        creditButton = new MenuSideButton(UtilStringStorage.creditButton, UtilStringStorage.creditTooltip, 42, 270);
+        creditButton = new MenuSideButton(UtilStringStorage.creditButton, UtilStringStorage.creditTooltip, 55, 360);
     }
 
     public void setLeftButtonOnAction()
@@ -154,19 +154,18 @@ public class MenuScene extends Scene
     public void createLabel()
     {
         tenModeButton = new Label(UtilStringStorage.mode10Button);
-        tenModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 16));
+        tenModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 19));
         tenModeButton.setTextFill(Color.BLACK);
 
         fifteenModeButton = new Label(UtilStringStorage.mode15Button);
-        fifteenModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 16));
         fifteenModeButton.setTextFill(Color.BLACK);
 
         twentyModeButton = new Label(UtilStringStorage.mode20Button);
-        twentyModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 16));
+        twentyModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 19));
         twentyModeButton.setTextFill(Color.BLACK);
 
         survivalModeButton = new Label(UtilStringStorage.modeSurvivalButton);
-        survivalModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 16));
+        survivalModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 19));
         survivalModeButton.setTextFill(Color.BLACK);
     }
 
@@ -175,10 +174,10 @@ public class MenuScene extends Scene
         VBox selectModeArea = new VBox();
 
         Label chooseMode = new Label(UtilStringStorage.chooseMode);
-        chooseMode.setFont(Font.font("Impact", FontWeight.EXTRA_BOLD, 22));
+        chooseMode.setFont(Font.font("Impact", FontWeight.EXTRA_BOLD, 25));
         chooseMode.setTextFill(Color.BLACK);
         chooseMode.setTranslateX(270);
-        chooseMode.setTranslateY(135);
+        chooseMode.setTranslateY(95);
         if(chooseMode.getText().equals("Choose your game mod"))
         {
             chooseMode.setTranslateX(295);
@@ -197,12 +196,12 @@ public class MenuScene extends Scene
         launchGameButton = new Button(UtilStringStorage.launchGameButton);
         CustomOption.customLaunchButton(launchGameButton);
 
-        ImageView gifImageView = GifCreator.createVibeGif(80, 80);
-        ImageView gifImageView2 = GifCreator.createVibeGif(640, -20);
+        ImageView gifImageView = GifCreator.createVibeGif(60, 80);
+        ImageView gifImageView2 = GifCreator.createVibeGif(640, -70);
 
         DeveloperVbox developerVbox = new DeveloperVbox();
-        developerVbox.setTranslateX(348);
-        developerVbox.setTranslateY(96);
+        developerVbox.setTranslateX(353);
+        developerVbox.setTranslateY(86);
 
         selectModeArea.getChildren().add(chooseMode);
         selectModeArea.getChildren().add(comboBox);
@@ -211,6 +210,8 @@ public class MenuScene extends Scene
         selectModeArea.getChildren().add(gifImageView2);
         selectModeArea.getChildren().add(developerVbox);
         pane.setCenter(selectModeArea);
+        selectModeArea.setTranslateX(50);
+        selectModeArea.setTranslateY(50);
     }
 
     public void setButtonOnAction()
@@ -259,7 +260,7 @@ public class MenuScene extends Scene
         label.setTranslateY(3);
 
         HBox area = new HBox();
-        area.setPrefHeight(50);
+        area.setPrefHeight(70);
         area.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 
         Label emptySpace = new Label();

@@ -52,8 +52,8 @@ public class IconCreator
     {
         IconCreator iconCreator = new IconCreator(PathUtil.DEV_LURK);
         ImageView imageView = iconCreator.createImage();
-        imageView.setFitWidth(40);
-        imageView.setFitHeight(40);
+        imageView.setFitWidth(50);
+        imageView.setFitHeight(50);
         imageView.setTranslateX(35);
         return imageView;
     }

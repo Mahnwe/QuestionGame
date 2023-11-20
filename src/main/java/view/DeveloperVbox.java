@@ -16,8 +16,8 @@ public class DeveloperVbox extends VBox {
     {
         ImageView devLurkImage = IconCreator.createDevImage();
 
-        Label nameLabel = new Label("ManawéGames");
-        nameLabel.setFont(Font.font(DEV_LABEL, FontWeight.EXTRA_BOLD, 17));
+        Label nameLabel = new Label("Manawé Games");
+        nameLabel.setFont(Font.font(DEV_LABEL, FontWeight.EXTRA_BOLD, 18));
         nameLabel.setTextFill(Color.GHOSTWHITE);
         nameLabel.setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY)));
 
@@ -26,7 +26,7 @@ public class DeveloperVbox extends VBox {
         Border border = new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, cornerRadii, borderWidths));
         nameLabel.setBorder(border);
 
-        this.setMaxWidth(112);
+        this.setMaxWidth(120);
         this.setBorder(border);
         Background background = new Background(new BackgroundFill(Color.LIGHTBLUE, CornerRadii.EMPTY, Insets.EMPTY));
         this.setBackground(background);

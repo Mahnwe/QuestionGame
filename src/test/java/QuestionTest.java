@@ -20,17 +20,16 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
        questionBankSize = questionStorage.getQuestionList().size();
     }
     @Test
-    void testQuestion()
+    void testQuestionListSize()
     {
         assertFalse(questionStorage.getQuestionList().isEmpty());
-        assertEquals(questionStorage.getQuestionList().size(), questionStorage.getQuestionList().size());
+
+        assertEquals(questionBankSize, questionStorage.getQuestionList().size());
     }
 
     @Test
     void testSetUpQuestionInNormalMod()
     {
-        assertFalse(questionStorage.getQuestionList().isEmpty());
-
         gameHandler.setupQuestionList(15);
 
         assertThat(gameHandler.getQuestionList()).hasSize(15);
@@ -40,6 +39,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
     void testSetUpSurvivalMod()
     {
         gameHandler.setUpSurvivalMode();
+
         assertThat(gameHandler.getQuestionList()).hasSize(questionBankSize);
     }
 }

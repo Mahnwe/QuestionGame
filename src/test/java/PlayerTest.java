@@ -1,4 +1,5 @@
 import model.Player;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -6,15 +7,26 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PlayerTest
 {
-    @Test
-     void testPlayer()
-    {
-        Player player = new Player();
-        player.setPlayerName("Thierry");
-        player.setPlayerScore(9);
+   private Player player;
 
-        assertEquals("Thierry", player.getPlayerName());
+    @BeforeEach
+    void setUpPlayer()
+    {
+        player = new Player();
+    }
+
+    @Test
+     void testPlayerName()
+    {
+        player.setPlayerName("Thierry");
+
         assertThat(player.getPlayerName()).isEqualTo("Thierry");
+    }
+
+    @Test
+    void testPlayerScore()
+    {
+        player.setPlayerScore(9);
 
         assertEquals(9, player.getPlayerScore());
     }

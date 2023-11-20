@@ -16,7 +16,7 @@ class TimerTest {
     {
         GameTimer.startTimer();
         try {
-            TimeUnit.SECONDS.sleep(5);
+            TimeUnit.SECONDS.sleep(2);
         } catch (InterruptedException e) {
             logger.error("Timer error");
             fail();
@@ -26,6 +26,6 @@ class TimerTest {
         GameTimer.setTimerDisplay();
 
         assertThat(GameTimer.getElapsedMinutes()).isZero();
-        assertThat(GameTimer.getSecondsDisplay()).isEqualTo(5);
+        assertThat(GameTimer.getSecondsDisplay()).isEqualTo(2);
     }
 }

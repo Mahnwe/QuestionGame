@@ -108,8 +108,8 @@ public class PlayerInfoScene extends Scene
                     createPlayerInfoArea();
                     pane.setLeft(playerInfos);
                     questionInterface.setDisable(false);
-                    stage.setMinWidth(900);
-                    stage.setMinHeight(500);
+                    stage.setMinWidth(1000);
+                    stage.setMinHeight(550);
                     GameTimer.startTimer();
                     popUpStage.close();
             }
@@ -136,7 +136,7 @@ public class PlayerInfoScene extends Scene
     public void createPlayerInfoArea()
     {
         playerInfos = new VBox();
-        playerInfos.setTranslateY(60);
+        playerInfos.setTranslateY(200);
 
         player.setPlayerName(userInputArea.getText());
         Label playerNameLabel = new Label(UtilStringStorage.playerNameIngame + " " + player.getPlayerName());
@@ -145,7 +145,7 @@ public class PlayerInfoScene extends Scene
         playerInfos.getChildren().add(createStatArea(playerNameLabel));
         playerInfos.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 
-        playerScoreLabel = new Label(UtilStringStorage.scoreLabelIngame + " " + player.getPlayerScore());
+        playerScoreLabel = new Label(UtilStringStorage.scoreLabelIngame + "    " + player.getPlayerScore());
         stylizeLabel(playerScoreLabel);
 
         playerInfos.getChildren().add(createStatArea(playerScoreLabel));
@@ -155,8 +155,7 @@ public class PlayerInfoScene extends Scene
             stylizeLabel(playerLivesLabel);
             playerInfos.getChildren().add(createStatArea(playerLivesLabel));
         }
-        playerInfos.setMinWidth(170);
-        playerInfos.setMaxWidth(150);
+        playerInfos.setMinWidth(230);
 
         createSliderArea();
 
@@ -164,7 +163,7 @@ public class PlayerInfoScene extends Scene
 
     public void stylizeLabel(Label label)
     {
-        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
+        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 19));
         label.setTextFill(Color.GHOSTWHITE);
         label.setTranslateX(-11);
     }
@@ -175,17 +174,17 @@ public class PlayerInfoScene extends Scene
 
         Label volumeLabel = new Label(UtilStringStorage.volumeLabel);
         volumeLabel.setTranslateY(120);
-        volumeLabel.setTranslateX(50);
-        volumeLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 18));
+        volumeLabel.setTranslateX(80);
+        volumeLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 19));
         volumeLabel.setTextFill(Color.GHOSTWHITE);
         playerInfos.getChildren().add(volumeLabel);
 
         muteButton = new Button();
-        CustomOption.customMuteButton(muteButton, PathUtil.WHITE_MUTE_ICON, 185, 75);
+        CustomOption.customMuteButton(muteButton, PathUtil.WHITE_MUTE_ICON, 185, 105);
         playerInfos.getChildren().add(muteButton);
 
         Slider volumeSlider = new Slider(0, 10, 5);
-        CustomOption.customSlider(volumeSlider, 200, 40, 105, 0);
+        CustomOption.customSlider(volumeSlider, 250, 40, 105, 0);
 
         if(SoundManager.soundVolume == 0.0) {
             VolumeInGameHandler.isMute = true;

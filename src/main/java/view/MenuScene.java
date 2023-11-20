@@ -49,8 +49,8 @@ public class MenuScene extends Scene
         super(pane);
         this.pane = pane;
         this.menuStage = stage;
-        pane.setPrefWidth(1000);
-        pane.setPrefHeight(550);
+        pane.setPrefWidth(1200);
+        pane.setPrefHeight(750);
 
         this.gameHandler = new GameHandler();
 
@@ -77,8 +77,8 @@ public class MenuScene extends Scene
         VBox welcomeArea = new VBox();
         Label welcomeInGame = new Label(UtilStringStorage.welcomeLabel);
         welcomeInGame.setTextFill(Color.BLACK);
-        welcomeInGame.setFont(Font.font("Impact", FontWeight.BOLD, 22));
-        welcomeInGame.setTranslateX(300);
+        welcomeInGame.setFont(Font.font("Futura", FontWeight.BOLD, 23));
+        welcomeInGame.setTranslateX(350);
         welcomeArea.getChildren().add(createStatArea(welcomeInGame));
         welcomeInGame.setTranslateY(10);
         pane.setTop(welcomeArea);
@@ -175,7 +175,7 @@ public class MenuScene extends Scene
         VBox selectModeArea = new VBox();
 
         Label chooseMode = new Label(UtilStringStorage.chooseMode);
-        chooseMode.setFont(Font.font("Impact", FontWeight.BOLD, 22));
+        chooseMode.setFont(Font.font("Impact", FontWeight.EXTRA_BOLD, 22));
         chooseMode.setTextFill(Color.BLACK);
         chooseMode.setTranslateX(270);
         chooseMode.setTranslateY(135);

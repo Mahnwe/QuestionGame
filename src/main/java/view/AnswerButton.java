@@ -14,14 +14,16 @@ public class AnswerButton extends Button
 
     private final BorderWidths borderWidths = new BorderWidths(2.0);
     private final CornerRadii cornerRadii = new CornerRadii(5.0);
-    private final Border border = new Border(new BorderStroke(Color.BLACK,
+    private final Border border = new Border(new BorderStroke(Color.LIGHTBLUE,
             BorderStrokeStyle.SOLID, cornerRadii, borderWidths));
     private boolean isClicked;
     public AnswerButton(boolean buttonIsClicked, String text)
     {
         isClicked = buttonIsClicked;
-        this.setText(text);
-        this.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
+        String upperText = text.toUpperCase();
+        this.setText(upperText);
+        this.setFont(Font.font("Futura", FontWeight.BOLD, 18));
+
     }
 
     public void setAnswerButtonOnAction(AnswerButton answerButton, List<AnswerButton> buttonList, Button validateButton)

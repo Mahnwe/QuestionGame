@@ -24,6 +24,7 @@ public class QuestionInterface extends BorderPane
     private final BorderPane questionPane;
     private VBox game;
     private final Question question;
+    private Label questionNumber;
     private Label questionToAsk;
     private AnswerButton answerButton1;
     private AnswerButton answerButton2;
@@ -58,8 +59,8 @@ public class QuestionInterface extends BorderPane
         gridPane.setVgap(40);
         gridPane.addColumn(4);
         gridPane.addRow(5);
-        gridPane.setTranslateY(40);
-        gridPane.setTranslateX(90);
+        gridPane.setTranslateY(70);
+        gridPane.setTranslateX(250);
     }
 
     public void createGameSpace()
@@ -75,26 +76,28 @@ public class QuestionInterface extends BorderPane
     {
         for(int i = 0; i<questionList.getQuestionList().size(); i++)
         {
+            questionNumber = new Label();
+            questionNumber.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 19));
+            questionNumber.setTextFill(Color.GHOSTWHITE);
+            questionNumber.setTranslateX(-190);
+            questionNumber.setTranslateY(35);
+
             questionToAsk = new Label();
-            questionToAsk.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
+            questionToAsk.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 18));
             questionToAsk.setTextFill(Color.GHOSTWHITE);
-            questionToAsk.setTranslateX(25);
-            questionToAsk.setTranslateY(5);
+            questionToAsk.setTranslateX(100);
+            questionToAsk.setTranslateY(35);
         }
     }
 
     public void createAnswerButton()
     {
         validateAnswerButton = new Button(UtilStringStorage.validateAnswerButton);
-        validateAnswerButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
-        validateAnswerButton.setTranslateX(35);
-        if(validateAnswerButton.getText().equals("Validate"))
-        {
-            validateAnswerButton.setTranslateX(20);
-        }
+        validateAnswerButton.setFont(Font.font("Futura", FontWeight.BOLD, 17));
         CustomOption.setGlowEffectOnButton(validateAnswerButton);
         validateAnswerButton.setDisable(true);
         gridPane.add(validateAnswerButton, 2, 3);
+        validateAnswerButton.setTranslateY(30);
 
         answerButton1 = new AnswerButton(false, question.getAnswerList().get(0));
         answerButton1.setAnswerButtonOnAction(answerButton1, answerButtonList, validateAnswerButton);
@@ -117,16 +120,19 @@ public class QuestionInterface extends BorderPane
         answerButtonList.add(answerButton4);
 
         nextQuestionButton = new Button(UtilStringStorage.nextQuestionButton);
-        nextQuestionButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
+        nextQuestionButton.setFont(Font.font("Futura", FontWeight.BOLD, 17));
         CustomOption.setGlowEffectOnButton(nextQuestionButton);
-        gridPane.add(nextQuestionButton, 2, 4);
         nextQuestionButton.setDisable(true);
+        nextQuestionButton.setTranslateY(320);
+        nextQuestionButton.setTranslateX(700);
     }
 
     public void initGameSpace()
     {
-        game.getChildren().add(createStatArea(questionToAsk));
+        game.getChildren().add(questionNumber);
+        game.getChildren().add(questionToAsk);
         game.getChildren().add(gridPane);
+        game.getChildren().add(nextQuestionButton);
         questionPane.setCenter(game);
     }
 
@@ -147,7 +153,8 @@ public class QuestionInterface extends BorderPane
                 answerButtonClicked = answerButton;
             }
         }
-          if(answerButtonClicked.getText().equals(question.getGoodAnswer()))
+        String upperGoodAnswer = question.getGoodAnswer().toUpperCase();
+          if(answerButtonClicked.getText().equals(upperGoodAnswer))
           {
               playerAnswer = true;
               answerButtonClicked.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
@@ -170,14 +177,14 @@ public class QuestionInterface extends BorderPane
     private void displayAnswer(String answerLabel)
     {
         Label goodResult = new Label(answerLabel);
-        goodResult.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
+        goodResult.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 17));
         goodResult.setTextFill(Color.GHOSTWHITE);
-        goodResult.setTranslateY(100);
+        goodResult.setTranslateY(160);
 
         Label explanation = new Label(question.getExplanation());
-        explanation.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 13));
+        explanation.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 15));
         explanation.setTextFill(Color.GHOSTWHITE);
-        explanation.setTranslateY(120);
+        explanation.setTranslateY(180);
 
         game.getChildren().add(goodResult);
         game.getChildren().add(explanation);
@@ -198,28 +205,16 @@ public class QuestionInterface extends BorderPane
         answerButton4.setDisable(true);
     }
 
-    public HBox createStatArea(Label label)
-    {
-        label.setTranslateY(3);
-
-        HBox area = new HBox();
-        area.setMinHeight(30);
-        area.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID,CornerRadii.EMPTY,BorderWidths.DEFAULT)));
-
-        Label emptySpace = new Label();
-        emptySpace.setMinWidth(20);
-        area.getChildren().add(emptySpace);
-        area.getChildren().add(label);
-
-        return area;
-    }
-
     public Button getNextQuestionButton() {
         return nextQuestionButton;
     }
 
     public boolean isPlayerAnswer() {
         return playerAnswer;
+    }
+
+    public Label getQuestionNumber() {
+        return questionNumber;
     }
 
     public Label getQuestionToAsk() {

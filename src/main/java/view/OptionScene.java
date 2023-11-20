@@ -32,8 +32,8 @@ public class OptionScene extends Scene {
         this.pane = pane;
         this.stage = stage;
         this.achievementManager = achievementManager;
-        pane.setPrefHeight(550);
-        pane.setPrefWidth(1000);
+        pane.setPrefHeight(750);
+        pane.setPrefWidth(1200);
         this.confirmAlert = new ConfirmAlert(Alert.AlertType.CONFIRMATION);
 
         optionVbox = new VBox();
@@ -123,7 +123,7 @@ public class OptionScene extends Scene {
         frenchVbox.getChildren().add(frenchLabel);
         frenchVbox.getChildren().add(frButton);
         frenchVbox.setTranslateX(480);
-        frenchVbox.setTranslateY(-5);
+        frenchVbox.setTranslateY(-32);
 
         Label languageLabel = new Label(UtilStringStorage.languageLabel);
         stylizeLabel(languageLabel, 55, 405);
@@ -149,8 +149,8 @@ public class OptionScene extends Scene {
             SoundManager.checkIfMusicIsPlayed(App.menuMusicToStop);
             App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
             MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
-            stage.setMinHeight(550);
-            stage.setMinWidth(1000);
+            stage.setMinHeight(750);
+            stage.setMinWidth(1200);
             stage.setScene(menuScene);
             stage.setTitle(UtilStringStorage.gameTitle);
             stage.show();
@@ -163,8 +163,8 @@ public class OptionScene extends Scene {
             SoundManager.checkIfMusicIsPlayed(App.menuMusicToStop);
             App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
             MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
-            stage.setMinHeight(550);
-            stage.setMinWidth(1000);
+            stage.setMinHeight(750);
+            stage.setMinWidth(1200);
             stage.setScene(menuScene);
             stage.setTitle(UtilStringStorage.gameTitle);
             stage.show();

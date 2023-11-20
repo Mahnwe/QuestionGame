@@ -22,7 +22,7 @@ public class PathUtil
 
     // BACKGROUNDS
     public static final String MENU_BACKGROUND = RESOURCES_PATH + "Background/Background-Test.jpg";
-    public static final String MAIN_BACKGROUND = RESOURCES_PATH + "Background/MenuSceneBackground.jpg";
+    public static final String MAIN_BACKGROUND = RESOURCES_PATH + "Background/Background-Ingame.jpg";
 
     // TRANSLATION
     public static final String ENG_TRAD_PROPERTIES_FILE = RESOURCES_PATH + "TradFile/EngTradFile.properties";

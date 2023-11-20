@@ -32,8 +32,8 @@ public class MainScene extends Scene
         this.stage = stage;
         this.menuPane = (BorderPane) this.getRoot();
         this.player = player;
-        menuPane.setPrefWidth(1000);
-        menuPane.setPrefHeight(550);
+        menuPane.setPrefWidth(1200);
+        menuPane.setPrefHeight(750);
         this.gameHandler = gameHandler;
         this.achievementManager = achievementManager;
 
@@ -90,7 +90,8 @@ public class MainScene extends Scene
     public void createNewQuestionInterface()
     {
         questionInterface = new QuestionInterface(new BorderPane(), gameHandler.getQuestionList().get(gameHandler.getQuestionCount()));
-        questionInterface.getQuestionToAsk().setText(UtilStringStorage.questionNumber + (gameHandler.getQuestionCount() + 1) + " : " + questionInterface.getQuestion().getQuestionToAsk());
+        questionInterface.getQuestionNumber().setText(UtilStringStorage.questionNumber + (gameHandler.getQuestionCount() + 1));
+        questionInterface.getQuestionToAsk().setText(questionInterface.getQuestion().getQuestionToAsk());
         setAnswersButtonListeners();
         menuPane.setCenter(questionInterface);
         gameHandler.increaseQuestionCount();

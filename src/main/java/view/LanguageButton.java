@@ -21,8 +21,8 @@ public class LanguageButton extends Button {
         BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
         this.setBackground(new Background(new BackgroundImage(englishFlag, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
                 backgroundSize)));
-        this.setMinWidth(75);
-        this.setMinHeight(50);
+        this.setMinWidth(130);
+        this.setMinHeight(80);
         this.setTranslateX(40);
         this.setTranslateY(30);
         Tooltip buttonTooltip = new Tooltip(tooltipLanguage);

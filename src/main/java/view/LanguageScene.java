@@ -29,8 +29,8 @@ public class LanguageScene extends Scene
         this.pane = pane;
         this.stage = stage;
         this.achievementManager = achievementManager;
-        pane.setPrefWidth(500);
-        pane.setPrefHeight(400);
+        pane.setPrefWidth(650);
+        pane.setPrefHeight(550);
 
         createTitleArea();
 
@@ -44,11 +44,11 @@ public class LanguageScene extends Scene
     public void createTitleArea()
     {
         vBox = new VBox();
-        vBox.setTranslateX(100);
-        vBox.setTranslateY(100);
+        vBox.setTranslateX(250);
+        vBox.setTranslateY(150);
         Label launcherLabel = new Label("LOGO");
-        launcherLabel.setFont(Font.font("Impact", FontWeight.BOLD, 25));
-        launcherLabel.setTranslateX(85);
+        launcherLabel.setFont(Font.font("Impact", FontWeight.BOLD, 28));
+        launcherLabel.setTranslateX(25);
         vBox.getChildren().add(launcherLabel);
         pane.setCenter(vBox);
     }
@@ -63,25 +63,25 @@ public class LanguageScene extends Scene
     {
         VBox englishVbox = new VBox();
         Label englishLabel = new Label("Choose a language");
-        englishLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 15));
+        englishLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 18));
 
         engButton = new LanguageButton(PathUtil.ENGLISH_FLAG, UtilStringStorage.englishLanguageTooltip);
 
         englishVbox.getChildren().add(englishLabel);
         englishVbox.getChildren().add(engButton);
-        englishVbox.setTranslateY(80);
-        englishVbox.setTranslateX(-50);
+        englishVbox.setTranslateY(100);
+        englishVbox.setTranslateX(-170);
 
         VBox frenchVbox = new VBox();
         Label frenchLabel = new Label("Choisissez une langue");
-        frenchLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 15));
+        frenchLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 18));
 
         frButton = new LanguageButton(PathUtil.FRENCH_FLAG, UtilStringStorage.frenchLanguageTooltip);
 
         frenchVbox.getChildren().add(frenchLabel);
         frenchVbox.getChildren().add(frButton);
-        frenchVbox.setTranslateX(170);
-        frenchVbox.setTranslateY(12.5);
+        frenchVbox.setTranslateX(110);
+        frenchVbox.setTranslateY(-1);
 
         vBox.getChildren().add(englishVbox);
         vBox.getChildren().add(frenchVbox);
@@ -94,8 +94,8 @@ public class LanguageScene extends Scene
             utilTranslateString.translateEngString();
             App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
             MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
-            stage.setMinHeight(550);
-            stage.setMinWidth(1000);
+            stage.setMinHeight(750);
+            stage.setMinWidth(1200);
             stage.setScene(menuScene);
             stage.setTitle(UtilStringStorage.gameTitle);
             stage.show();
@@ -105,8 +105,8 @@ public class LanguageScene extends Scene
             utilTranslateString.translateFrString();
             App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
             MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
-            stage.setMinHeight(550);
-            stage.setMinWidth(1000);
+            stage.setMinHeight(750);
+            stage.setMinWidth(1200);
             stage.setScene(menuScene);
             stage.setTitle(UtilStringStorage.gameTitle);
             stage.show();

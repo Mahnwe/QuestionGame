@@ -40,7 +40,7 @@ public class AchievementScene extends Scene
     public AchievementScene(ScrollPane scrollPane, AchievementManager achievementManager, Stage stage)
     {
         super(scrollPane);
-        scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+        scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
         scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         scrollPane.setFitToWidth(true);
         this.stage = stage;
@@ -61,17 +61,19 @@ public class AchievementScene extends Scene
         checkAchievements();
 
         BorderPane multiPane = new BorderPane();
-        multiPane.setMinHeight(1080);
+        multiPane.setMinHeight(750);
         takeMultiPane = new BorderPane();
 
         Label achievementLabel = new Label(UtilStringStorage.achievementLabel);
-        achievementLabel.setFont(Font.font("Impact", FontWeight.BOLD, 23));
+        achievementLabel.setFont(Font.font("Impact", FontWeight.BOLD, 30));
         multiPane.setTop(achievementLabel);
         achievementLabel.setTranslateX(400);
         achievementLabel.setTranslateY(5);
         multiPane.setCenter(gridPane);
         takeMultiPane.setCenter(multiPane);
         scrollPane.setContent(takeMultiPane);
+        multiPane.setTranslateX(120);
+        multiPane.setTranslateY(50);
 
         createReturnButton();
         createBackground();
@@ -80,7 +82,6 @@ public class AchievementScene extends Scene
     public void createGridPane()
     {
         gridPane = new GridPane();
-        gridPane.setTranslateX(100);
         gridPane.setTranslateY(60);
         gridPane.setHgap(30);
         gridPane.setVgap(40);

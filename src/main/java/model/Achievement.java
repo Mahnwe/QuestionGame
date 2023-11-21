@@ -22,13 +22,13 @@ public class Achievement
     {
         IconCreator lockIcon = new IconCreator(PathUtil.LOCK_ICON);
         lockImageView = lockIcon.createImage();
-        lockImageView.setFitHeight(40);
-        lockImageView.setFitWidth(50);
+        lockImageView.setFitHeight(50);
+        lockImageView.setFitWidth(60);
 
         IconCreator unlockIcon = new IconCreator(PathUtil.UNLOCK_ICON);
         unlockImageView = unlockIcon.createImage();
-        unlockImageView.setFitHeight(40);
-        unlockImageView.setFitWidth(50);
+        unlockImageView.setFitHeight(50);
+        unlockImageView.setFitWidth(60);
     }
 
     public int getCondition() {

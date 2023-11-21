@@ -58,7 +58,7 @@ public class LeaderBoardScene extends Scene
     public void createLeaderBoard()
     {
         Label leaderBoardLabel = new Label(UtilStringStorage.leaderBoardLabel);
-        leaderBoardLabel.setTranslateX(550);
+        leaderBoardLabel.setTranslateX(500);
         leaderBoardLabel.setTranslateY(10);
         leaderBoardLabel.setFont(Font.font("Impact", FontWeight.BOLD, 30));
 

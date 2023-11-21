@@ -44,8 +44,8 @@ public class IconCreator
 
     public static void stylizeIcon(ImageView imageView)
     {
-        imageView.setFitHeight(150);
-        imageView.setFitWidth(130);
+        imageView.setFitHeight(160);
+        imageView.setFitWidth(140);
     }
 
     public static ImageView createDevImage()

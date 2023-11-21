@@ -56,27 +56,37 @@ public class TrophyScene extends Scene
 
         VBox goldCupImages = new VBox();
         Label nbrOfGoldCupLabel = new Label();
+        Label goldCupNumber = new Label();
         goldCupImages.getChildren().add(goldCup);
-        setUpVbox(goldCupImages, nbrOfGoldCupLabel, 5, 25, UtilStringStorage.goldCupTrophy, FileUtil.generalSavesFile, "goldCup");
+        setUpVbox(goldCupImages, nbrOfGoldCupLabel, 10, 25, UtilStringStorage.goldCupTrophy, FileUtil.generalSavesFile, "goldCup", goldCupNumber);
+        goldCupImages.getChildren().add(goldCupNumber);
+        goldCupImages.setTranslateX(-20);
 
         VBox silverCupImages = new VBox();
         Label nbrOfSilverCupLabel = new Label();
+        Label silverCupNumber = new Label();
         silverCupImages.getChildren().add(silverCup);
-        setUpVbox(silverCupImages, nbrOfSilverCupLabel, -15, 25, UtilStringStorage.silverCupTrophy, FileUtil.generalSavesFile, "silverCup");
+        setUpVbox(silverCupImages, nbrOfSilverCupLabel, -25, 25, UtilStringStorage.silverCupTrophy, FileUtil.generalSavesFile, "silverCup", silverCupNumber);
+        silverCupImages.getChildren().add(silverCupNumber);
 
         VBox bronzeCupImages = new VBox();
         Label nbrOfBronzeCupLabel = new Label();
+        Label bronzeCupNumber = new Label();
         bronzeCupImages.getChildren().add(bronzeCup);
-        setUpVbox(bronzeCupImages, nbrOfBronzeCupLabel, -20, 25, UtilStringStorage.bronzeCupTrophy, FileUtil.generalSavesFile, "bronzeCup");
+        setUpVbox(bronzeCupImages, nbrOfBronzeCupLabel, -35, 25, UtilStringStorage.bronzeCupTrophy, FileUtil.generalSavesFile, "bronzeCup", bronzeCupNumber);
+        bronzeCupImages.getChildren().add(bronzeCupNumber);
 
         gridPane.add(goldCupImages, 0, 0);
         gridPane.add(silverCupImages, 1, 0);
         gridPane.add(bronzeCupImages, 2, 0);
+        gridPane.setTranslateX(130);
 
         centralVbox.getChildren().add(trophyLabel);
         centralVbox.getChildren().add(gridPane);
 
         pane.setCenter(centralVbox);
+        centralVbox.setTranslateX(100);
+        centralVbox.setTranslateY(70);
     }
 
     public void createGridPane()
@@ -91,15 +101,17 @@ public class TrophyScene extends Scene
     public void stylizeTitleLabel(Label label)
     {
         label.setText(UtilStringStorage.trophyLabel);
-        label.setFont(Font.font("Impact", FontWeight.BOLD, 25));
+        label.setFont(Font.font("Impact", FontWeight.BOLD, 30));
         label.setTranslateX(355);
-        label.setTranslateY(40);
+        label.setTranslateY(10);
     }
 
-    public void setUpVbox(VBox vbox, Label label, int translateX, int translateY, String string, Properties properties, String propertyKey)
+    public void setUpVbox(VBox vbox, Label label, int translateX, int translateY, String string, Properties properties, String propertyKey, Label cupNumber)
     {
         placeLabel(label, translateX, translateY);
-        stylizeLabel(label, string, properties, propertyKey);
+        stylizeLabel(label, string, properties, propertyKey, cupNumber);
+        cupNumber.setTranslateX(80);
+        cupNumber.setTranslateY(40);
         vbox.getChildren().add(label);
     }
 
@@ -119,10 +131,12 @@ public class TrophyScene extends Scene
         label.setTranslateY(translateY);
     }
 
-    public void stylizeLabel(Label label, String string, Properties properties, String propertyKey)
+    public void stylizeLabel(Label label, String string, Properties properties, String propertyKey, Label cupNumber)
     {
-        label.setText(string +" "+ properties.getProperty(propertyKey));
-        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 18));
+        label.setText(string +" ");
+        cupNumber.setText(properties.getProperty(propertyKey));
+        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 23));
+        cupNumber.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 25));
     }
 
     public void createIcons()

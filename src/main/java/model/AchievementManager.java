@@ -65,7 +65,12 @@ public class AchievementManager
             achievement.setUnlock(true);
             achievement.getLockImageView().setImage(achievement.getUnlockImageView().getImage());
             notificationAlert = new NotificationAlert(Alert.AlertType.INFORMATION);
-        } else {
+        }
+        if(achievement.isUnlock() && achievement.getCondition() <= numberToCompareWithCondition) {
+            achievement.setUnlock(true);
+            achievement.getLockImageView().setImage(achievement.getUnlockImageView().getImage());
+        }
+        else {
             achievement.setUnlock(false);
             achievement.getLockImageView().setImage(achievement.getLockImageView().getImage());
         }

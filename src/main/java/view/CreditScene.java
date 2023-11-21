@@ -44,14 +44,14 @@ public class CreditScene extends Scene
     public void setUpLabels(Label label, String string, int labelSize, int translateX, int translateY)
     {
         label.setText(string);
-        label.setFont(Font.font("Impact", FontWeight.BOLD, labelSize));
+        label.setFont(Font.font("Futura", FontWeight.BOLD, labelSize));
         label.setTranslateX(translateX);
         label.setTranslateY(translateY);
     }
 
     public void setUpLinkLabels(Hyperlink hyperlink, int labelSize, int translateX, int translateY)
     {
-        hyperlink.setFont(Font.font("Impact", FontWeight.BOLD, labelSize));
+        hyperlink.setFont(Font.font("Futura", FontWeight.BOLD, labelSize));
         hyperlink.setTranslateX(translateX);
         hyperlink.setTranslateY(translateY);
     }
@@ -61,46 +61,48 @@ public class CreditScene extends Scene
         creditVbox = new VBox();
 
         Label generalThankLabel = new Label();
-        setUpLabels(generalThankLabel, UtilStringStorage.generalThank,  20, 190, 40);
+        setUpLabels(generalThankLabel, UtilStringStorage.generalThank,  27, 160, 30);
+        generalThankLabel.setFont(Font.font("Impact", FontWeight.BOLD, 25));
 
         Label kebabThank = new Label();
-        setUpLabels(kebabThank, UtilStringStorage.kebabThank, 17, 140, 60);
+        setUpLabels(kebabThank, UtilStringStorage.kebabThank, 20, 70, 60);
 
         Label pandaThank = new Label();
-        setUpLabels(pandaThank, UtilStringStorage.pandaThank, 17, 140, 80);
+        setUpLabels(pandaThank, UtilStringStorage.pandaThank, 20, 70, 90);
 
         Label satanThank = new Label();
-        setUpLabels(satanThank, UtilStringStorage.satanThank, 17, 140, 100);
+        setUpLabels(satanThank, UtilStringStorage.satanThank, 20, 70, 120);
 
         Label givrThank = new Label();
-        setUpLabels(givrThank, UtilStringStorage.givrThank, 17, 140, 120);
+        setUpLabels(givrThank, UtilStringStorage.givrThank, 20, 70, 150);
 
         Label yukiThank = new Label();
-        setUpLabels(yukiThank, UtilStringStorage.yukiThank, 17, 140, 140);
+        setUpLabels(yukiThank, UtilStringStorage.yukiThank, 20, 70, 180);
 
         Label darkwestThank = new Label();
-        setUpLabels(darkwestThank, UtilStringStorage.darkwestThank, 17, 140, 160);
+        setUpLabels(darkwestThank, UtilStringStorage.darkwestThank, 20, 70, 200);
 
         Label darkantThank = new Label();
-        setUpLabels(darkantThank, UtilStringStorage.darkantThank, 17, 140, 180);
+        setUpLabels(darkantThank, UtilStringStorage.darkantThank, 20, 70, 230);
 
         Label bestLabel = new Label();
-        setUpLabels(bestLabel, UtilStringStorage.loveLabel, 20, 190, 200);
+        setUpLabels(bestLabel, UtilStringStorage.loveLabel, 25, 140, 260);
 
         addLabelInVbox(generalThankLabel, kebabThank, pandaThank, satanThank, givrThank);
         addLabelInVboxPart2(yukiThank, darkwestThank, darkantThank, bestLabel);
 
         Label linkLabel = new Label();
-        setUpLabels(linkLabel, UtilStringStorage.linkLabel, 20, 700, -80);
+        setUpLabels(linkLabel, UtilStringStorage.linkLabel, 27, 750, -100);
+        linkLabel.setFont(Font.font("Impact", FontWeight.BOLD, 25));
 
         Hyperlink hyperLinkIcon = App.hyperLinkIcon;
-        setUpLinkLabels(hyperLinkIcon, 17, 640, -50);
+        setUpLinkLabels(hyperLinkIcon, 20, 660, -70);
 
         Hyperlink hyperLinkIcon2 = App.hyperLinkIcon2;
-        setUpLinkLabels(hyperLinkIcon2, 17, 640, -30);
+        setUpLinkLabels(hyperLinkIcon2, 20, 660, -50);
 
         Hyperlink hyperlinkBackground = App.hyperLinkBackground;
-        setUpLinkLabels(hyperlinkBackground, 17, 640, -10);
+        setUpLinkLabels(hyperlinkBackground, 20, 660, -30);
 
         creditVbox.getChildren().add(linkLabel);
         creditVbox.getChildren().add(hyperLinkIcon);
@@ -108,6 +110,8 @@ public class CreditScene extends Scene
         creditVbox.getChildren().add(hyperlinkBackground);
 
         pane.setCenter(creditVbox);
+        creditVbox.setTranslateX(100);
+        creditVbox.setTranslateY(50);
 
     }
 

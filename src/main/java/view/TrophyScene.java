@@ -58,7 +58,11 @@ public class TrophyScene extends Scene
         Label nbrOfGoldCupLabel = new Label();
         Label goldCupNumber = new Label();
         goldCupImages.getChildren().add(goldCup);
-        setUpVbox(goldCupImages, nbrOfGoldCupLabel, 10, 25, UtilStringStorage.goldCupTrophy, FileUtil.generalSavesFile, "goldCup", goldCupNumber);
+        if(UtilStringStorage.goldCupTrophy.equals("Coupe d'or :")) {
+            setUpVbox(goldCupImages, nbrOfGoldCupLabel, 5, 25, UtilStringStorage.goldCupTrophy, FileUtil.generalSavesFile, "goldCup", goldCupNumber);
+        } else {
+            setUpVbox(goldCupImages, nbrOfGoldCupLabel, 20, 25, UtilStringStorage.goldCupTrophy, FileUtil.generalSavesFile, "goldCup", goldCupNumber);
+        }
         goldCupImages.getChildren().add(goldCupNumber);
         goldCupImages.setTranslateX(-20);
 
@@ -66,14 +70,22 @@ public class TrophyScene extends Scene
         Label nbrOfSilverCupLabel = new Label();
         Label silverCupNumber = new Label();
         silverCupImages.getChildren().add(silverCup);
-        setUpVbox(silverCupImages, nbrOfSilverCupLabel, -25, 25, UtilStringStorage.silverCupTrophy, FileUtil.generalSavesFile, "silverCup", silverCupNumber);
+        if(UtilStringStorage.silverCupTrophy.equals("Coupe d'argent :")) {
+            setUpVbox(silverCupImages, nbrOfSilverCupLabel, -25, 25, UtilStringStorage.silverCupTrophy, FileUtil.generalSavesFile, "silverCup", silverCupNumber);
+        } else {
+            setUpVbox(silverCupImages, nbrOfSilverCupLabel, 0, 25, UtilStringStorage.silverCupTrophy, FileUtil.generalSavesFile, "silverCup", silverCupNumber);
+        }
         silverCupImages.getChildren().add(silverCupNumber);
 
         VBox bronzeCupImages = new VBox();
         Label nbrOfBronzeCupLabel = new Label();
         Label bronzeCupNumber = new Label();
         bronzeCupImages.getChildren().add(bronzeCup);
-        setUpVbox(bronzeCupImages, nbrOfBronzeCupLabel, -35, 25, UtilStringStorage.bronzeCupTrophy, FileUtil.generalSavesFile, "bronzeCup", bronzeCupNumber);
+        if(UtilStringStorage.bronzeCupTrophy.equals("Coupe de bronze :")) {
+            setUpVbox(bronzeCupImages, nbrOfBronzeCupLabel, -35, 25, UtilStringStorage.bronzeCupTrophy, FileUtil.generalSavesFile, "bronzeCup", bronzeCupNumber);
+        } else {
+            setUpVbox(bronzeCupImages, nbrOfBronzeCupLabel, -5, 25, UtilStringStorage.bronzeCupTrophy, FileUtil.generalSavesFile, "bronzeCup", bronzeCupNumber);
+        }
         bronzeCupImages.getChildren().add(bronzeCupNumber);
 
         gridPane.add(goldCupImages, 0, 0);

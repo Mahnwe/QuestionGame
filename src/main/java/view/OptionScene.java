@@ -38,6 +38,8 @@ public class OptionScene extends Scene {
 
         optionVbox = new VBox();
         pane.setCenter(optionVbox);
+        optionVbox.setTranslateX(100);
+        optionVbox.setTranslateY(50);
 
         createSliderArea();
 
@@ -66,7 +68,7 @@ public class OptionScene extends Scene {
 
     public void stylizeLabel(Label label, int translateY, int translateX)
     {
-        label.setFont(Font.font(OPTION_POLICE_LABEL, FontWeight.EXTRA_BOLD, 17));
+        label.setFont(Font.font(OPTION_POLICE_LABEL, FontWeight.EXTRA_BOLD, 25));
         label.setTextFill(Color.BLACK);
         label.setTranslateY(translateY);
         label.setTranslateX(translateX);
@@ -75,15 +77,15 @@ public class OptionScene extends Scene {
     public void createSliderArea()
     {
         Label volumeLabel = new Label(UtilStringStorage.volumeLabel);
-        stylizeLabel(volumeLabel, 30, 405);
+        stylizeLabel(volumeLabel, 20, 405);
         optionVbox.getChildren().add(volumeLabel);
 
         Button muteButton = new Button();
-        CustomOption.customMuteButton(muteButton, PathUtil.MUTE_ICON, 45, 242);
+        CustomOption.customMuteButton(muteButton, PathUtil.MUTE_ICON, 52, 202);
         optionVbox.getChildren().add(muteButton);
 
         Slider volumeSlider = new Slider(0, 10, 5);
-        CustomOption.customSlider(volumeSlider, 305, 60, 20, 280);
+        CustomOption.customSlider(volumeSlider, 400, 150, 20, 250);
         volumeSlider.setValue(SoundManager.soundVolume);
 
         if(SoundManager.soundVolume == 0.0) {
@@ -102,32 +104,36 @@ public class OptionScene extends Scene {
     public void createButtons()
     {
         VBox englishVbox = new VBox();
-        Label englishLabel = new Label("Choose a language");
-        englishLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 15));
+        Label englishLabel = new Label("English");
+        englishLabel.setFont(Font.font("Futura", FontWeight.BOLD, 20));
+        englishLabel.setTranslateX(60);
+        englishLabel.setTranslateY(10);
 
         engButton = new LanguageButton(PathUtil.ENGLISH_FLAG, UtilStringStorage.englishLanguageTooltip);
 
         englishVbox.getChildren().add(englishLabel);
         englishVbox.getChildren().add(engButton);
-        englishVbox.setTranslateY(65);
+        englishVbox.setTranslateY(95);
         englishVbox.setTranslateX(230);
 
         VBox frenchVbox = new VBox();
-        Label frenchLabel = new Label("Choisissez une langue");
-        frenchLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 15));
+        Label frenchLabel = new Label("Français");
+        frenchLabel.setFont(Font.font("Futura", FontWeight.BOLD, 20));
+        frenchLabel.setTranslateX(60);
+        frenchLabel.setTranslateY(10);
 
         frButton = new LanguageButton(PathUtil.FRENCH_FLAG, UtilStringStorage.frenchLanguageTooltip);
 
         frenchVbox.getChildren().add(frenchLabel);
         frenchVbox.getChildren().add(frButton);
         frenchVbox.setTranslateX(480);
-        frenchVbox.setTranslateY(-32);
+        frenchVbox.setTranslateY(-12);
 
         Label languageLabel = new Label(UtilStringStorage.languageLabel);
-        stylizeLabel(languageLabel, 55, 405);
+        stylizeLabel(languageLabel, 85, 405);
         if(languageLabel.getText().equals("Languages"))
         {
-            stylizeLabel(languageLabel, 55, 395);
+            stylizeLabel(languageLabel, 85, 395);
         }
 
         optionVbox.getChildren().add(languageLabel);
@@ -172,8 +178,8 @@ public class OptionScene extends Scene {
     public void createResetButtonArea()
     {
         Button resetButton = new Button();
-        resetButton.setTranslateY(85);
-        resetButton.setTranslateX(405);
+        resetButton.setTranslateY(115);
+        resetButton.setTranslateX(415);
         CustomOption.setUpTrashButton(resetButton);
         resetButton.setOnAction(event -> {
             Optional<ButtonType> result = confirmAlert.showAndWait();
@@ -196,11 +202,11 @@ public class OptionScene extends Scene {
     public void placeLabelWithTranslation(Label label)
     {
         if(label.getText().equals("Sauvegarde")) {
-            label.setTranslateY(65);
+            label.setTranslateY(95);
             label.setTranslateX(394);
         }
         else {
-            label.setTranslateY(65);
+            label.setTranslateY(95);
             label.setTranslateX(417);
         }
     }

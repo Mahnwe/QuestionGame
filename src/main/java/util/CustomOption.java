@@ -22,8 +22,8 @@ public class CustomOption {
         slider.setTranslateX(translateX);
         slider.setShowTickMarks(true);
         slider.setShowTickLabels(true);
-        slider.setMajorTickUnit(1f);
-        slider.setBlockIncrement(1f);
+        slider.setMajorTickUnit(1);
+        slider.setBlockIncrement(0.1);
     }
 
     public static void customMuteButton(Button button, String pathImage, int translateY, int translateX)
@@ -31,7 +31,7 @@ public class CustomOption {
         IconCreator muteIcon = new IconCreator(pathImage);
         Image muteImage = muteIcon.createImage().getImage();
 
-        button.setPrefSize(30,30);
+        button.setPrefSize(40,40);
         BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
         button.setBackground(new Background(new BackgroundImage(muteImage, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
                 backgroundSize)));
@@ -78,7 +78,7 @@ public class CustomOption {
         IconCreator trashIcon = new IconCreator(PathUtil.TRASH_ICON);
         Image trashImage = trashIcon.createImage().getImage();
 
-        button.setPrefSize(70,70);
+        button.setPrefSize(80,80);
         Tooltip resetTooltip = new Tooltip(UtilStringStorage.resetTooltip);
         button.setTooltip(resetTooltip);
         BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);

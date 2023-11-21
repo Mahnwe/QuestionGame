@@ -178,8 +178,8 @@ public class OptionScene extends Scene {
     public void createResetButtonArea()
     {
         Button resetButton = new Button();
-        resetButton.setTranslateY(115);
-        resetButton.setTranslateX(415);
+        resetButton.setTranslateY(105);
+        resetButton.setTranslateX(410);
         CustomOption.setUpTrashButton(resetButton);
         resetButton.setOnAction(event -> {
             Optional<ButtonType> result = confirmAlert.showAndWait();
@@ -201,13 +201,13 @@ public class OptionScene extends Scene {
 
     public void placeLabelWithTranslation(Label label)
     {
-        if(label.getText().equals("Sauvegarde")) {
-            label.setTranslateY(95);
-            label.setTranslateX(394);
+        if(label.getText().equals("Supprimer sauvegardes")) {
+            label.setTranslateY(85);
+            label.setTranslateX(330);
         }
         else {
-            label.setTranslateY(95);
-            label.setTranslateX(417);
+            label.setTranslateY(85);
+            label.setTranslateX(393);
         }
     }
 

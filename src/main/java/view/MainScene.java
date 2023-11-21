@@ -56,7 +56,7 @@ public class MainScene extends Scene
     public void createPopup()
     {
         playerInfoScene = new PlayerInfoScene(new BorderPane(), player);
-        playerInfoScene = PopUp.createPopup(player, menuPane, questionInterface, stage);
+        playerInfoScene = PopUp.createPopup(player, menuPane, questionInterface);
     }
 
     private void setAnswersButtonListeners()
@@ -92,6 +92,7 @@ public class MainScene extends Scene
         questionInterface = new QuestionInterface(new BorderPane(), gameHandler.getQuestionList().get(gameHandler.getQuestionCount()));
         questionInterface.getQuestionNumber().setText(UtilStringStorage.questionNumber + (gameHandler.getQuestionCount() + 1));
         questionInterface.getQuestionToAsk().setText(questionInterface.getQuestion().getQuestionToAsk());
+        questionInterface.placeQuestionLabelIfNecessary(questionInterface.getQuestionToAsk());
         setAnswersButtonListeners();
         menuPane.setTop(questionInterface.getQuestionNumber());
         menuPane.setCenter(questionInterface);

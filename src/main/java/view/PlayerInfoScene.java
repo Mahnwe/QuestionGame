@@ -31,6 +31,7 @@ public class PlayerInfoScene extends Scene
     private final CornerRadii cornerRadii = new CornerRadii(1.0);
     private final Border border = new Border(new BorderStroke(Color.BLACK,
             BorderStrokeStyle.SOLID, cornerRadii, borderWidths));
+    public static final String POLICE_LABEL = "Futura";
 
     public PlayerInfoScene(BorderPane pane, Player player)
     {
@@ -48,9 +49,10 @@ public class PlayerInfoScene extends Scene
     {
         getPlayerName = new VBox();
         Label askPlayerName = new Label(UtilStringStorage.askPlayerName);
-        askPlayerName.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 15));
+        askPlayerName.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 19));
         askPlayerName.setTextFill(Color.GHOSTWHITE);
         askPlayerName.setTranslateY(40);
+        askPlayerName.setTranslateX(70);
         getPlayerName.getChildren().add(askPlayerName);
         createUserInputArea();
         pane.setCenter(getPlayerName);
@@ -65,6 +67,7 @@ public class PlayerInfoScene extends Scene
     public void createUserInputArea()
     {
         userInputArea = new TextArea();
+        userInputArea.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 19));
         userInputArea.setOnKeyTyped(event -> {
             int maxCharacters = 10;
             if(!userInputArea.getText().isEmpty())
@@ -80,7 +83,9 @@ public class PlayerInfoScene extends Scene
 
         userInputArea.setBorder(border);
         userInputArea.setMaxHeight(50);
-        userInputArea.setTranslateY(60);
+        userInputArea.setMaxWidth(250);
+        userInputArea.setTranslateY(75);
+        userInputArea.setTranslateX(230);
 
         sendButton = new Button(UtilStringStorage.validateButton);
         stylizeSendButton(sendButton);
@@ -92,38 +97,35 @@ public class PlayerInfoScene extends Scene
 
     public void stylizeSendButton(Button sendButton)
     {
-        sendButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 14));
+        sendButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 19));
         sendButton.setDisable(true);
         sendButton.setBorder(border);
         sendButton.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
         sendButton.setTextFill(Color.GHOSTWHITE);
-        sendButton.setMinWidth(80);
-        sendButton.setTranslateY(60);
+        sendButton.setMinWidth(100);
+        sendButton.setTranslateY(115);
+        sendButton.setTranslateX(295);
     }
 
-    public void setOnActionSendButton(BorderPane pane, QuestionInterface questionInterface, Stage stage, Stage popUpStage)
+    public void setOnActionSendButton(BorderPane pane, QuestionInterface questionInterface, Stage popUpStage)
     {
             if(!userInputArea.getText().isEmpty())
             {
                     createPlayerInfoArea();
                     pane.setLeft(playerInfos);
                     questionInterface.setDisable(false);
-                    stage.setMinWidth(1000);
-                    stage.setMinHeight(550);
                     GameTimer.startTimer();
                     popUpStage.close();
             }
     }
 
-    public void setOnKeyTypedSendButton(BorderPane pane, QuestionInterface questionInterface, Stage stage, Stage popUpStage)
+    public void setOnKeyTypedSendButton(BorderPane pane, QuestionInterface questionInterface, Stage popUpStage)
     {
         userInputArea.setOnKeyPressed(keyEvent -> {
             if (keyEvent.getCode().equals(KeyCode.ENTER) && (!userInputArea.getText().substring(0,1).isBlank())) {
                 createPlayerInfoArea();
                 pane.setLeft(playerInfos);
                 questionInterface.setDisable(false);
-                stage.setMinWidth(900);
-                stage.setMinHeight(500);
                 GameTimer.startTimer();
                 popUpStage.close();
             }

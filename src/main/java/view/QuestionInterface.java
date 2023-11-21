@@ -85,8 +85,17 @@ public class QuestionInterface extends BorderPane
             questionToAsk = new Label();
             questionToAsk.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 18));
             questionToAsk.setTextFill(Color.GHOSTWHITE);
-            questionToAsk.setTranslateX(100);
             questionToAsk.setTranslateY(35);
+        }
+    }
+
+    public void placeQuestionLabelIfNecessary(Label questionLabelToPlace)
+    {
+        if(questionLabelToPlace.getText().length() >= 50) {
+            questionLabelToPlace.setTranslateX(100);
+        }
+        else {
+            questionLabelToPlace.setTranslateX(160);
         }
     }
 
@@ -118,6 +127,7 @@ public class QuestionInterface extends BorderPane
         answerButton4.setAnswerButtonOnAction(answerButton4, answerButtonList, validateAnswerButton);
         gridPane.add(answerButton4, 3, 2);
         answerButtonList.add(answerButton4);
+        placeGridPaneWithTextLength();
 
         nextQuestionButton = new Button(UtilStringStorage.nextQuestionButton);
         nextQuestionButton.setFont(Font.font("Futura", FontWeight.BOLD, 17));
@@ -125,6 +135,16 @@ public class QuestionInterface extends BorderPane
         nextQuestionButton.setDisable(true);
         nextQuestionButton.setTranslateY(320);
         nextQuestionButton.setTranslateX(700);
+    }
+
+    public void placeGridPaneWithTextLength()
+    {
+        for (AnswerButton answerButton : answerButtonList) {
+            if (answerButton.getText().length() >= 15) {
+                gridPane.setTranslateX(170);
+                break;
+            }
+        }
     }
 
     public void initGameSpace()
@@ -177,14 +197,16 @@ public class QuestionInterface extends BorderPane
     private void displayAnswer(String answerLabel)
     {
         Label goodResult = new Label(answerLabel);
-        goodResult.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 17));
+        goodResult.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 18));
         goodResult.setTextFill(Color.GHOSTWHITE);
         goodResult.setTranslateY(160);
+        goodResult.setTranslateX(250);
 
         Label explanation = new Label(question.getExplanation());
         explanation.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 15));
         explanation.setTextFill(Color.GHOSTWHITE);
         explanation.setTranslateY(180);
+        explanation.setTranslateX(50);
 
         game.getChildren().add(goodResult);
         game.getChildren().add(explanation);

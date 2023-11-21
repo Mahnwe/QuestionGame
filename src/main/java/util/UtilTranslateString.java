@@ -148,7 +148,6 @@ public class UtilTranslateString {
         UtilStringStorage.languageLabel = engTradFile.getProperty("languageLabel");
         UtilStringStorage.languageTooltip = engTradFile.getProperty("languageTooltip");
         UtilStringStorage.resetLabel = engTradFile.getProperty("resetLabel");
-        UtilStringStorage.resetButton = engTradFile.getProperty("resetButton");
         UtilStringStorage.resetTooltip = engTradFile.getProperty("resetTooltip");
         UtilStringStorage.confirmAlertWindow = engTradFile.getProperty("confirmAlertWindow");
         UtilStringStorage.askConfirmReset = engTradFile.getProperty("askToReset");
@@ -282,7 +281,6 @@ public class UtilTranslateString {
         UtilStringStorage.languageLabel = frTradFile.getProperty("languageLabel");
         UtilStringStorage.languageTooltip = frTradFile.getProperty("languageTooltip");
         UtilStringStorage.resetLabel = frTradFile.getProperty("resetLabel");
-        UtilStringStorage.resetButton = frTradFile.getProperty("resetButton");
         UtilStringStorage.resetTooltip = frTradFile.getProperty("resetTooltip");
         UtilStringStorage.confirmAlertWindow = frTradFile.getProperty("confirmAlertWindow");
         UtilStringStorage.askConfirmReset = frTradFile.getProperty("askToReset");

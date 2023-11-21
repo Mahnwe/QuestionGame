@@ -79,7 +79,7 @@ public class QuestionInterface extends BorderPane
             questionNumber = new Label();
             questionNumber.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 19));
             questionNumber.setTextFill(Color.GHOSTWHITE);
-            questionNumber.setTranslateX(-190);
+            questionNumber.setTranslateX(40);
             questionNumber.setTranslateY(35);
 
             questionToAsk = new Label();
@@ -192,7 +192,8 @@ public class QuestionInterface extends BorderPane
 
     public void showGoodAnswer(AnswerButton button)
     {
-        if(button.getText().equals(question.getGoodAnswer()))
+        String upperGoodAnswer = question.getGoodAnswer().toUpperCase();
+        if(button.getText().equals(upperGoodAnswer))
         {
             button.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
         }

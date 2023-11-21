@@ -93,6 +93,7 @@ public class MainScene extends Scene
         questionInterface.getQuestionNumber().setText(UtilStringStorage.questionNumber + (gameHandler.getQuestionCount() + 1));
         questionInterface.getQuestionToAsk().setText(questionInterface.getQuestion().getQuestionToAsk());
         setAnswersButtonListeners();
+        menuPane.setTop(questionInterface.getQuestionNumber());
         menuPane.setCenter(questionInterface);
         gameHandler.increaseQuestionCount();
     }
@@ -113,7 +114,7 @@ public class MainScene extends Scene
             resultScene.getPlayerResult().setText(UtilStringStorage.playerResult + playerInfoScene.getPlayer().getPlayerScore() + " " + UtilStringStorage.scoreOn + " " + gameHandler.getQuestionCount());
         }
         else if(GameHandler.gameMode.equals(SURVIVAL_MODE)) {
-            resultScene.getPlayerResult().setText(UtilStringStorage.survivalLabel +" "+playerInfoScene.getPlayer().getPlayerScore() + " questions");
+            resultScene.getPlayerResult().setText(UtilStringStorage.survivalLabel +" "+gameHandler.getQuestionCount() + " questions");
         }
     }
 
@@ -124,7 +125,7 @@ public class MainScene extends Scene
                     " | " + UtilStringStorage.timerLabelInfile + " " + GameTimer.getElapsedMinutes() + " " + UtilStringStorage.gameMinutes + " " + GameTimer.getSecondsDisplay() + " " + UtilStringStorage.gameSecondes + "\n");
         }
         else if(GameHandler.gameMode.equals(SURVIVAL_MODE)) {
-            FileUtil.writeInSaveFile(FileUtil.saveFile,  UtilStringStorage.survivalLabelInfile +"  "+ UtilStringStorage.playerNameInfile +" "+ playerInfoScene.getPlayer().getPlayerName() +" | "+ UtilStringStorage.scoreLabelInfile +" "+ playerInfoScene.getPlayer().getPlayerScore()+ " questions"+
+            FileUtil.writeInSaveFile(FileUtil.saveFile,  UtilStringStorage.survivalLabelInfile +"  "+ UtilStringStorage.playerNameInfile +" "+ playerInfoScene.getPlayer().getPlayerName() +" | "+ UtilStringStorage.scoreLabelInfile +" "+ gameHandler.getQuestionCount()+ " questions"+
                     " | " + UtilStringStorage.timerLabelInfile + " " + GameTimer.getElapsedMinutes() + " " + UtilStringStorage.gameMinutes + " " + GameTimer.getSecondsDisplay() + " " + UtilStringStorage.gameSecondes +"\n");
         }
     }

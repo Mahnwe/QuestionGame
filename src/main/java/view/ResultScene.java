@@ -40,6 +40,8 @@ public class ResultScene extends VBox
         this.questionCount = questionCount;
         this.stage = stage;
         gameResult = new VBox();
+        pane.getLeft().setVisible(false);
+        pane.getTop().setVisible(false);
 
         createIcons();
         setUpLabelAndTimer();
@@ -53,38 +55,39 @@ public class ResultScene extends VBox
 
         gameResult.getChildren().add(exitToMenuButton);
         pane.setCenter(gameResult);
+        gameResult.setTranslateY(100);
 
     }
 
     public void stylizeLabel(Label label, int translateX, int translateY) {
         label.setTranslateX(translateX);
         label.setTranslateY(translateY);
-        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 16));
+        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 20));
         label.setTextFill(Color.GHOSTWHITE);
     }
 
     public void checkSurvivalModeResult()
     {
         AchievementManager.notificationAlert = null;
-        if(questionCount >= 20 && questionCount < 30)
+        if(questionCount >= 10 && questionCount < 19)
         {
             achievementManager.survivalModeResult(questionCount, FileUtil.generalSavesFile, achievementManager);
             achievementManager.bronzeCupResult(gameResult, FileUtil.generalSavesFile, achievementManager, bronzeCup);
             FileUtil.storeGeneralSavesFile();
         }
-        if(questionCount >= 30 && questionCount < 50)
+        if(questionCount >= 20 && questionCount < 29)
         {
             achievementManager.survivalModeResult(questionCount, FileUtil.generalSavesFile, achievementManager);
             achievementManager.silverCupResult(gameResult, FileUtil.generalSavesFile, achievementManager, silverCup);
             FileUtil.storeGeneralSavesFile();
         }
-        if(questionCount >= 50)
+        if(questionCount >= 30)
         {
             achievementManager.survivalModeResult(questionCount, FileUtil.generalSavesFile, achievementManager);
             achievementManager.goldCupResult(questionCount, playerFinalScore, gameResult, FileUtil.generalSavesFile, achievementManager, goldCup);
             FileUtil.storeGeneralSavesFile();
         }
-        if(questionCount < 20) {
+        if(questionCount < 10) {
             Label cupLabel = new Label(UtilStringStorage.noSurviveLabel);
             stylizeLabel(cupLabel, 100, 70);
             gameResult.getChildren().add(cupLabel);
@@ -119,7 +122,7 @@ public class ResultScene extends VBox
     public void setUpLabelAndTimer()
     {
         congratsLabel = new Label();
-        stylizeLabel(congratsLabel, 120, 10);
+        stylizeLabel(congratsLabel, 180, 10);
 
         playerResult = new Label();
         stylizeLabel(playerResult, 225, 30);

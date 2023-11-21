@@ -74,17 +74,15 @@ public class OptionScene extends Scene {
 
     public void createSliderArea()
     {
-        Button muteButton;
-        Slider volumeSlider;
         Label volumeLabel = new Label(UtilStringStorage.volumeLabel);
         stylizeLabel(volumeLabel, 30, 405);
         optionVbox.getChildren().add(volumeLabel);
 
-        muteButton = new Button();
+        Button muteButton = new Button();
         CustomOption.customMuteButton(muteButton, PathUtil.MUTE_ICON, 45, 242);
         optionVbox.getChildren().add(muteButton);
 
-        volumeSlider = new Slider(0, 10, 5);
+        Slider volumeSlider = new Slider(0, 10, 5);
         CustomOption.customSlider(volumeSlider, 305, 60, 20, 280);
         volumeSlider.setValue(SoundManager.soundVolume);
 

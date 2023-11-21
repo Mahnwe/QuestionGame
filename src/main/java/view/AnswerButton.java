@@ -14,7 +14,7 @@ public class AnswerButton extends Button
 
     private final BorderWidths borderWidths = new BorderWidths(2.0);
     private final CornerRadii cornerRadii = new CornerRadii(5.0);
-    private final Border border = new Border(new BorderStroke(Color.LIGHTBLUE,
+    private final Border border = new Border(new BorderStroke(Color.BLACK,
             BorderStrokeStyle.SOLID, cornerRadii, borderWidths));
     private boolean isClicked;
     public AnswerButton(boolean buttonIsClicked, String text)

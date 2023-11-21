@@ -136,6 +136,7 @@ public class PlayerInfoScene extends Scene
     public void createPlayerInfoArea()
     {
         playerInfos = new VBox();
+        playerInfos.setMinWidth(230);
         playerInfos.setTranslateY(200);
 
         player.setPlayerName(userInputArea.getText());
@@ -155,7 +156,6 @@ public class PlayerInfoScene extends Scene
             stylizeLabel(playerLivesLabel);
             playerInfos.getChildren().add(createStatArea(playerLivesLabel));
         }
-        playerInfos.setMinWidth(230);
 
         createSliderArea();
 
@@ -170,8 +170,6 @@ public class PlayerInfoScene extends Scene
 
     public void createSliderArea()
     {
-        Button muteButton;
-
         Label volumeLabel = new Label(UtilStringStorage.volumeLabel);
         volumeLabel.setTranslateY(120);
         volumeLabel.setTranslateX(80);
@@ -179,23 +177,23 @@ public class PlayerInfoScene extends Scene
         volumeLabel.setTextFill(Color.GHOSTWHITE);
         playerInfos.getChildren().add(volumeLabel);
 
-        muteButton = new Button();
+        Button muteButton = new Button();
         CustomOption.customMuteButton(muteButton, PathUtil.WHITE_MUTE_ICON, 185, 105);
         playerInfos.getChildren().add(muteButton);
 
         Slider volumeSlider = new Slider(0, 10, 5);
-        CustomOption.customSlider(volumeSlider, 250, 40, 105, 0);
-
+        CustomOption.customSlider(volumeSlider, 245, 50, 105, 0);
+        volumeSlider.setValue(SoundManager.soundVolume);
         if(SoundManager.soundVolume == 0.0) {
-            VolumeInGameHandler.isMute = true;
+            SoundManager.isMute = true;
             volumeSlider.setDisable(true);
         }
-        volumeSlider.setValue(SoundManager.soundVolume);
-        VolumeInGameHandler.setUpMuteButton(muteButton, volumeSlider);
+
+        SoundManager.setUpMuteButtonInGame(muteButton, volumeSlider);
         playerInfos.getChildren().add(volumeSlider);
-        volumeSlider.setOnDragDetected(event -> VolumeInGameHandler.setVolumeFromSlider(volumeSlider.getValue()));
-        volumeSlider.setOnMouseClicked(event -> VolumeInGameHandler.setVolumeFromSlider(volumeSlider.getValue()));
-        volumeSlider.setOnMouseReleased(event -> VolumeInGameHandler.setVolumeFromSlider(volumeSlider.getValue()));
+        volumeSlider.setOnDragDetected(event -> SoundManager.setVolumeFromSliderInGame(volumeSlider.getValue()));
+        volumeSlider.setOnMouseClicked(event -> SoundManager.setVolumeFromSliderInGame(volumeSlider.getValue()));
+        volumeSlider.setOnMouseReleased(event -> SoundManager.setVolumeFromSliderInGame(volumeSlider.getValue()));
 
     }
     public void increaseScore()

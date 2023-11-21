@@ -51,7 +51,7 @@ public class AchievementManager
         Achievement survivalAchievement30 = new Achievement(30, false);
         achievementsList.add(survivalAchievement30);
 
-        Achievement survivalAchievement50 = new Achievement(50, false);
+        Achievement survivalAchievement50 = new Achievement(40, false);
         achievementsList.add(survivalAchievement50);
 
         Achievement secretAchievement = new Achievement(9, false);
@@ -98,7 +98,7 @@ public class AchievementManager
         {
             checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "survivalScore30", achievementsList.get(7).getCondition(), 7);
         }
-        if(questionCount >= 50)
+        if(questionCount >= 40)
         {
             checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "survivalScore50", achievementsList.get(8).getCondition(), 8);
         }
@@ -190,7 +190,7 @@ public class AchievementManager
     {
         label.setTranslateX(translateX);
         label.setTranslateY(translateY);
-        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 16));
+        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 20));
         label.setTextFill(Color.GHOSTWHITE);
     }
 

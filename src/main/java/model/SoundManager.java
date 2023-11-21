@@ -5,6 +5,7 @@ import javafx.scene.control.Slider;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import view.App;
+import view.MainScene;
 import view.ResultScene;
 
 import java.io.File;
@@ -54,10 +55,10 @@ public class SoundManager {
     {
         button.setOnAction(event -> {
             if (!isMute) {
-                SoundManager.soundVolume = 0.0;
-                SoundManager.handleMenuSceneVolume(App.menuMusicToStop, 0.0);
+                soundVolume = 0.0;
+                handleMenuSceneVolume(App.menuMusicToStop, 0.0);
                 if(ResultScene.returnToMenuMusic != null) {
-                    SoundManager.handleMenuSceneVolume(ResultScene.returnToMenuMusic, 0.0);
+                    handleMenuSceneVolume(ResultScene.returnToMenuMusic, 0.0);
                 }
                 isMute = true;
                 volumeSlider.setDisable(true);
@@ -72,8 +73,31 @@ public class SoundManager {
 
     public static void setVolumeFromSlider(Double sliderValue)
     {
-        SoundManager.handleMenuSceneVolume(App.menuMusicToStop, sliderValue);
-        SoundManager.setSoundVolume(sliderValue);
+        handleMenuSceneVolume(App.menuMusicToStop, sliderValue);
+        setSoundVolume(sliderValue);
+    }
+
+    public static void setUpMuteButtonInGame(Button button, Slider volumeSlider)
+    {
+        button.setOnAction(event -> {
+            if (!isMute) {
+                soundVolume = 0.0;
+                handleMenuSceneVolume(MainScene.inGameMusicToStop, 0.0);
+                isMute = true;
+                volumeSlider.setDisable(true);
+            }
+            else {
+                volumeSlider.setDisable(false);
+                setVolumeFromSliderInGame(volumeSlider.getValue());
+                isMute = false;
+            }
+        });
+    }
+
+    public static void setVolumeFromSliderInGame(Double sliderValue)
+    {
+        handleMenuSceneVolume(MainScene.inGameMusicToStop, sliderValue);
+        setSoundVolume(sliderValue);
     }
 
     public static void setSoundVolume(Double soundVolume) {

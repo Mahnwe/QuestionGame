@@ -174,10 +174,10 @@ public class MenuScene extends Scene
         VBox selectModeArea = new VBox();
 
         Label chooseMode = new Label(UtilStringStorage.chooseMode);
-        chooseMode.setFont(Font.font("Impact", FontWeight.EXTRA_BOLD, 25));
+        chooseMode.setFont(Font.font("Impact", FontWeight.EXTRA_BOLD, 28));
         chooseMode.setTextFill(Color.BLACK);
-        chooseMode.setTranslateX(270);
-        chooseMode.setTranslateY(95);
+        chooseMode.setTranslateX(245);
+        chooseMode.setTranslateY(75);
         if(chooseMode.getText().equals("Choose your game mod"))
         {
             chooseMode.setTranslateX(295);
@@ -196,12 +196,12 @@ public class MenuScene extends Scene
         launchGameButton = new Button(UtilStringStorage.launchGameButton);
         CustomOption.customLaunchButton(launchGameButton);
 
-        ImageView gifImageView = GifCreator.createVibeGif(60, 80);
-        ImageView gifImageView2 = GifCreator.createVibeGif(640, -70);
+        ImageView gifImageView = GifCreator.createVibeGif(60, 70);
+        ImageView gifImageView2 = GifCreator.createVibeGif(640, -80);
 
         DeveloperVbox developerVbox = new DeveloperVbox();
         developerVbox.setTranslateX(353);
-        developerVbox.setTranslateY(86);
+        developerVbox.setTranslateY(77);
 
         selectModeArea.getChildren().add(chooseMode);
         selectModeArea.getChildren().add(comboBox);

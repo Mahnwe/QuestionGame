@@ -122,7 +122,7 @@ public class ResultScene extends VBox
     public void setUpLabelAndTimer()
     {
         congratsLabel = new Label();
-        stylizeLabel(congratsLabel, 180, 10);
+        stylizeLabel(congratsLabel, 50, 10);
 
         playerResult = new Label();
         stylizeLabel(playerResult, 225, 30);

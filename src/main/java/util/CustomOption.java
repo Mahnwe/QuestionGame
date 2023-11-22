@@ -42,19 +42,19 @@ public class CustomOption {
 
     public static void customLaunchButton(Button button)
     {
-        button.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 25));
-        button.setTranslateX(325);
-        button.setTranslateY(230);
+        button.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 27));
+        button.setTranslateX(320);
+        button.setTranslateY(195);
         setGlowEffectOnButton(button);
     }
 
     public static void customComboBox(ComboBox<String> comboBox)
     {
-        comboBox.setStyle("-fx-font: 25px \"Verdana\"");
+        comboBox.setStyle("-fx-font: 28px \"Futura\"");
         comboBox.setMinHeight(50);
         comboBox.setMinWidth(150);
         comboBox.setTranslateX(282);
-        comboBox.setTranslateY(185);
+        comboBox.setTranslateY(140);
         comboBox.setOnMouseEntered(event -> comboBox.setEffect(glow));
         comboBox.setOnMouseExited(event -> comboBox.setEffect(null));
     }

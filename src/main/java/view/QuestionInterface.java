@@ -200,7 +200,7 @@ public class QuestionInterface extends BorderPane
         goodResult.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 18));
         goodResult.setTextFill(Color.GHOSTWHITE);
         goodResult.setTranslateY(160);
-        goodResult.setTranslateX(250);
+        goodResult.setTranslateX(330);
 
         Label explanation = new Label(question.getExplanation());
         explanation.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 15));

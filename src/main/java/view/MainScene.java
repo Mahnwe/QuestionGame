@@ -90,10 +90,13 @@ public class MainScene extends Scene
     public void createNewQuestionInterface()
     {
         questionInterface = new QuestionInterface(new BorderPane(), gameHandler.getQuestionList().get(gameHandler.getQuestionCount()));
+
         questionInterface.getQuestionNumber().setText(UtilStringStorage.questionNumber + (gameHandler.getQuestionCount() + 1));
         questionInterface.getQuestionToAsk().setText(questionInterface.getQuestion().getQuestionToAsk());
         questionInterface.placeQuestionLabelIfNecessary(questionInterface.getQuestionToAsk());
+
         setAnswersButtonListeners();
+
         menuPane.setTop(questionInterface.getQuestionNumber());
         menuPane.setCenter(questionInterface);
         gameHandler.increaseQuestionCount();

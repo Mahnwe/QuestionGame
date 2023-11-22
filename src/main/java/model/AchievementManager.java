@@ -51,8 +51,8 @@ public class AchievementManager
         Achievement survivalAchievement30 = new Achievement(30, false);
         achievementsList.add(survivalAchievement30);
 
-        Achievement survivalAchievement50 = new Achievement(40, false);
-        achievementsList.add(survivalAchievement50);
+        Achievement survivalAchievement40 = new Achievement(40, false);
+        achievementsList.add(survivalAchievement40);
 
         Achievement secretAchievement = new Achievement(9, false);
         achievementsList.add(secretAchievement);

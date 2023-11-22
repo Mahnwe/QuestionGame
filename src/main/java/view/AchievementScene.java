@@ -24,15 +24,15 @@ public class AchievementScene extends Scene
     private GridPane gridPane;
     private final BorderPane takeMultiPane;
     private final AchievementManager achievementManager;
-    private Label goldCupAchievementInfo;
-    private Label silverCupAchievementInfo;
-    private Label bronzeCupAchievementInfo;
-    private Label perfectScoreAchievementInfo;
-    private Label perfectScoreAchievement15Info;
-    private Label perfectScoreAchievement20Info;
-    private Label survivalAchievement20Info;
-    private Label survivalAchievement30Info;
-    private Label survivalAchievement50Info;
+    private final Label goldCupAchievementInfo = new Label();
+    private final Label silverCupAchievementInfo = new Label();
+    private final Label bronzeCupAchievementInfo = new Label();
+    private final Label perfectScoreAchievementInfo= new Label();
+    private final Label perfectScoreAchievement15Info= new Label();
+    private final Label perfectScoreAchievement20Info= new Label();
+    private final Label survivalAchievement20Info= new Label();
+    private final Label survivalAchievement30Info= new Label();
+    private final Label survivalAchievement40Info = new Label();
     private Label secretAchievementInfo;
     private Label secretAchievementLabel;
 
@@ -48,15 +48,24 @@ public class AchievementScene extends Scene
 
         createGridPane();
 
-        createGoldAchievementArea();
-        createSilverAchievementArea();
-        createBronzeAchievementArea();
-        createPerfectScore10Area();
-        createPerfectScore15Area();
-        createPerfectScore20Area();
-        createSurvive20AchievementArea();
-        createSurvive30AchievementArea();
-        createSurvive50AchievementArea();
+        createAchievementArea(UtilStringStorage.goldCupAchievementDescription, goldCupAchievementInfo, 0, 0, 0);
+
+        createAchievementArea(UtilStringStorage.silverCupAchievementDescription, silverCupAchievementInfo, 1, 1, 0);
+
+        createAchievementArea(UtilStringStorage.bronzeCupAchievementDescription, bronzeCupAchievementInfo, 2, 2,0);
+
+        createAchievementArea(UtilStringStorage.perfectScore10Achievement, perfectScoreAchievementInfo, 3, 0, 1);
+
+        createAchievementArea(UtilStringStorage.perfectScore15Achievement, perfectScoreAchievement15Info, 4, 1, 1);
+
+        createAchievementArea(UtilStringStorage.perfectScore20Achievement, perfectScoreAchievement20Info, 5, 2, 1);
+
+        createAchievementArea(UtilStringStorage.survivalAchievement20Description, survivalAchievement20Info, 6, 0, 2);
+
+        createAchievementArea(UtilStringStorage.survivalAchievement30Description, survivalAchievement30Info, 7, 1, 2);
+
+        createAchievementArea(UtilStringStorage.survivalAchievement40Description, survivalAchievement40Info, 8, 2, 2);
+
         createSecretAchievementArea();
         checkAchievements();
 
@@ -104,92 +113,13 @@ public class AchievementScene extends Scene
         returnButton.setOnAction(event -> backToMainMenu());
     }
 
-    public void createGoldAchievementArea()
+    public void createAchievementArea(String achievementDescription, Label achievementInfo, int achievementIndex, int gridColumn, int gridRow)
     {
-        VBox goldCupAchievementVBox = new VBox();
-        Label goldCupAchievementLabel = new Label();
-        goldCupAchievementLabel.setText(UtilStringStorage.goldCupAchievementDescription);
-        goldCupAchievementInfo = new Label();
-        AchievementVbox.setAchievementVbox(goldCupAchievementVBox, goldCupAchievementLabel, achievementManager, 0, goldCupAchievementInfo);
-        gridPane.add(goldCupAchievementVBox, 0, 0);
-    }
-    public void createSilverAchievementArea()
-    {
-        VBox silverCupAchievementVBox = new VBox();
-        Label silverCupAchievementLabel = new Label();
-        silverCupAchievementLabel.setText(UtilStringStorage.silverCupAchievementDescription);
-        silverCupAchievementInfo = new Label();
-        AchievementVbox.setAchievementVbox(silverCupAchievementVBox, silverCupAchievementLabel, achievementManager, 1, silverCupAchievementInfo);
-        gridPane.add(silverCupAchievementVBox, 1, 0);
-    }
-
-    public void createBronzeAchievementArea()
-    {
-        VBox bronzeCupAchievementVBox = new VBox();
-        Label bronzeCupAchievementLabel = new Label();
-        bronzeCupAchievementLabel.setText(UtilStringStorage.bronzeCupAchievementDescription);
-        bronzeCupAchievementInfo = new Label();
-        AchievementVbox.setAchievementVbox(bronzeCupAchievementVBox, bronzeCupAchievementLabel, achievementManager, 2, bronzeCupAchievementInfo);
-        gridPane.add(bronzeCupAchievementVBox, 2, 0);
-    }
-
-    public void createPerfectScore10Area()
-    {
-        VBox perfectScoreAchievementVBox = new VBox();
-        Label perfectScoreAchievementLabel = new Label();
-        perfectScoreAchievementLabel.setText(UtilStringStorage.perfectScore10Achievement);
-        perfectScoreAchievementInfo = new Label();
-        AchievementVbox.setAchievementVbox(perfectScoreAchievementVBox, perfectScoreAchievementLabel, achievementManager, 3, perfectScoreAchievementInfo);
-        gridPane.add(perfectScoreAchievementVBox, 0, 1);
-    }
-
-    public void createPerfectScore15Area()
-    {
-        VBox perfectScoreAchievement15 = new VBox();
-        Label perfectScoreAchievement15Label = new Label();
-        perfectScoreAchievement15Label.setText(UtilStringStorage.perfectScore15Achievement);
-        perfectScoreAchievement15Info = new Label();
-        AchievementVbox.setAchievementVbox(perfectScoreAchievement15, perfectScoreAchievement15Label, achievementManager, 4, perfectScoreAchievement15Info);
-        gridPane.add(perfectScoreAchievement15, 1, 1);
-    }
-
-    public void createPerfectScore20Area()
-    {
-        VBox perfectScoreAchievement20 = new VBox();
-        Label perfectScoreAchievement20Label = new Label();
-        perfectScoreAchievement20Label.setText(UtilStringStorage.perfectScore20Achievement);
-        perfectScoreAchievement20Info = new Label();
-        AchievementVbox.setAchievementVbox(perfectScoreAchievement20, perfectScoreAchievement20Label, achievementManager, 5, perfectScoreAchievement20Info);
-        gridPane.add(perfectScoreAchievement20, 2, 1);
-    }
-
-    public void createSurvive20AchievementArea()
-    {
-        VBox survive20AchievementVBox = new VBox();
-        Label survive20AchievementLabel = new Label();
-        survive20AchievementLabel.setText(UtilStringStorage.survivalAchievement20Description);
-        survivalAchievement20Info = new Label();
-        AchievementVbox.setAchievementVbox(survive20AchievementVBox, survive20AchievementLabel, achievementManager, 6, survivalAchievement20Info);
-        gridPane.add(survive20AchievementVBox, 0, 2);
-    }
-    public void createSurvive30AchievementArea()
-    {
-        VBox survive30AchievementVBox = new VBox();
-        Label survive30AchievementLabel = new Label();
-        survive30AchievementLabel.setText(UtilStringStorage.survivalAchievement30Description);
-        survivalAchievement30Info = new Label();
-        AchievementVbox.setAchievementVbox(survive30AchievementVBox, survive30AchievementLabel, achievementManager, 7, survivalAchievement30Info);
-        gridPane.add(survive30AchievementVBox, 1, 2);
-    }
-
-    public void createSurvive50AchievementArea()
-    {
-        VBox survive50AchievementVBox = new VBox();
-        Label survive50AchievementLabel = new Label();
-        survive50AchievementLabel.setText(UtilStringStorage.survivalAchievement50Description);
-        survivalAchievement50Info = new Label();
-        AchievementVbox.setAchievementVbox(survive50AchievementVBox, survive50AchievementLabel, achievementManager, 8, survivalAchievement50Info);
-        gridPane.add(survive50AchievementVBox, 2, 2);
+        VBox achievementVbox = new VBox();
+        Label achievementLabel = new Label();
+        achievementLabel.setText(achievementDescription);
+        AchievementVbox.setAchievementVbox(achievementVbox, achievementLabel, achievementManager, achievementIndex, achievementInfo);
+        gridPane.add(achievementVbox, gridColumn, gridRow);
     }
 
     public void createSecretAchievementArea()
@@ -222,7 +152,7 @@ public class AchievementScene extends Scene
 
         checkPropertyKeyNumber(FileUtil.generalSavesFile, "survivalScore20", 6, survivalAchievement20Info);
         checkPropertyKeyNumber(FileUtil.generalSavesFile, "survivalScore30", 7, survivalAchievement30Info);
-        checkPropertyKeyNumber(FileUtil.generalSavesFile, "survivalScore50", 8, survivalAchievement50Info);
+        checkPropertyKeyNumber(FileUtil.generalSavesFile, "survivalScore50", 8, survivalAchievement40Info);
 
         int checkNbrOfAchievementUnlock = checkSecretAchievement();
         achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(9), checkNbrOfAchievementUnlock);

@@ -17,6 +17,7 @@ public class DeveloperVbox extends VBox {
         ImageView devLurkImage = IconCreator.createDevImage();
 
         Label nameLabel = new Label("Manawé Games");
+
         nameLabel.setFont(Font.font(DEV_LABEL, FontWeight.EXTRA_BOLD, 18));
         nameLabel.setTextFill(Color.GHOSTWHITE);
         nameLabel.setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY)));

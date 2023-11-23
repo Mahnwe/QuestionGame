@@ -18,7 +18,6 @@ public class ConfirmAlert extends Alert {
     public ConfirmAlert(AlertType alertType)
     {
         super(alertType);
-        modifyConfirmAlert();
     }
 
     public void modifyConfirmAlert()

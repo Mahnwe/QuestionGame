@@ -27,6 +27,11 @@ public class AchievementManager
 
     public AchievementManager()
     {
+        addAchievementsToAchievementManager();
+    }
+
+    public void addAchievementsToAchievementManager()
+    {
         Achievement goldCupAchievement = new Achievement(3, false);
         achievementsList.add(goldCupAchievement);
 
@@ -56,23 +61,22 @@ public class AchievementManager
 
         Achievement secretAchievement = new Achievement(9, false);
         achievementsList.add(secretAchievement);
-
     }
 
     public void checkIfAchievementIsUnlock(Achievement achievement, int numberToCompareWithCondition)
     {
         if (!achievement.isUnlock() && achievement.getCondition() <= numberToCompareWithCondition) {
             achievement.setUnlock(true);
-            achievement.getLockImageView().setImage(achievement.getUnlockImageView().getImage());
+            achievement.getAchievementImage().setImage(achievement.getUnlockImageView().getImage());
             notificationAlert = new NotificationAlert(Alert.AlertType.INFORMATION);
         }
         if(achievement.isUnlock() && achievement.getCondition() <= numberToCompareWithCondition) {
             achievement.setUnlock(true);
-            achievement.getLockImageView().setImage(achievement.getUnlockImageView().getImage());
+            achievement.getAchievementImage().setImage(achievement.getUnlockImageView().getImage());
         }
         else {
             achievement.setUnlock(false);
-            achievement.getLockImageView().setImage(achievement.getLockImageView().getImage());
+            achievement.getAchievementImage().setImage(achievement.getLockImageView().getImage());
         }
     }
     public void checkPerfectScoreAchievement(AchievementManager achievementManager, int playerFinalScore, Properties generalSavesFile, String propertyKey, int numberToCompare, int achievementIndex)

@@ -19,7 +19,7 @@ public class PlayerInfoScene extends Scene
 {
     private VBox getPlayerName;
     private Button sendButton;
-    private TextArea userInputArea;
+    private CustomTextArea userInputArea;
     private final BorderPane pane;
 
     private VBox playerInfos;
@@ -66,30 +66,11 @@ public class PlayerInfoScene extends Scene
 
     public void createUserInputArea()
     {
-        userInputArea = new TextArea();
-        userInputArea.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 19));
-        userInputArea.setOnKeyTyped(event -> {
-            int maxCharacters = 10;
-            if(!userInputArea.getText().isEmpty())
-            {
-                sendButton.setDisable(false);
-            }
-            if (userInputArea.getText().length() > maxCharacters)
-            {
-                userInputArea.deletePreviousChar();
-            }
-
-        });
-
-        userInputArea.setBorder(border);
-        userInputArea.setMaxHeight(50);
-        userInputArea.setMaxWidth(250);
-        userInputArea.setTranslateY(75);
-        userInputArea.setTranslateX(230);
-
         sendButton = new Button(UtilStringStorage.validateButton);
         stylizeSendButton(sendButton);
 
+        userInputArea = new CustomTextArea(sendButton);
+        userInputArea.setBorder(border);
 
         getPlayerName.getChildren().add(userInputArea);
         getPlayerName.getChildren().add(sendButton);

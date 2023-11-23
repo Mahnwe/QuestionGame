@@ -43,11 +43,53 @@ public class AchievementScene extends Scene
         scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
         scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         scrollPane.setFitToWidth(true);
+
         this.stage = stage;
         this.achievementManager = achievementManager;
 
-        createGridPane();
+        BorderPane multiPane = new BorderPane();
 
+        createTitle(multiPane);
+        createGridPane();
+        putAchievementsInGridPane();
+        createSecretAchievementArea();
+        checkAchievements();
+
+        multiPane.setMinHeight(750);
+        multiPane.setCenter(gridPane);
+
+        takeMultiPane = new BorderPane();
+        takeMultiPane.setCenter(multiPane);
+        multiPane.setTranslateX(120);
+        multiPane.setTranslateY(50);
+
+        scrollPane.setContent(takeMultiPane);
+
+        createReturnButton();
+        createBackground();
+    }
+
+    public void createTitle(BorderPane multiPane)
+    {
+        Label achievementLabel = new Label(UtilStringStorage.achievementLabel);
+        achievementLabel.setFont(Font.font("Impact", FontWeight.BOLD, 30));
+        multiPane.setTop(achievementLabel);
+        achievementLabel.setTranslateX(400);
+        achievementLabel.setTranslateY(5);
+    }
+
+    public void createGridPane()
+    {
+        gridPane = new GridPane();
+        gridPane.setTranslateY(60);
+        gridPane.setHgap(30);
+        gridPane.setVgap(40);
+        gridPane.addColumn(3);
+        gridPane.addRow(3);
+    }
+
+    public void putAchievementsInGridPane()
+    {
         createAchievementArea(UtilStringStorage.goldCupAchievementDescription, goldCupAchievementInfo, 0, 0, 0);
 
         createAchievementArea(UtilStringStorage.silverCupAchievementDescription, silverCupAchievementInfo, 1, 1, 0);
@@ -65,37 +107,6 @@ public class AchievementScene extends Scene
         createAchievementArea(UtilStringStorage.survivalAchievement30Description, survivalAchievement30Info, 7, 1, 2);
 
         createAchievementArea(UtilStringStorage.survivalAchievement40Description, survivalAchievement40Info, 8, 2, 2);
-
-        createSecretAchievementArea();
-        checkAchievements();
-
-        BorderPane multiPane = new BorderPane();
-        multiPane.setMinHeight(750);
-        takeMultiPane = new BorderPane();
-
-        Label achievementLabel = new Label(UtilStringStorage.achievementLabel);
-        achievementLabel.setFont(Font.font("Impact", FontWeight.BOLD, 30));
-        multiPane.setTop(achievementLabel);
-        achievementLabel.setTranslateX(400);
-        achievementLabel.setTranslateY(5);
-        multiPane.setCenter(gridPane);
-        takeMultiPane.setCenter(multiPane);
-        scrollPane.setContent(takeMultiPane);
-        multiPane.setTranslateX(120);
-        multiPane.setTranslateY(50);
-
-        createReturnButton();
-        createBackground();
-    }
-
-    public void createGridPane()
-    {
-        gridPane = new GridPane();
-        gridPane.setTranslateY(60);
-        gridPane.setHgap(30);
-        gridPane.setVgap(40);
-        gridPane.addColumn(3);
-        gridPane.addRow(3);
     }
 
     public void createBackground()

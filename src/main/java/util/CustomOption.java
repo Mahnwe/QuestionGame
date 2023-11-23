@@ -61,9 +61,9 @@ public class CustomOption {
 
     public static void customExitToMenuButton(Button button)
     {
-        button.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 16));
+        button.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 20));
         button.setTranslateY(160);
-        button.setTranslateX(260);
+        button.setTranslateX(250);
         setGlowEffectOnButton(button);
     }
 

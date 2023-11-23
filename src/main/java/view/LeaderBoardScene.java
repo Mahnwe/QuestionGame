@@ -65,10 +65,10 @@ public class LeaderBoardScene extends Scene
 
         Label leaderBoardArea = new Label();
 
-        leaderBoardArea.setTranslateX(280);
         leaderBoardArea.setText(String.valueOf(stringBuilder));
         leaderBoardArea.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 17));
         leaderBoardArea.setTextFill(Color.BLACK);
+        leaderBoardArea.setTranslateX(260);
 
         Button eraseSaveFileButton = new Button();
 

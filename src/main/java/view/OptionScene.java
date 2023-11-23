@@ -35,6 +35,7 @@ public class OptionScene extends Scene {
         pane.setPrefHeight(750);
         pane.setPrefWidth(1200);
         this.confirmAlert = new ConfirmAlert(Alert.AlertType.CONFIRMATION);
+        confirmAlert.modifyConfirmAlert();
 
         optionVbox = new VBox();
         pane.setCenter(optionVbox);

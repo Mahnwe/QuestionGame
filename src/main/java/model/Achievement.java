@@ -8,6 +8,7 @@ public class Achievement
 {
     private final int condition;
     private boolean isUnlock;
+    private final ImageView achievementImage;
     private ImageView lockImageView;
     private ImageView unlockImageView;
 
@@ -16,6 +17,7 @@ public class Achievement
         createIcons();
         this.condition = condition;
         this.isUnlock = isUnlock;
+        this.achievementImage = new ImageView();
     }
 
     public void createIcons()
@@ -50,5 +52,9 @@ public class Achievement
 
     public void setUnlock(boolean unlock) {
         isUnlock = unlock;
+    }
+
+    public ImageView getAchievementImage() {
+        return achievementImage;
     }
 }

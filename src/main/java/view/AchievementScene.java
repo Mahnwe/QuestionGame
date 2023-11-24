@@ -60,7 +60,7 @@ public class AchievementScene extends Scene
 
         takeMultiPane = new BorderPane();
         takeMultiPane.setCenter(multiPane);
-        multiPane.setTranslateX(120);
+        multiPane.setTranslateX(70);
         multiPane.setTranslateY(50);
 
         scrollPane.setContent(takeMultiPane);

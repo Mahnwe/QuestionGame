@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import model.*;
@@ -91,13 +92,17 @@ public class MainScene extends Scene
     {
         questionInterface = new QuestionInterface(new BorderPane(), gameHandler.getQuestionList().get(gameHandler.getQuestionCount()));
 
+        VBox infoQuestionVbox = new VBox();
         questionInterface.getQuestionNumber().setText(UtilStringStorage.questionNumber + (gameHandler.getQuestionCount() + 1));
+        questionInterface.getQuestionCategory().setText(questionInterface.getQuestion().getCategory());
         questionInterface.getQuestionToAsk().setText(questionInterface.getQuestion().getQuestionToAsk());
         questionInterface.placeQuestionLabelIfNecessary(questionInterface.getQuestionToAsk());
+        infoQuestionVbox.getChildren().add(questionInterface.getQuestionNumber());
+        infoQuestionVbox.getChildren().add(questionInterface.getQuestionCategory());
 
         setAnswersButtonListeners();
 
-        menuPane.setTop(questionInterface.getQuestionNumber());
+        menuPane.setTop(infoQuestionVbox);
         menuPane.setCenter(questionInterface);
         gameHandler.increaseQuestionCount();
     }

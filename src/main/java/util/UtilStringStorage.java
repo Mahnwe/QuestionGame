@@ -14,6 +14,33 @@ public class UtilStringStorage
     public static String yesButton = "";
     public static String noButton = "";
 
+    // QUESTIONS CATEGORY
+    public static String geography = "";
+    public static String historia = "";
+    public static String linguistic = "";
+    public static String animals = "";
+    public static String insolite = "";
+    public static String paleontology = "";
+    public static String videoGames = "";
+    public static String cinema = "";
+    public static String space = "";
+    public static String plants = "";
+    public static String music = "";
+    public static String literature = "";
+    public static String humanBody = "";
+    public static String records = "";
+    public static String culture = "";
+    public static String law = "";
+    public static String mythology = "";
+    public static String society = "";
+    public static String internet = "";
+    public static String flags = "";
+    public static String sports = "";
+    public static String painting = "";
+    public static String minerals = "";
+    public static String nature = "";
+    public static String invention = "";
+
     // ACHIEVEMENTS
     public static String achievementLabel = "";
     public static String goldCupAchievementDescription = "";

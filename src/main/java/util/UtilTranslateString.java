@@ -51,6 +51,33 @@ public class UtilTranslateString {
         UtilStringStorage.yesButton = engTradFile.getProperty("yesButton");
         UtilStringStorage.noButton = engTradFile.getProperty("noButton");
 
+        // QUESTIONS CATEGORIES
+        UtilStringStorage.geography = engTradFile.getProperty("geography");
+        UtilStringStorage.historia = engTradFile.getProperty("historia");
+        UtilStringStorage.linguistic = engTradFile.getProperty("linguistic");
+        UtilStringStorage.animals = engTradFile.getProperty("animals");
+        UtilStringStorage.insolite = engTradFile.getProperty("insolite");
+        UtilStringStorage.paleontology = engTradFile.getProperty("paleontology");
+        UtilStringStorage.videoGames = engTradFile.getProperty("videoGames");
+        UtilStringStorage.cinema = engTradFile.getProperty("cinema");
+        UtilStringStorage.space = engTradFile.getProperty("space");
+        UtilStringStorage.plants = engTradFile.getProperty("plants");
+        UtilStringStorage.music = engTradFile.getProperty("music");
+        UtilStringStorage.literature = engTradFile.getProperty("literature");
+        UtilStringStorage.humanBody = engTradFile.getProperty("humanBody");
+        UtilStringStorage.records = engTradFile.getProperty("record");
+        UtilStringStorage.culture = engTradFile.getProperty("culture");
+        UtilStringStorage.law =engTradFile.getProperty("law");
+        UtilStringStorage.mythology = engTradFile.getProperty("mythology");
+        UtilStringStorage.society = engTradFile.getProperty("society");
+        UtilStringStorage.internet = engTradFile.getProperty("internet");
+        UtilStringStorage.flags = engTradFile.getProperty("flags");
+        UtilStringStorage.sports = engTradFile.getProperty("sports");
+        UtilStringStorage.painting = engTradFile.getProperty("painting");
+        UtilStringStorage.minerals = engTradFile.getProperty("minerals");
+        UtilStringStorage.nature = engTradFile.getProperty("nature");
+        UtilStringStorage.invention = engTradFile.getProperty("invention");
+
         // ACHIEVEMENTS
         UtilStringStorage.achievementLabel = engTradFile.getProperty("achievementLabel");
         UtilStringStorage.goldCupAchievementDescription = engTradFile.getProperty("goldCupAchievementDescription");
@@ -187,6 +214,33 @@ public class UtilTranslateString {
         UtilStringStorage.validateButton = frTradFile.getProperty("validateButton");
         UtilStringStorage.yesButton = frTradFile.getProperty("yesButton");
         UtilStringStorage.noButton = frTradFile.getProperty("noButton");
+
+        // QUESTIONS CATEGORIES
+        UtilStringStorage.geography = frTradFile.getProperty("geography");
+        UtilStringStorage.historia = frTradFile.getProperty("historia");
+        UtilStringStorage.linguistic = frTradFile.getProperty("linguistic");
+        UtilStringStorage.animals = frTradFile.getProperty("animals");
+        UtilStringStorage.insolite = frTradFile.getProperty("insolite");
+        UtilStringStorage.paleontology = frTradFile.getProperty("paleontology");
+        UtilStringStorage.videoGames = frTradFile.getProperty("videoGames");
+        UtilStringStorage.cinema = frTradFile.getProperty("cinema");
+        UtilStringStorage.space = frTradFile.getProperty("space");
+        UtilStringStorage.plants = frTradFile.getProperty("plants");
+        UtilStringStorage.music = frTradFile.getProperty("music");
+        UtilStringStorage.literature = frTradFile.getProperty("literature");
+        UtilStringStorage.humanBody = frTradFile.getProperty("humanBody");
+        UtilStringStorage.records = frTradFile.getProperty("record");
+        UtilStringStorage.culture = frTradFile.getProperty("culture");
+        UtilStringStorage.law =frTradFile.getProperty("law");
+        UtilStringStorage.mythology = frTradFile.getProperty("mythology");
+        UtilStringStorage.society = frTradFile.getProperty("society");
+        UtilStringStorage.internet = frTradFile.getProperty("internet");
+        UtilStringStorage.flags = frTradFile.getProperty("flags");
+        UtilStringStorage.sports = frTradFile.getProperty("sports");
+        UtilStringStorage.painting = frTradFile.getProperty("painting");
+        UtilStringStorage.minerals = frTradFile.getProperty("minerals");
+        UtilStringStorage.nature = frTradFile.getProperty("nature");
+        UtilStringStorage.invention = frTradFile.getProperty("invention");
 
         // ACHIEVEMENTS
         UtilStringStorage.achievementLabel = frTradFile.getProperty("achievementLabel");

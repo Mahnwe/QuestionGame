@@ -39,7 +39,6 @@ public class TrophyScene extends Scene
         createReturnButton();
 
         createBackground();
-
     }
 
     public void createBackground()
@@ -72,6 +71,16 @@ public class TrophyScene extends Scene
         pane.setCenter(centralVbox);
         centralVbox.setTranslateX(100);
         centralVbox.setTranslateY(70);
+
+        if(UtilStringStorage.goldCupTrophy.equals("Coupe d'or"))
+        {
+            goldCup.setTranslateX(-8);
+            bronzeCup.setTranslateX(25);
+            silverCup.setTranslateX(25);
+        }
+        else {
+            goldCup.setTranslateX(-8);
+        }
     }
 
     public void createGoldVbox()
@@ -80,13 +89,10 @@ public class TrophyScene extends Scene
         Label nbrOfGoldCupLabel = new Label();
         Label goldCupNumber = new Label();
         goldCupImage.getChildren().add(goldCup);
-        if(UtilStringStorage.goldCupTrophy.equals("Coupe d'or :")) {
-            setUpVbox(goldCupImage, nbrOfGoldCupLabel, 5, 25, UtilStringStorage.goldCupTrophy, FileUtil.generalSavesFile, "goldCup", goldCupNumber);
-        } else {
-            setUpVbox(goldCupImage, nbrOfGoldCupLabel, 20, 25, UtilStringStorage.goldCupTrophy, FileUtil.generalSavesFile, "goldCup", goldCupNumber);
-        }
+        setUpVbox(goldCupImage, nbrOfGoldCupLabel, 0, 25, UtilStringStorage.goldCupTrophy, FileUtil.generalSavesFile, "goldCup", goldCupNumber);
         goldCupImage.getChildren().add(goldCupNumber);
         goldCupImage.setTranslateX(-20);
+        goldCupNumber.setTranslateX(60);
     }
     public void createSilverVbox()
     {
@@ -94,11 +100,7 @@ public class TrophyScene extends Scene
         Label nbrOfSilverCupLabel = new Label();
         Label silverCupNumber = new Label();
         silverCupImage.getChildren().add(silverCup);
-        if(UtilStringStorage.silverCupTrophy.equals("Coupe d'argent :")) {
-            setUpVbox(silverCupImage, nbrOfSilverCupLabel, -25, 25, UtilStringStorage.silverCupTrophy, FileUtil.generalSavesFile, "silverCup", silverCupNumber);
-        } else {
-            setUpVbox(silverCupImage, nbrOfSilverCupLabel, 0, 25, UtilStringStorage.silverCupTrophy, FileUtil.generalSavesFile, "silverCup", silverCupNumber);
-        }
+        setUpVbox(silverCupImage, nbrOfSilverCupLabel, 0, 25, UtilStringStorage.silverCupTrophy, FileUtil.generalSavesFile, "silverCup", silverCupNumber);
         silverCupImage.getChildren().add(silverCupNumber);
     }
     public void createBronzeVbox()
@@ -107,12 +109,9 @@ public class TrophyScene extends Scene
         Label nbrOfBronzeCupLabel = new Label();
         Label bronzeCupNumber = new Label();
         bronzeCupImage.getChildren().add(bronzeCup);
-        if(UtilStringStorage.bronzeCupTrophy.equals("Coupe de bronze :")) {
-            setUpVbox(bronzeCupImage, nbrOfBronzeCupLabel, -35, 25, UtilStringStorage.bronzeCupTrophy, FileUtil.generalSavesFile, "bronzeCup", bronzeCupNumber);
-        } else {
-            setUpVbox(bronzeCupImage, nbrOfBronzeCupLabel, -5, 25, UtilStringStorage.bronzeCupTrophy, FileUtil.generalSavesFile, "bronzeCup", bronzeCupNumber);
-        }
+        setUpVbox(bronzeCupImage, nbrOfBronzeCupLabel, 0, 25, UtilStringStorage.bronzeCupTrophy, FileUtil.generalSavesFile, "bronzeCup", bronzeCupNumber);
         bronzeCupImage.getChildren().add(bronzeCupNumber);
+        bronzeCupNumber.setTranslateX(90);
     }
 
     public void createGridPane()
@@ -162,22 +161,19 @@ public class TrophyScene extends Scene
         label.setText(string +" ");
         cupNumber.setText(properties.getProperty(propertyKey));
         label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 23));
-        cupNumber.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 25));
+        cupNumber.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 27));
     }
 
     public void createIcons()
     {
         goldCup = IconCreator.createCupIcon(PathUtil.GOLD_CUP_PATH);
         goldCup.setTranslateY(10);
-        goldCup.setTranslateX(10);
 
         bronzeCup = IconCreator.createCupIcon(PathUtil.BRONZE_CUP_PATH);
         bronzeCup.setTranslateY(10);
-        bronzeCup.setTranslateX(10);
 
         silverCup = IconCreator.createCupIcon(PathUtil.SILVER_CUP_PATH);
         silverCup.setTranslateY(10);
-        silverCup.setTranslateX(10);
     }
     public void backToMainMenu()
     {

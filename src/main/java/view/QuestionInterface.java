@@ -25,6 +25,7 @@ public class QuestionInterface extends BorderPane
     private VBox game;
     private final Question question;
     private Label questionNumber;
+    private Label questionCategory;
     private Label questionToAsk;
     private AnswerButton answerButton1;
     private AnswerButton answerButton2;
@@ -81,6 +82,12 @@ public class QuestionInterface extends BorderPane
             questionNumber.setTextFill(Color.GHOSTWHITE);
             questionNumber.setTranslateX(40);
             questionNumber.setTranslateY(35);
+
+            questionCategory = new Label();
+            questionCategory.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 19));
+            questionCategory.setTextFill(Color.GHOSTWHITE);
+            questionCategory.setTranslateX(50);
+            questionCategory.setTranslateY(95);
 
             questionToAsk = new Label();
             questionToAsk.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 18));
@@ -238,6 +245,10 @@ public class QuestionInterface extends BorderPane
 
     public Label getQuestionNumber() {
         return questionNumber;
+    }
+
+    public Label getQuestionCategory() {
+        return questionCategory;
     }
 
     public Label getQuestionToAsk() {

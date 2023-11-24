@@ -9,11 +9,13 @@ public class Question
     private final String goodAnswer;
 
     private final String explanation;
+    private final String category;
 
     private final ArrayList<String> answerList = new ArrayList<>();
 
-    public Question(String questionToAsk, String answerA, String answerB, String answerC, String answerD, String goodAnswer, String explanation)
+    public Question(String category, String questionToAsk, String answerA, String answerB, String answerC, String answerD, String goodAnswer, String explanation)
     {
+        this.category = category;
         this.questionToAsk = questionToAsk;
         this.goodAnswer = goodAnswer;
         this.explanation = explanation;
@@ -39,4 +41,7 @@ public class Question
         return explanation;
     }
 
+    public String getCategory() {
+        return category;
+    }
 }

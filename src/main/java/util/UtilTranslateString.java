@@ -72,6 +72,10 @@ public class UtilTranslateString {
         UtilStringStorage.eraseTooltipLabel = engTradFile.getProperty("eraseTooltipLabel");
         UtilStringStorage.askToResetScore = engTradFile.getProperty("askToResetScore");
         UtilStringStorage.resetScoreInfo = engTradFile.getProperty("resetScoreInfo");
+        UtilStringStorage.bestScoreIn10Label = engTradFile.getProperty("bestScoreIn10QuestionsLabel");
+        UtilStringStorage.bestScoreIn15Label = engTradFile.getProperty("bestScoreIn15QuestionsLabel");
+        UtilStringStorage.bestScoreIn20Label = engTradFile.getProperty("bestScoreIn20QuestionsLabel");
+        UtilStringStorage.bestScoreSurvivalLabel = engTradFile.getProperty("bestScoreInSurvivalMode");
 
         // MENU SCENE
         UtilStringStorage.welcomeLabel = engTradFile.getProperty("welcomeLabel");
@@ -205,6 +209,10 @@ public class UtilTranslateString {
         UtilStringStorage.eraseTooltipLabel = frTradFile.getProperty("eraseTooltipLabel");
         UtilStringStorage.askToResetScore = frTradFile.getProperty("askToResetScore");
         UtilStringStorage.resetScoreInfo = frTradFile.getProperty("resetScoreInfo");
+        UtilStringStorage.bestScoreIn10Label = frTradFile.getProperty("bestScoreIn10QuestionsLabel");
+        UtilStringStorage.bestScoreIn15Label = frTradFile.getProperty("bestScoreIn15QuestionsLabel");
+        UtilStringStorage.bestScoreIn20Label = frTradFile.getProperty("bestScoreIn20QuestionsLabel");
+        UtilStringStorage.bestScoreSurvivalLabel = frTradFile.getProperty("bestScoreInSurvivalMode");
 
         // MENU SCENE
         UtilStringStorage.welcomeLabel = frTradFile.getProperty("welcomeLabel");

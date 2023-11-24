@@ -43,15 +43,10 @@ public class OptionScene extends Scene {
         optionVbox.setTranslateY(50);
 
         createSliderArea();
-
         createReturnButton();
-
         createLanguageButton();
-
         createResetButtonArea();
-
         createBackground();
-
     }
 
     public void createBackground()

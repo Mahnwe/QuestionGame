@@ -21,8 +21,9 @@ public class LeaderBoardScene extends Scene
     private final Stage stage;
     private final AchievementManager achievementManager;
     private final VBox leaderBoardVBox;
-    private final GridPane gridpane;
     private final ConfirmAlert confirmAlert;
+    private VBox bestScoresVbox;
+    private final BorderPane borderPane;
 
     public LeaderBoardScene(ScrollPane scrollPane, Stage stage, AchievementManager achievementManager)
     {
@@ -37,19 +38,27 @@ public class LeaderBoardScene extends Scene
         scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         scrollPane.setFitToWidth(true);
 
-        gridpane = new GridPane();
+        GridPane gridpane = new GridPane();
         gridpane.setMinHeight(1080);
         GridPane.setVgrow(gridpane, Priority.ALWAYS);
 
         leaderBoardVBox = new VBox();
         VBox.setVgrow(leaderBoardVBox, Priority.ALWAYS);
 
+        borderPane = new BorderPane();
+
         createReturnButton();
 
         createLeaderBoard();
+        createBestScoresLabel();
+        createEraseFileButton();
 
         gridpane.add(leaderBoardVBox, 0, 0);
-        scrollPane.setContent(gridpane);
+
+        borderPane.setLeft(bestScoresVbox);
+        borderPane.setCenter(gridpane);
+        scrollPane.setContent(borderPane);
+        gridpane.setTranslateX(-210);
 
         createBackground();
 
@@ -59,7 +68,7 @@ public class LeaderBoardScene extends Scene
     {
         Label leaderBoardLabel = new Label(UtilStringStorage.leaderBoardLabel);
 
-        leaderBoardLabel.setTranslateX(500);
+        leaderBoardLabel.setTranslateX(570);
         leaderBoardLabel.setTranslateY(10);
         leaderBoardLabel.setFont(Font.font("Impact", FontWeight.BOLD, 30));
 
@@ -68,12 +77,65 @@ public class LeaderBoardScene extends Scene
         leaderBoardArea.setText(String.valueOf(stringBuilder));
         leaderBoardArea.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 17));
         leaderBoardArea.setTextFill(Color.BLACK);
-        leaderBoardArea.setTranslateX(260);
+        leaderBoardArea.setTranslateX(340);
+        leaderBoardArea.setTranslateY(60);
 
+        leaderBoardVBox.getChildren().add(leaderBoardLabel);
+        leaderBoardVBox.getChildren().add(leaderBoardArea);
+    }
+
+    public void createBestScoresLabel()
+    {
+        bestScoresVbox = new VBox();
+
+        Label bestScoreIn10Questions = new Label(UtilStringStorage.bestScoreIn10Label+  " "+FileUtil.generalSavesFile.getProperty("perfectScore10"));
+        stylizeBestScoreLabel(bestScoreIn10Questions, 0);
+
+        Label bestScoreIn15Questions = new Label(UtilStringStorage.bestScoreIn15Label+  " "+FileUtil.generalSavesFile.getProperty("perfectScore15"));
+        stylizeBestScoreLabel(bestScoreIn15Questions, 20);
+
+        Label bestScoreIn20Questions = new Label(UtilStringStorage.bestScoreIn20Label+  " "+FileUtil.generalSavesFile.getProperty("perfectScore20"));
+        stylizeBestScoreLabel(bestScoreIn20Questions, 40);
+
+        Label bestScoreInSurvivalMode = new Label();
+        int survivalScore = Integer.parseInt(FileUtil.generalSavesFile.getProperty("survivalScore50"));
+        if(survivalScore != 0)
+        {
+            bestScoreInSurvivalMode.setText(UtilStringStorage.bestScoreSurvivalLabel+ " "+survivalScore);
+        }
+        if(survivalScore == 0) {
+            survivalScore = Integer.parseInt(FileUtil.generalSavesFile.getProperty("survivalScore30"));
+            if(survivalScore != 0)
+            {
+                bestScoreInSurvivalMode.setText(UtilStringStorage.bestScoreSurvivalLabel+ " "+ survivalScore);
+            }
+            if(survivalScore == 0)
+            {
+                survivalScore = Integer.parseInt(FileUtil.generalSavesFile.getProperty("survivalScore20"));
+                bestScoreInSurvivalMode.setText(UtilStringStorage.bestScoreSurvivalLabel+ " "+ survivalScore);
+            }
+        }
+        stylizeBestScoreLabel(bestScoreInSurvivalMode, 60);
+
+        bestScoresVbox.getChildren().add(bestScoreIn10Questions);
+        bestScoresVbox.getChildren().add(bestScoreIn15Questions);
+        bestScoresVbox.getChildren().add(bestScoreIn20Questions);
+        bestScoresVbox.getChildren().add(bestScoreInSurvivalMode);
+    }
+
+    public void stylizeBestScoreLabel(Label label, int translateY)
+    {
+        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 15));
+        label.setTextFill(Color.BLACK);
+        label.setTranslateY(translateY);
+        label.setTranslateX(5);
+    }
+
+    public void createEraseFileButton()
+    {
         Button eraseSaveFileButton = new Button();
-
         eraseSaveFileButton.setTranslateX(50);
-        eraseSaveFileButton.setTranslateY(80);
+        eraseSaveFileButton.setTranslateY(220);
         CustomOption.setUpTrashButton(eraseSaveFileButton);
 
         eraseSaveFileButton.setTooltip(null);
@@ -89,15 +151,14 @@ public class LeaderBoardScene extends Scene
             }
         });
 
-        leaderBoardVBox.getChildren().add(leaderBoardLabel);
-        leaderBoardVBox.getChildren().add(eraseSaveFileButton);
-        leaderBoardVBox.getChildren().add(leaderBoardArea);
+        bestScoresVbox.getChildren().add(eraseSaveFileButton);
+        bestScoresVbox.setTranslateY(80);
     }
 
     public void createBackground()
     {
         BackgroundImage backgroundImage = BackgroundCreator.createMenuBackground();
-        gridpane.setBackground(new Background(backgroundImage));
+        borderPane.setBackground(new Background(backgroundImage));
     }
 
     public void createReturnButton()
@@ -106,7 +167,7 @@ public class LeaderBoardScene extends Scene
         ReturnButton returnButton = new ReturnButton();
 
         buttonHbox.getChildren().add(returnButton);
-        leaderBoardVBox.getChildren().add(buttonHbox);
+        borderPane.setTop(buttonHbox);
         returnButton.setOnAction(event -> backToMainMenu());
     }
 

@@ -35,6 +35,10 @@ public class UtilStringStorage
     public static String eraseTooltipLabel = "";
     public static String askToResetScore = "";
     public static String resetScoreInfo = "";
+    public static  String bestScoreIn10Label = "";
+    public static  String bestScoreIn15Label = "";
+    public static  String bestScoreIn20Label = "";
+    public static  String bestScoreSurvivalLabel = "";
 
     // MENU SCENE
     public static String welcomeLabel = "";

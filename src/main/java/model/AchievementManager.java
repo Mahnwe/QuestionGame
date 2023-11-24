@@ -79,18 +79,20 @@ public class AchievementManager
             achievement.getAchievementImage().setImage(achievement.getLockImageView().getImage());
         }
     }
-    public void checkPerfectScoreAchievement(AchievementManager achievementManager, int playerFinalScore, Properties generalSavesFile, String propertyKey, int numberToCompare, int achievementIndex)
+    public void checkPerfectScoreAchievement(AchievementManager achievementManager, int playerFinalScore, Properties generalSavesFile, String propertyKey, int achievementIndex)
     {
-        if(playerFinalScore == numberToCompare) {
+        int scoreInFile = Integer.parseInt(generalSavesFile.getProperty(propertyKey));
+        if(playerFinalScore >= scoreInFile) {
             String perfectScoreString = String.valueOf(playerFinalScore);
             generalSavesFile.setProperty(propertyKey, perfectScoreString);
             achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(achievementIndex), playerFinalScore);
         }
     }
 
-    public void checkSurvivalScoreAchievement(AchievementManager achievementManager, int playerFinalScore, Properties generalSavesFile, String propertyKey, int numberToCompare, int achievementIndex)
+    public void checkSurvivalScoreAchievement(AchievementManager achievementManager, int playerFinalScore, Properties generalSavesFile, String propertyKey, int achievementIndex)
     {
-        if(playerFinalScore >= numberToCompare) {
+        int scoreInFile = Integer.parseInt(generalSavesFile.getProperty(propertyKey));
+        if(playerFinalScore >= scoreInFile) {
             String perfectScoreString = String.valueOf(playerFinalScore);
             generalSavesFile.setProperty(propertyKey, perfectScoreString);
             achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(achievementIndex), playerFinalScore);
@@ -101,28 +103,33 @@ public class AchievementManager
     {
         if(questionCount >= 20)
         {
-            checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "survivalScore20", achievementsList.get(6).getCondition(), 6);
+            checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "survivalScore20", 6);
         }
         if(questionCount >= 30)
         {
-            checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "survivalScore30", achievementsList.get(7).getCondition(), 7);
+            checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "survivalScore30", 7);
         }
         if(questionCount >= 40)
         {
-            checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "survivalScore50", achievementsList.get(8).getCondition(), 8);
+            checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "survivalScore50", 8);
+        }
+    }
+
+    public void checkIfPerfectScoreAchievementIsUnlock(int questionCount, int playerScore, Properties generalSavesFile, AchievementManager achievementManager)
+    {
+        if(GameHandler.gameMode == null) {
+            switch (questionCount) {
+                case 10 -> checkPerfectScoreAchievement(achievementManager, playerScore, generalSavesFile, "perfectScore10", 3);
+                case 15 -> checkPerfectScoreAchievement(achievementManager, playerScore, generalSavesFile, "perfectScore15", 4);
+                case 20 -> checkPerfectScoreAchievement(achievementManager, playerScore, generalSavesFile, "perfectScore20", 5);
+                default -> logger.error("Question count bug");
+            }
         }
     }
 
     public void goldCupResult(int questionCount, int playerScore, VBox vBox, Properties generalSavesFile, AchievementManager achievementManager, ImageView imageView)
     {
-        if(GameHandler.gameMode == null) {
-            switch (questionCount) {
-                case 10 -> checkPerfectScoreAchievement(achievementManager, playerScore, generalSavesFile, "perfectScore10", achievementsList.get(3).getCondition(), 3);
-                case 15 -> checkPerfectScoreAchievement(achievementManager, playerScore, generalSavesFile, "perfectScore15", achievementsList.get(4).getCondition(), 4);
-                case 20 -> checkPerfectScoreAchievement(achievementManager, playerScore, generalSavesFile, "perfectScore20", achievementsList.get(5).getCondition(), 5);
-                default -> logger.error("Question count bug");
-            }
-        }
+        checkIfPerfectScoreAchievementIsUnlock(questionCount, playerScore, generalSavesFile, achievementManager);
 
         int nbrOfGoldCup = Integer.parseInt(generalSavesFile.getProperty("goldCup"));
         nbrOfGoldCup++;
@@ -143,8 +150,10 @@ public class AchievementManager
         vBox.getChildren().add(imageView);
     }
 
-    public void silverCupResult(VBox vBox, Properties generalSavesFile, AchievementManager achievementManager, ImageView imageView)
+    public void silverCupResult(int questionCount, int playerScore, VBox vBox, Properties generalSavesFile, AchievementManager achievementManager, ImageView imageView)
     {
+        checkIfPerfectScoreAchievementIsUnlock(questionCount, playerScore, generalSavesFile, achievementManager);
+
         int nbrOfSilverCup = Integer.parseInt(generalSavesFile.getProperty("silverCup"));
         nbrOfSilverCup++;
 
@@ -164,8 +173,10 @@ public class AchievementManager
         vBox.getChildren().add(imageView);
     }
 
-    public void bronzeCupResult(VBox vBox, Properties generalSavesFile, AchievementManager achievementManager, ImageView imageView)
+    public void bronzeCupResult(int questionCount, int playerScore, VBox vBox, Properties generalSavesFile, AchievementManager achievementManager, ImageView imageView)
     {
+        checkIfPerfectScoreAchievementIsUnlock(questionCount, playerScore, generalSavesFile, achievementManager);
+
         int nbrOfBronzeCup = Integer.parseInt(generalSavesFile.getProperty("bronzeCup"));
         nbrOfBronzeCup++;
 

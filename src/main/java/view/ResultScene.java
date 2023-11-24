@@ -72,13 +72,13 @@ public class ResultScene extends VBox
         if(questionCount >= 10 && questionCount < 19)
         {
             achievementManager.survivalModeResult(questionCount, FileUtil.generalSavesFile, achievementManager);
-            achievementManager.bronzeCupResult(gameResult, FileUtil.generalSavesFile, achievementManager, bronzeCup);
+            achievementManager.bronzeCupResult(questionCount, playerFinalScore, gameResult, FileUtil.generalSavesFile, achievementManager, bronzeCup);
             FileUtil.storeGeneralSavesFile();
         }
         if(questionCount >= 20 && questionCount < 29)
         {
             achievementManager.survivalModeResult(questionCount, FileUtil.generalSavesFile, achievementManager);
-            achievementManager.silverCupResult(gameResult, FileUtil.generalSavesFile, achievementManager, silverCup);
+            achievementManager.silverCupResult(questionCount, playerFinalScore, gameResult, FileUtil.generalSavesFile, achievementManager, silverCup);
             FileUtil.storeGeneralSavesFile();
         }
         if(questionCount >= 30)
@@ -88,6 +88,7 @@ public class ResultScene extends VBox
             FileUtil.storeGeneralSavesFile();
         }
         if(questionCount < 10) {
+            FileUtil.generalSavesFile.setProperty("survivalScore20", String.valueOf(questionCount));
             Label cupLabel = new Label(UtilStringStorage.noSurviveLabel);
             stylizeLabel(cupLabel, 100, 70);
             gameResult.getChildren().add(cupLabel);
@@ -104,14 +105,15 @@ public class ResultScene extends VBox
         }
         if(playerFinalScore > questionCount*60/100 && playerFinalScore <= questionCount*80/100)
         {
-            achievementManager.silverCupResult(gameResult, FileUtil.generalSavesFile, achievementManager, silverCup);
+            achievementManager.silverCupResult(questionCount, playerFinalScore, gameResult, FileUtil.generalSavesFile, achievementManager, silverCup);
         }
         if(playerFinalScore >= questionCount*50/100 && playerFinalScore < questionCount*60/100)
         {
-            achievementManager.bronzeCupResult(gameResult, FileUtil.generalSavesFile, achievementManager, bronzeCup);
+            achievementManager.bronzeCupResult(questionCount, playerFinalScore, gameResult, FileUtil.generalSavesFile, achievementManager, bronzeCup);
         }
         if(playerFinalScore < questionCount*50/100)
         {
+            achievementManager.checkIfPerfectScoreAchievementIsUnlock(questionCount, playerFinalScore, FileUtil.generalSavesFile, achievementManager);
             Label cupLabel = new Label(UtilStringStorage.noCupLabel);
             stylizeLabel(cupLabel, 100, 70);
             gameResult.getChildren().add(cupLabel);

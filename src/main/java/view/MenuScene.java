@@ -1,5 +1,6 @@
 package view;
 
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -33,10 +34,6 @@ public class MenuScene extends Scene
     private final AchievementManager achievementManager;
 
     public static final String POLICE_LABEL = "Verdana";
-    private Label tenModeButton;
-    private Label fifteenModeButton;
-    private Label twentyModeButton;
-    private Label survivalModeButton;
     private MenuSideButton leaderBoardButton;
     private MenuSideButton trophyButton;
     private MenuSideButton achievementButton;
@@ -53,7 +50,6 @@ public class MenuScene extends Scene
         pane.setPrefHeight(750);
 
         this.gameHandler = new GameHandler();
-
         this.achievementManager = achievementManager;
 
         createWelcomeArea();
@@ -61,9 +57,7 @@ public class MenuScene extends Scene
         createButtonArea();
 
         setButtonOnAction();
-
         createBackground();
-
     }
 
     public void createBackground()
@@ -90,37 +84,39 @@ public class MenuScene extends Scene
         leaderBoardVBox.setBorder(border);
         leaderBoardVBox.setPrefWidth(220);
 
-        createLeftButtons();
+        GridPane sideButtonGridPane = createLeftButtons();
 
         setLeftButtonOnAction();
 
-        leaderBoardVBox.getChildren().add(leaderBoardButton);
-        leaderBoardVBox.getChildren().add(trophyButton);
-        leaderBoardVBox.getChildren().add(achievementButton);
-        leaderBoardVBox.getChildren().add(optionButton);
-        leaderBoardVBox.getChildren().add(creditButton);
+        leaderBoardVBox.getChildren().add(sideButtonGridPane);
         pane.setLeft(leaderBoardVBox);
     }
 
-    public void createLeftButtons()
+    public GridPane createLeftButtons()
     {
-        leaderBoardButton = new MenuSideButton(UtilStringStorage.leaderBoardButton, UtilStringStorage.leaderBoardTooltip, 35, 80);
-        if(leaderBoardButton.getText().equals("Leaderboard"))
-        {
-            leaderBoardButton.setTranslateX(31);
-        }
+        GridPane gridPaneMenuButton = new GridPane();
+        gridPaneMenuButton.addColumn(1);
+        gridPaneMenuButton.addRow(5);
+        gridPaneMenuButton.setVgap(70);
+        gridPaneMenuButton.setAlignment(Pos.CENTER);
+        gridPaneMenuButton.setTranslateY(70);
 
-        trophyButton = new MenuSideButton(UtilStringStorage.trophyButton, UtilStringStorage.trophyTooltip, 45, 150);
+        leaderBoardButton = new MenuSideButton(UtilStringStorage.leaderBoardButton, UtilStringStorage.leaderBoardTooltip);
+        gridPaneMenuButton.add(leaderBoardButton, 0, 0);
 
-        achievementButton = new MenuSideButton(UtilStringStorage.achievementButton, UtilStringStorage.achievementTooltip, 55, 220);
-        if(achievementButton.getText().equals("Achievements"))
-        {
-            achievementButton.setTranslateX(23);
-        }
+        trophyButton = new MenuSideButton(UtilStringStorage.trophyButton, UtilStringStorage.trophyTooltip);
+        gridPaneMenuButton.add(trophyButton, 0, 1);
 
-        optionButton = new MenuSideButton(UtilStringStorage.optionButton, UtilStringStorage.optionTooltip, 50, 290);
+        achievementButton = new MenuSideButton(UtilStringStorage.achievementButton, UtilStringStorage.achievementTooltip);
+        gridPaneMenuButton.add(achievementButton, 0, 2);
 
-        creditButton = new MenuSideButton(UtilStringStorage.creditButton, UtilStringStorage.creditTooltip, 55, 360);
+        optionButton = new MenuSideButton(UtilStringStorage.optionButton, UtilStringStorage.optionTooltip);
+        gridPaneMenuButton.add(optionButton, 0, 3);
+
+        creditButton = new MenuSideButton(UtilStringStorage.creditButton, UtilStringStorage.creditTooltip);
+        gridPaneMenuButton.add(creditButton, 0, 4);
+
+        return gridPaneMenuButton;
     }
 
     public void setLeftButtonOnAction()
@@ -151,24 +147,6 @@ public class MenuScene extends Scene
         });
     }
 
-    public void createLabel()
-    {
-        tenModeButton = new Label(UtilStringStorage.mode10Button);
-        tenModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 19));
-        tenModeButton.setTextFill(Color.BLACK);
-
-        fifteenModeButton = new Label(UtilStringStorage.mode15Button);
-        fifteenModeButton.setTextFill(Color.BLACK);
-
-        twentyModeButton = new Label(UtilStringStorage.mode20Button);
-        twentyModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 19));
-        twentyModeButton.setTextFill(Color.BLACK);
-
-        survivalModeButton = new Label(UtilStringStorage.modeSurvivalButton);
-        survivalModeButton.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 19));
-        survivalModeButton.setTextFill(Color.BLACK);
-    }
-
     public void createButtonArea()
     {
         VBox selectModeArea = new VBox();
@@ -183,15 +161,8 @@ public class MenuScene extends Scene
             chooseMode.setTranslateX(295);
         }
 
-        createLabel();
-
         comboBox = new ComboBox<>();
         CustomOption.customComboBox(comboBox);
-        comboBox.getItems().add(tenModeButton.getText());
-        comboBox.getItems().add(fifteenModeButton.getText());
-        comboBox.getItems().add(twentyModeButton.getText());
-        comboBox.getItems().add(survivalModeButton.getText());
-        comboBox.getSelectionModel().selectFirst();
 
         launchGameButton = new Button(UtilStringStorage.launchGameButton);
         CustomOption.customLaunchButton(launchGameButton);
@@ -253,7 +224,6 @@ public class MenuScene extends Scene
             relaunchGame = SoundManager.playMusicRepeat(PathUtil.IN_GAME_MUSIC);
         }
         menuStage.setScene(mainScene);
-
     }
 
     public HBox createStatArea(Label label) {

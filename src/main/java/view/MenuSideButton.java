@@ -8,13 +8,11 @@ import util.CustomOption;
 
 public class MenuSideButton extends Button
 {
-    public MenuSideButton(String buttonText, String tooltipText, int translateX, int translateY)
+    public MenuSideButton(String buttonText, String tooltipText)
     {
         this.setText(buttonText);
         Tooltip tooltip = new Tooltip(tooltipText);
         this.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 18));
-        this.setTranslateX(translateX);
-        this.setTranslateY(translateY);
         this.setTooltip(tooltip);
         CustomOption.setGlowEffectOnButton(this);
     }

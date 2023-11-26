@@ -1,5 +1,6 @@
 package view;
 
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
@@ -24,6 +25,7 @@ public class LeaderBoardScene extends Scene
     private final ConfirmAlert confirmAlert;
     private VBox bestScoresVbox;
     private final BorderPane borderPane;
+    private GridPane gridPaneBestScore;
 
     public LeaderBoardScene(ScrollPane scrollPane, Stage stage, AchievementManager achievementManager)
     {
@@ -84,20 +86,41 @@ public class LeaderBoardScene extends Scene
         leaderBoardVBox.getChildren().add(leaderBoardArea);
     }
 
+    public void createGridPaneBestScore()
+    {
+        gridPaneBestScore = new GridPane();
+        gridPaneBestScore.addColumn(1);
+        gridPaneBestScore.addRow(4);
+        gridPaneBestScore.setVgap(20);
+        gridPaneBestScore.setAlignment(Pos.CENTER);
+        gridPaneBestScore.setTranslateY(50);
+        gridPaneBestScore.setTranslateX(5);
+    }
+
     public void createBestScoresLabel()
     {
         bestScoresVbox = new VBox();
 
+        createGridPaneBestScore();
+
         Label bestScoreIn10Questions = new Label(UtilStringStorage.bestScoreIn10Label+  " "+FileUtil.generalSavesFile.getProperty("perfectScore10"));
-        stylizeBestScoreLabel(bestScoreIn10Questions, 0);
+        stylizeBestScoreLabel(bestScoreIn10Questions, 0, 0);
 
         Label bestScoreIn15Questions = new Label(UtilStringStorage.bestScoreIn15Label+  " "+FileUtil.generalSavesFile.getProperty("perfectScore15"));
-        stylizeBestScoreLabel(bestScoreIn15Questions, 20);
+        stylizeBestScoreLabel(bestScoreIn15Questions, 0, 1);
 
         Label bestScoreIn20Questions = new Label(UtilStringStorage.bestScoreIn20Label+  " "+FileUtil.generalSavesFile.getProperty("perfectScore20"));
-        stylizeBestScoreLabel(bestScoreIn20Questions, 40);
+        stylizeBestScoreLabel(bestScoreIn20Questions, 0, 2);
 
         Label bestScoreInSurvivalMode = new Label();
+        checkForBestSurvivalScore(bestScoreInSurvivalMode);
+        stylizeBestScoreLabel(bestScoreInSurvivalMode, 0, 3);
+
+        bestScoresVbox.getChildren().add(gridPaneBestScore);
+    }
+
+    public void checkForBestSurvivalScore(Label bestScoreInSurvivalMode)
+    {
         int survivalScore = Integer.parseInt(FileUtil.generalSavesFile.getProperty("survivalScore50"));
         if(survivalScore != 0)
         {
@@ -105,30 +128,21 @@ public class LeaderBoardScene extends Scene
         }
         if(survivalScore == 0) {
             survivalScore = Integer.parseInt(FileUtil.generalSavesFile.getProperty("survivalScore30"));
-            if(survivalScore != 0)
-            {
-                bestScoreInSurvivalMode.setText(UtilStringStorage.bestScoreSurvivalLabel+ " "+ survivalScore);
+            if (survivalScore != 0) {
+                bestScoreInSurvivalMode.setText(UtilStringStorage.bestScoreSurvivalLabel + " " + survivalScore);
             }
-            if(survivalScore == 0)
-            {
+            if (survivalScore == 0) {
                 survivalScore = Integer.parseInt(FileUtil.generalSavesFile.getProperty("survivalScore20"));
-                bestScoreInSurvivalMode.setText(UtilStringStorage.bestScoreSurvivalLabel+ " "+ survivalScore);
+                bestScoreInSurvivalMode.setText(UtilStringStorage.bestScoreSurvivalLabel + " " + survivalScore);
             }
         }
-        stylizeBestScoreLabel(bestScoreInSurvivalMode, 60);
-
-        bestScoresVbox.getChildren().add(bestScoreIn10Questions);
-        bestScoresVbox.getChildren().add(bestScoreIn15Questions);
-        bestScoresVbox.getChildren().add(bestScoreIn20Questions);
-        bestScoresVbox.getChildren().add(bestScoreInSurvivalMode);
     }
 
-    public void stylizeBestScoreLabel(Label label, int translateY)
+    public void stylizeBestScoreLabel(Label label, int column, int row)
     {
         label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 15));
         label.setTextFill(Color.BLACK);
-        label.setTranslateY(translateY);
-        label.setTranslateX(5);
+        gridPaneBestScore.add(label, column, row);
     }
 
     public void createEraseFileButton()

@@ -1,18 +1,21 @@
 package util;
 
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Slider;
-import javafx.scene.control.Tooltip;
+import javafx.scene.control.*;
 import javafx.scene.effect.Glow;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import view.MenuScene;
 
 public class CustomOption {
     public static final Glow glow = new Glow(0.3);
+    private static Label tenModeButton;
+    private static Label fifteenModeButton;
+    private static Label twentyModeButton;
+    private static Label survivalModeButton;
+
 
     public static void customSlider(Slider slider, int width, int height, int translateY, int translateX)
     {
@@ -50,6 +53,8 @@ public class CustomOption {
 
     public static void customComboBox(ComboBox<String> comboBox)
     {
+        createLabel();
+
         comboBox.setStyle("-fx-font: 28px \"Futura\"");
         comboBox.setMinHeight(50);
         comboBox.setMinWidth(150);
@@ -57,6 +62,31 @@ public class CustomOption {
         comboBox.setTranslateY(140);
         comboBox.setOnMouseEntered(event -> comboBox.setEffect(glow));
         comboBox.setOnMouseExited(event -> comboBox.setEffect(null));
+
+        comboBox.getItems().add(tenModeButton.getText());
+        comboBox.getItems().add(fifteenModeButton.getText());
+        comboBox.getItems().add(twentyModeButton.getText());
+        comboBox.getItems().add(survivalModeButton.getText());
+        comboBox.getSelectionModel().selectFirst();
+    }
+
+    public static void createLabel()
+    {
+        tenModeButton = new Label(UtilStringStorage.mode10Button);
+        tenModeButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 19));
+        tenModeButton.setTextFill(Color.BLACK);
+
+        fifteenModeButton = new Label(UtilStringStorage.mode15Button);
+        fifteenModeButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 19));
+        fifteenModeButton.setTextFill(Color.BLACK);
+
+        twentyModeButton = new Label(UtilStringStorage.mode20Button);
+        twentyModeButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 19));
+        twentyModeButton.setTextFill(Color.BLACK);
+
+        survivalModeButton = new Label(UtilStringStorage.modeSurvivalButton);
+        survivalModeButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 19));
+        survivalModeButton.setTextFill(Color.BLACK);
     }
 
     public static void customExitToMenuButton(Button button)

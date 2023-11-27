@@ -30,7 +30,6 @@ public class CreditScene extends Scene
         createReturnButton();
         createBackground();
         createCreditArea();
-
     }
 
     public void createReturnButton()
@@ -112,7 +111,6 @@ public class CreditScene extends Scene
         pane.setCenter(creditVbox);
         creditVbox.setTranslateX(100);
         creditVbox.setTranslateY(50);
-
     }
 
     public void addLabelInVbox(Label label1, Label label2, Label label3, Label label4, Label label5)

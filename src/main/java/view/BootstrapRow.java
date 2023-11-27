@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class BootstrapRow {
-    public int calculateRowPositions(int lastGridPaneRow, BootstrapPane.Breakpoint currentWindowSize) {
+    public int calculateRowPositions(int lastGridPaneRow, Breakpoint currentWindowSize) {
         int inputRow = lastGridPaneRow;
         if (this.getColumns().isEmpty()) return 0;
         int currentGridPaneColumn = 0; //start in the first column

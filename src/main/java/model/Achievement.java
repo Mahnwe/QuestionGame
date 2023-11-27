@@ -24,14 +24,14 @@ public class Achievement
     {
         IconCreator lockIcon = new IconCreator(PathUtil.LOCK_ICON);
         lockImageView = lockIcon.createImage();
-        lockImageView.setFitHeight(60);
-        lockImageView.setFitWidth(70);
+        lockImageView.setFitHeight(70);
+        lockImageView.setFitWidth(80);
         lockImageView.setTranslateX(20);
 
         IconCreator unlockIcon = new IconCreator(PathUtil.UNLOCK_ICON);
         unlockImageView = unlockIcon.createImage();
-        unlockImageView.setFitHeight(60);
-        unlockImageView.setFitWidth(70);
+        unlockImageView.setFitHeight(70);
+        unlockImageView.setFitWidth(80);
         unlockImageView.setTranslateX(20);
     }
 

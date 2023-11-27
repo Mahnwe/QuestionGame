@@ -21,8 +21,8 @@ public class AchievementScene extends Scene
 {
     private final StringProperty valueOfSuccess = new SimpleStringProperty();
     private final Stage stage;
-    private GridPane gridPane;
-    private final BorderPane takeMultiPane;
+    private BootstrapPane gridPane;
+    private final BorderPane multiPane;
     private final AchievementManager achievementManager;
     private final Label goldCupAchievementInfo = new Label();
     private final Label silverCupAchievementInfo = new Label();
@@ -43,76 +43,69 @@ public class AchievementScene extends Scene
         scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
         scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         scrollPane.setFitToWidth(true);
+        scrollPane.setMinHeight(850);
 
         this.stage = stage;
         this.achievementManager = achievementManager;
+        multiPane = new BorderPane();
 
-        BorderPane multiPane = new BorderPane();
-
-        createTitle(multiPane);
         createGridPane();
+
+        createTitle();
         putAchievementsInGridPane();
         createSecretAchievementArea();
         checkAchievements();
 
-        multiPane.setMinHeight(750);
+        multiPane.setMinHeight(1080);
         multiPane.setCenter(gridPane);
 
-        takeMultiPane = new BorderPane();
-        takeMultiPane.setCenter(multiPane);
-        multiPane.setTranslateX(70);
-        multiPane.setTranslateY(50);
-
-        scrollPane.setContent(takeMultiPane);
+        scrollPane.setContent(multiPane);
 
         createReturnButton();
         createBackground();
     }
 
-    public void createTitle(BorderPane multiPane)
+    public void createTitle()
     {
         Label achievementLabel = new Label(UtilStringStorage.achievementLabel);
-        achievementLabel.setFont(Font.font("Impact", FontWeight.BOLD, 30));
-        multiPane.setTop(achievementLabel);
-        achievementLabel.setTranslateX(400);
-        achievementLabel.setTranslateY(5);
+        achievementLabel.setFont(Font.font("Impact", FontWeight.BOLD, 35));
+        gridPane.add(achievementLabel, 1, 0);
     }
 
     public void createGridPane()
     {
-        gridPane = new GridPane();
-        gridPane.setTranslateY(60);
-        gridPane.setHgap(30);
-        gridPane.setVgap(40);
-        gridPane.addColumn(3);
+        gridPane = new BootstrapPane(3);
+        gridPane.setTranslateY(70);
+        gridPane.setTranslateX(70);
+        gridPane.setVgap(60);
         gridPane.addRow(3);
     }
 
     public void putAchievementsInGridPane()
     {
-        createAchievementArea(UtilStringStorage.goldCupAchievementDescription, goldCupAchievementInfo, 0, 0, 0);
+        createAchievementArea(UtilStringStorage.goldCupAchievementDescription, goldCupAchievementInfo, 0, 0, 1);
 
-        createAchievementArea(UtilStringStorage.silverCupAchievementDescription, silverCupAchievementInfo, 1, 1, 0);
+        createAchievementArea(UtilStringStorage.silverCupAchievementDescription, silverCupAchievementInfo, 1, 1, 1);
 
-        createAchievementArea(UtilStringStorage.bronzeCupAchievementDescription, bronzeCupAchievementInfo, 2, 2,0);
+        createAchievementArea(UtilStringStorage.bronzeCupAchievementDescription, bronzeCupAchievementInfo, 2, 2,1);
 
-        createAchievementArea(UtilStringStorage.perfectScore10Achievement, perfectScoreAchievementInfo, 3, 0, 1);
+        createAchievementArea(UtilStringStorage.perfectScore10Achievement, perfectScoreAchievementInfo, 3, 0, 2);
 
-        createAchievementArea(UtilStringStorage.perfectScore15Achievement, perfectScoreAchievement15Info, 4, 1, 1);
+        createAchievementArea(UtilStringStorage.perfectScore15Achievement, perfectScoreAchievement15Info, 4, 1, 2);
 
-        createAchievementArea(UtilStringStorage.perfectScore20Achievement, perfectScoreAchievement20Info, 5, 2, 1);
+        createAchievementArea(UtilStringStorage.perfectScore20Achievement, perfectScoreAchievement20Info, 5, 2, 2);
 
-        createAchievementArea(UtilStringStorage.survivalAchievement20Description, survivalAchievement20Info, 6, 0, 2);
+        createAchievementArea(UtilStringStorage.survivalAchievement20Description, survivalAchievement20Info, 6, 0, 3);
 
-        createAchievementArea(UtilStringStorage.survivalAchievement30Description, survivalAchievement30Info, 7, 1, 2);
+        createAchievementArea(UtilStringStorage.survivalAchievement30Description, survivalAchievement30Info, 7, 1, 3);
 
-        createAchievementArea(UtilStringStorage.survivalAchievement40Description, survivalAchievement40Info, 8, 2, 2);
+        createAchievementArea(UtilStringStorage.survivalAchievement40Description, survivalAchievement40Info, 8, 2, 3);
     }
 
     public void createBackground()
     {
         BackgroundImage backgroundImage = BackgroundCreator.createMenuBackground();
-        takeMultiPane.setBackground(new Background(backgroundImage));
+        multiPane.setBackground(new Background(backgroundImage));
     }
 
     public void createReturnButton()
@@ -120,7 +113,7 @@ public class AchievementScene extends Scene
         HBox buttonHbox = new HBox();
         ReturnButton returnButton = new ReturnButton();
         buttonHbox.getChildren().add(returnButton);
-        takeMultiPane.setTop(buttonHbox);
+        multiPane.setTop(buttonHbox);
         returnButton.setOnAction(event -> backToMainMenu());
     }
 
@@ -140,7 +133,7 @@ public class AchievementScene extends Scene
         secretAchievementLabel.setText(UtilStringStorage.secretLabel);
         secretAchievementInfo = new Label();
         AchievementVbox.setAchievementVbox(secretAchievementBox, secretAchievementLabel, achievementManager, 9, secretAchievementInfo);
-        gridPane.add(secretAchievementBox, 1,3);
+        gridPane.add(secretAchievementBox, 1,4);
 
     }
 

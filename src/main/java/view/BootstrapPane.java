@@ -8,26 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BootstrapPane extends GridPane {
-
-    public enum Breakpoint {
-        XSMALL(0),
-        SMALL(1),
-        MEDIUM(2),
-        LARGE(3),
-        XLARGE(4);
-        private int value;
-        Breakpoint(int value) {
-            this.value = value;
-        }
-        public int getValue() {
-            return value;
-        }
-    }
     private Breakpoint currentWindowSize = Breakpoint.XSMALL;
-    public BootstrapPane() {
+    public BootstrapPane(int numberOfColumn) {
         super();
         setAlignment(Pos.TOP_CENTER);
-        setColumnConstraints();
+        setColumnConstraints(numberOfColumn);
         setWidthEventHandlers();
     }
     private void setWidthEventHandlers() {
@@ -43,12 +28,12 @@ public class BootstrapPane extends GridPane {
             }
         });
     }
-    private void setColumnConstraints() {
+    private void setColumnConstraints(int numberOfColumn) {
         //Remove all current columns.
         getColumnConstraints().clear();
         //Create 12 equally sized columns for layout
-        double width = 100.0 / 12.0;
-        for (int i = 0; i < 12; i++) {
+        double width = 100.0 / numberOfColumn;
+        for (int i = 0; i < numberOfColumn; i++) {
             ColumnConstraints columnConstraints = new ColumnConstraints();
             columnConstraints.setPercentWidth(width);
             getColumnConstraints().add(columnConstraints);

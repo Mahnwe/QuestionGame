@@ -1,5 +1,6 @@
 package view;
 
+import com.sun.javafx.util.Utils;
 import javafx.scene.Node;
 
 public class BootstrapColumn {
@@ -15,11 +16,11 @@ public class BootstrapColumn {
         this.content = content;
     }
 
-    /*public void setBreakpointColumnWidth(BootstrapPane.Breakpoint breakPoint, int width) {
-        columnWidths[breakPoint.getValue()] = MathUtils.clamp(width, 1, 12);
-    }*/
+    public void setBreakpointColumnWidth(Breakpoint breakPoint, int width) {
+        columnWidths[breakPoint.getValue()] = Utils.clamp(width, 1, 12);
+    }
 
-    public void unsetBreakPoint(BootstrapPane.Breakpoint breakPoint) {
+    public void unsetBreakPoint(Breakpoint breakPoint) {
         columnWidths[breakPoint.getValue()] = -1;
     }
     public void unsetAllBreakPoints() {
@@ -31,7 +32,7 @@ public class BootstrapColumn {
                 -1  //XL
         };
     }
-    public int getColumnWidth(BootstrapPane.Breakpoint breakPoint) {
+    public int getColumnWidth(Breakpoint breakPoint) {
         //Iterate through breakpoints, beginning at the specified bp, travelling down. Return first valid bp value.
         for (int i = breakPoint.getValue(); i >= 0; i--) {
             if (isValid(columnWidths[i])) return columnWidths[i];

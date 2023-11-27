@@ -23,7 +23,7 @@ public class TrophyScene extends Scene
     private final Stage stage;
     private final AchievementManager achievementManager;
     private final BorderPane pane;
-    private GridPane gridPane;
+    private BootstrapPane gridPane;
 
     public TrophyScene(BorderPane pane, Stage stage, AchievementManager achievementManager)
     {
@@ -60,45 +60,36 @@ public class TrophyScene extends Scene
         createSilverVbox();
         createBronzeVbox();
 
-        gridPane.add(goldCupImage, 0, 0);
-        gridPane.add(silverCupImage, 1, 0);
-        gridPane.add(bronzeCupImage, 2, 0);
-        gridPane.setTranslateX(130);
+        gridPane.add(trophyLabel, 1, 0);
+        gridPane.add(goldCupImage, 0, 1);
+        gridPane.add(silverCupImage, 1, 1);
+        gridPane.add(bronzeCupImage, 2, 1);
+        gridPane.setTranslateX(100);
 
-        centralVbox.getChildren().add(trophyLabel);
         centralVbox.getChildren().add(gridPane);
 
         pane.setCenter(centralVbox);
-        centralVbox.setTranslateX(100);
         centralVbox.setTranslateY(70);
-
-        if(UtilStringStorage.goldCupTrophy.equals("Coupe d'or"))
-        {
-            goldCup.setTranslateX(-8);
-            bronzeCup.setTranslateX(25);
-            silverCup.setTranslateX(25);
-        }
-        else {
-            goldCup.setTranslateX(-8);
-        }
     }
 
     public void createGoldVbox()
     {
         goldCupImage = new VBox();
+
         Label nbrOfGoldCupLabel = new Label();
         Label goldCupNumber = new Label();
+
         goldCupImage.getChildren().add(goldCup);
         setUpVbox(goldCupImage, nbrOfGoldCupLabel, 0, 25, UtilStringStorage.goldCupTrophy, FileUtil.generalSavesFile, "goldCup", goldCupNumber);
         goldCupImage.getChildren().add(goldCupNumber);
-        goldCupImage.setTranslateX(-20);
-        goldCupNumber.setTranslateX(60);
     }
     public void createSilverVbox()
     {
         silverCupImage = new VBox();
+
         Label nbrOfSilverCupLabel = new Label();
         Label silverCupNumber = new Label();
+
         silverCupImage.getChildren().add(silverCup);
         setUpVbox(silverCupImage, nbrOfSilverCupLabel, 0, 25, UtilStringStorage.silverCupTrophy, FileUtil.generalSavesFile, "silverCup", silverCupNumber);
         silverCupImage.getChildren().add(silverCupNumber);
@@ -106,38 +97,35 @@ public class TrophyScene extends Scene
     public void createBronzeVbox()
     {
         bronzeCupImage = new VBox();
+
         Label nbrOfBronzeCupLabel = new Label();
         Label bronzeCupNumber = new Label();
+
         bronzeCupImage.getChildren().add(bronzeCup);
         setUpVbox(bronzeCupImage, nbrOfBronzeCupLabel, 0, 25, UtilStringStorage.bronzeCupTrophy, FileUtil.generalSavesFile, "bronzeCup", bronzeCupNumber);
         bronzeCupImage.getChildren().add(bronzeCupNumber);
-        bronzeCupNumber.setTranslateX(90);
     }
 
     public void createGridPane()
     {
-        gridPane = new GridPane();
-        gridPane.setHgap(90);
-        gridPane.setVgap(50);
-        gridPane.setTranslateY(130);
-        gridPane.setTranslateX(155);
+        gridPane = new BootstrapPane(3);
+        gridPane.setHgap(30);
+        gridPane.setVgap(90);
     }
 
     public void stylizeTitleLabel(Label label)
     {
         label.setText(UtilStringStorage.trophyLabel);
-        label.setFont(Font.font("Impact", FontWeight.BOLD, 30));
-        label.setTranslateX(355);
-        label.setTranslateY(10);
+        label.setFont(Font.font("Impact", FontWeight.BOLD, 35));
     }
 
-    public void setUpVbox(VBox vbox, Label label, int translateX, int translateY, String string, Properties properties, String propertyKey, Label cupNumber)
+    public void setUpVbox(VBox vBox, Label label, int translateX, int translateY, String string, Properties properties, String propertyKey, Label cupNumber)
     {
         placeLabel(label, translateX, translateY);
         stylizeLabel(label, string, properties, propertyKey, cupNumber);
         cupNumber.setTranslateX(80);
         cupNumber.setTranslateY(40);
-        vbox.getChildren().add(label);
+        vBox.getChildren().add(label);
     }
 
     public void createReturnButton()
@@ -160,7 +148,7 @@ public class TrophyScene extends Scene
     {
         label.setText(string +" ");
         cupNumber.setText(properties.getProperty(propertyKey));
-        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 23));
+        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 25));
         cupNumber.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 27));
     }
 

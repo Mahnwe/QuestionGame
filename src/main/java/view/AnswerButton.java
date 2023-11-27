@@ -1,5 +1,6 @@
 package view;
 
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
@@ -11,11 +12,6 @@ import java.util.List;
 
 public class AnswerButton extends Button
 {
-
-    private final BorderWidths borderWidths = new BorderWidths(2.0);
-    private final CornerRadii cornerRadii = new CornerRadii(5.0);
-    private final Border border = new Border(new BorderStroke(Color.BLACK,
-            BorderStrokeStyle.SOLID, cornerRadii, borderWidths));
     private boolean isClicked;
     public AnswerButton(boolean buttonIsClicked, String text)
     {
@@ -23,7 +19,6 @@ public class AnswerButton extends Button
         String upperText = text.toUpperCase();
         this.setText(upperText);
         this.setFont(Font.font("Futura", FontWeight.BOLD, 18));
-
     }
 
     public void setAnswerButtonOnAction(AnswerButton answerButton, List<AnswerButton> buttonList, Button validateButton)
@@ -31,7 +26,8 @@ public class AnswerButton extends Button
         answerButton.setOnAction(event -> {
         answerButton.checkOthersButtonClicked(buttonList);
         answerButton.setClicked(true);
-        answerButton.setBorder(border);
+        answerButton.setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY)));
+        answerButton.setTextFill(Color.GHOSTWHITE);
         validateButton.setDisable(false);
         });
         CustomOption.setGlowEffectOnButton(answerButton);
@@ -40,7 +36,8 @@ public class AnswerButton extends Button
     public void checkOthersButtonClicked(List<AnswerButton> buttonList)
     {
         for (AnswerButton answerButton : buttonList) {
-            answerButton.setBorder(null);
+            answerButton.setBackground(new Background(new BackgroundFill(Color.GHOSTWHITE, CornerRadii.EMPTY, Insets.EMPTY)));
+            answerButton.setTextFill(Color.BLACK);
             if (answerButton.isClicked) {
                 answerButton.isClicked = false;
             }

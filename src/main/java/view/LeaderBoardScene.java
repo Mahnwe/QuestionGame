@@ -1,6 +1,5 @@
 package view;
 
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
@@ -25,7 +24,6 @@ public class LeaderBoardScene extends Scene
     private final ConfirmAlert confirmAlert;
     private VBox bestScoresVbox;
     private final BorderPane borderPane;
-    private GridPane gridPaneBestScore;
 
     public LeaderBoardScene(ScrollPane scrollPane, Stage stage, AchievementManager achievementManager)
     {
@@ -54,14 +52,12 @@ public class LeaderBoardScene extends Scene
         createLeaderBoard();
         createBestScoresLabel();
         createEraseFileButton();
+        borderPane.setLeft(bestScoresVbox);
 
         gridpane.add(leaderBoardVBox, 0, 0);
-
-        borderPane.setLeft(bestScoresVbox);
         borderPane.setCenter(gridpane);
-        scrollPane.setContent(borderPane);
-        gridpane.setTranslateX(-210);
 
+        scrollPane.setContent(borderPane);
         createBackground();
 
     }
@@ -70,7 +66,7 @@ public class LeaderBoardScene extends Scene
     {
         Label leaderBoardLabel = new Label(UtilStringStorage.leaderBoardLabel);
 
-        leaderBoardLabel.setTranslateX(570);
+        leaderBoardLabel.setTranslateX(420);
         leaderBoardLabel.setTranslateY(10);
         leaderBoardLabel.setFont(Font.font("Impact", FontWeight.BOLD, 30));
 
@@ -79,44 +75,29 @@ public class LeaderBoardScene extends Scene
         leaderBoardArea.setText(String.valueOf(stringBuilder));
         leaderBoardArea.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 17));
         leaderBoardArea.setTextFill(Color.BLACK);
-        leaderBoardArea.setTranslateX(340);
+        leaderBoardArea.setTranslateX(250);
         leaderBoardArea.setTranslateY(60);
 
         leaderBoardVBox.getChildren().add(leaderBoardLabel);
         leaderBoardVBox.getChildren().add(leaderBoardArea);
     }
 
-    public void createGridPaneBestScore()
-    {
-        gridPaneBestScore = new GridPane();
-        gridPaneBestScore.addColumn(1);
-        gridPaneBestScore.addRow(4);
-        gridPaneBestScore.setVgap(20);
-        gridPaneBestScore.setAlignment(Pos.CENTER);
-        gridPaneBestScore.setTranslateY(50);
-        gridPaneBestScore.setTranslateX(5);
-    }
-
     public void createBestScoresLabel()
     {
         bestScoresVbox = new VBox();
 
-        createGridPaneBestScore();
-
         Label bestScoreIn10Questions = new Label(UtilStringStorage.bestScoreIn10Label+  " "+FileUtil.generalSavesFile.getProperty("perfectScore10"));
-        stylizeBestScoreLabel(bestScoreIn10Questions, 0, 0);
+        stylizeBestScoreLabel(bestScoresVbox, bestScoreIn10Questions, 10, 0);
 
         Label bestScoreIn15Questions = new Label(UtilStringStorage.bestScoreIn15Label+  " "+FileUtil.generalSavesFile.getProperty("perfectScore15"));
-        stylizeBestScoreLabel(bestScoreIn15Questions, 0, 1);
+        stylizeBestScoreLabel(bestScoresVbox, bestScoreIn15Questions, 10, 20);
 
         Label bestScoreIn20Questions = new Label(UtilStringStorage.bestScoreIn20Label+  " "+FileUtil.generalSavesFile.getProperty("perfectScore20"));
-        stylizeBestScoreLabel(bestScoreIn20Questions, 0, 2);
+        stylizeBestScoreLabel(bestScoresVbox, bestScoreIn20Questions, 10, 40);
 
         Label bestScoreInSurvivalMode = new Label();
         checkForBestSurvivalScore(bestScoreInSurvivalMode);
-        stylizeBestScoreLabel(bestScoreInSurvivalMode, 0, 3);
-
-        bestScoresVbox.getChildren().add(gridPaneBestScore);
+        stylizeBestScoreLabel(bestScoresVbox, bestScoreInSurvivalMode, 10, 60);
     }
 
     public void checkForBestSurvivalScore(Label bestScoreInSurvivalMode)
@@ -138,18 +119,20 @@ public class LeaderBoardScene extends Scene
         }
     }
 
-    public void stylizeBestScoreLabel(Label label, int column, int row)
+    public void stylizeBestScoreLabel(VBox vBox, Label label, int translateX, int translateY)
     {
         label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 15));
         label.setTextFill(Color.BLACK);
-        gridPaneBestScore.add(label, column, row);
+        label.setTranslateX(translateX);
+        label.setTranslateY(translateY);
+        vBox.getChildren().add(label);
     }
 
     public void createEraseFileButton()
     {
         Button eraseSaveFileButton = new Button();
         eraseSaveFileButton.setTranslateX(50);
-        eraseSaveFileButton.setTranslateY(220);
+        eraseSaveFileButton.setTranslateY(170);
         CustomOption.setUpTrashButton(eraseSaveFileButton);
 
         eraseSaveFileButton.setTooltip(null);

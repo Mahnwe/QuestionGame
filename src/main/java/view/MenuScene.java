@@ -51,7 +51,6 @@ public class MenuScene extends Scene
 
         this.gameHandler = new GameHandler();
         this.achievementManager = achievementManager;
-
         createWelcomeArea();
         createLeaderBoardButtonArea();
         createButtonArea();
@@ -80,26 +79,27 @@ public class MenuScene extends Scene
 
     public void createLeaderBoardButtonArea()
     {
-        VBox leaderBoardVBox = new VBox();
+        BootstrapPane leaderBoardVBox = new BootstrapPane(1);
         leaderBoardVBox.setBorder(border);
-        leaderBoardVBox.setPrefWidth(220);
+        leaderBoardVBox.setMinWidth(240);
 
-        GridPane sideButtonGridPane = createLeftButtons();
+        BootstrapPane sideButtonGridPane = createLeftButtons();
 
         setLeftButtonOnAction();
 
-        leaderBoardVBox.getChildren().add(sideButtonGridPane);
+        leaderBoardVBox.add(sideButtonGridPane, 0, 0);
         pane.setLeft(leaderBoardVBox);
     }
 
-    public GridPane createLeftButtons()
+    public BootstrapPane createLeftButtons()
     {
-        GridPane gridPaneMenuButton = new GridPane();
+        BootstrapPane gridPaneMenuButton = new BootstrapPane(1);
         gridPaneMenuButton.addColumn(1);
         gridPaneMenuButton.addRow(5);
         gridPaneMenuButton.setVgap(70);
         gridPaneMenuButton.setAlignment(Pos.CENTER);
         gridPaneMenuButton.setTranslateY(70);
+        gridPaneMenuButton.setTranslateX(40);
 
         leaderBoardButton = new MenuSideButton(UtilStringStorage.leaderBoardButton, UtilStringStorage.leaderBoardTooltip);
         gridPaneMenuButton.add(leaderBoardButton, 0, 0);

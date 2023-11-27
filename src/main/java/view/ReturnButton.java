@@ -4,6 +4,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
+import util.CustomOption;
 import util.IconCreator;
 import util.PathUtil;
 import util.UtilStringStorage;
@@ -23,6 +24,7 @@ public class ReturnButton  extends Button {
         BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
         this.setBackground(new Background(new BackgroundImage(backArrow, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
                 backgroundSize)));
+        CustomOption.setGlowEffectOnButton(this);
     }
 
 }

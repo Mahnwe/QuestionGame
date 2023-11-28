@@ -1,13 +1,16 @@
 package model;
 
+import util.FileUtil;
 import util.UtilStringStorage;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class QuestionStorage
 {
     private final ArrayList<Question> questionList = new ArrayList<>();
+    private Random randomIndex;
 
     public QuestionStorage()
     {
@@ -416,6 +419,22 @@ public class QuestionStorage
                 UtilStringStorage.explanation80);
         questionList.add(question80);
 
+        if(!FileUtil.personalizeQuestionsFile.isEmpty()) {
+            randomIndex = new Random();
+            for (int i = PersonalizeQuestionsHandler.personalizeQuestionList.size(); i > 0; i--) {
+                int randomQuestionIndex = generateRandomIndex();
+                Question question = PersonalizeQuestionsHandler.personalizeQuestionList.remove(randomQuestionIndex);
+                questionList.add(question);
+            }
+        }
+
+    }
+
+    public int generateRandomIndex()
+    {
+        int maxRandom = PersonalizeQuestionsHandler.personalizeQuestionList.size();
+        int minRandom = 0;
+        return randomIndex.nextInt((maxRandom - 1 - minRandom) + 1) + minRandom;
     }
 
     public List<Question> getQuestionList() {

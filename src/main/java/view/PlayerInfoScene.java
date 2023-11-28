@@ -190,10 +190,10 @@ public class PlayerInfoScene extends Scene
     }
 
     public HBox createStatArea(Label label) {
-        label.setTranslateY(3);
+        label.setTranslateY(12);
 
         HBox area = new HBox();
-        area.setMinHeight(30);
+        area.setMinHeight(50);
         area.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 
         Label emptySpace = new Label();

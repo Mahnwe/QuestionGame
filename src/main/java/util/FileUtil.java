@@ -11,6 +11,7 @@ public class FileUtil {
 
     private static final Logger logger = LogManager.getLogger(FileUtil.class);
     public static Properties generalSavesFile = new Properties();
+    public static Properties personalizeQuestionsFile = new Properties();
     public static File saveFile;
 
     public static void loadFile(Properties properties, final String filePath)
@@ -77,7 +78,16 @@ public class FileUtil {
         try (FileWriter fileWriter = new FileWriter(PathUtil.GENERAL_SAVES_FILE)){
             generalSavesFile.store(fileWriter, "");
         } catch (IOException e) {
-            logger.error("Survival file can't be store");
+            logger.error("General file can't be store");
+        }
+    }
+
+    public static void storePersonalizeQuestionsFile()
+    {
+        try (FileWriter fileWriter = new FileWriter(PathUtil.PERSONALIZE_QUESTIONS_FILE)){
+            personalizeQuestionsFile.store(fileWriter, "");
+        } catch (IOException e) {
+            logger.error("Personalize questions file can't be store");
         }
     }
 

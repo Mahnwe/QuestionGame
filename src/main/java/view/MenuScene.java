@@ -13,10 +13,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import model.AchievementManager;
-import model.GameHandler;
-import model.Player;
-import model.SoundManager;
+import model.*;
 import util.*;
 
 
@@ -48,6 +45,9 @@ public class MenuScene extends Scene
         this.menuStage = stage;
         pane.setPrefWidth(1200);
         pane.setPrefHeight(750);
+        PersonalizeQuestionsHandler.addNewQuestionToPropertiesFile("Histoire", "Quelle est la date de la Revolution Francaise ?", "1739", "1789", "1839", "1889", "1789", "La revolution francaise se deroule en 1789");
+        PersonalizeQuestionsHandler.addNewQuestionToPropertiesFile("Geographie", "Quelle est le pays le plus grand du monde ?", "Etats-Unis", "Russie", "Inde", "Bresil", "Russie", "La Russie est le pays le plus grand du monde");
+        PersonalizeQuestionsHandler.addPersonalizeQuestionsToStringList();
 
         this.gameHandler = new GameHandler();
         this.achievementManager = achievementManager;

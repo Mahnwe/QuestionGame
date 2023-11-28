@@ -28,6 +28,7 @@ public class App extends Application
 
         FileUtil.createSaveFile();
         FileUtil.loadFile(FileUtil.generalSavesFile, PathUtil.GENERAL_SAVES_FILE);
+        FileUtil.loadFile(FileUtil.personalizeQuestionsFile, PathUtil.PERSONALIZE_QUESTIONS_FILE);
 
         AchievementManager achievementManager = new AchievementManager();
         LanguageScene languageScene = new LanguageScene(new BorderPane(), stage, achievementManager);

@@ -31,6 +31,10 @@ public class PathUtil
     // SAVES
     public static final String GENERAL_SAVES_FILE = RESOURCES_PATH + "SaveFile/GeneralSaves.properties";
 
+    // PERSONALIZE QUESTIONS
+
+    public static final String PERSONALIZE_QUESTIONS_FILE = RESOURCES_PATH + "PersonalizeQuestions/PersonalizeQuestions.properties";
+
     // MUSICS SOUND EFFECTS
     public static final String BAD_ANSWER_SOUND_EFFECT = RESOURCES_PATH + "SoundEffect/Quack-Sound-Effect.wav";
     public static final String GOOD_ANSWER_SOUND_EFFECT = RESOURCES_PATH + "SoundEffect/Applause-Sound-Effect.wav";

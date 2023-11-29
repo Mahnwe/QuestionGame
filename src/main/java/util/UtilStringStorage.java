@@ -75,6 +75,8 @@ public class UtilStringStorage
     public static String trophyTooltip = "";
     public static String achievementButton = "";
     public static String achievementTooltip = "";
+    public static String questionCreatorButton = "";
+    public static String questionCreatorTooltip = "";
     public static String optionButton = "";
     public static String optionTooltip = "";
     public static String creditButton = "";
@@ -137,6 +139,19 @@ public class UtilStringStorage
     public static String goldCupTrophy = "";
     public static String silverCupTrophy = "";
     public static String bronzeCupTrophy = "";
+
+    // QUESTION CREATOR
+    public static String creatorSceneTitleLabel = "";
+    public static String sceneExplanationLabel = "";
+    public static String createCategoryLabel = "";
+    public static String createQuestionToAskLabel = "";
+    public static String createAnswerALabel = "";
+    public static String createAnswerBLabel = "";
+    public static String createAnswerCLabel = "";
+    public static String createAnswerDLabel = "";
+    public static String createGoodAnswerLabel = "";
+    public static String createExplanationLabel = "";
+    public static String validateCreationButton = "";
 
     // OPTION SCENE
     public static String volumeLabel = "";

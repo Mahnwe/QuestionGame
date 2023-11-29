@@ -69,7 +69,11 @@ public class PlayerInfoScene extends Scene
         sendButton = new Button(UtilStringStorage.validateButton);
         stylizeSendButton(sendButton);
 
-        userInputArea = new CustomTextArea(sendButton);
+        userInputArea = new CustomTextArea(sendButton, 12);
+        userInputArea.setMaxHeight(50);
+        userInputArea.setMaxWidth(250);
+        userInputArea.setTranslateY(75);
+        userInputArea.setTranslateX(230);
         userInputArea.setBorder(border);
 
         getPlayerName.getChildren().add(userInputArea);

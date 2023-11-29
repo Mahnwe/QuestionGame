@@ -34,6 +34,7 @@ public class MenuScene extends Scene
     private MenuSideButton leaderBoardButton;
     private MenuSideButton trophyButton;
     private MenuSideButton achievementButton;
+    private MenuSideButton questionCreatorButton;
     private MenuSideButton optionButton;
     private MenuSideButton creditButton;
     public static MediaPlayer relaunchGame;
@@ -45,9 +46,6 @@ public class MenuScene extends Scene
         this.menuStage = stage;
         pane.setPrefWidth(1200);
         pane.setPrefHeight(750);
-        PersonalizeQuestionsHandler.addNewQuestionToPropertiesFile("Histoire", "Quelle est la date de la Revolution Francaise ?", "1739", "1789", "1839", "1889", "1789", "La revolution francaise se deroule en 1789");
-        PersonalizeQuestionsHandler.addNewQuestionToPropertiesFile("Geographie", "Quelle est le pays le plus grand du monde ?", "Etats-Unis", "Russie", "Inde", "Bresil", "Russie", "La Russie est le pays le plus grand du monde");
-        PersonalizeQuestionsHandler.addPersonalizeQuestionsToStringList();
 
         this.gameHandler = new GameHandler();
         this.achievementManager = achievementManager;
@@ -95,26 +93,29 @@ public class MenuScene extends Scene
     {
         BootstrapPane gridPaneMenuButton = new BootstrapPane(1);
         gridPaneMenuButton.addColumn(1);
-        gridPaneMenuButton.addRow(5);
+        gridPaneMenuButton.addRow(6);
         gridPaneMenuButton.setVgap(70);
         gridPaneMenuButton.setAlignment(Pos.CENTER);
-        gridPaneMenuButton.setTranslateY(70);
+        gridPaneMenuButton.setTranslateY(40);
         gridPaneMenuButton.setTranslateX(40);
 
-        leaderBoardButton = new MenuSideButton(UtilStringStorage.leaderBoardButton, UtilStringStorage.leaderBoardTooltip);
+        leaderBoardButton = new MenuSideButton(UtilStringStorage.leaderBoardButton, UtilStringStorage.leaderBoardTooltip, -5);
         gridPaneMenuButton.add(leaderBoardButton, 0, 0);
 
-        trophyButton = new MenuSideButton(UtilStringStorage.trophyButton, UtilStringStorage.trophyTooltip);
+        trophyButton = new MenuSideButton(UtilStringStorage.trophyButton, UtilStringStorage.trophyTooltip, 10);
         gridPaneMenuButton.add(trophyButton, 0, 1);
 
-        achievementButton = new MenuSideButton(UtilStringStorage.achievementButton, UtilStringStorage.achievementTooltip);
+        achievementButton = new MenuSideButton(UtilStringStorage.achievementButton, UtilStringStorage.achievementTooltip, 0);
         gridPaneMenuButton.add(achievementButton, 0, 2);
 
-        optionButton = new MenuSideButton(UtilStringStorage.optionButton, UtilStringStorage.optionTooltip);
-        gridPaneMenuButton.add(optionButton, 0, 3);
+        questionCreatorButton = new MenuSideButton(UtilStringStorage.questionCreatorButton, UtilStringStorage.questionCreatorTooltip, -15);
+        gridPaneMenuButton.add(questionCreatorButton, 0, 3);
 
-        creditButton = new MenuSideButton(UtilStringStorage.creditButton, UtilStringStorage.creditTooltip);
-        gridPaneMenuButton.add(creditButton, 0, 4);
+        optionButton = new MenuSideButton(UtilStringStorage.optionButton, UtilStringStorage.optionTooltip, 10);
+        gridPaneMenuButton.add(optionButton, 0, 4);
+
+        creditButton = new MenuSideButton(UtilStringStorage.creditButton, UtilStringStorage.creditTooltip, 10);
+        gridPaneMenuButton.add(creditButton, 0, 5);
 
         return gridPaneMenuButton;
     }
@@ -134,6 +135,11 @@ public class MenuScene extends Scene
         achievementButton.setOnAction(event -> {
             AchievementScene achievementScene = new AchievementScene(new ScrollPane(), achievementManager, menuStage);
             menuStage.setScene(achievementScene);
+        });
+
+        questionCreatorButton.setOnAction(event -> {
+            QuestionCreatorScene questionCreatorScene = new QuestionCreatorScene(new BorderPane(), menuStage, achievementManager);
+            menuStage.setScene(questionCreatorScene);
         });
 
         optionButton.setOnAction(event -> {

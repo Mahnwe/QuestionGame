@@ -112,6 +112,8 @@ public class UtilTranslateString {
         UtilStringStorage.trophyTooltip = engTradFile.getProperty("trophyTooltip");
         UtilStringStorage.achievementButton = engTradFile.getProperty("achievementButton");
         UtilStringStorage.achievementTooltip = engTradFile.getProperty("achievementTooltip");
+        UtilStringStorage.questionCreatorButton = engTradFile.getProperty("questionCreatorButton");
+        UtilStringStorage.questionCreatorTooltip = engTradFile.getProperty("questionCreatorTooltip");
         UtilStringStorage.optionButton = engTradFile.getProperty("optionButton");
         UtilStringStorage.optionTooltip = engTradFile.getProperty("optionTooltip");
         UtilStringStorage.creditButton = engTradFile.getProperty("creditButton");
@@ -173,6 +175,19 @@ public class UtilTranslateString {
         UtilStringStorage.goldCupTrophy = engTradFile.getProperty("goldCupTrophy");
         UtilStringStorage.silverCupTrophy = engTradFile.getProperty("silverCupTrophy");
         UtilStringStorage.bronzeCupTrophy = engTradFile.getProperty("bronzeCupTrophy");
+
+        //QUESTION CREATOR
+        UtilStringStorage.creatorSceneTitleLabel = engTradFile.getProperty("creatorSceneTitleLabel");
+        UtilStringStorage.sceneExplanationLabel = engTradFile.getProperty("sceneExplanationLabel");
+        UtilStringStorage.createCategoryLabel = engTradFile.getProperty("createCategoryLabel");
+        UtilStringStorage.createQuestionToAskLabel = engTradFile.getProperty("createQuestionToAskLabel");
+        UtilStringStorage.createAnswerALabel = engTradFile.getProperty("createAnswerALabel");
+        UtilStringStorage.createAnswerBLabel = engTradFile.getProperty("createAnswerBLabel");
+        UtilStringStorage.createAnswerCLabel = engTradFile.getProperty("createAnswerCLabel");
+        UtilStringStorage.createAnswerDLabel = engTradFile.getProperty("createAnswerDLabel");
+        UtilStringStorage.createGoodAnswerLabel = engTradFile.getProperty("createGoodAnswerLabel");
+        UtilStringStorage.createExplanationLabel = engTradFile.getProperty("createExplanationLabel");
+        UtilStringStorage.validateCreationButton = engTradFile.getProperty("validateCreationButton");
 
         // OPTION SCENE
         UtilStringStorage.volumeLabel = engTradFile.getProperty("volumeLabel");
@@ -276,6 +291,8 @@ public class UtilTranslateString {
         UtilStringStorage.trophyTooltip = frTradFile.getProperty("trophyTooltip");
         UtilStringStorage.achievementButton = frTradFile.getProperty("achievementButton");
         UtilStringStorage.achievementTooltip = frTradFile.getProperty("achievementTooltip");
+        UtilStringStorage.questionCreatorButton = frTradFile.getProperty("questionCreatorButton");
+        UtilStringStorage.questionCreatorTooltip = frTradFile.getProperty("questionCreatorTooltip");
         UtilStringStorage.optionButton = frTradFile.getProperty("optionButton");
         UtilStringStorage.optionTooltip = frTradFile.getProperty("optionTooltip");
         UtilStringStorage.creditButton = frTradFile.getProperty("creditButton");
@@ -337,6 +354,19 @@ public class UtilTranslateString {
         UtilStringStorage.goldCupTrophy = frTradFile.getProperty("goldCupTrophy");
         UtilStringStorage.silverCupTrophy = frTradFile.getProperty("silverCupTrophy");
         UtilStringStorage.bronzeCupTrophy = frTradFile.getProperty("bronzeCupTrophy");
+
+        //QUESTION CREATOR
+        UtilStringStorage.creatorSceneTitleLabel = frTradFile.getProperty("creatorSceneTitleLabel");
+        UtilStringStorage.sceneExplanationLabel = frTradFile.getProperty("sceneExplanationLabel");
+        UtilStringStorage.createCategoryLabel = frTradFile.getProperty("createCategoryLabel");
+        UtilStringStorage.createQuestionToAskLabel = frTradFile.getProperty("createQuestionToAskLabel");
+        UtilStringStorage.createAnswerALabel = frTradFile.getProperty("createAnswerALabel");
+        UtilStringStorage.createAnswerBLabel = frTradFile.getProperty("createAnswerBLabel");
+        UtilStringStorage.createAnswerCLabel = frTradFile.getProperty("createAnswerCLabel");
+        UtilStringStorage.createAnswerDLabel = frTradFile.getProperty("createAnswerDLabel");
+        UtilStringStorage.createGoodAnswerLabel = frTradFile.getProperty("createGoodAnswerLabel");
+        UtilStringStorage.createExplanationLabel = frTradFile.getProperty("createExplanationLabel");
+        UtilStringStorage.validateCreationButton = frTradFile.getProperty("validateCreationButton");
 
         // OPTION SCENE
         UtilStringStorage.volumeLabel = frTradFile.getProperty("volumeLabel");

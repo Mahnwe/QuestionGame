@@ -15,15 +15,17 @@ public class ValidateQuestionCreationButton extends Button {
     {
         this.setText(UtilStringStorage.validateCreationButton);
         this.setFont(Font.font(QuestionCreatorScene.POLICE_LABEL, FontWeight.BOLD, 25));
-        this.setDisable(true);
     }
 
     public void checkForValidateQuestion(List<QuestionCreatorTextArea> textAreaList)
     {
         numberOfFilledTextArea = 0;
         for (QuestionCreatorTextArea questionCreatorTextArea : textAreaList) {
-            if (questionCreatorTextArea.isFill()) {
+            if (questionCreatorTextArea.isFill() && !questionCreatorTextArea.getText().equals("This field is blank, you have to fill it")) {
                 numberOfFilledTextArea++;
+            }
+            else {
+                questionCreatorTextArea.setText("This field is blank, you have to fill it");
             }
         }
     }

@@ -1,13 +1,13 @@
 package view;
 
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.AchievementManager;
+import model.PersonalizeQuestionsHandler;
 import util.BackgroundCreator;
 import util.UtilStringStorage;
 
@@ -21,8 +21,10 @@ public class QuestionCreatorScene extends Scene {
     private GridPane gridPane;
     private final BorderPane multiPane = new BorderPane();
     public static final String POLICE_LABEL = "Futura";
-    private VBox centerVbox;
+    private final VBox centerVbox;
     public static List<QuestionCreatorTextArea> textAreaList = new ArrayList<>();
+    private final ValidateQuestionCreationButton validateQuestionCreationButton;
+    private Label isCreatedLabel;
 
     public QuestionCreatorScene(BorderPane pane, Stage stage, AchievementManager achievementManager)
     {
@@ -31,6 +33,9 @@ public class QuestionCreatorScene extends Scene {
         this.stage = stage;
         this.achievementManager = achievementManager;
 
+        centerVbox = new VBox();
+        validateQuestionCreationButton = new ValidateQuestionCreationButton();
+
         createGridPane();
 
         createReturnButton();
@@ -38,7 +43,6 @@ public class QuestionCreatorScene extends Scene {
         createPresentation();
         createForm();
         createButtons();
-
 
     }
 
@@ -73,34 +77,23 @@ public class QuestionCreatorScene extends Scene {
 
     public void createButtons()
     {
-        ValidateQuestionCreationButton validateQuestionCreationButton = new ValidateQuestionCreationButton();
         validateQuestionCreationButton.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 20));
 
-        Button checkButton = new Button("Check");
-        checkButton.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 20));
+        isCreatedLabel = new Label();
+        isCreatedLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 20));
 
         centerVbox.getChildren().add(validateQuestionCreationButton);
-        centerVbox.getChildren().add(checkButton);
+        centerVbox.getChildren().add(isCreatedLabel);
 
         validateQuestionCreationButton.setTranslateY(90);
-        validateQuestionCreationButton.setTranslateX(580);
+        validateQuestionCreationButton.setTranslateX(350);
 
-        checkButton.setTranslateY(50);
-        checkButton.setTranslateX(380);
-
-        checkButton.setOnAction(event -> {
-            validateQuestionCreationButton.checkForValidateQuestion(textAreaList);
-            if(validateQuestionCreationButton.getNumberOfFilledTextArea() == 8)
-            {
-                validateQuestionCreationButton.setDisable(false);
-            }
-        });
+        isCreatedLabel.setTranslateY(50);
+        isCreatedLabel.setTranslateX(580);
     }
 
     public void createForm()
     {
-        centerVbox = new VBox();
-
         Label categoryLabel = new Label(UtilStringStorage.createCategoryLabel);
         QuestionCreatorTextArea categoryTextArea = new QuestionCreatorTextArea(20);
         textAreaList.add(categoryTextArea);
@@ -152,6 +145,27 @@ public class QuestionCreatorScene extends Scene {
         centerVbox.getChildren().add(gridPane);
 
         multiPane.setCenter(centerVbox);
+
+        validateQuestionCreationButton.setOnAction(event -> {
+            validateQuestionCreationButton.checkForValidateQuestion(textAreaList);
+            if(validateQuestionCreationButton.getNumberOfFilledTextArea() == 8)
+            {
+                PersonalizeQuestionsHandler.addNewQuestionToPropertiesFile(categoryTextArea.getText(), questionTextArea.getText(), answerATextArea.getText(), answerBTextArea.getText(),
+                        answerCTextArea.getText(), answerDTextArea.getText(), goodAnswerTextArea.getText(), explanationTextArea.getText());
+                isCreatedLabel.setText("Question forgée !");
+                resetTextAreas();
+            }
+            else {
+                isCreatedLabel.setText("La forge a échoué");
+            }
+        });
+    }
+
+    public void resetTextAreas()
+    {
+        for (QuestionCreatorTextArea questionCreatorTextArea : textAreaList) {
+            questionCreatorTextArea.setText("");
+        }
     }
 
     public void stylizeLabel(VBox vBox, Label label, int columnIndex, int rowIndex)

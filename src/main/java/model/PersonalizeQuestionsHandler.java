@@ -8,7 +8,7 @@ import java.util.List;
 public class PersonalizeQuestionsHandler
 {
     public static List<Question> personalizeQuestionList = new ArrayList<>();
-    private static int propertyKeyQuestionNumber;
+    private static int propertyKeyQuestionNumber = Integer.parseInt(FileUtil.personalizeQuestionsFile.getProperty("personalizeQuestionsNumber"));
     private static final ArrayList<String> listeStringQuestion = new ArrayList<>();
     private static final String PROPERTY_KEY_START = "personalizeQuestion";
     private static final String PROPERTY_KEY_CATEGORY = "Category";
@@ -35,10 +35,12 @@ public class PersonalizeQuestionsHandler
 
         FileUtil.storePersonalizeQuestionsFile();
         propertyKeyQuestionNumber++;
+        FileUtil.personalizeQuestionsFile.setProperty("personalizeQuestionsNumber", String.valueOf(propertyKeyQuestionNumber));
     }
 
     public static void addPersonalizeQuestionsToStringList()
     {
+        propertyKeyQuestionNumber = Integer.parseInt(FileUtil.personalizeQuestionsFile.getProperty("personalizeQuestionsNumber"));
         String propertyReadQuestionKey;
         for(int i = 0; i < propertyKeyQuestionNumber; i++)
         {

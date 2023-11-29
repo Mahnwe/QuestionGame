@@ -1,6 +1,7 @@
 package model;
 
 import util.FileUtil;
+import util.PathUtil;
 import util.UtilStringStorage;
 
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ public class QuestionStorage
     public QuestionStorage()
     {
         createQuestions();
+        checkPersonalizeQuestions();
     }
 
     public void createQuestions()
@@ -419,7 +421,12 @@ public class QuestionStorage
                 UtilStringStorage.explanation80);
         questionList.add(question80);
 
-        if(!FileUtil.personalizeQuestionsFile.isEmpty()) {
+    }
+
+    public void checkPersonalizeQuestions()
+    {
+        PersonalizeQuestionsHandler.addPersonalizeQuestionsToStringList();
+        if(!PersonalizeQuestionsHandler.personalizeQuestionList.isEmpty()) {
             randomIndex = new Random();
             for (int i = PersonalizeQuestionsHandler.personalizeQuestionList.size(); i > 0; i--) {
                 int randomQuestionIndex = generateRandomIndex();
@@ -427,7 +434,6 @@ public class QuestionStorage
                 questionList.add(question);
             }
         }
-
     }
 
     public int generateRandomIndex()

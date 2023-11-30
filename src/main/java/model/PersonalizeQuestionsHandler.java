@@ -8,7 +8,8 @@ import java.util.List;
 public class PersonalizeQuestionsHandler
 {
     public static List<Question> personalizeQuestionList = new ArrayList<>();
-    private static int propertyKeyQuestionNumber = Integer.parseInt(FileUtil.personalizeQuestionsFile.getProperty("personalizeQuestionsNumber"));
+    private static final String QUESTION_NUMBER_KEY_PROPERTIES = "personalizeQuestionsNumber";
+    private static int propertyKeyQuestionNumber = Integer.parseInt(FileUtil.personalizeQuestionsFile.getProperty(QUESTION_NUMBER_KEY_PROPERTIES));
     private static final ArrayList<String> listeStringQuestion = new ArrayList<>();
     private static final String PROPERTY_KEY_START = "personalizeQuestion";
     private static final String PROPERTY_KEY_CATEGORY = "Category";
@@ -33,14 +34,14 @@ public class PersonalizeQuestionsHandler
         FileUtil.personalizeQuestionsFile.setProperty(propertyQuestionKey+ PROPERTY_KEY_GOOD_ANSWER, goodAnswer);
         FileUtil.personalizeQuestionsFile.setProperty(propertyQuestionKey+ PROPERTY_KEY_EXPLANATION, explanation);
 
-        FileUtil.storePersonalizeQuestionsFile();
         propertyKeyQuestionNumber++;
-        FileUtil.personalizeQuestionsFile.setProperty("personalizeQuestionsNumber", String.valueOf(propertyKeyQuestionNumber));
+        FileUtil.personalizeQuestionsFile.setProperty(QUESTION_NUMBER_KEY_PROPERTIES, String.valueOf(propertyKeyQuestionNumber));
+        FileUtil.storePersonalizeQuestionsFile();
     }
 
     public static void addPersonalizeQuestionsToStringList()
     {
-        propertyKeyQuestionNumber = Integer.parseInt(FileUtil.personalizeQuestionsFile.getProperty("personalizeQuestionsNumber"));
+        propertyKeyQuestionNumber = Integer.parseInt(FileUtil.personalizeQuestionsFile.getProperty(QUESTION_NUMBER_KEY_PROPERTIES));
         String propertyReadQuestionKey;
         for(int i = 0; i < propertyKeyQuestionNumber; i++)
         {

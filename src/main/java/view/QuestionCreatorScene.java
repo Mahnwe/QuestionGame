@@ -153,6 +153,7 @@ public class QuestionCreatorScene extends Scene {
                 PersonalizeQuestionsHandler.addNewQuestionToPropertiesFile(categoryTextArea.getText(), questionTextArea.getText(), answerATextArea.getText(), answerBTextArea.getText(),
                         answerCTextArea.getText(), answerDTextArea.getText(), goodAnswerTextArea.getText(), explanationTextArea.getText());
                 isCreatedLabel.setText("Question forgée !");
+                PersonalizeQuestionsHandler.addPersonalizeQuestionsToStringList();
                 resetTextAreas();
             }
             else {

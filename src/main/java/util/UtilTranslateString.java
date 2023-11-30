@@ -188,6 +188,9 @@ public class UtilTranslateString {
         UtilStringStorage.createGoodAnswerLabel = engTradFile.getProperty("createGoodAnswerLabel");
         UtilStringStorage.createExplanationLabel = engTradFile.getProperty("createExplanationLabel");
         UtilStringStorage.validateCreationButton = engTradFile.getProperty("validateCreationButton");
+        UtilStringStorage.questionIsForged = engTradFile.getProperty("questionIsForged");
+        UtilStringStorage.questionIsNotForged = engTradFile.getProperty("questionIsNotForged");
+        UtilStringStorage.textAreaPlaceHolder = engTradFile.getProperty("textAreaPlaceHolder");
 
         // OPTION SCENE
         UtilStringStorage.volumeLabel = engTradFile.getProperty("volumeLabel");
@@ -367,6 +370,9 @@ public class UtilTranslateString {
         UtilStringStorage.createGoodAnswerLabel = frTradFile.getProperty("createGoodAnswerLabel");
         UtilStringStorage.createExplanationLabel = frTradFile.getProperty("createExplanationLabel");
         UtilStringStorage.validateCreationButton = frTradFile.getProperty("validateCreationButton");
+        UtilStringStorage.questionIsForged = frTradFile.getProperty("questionIsForged");
+        UtilStringStorage.questionIsNotForged = frTradFile.getProperty("questionIsNotForged");
+        UtilStringStorage.textAreaPlaceHolder = frTradFile.getProperty("textAreaPlaceHolder");
 
         // OPTION SCENE
         UtilStringStorage.volumeLabel = frTradFile.getProperty("volumeLabel");

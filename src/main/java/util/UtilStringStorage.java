@@ -152,6 +152,9 @@ public class UtilStringStorage
     public static String createGoodAnswerLabel = "";
     public static String createExplanationLabel = "";
     public static String validateCreationButton = "";
+    public static String questionIsForged = "";
+    public static String questionIsNotForged = "";
+    public static String textAreaPlaceHolder = "";
 
     // OPTION SCENE
     public static String volumeLabel = "";

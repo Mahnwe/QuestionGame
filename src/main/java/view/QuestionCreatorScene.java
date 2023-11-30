@@ -152,12 +152,12 @@ public class QuestionCreatorScene extends Scene {
             {
                 PersonalizeQuestionsHandler.addNewQuestionToPropertiesFile(categoryTextArea.getText(), questionTextArea.getText(), answerATextArea.getText(), answerBTextArea.getText(),
                         answerCTextArea.getText(), answerDTextArea.getText(), goodAnswerTextArea.getText(), explanationTextArea.getText());
-                isCreatedLabel.setText("Question forgée !");
+                isCreatedLabel.setText(UtilStringStorage.questionIsForged);
                 PersonalizeQuestionsHandler.addPersonalizeQuestionsToStringList();
                 resetTextAreas();
             }
             else {
-                isCreatedLabel.setText("La forge a échoué");
+                isCreatedLabel.setText(UtilStringStorage.questionIsNotForged);
             }
         });
     }

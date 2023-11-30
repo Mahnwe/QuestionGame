@@ -21,11 +21,11 @@ public class ValidateQuestionCreationButton extends Button {
     {
         numberOfFilledTextArea = 0;
         for (QuestionCreatorTextArea questionCreatorTextArea : textAreaList) {
-            if (questionCreatorTextArea.isFill() && !questionCreatorTextArea.getText().equals("This field is blank, you have to fill it")) {
+            if (questionCreatorTextArea.isFill() && !questionCreatorTextArea.getText().equals(UtilStringStorage.textAreaPlaceHolder)) {
                 numberOfFilledTextArea++;
             }
             else {
-                questionCreatorTextArea.setText("This field is blank, you have to fill it");
+                questionCreatorTextArea.setText(UtilStringStorage.textAreaPlaceHolder);
             }
         }
     }

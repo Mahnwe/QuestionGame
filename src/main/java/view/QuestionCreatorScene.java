@@ -54,7 +54,6 @@ public class QuestionCreatorScene extends Scene {
         createForm();
         createButtons();
         createDeleteArea();
-
     }
 
     public void createGridPane()

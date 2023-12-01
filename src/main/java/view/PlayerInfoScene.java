@@ -21,16 +21,11 @@ public class PlayerInfoScene extends Scene
     private Button sendButton;
     private CustomTextArea userInputArea;
     private final BorderPane pane;
-
     private VBox playerInfos;
     private Label playerScoreLabel;
     private Label playerLivesLabel;
     private final Player player;
 
-    private final BorderWidths borderWidths = new BorderWidths(1.5);
-    private final CornerRadii cornerRadii = new CornerRadii(1.0);
-    private final Border border = new Border(new BorderStroke(Color.BLACK,
-            BorderStrokeStyle.SOLID, cornerRadii, borderWidths));
     public static final String POLICE_LABEL = "Futura";
 
     public PlayerInfoScene(BorderPane pane, Player player)
@@ -74,7 +69,7 @@ public class PlayerInfoScene extends Scene
         userInputArea.setMaxWidth(250);
         userInputArea.setTranslateY(75);
         userInputArea.setTranslateX(230);
-        userInputArea.setBorder(border);
+        userInputArea.setBorder(CustomOption.createCustomBorder(1.0, 1.5, Color.BLACK));
 
         getPlayerName.getChildren().add(userInputArea);
         getPlayerName.getChildren().add(sendButton);
@@ -84,7 +79,7 @@ public class PlayerInfoScene extends Scene
     {
         sendButton.setFont(Font.font(POLICE_LABEL, FontWeight.EXTRA_LIGHT, 19));
         sendButton.setDisable(true);
-        sendButton.setBorder(border);
+        sendButton.setBorder(CustomOption.createCustomBorder(1.0, 1.5, Color.BLACK));
         sendButton.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
         sendButton.setTextFill(Color.GHOSTWHITE);
         sendButton.setMinWidth(100);

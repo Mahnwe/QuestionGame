@@ -26,8 +26,6 @@ public class MenuScene extends Scene
     private Button launchGameButton;
     private final GameHandler gameHandler;
     private ComboBox<String> comboBox;
-    private final Border border = new Border(new BorderStroke(Color.BLACK,
-            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT));
     private final AchievementManager achievementManager;
 
     public static final String POLICE_LABEL = "Verdana";
@@ -78,7 +76,7 @@ public class MenuScene extends Scene
     public void createLeaderBoardButtonArea()
     {
         BootstrapPane leaderBoardVBox = new BootstrapPane(1);
-        leaderBoardVBox.setBorder(border);
+        leaderBoardVBox.setBorder(CustomOption.createCustomBorder(1.0, 1.0, Color.BLACK));
         leaderBoardVBox.setMinWidth(240);
 
         BootstrapPane sideButtonGridPane = createLeftButtons();

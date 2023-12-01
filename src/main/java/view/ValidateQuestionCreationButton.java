@@ -1,8 +1,10 @@
 package view;
 
 import javafx.scene.control.Button;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import util.CustomOption;
 import util.UtilStringStorage;
 
 import java.util.List;
@@ -22,12 +24,12 @@ public class ValidateQuestionCreationButton extends Button {
         numberOfFilledTextArea = 0;
         for (QuestionCreatorTextArea questionCreatorTextArea : textAreaList) {
             if (questionCreatorTextArea.isFill() && !questionCreatorTextArea.getText().equals(UtilStringStorage.textAreaPlaceHolder)) {
-                questionCreatorTextArea.setBorder(questionCreatorTextArea.getBlackBorder());
+                questionCreatorTextArea.setBorder(CustomOption.createCustomBorder(1.5, 2.0, Color.BLACK));
                 numberOfFilledTextArea++;
             }
             else {
                 questionCreatorTextArea.setText(UtilStringStorage.textAreaPlaceHolder);
-                questionCreatorTextArea.setBorder(questionCreatorTextArea.getRedBorder());
+                questionCreatorTextArea.setBorder(CustomOption.createCustomBorder(1.5, 2.0, Color.RED));
             }
         }
     }

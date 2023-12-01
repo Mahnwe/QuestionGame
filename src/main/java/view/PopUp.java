@@ -9,7 +9,6 @@ import util.CustomOption;
 
 public class PopUp {
 
-
     public static PlayerInfoScene createPopup(Player player, BorderPane menuPane, QuestionInterface questionInterface)
     {
         PlayerInfoScene playerInfoScene = new PlayerInfoScene(new BorderPane(), player);

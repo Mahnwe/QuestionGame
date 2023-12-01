@@ -10,10 +10,6 @@ import util.IconCreator;
 
 public class LanguageButton extends Button {
 
-    private final BorderWidths borderWidths = new BorderWidths(2.0);
-    private final Border border = new Border(new BorderStroke(Color.GHOSTWHITE,
-            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, borderWidths));
-
     public LanguageButton (String imagePath, String tooltipLanguage)
     {
         IconCreator englishIcon = new IconCreator(imagePath);
@@ -33,7 +29,7 @@ public class LanguageButton extends Button {
 
         this.setOnMouseEntered(event -> {
             this.setEffect(CustomOption.glow);
-            this.setBorder(border);
+            this.setBorder(CustomOption.createCustomBorder(1.0, 2.0, Color.GHOSTWHITE));
         });
 
         this.setOnMouseExited(event -> {

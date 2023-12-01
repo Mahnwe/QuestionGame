@@ -35,9 +35,6 @@ public class QuestionInterface extends BorderPane
     private final List<AnswerButton> answerButtonList;
     private Button nextQuestionButton;
     private Boolean playerAnswer;
-    private final Border border = new Border(new BorderStroke(Color.BLACK,
-            BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT));
-
     public static MediaPlayer soundEffectToStop;
     private GridPane gridPane;
 
@@ -67,7 +64,7 @@ public class QuestionInterface extends BorderPane
     public void createGameSpace()
     {
         game = new VBox();
-        game.setBorder(border);
+        game.setBorder(CustomOption.createCustomBorder(1.0, 1.0, Color.BLACK));
         game.setBorder(new Border(new BorderStroke(Color.BLACK,BorderStrokeStyle.SOLID,CornerRadii.EMPTY,BorderWidths.DEFAULT)));
         game.setPrefWidth(830);
         game.setPrefHeight(300);

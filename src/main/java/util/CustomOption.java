@@ -116,4 +116,12 @@ public class CustomOption {
                 backgroundSize)));
         setGlowEffectOnButton(button);
     }
+
+    public static Border createCustomBorder(double cornerRadiiValue, double borderWidthsValue, Color color)
+    {
+        CornerRadii cornerRadii = new CornerRadii(cornerRadiiValue);
+        BorderWidths borderWidths = new BorderWidths(borderWidthsValue);
+        return new Border(new BorderStroke(color,
+                BorderStrokeStyle.SOLID, cornerRadii, borderWidths));
+    }
 }

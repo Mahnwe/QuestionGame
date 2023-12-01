@@ -22,10 +22,12 @@ public class ValidateQuestionCreationButton extends Button {
         numberOfFilledTextArea = 0;
         for (QuestionCreatorTextArea questionCreatorTextArea : textAreaList) {
             if (questionCreatorTextArea.isFill() && !questionCreatorTextArea.getText().equals(UtilStringStorage.textAreaPlaceHolder)) {
+                questionCreatorTextArea.setBorder(questionCreatorTextArea.getBlackBorder());
                 numberOfFilledTextArea++;
             }
             else {
                 questionCreatorTextArea.setText(UtilStringStorage.textAreaPlaceHolder);
+                questionCreatorTextArea.setBorder(questionCreatorTextArea.getRedBorder());
             }
         }
     }

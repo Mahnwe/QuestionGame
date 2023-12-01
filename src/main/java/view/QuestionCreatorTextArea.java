@@ -25,5 +25,9 @@ public class QuestionCreatorTextArea extends TextArea{
     public boolean isFill() {
         return isFill;
     }
+
+    public void setFill(boolean fill) {
+        isFill = fill;
+    }
 }
 

@@ -33,6 +33,7 @@ public class QuestionCreatorScene extends Scene {
     public static List<QuestionCreatorTextArea> textAreaList = new ArrayList<>();
     private final ValidateQuestionCreationButton validateQuestionCreationButton;
     private Label isCreatedLabel;
+    private VBox deletedAreaVbox;
 
     public QuestionCreatorScene(BorderPane pane, Stage stage, AchievementManager achievementManager)
     {
@@ -41,7 +42,6 @@ public class QuestionCreatorScene extends Scene {
         this.stage = stage;
         this.achievementManager = achievementManager;
         this.confirmAlert = new ConfirmAlert(Alert.AlertType.CONFIRMATION);
-        confirmAlert.modifyConfirmAlert(UtilStringStorage.confirmAlertHeaderText);
 
         centerVbox = new VBox();
         validateQuestionCreationButton = new ValidateQuestionCreationButton();
@@ -53,7 +53,7 @@ public class QuestionCreatorScene extends Scene {
         createPresentation();
         createForm();
         createButtons();
-        deleteAllPersonalizeQuestionsButton();
+        createDeleteArea();
 
     }
 
@@ -148,6 +148,7 @@ public class QuestionCreatorScene extends Scene {
         multiPane.setCenter(centerVbox);
 
         validateQuestionCreationButton.setOnAction(event -> {
+            isCreatedLabel.setText("");
             validateQuestionCreationButton.checkForValidateQuestion(textAreaList);
             if(validateQuestionCreationButton.getNumberOfFilledTextArea() == 8)
             {
@@ -163,10 +164,9 @@ public class QuestionCreatorScene extends Scene {
         });
     }
 
-    public void deleteAllPersonalizeQuestionsButton()
+    public void createDeleteAllVbox()
     {
-        VBox vbox = new VBox();
-
+        VBox deleteAllVbox = new VBox();
         Label deleteAllLabel = new Label(UtilStringStorage.deleteAllLabel);
         deleteAllLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 18));
 
@@ -178,37 +178,89 @@ public class QuestionCreatorScene extends Scene {
         questionsAreDeletedLabel.setVisible(false);
 
         deleteAllPersonalizeQuestionsButton.setOnAction(event -> {
+            questionsAreDeletedLabel.setText(UtilStringStorage.questionAreDeleted);
+            confirmAlert.modifyConfirmAlert(UtilStringStorage.confirmAlertDeleteAllQuestions);
             Optional<ButtonType> result = confirmAlert.showAndWait();
             if(result.orElse(null) == ButtonType.OK)
             {
-                FileUtil.resetPersonalizeQuestionFile();
-                questionsAreDeletedLabel.setVisible(true);
+                if(PersonalizeQuestionsHandler.getPropertyKeyQuestionNumber() > 0) {
+                    FileUtil.resetPersonalizeQuestionFile();
+                    questionsAreDeletedLabel.setVisible(true);
+                } else {
+                    questionsAreDeletedLabel.setText(UtilStringStorage.nothingToDelete);
+                    questionsAreDeletedLabel.setVisible(true);
+                }
             }
         });
-
-        vbox.setTranslateY(80);
-        vbox.setTranslateX(-40);
-        vbox.getChildren().add(deleteAllLabel);
-        vbox.getChildren().add(deleteAllPersonalizeQuestionsButton);
-        vbox.getChildren().add(questionsAreDeletedLabel);
-        multiPane.setRight(vbox);
+        deleteAllVbox.getChildren().add(deleteAllLabel);
+        deleteAllVbox.getChildren().add(deleteAllPersonalizeQuestionsButton);
+        deleteAllVbox.getChildren().add(questionsAreDeletedLabel);
+        deletedAreaVbox.getChildren().add(deleteAllVbox);
     }
 
-    public void resetTextAreas()
+    public void createDeleteLastVbox()
     {
+        VBox deleteLastVbox = new VBox();
+
+        Label deleteLastQuestionLabel = new Label(UtilStringStorage.deleteLastLabel);
+        deleteLastQuestionLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 18));
+
+        Button deleteLastPersonalizeQuestionsButton = new Button();
+        CustomOption.setUpTrashButton(deleteLastPersonalizeQuestionsButton, UtilStringStorage.deleteLastTooltip);
+
+        Label lastQuestionIsDeletedLabel = new Label(UtilStringStorage.lastQuestionIsDeleted);
+        lastQuestionIsDeletedLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 18));
+        lastQuestionIsDeletedLabel.setVisible(false);
+
+        deleteLastPersonalizeQuestionsButton.setOnAction(event -> {
+            lastQuestionIsDeletedLabel.setText(UtilStringStorage.deleteLastLabel);
+            confirmAlert.modifyConfirmAlert(UtilStringStorage.confirmLastQuestionIsDeleted);
+            Optional<ButtonType> result = confirmAlert.showAndWait();
+            if(result.orElse(null) == ButtonType.OK) {
+                if (PersonalizeQuestionsHandler.getPropertyKeyQuestionNumber() > 0)
+                {
+                    PersonalizeQuestionsHandler.deleteLastQuestionAdded();
+                    lastQuestionIsDeletedLabel.setVisible(true);
+                }
+                else {
+                    lastQuestionIsDeletedLabel.setText(UtilStringStorage.nothingToDelete);
+                    lastQuestionIsDeletedLabel.setVisible(true);
+                }
+            }
+        });
+        deleteLastVbox.getChildren().add(deleteLastQuestionLabel);
+        deleteLastVbox.getChildren().add(deleteLastPersonalizeQuestionsButton);
+        deleteLastVbox.getChildren().add(lastQuestionIsDeletedLabel);
+        deleteLastVbox.setTranslateY(20);
+        deletedAreaVbox.getChildren().add(deleteLastVbox);
+    }
+
+    public void createDeleteArea()
+    {
+        deletedAreaVbox = new VBox();
+
+        createDeleteAllVbox();
+        createDeleteLastVbox();
+
+        deletedAreaVbox.setTranslateY(60);
+        deletedAreaVbox.setTranslateX(-40);
+
+        multiPane.setRight(deletedAreaVbox);
+    }
+
+    public void resetTextAreas() {
         for (QuestionCreatorTextArea questionCreatorTextArea : textAreaList) {
-            questionCreatorTextArea.setText("");
+            questionCreatorTextArea.clear();
+            questionCreatorTextArea.setFill(false);
         }
     }
 
-    public void stylizeLabel(VBox vBox, Label label, int columnIndex, int rowIndex)
-    {
+    public void stylizeLabel(VBox vBox, Label label, int columnIndex, int rowIndex) {
         label.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 18));
         gridPane.add(vBox, columnIndex, rowIndex);
     }
 
-    public void createReturnButton()
-    {
+    public void createReturnButton() {
         HBox buttonHbox = new HBox();
         ReturnButton returnButton = new ReturnButton();
         buttonHbox.getChildren().add(returnButton);
@@ -216,14 +268,12 @@ public class QuestionCreatorScene extends Scene {
         returnButton.setOnAction(event -> backToMainMenu());
     }
 
-    public void createBackground()
-    {
+    public void createBackground() {
         BackgroundImage backgroundImage = BackgroundCreator.createMenuBackground();
         borderPane.setBackground(new Background(backgroundImage));
     }
 
-    public void backToMainMenu()
-    {
+    public void backToMainMenu() {
         MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
         stage.setScene(menuScene);
     }

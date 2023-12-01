@@ -190,10 +190,15 @@ public class UtilTranslateString {
         UtilStringStorage.questionIsForged = engTradFile.getProperty("questionIsForged");
         UtilStringStorage.questionIsNotForged = engTradFile.getProperty("questionIsNotForged");
         UtilStringStorage.textAreaPlaceHolder = engTradFile.getProperty("textAreaPlaceHolder");
-        UtilStringStorage.confirmAlertHeaderText = engTradFile.getProperty("confirmAlertHeaderText");
+        UtilStringStorage.confirmAlertDeleteAllQuestions = engTradFile.getProperty("confirmAlertHeaderText");
         UtilStringStorage.deleteAllLabel = engTradFile.getProperty("deleteAllLabel");
         UtilStringStorage.deleteAllTooltip = engTradFile.getProperty("deleteAllTooltip");
         UtilStringStorage.questionAreDeleted = engTradFile.getProperty("questionAreDeletedLabel");
+        UtilStringStorage.nothingToDelete = engTradFile.getProperty("nothingToDelete");
+        UtilStringStorage.deleteLastLabel = engTradFile.getProperty("deleteLastLabel");
+        UtilStringStorage.deleteLastTooltip = engTradFile.getProperty("deleteLastTooltip");
+        UtilStringStorage.lastQuestionIsDeleted = engTradFile.getProperty("lastQuestionIsDeleted");
+        UtilStringStorage.confirmLastQuestionIsDeleted = engTradFile.getProperty("confirmLastQuestionIsDeleted");
 
         // OPTION SCENE
         UtilStringStorage.volumeLabel = engTradFile.getProperty("volumeLabel");
@@ -374,10 +379,15 @@ public class UtilTranslateString {
         UtilStringStorage.questionIsForged = frTradFile.getProperty("questionIsForged");
         UtilStringStorage.questionIsNotForged = frTradFile.getProperty("questionIsNotForged");
         UtilStringStorage.textAreaPlaceHolder = frTradFile.getProperty("textAreaPlaceHolder");
-        UtilStringStorage.confirmAlertHeaderText = frTradFile.getProperty("confirmAlertHeaderText");
+        UtilStringStorage.confirmAlertDeleteAllQuestions = frTradFile.getProperty("confirmAlertHeaderText");
         UtilStringStorage.deleteAllLabel = frTradFile.getProperty("deleteAllLabel");
         UtilStringStorage.deleteAllTooltip = frTradFile.getProperty("deleteAllTooltip");
         UtilStringStorage.questionAreDeleted = frTradFile.getProperty("questionAreDeletedLabel");
+        UtilStringStorage.nothingToDelete = frTradFile.getProperty("nothingToDelete");
+        UtilStringStorage.deleteLastLabel = frTradFile.getProperty("deleteLastLabel");
+        UtilStringStorage.deleteLastTooltip = frTradFile.getProperty("deleteLastTooltip");
+        UtilStringStorage.lastQuestionIsDeleted = frTradFile.getProperty("lastQuestionIsDeleted");
+        UtilStringStorage.confirmLastQuestionIsDeleted = frTradFile.getProperty("confirmLastQuestionIsDeleted");
 
         // OPTION SCENE
         UtilStringStorage.volumeLabel = frTradFile.getProperty("volumeLabel");

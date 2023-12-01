@@ -154,10 +154,15 @@ public class UtilStringStorage
     public static String questionIsForged = "";
     public static String questionIsNotForged = "";
     public static String textAreaPlaceHolder = "";
-    public static String confirmAlertHeaderText = "";
+    public static String confirmAlertDeleteAllQuestions = "";
     public static String deleteAllLabel = "";
     public static String deleteAllTooltip = "";
     public static String questionAreDeleted = "";
+    public static String nothingToDelete = "";
+    public static String deleteLastLabel = "";
+    public static String deleteLastTooltip = "";
+    public static String lastQuestionIsDeleted = "";
+    public static String confirmLastQuestionIsDeleted = "";
 
     // OPTION SCENE
     public static String volumeLabel = "";

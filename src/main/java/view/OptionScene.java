@@ -35,7 +35,7 @@ public class OptionScene extends Scene {
         pane.setPrefHeight(750);
         pane.setPrefWidth(1200);
         this.confirmAlert = new ConfirmAlert(Alert.AlertType.CONFIRMATION);
-        confirmAlert.modifyConfirmAlert();
+        confirmAlert.modifyConfirmAlert(UtilStringStorage.askConfirmReset);
 
         optionVbox = new VBox();
         pane.setCenter(optionVbox);
@@ -176,7 +176,7 @@ public class OptionScene extends Scene {
         Button resetButton = new Button();
         resetButton.setTranslateY(105);
         resetButton.setTranslateX(410);
-        CustomOption.setUpTrashButton(resetButton);
+        CustomOption.setUpTrashButton(resetButton, UtilStringStorage.resetTooltip);
         resetButton.setOnAction(event -> {
             Optional<ButtonType> result = confirmAlert.showAndWait();
             if(result.orElse(null) == ButtonType.OK)

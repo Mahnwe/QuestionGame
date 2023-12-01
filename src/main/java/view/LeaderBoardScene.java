@@ -133,11 +133,7 @@ public class LeaderBoardScene extends Scene
         Button eraseSaveFileButton = new Button();
         eraseSaveFileButton.setTranslateX(50);
         eraseSaveFileButton.setTranslateY(170);
-        CustomOption.setUpTrashButton(eraseSaveFileButton);
-
-        eraseSaveFileButton.setTooltip(null);
-        Tooltip eraseTooltip = new Tooltip(UtilStringStorage.eraseTooltipLabel);
-        eraseSaveFileButton.setTooltip(eraseTooltip);
+        CustomOption.setUpTrashButton(eraseSaveFileButton, UtilStringStorage.eraseTooltipLabel);
 
         eraseSaveFileButton.setOnAction(event -> {
             Optional<ButtonType> result = confirmAlert.showAndWait();

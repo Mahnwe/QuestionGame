@@ -98,7 +98,6 @@ public class UtilTranslateString {
         UtilStringStorage.leaderBoardLabel = engTradFile.getProperty("leaderBoardLabel");
         UtilStringStorage.eraseTooltipLabel = engTradFile.getProperty("eraseTooltipLabel");
         UtilStringStorage.askToResetScore = engTradFile.getProperty("askToResetScore");
-        UtilStringStorage.resetScoreInfo = engTradFile.getProperty("resetScoreInfo");
         UtilStringStorage.bestScoreIn10Label = engTradFile.getProperty("bestScoreIn10QuestionsLabel");
         UtilStringStorage.bestScoreIn15Label = engTradFile.getProperty("bestScoreIn15QuestionsLabel");
         UtilStringStorage.bestScoreIn20Label = engTradFile.getProperty("bestScoreIn20QuestionsLabel");
@@ -191,6 +190,10 @@ public class UtilTranslateString {
         UtilStringStorage.questionIsForged = engTradFile.getProperty("questionIsForged");
         UtilStringStorage.questionIsNotForged = engTradFile.getProperty("questionIsNotForged");
         UtilStringStorage.textAreaPlaceHolder = engTradFile.getProperty("textAreaPlaceHolder");
+        UtilStringStorage.confirmAlertHeaderText = engTradFile.getProperty("confirmAlertHeaderText");
+        UtilStringStorage.deleteAllLabel = engTradFile.getProperty("deleteAllLabel");
+        UtilStringStorage.deleteAllTooltip = engTradFile.getProperty("deleteAllTooltip");
+        UtilStringStorage.questionAreDeleted = engTradFile.getProperty("questionAreDeletedLabel");
 
         // OPTION SCENE
         UtilStringStorage.volumeLabel = engTradFile.getProperty("volumeLabel");
@@ -200,7 +203,6 @@ public class UtilTranslateString {
         UtilStringStorage.resetTooltip = engTradFile.getProperty("resetTooltip");
         UtilStringStorage.confirmAlertWindow = engTradFile.getProperty("confirmAlertWindow");
         UtilStringStorage.askConfirmReset = engTradFile.getProperty("askToReset");
-        UtilStringStorage.resetInfo = engTradFile.getProperty("resetInfo");
 
         // CREDIT SCENE
         UtilStringStorage.generalThank = engTradFile.getProperty("generalThank");
@@ -280,7 +282,6 @@ public class UtilTranslateString {
         UtilStringStorage.leaderBoardLabel = frTradFile.getProperty("leaderBoardLabel");
         UtilStringStorage.eraseTooltipLabel = frTradFile.getProperty("eraseTooltipLabel");
         UtilStringStorage.askToResetScore = frTradFile.getProperty("askToResetScore");
-        UtilStringStorage.resetScoreInfo = frTradFile.getProperty("resetScoreInfo");
         UtilStringStorage.bestScoreIn10Label = frTradFile.getProperty("bestScoreIn10QuestionsLabel");
         UtilStringStorage.bestScoreIn15Label = frTradFile.getProperty("bestScoreIn15QuestionsLabel");
         UtilStringStorage.bestScoreIn20Label = frTradFile.getProperty("bestScoreIn20QuestionsLabel");
@@ -373,6 +374,10 @@ public class UtilTranslateString {
         UtilStringStorage.questionIsForged = frTradFile.getProperty("questionIsForged");
         UtilStringStorage.questionIsNotForged = frTradFile.getProperty("questionIsNotForged");
         UtilStringStorage.textAreaPlaceHolder = frTradFile.getProperty("textAreaPlaceHolder");
+        UtilStringStorage.confirmAlertHeaderText = frTradFile.getProperty("confirmAlertHeaderText");
+        UtilStringStorage.deleteAllLabel = frTradFile.getProperty("deleteAllLabel");
+        UtilStringStorage.deleteAllTooltip = frTradFile.getProperty("deleteAllTooltip");
+        UtilStringStorage.questionAreDeleted = frTradFile.getProperty("questionAreDeletedLabel");
 
         // OPTION SCENE
         UtilStringStorage.volumeLabel = frTradFile.getProperty("volumeLabel");
@@ -382,7 +387,6 @@ public class UtilTranslateString {
         UtilStringStorage.resetTooltip = frTradFile.getProperty("resetTooltip");
         UtilStringStorage.confirmAlertWindow = frTradFile.getProperty("confirmAlertWindow");
         UtilStringStorage.askConfirmReset = frTradFile.getProperty("askToReset");
-        UtilStringStorage.resetInfo = frTradFile.getProperty("resetInfo");
 
         // CREDIT SCENE
         UtilStringStorage.generalThank = frTradFile.getProperty("generalThank");

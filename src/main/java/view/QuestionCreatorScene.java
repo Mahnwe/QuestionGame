@@ -1,6 +1,9 @@
 package view;
 
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
@@ -9,12 +12,17 @@ import javafx.stage.Stage;
 import model.AchievementManager;
 import model.PersonalizeQuestionsHandler;
 import util.BackgroundCreator;
+import util.CustomOption;
+import util.FileUtil;
 import util.UtilStringStorage;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class QuestionCreatorScene extends Scene {
+
+    private final ConfirmAlert confirmAlert;
     private final BorderPane borderPane;
     private final Stage stage;
     private final AchievementManager achievementManager;
@@ -32,6 +40,8 @@ public class QuestionCreatorScene extends Scene {
         this.borderPane = pane;
         this.stage = stage;
         this.achievementManager = achievementManager;
+        this.confirmAlert = new ConfirmAlert(Alert.AlertType.CONFIRMATION);
+        confirmAlert.modifyConfirmAlert(UtilStringStorage.confirmAlertHeaderText);
 
         centerVbox = new VBox();
         validateQuestionCreationButton = new ValidateQuestionCreationButton();
@@ -43,6 +53,7 @@ public class QuestionCreatorScene extends Scene {
         createPresentation();
         createForm();
         createButtons();
+        deleteAllPersonalizeQuestionsButton();
 
     }
 
@@ -51,17 +62,17 @@ public class QuestionCreatorScene extends Scene {
         gridPane = new GridPane();
         gridPane.addRow(7);
         gridPane.addColumn(5);
-        gridPane.setHgap(50);
+        gridPane.setHgap(30);
         gridPane.setVgap(20);
         borderPane.setCenter(multiPane);
         gridPane.setTranslateY(40);
-        gridPane.setTranslateX(120);
+        gridPane.setTranslateX(20);
     }
 
     public void createPresentation()
     {
         VBox titleFormVbox = new VBox();
-        titleFormVbox.setTranslateX(400);
+        titleFormVbox.setTranslateX(450);
         Label sceneTitleLabel = new Label(UtilStringStorage.creatorSceneTitleLabel);
         sceneTitleLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 35));
         titleFormVbox.getChildren().add(sceneTitleLabel);
@@ -86,64 +97,54 @@ public class QuestionCreatorScene extends Scene {
         centerVbox.getChildren().add(isCreatedLabel);
 
         validateQuestionCreationButton.setTranslateY(90);
-        validateQuestionCreationButton.setTranslateX(350);
+        validateQuestionCreationButton.setTranslateX(200);
 
         isCreatedLabel.setTranslateY(50);
-        isCreatedLabel.setTranslateX(580);
+        isCreatedLabel.setTranslateX(450);
+    }
+
+    public void createAreaForForm(Label label, QuestionCreatorTextArea textArea, int columnIndex, int rowIndex)
+    {
+        textAreaList.add(textArea);
+        QuestionCreatorVbox questionCreatorVbox = new QuestionCreatorVbox(label, textArea);
+        stylizeLabel(questionCreatorVbox, label, columnIndex, rowIndex);
     }
 
     public void createForm()
     {
         Label categoryLabel = new Label(UtilStringStorage.createCategoryLabel);
         QuestionCreatorTextArea categoryTextArea = new QuestionCreatorTextArea(20);
-        textAreaList.add(categoryTextArea);
-        QuestionCreatorVbox categoryVbox = new QuestionCreatorVbox(categoryLabel, categoryTextArea);
-        stylizeLabel(categoryVbox, categoryLabel, 0, 0);
+        createAreaForForm(categoryLabel, categoryTextArea,0, 0);
 
         Label questionToAskLabel = new Label(UtilStringStorage.createQuestionToAskLabel);
         QuestionCreatorTextArea questionTextArea = new QuestionCreatorTextArea(85);
-        textAreaList.add(questionTextArea);
-        QuestionCreatorVbox questionVbox = new QuestionCreatorVbox(questionToAskLabel, questionTextArea);
-        stylizeLabel(questionVbox, questionToAskLabel, 2, 0);
+        createAreaForForm(questionToAskLabel, questionTextArea, 2, 0);
 
         Label createAnswerALabel = new Label(UtilStringStorage.createAnswerALabel);
         QuestionCreatorTextArea answerATextArea = new QuestionCreatorTextArea(26);
-        textAreaList.add(answerATextArea);
-        QuestionCreatorVbox answerAVbox = new QuestionCreatorVbox(createAnswerALabel, answerATextArea);
-        stylizeLabel(answerAVbox, createAnswerALabel, 0, 1);
+        createAreaForForm(createAnswerALabel, answerATextArea, 0, 1);
 
         Label createAnswerBLabel = new Label(UtilStringStorage.createAnswerBLabel);
         QuestionCreatorTextArea answerBTextArea = new QuestionCreatorTextArea(26);
-        textAreaList.add(answerBTextArea);
-        QuestionCreatorVbox answerBVbox = new QuestionCreatorVbox(createAnswerBLabel, answerBTextArea);
-        stylizeLabel(answerBVbox, createAnswerBLabel, 2, 1);
+        createAreaForForm(createAnswerBLabel, answerBTextArea, 2, 1);
 
         Label createAnswerCLabel = new Label(UtilStringStorage.createAnswerCLabel);
         QuestionCreatorTextArea answerCTextArea = new QuestionCreatorTextArea(26);
-        textAreaList.add(answerCTextArea);
-        QuestionCreatorVbox answerCVbox = new QuestionCreatorVbox(createAnswerCLabel, answerCTextArea);
-        stylizeLabel(answerCVbox, createAnswerCLabel, 0, 2);
+        createAreaForForm(createAnswerCLabel, answerCTextArea, 0, 2);
 
         Label createAnswerDLabel = new Label(UtilStringStorage.createAnswerDLabel);
         QuestionCreatorTextArea answerDTextArea = new QuestionCreatorTextArea(26);
-        textAreaList.add(answerDTextArea);
-        QuestionCreatorVbox answerDVbox = new QuestionCreatorVbox(createAnswerDLabel, answerDTextArea);
-        stylizeLabel(answerDVbox, createAnswerDLabel, 2, 2);
+        createAreaForForm(createAnswerDLabel,answerDTextArea, 2, 2);
 
         Label createGoodAnswerLabel = new Label(UtilStringStorage.createGoodAnswerLabel);
         QuestionCreatorTextArea goodAnswerTextArea = new QuestionCreatorTextArea(26);
-        textAreaList.add(goodAnswerTextArea);
-        QuestionCreatorVbox goodAnswerVbox = new QuestionCreatorVbox(createGoodAnswerLabel, goodAnswerTextArea);
-        stylizeLabel(goodAnswerVbox, createGoodAnswerLabel, 0, 3);
+        createAreaForForm(createGoodAnswerLabel, goodAnswerTextArea, 0, 3);
 
         Label createExplanationLabel = new Label(UtilStringStorage.createExplanationLabel);
         QuestionCreatorTextArea explanationTextArea = new QuestionCreatorTextArea(95);
-        textAreaList.add(explanationTextArea);
-        QuestionCreatorVbox explanationVbox = new QuestionCreatorVbox(createExplanationLabel, explanationTextArea);
-        stylizeLabel(explanationVbox, createExplanationLabel, 2, 3);
+        createAreaForForm(createExplanationLabel, explanationTextArea, 2, 3);
 
         centerVbox.getChildren().add(gridPane);
-
         multiPane.setCenter(centerVbox);
 
         validateQuestionCreationButton.setOnAction(event -> {
@@ -160,6 +161,37 @@ public class QuestionCreatorScene extends Scene {
                 isCreatedLabel.setText(UtilStringStorage.questionIsNotForged);
             }
         });
+    }
+
+    public void deleteAllPersonalizeQuestionsButton()
+    {
+        VBox vbox = new VBox();
+
+        Label deleteAllLabel = new Label(UtilStringStorage.deleteAllLabel);
+        deleteAllLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 18));
+
+        Button deleteAllPersonalizeQuestionsButton = new Button();
+        CustomOption.setUpTrashButton(deleteAllPersonalizeQuestionsButton, UtilStringStorage.deleteAllTooltip);
+
+        Label questionsAreDeletedLabel = new Label(UtilStringStorage.questionAreDeleted);
+        questionsAreDeletedLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 18));
+        questionsAreDeletedLabel.setVisible(false);
+
+        deleteAllPersonalizeQuestionsButton.setOnAction(event -> {
+            Optional<ButtonType> result = confirmAlert.showAndWait();
+            if(result.orElse(null) == ButtonType.OK)
+            {
+                FileUtil.resetPersonalizeQuestionFile();
+                questionsAreDeletedLabel.setVisible(true);
+            }
+        });
+
+        vbox.setTranslateY(80);
+        vbox.setTranslateX(-40);
+        vbox.getChildren().add(deleteAllLabel);
+        vbox.getChildren().add(deleteAllPersonalizeQuestionsButton);
+        vbox.getChildren().add(questionsAreDeletedLabel);
+        multiPane.setRight(vbox);
     }
 
     public void resetTextAreas()

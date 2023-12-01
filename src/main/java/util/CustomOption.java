@@ -103,13 +103,13 @@ public class CustomOption {
         button.setOnMouseExited(event -> button.setEffect(null));
     }
 
-    public static void setUpTrashButton(Button button)
+    public static void setUpTrashButton(Button button, String tooltipString)
     {
         IconCreator trashIcon = new IconCreator(PathUtil.TRASH_ICON);
         Image trashImage = trashIcon.createImage().getImage();
 
         button.setPrefSize(80,80);
-        Tooltip resetTooltip = new Tooltip(UtilStringStorage.resetTooltip);
+        Tooltip resetTooltip = new Tooltip(tooltipString);
         button.setTooltip(resetTooltip);
         BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
         button.setBackground(new Background(new BackgroundImage(trashImage, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,

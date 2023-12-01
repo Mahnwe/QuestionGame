@@ -20,18 +20,14 @@ public class ConfirmAlert extends Alert {
         super(alertType);
     }
 
-    public void modifyConfirmAlert()
+    public void modifyConfirmAlert(String headerText)
     {
         this.setTitle(UtilStringStorage.confirmAlertWindow);
 
-        Label confirmReset = new Label(UtilStringStorage.askConfirmReset);
+        Label confirmReset = new Label(headerText);
         confirmReset.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 23));
 
-        Label resetInfo = new Label(UtilStringStorage.resetInfo);
-        resetInfo.setTranslateY(3);
-        resetInfo.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 23));
-
-        this.setHeaderText(confirmReset.getText()+"\n"+resetInfo.getText());
+        this.setHeaderText(headerText);
 
         IconCreator iconCreator = new IconCreator(PathUtil.QUESTION_MARK_TEST);
         ImageView backgroundImage = iconCreator.createImage();
@@ -59,11 +55,7 @@ public class ConfirmAlert extends Alert {
         Label confirmReset = new Label(UtilStringStorage.askToResetScore);
         confirmReset.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 23));
 
-        Label resetInfo = new Label(UtilStringStorage.resetScoreInfo);
-        resetInfo.setTranslateY(3);
-        resetInfo.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 23));
-
-        confirmAlert.setHeaderText(confirmReset.getText()+"\n"+resetInfo.getText());
+        confirmAlert.setHeaderText(confirmReset.getText());
 
         IconCreator iconCreator = new IconCreator(PathUtil.QUESTION_MARK_TEST);
         ImageView backgroundImage = iconCreator.createImage();

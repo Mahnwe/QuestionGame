@@ -1,5 +1,6 @@
 package util;
 
+import model.PersonalizeQuestionsHandler;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -89,6 +90,13 @@ public class FileUtil {
         } catch (IOException e) {
             logger.error("Personalize questions file can't be store");
         }
+    }
+
+    public static void resetPersonalizeQuestionFile()
+    {
+        personalizeQuestionsFile.clear();
+        personalizeQuestionsFile.setProperty(PersonalizeQuestionsHandler.QUESTION_NUMBER_KEY_PROPERTIES, "0");
+        storePersonalizeQuestionsFile();
     }
 
     public static void resetSaveFile()

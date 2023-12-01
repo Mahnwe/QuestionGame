@@ -61,7 +61,6 @@ public class UtilStringStorage
     public static String leaderBoardLabel = "";
     public static String eraseTooltipLabel = "";
     public static String askToResetScore = "";
-    public static String resetScoreInfo = "";
     public static  String bestScoreIn10Label = "";
     public static  String bestScoreIn15Label = "";
     public static  String bestScoreIn20Label = "";
@@ -155,6 +154,10 @@ public class UtilStringStorage
     public static String questionIsForged = "";
     public static String questionIsNotForged = "";
     public static String textAreaPlaceHolder = "";
+    public static String confirmAlertHeaderText = "";
+    public static String deleteAllLabel = "";
+    public static String deleteAllTooltip = "";
+    public static String questionAreDeleted = "";
 
     // OPTION SCENE
     public static String volumeLabel = "";
@@ -164,7 +167,6 @@ public class UtilStringStorage
     public static String resetTooltip = "";
     public static String confirmAlertWindow = "";
     public static String askConfirmReset = "";
-    public static String resetInfo = "";
 
     // CREDIT SCENE
     public static String generalThank = "";

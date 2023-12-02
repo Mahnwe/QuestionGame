@@ -15,7 +15,7 @@ public class QuestionCreatorTextArea extends TextArea
             this.setFont(Font.font(PlayerInfoScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 16));
             this.setBorder(CustomOption.createCustomBorder(1.5, 2.0, Color.BLACK));
             this.setOnKeyTyped(event -> {
-                if(!this.getText().isBlank())
+                if(!this.getText().isEmpty())
                 {
                     isFill = true;
                 }

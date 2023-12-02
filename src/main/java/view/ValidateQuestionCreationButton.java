@@ -23,7 +23,7 @@ public class ValidateQuestionCreationButton extends Button {
     {
         numberOfFilledTextArea = 0;
         for (QuestionCreatorTextArea questionCreatorTextArea : textAreaList) {
-            if (questionCreatorTextArea.isFill() && !questionCreatorTextArea.getText().equals(UtilStringStorage.textAreaPlaceHolder)) {
+            if (questionCreatorTextArea.isFill() && !questionCreatorTextArea.getText().equals(UtilStringStorage.textAreaPlaceHolder) && !questionCreatorTextArea.getText().equals("")) {
                 questionCreatorTextArea.setBorder(CustomOption.createCustomBorder(1.5, 2.0, Color.BLACK));
                 numberOfFilledTextArea++;
             }

@@ -7,6 +7,7 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import util.CustomOption;
 import util.IconCreator;
 
 public class DeveloperVbox extends VBox {
@@ -22,13 +23,10 @@ public class DeveloperVbox extends VBox {
         nameLabel.setTextFill(Color.GHOSTWHITE);
         nameLabel.setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY)));
 
-        BorderWidths borderWidths = new BorderWidths(1.0);
-        CornerRadii cornerRadii = new CornerRadii(3.0);
-        Border border = new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, cornerRadii, borderWidths));
-        nameLabel.setBorder(border);
+        nameLabel.setBorder(CustomOption.createCustomBorder(3.0, 2.0, Color.BLACK));
 
-        this.setMaxWidth(120);
-        this.setBorder(border);
+        this.setMaxWidth(124);
+        this.setBorder(CustomOption.createCustomBorder(3.0, 2.0, Color.BLACK));
         Background background = new Background(new BackgroundFill(Color.LIGHTBLUE, CornerRadii.EMPTY, Insets.EMPTY));
         this.setBackground(background);
 

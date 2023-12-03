@@ -106,7 +106,7 @@ public class MenuScene extends Scene
         achievementButton = new MenuSideButton(UtilStringStorage.achievementButton, UtilStringStorage.achievementTooltip, 0);
         gridPaneMenuButton.add(achievementButton, 0, 2);
 
-        questionCreatorButton = new MenuSideButton(UtilStringStorage.questionCreatorButton, UtilStringStorage.questionCreatorTooltip, -15);
+        questionCreatorButton = new MenuSideButton(UtilStringStorage.questionCreatorButton, UtilStringStorage.questionCreatorTooltip, 10);
         gridPaneMenuButton.add(questionCreatorButton, 0, 3);
 
         optionButton = new MenuSideButton(UtilStringStorage.optionButton, UtilStringStorage.optionTooltip, 10);
@@ -175,8 +175,8 @@ public class MenuScene extends Scene
         ImageView gifImageView2 = GifCreator.createVibeGif(640, -80);
 
         DeveloperVbox developerVbox = new DeveloperVbox();
-        developerVbox.setTranslateX(353);
-        developerVbox.setTranslateY(77);
+        developerVbox.setTranslateX(355);
+        developerVbox.setTranslateY(67);
 
         selectModeArea.getChildren().add(chooseMode);
         selectModeArea.getChildren().add(comboBox);

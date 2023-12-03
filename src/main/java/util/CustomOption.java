@@ -48,6 +48,7 @@ public class CustomOption {
         button.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 27));
         button.setTranslateX(320);
         button.setTranslateY(195);
+        button.setBorder(CustomOption.createCustomBorder(3.0, 2.0, Color.BLACK));
         setGlowEffectOnButton(button);
     }
 
@@ -60,6 +61,7 @@ public class CustomOption {
         comboBox.setMinWidth(150);
         comboBox.setTranslateX(282);
         comboBox.setTranslateY(140);
+        comboBox.setBorder(CustomOption.createCustomBorder(3.0, 2.0, Color.BLACK));
         comboBox.setOnMouseEntered(event -> comboBox.setEffect(glow));
         comboBox.setOnMouseExited(event -> comboBox.setEffect(null));
 

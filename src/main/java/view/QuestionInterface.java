@@ -107,6 +107,7 @@ public class QuestionInterface extends BorderPane
     {
         validateAnswerButton = new Button(UtilStringStorage.validateAnswerButton);
         validateAnswerButton.setFont(Font.font("Futura", FontWeight.BOLD, 17));
+        validateAnswerButton.setBorder(CustomOption.createCustomBorder(3.0, 2.0, Color.BLACK));
         CustomOption.setGlowEffectOnButton(validateAnswerButton);
         validateAnswerButton.setDisable(true);
         gridPane.add(validateAnswerButton, 2, 3);
@@ -135,6 +136,7 @@ public class QuestionInterface extends BorderPane
 
         nextQuestionButton = new Button(UtilStringStorage.nextQuestionButton);
         nextQuestionButton.setFont(Font.font("Futura", FontWeight.BOLD, 17));
+        nextQuestionButton.setBorder(CustomOption.createCustomBorder(3.0, 2.0, Color.BLACK));
         CustomOption.setGlowEffectOnButton(nextQuestionButton);
         nextQuestionButton.setDisable(true);
         nextQuestionButton.setTranslateY(320);

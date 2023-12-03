@@ -17,6 +17,7 @@ public class ValidateQuestionCreationButton extends Button {
     {
         this.setText(UtilStringStorage.validateCreationButton);
         this.setFont(Font.font(QuestionCreatorScene.POLICE_LABEL, FontWeight.BOLD, 25));
+        this.setBorder(CustomOption.createCustomBorder(3.0, 2.0, Color.BLACK));
     }
 
     public void checkForValidateQuestion(List<QuestionCreatorTextArea> textAreaList)

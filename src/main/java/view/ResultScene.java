@@ -55,14 +55,15 @@ public class ResultScene extends VBox
 
         gameResult.getChildren().add(exitToMenuButton);
         pane.setCenter(gameResult);
-        gameResult.setTranslateY(100);
+        gameResult.setTranslateY(80);
+        gameResult.setTranslateX(-70);
 
     }
 
     public void stylizeLabel(Label label, int translateX, int translateY) {
         label.setTranslateX(translateX);
         label.setTranslateY(translateY);
-        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 20));
+        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 25));
         label.setTextFill(Color.GHOSTWHITE);
     }
 
@@ -124,7 +125,7 @@ public class ResultScene extends VBox
     public void setUpLabelAndTimer()
     {
         congratsLabel = new Label();
-        stylizeLabel(congratsLabel, 50, 10);
+        stylizeLabel(congratsLabel, 10, 10);
 
         playerResult = new Label();
         stylizeLabel(playerResult, 225, 30);
@@ -160,8 +161,10 @@ public class ResultScene extends VBox
 
     public void stylizeIcon (ImageView imageView)
     {
-        imageView.setTranslateY(80);
-        imageView.setTranslateX(280);
+        imageView.setFitHeight(190);
+        imageView.setFitWidth(170);
+        imageView.setTranslateY(110);
+        imageView.setTranslateX(310);
     }
 
     public void backToMainMenu()

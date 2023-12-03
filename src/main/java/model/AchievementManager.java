@@ -210,7 +210,7 @@ public class AchievementManager
     {
         label.setTranslateX(translateX);
         label.setTranslateY(translateY);
-        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 20));
+        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 25));
         label.setTextFill(Color.GHOSTWHITE);
     }
 

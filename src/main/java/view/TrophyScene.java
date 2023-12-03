@@ -64,7 +64,7 @@ public class TrophyScene extends Scene
         gridPane.add(goldCupImage, 0, 1);
         gridPane.add(silverCupImage, 1, 1);
         gridPane.add(bronzeCupImage, 2, 1);
-        gridPane.setTranslateX(100);
+        gridPane.setTranslateX(80);
 
         centralVbox.getChildren().add(gridPane);
 

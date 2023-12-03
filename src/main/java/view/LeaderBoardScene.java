@@ -8,22 +8,28 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.AchievementManager;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import util.BackgroundCreator;
 import util.CustomOption;
 import util.FileUtil;
 import util.UtilStringStorage;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Optional;
 
 public class LeaderBoardScene extends Scene
 {
-    private final StringBuilder stringBuilder;
+    private static final Logger logger = LogManager.getLogger(LeaderBoardScene.class);
     private final Stage stage;
     private final AchievementManager achievementManager;
     private final VBox leaderBoardVBox;
     private final ConfirmAlert confirmAlert;
     private VBox bestScoresVbox;
     private final BorderPane borderPane;
+    private GridPane scoreGridPane;
 
     public LeaderBoardScene(ScrollPane scrollPane, Stage stage, AchievementManager achievementManager)
     {
@@ -32,7 +38,6 @@ public class LeaderBoardScene extends Scene
         this.achievementManager = achievementManager;
         confirmAlert = new ConfirmAlert(Alert.AlertType.CONFIRMATION);
         confirmAlert.modifyConfirmAlertForSaveDelete(confirmAlert);
-        stringBuilder = FileUtil.readSaveFile(FileUtil.saveFile);
 
         scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
         scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
@@ -62,6 +67,23 @@ public class LeaderBoardScene extends Scene
 
     }
 
+    public void readSaveFile(int rowIndex)
+    {
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(FileUtil.saveFile))){
+            String line;
+            while((line = bufferedReader.readLine()) != null)
+            {
+                Label label = new Label();
+                 label.setText(line);
+                label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 17));
+                scoreGridPane.add(label, 0, rowIndex);
+                rowIndex++;
+            }
+        } catch (IOException e) {
+            logger.error("Save file can't be read");
+        }
+    }
+
     public void createLeaderBoard()
     {
         Label leaderBoardLabel = new Label(UtilStringStorage.leaderBoardLabel);
@@ -70,16 +92,14 @@ public class LeaderBoardScene extends Scene
         leaderBoardLabel.setTranslateY(10);
         leaderBoardLabel.setFont(Font.font("Impact", FontWeight.BOLD, 30));
 
-        Label leaderBoardArea = new Label();
-
-        leaderBoardArea.setText(String.valueOf(stringBuilder));
-        leaderBoardArea.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 17));
-        leaderBoardArea.setTextFill(Color.BLACK);
-        leaderBoardArea.setTranslateX(250);
-        leaderBoardArea.setTranslateY(60);
+        scoreGridPane = new GridPane();
+        scoreGridPane.setVgap(35);
+        readSaveFile(0);
+        scoreGridPane.setTranslateX(110);
+        scoreGridPane.setTranslateY(60);
 
         leaderBoardVBox.getChildren().add(leaderBoardLabel);
-        leaderBoardVBox.getChildren().add(leaderBoardArea);
+        leaderBoardVBox.getChildren().add(scoreGridPane);
     }
 
     public void createBestScoresLabel()

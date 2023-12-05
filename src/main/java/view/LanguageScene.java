@@ -2,6 +2,7 @@ package view;
 
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BorderPane;
@@ -29,8 +30,8 @@ public class LanguageScene extends Scene
         this.pane = pane;
         this.stage = stage;
         this.achievementManager = achievementManager;
-        pane.setPrefWidth(650);
-        pane.setPrefHeight(550);
+        pane.setPrefWidth(750);
+        pane.setPrefHeight(650);
 
         createTitleArea();
 
@@ -44,12 +45,15 @@ public class LanguageScene extends Scene
     public void createTitleArea()
     {
         vBox = new VBox();
-        vBox.setTranslateX(250);
-        vBox.setTranslateY(150);
-        Label launcherLabel = new Label("LOGO");
-        launcherLabel.setFont(Font.font("Impact", FontWeight.BOLD, 28));
-        launcherLabel.setTranslateX(25);
-        vBox.getChildren().add(launcherLabel);
+        vBox.setTranslateX(220);
+        vBox.setTranslateY(100);
+        IconCreator iconCreator = new IconCreator(PathUtil.LOGO_ICON);
+        ImageView logoIcon = iconCreator.createImage();
+        logoIcon.setFitWidth(400);
+        logoIcon.setFitHeight(300);
+        logoIcon.setTranslateY(-40);
+        logoIcon.setTranslateX(-50);
+        vBox.getChildren().add(logoIcon);
         pane.setCenter(vBox);
     }
 
@@ -63,25 +67,25 @@ public class LanguageScene extends Scene
     {
         VBox englishVbox = new VBox();
         Label englishLabel = new Label("Choose a language");
-        englishLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 18));
+        englishLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 20));
 
         engButton = new LanguageButton(PathUtil.ENGLISH_FLAG, UtilStringStorage.englishLanguageTooltip);
 
         englishVbox.getChildren().add(englishLabel);
         englishVbox.getChildren().add(engButton);
-        englishVbox.setTranslateY(100);
-        englishVbox.setTranslateX(-170);
+        englishVbox.setTranslateY(10);
+        englishVbox.setTranslateX(-100);
 
         VBox frenchVbox = new VBox();
         Label frenchLabel = new Label("Choisissez une langue");
-        frenchLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 18));
+        frenchLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 20));
 
         frButton = new LanguageButton(PathUtil.FRENCH_FLAG, UtilStringStorage.frenchLanguageTooltip);
 
         frenchVbox.getChildren().add(frenchLabel);
         frenchVbox.getChildren().add(frButton);
-        frenchVbox.setTranslateX(110);
-        frenchVbox.setTranslateY(-1);
+        frenchVbox.setTranslateX(200);
+        frenchVbox.setTranslateY(-91);
 
         vBox.getChildren().add(englishVbox);
         vBox.getChildren().add(frenchVbox);

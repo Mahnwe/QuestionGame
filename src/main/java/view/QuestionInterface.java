@@ -205,13 +205,13 @@ public class QuestionInterface extends BorderPane
         Label goodResult = new Label(answerLabel);
         goodResult.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 18));
         goodResult.setTextFill(Color.GHOSTWHITE);
-        goodResult.setTranslateY(160);
+        goodResult.setTranslateY(130);
         goodResult.setTranslateX(330);
 
         Label explanation = new Label(question.getExplanation());
         explanation.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 15));
         explanation.setTextFill(Color.GHOSTWHITE);
-        explanation.setTranslateY(180);
+        explanation.setTranslateY(165);
         explanation.setTranslateX(50);
 
         game.getChildren().add(goodResult);

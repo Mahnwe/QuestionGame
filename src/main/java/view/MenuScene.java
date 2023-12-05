@@ -66,7 +66,7 @@ public class MenuScene extends Scene
         VBox welcomeArea = new VBox();
         Label welcomeInGame = new Label(UtilStringStorage.welcomeLabel);
         welcomeInGame.setTextFill(Color.BLACK);
-        welcomeInGame.setFont(Font.font("Futura", FontWeight.BOLD, 30));
+        welcomeInGame.setFont(Font.font("Futura", FontWeight.BOLD, 32));
         welcomeInGame.setTranslateX(350);
         welcomeArea.getChildren().add(createStatArea(welcomeInGame));
         welcomeInGame.setTranslateY(20);
@@ -156,10 +156,10 @@ public class MenuScene extends Scene
         VBox selectModeArea = new VBox();
 
         Label chooseMode = new Label(UtilStringStorage.chooseMode);
-        chooseMode.setFont(Font.font("Impact", FontWeight.EXTRA_BOLD, 28));
+        chooseMode.setFont(Font.font("Impact", FontWeight.EXTRA_BOLD, 30));
         chooseMode.setTextFill(Color.BLACK);
         chooseMode.setTranslateX(245);
-        chooseMode.setTranslateY(75);
+        chooseMode.setTranslateY(65);
         if(chooseMode.getText().equals("Choose your game mod"))
         {
             chooseMode.setTranslateX(295);
@@ -176,7 +176,7 @@ public class MenuScene extends Scene
 
         DeveloperVbox developerVbox = new DeveloperVbox();
         developerVbox.setTranslateX(355);
-        developerVbox.setTranslateY(67);
+        developerVbox.setTranslateY(63);
 
         selectModeArea.getChildren().add(chooseMode);
         selectModeArea.getChildren().add(comboBox);

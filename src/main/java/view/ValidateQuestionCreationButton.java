@@ -24,12 +24,11 @@ public class ValidateQuestionCreationButton extends Button {
     {
         numberOfFilledTextArea = 0;
         for (QuestionCreatorTextArea questionCreatorTextArea : textAreaList) {
-            if (questionCreatorTextArea.isFill() && !questionCreatorTextArea.getText().equals(UtilStringStorage.textAreaPlaceHolder) && !questionCreatorTextArea.getText().equals("")) {
-                questionCreatorTextArea.setBorder(CustomOption.createCustomBorder(1.5, 2.0, Color.BLACK));
+            if (questionCreatorTextArea.isFill() && !questionCreatorTextArea.getText().equals("")) {
+                questionCreatorTextArea.setBorder(CustomOption.createCustomBorder(1.5, 2.0, Color.GREEN));
                 numberOfFilledTextArea++;
             }
             else {
-                questionCreatorTextArea.setText(UtilStringStorage.textAreaPlaceHolder);
                 questionCreatorTextArea.setBorder(CustomOption.createCustomBorder(1.5, 2.0, Color.RED));
             }
         }

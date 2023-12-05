@@ -18,6 +18,7 @@ public class AnswerButton extends Button
         isClicked = buttonIsClicked;
         String upperText = text.toUpperCase();
         this.setText(upperText);
+        this.setBorder(CustomOption.createCustomBorder(1.5, 2.0, Color.BLACK));
         this.setFont(Font.font("Futura", FontWeight.BOLD, 18));
     }
 
@@ -28,6 +29,7 @@ public class AnswerButton extends Button
         answerButton.setClicked(true);
         answerButton.setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY)));
         answerButton.setTextFill(Color.GHOSTWHITE);
+        answerButton.setBorder(CustomOption.createCustomBorder(1.5, 2.0, Color.GHOSTWHITE));
         validateButton.setDisable(false);
         });
         CustomOption.setGlowEffectOnButton(answerButton);
@@ -38,6 +40,7 @@ public class AnswerButton extends Button
         for (AnswerButton answerButton : buttonList) {
             answerButton.setBackground(new Background(new BackgroundFill(Color.GHOSTWHITE, CornerRadii.EMPTY, Insets.EMPTY)));
             answerButton.setTextFill(Color.BLACK);
+            answerButton.setBorder(CustomOption.createCustomBorder(1.5, 2.0, Color.BLACK));
             if (answerButton.isClicked) {
                 answerButton.isClicked = false;
             }

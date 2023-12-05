@@ -189,7 +189,6 @@ public class UtilTranslateString {
         UtilStringStorage.validateCreationButton = engTradFile.getProperty("validateCreationButton");
         UtilStringStorage.questionIsForged = engTradFile.getProperty("questionIsForged");
         UtilStringStorage.questionIsNotForged = engTradFile.getProperty("questionIsNotForged");
-        UtilStringStorage.textAreaPlaceHolder = engTradFile.getProperty("textAreaPlaceHolder");
         UtilStringStorage.confirmAlertDeleteAllQuestions = engTradFile.getProperty("confirmAlertHeaderText");
         UtilStringStorage.deleteAllLabel = engTradFile.getProperty("deleteAllLabel");
         UtilStringStorage.deleteAllTooltip = engTradFile.getProperty("deleteAllTooltip");
@@ -378,7 +377,6 @@ public class UtilTranslateString {
         UtilStringStorage.validateCreationButton = frTradFile.getProperty("validateCreationButton");
         UtilStringStorage.questionIsForged = frTradFile.getProperty("questionIsForged");
         UtilStringStorage.questionIsNotForged = frTradFile.getProperty("questionIsNotForged");
-        UtilStringStorage.textAreaPlaceHolder = frTradFile.getProperty("textAreaPlaceHolder");
         UtilStringStorage.confirmAlertDeleteAllQuestions = frTradFile.getProperty("confirmAlertHeaderText");
         UtilStringStorage.deleteAllLabel = frTradFile.getProperty("deleteAllLabel");
         UtilStringStorage.deleteAllTooltip = frTradFile.getProperty("deleteAllTooltip");

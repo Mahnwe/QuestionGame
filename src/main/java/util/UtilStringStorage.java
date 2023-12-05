@@ -153,7 +153,6 @@ public class UtilStringStorage
     public static String validateCreationButton = "";
     public static String questionIsForged = "";
     public static String questionIsNotForged = "";
-    public static String textAreaPlaceHolder = "";
     public static String confirmAlertDeleteAllQuestions = "";
     public static String deleteAllLabel = "";
     public static String deleteAllTooltip = "";

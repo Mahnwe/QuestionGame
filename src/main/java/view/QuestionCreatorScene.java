@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
@@ -171,6 +172,7 @@ public class QuestionCreatorScene extends Scene {
 
         Button deleteAllPersonalizeQuestionsButton = new Button();
         CustomOption.setUpTrashButton(deleteAllPersonalizeQuestionsButton, UtilStringStorage.deleteAllTooltip);
+        deleteAllPersonalizeQuestionsButton.setTranslateX(10);
 
         Label questionsAreDeletedLabel = new Label(UtilStringStorage.questionAreDeleted);
         questionsAreDeletedLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 18));
@@ -206,6 +208,7 @@ public class QuestionCreatorScene extends Scene {
 
         Button deleteLastPersonalizeQuestionsButton = new Button();
         CustomOption.setUpTrashButton(deleteLastPersonalizeQuestionsButton, UtilStringStorage.deleteLastTooltip);
+        deleteLastPersonalizeQuestionsButton.setTranslateX(10);
 
         Label lastQuestionIsDeletedLabel = new Label(UtilStringStorage.lastQuestionIsDeleted);
         lastQuestionIsDeletedLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 18));
@@ -242,7 +245,7 @@ public class QuestionCreatorScene extends Scene {
         createDeleteLastVbox();
 
         deletedAreaVbox.setTranslateY(60);
-        deletedAreaVbox.setTranslateX(-40);
+        deletedAreaVbox.setTranslateX(-25);
 
         multiPane.setRight(deletedAreaVbox);
     }
@@ -251,6 +254,7 @@ public class QuestionCreatorScene extends Scene {
         for (QuestionCreatorTextArea questionCreatorTextArea : textAreaList) {
             questionCreatorTextArea.clear();
             questionCreatorTextArea.setFill(false);
+            questionCreatorTextArea.setBorder(CustomOption.createCustomBorder(1.5, 2.0, Color.BLACK));
         }
     }
 

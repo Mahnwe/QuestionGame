@@ -16,6 +16,9 @@ public class App extends Application
     public static Hyperlink hyperLinkIcon;
     public static Hyperlink hyperLinkIcon2;
     public static Hyperlink hyperLinkBackground;
+    public static void main (String[]args) {
+        launch(args);
+    }
     @Override
     public void start(Stage stage)
     {

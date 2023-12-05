@@ -5572,3 +5572,9 @@ w
 G.idea/sonarlint/issuestore/f/0/f09d8457915cb4f3c26421e854e5df8c93a5e2e5,4\1\4198bc74ad96d975157f49909cfaf00ea54bc6b0
 w
 G.idea/sonarlint/issuestore/9/8/98cdda3e00c24ac72814f7f2d393d547a1eae62b,0\d\0d28653d051caac2a22e9fa58452afea58a3fe38
+L
+src/main/java/view/Main.java,3\6\3607f69ac32282634241e9a380d7cfe432f50346
+Å
+Q.idea/sonarlint/securityhotspotstore/3/6/3607f69ac32282634241e9a380d7cfe432f50346,7\9\797fd5bded73e285035279a351f28f93c9a23fd2
+T
+$.idea/artifacts/QuestionGame_jar.xml,e\b\eb646e7b5f1afd75d301e09697152d2e2ef7b018

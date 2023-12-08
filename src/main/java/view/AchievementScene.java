@@ -164,6 +164,10 @@ public class AchievementScene extends Scene
         if(checkNbrOfAchievementUnlock == 9)
         {
             secretAchievementLabel.setText(UtilStringStorage.secretAchievement);
+            TrophyScene.setAllAchievementAreUnlocked(true);
+            int nbrOfSecretCup = Integer.parseInt(FileUtil.generalSavesFile.getProperty("secretCup"));
+            nbrOfSecretCup++;
+            FileUtil.generalSavesFile.setProperty("secretCup", String.valueOf(nbrOfSecretCup));
         }
     }
 

@@ -138,6 +138,7 @@ public class UtilStringStorage
     public static String goldCupTrophy = "";
     public static String silverCupTrophy = "";
     public static String bronzeCupTrophy = "";
+    public static String secretCupTrophy = "";
 
     // QUESTION CREATOR
     public static String creatorSceneTitleLabel = "";

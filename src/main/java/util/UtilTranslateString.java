@@ -174,6 +174,7 @@ public class UtilTranslateString {
         UtilStringStorage.goldCupTrophy = engTradFile.getProperty("goldCupTrophy");
         UtilStringStorage.silverCupTrophy = engTradFile.getProperty("silverCupTrophy");
         UtilStringStorage.bronzeCupTrophy = engTradFile.getProperty("bronzeCupTrophy");
+        UtilStringStorage.secretCupTrophy = engTradFile.getProperty("secretCupTrophy");
 
         //QUESTION CREATOR
         UtilStringStorage.creatorSceneTitleLabel = engTradFile.getProperty("creatorSceneTitleLabel");
@@ -362,6 +363,7 @@ public class UtilTranslateString {
         UtilStringStorage.goldCupTrophy = frTradFile.getProperty("goldCupTrophy");
         UtilStringStorage.silverCupTrophy = frTradFile.getProperty("silverCupTrophy");
         UtilStringStorage.bronzeCupTrophy = frTradFile.getProperty("bronzeCupTrophy");
+        UtilStringStorage.secretCupTrophy = frTradFile.getProperty("secretCupTrophy");
 
         //QUESTION CREATOR
         UtilStringStorage.creatorSceneTitleLabel = frTradFile.getProperty("creatorSceneTitleLabel");

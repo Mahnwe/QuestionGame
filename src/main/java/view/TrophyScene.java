@@ -17,13 +17,16 @@ public class TrophyScene extends Scene
     private ImageView goldCup;
     private ImageView bronzeCup;
     private ImageView silverCup;
+    private ImageView secretCup;
     private VBox goldCupImage;
     private VBox silverCupImage;
     private VBox bronzeCupImage;
+    private VBox secretCupImage;
     private final Stage stage;
     private final AchievementManager achievementManager;
     private final BorderPane pane;
     private BootstrapPane gridPane;
+    public static boolean allAchievementAreUnlocked;
 
     public TrophyScene(BorderPane pane, Stage stage, AchievementManager achievementManager)
     {
@@ -59,11 +62,16 @@ public class TrophyScene extends Scene
         createGoldVbox();
         createSilverVbox();
         createBronzeVbox();
+        createSecretVbox();
 
         gridPane.add(trophyLabel, 1, 0);
         gridPane.add(goldCupImage, 0, 1);
         gridPane.add(silverCupImage, 1, 1);
+        silverCupImage.setTranslateX(-55);
         gridPane.add(bronzeCupImage, 2, 1);
+        bronzeCupImage.setTranslateX(-50);
+        gridPane.add(secretCupImage, 3, 1);
+        secretCupImage.setTranslateX(-35);
         gridPane.setTranslateX(80);
 
         centralVbox.getChildren().add(gridPane);
@@ -91,6 +99,7 @@ public class TrophyScene extends Scene
         Label silverCupNumber = new Label();
 
         silverCupImage.getChildren().add(silverCup);
+        silverCup.setTranslateX(10);
         setUpVbox(silverCupImage, nbrOfSilverCupLabel, 0, 25, UtilStringStorage.silverCupTrophy, FileUtil.generalSavesFile, "silverCup", silverCupNumber);
         silverCupImage.getChildren().add(silverCupNumber);
     }
@@ -106,10 +115,22 @@ public class TrophyScene extends Scene
         bronzeCupImage.getChildren().add(bronzeCupNumber);
     }
 
+    public void createSecretVbox()
+    {
+        secretCupImage = new VBox();
+
+        Label nbrOfSecretCupLabel = new Label();
+        Label secretCupNumber = new Label();
+
+        secretCupImage.getChildren().add(secretCup);
+        setUpVbox(secretCupImage, nbrOfSecretCupLabel, 0, 25, UtilStringStorage.secretCupTrophy, FileUtil.generalSavesFile, "secretCup", secretCupNumber);
+        secretCupImage.getChildren().add(secretCupNumber);
+    }
+
     public void createGridPane()
     {
-        gridPane = new BootstrapPane(3);
-        gridPane.setHgap(30);
+        gridPane = new BootstrapPane(4);
+        gridPane.setHgap(10);
         gridPane.setVgap(90);
     }
 
@@ -117,6 +138,7 @@ public class TrophyScene extends Scene
     {
         label.setText(UtilStringStorage.trophyLabel);
         label.setFont(Font.font("Impact", FontWeight.BOLD, 35));
+        label.setTranslateX(50);
     }
 
     public void setUpVbox(VBox vBox, Label label, int translateX, int translateY, String string, Properties properties, String propertyKey, Label cupNumber)
@@ -162,10 +184,22 @@ public class TrophyScene extends Scene
 
         silverCup = IconCreator.createCupIcon(PathUtil.SILVER_CUP_PATH);
         silverCup.setTranslateY(10);
+
+        if(!allAchievementAreUnlocked)
+        {
+            secretCup = IconCreator.createCupIcon(PathUtil.PLACE_HOLDER_CUP);
+        } else {
+            secretCup = IconCreator.createCupIcon(PathUtil.SECRET_CUP);
+        }
+        secretCup.setTranslateY(10);
     }
     public void backToMainMenu()
     {
         MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
         stage.setScene(menuScene);
+    }
+
+    public static void setAllAchievementAreUnlocked(boolean allAchievementAreUnlocked) {
+        TrophyScene.allAchievementAreUnlocked = allAchievementAreUnlocked;
     }
 }

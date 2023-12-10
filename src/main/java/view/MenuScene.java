@@ -97,22 +97,30 @@ public class MenuScene extends Scene
         gridPaneMenuButton.setTranslateY(40);
         gridPaneMenuButton.setTranslateX(40);
 
-        leaderBoardButton = new MenuSideButton(UtilStringStorage.leaderBoardButton, UtilStringStorage.leaderBoardTooltip, -5);
+        leaderBoardButton = new MenuSideButton(UtilStringStorage.leaderBoardButton, UtilStringStorage.leaderBoardTooltip, 5);
+        if(leaderBoardButton.getText().equals("Records"))
+        {
+            leaderBoardButton.setTranslateX(15);
+        }
         gridPaneMenuButton.add(leaderBoardButton, 0, 0);
 
-        trophyButton = new MenuSideButton(UtilStringStorage.trophyButton, UtilStringStorage.trophyTooltip, 10);
+        trophyButton = new MenuSideButton(UtilStringStorage.trophyButton, UtilStringStorage.trophyTooltip, 12);
         gridPaneMenuButton.add(trophyButton, 0, 1);
 
-        achievementButton = new MenuSideButton(UtilStringStorage.achievementButton, UtilStringStorage.achievementTooltip, 0);
+        achievementButton = new MenuSideButton(UtilStringStorage.achievementButton, UtilStringStorage.achievementTooltip, 15);
+        if(achievementButton.getText().equals("Achievements"))
+        {
+            achievementButton.setTranslateX(-5);
+        }
         gridPaneMenuButton.add(achievementButton, 0, 2);
 
-        questionCreatorButton = new MenuSideButton(UtilStringStorage.questionCreatorButton, UtilStringStorage.questionCreatorTooltip, 10);
+        questionCreatorButton = new MenuSideButton(UtilStringStorage.questionCreatorButton, UtilStringStorage.questionCreatorTooltip, 15);
         gridPaneMenuButton.add(questionCreatorButton, 0, 3);
 
-        optionButton = new MenuSideButton(UtilStringStorage.optionButton, UtilStringStorage.optionTooltip, 10);
+        optionButton = new MenuSideButton(UtilStringStorage.optionButton, UtilStringStorage.optionTooltip, 15);
         gridPaneMenuButton.add(optionButton, 0, 4);
 
-        creditButton = new MenuSideButton(UtilStringStorage.creditButton, UtilStringStorage.creditTooltip, 10);
+        creditButton = new MenuSideButton(UtilStringStorage.creditButton, UtilStringStorage.creditTooltip, 15);
         gridPaneMenuButton.add(creditButton, 0, 5);
 
         return gridPaneMenuButton;

@@ -156,7 +156,7 @@ public class MainScene extends Scene
                 createNewQuestionInterface();
             }
             else {
-                if(playerInfoScene.getPlayer().getNbrOfLives() == 0) {
+                if(playerInfoScene.getPlayer().getNbrOfLives() == 0 || gameHandler.getQuestionCount() >= gameHandler.getQuestionList().size()) {
                     setDisplayResult();
                     saveScoreInFile();
                 } else {

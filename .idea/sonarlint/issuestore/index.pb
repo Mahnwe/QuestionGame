@@ -5578,3 +5578,13 @@ L
 Q.idea/sonarlint/securityhotspotstore/3/6/3607f69ac32282634241e9a380d7cfe432f50346,7\9\797fd5bded73e285035279a351f28f93c9a23fd2
 T
 $.idea/artifacts/QuestionGame_jar.xml,e\b\eb646e7b5f1afd75d301e09697152d2e2ef7b018
+Å
+Q.idea/sonarlint/securityhotspotstore/e/b/eb646e7b5f1afd75d301e09697152d2e2ef7b018,a\3\a32cb3ad22f123cbb9e19a4382a7df370952c3c2
+Å
+Q.idea/sonarlint/securityhotspotstore/7/9/797fd5bded73e285035279a351f28f93c9a23fd2,5\3\53ac0b73754d930e5123f697b3097131aa98f828
+w
+G.idea/sonarlint/issuestore/7/9/797fd5bded73e285035279a351f28f93c9a23fd2,2\0\206f8024f5f315a37cb92392c9a78b7ef51d2a3c
+w
+G.idea/sonarlint/issuestore/e/b/eb646e7b5f1afd75d301e09697152d2e2ef7b018,e\7\e722b4a12a3fd1a6e06c741680968c6861c819c0
+d
+4src/main/java/view/PersonalizeQuestionListScene.java,f\4\f46a8e4973ccfdbf7c76de77fd544196d7025862

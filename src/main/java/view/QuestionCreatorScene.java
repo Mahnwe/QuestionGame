@@ -1,10 +1,10 @@
 package view;
 
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -12,18 +12,12 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.AchievementManager;
 import model.PersonalizeQuestionsHandler;
-import util.BackgroundCreator;
-import util.CustomOption;
-import util.FileUtil;
-import util.UtilStringStorage;
+import util.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class QuestionCreatorScene extends Scene {
-
-    private final ConfirmAlert confirmAlert;
     private final BorderPane borderPane;
     private final Stage stage;
     private final AchievementManager achievementManager;
@@ -34,7 +28,6 @@ public class QuestionCreatorScene extends Scene {
     public static List<QuestionCreatorTextArea> textAreaList = new ArrayList<>();
     private final ValidateQuestionCreationButton validateQuestionCreationButton;
     private Label isCreatedLabel;
-    private VBox deletedAreaVbox;
 
     public QuestionCreatorScene(BorderPane pane, Stage stage, AchievementManager achievementManager)
     {
@@ -42,7 +35,6 @@ public class QuestionCreatorScene extends Scene {
         this.borderPane = pane;
         this.stage = stage;
         this.achievementManager = achievementManager;
-        this.confirmAlert = new ConfirmAlert(Alert.AlertType.CONFIRMATION);
 
         centerVbox = new VBox();
         validateQuestionCreationButton = new ValidateQuestionCreationButton();
@@ -54,7 +46,7 @@ public class QuestionCreatorScene extends Scene {
         createPresentation();
         createForm();
         createButtons();
-        createDeleteArea();
+        createListPersonalizeQuestionButton();
     }
 
     public void createGridPane()
@@ -92,15 +84,14 @@ public class QuestionCreatorScene extends Scene {
 
         isCreatedLabel = new Label();
         isCreatedLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 20));
+        isCreatedLabel.setTranslateY(50);
+        isCreatedLabel.setTranslateX(450);
 
         centerVbox.getChildren().add(validateQuestionCreationButton);
         centerVbox.getChildren().add(isCreatedLabel);
 
         validateQuestionCreationButton.setTranslateY(90);
         validateQuestionCreationButton.setTranslateX(200);
-
-        isCreatedLabel.setTranslateY(50);
-        isCreatedLabel.setTranslateX(450);
     }
 
     public void createAreaForForm(Label label, QuestionCreatorTextArea textArea, int columnIndex, int rowIndex)
@@ -164,90 +155,37 @@ public class QuestionCreatorScene extends Scene {
         });
     }
 
-    public void createDeleteAllVbox()
+    public void createListPersonalizeQuestionButton()
     {
-        VBox deleteAllVbox = new VBox();
-        Label deleteAllLabel = new Label(UtilStringStorage.deleteAllLabel);
-        deleteAllLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 18));
+        VBox vBox = new VBox();
+        vBox.setMaxHeight(200);
+        vBox.setBorder(CustomOption.createCustomBorder(3.0, 1.5, Color.BLACK));
 
-        Button deleteAllPersonalizeQuestionsButton = new Button();
-        CustomOption.setUpTrashButton(deleteAllPersonalizeQuestionsButton, UtilStringStorage.deleteAllTooltip);
-        deleteAllPersonalizeQuestionsButton.setTranslateX(10);
+        Label personalizeListLabel = new Label("Liste des questions"+"\n"+" personnalisées");
+        personalizeListLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 20));
+        vBox.getChildren().add(personalizeListLabel);
 
-        Label questionsAreDeletedLabel = new Label(UtilStringStorage.questionAreDeleted);
-        questionsAreDeletedLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 18));
-        questionsAreDeletedLabel.setVisible(false);
+        Button personalizeQuestionList = new Button();
+        personalizeQuestionList.setPrefSize(110, 110);
 
-        deleteAllPersonalizeQuestionsButton.setOnAction(event -> {
-            questionsAreDeletedLabel.setText(UtilStringStorage.questionAreDeleted);
-            confirmAlert.modifyConfirmAlert(UtilStringStorage.confirmAlertDeleteAllQuestions);
-            Optional<ButtonType> result = confirmAlert.showAndWait();
-            if(result.orElse(null) == ButtonType.OK)
-            {
-                if(PersonalizeQuestionsHandler.getPropertyKeyQuestionNumber() > 0) {
-                    FileUtil.resetPersonalizeQuestionFile();
-                    questionsAreDeletedLabel.setVisible(true);
-                } else {
-                    questionsAreDeletedLabel.setText(UtilStringStorage.nothingToDelete);
-                    questionsAreDeletedLabel.setVisible(true);
-                }
-            }
+        IconCreator personalizeIcon = new IconCreator(PathUtil.PERSONALIZE_LIST);
+        ImageView personalizeImage = personalizeIcon.createImage();
+
+        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
+        personalizeQuestionList.setBackground(new Background(new BackgroundImage(personalizeImage.getImage(), BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+                backgroundSize)));
+        CustomOption.setGlowEffectOnButton(personalizeQuestionList);
+
+        personalizeQuestionList.setOnAction(event -> {
+            resetTextAreas();
+            PersonalizeQuestionListScene personalizeQuestionListScene = new PersonalizeQuestionListScene(new ScrollPane(), stage, achievementManager);
+            stage.setScene(personalizeQuestionListScene);
         });
-        deleteAllVbox.getChildren().add(deleteAllLabel);
-        deleteAllVbox.getChildren().add(deleteAllPersonalizeQuestionsButton);
-        deleteAllVbox.getChildren().add(questionsAreDeletedLabel);
-        deletedAreaVbox.getChildren().add(deleteAllVbox);
-    }
 
-    public void createDeleteLastVbox()
-    {
-        VBox deleteLastVbox = new VBox();
-
-        Label deleteLastQuestionLabel = new Label(UtilStringStorage.deleteLastLabel);
-        deleteLastQuestionLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 18));
-
-        Button deleteLastPersonalizeQuestionsButton = new Button();
-        CustomOption.setUpTrashButton(deleteLastPersonalizeQuestionsButton, UtilStringStorage.deleteLastTooltip);
-        deleteLastPersonalizeQuestionsButton.setTranslateX(10);
-
-        Label lastQuestionIsDeletedLabel = new Label(UtilStringStorage.lastQuestionIsDeleted);
-        lastQuestionIsDeletedLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 18));
-        lastQuestionIsDeletedLabel.setVisible(false);
-
-        deleteLastPersonalizeQuestionsButton.setOnAction(event -> {
-            lastQuestionIsDeletedLabel.setText(UtilStringStorage.deleteLastLabel);
-            confirmAlert.modifyConfirmAlert(UtilStringStorage.confirmLastQuestionIsDeleted);
-            Optional<ButtonType> result = confirmAlert.showAndWait();
-            if(result.orElse(null) == ButtonType.OK) {
-                if (PersonalizeQuestionsHandler.getPropertyKeyQuestionNumber() > 0)
-                {
-                    PersonalizeQuestionsHandler.deleteLastQuestionAdded();
-                    lastQuestionIsDeletedLabel.setVisible(true);
-                }
-                else {
-                    lastQuestionIsDeletedLabel.setText(UtilStringStorage.nothingToDelete);
-                    lastQuestionIsDeletedLabel.setVisible(true);
-                }
-            }
-        });
-        deleteLastVbox.getChildren().add(deleteLastQuestionLabel);
-        deleteLastVbox.getChildren().add(deleteLastPersonalizeQuestionsButton);
-        deleteLastVbox.getChildren().add(lastQuestionIsDeletedLabel);
-        deleteLastVbox.setTranslateY(20);
-        deletedAreaVbox.getChildren().add(deleteLastVbox);
-    }
-
-    public void createDeleteArea()
-    {
-        deletedAreaVbox = new VBox();
-
-        createDeleteAllVbox();
-        createDeleteLastVbox();
-
-        deletedAreaVbox.setTranslateY(60);
-        deletedAreaVbox.setTranslateX(-25);
-
-        multiPane.setRight(deletedAreaVbox);
+        vBox.getChildren().add(personalizeQuestionList);
+        multiPane.setRight(vBox);
+        vBox.setTranslateY(110);
+        vBox.setTranslateX(-60);
     }
 
     public void resetTextAreas() {
@@ -257,7 +195,6 @@ public class QuestionCreatorScene extends Scene {
             questionCreatorTextArea.setBorder(CustomOption.createCustomBorder(1.5, 2.0, Color.BLACK));
         }
     }
-
     public void stylizeLabel(VBox vBox, Label label, int columnIndex, int rowIndex) {
         label.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 18));
         gridPane.add(vBox, columnIndex, rowIndex);

@@ -23,6 +23,8 @@ public class PathUtil
     public static final String TRASH_ICON = RESOURCES_PATH + "Icon/Trash-Icon.png";
     public static final String LOGO_ICON = RESOURCES_PATH + "Icon/QuestionGameLogo.png";
 
+    public static final String PERSONALIZE_LIST = RESOURCES_PATH + "Icon/Personalize-Question-List-Icon.png";
+
     // BACKGROUNDS
     public static final String MENU_BACKGROUND = RESOURCES_PATH + "Background/Background-Test.jpg";
     public static final String MAIN_BACKGROUND = RESOURCES_PATH + "Background/Background-Ingame.jpg";

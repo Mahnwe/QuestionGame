@@ -83,4 +83,11 @@ public class PersonalizeQuestionsHandler
     public static int getPropertyKeyQuestionNumber() {
         return propertyKeyQuestionNumber;
     }
+
+    public static String getPropertyKeyStart() {
+        return PROPERTY_KEY_START;
+    }
+    public static String getPropertyKeyQuestion() {
+        return PROPERTY_KEY_QUESTION;
+    }
 }

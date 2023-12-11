@@ -161,7 +161,7 @@ public class QuestionCreatorScene extends Scene {
         vBox.setMaxHeight(200);
         vBox.setBorder(CustomOption.createCustomBorder(3.0, 1.5, Color.BLACK));
 
-        Label personalizeListLabel = new Label("Liste des questions"+"\n"+" personnalisées");
+        Label personalizeListLabel = new Label(UtilStringStorage.personalizeQuestionListLabel);
         personalizeListLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 20));
         vBox.getChildren().add(personalizeListLabel);
 

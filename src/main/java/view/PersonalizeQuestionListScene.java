@@ -136,23 +136,26 @@ public class PersonalizeQuestionListScene extends Scene {
 
         questionListVbox = new VBox();
 
-        Label titleLabel = new Label("Liste des Questions personnalisées");
+        Label titleLabel = new Label(UtilStringStorage.questionListTitle);
         titleLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 25));
         titleLabel.setTranslateX(250);
         questionListVbox.getChildren().add(titleLabel);
 
-        if(PersonalizeQuestionsHandler.getPropertyKeyQuestionNumber() > 0)
-        {
+        if(PersonalizeQuestionsHandler.getPropertyKeyQuestionNumber() == 0) {
+            Label label = new Label();
+            label.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 20));
+            label.setText(UtilStringStorage.noPersonalizeQuestionInList);
+            gridpane.add(label, 0, 0);
+        } else {
             for (int i = 0; i < PersonalizeQuestionsHandler.getPropertyKeyQuestionNumber(); i++) {
                 String propertyQuestionKey = PersonalizeQuestionsHandler.getPropertyKeyStart() + i;
 
                 Label label = new Label();
                 label.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 20));
-                label.setText("Question n°" + i + " : " + FileUtil.personalizeQuestionsFile.getProperty(propertyQuestionKey + PersonalizeQuestionsHandler.getPropertyKeyQuestion()));
+                label.setText("Question n°" + (i+1) + " : " + FileUtil.personalizeQuestionsFile.getProperty(propertyQuestionKey + PersonalizeQuestionsHandler.getPropertyKeyQuestion()));
                 gridpane.add(label, 0, i);
             }
         }
-
         gridpane.setTranslateX(50);
         questionListVbox.getChildren().add(gridpane);
     }

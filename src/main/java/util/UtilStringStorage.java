@@ -154,6 +154,7 @@ public class UtilStringStorage
     public static String validateCreationButton = "";
     public static String questionIsForged = "";
     public static String questionIsNotForged = "";
+    public static String personalizeQuestionListLabel = "";
     public static String confirmAlertDeleteAllQuestions = "";
     public static String deleteAllLabel = "";
     public static String deleteAllTooltip = "";
@@ -163,6 +164,8 @@ public class UtilStringStorage
     public static String deleteLastTooltip = "";
     public static String lastQuestionIsDeleted = "";
     public static String confirmLastQuestionIsDeleted = "";
+    public static String questionListTitle = "";
+    public static String noPersonalizeQuestionInList = "";
 
     // OPTION SCENE
     public static String volumeLabel = "";
@@ -750,5 +753,40 @@ public class UtilStringStorage
     public static String answerD80 = "";
     public static String goodAnswer80 = "";
     public static String explanation80 = "";
+    public static String question81 = "";
+    public static String answerA81 = "";
+    public static String answerB81 = "";
+    public static String answerC81 = "";
+    public static String answerD81 = "";
+    public static String goodAnswer81 = "";
+    public static String explanation81 = "";
+    public static String question82 = "";
+    public static String answerA82 = "";
+    public static String answerB82 = "";
+    public static String answerC82 = "";
+    public static String answerD82 = "";
+    public static String goodAnswer82 = "";
+    public static String explanation82 = "";
+    public static String question83 = "";
+    public static String answerA83 = "";
+    public static String answerB83 = "";
+    public static String answerC83 = "";
+    public static String answerD83 = "";
+    public static String goodAnswer83 = "";
+    public static String explanation83 = "";
+    public static String question84 = "";
+    public static String answerA84 = "";
+    public static String answerB84 = "";
+    public static String answerC84 = "";
+    public static String answerD84 = "";
+    public static String goodAnswer84 = "";
+    public static String explanation84 = "";
+    public static String question85 = "";
+    public static String answerA85 = "";
+    public static String answerB85 = "";
+    public static String answerC85 = "";
+    public static String answerD85 = "";
+    public static String goodAnswer85 = "";
+    public static String explanation85 = "";
 
 }

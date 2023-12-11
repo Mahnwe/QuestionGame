@@ -419,6 +419,30 @@ public class QuestionStorage
                 UtilStringStorage.explanation80);
         questionList.add(question80);
 
+        Question question81 = new Question(UtilStringStorage.society, UtilStringStorage.question81,UtilStringStorage.answerA81,
+                UtilStringStorage.answerB81, UtilStringStorage.answerC81, UtilStringStorage.answerD81, UtilStringStorage.goodAnswer81,
+                UtilStringStorage.explanation81);
+        questionList.add(question81);
+
+        Question question82 = new Question(UtilStringStorage.minerals, UtilStringStorage.question82,UtilStringStorage.answerA82,
+                UtilStringStorage.answerB82, UtilStringStorage.answerC82, UtilStringStorage.answerD82, UtilStringStorage.goodAnswer82,
+                UtilStringStorage.explanation82);
+        questionList.add(question82);
+
+        Question question83 = new Question(UtilStringStorage.space, UtilStringStorage.question83,UtilStringStorage.answerA83,
+                UtilStringStorage.answerB83, UtilStringStorage.answerC83, UtilStringStorage.answerD83, UtilStringStorage.goodAnswer83,
+                UtilStringStorage.explanation83);
+        questionList.add(question83);
+
+        Question question84 = new Question(UtilStringStorage.animals, UtilStringStorage.question84,UtilStringStorage.answerA84,
+                UtilStringStorage.answerB84, UtilStringStorage.answerC84, UtilStringStorage.answerD84, UtilStringStorage.goodAnswer84,
+                UtilStringStorage.explanation84);
+        questionList.add(question84);
+
+        Question question85 = new Question(UtilStringStorage.humanBody, UtilStringStorage.question85,UtilStringStorage.answerA85,
+                UtilStringStorage.answerB85, UtilStringStorage.answerC85, UtilStringStorage.answerD85, UtilStringStorage.goodAnswer85,
+                UtilStringStorage.explanation85);
+        questionList.add(question85);
     }
 
     public void checkPersonalizeQuestions()

@@ -196,10 +196,6 @@ public class UtilTranslateString {
         UtilStringStorage.deleteAllTooltip = engTradFile.getProperty("deleteAllTooltip");
         UtilStringStorage.questionAreDeleted = engTradFile.getProperty("questionAreDeletedLabel");
         UtilStringStorage.nothingToDelete = engTradFile.getProperty("nothingToDelete");
-        UtilStringStorage.deleteLastLabel = engTradFile.getProperty("deleteLastLabel");
-        UtilStringStorage.deleteLastTooltip = engTradFile.getProperty("deleteLastTooltip");
-        UtilStringStorage.lastQuestionIsDeleted = engTradFile.getProperty("lastQuestionIsDeleted");
-        UtilStringStorage.confirmLastQuestionIsDeleted = engTradFile.getProperty("confirmLastQuestionIsDeleted");
         UtilStringStorage.questionListTitle = engTradFile.getProperty("questionListTitle");
         UtilStringStorage.noPersonalizeQuestionInList = engTradFile.getProperty("noPersonalizeQuestionInList");
 
@@ -388,10 +384,6 @@ public class UtilTranslateString {
         UtilStringStorage.deleteAllTooltip = frTradFile.getProperty("deleteAllTooltip");
         UtilStringStorage.questionAreDeleted = frTradFile.getProperty("questionAreDeletedLabel");
         UtilStringStorage.nothingToDelete = frTradFile.getProperty("nothingToDelete");
-        UtilStringStorage.deleteLastLabel = frTradFile.getProperty("deleteLastLabel");
-        UtilStringStorage.deleteLastTooltip = frTradFile.getProperty("deleteLastTooltip");
-        UtilStringStorage.lastQuestionIsDeleted = frTradFile.getProperty("lastQuestionIsDeleted");
-        UtilStringStorage.confirmLastQuestionIsDeleted = frTradFile.getProperty("confirmLastQuestionIsDeleted");
         UtilStringStorage.questionListTitle = frTradFile.getProperty("questionListTitle");
         UtilStringStorage.noPersonalizeQuestionInList = frTradFile.getProperty("noPersonalizeQuestionInList");
 

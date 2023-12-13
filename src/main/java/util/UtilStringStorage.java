@@ -160,10 +160,6 @@ public class UtilStringStorage
     public static String deleteAllTooltip = "";
     public static String questionAreDeleted = "";
     public static String nothingToDelete = "";
-    public static String deleteLastLabel = "";
-    public static String deleteLastTooltip = "";
-    public static String lastQuestionIsDeleted = "";
-    public static String confirmLastQuestionIsDeleted = "";
     public static String questionListTitle = "";
     public static String noPersonalizeQuestionInList = "";
 

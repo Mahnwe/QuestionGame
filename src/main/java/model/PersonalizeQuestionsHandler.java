@@ -61,23 +61,26 @@ public class PersonalizeQuestionsHandler
         }
     }
 
-    public static void deleteLastQuestionAdded()
+    public static void deleteIndividualQuestion(String deleteIndex)
     {
         propertyKeyQuestionNumber = Integer.parseInt(FileUtil.personalizeQuestionsFile.getProperty(QUESTION_NUMBER_KEY_PROPERTIES));
         propertyKeyQuestionNumber--;
-        String propertyDeleteQuestionKey = PROPERTY_KEY_START+propertyKeyQuestionNumber;
 
-        FileUtil.personalizeQuestionsFile.remove(propertyDeleteQuestionKey+PROPERTY_KEY_CATEGORY);
-        FileUtil.personalizeQuestionsFile.remove(propertyDeleteQuestionKey+PROPERTY_KEY_QUESTION);
-        FileUtil.personalizeQuestionsFile.remove(propertyDeleteQuestionKey+PROPERTY_KEY_ANSWER_A);
-        FileUtil.personalizeQuestionsFile.remove(propertyDeleteQuestionKey+PROPERTY_KEY_ANSWER_B);
-        FileUtil.personalizeQuestionsFile.remove(propertyDeleteQuestionKey+PROPERTY_KEY_ANSWER_C);
-        FileUtil.personalizeQuestionsFile.remove(propertyDeleteQuestionKey+PROPERTY_KEY_ANSWER_D);
-        FileUtil.personalizeQuestionsFile.remove(propertyDeleteQuestionKey+PROPERTY_KEY_GOOD_ANSWER);
-        FileUtil.personalizeQuestionsFile.remove(propertyDeleteQuestionKey+PROPERTY_KEY_EXPLANATION);
+        FileUtil.personalizeQuestionsFile.remove(deleteIndex+PROPERTY_KEY_CATEGORY);
+        FileUtil.personalizeQuestionsFile.remove(deleteIndex+PROPERTY_KEY_QUESTION);
+        FileUtil.personalizeQuestionsFile.remove(deleteIndex+PROPERTY_KEY_ANSWER_A);
+        FileUtil.personalizeQuestionsFile.remove(deleteIndex+PROPERTY_KEY_ANSWER_B);
+        FileUtil.personalizeQuestionsFile.remove(deleteIndex+PROPERTY_KEY_ANSWER_C);
+        FileUtil.personalizeQuestionsFile.remove(deleteIndex+PROPERTY_KEY_ANSWER_D);
+        FileUtil.personalizeQuestionsFile.remove(deleteIndex+PROPERTY_KEY_GOOD_ANSWER);
+        FileUtil.personalizeQuestionsFile.remove(deleteIndex+PROPERTY_KEY_EXPLANATION);
 
         FileUtil.personalizeQuestionsFile.setProperty(QUESTION_NUMBER_KEY_PROPERTIES, String.valueOf(propertyKeyQuestionNumber));
         FileUtil.storePersonalizeQuestionsFile();
+        if(propertyKeyQuestionNumber == 0)
+        {
+            FileUtil.resetPersonalizeQuestionFile();
+        }
     }
 
     public static int getPropertyKeyQuestionNumber() {

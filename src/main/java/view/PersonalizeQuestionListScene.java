@@ -108,30 +108,40 @@ public class PersonalizeQuestionListScene extends Scene {
         titleLabel.setTranslateX(250);
         questionListVbox.getChildren().add(titleLabel);
 
-        if(PersonalizeQuestionsHandler.getPropertyKeyQuestionNumber() == 0) {
+        if(PersonalizeQuestionsHandler.getPropertyKeyQuestionNumber() == 0)
+        {
+            HBox hBox = new HBox();
+            Button deleteButton = new Button();
+            CustomOption.setUpTrashButton(deleteButton, "Delete this question from list");
+            deleteButton.setPrefSize(40, 40);
+            hBox.getChildren().add(deleteButton);
+
             Label label = new Label();
             label.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 20));
             label.setText(UtilStringStorage.noPersonalizeQuestionInList);
-            gridpane.add(label, 0, 0);
+            hBox.getChildren().add(label);
+            gridpane.add(hBox, 0, 0);
         }
-        else {
-            for (int i = 0; i < PersonalizeQuestionsHandler.getPropertyKeyQuestionNumber(); i++) {
+        else
+        {
+            for (int i = 0; i < 100; i++)
+            {
                 int deleteIndex = i;
                 String propertyQuestionKey = PersonalizeQuestionsHandler.getPropertyKeyStart() + deleteIndex;
+                String checkForProperty = FileUtil.personalizeQuestionsFile.getProperty(propertyQuestionKey + PersonalizeQuestionsHandler.getPropertyKeyQuestion());
 
-                HBox hBox = new HBox();
-                Button deleteButton = new Button();
-                CustomOption.setUpTrashButton(deleteButton, "Delete this question from list");
-                deleteButton.setPrefSize(40, 40);
-                hBox.getChildren().add(deleteButton);
-
-                Label label = new Label();
-                label.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 20));
-
-                if(FileUtil.personalizeQuestionsFile.getProperty(propertyQuestionKey + PersonalizeQuestionsHandler.getPropertyKeyQuestion()) != null)
+                if(checkForProperty != null)
                 {
-                    String checkForProperty = FileUtil.personalizeQuestionsFile.getProperty(propertyQuestionKey + PersonalizeQuestionsHandler.getPropertyKeyQuestion());
+                    HBox hBox = new HBox();
+                    Button deleteButton = new Button();
+                    CustomOption.setUpTrashButton(deleteButton, "Delete this question from list");
+                    deleteButton.setPrefSize(40, 40);
+                    hBox.getChildren().add(deleteButton);
+
+                    Label label = new Label();
+                    label.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 20));
                     label.setText("Question n°" + (i+1) + " : " + checkForProperty);
+                    hBox.getChildren().add(label);
 
                     deleteButton.setOnAction(event -> {
                         confirmAlert.modifyConfirmAlert("Etes vous sûr de vouloir supprimer cette question ?");
@@ -141,32 +151,8 @@ public class PersonalizeQuestionListScene extends Scene {
                             gridpane.getChildren().remove(deleteIndex);
                         }
                     });
+                    gridpane.add(hBox, 0, i);
                 }
-                else
-                {
-                    int deleteIndexSup = deleteIndex;
-                    String propertyQuestionKeyNotFind;
-                    String checkForProperty;
-                    do {
-                        propertyQuestionKeyNotFind = PersonalizeQuestionsHandler.getPropertyKeyStart() + deleteIndexSup;
-                        checkForProperty = FileUtil.personalizeQuestionsFile.getProperty(propertyQuestionKeyNotFind + PersonalizeQuestionsHandler.getPropertyKeyQuestion());
-                        deleteIndexSup++;
-                    }while(checkForProperty == null);
-
-                    label.setText("Question n°" + (i + 1) + " : " + checkForProperty);
-                    String finalPropertyQuestionKeyNotFind = propertyQuestionKeyNotFind;
-
-                    deleteButton.setOnAction(event -> {
-                            confirmAlert.modifyConfirmAlert("Etes vous sûr de vouloir supprimer cette question ?");
-                            Optional<ButtonType> result = confirmAlert.showAndWait();
-                            if (result.orElse(null) == ButtonType.OK) {
-                                PersonalizeQuestionsHandler.deleteIndividualQuestion(finalPropertyQuestionKeyNotFind);
-                                gridpane.getChildren().remove(deleteIndex);
-                            }
-                        });
-                }
-                hBox.getChildren().add(label);
-                gridpane.add(hBox, 0, i);
             }
         }
         gridpane.setTranslateX(50);

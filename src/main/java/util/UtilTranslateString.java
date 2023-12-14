@@ -190,6 +190,7 @@ public class UtilTranslateString {
         UtilStringStorage.validateCreationButton = engTradFile.getProperty("validateCreationButton");
         UtilStringStorage.questionIsForged = engTradFile.getProperty("questionIsForged");
         UtilStringStorage.questionIsNotForged = engTradFile.getProperty("questionIsNotForged");
+        UtilStringStorage.personalizeListButtonTooltip = engTradFile.getProperty("personalizeListButtonTooltip");
         UtilStringStorage.personalizeQuestionListLabel = engTradFile.getProperty("personalizeQuestionListLabel");
         UtilStringStorage.confirmAlertDeleteAllQuestions = engTradFile.getProperty("confirmAlertHeaderText");
         UtilStringStorage.deleteAllLabel = engTradFile.getProperty("deleteAllLabel");
@@ -198,6 +199,8 @@ public class UtilTranslateString {
         UtilStringStorage.nothingToDelete = engTradFile.getProperty("nothingToDelete");
         UtilStringStorage.questionListTitle = engTradFile.getProperty("questionListTitle");
         UtilStringStorage.noPersonalizeQuestionInList = engTradFile.getProperty("noPersonalizeQuestionInList");
+        UtilStringStorage.individualQuestionTooltip = engTradFile.getProperty("individualQuestionTooltip");
+        UtilStringStorage.individualConfirmDelete = engTradFile.getProperty("individualConfirmDelete");
 
         // OPTION SCENE
         UtilStringStorage.volumeLabel = engTradFile.getProperty("volumeLabel");
@@ -378,6 +381,7 @@ public class UtilTranslateString {
         UtilStringStorage.validateCreationButton = frTradFile.getProperty("validateCreationButton");
         UtilStringStorage.questionIsForged = frTradFile.getProperty("questionIsForged");
         UtilStringStorage.questionIsNotForged = frTradFile.getProperty("questionIsNotForged");
+        UtilStringStorage.personalizeListButtonTooltip = frTradFile.getProperty("personalizeListButtonTooltip");
         UtilStringStorage.personalizeQuestionListLabel = frTradFile.getProperty("personalizeQuestionListLabel");
         UtilStringStorage.confirmAlertDeleteAllQuestions = frTradFile.getProperty("confirmAlertHeaderText");
         UtilStringStorage.deleteAllLabel = frTradFile.getProperty("deleteAllLabel");
@@ -386,6 +390,8 @@ public class UtilTranslateString {
         UtilStringStorage.nothingToDelete = frTradFile.getProperty("nothingToDelete");
         UtilStringStorage.questionListTitle = frTradFile.getProperty("questionListTitle");
         UtilStringStorage.noPersonalizeQuestionInList = frTradFile.getProperty("noPersonalizeQuestionInList");
+        UtilStringStorage.individualQuestionTooltip = frTradFile.getProperty("individualQuestionTooltip");
+        UtilStringStorage.individualConfirmDelete = frTradFile.getProperty("individualConfirmDelete");
 
         // OPTION SCENE
         UtilStringStorage.volumeLabel = frTradFile.getProperty("volumeLabel");

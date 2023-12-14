@@ -23,18 +23,25 @@ public class PersonalizeQuestionsHandler
 
     public static void addNewQuestionToPropertiesFile(String category, String questionToAsk, String answerA, String answerB, String answerC, String answerD, String goodAnswer, String explanation)
     {
-        String propertyQuestionKey = PROPERTY_KEY_START +propertyKeyQuestionNumber;
-
-        FileUtil.personalizeQuestionsFile.setProperty(propertyQuestionKey+ PROPERTY_KEY_CATEGORY, category);
-        FileUtil.personalizeQuestionsFile.setProperty(propertyQuestionKey+ PROPERTY_KEY_QUESTION, questionToAsk);
-        FileUtil.personalizeQuestionsFile.setProperty(propertyQuestionKey+ PROPERTY_KEY_ANSWER_A, answerA);
-        FileUtil.personalizeQuestionsFile.setProperty(propertyQuestionKey+ PROPERTY_KEY_ANSWER_B, answerB);
-        FileUtil.personalizeQuestionsFile.setProperty(propertyQuestionKey+ PROPERTY_KEY_ANSWER_C, answerC);
-        FileUtil.personalizeQuestionsFile.setProperty(propertyQuestionKey+ PROPERTY_KEY_ANSWER_D, answerD);
-        FileUtil.personalizeQuestionsFile.setProperty(propertyQuestionKey+ PROPERTY_KEY_GOOD_ANSWER, goodAnswer);
-        FileUtil.personalizeQuestionsFile.setProperty(propertyQuestionKey+ PROPERTY_KEY_EXPLANATION, explanation);
-
+        propertyKeyQuestionNumber = Integer.parseInt(FileUtil.personalizeQuestionsFile.getProperty(QUESTION_NUMBER_KEY_PROPERTIES));
         propertyKeyQuestionNumber++;
+
+
+        for(int i = 0; i < propertyKeyQuestionNumber; i++) {
+            String propertyQuestionKey = PROPERTY_KEY_START + i;
+            String checkIfPropertyExist = FileUtil.personalizeQuestionsFile.getProperty(propertyQuestionKey +PROPERTY_KEY_QUESTION);
+            if (checkIfPropertyExist == null) {
+                FileUtil.personalizeQuestionsFile.setProperty(propertyQuestionKey + PROPERTY_KEY_CATEGORY, category);
+                FileUtil.personalizeQuestionsFile.setProperty(propertyQuestionKey + PROPERTY_KEY_QUESTION, questionToAsk);
+                FileUtil.personalizeQuestionsFile.setProperty(propertyQuestionKey + PROPERTY_KEY_ANSWER_A, answerA);
+                FileUtil.personalizeQuestionsFile.setProperty(propertyQuestionKey + PROPERTY_KEY_ANSWER_B, answerB);
+                FileUtil.personalizeQuestionsFile.setProperty(propertyQuestionKey + PROPERTY_KEY_ANSWER_C, answerC);
+                FileUtil.personalizeQuestionsFile.setProperty(propertyQuestionKey + PROPERTY_KEY_ANSWER_D, answerD);
+                FileUtil.personalizeQuestionsFile.setProperty(propertyQuestionKey + PROPERTY_KEY_GOOD_ANSWER, goodAnswer);
+                FileUtil.personalizeQuestionsFile.setProperty(propertyQuestionKey + PROPERTY_KEY_EXPLANATION, explanation);
+                break;
+            }
+        }
         FileUtil.personalizeQuestionsFile.setProperty(QUESTION_NUMBER_KEY_PROPERTIES, String.valueOf(propertyKeyQuestionNumber));
         FileUtil.storePersonalizeQuestionsFile();
     }

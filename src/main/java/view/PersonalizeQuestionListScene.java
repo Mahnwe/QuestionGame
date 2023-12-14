@@ -111,10 +111,6 @@ public class PersonalizeQuestionListScene extends Scene {
         if(PersonalizeQuestionsHandler.getPropertyKeyQuestionNumber() == 0)
         {
             HBox hBox = new HBox();
-            Button deleteButton = new Button();
-            CustomOption.setUpTrashButton(deleteButton, "Delete this question from list");
-            deleteButton.setPrefSize(40, 40);
-            hBox.getChildren().add(deleteButton);
 
             Label label = new Label();
             label.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 20));
@@ -126,15 +122,14 @@ public class PersonalizeQuestionListScene extends Scene {
         {
             for (int i = 0; i < 100; i++)
             {
-                int deleteIndex = i;
-                String propertyQuestionKey = PersonalizeQuestionsHandler.getPropertyKeyStart() + deleteIndex;
+                String propertyQuestionKey = PersonalizeQuestionsHandler.getPropertyKeyStart() + i;
                 String checkForProperty = FileUtil.personalizeQuestionsFile.getProperty(propertyQuestionKey + PersonalizeQuestionsHandler.getPropertyKeyQuestion());
 
                 if(checkForProperty != null)
                 {
                     HBox hBox = new HBox();
                     Button deleteButton = new Button();
-                    CustomOption.setUpTrashButton(deleteButton, "Delete this question from list");
+                    CustomOption.setUpTrashButton(deleteButton, UtilStringStorage.individualQuestionTooltip);
                     deleteButton.setPrefSize(40, 40);
                     hBox.getChildren().add(deleteButton);
 
@@ -144,11 +139,12 @@ public class PersonalizeQuestionListScene extends Scene {
                     hBox.getChildren().add(label);
 
                     deleteButton.setOnAction(event -> {
-                        confirmAlert.modifyConfirmAlert("Etes vous sûr de vouloir supprimer cette question ?");
+                        confirmAlert.modifyConfirmAlert(UtilStringStorage.individualConfirmDelete);
                         Optional<ButtonType> result = confirmAlert.showAndWait();
                         if(result.orElse(null) == ButtonType.OK) {
                             PersonalizeQuestionsHandler.deleteIndividualQuestion(propertyQuestionKey);
-                            gridpane.getChildren().remove(deleteIndex);
+                            PersonalizeQuestionListScene personalizeQuestionListScene = new PersonalizeQuestionListScene(new ScrollPane(), stage, achievementManager);
+                            stage.setScene(personalizeQuestionListScene);
                         }
                     });
                     gridpane.add(hBox, 0, i);

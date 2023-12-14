@@ -154,6 +154,7 @@ public class UtilStringStorage
     public static String validateCreationButton = "";
     public static String questionIsForged = "";
     public static String questionIsNotForged = "";
+    public static String personalizeListButtonTooltip = "";
     public static String personalizeQuestionListLabel = "";
     public static String confirmAlertDeleteAllQuestions = "";
     public static String deleteAllLabel = "";
@@ -162,6 +163,8 @@ public class UtilStringStorage
     public static String nothingToDelete = "";
     public static String questionListTitle = "";
     public static String noPersonalizeQuestionInList = "";
+    public static String individualQuestionTooltip =  "";
+    public static String individualConfirmDelete =  "";
 
     // OPTION SCENE
     public static String volumeLabel = "";

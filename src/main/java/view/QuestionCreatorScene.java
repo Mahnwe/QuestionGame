@@ -4,6 +4,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
@@ -166,6 +167,8 @@ public class QuestionCreatorScene extends Scene {
         vBox.getChildren().add(personalizeListLabel);
 
         Button personalizeQuestionList = new Button();
+        Tooltip buttonTooltip = new Tooltip(UtilStringStorage.personalizeListButtonTooltip);
+        personalizeQuestionList.setTooltip(buttonTooltip);
         personalizeQuestionList.setPrefSize(110, 110);
 
         IconCreator personalizeIcon = new IconCreator(PathUtil.PERSONALIZE_LIST);

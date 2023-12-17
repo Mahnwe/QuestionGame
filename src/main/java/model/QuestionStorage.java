@@ -443,6 +443,32 @@ public class QuestionStorage
                 UtilStringStorage.answerB85, UtilStringStorage.answerC85, UtilStringStorage.answerD85, UtilStringStorage.goodAnswer85,
                 UtilStringStorage.explanation85);
         questionList.add(question85);
+
+        Question question86 = new Question(UtilStringStorage.flags, UtilStringStorage.question86,UtilStringStorage.answerA86,
+                UtilStringStorage.answerB86, UtilStringStorage.answerC86, UtilStringStorage.answerD86, UtilStringStorage.goodAnswer86,
+                UtilStringStorage.explanation86);
+        questionList.add(question86);
+
+        Question question87 = new Question(UtilStringStorage.insolite, UtilStringStorage.question87,UtilStringStorage.answerA87,
+                UtilStringStorage.answerB87, UtilStringStorage.answerC87, UtilStringStorage.answerD87, UtilStringStorage.goodAnswer87,
+                UtilStringStorage.explanation87);
+        questionList.add(question87);
+
+        Question question88 = new Question(UtilStringStorage.invention, UtilStringStorage.question88,UtilStringStorage.answerA88,
+                UtilStringStorage.answerB88, UtilStringStorage.answerC88, UtilStringStorage.answerD88, UtilStringStorage.goodAnswer88,
+                UtilStringStorage.explanation88);
+        questionList.add(question88);
+
+        Question question89 = new Question(UtilStringStorage.linguistic, UtilStringStorage.question89,UtilStringStorage.answerA89,
+                UtilStringStorage.answerB89, UtilStringStorage.answerC89, UtilStringStorage.answerD89, UtilStringStorage.goodAnswer89,
+                UtilStringStorage.explanation89);
+        questionList.add(question89);
+
+        Question question90 = new Question(UtilStringStorage.animals, UtilStringStorage.question90,UtilStringStorage.answerA90,
+                UtilStringStorage.answerB90, UtilStringStorage.answerC90, UtilStringStorage.answerD90, UtilStringStorage.goodAnswer90,
+                UtilStringStorage.explanation90);
+        questionList.add(question90);
+
     }
 
     public void checkPersonalizeQuestions()

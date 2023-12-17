@@ -31,7 +31,6 @@ public class ResultScene extends VBox
     private final Stage stage;
     private final int questionCount;
     public static MediaPlayer resultSoundEffect;
-    public static MediaPlayer returnToMenuMusic;
 
     public ResultScene(BorderPane pane, int playerFinalScore, int questionCount, AchievementManager achievementManager, Stage stage)
     {
@@ -169,9 +168,11 @@ public class ResultScene extends VBox
 
     public void backToMainMenu()
     {
+        SoundManager.stopMusic(MainScene.inGameMusicToStop);
+        MainScene.inGameMusicToStop.stop();
         MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
         stage.setScene(menuScene);
-        returnToMenuMusic = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
+        App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
 
         if(AchievementManager.notificationAlert != null) {
             NotificationAlert notificationAlert = AchievementManager.notificationAlert;

@@ -229,12 +229,8 @@ public class MenuScene extends Scene
     {
         Player player = new Player();
         MainScene mainScene = new MainScene(player, gameHandler, menuStage, achievementManager);
+        MainScene.inGameMusicToStop = SoundManager.playMusicRepeat(PathUtil.IN_GAME_MUSIC);
         SoundManager.stopMusic(App.menuMusicToStop);
-
-        if(ResultScene.returnToMenuMusic != null) {
-            SoundManager.stopMusic(ResultScene.returnToMenuMusic);
-            relaunchGame = SoundManager.playMusicRepeat(PathUtil.IN_GAME_MUSIC);
-        }
         menuStage.setScene(mainScene);
     }
 

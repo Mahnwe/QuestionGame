@@ -65,9 +65,8 @@ public class QuestionInterface extends BorderPane
     {
         game = new VBox();
         game.setBorder(CustomOption.createCustomBorder(1.0, 1.0, Color.BLACK));
-        game.setBorder(new Border(new BorderStroke(Color.BLACK,BorderStrokeStyle.SOLID,CornerRadii.EMPTY,BorderWidths.DEFAULT)));
         game.setPrefWidth(830);
-        game.setPrefHeight(300);
+        game.setPrefHeight(340);
     }
 
     public void createQuestionLabel()
@@ -139,7 +138,7 @@ public class QuestionInterface extends BorderPane
         nextQuestionButton.setBorder(CustomOption.createCustomBorder(3.0, 2.0, Color.BLACK));
         CustomOption.setGlowEffectOnButton(nextQuestionButton);
         nextQuestionButton.setDisable(true);
-        nextQuestionButton.setTranslateY(320);
+        nextQuestionButton.setTranslateY(300);
         nextQuestionButton.setTranslateX(700);
     }
 
@@ -260,5 +259,9 @@ public class QuestionInterface extends BorderPane
 
     public Button getValidateAnswerButton() {
         return validateAnswerButton;
+    }
+
+    public VBox getGame() {
+        return game;
     }
 }

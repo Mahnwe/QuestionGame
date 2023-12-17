@@ -6,7 +6,6 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import view.App;
 import view.MainScene;
-import view.ResultScene;
 
 import java.io.File;
 
@@ -57,9 +56,6 @@ public class SoundManager {
             if (!isMute) {
                 soundVolume = 0.0;
                 handleMenuSceneVolume(App.menuMusicToStop, 0.0);
-                if(ResultScene.returnToMenuMusic != null) {
-                    handleMenuSceneVolume(ResultScene.returnToMenuMusic, 0.0);
-                }
                 isMute = true;
                 volumeSlider.setDisable(true);
             }

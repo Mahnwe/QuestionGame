@@ -153,18 +153,18 @@ public class PlayerInfoScene extends Scene
     public void createSliderArea()
     {
         Label volumeLabel = new Label(UtilStringStorage.volumeLabel);
-        volumeLabel.setTranslateY(120);
+        volumeLabel.setTranslateY(110);
         volumeLabel.setTranslateX(80);
         volumeLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 19));
         volumeLabel.setTextFill(Color.GHOSTWHITE);
         playerInfos.getChildren().add(volumeLabel);
 
         Button muteButton = new Button();
-        CustomOption.customMuteButton(muteButton, PathUtil.WHITE_MUTE_ICON, 185, 105);
+        CustomOption.customMuteButton(muteButton, PathUtil.WHITE_MUTE_ICON, 175, 105);
         playerInfos.getChildren().add(muteButton);
 
         Slider volumeSlider = new Slider(0, 10, 5);
-        CustomOption.customSlider(volumeSlider, 245, 50, 105, 0);
+        CustomOption.customSlider(volumeSlider, 245, 50, 95, 0);
         volumeSlider.setValue(SoundManager.soundVolume);
         if(SoundManager.soundVolume == 0.0) {
             SoundManager.isMute = true;

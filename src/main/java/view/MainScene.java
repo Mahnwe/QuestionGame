@@ -1,18 +1,24 @@
 package view;
 
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.*;
 import util.BackgroundCreator;
 import util.FileUtil;
 import util.PathUtil;
 import util.UtilStringStorage;
+
+import java.util.Optional;
 
 
 public class MainScene extends Scene
@@ -23,7 +29,7 @@ public class MainScene extends Scene
     private final GameHandler gameHandler;
     private final Stage stage;
     private final AchievementManager achievementManager;
-    public static MediaPlayer inGameMusicToStop = SoundManager.playMusicRepeat(PathUtil.IN_GAME_MUSIC);
+    public static MediaPlayer inGameMusicToStop;
     private final Player player;
     private static final String SURVIVAL_MODE = "survival";
 
@@ -88,21 +94,34 @@ public class MainScene extends Scene
         });
     }
 
-    public void createNewQuestionInterface()
+    public void createTopArea()
     {
-        questionInterface = new QuestionInterface(new BorderPane(), gameHandler.getQuestionList().get(gameHandler.getQuestionCount()));
-
         VBox infoQuestionVbox = new VBox();
+
+        Button quitLaunchedGame = new Button("Menu");
+        quitLaunchedGame.setFont(Font.font("Futura", FontWeight.BOLD, 20));
+        quitLaunchedGame.setOnAction(event -> backToMainMenu());
+
         questionInterface.getQuestionNumber().setText(UtilStringStorage.questionNumber + (gameHandler.getQuestionCount() + 1));
         questionInterface.getQuestionCategory().setText(questionInterface.getQuestion().getCategory());
         questionInterface.getQuestionToAsk().setText(questionInterface.getQuestion().getQuestionToAsk());
         questionInterface.placeQuestionLabelIfNecessary(questionInterface.getQuestionToAsk());
+
+        infoQuestionVbox.getChildren().add(quitLaunchedGame);
         infoQuestionVbox.getChildren().add(questionInterface.getQuestionNumber());
         infoQuestionVbox.getChildren().add(questionInterface.getQuestionCategory());
 
+        menuPane.setTop(infoQuestionVbox);
+        questionInterface.getGame().setTranslateY(-50);
+    }
+
+    public void createNewQuestionInterface()
+    {
+        questionInterface = new QuestionInterface(new BorderPane(), gameHandler.getQuestionList().get(gameHandler.getQuestionCount()));
         setAnswersButtonListeners();
 
-        menuPane.setTop(infoQuestionVbox);
+        createTopArea();
+
         menuPane.setCenter(questionInterface);
         gameHandler.increaseQuestionCount();
     }
@@ -166,4 +185,17 @@ public class MainScene extends Scene
         }
     }
 
+    public void backToMainMenu()
+    {
+        ConfirmAlert confirmAlert = new ConfirmAlert(Alert.AlertType.CONFIRMATION);
+        confirmAlert.modifyConfirmAlert("Êtes-vous sûr de vouloir arrêter la partie ?"+"\n"+"(Aucune données ne sera sauvegardées)");
+        Optional<ButtonType> result = confirmAlert.showAndWait();
+        if(result.orElse(null) == ButtonType.OK) {
+            SoundManager.stopMusic(inGameMusicToStop);
+            inGameMusicToStop.stop();
+            App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
+            MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
+            stage.setScene(menuScene);
+        }
+    }
 }

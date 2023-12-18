@@ -479,6 +479,16 @@ public class QuestionStorage
                 UtilStringStorage.explanation92);
         questionList.add(question92);
 
+        Question question93 = new Question(UtilStringStorage.historia, UtilStringStorage.question93,UtilStringStorage.answerA93,
+                UtilStringStorage.answerB93, UtilStringStorage.answerC93, UtilStringStorage.answerD93, UtilStringStorage.goodAnswer93,
+                UtilStringStorage.explanation93);
+        questionList.add(question93);
+
+        Question question94 = new Question(UtilStringStorage.science, UtilStringStorage.question94,UtilStringStorage.answerA94,
+                UtilStringStorage.answerB94, UtilStringStorage.answerC94, UtilStringStorage.answerD94, UtilStringStorage.goodAnswer94,
+                UtilStringStorage.explanation94);
+        questionList.add(question94);
+
     }
 
     public void checkPersonalizeQuestions()

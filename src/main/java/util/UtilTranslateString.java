@@ -77,6 +77,7 @@ public class UtilTranslateString {
         UtilStringStorage.minerals = engTradFile.getProperty("minerals");
         UtilStringStorage.nature = engTradFile.getProperty("nature");
         UtilStringStorage.invention = engTradFile.getProperty("invention");
+        UtilStringStorage.science = engTradFile.getProperty("science");
 
         // ACHIEVEMENTS
         UtilStringStorage.achievementLabel = engTradFile.getProperty("achievementLabel");
@@ -140,6 +141,7 @@ public class UtilTranslateString {
         UtilStringStorage.gameIn = engTradFile.getProperty("gameIn");
         UtilStringStorage.gameMinutes = engTradFile.getProperty("gameMinutes");
         UtilStringStorage.gameSecondes = engTradFile.getProperty("gameSecondes");
+        UtilStringStorage.returnMenuConfirmAlert = engTradFile.getProperty("returnMenuConfirmAlert");
 
         // PLAYER INFO
         UtilStringStorage.askPlayerName = engTradFile.getProperty("askPlayerName");
@@ -268,6 +270,7 @@ public class UtilTranslateString {
         UtilStringStorage.minerals = frTradFile.getProperty("minerals");
         UtilStringStorage.nature = frTradFile.getProperty("nature");
         UtilStringStorage.invention = frTradFile.getProperty("invention");
+        UtilStringStorage.science = frTradFile.getProperty("science");
 
         // ACHIEVEMENTS
         UtilStringStorage.achievementLabel = frTradFile.getProperty("achievementLabel");
@@ -331,6 +334,7 @@ public class UtilTranslateString {
         UtilStringStorage.gameIn = frTradFile.getProperty("gameIn");
         UtilStringStorage.gameMinutes = frTradFile.getProperty("gameMinutes");
         UtilStringStorage.gameSecondes = frTradFile.getProperty("gameSecondes");
+        UtilStringStorage.returnMenuConfirmAlert = frTradFile.getProperty("returnMenuConfirmAlert");
 
         // PLAYER INFO
         UtilStringStorage.askPlayerName = frTradFile.getProperty("askPlayerName");

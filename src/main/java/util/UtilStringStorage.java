@@ -40,6 +40,7 @@ public class UtilStringStorage
     public static String minerals = "";
     public static String nature = "";
     public static String invention = "";
+    public static String science = "";
 
     // ACHIEVEMENTS
     public static String achievementLabel = "";
@@ -103,6 +104,7 @@ public class UtilStringStorage
     public static String gameIn = "";
     public static String gameMinutes = "";
     public static String gameSecondes = "";
+    public static String returnMenuConfirmAlert = "";
 
     // PLAYER INFOS
     public static String askPlayerName = "";
@@ -836,5 +838,19 @@ public class UtilStringStorage
     public static String answerD92 = "";
     public static String goodAnswer92 = "";
     public static String explanation92 = "";
+    public static String question93 = "";
+    public static String answerA93 = "";
+    public static String answerB93 = "";
+    public static String answerC93 = "";
+    public static String answerD93 = "";
+    public static String goodAnswer93 = "";
+    public static String explanation93 = "";
+    public static String question94 = "";
+    public static String answerA94 = "";
+    public static String answerB94 = "";
+    public static String answerC94 = "";
+    public static String answerD94 = "";
+    public static String goodAnswer94 = "";
+    public static String explanation94 = "";
 
 }

@@ -4,19 +4,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.*;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.*;
-import util.BackgroundCreator;
-import util.FileUtil;
-import util.PathUtil;
-import util.UtilStringStorage;
+import util.*;
 
 import java.util.Optional;
 
@@ -100,6 +96,18 @@ public class MainScene extends Scene
 
         Button quitLaunchedGame = new Button("Menu");
         quitLaunchedGame.setFont(Font.font("Futura", FontWeight.BOLD, 20));
+        quitLaunchedGame.setBorder(CustomOption.createCustomBorder(2.0, 2.0, Color.BLACK));
+
+        IconCreator personalizeIcon = new IconCreator(PathUtil.MENU_BACKGROUND);
+        ImageView personalizeImage = personalizeIcon.createImage();
+
+        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
+        quitLaunchedGame.setBackground(new Background(new BackgroundImage(personalizeImage.getImage(), BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+                backgroundSize)));
+        CustomOption.setGlowEffectOnButton(quitLaunchedGame);
+        quitLaunchedGame.setOnMouseEntered(event -> quitLaunchedGame.setBorder(CustomOption.createCustomBorder(2.0, 2.0, Color.GHOSTWHITE)));
+        quitLaunchedGame.setOnMouseExited(event -> quitLaunchedGame.setBorder(CustomOption.createCustomBorder(2.0, 2.0, Color.BLACK)));
+
         quitLaunchedGame.setOnAction(event -> backToMainMenu());
 
         questionInterface.getQuestionNumber().setText(UtilStringStorage.questionNumber + (gameHandler.getQuestionCount() + 1));
@@ -188,7 +196,7 @@ public class MainScene extends Scene
     public void backToMainMenu()
     {
         ConfirmAlert confirmAlert = new ConfirmAlert(Alert.AlertType.CONFIRMATION);
-        confirmAlert.modifyConfirmAlert("Êtes-vous sûr de vouloir arrêter la partie ?"+"\n"+"(Aucune données ne sera sauvegardées)");
+        confirmAlert.modifyConfirmAlert(UtilStringStorage.returnMenuConfirmAlert);
         Optional<ButtonType> result = confirmAlert.showAndWait();
         if(result.orElse(null) == ButtonType.OK) {
             SoundManager.stopMusic(inGameMusicToStop);

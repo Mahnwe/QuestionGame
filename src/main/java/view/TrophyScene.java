@@ -54,28 +54,17 @@ public class TrophyScene extends Scene
     {
         VBox centralVbox = new VBox();
 
-        createGridPane();
-
-        Label trophyLabel = new Label();
-        stylizeTitleLabel(trophyLabel);
+        gridPane = new BootstrapPane(4);
+        gridPane.setHgap(10);
+        gridPane.setVgap(90);
 
         createGoldVbox();
         createSilverVbox();
         createBronzeVbox();
         createSecretVbox();
 
-        gridPane.add(trophyLabel, 1, 0);
-        gridPane.add(goldCupImage, 0, 1);
-        gridPane.add(silverCupImage, 1, 1);
-        silverCupImage.setTranslateX(-55);
-        gridPane.add(bronzeCupImage, 2, 1);
-        bronzeCupImage.setTranslateX(-50);
-        gridPane.add(secretCupImage, 3, 1);
-        secretCupImage.setTranslateX(-35);
-        gridPane.setTranslateX(80);
-
+        setUpGridPane();
         centralVbox.getChildren().add(gridPane);
-
         pane.setCenter(centralVbox);
         centralVbox.setTranslateY(70);
     }
@@ -127,11 +116,20 @@ public class TrophyScene extends Scene
         secretCupImage.getChildren().add(secretCupNumber);
     }
 
-    public void createGridPane()
+    public void setUpGridPane()
     {
-        gridPane = new BootstrapPane(4);
-        gridPane.setHgap(10);
-        gridPane.setVgap(90);
+        Label trophyLabel = new Label();
+        stylizeTitleLabel(trophyLabel);
+
+        gridPane.add(trophyLabel, 1, 0);
+        gridPane.add(goldCupImage, 0, 1);
+        gridPane.add(silverCupImage, 1, 1);
+        silverCupImage.setTranslateX(-55);
+        gridPane.add(bronzeCupImage, 2, 1);
+        bronzeCupImage.setTranslateX(-50);
+        gridPane.add(secretCupImage, 3, 1);
+        secretCupImage.setTranslateX(-35);
+        gridPane.setTranslateX(80);
     }
 
     public void stylizeTitleLabel(Label label)

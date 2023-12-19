@@ -45,21 +45,6 @@ public class FileUtil {
         saveFile = new File("./src/main/resources/SaveFile/saveScoresFile");
     }
 
-    public static StringBuilder readSaveFile(File saveFile)
-    {
-        StringBuilder stringBuilder = new StringBuilder();
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(saveFile))){
-            String line;
-            while((line = bufferedReader.readLine()) != null)
-            {
-                stringBuilder.append(line).append("\n").append("\n");
-            }
-        } catch (IOException e) {
-                logger.error("Save file can't be read");
-        }
-        return stringBuilder;
-    }
-
     public static void writeInSaveFile(File saveFile, String lineToWrite)
     {
         try {
@@ -125,6 +110,9 @@ public class FileUtil {
         generalSavesFile.setProperty("survivalScore20", "0");
         generalSavesFile.setProperty("survivalScore30", "0");
         generalSavesFile.setProperty("survivalScore50", "0");
+
+        generalSavesFile.setProperty("numberOfGames", "0");
+
         FileUtil.storeGeneralSavesFile();
     }
 

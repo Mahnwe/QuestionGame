@@ -53,6 +53,9 @@ public class UtilStringStorage
     public static String survivalAchievement20Description = "";
     public static String survivalAchievement30Description = "";
     public static String survivalAchievement40Description = "";
+    public static String numberOfGamesPlayed5Description = "";
+    public static String numberOfGamesPlayed10Description = "";
+    public static String numberOfGamesPlayed20Description = "";
     public static String secretAchievement = "";
     public static String secretLabel = "";
     public static String successUnlock = "";

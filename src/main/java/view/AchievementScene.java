@@ -33,6 +33,9 @@ public class AchievementScene extends Scene
     private final Label survivalAchievement20Info= new Label();
     private final Label survivalAchievement30Info= new Label();
     private final Label survivalAchievement40Info = new Label();
+    private final Label numberOfGamesPlayed5Info = new Label();
+    private final Label numberOfGamesPlayed10Info = new Label();
+    private final Label numberOfGamesPlayed20Info = new Label();
     private Label secretAchievementInfo;
     private Label secretAchievementLabel;
 
@@ -43,7 +46,7 @@ public class AchievementScene extends Scene
         scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
         scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         scrollPane.setFitToWidth(true);
-        scrollPane.setMinHeight(850);
+        scrollPane.setMinHeight(950);
 
         this.stage = stage;
         this.achievementManager = achievementManager;
@@ -56,7 +59,7 @@ public class AchievementScene extends Scene
         createSecretAchievementArea();
         checkAchievements();
 
-        multiPane.setMinHeight(1080);
+        multiPane.setMinHeight(1100);
         multiPane.setCenter(gridPane);
 
         scrollPane.setContent(multiPane);
@@ -75,7 +78,7 @@ public class AchievementScene extends Scene
     public void createGridPane()
     {
         gridPane = new BootstrapPane(3);
-        gridPane.setTranslateY(70);
+        gridPane.setTranslateY(50);
         gridPane.setTranslateX(70);
         gridPane.setVgap(60);
         gridPane.addRow(3);
@@ -100,6 +103,12 @@ public class AchievementScene extends Scene
         createAchievementArea(UtilStringStorage.survivalAchievement30Description, survivalAchievement30Info, 7, 1, 3);
 
         createAchievementArea(UtilStringStorage.survivalAchievement40Description, survivalAchievement40Info, 8, 2, 3);
+
+        createAchievementArea(UtilStringStorage.numberOfGamesPlayed5Description, numberOfGamesPlayed5Info, 9, 0, 4);
+
+        createAchievementArea(UtilStringStorage.numberOfGamesPlayed10Description, numberOfGamesPlayed10Info, 10, 1, 4);
+
+        createAchievementArea(UtilStringStorage.numberOfGamesPlayed20Description, numberOfGamesPlayed20Info, 11, 2, 4);
     }
 
     public void createBackground()
@@ -132,8 +141,8 @@ public class AchievementScene extends Scene
         secretAchievementLabel = new Label();
         secretAchievementLabel.setText(UtilStringStorage.secretLabel);
         secretAchievementInfo = new Label();
-        AchievementVbox.setAchievementVbox(secretAchievementBox, secretAchievementLabel, achievementManager, 9, secretAchievementInfo);
-        gridPane.add(secretAchievementBox, 1,4);
+        AchievementVbox.setAchievementVbox(secretAchievementBox, secretAchievementLabel, achievementManager, 12, secretAchievementInfo);
+        gridPane.add(secretAchievementBox, 1,5);
 
     }
 
@@ -158,10 +167,14 @@ public class AchievementScene extends Scene
         checkPropertyKeyNumber(FileUtil.generalSavesFile, "survivalScore30", 7, survivalAchievement30Info);
         checkPropertyKeyNumber(FileUtil.generalSavesFile, "survivalScore50", 8, survivalAchievement40Info);
 
+        checkPropertyKeyNumber(FileUtil.generalSavesFile, "numberOfGames", 9, numberOfGamesPlayed5Info);
+        checkPropertyKeyNumber(FileUtil.generalSavesFile, "numberOfGames", 10, numberOfGamesPlayed10Info);
+        checkPropertyKeyNumber(FileUtil.generalSavesFile, "numberOfGames", 11, numberOfGamesPlayed20Info);
+
         int checkNbrOfAchievementUnlock = checkSecretAchievement();
-        achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(9), checkNbrOfAchievementUnlock);
-        checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(9), secretAchievementInfo);
-        if(checkNbrOfAchievementUnlock == 9)
+        achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(12), checkNbrOfAchievementUnlock);
+        checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(12), secretAchievementInfo);
+        if(checkNbrOfAchievementUnlock == 12)
         {
             secretAchievementLabel.setText(UtilStringStorage.secretAchievement);
             TrophyScene.setAllAchievementAreUnlocked(true);

@@ -90,6 +90,9 @@ public class UtilTranslateString {
         UtilStringStorage.survivalAchievement20Description = engTradFile.getProperty("survival20Achievement");
         UtilStringStorage.survivalAchievement30Description = engTradFile.getProperty("survival30Achievement");
         UtilStringStorage.survivalAchievement40Description = engTradFile.getProperty("survival40Achievement");
+        UtilStringStorage.numberOfGamesPlayed5Description = engTradFile.getProperty("numberOfGamesPlayed5");
+        UtilStringStorage.numberOfGamesPlayed10Description = engTradFile.getProperty("numberOfGamesPlayed10");
+        UtilStringStorage.numberOfGamesPlayed20Description = engTradFile.getProperty("numberOfGamesPlayed20");
         UtilStringStorage.secretAchievement = engTradFile.getProperty("secretAchievement");
         UtilStringStorage.secretLabel = engTradFile.getProperty("secretLabel");
         UtilStringStorage.successUnlock = engTradFile.getProperty("successUnlock");
@@ -283,6 +286,9 @@ public class UtilTranslateString {
         UtilStringStorage.survivalAchievement20Description = frTradFile.getProperty("survival20Achievement");
         UtilStringStorage.survivalAchievement30Description = frTradFile.getProperty("survival30Achievement");
         UtilStringStorage.survivalAchievement40Description = frTradFile.getProperty("survival40Achievement");
+        UtilStringStorage.numberOfGamesPlayed5Description = frTradFile.getProperty("numberOfGamesPlayed5");
+        UtilStringStorage.numberOfGamesPlayed10Description = frTradFile.getProperty("numberOfGamesPlayed10");
+        UtilStringStorage.numberOfGamesPlayed20Description = frTradFile.getProperty("numberOfGamesPlayed20");
         UtilStringStorage.secretAchievement = frTradFile.getProperty("secretAchievement");
         UtilStringStorage.secretLabel = frTradFile.getProperty("secretLabel");
         UtilStringStorage.successUnlock = frTradFile.getProperty("successUnlock");

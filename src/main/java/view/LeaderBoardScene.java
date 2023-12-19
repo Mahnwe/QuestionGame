@@ -53,16 +53,15 @@ public class LeaderBoardScene extends Scene
         borderPane = new BorderPane();
 
         createReturnButton();
-
         createLeaderBoard();
         createBestScoresLabel();
         createEraseFileButton();
-        borderPane.setLeft(bestScoresVbox);
 
+        borderPane.setLeft(bestScoresVbox);
         gridpane.add(leaderBoardVBox, 0, 0);
         borderPane.setCenter(gridpane);
-
         scrollPane.setContent(borderPane);
+
         createBackground();
 
     }

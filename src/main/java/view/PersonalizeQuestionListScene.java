@@ -47,6 +47,7 @@ public class PersonalizeQuestionListScene extends Scene {
         createReturnButton();
         createBackground();
         createDeleteArea();
+        createGridPaneList();
         createPersonalizeQuestionList();
         mainBorderPane.setCenter(questionListVbox);
     }
@@ -100,7 +101,6 @@ public class PersonalizeQuestionListScene extends Scene {
 
     public void createPersonalizeQuestionList()
     {
-        createGridPaneList();
         questionListVbox = new VBox();
 
         Label titleLabel = new Label(UtilStringStorage.questionListTitle);
@@ -158,11 +158,9 @@ public class PersonalizeQuestionListScene extends Scene {
     public void createDeleteArea()
     {
         deletedAreaVbox = new VBox();
-
         createDeleteAllVbox();
 
         deletedAreaVbox.setTranslateY(60);
-
         mainBorderPane.setLeft(deletedAreaVbox);
     }
 

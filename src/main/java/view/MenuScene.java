@@ -199,29 +199,28 @@ public class MenuScene extends Scene
 
     public void setButtonOnAction()
     {
-        launchGameButton.setOnAction(event -> {
-            if(comboBox.getSelectionModel().getSelectedItem().equals(comboBox.getItems().get(0)))
-            {
+        launchGameButton.setOnAction(event ->
+        {
+            if(comboBox.getSelectionModel().getSelectedItem().equals(comboBox.getItems().get(0))) {
                 gameHandler.setupQuestionList(10);
                 instantiateMainScene();
             }
 
-            if(comboBox.getSelectionModel().getSelectedItem().equals(comboBox.getItems().get(1)))
-            {
+            if(comboBox.getSelectionModel().getSelectedItem().equals(comboBox.getItems().get(1))) {
                 gameHandler.setupQuestionList(15);
                 instantiateMainScene();
             }
 
-            if(comboBox.getSelectionModel().getSelectedItem().equals(comboBox.getItems().get(2)))
-            {
+            if(comboBox.getSelectionModel().getSelectedItem().equals(comboBox.getItems().get(2))) {
             gameHandler.setupQuestionList(20);
             instantiateMainScene();
             }
-            if(comboBox.getSelectionModel().getSelectedItem().equals(comboBox.getItems().get(3)))
-            {
+
+            if(comboBox.getSelectionModel().getSelectedItem().equals(comboBox.getItems().get(3))) {
                 gameHandler.setUpSurvivalMode();
                 instantiateMainScene();
             }
+
         });
     }
 

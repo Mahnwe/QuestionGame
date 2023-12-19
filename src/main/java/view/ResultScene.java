@@ -54,7 +54,7 @@ public class ResultScene extends VBox
 
         gameResult.getChildren().add(exitToMenuButton);
         pane.setCenter(gameResult);
-        gameResult.setTranslateY(80);
+        gameResult.setTranslateY(20);
         gameResult.setTranslateX(-70);
 
     }
@@ -93,6 +93,7 @@ public class ResultScene extends VBox
             stylizeLabel(cupLabel, 100, 70);
             gameResult.getChildren().add(cupLabel);
         }
+        achievementManager.checkNumberOfGamesAchievement(achievementManager, FileUtil.generalSavesFile);
         FileUtil.storeGeneralSavesFile();
     }
 
@@ -118,6 +119,7 @@ public class ResultScene extends VBox
             stylizeLabel(cupLabel, 100, 70);
             gameResult.getChildren().add(cupLabel);
         }
+        achievementManager.checkNumberOfGamesAchievement(achievementManager, FileUtil.generalSavesFile);
         FileUtil.storeGeneralSavesFile();
     }
 

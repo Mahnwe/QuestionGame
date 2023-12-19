@@ -59,6 +59,15 @@ public class AchievementManager
         Achievement survivalAchievement40 = new Achievement(40, false);
         achievementsList.add(survivalAchievement40);
 
+        Achievement numberOfGamePlayed5 = new Achievement(5, false);
+        achievementsList.add(numberOfGamePlayed5);
+
+        Achievement numberOfGamePlayed10 = new Achievement(10, false);
+        achievementsList.add(numberOfGamePlayed10);
+
+        Achievement numberOfGamePlayed20 = new Achievement(20, false);
+        achievementsList.add(numberOfGamePlayed20);
+
         Achievement secretAchievement = new Achievement(9, false);
         achievementsList.add(secretAchievement);
     }
@@ -78,6 +87,16 @@ public class AchievementManager
             achievement.setUnlock(false);
             achievement.getAchievementImage().setImage(achievement.getLockImageView().getImage());
         }
+    }
+    public void checkNumberOfGamesAchievement(AchievementManager achievementManager, Properties generalSavesFile)
+    {
+        int scoreInFile = Integer.parseInt(generalSavesFile.getProperty("numberOfGames"));
+        scoreInFile++;
+        achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(9), scoreInFile);
+        achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(10), scoreInFile);
+        achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(11), scoreInFile);
+        generalSavesFile.setProperty("numberOfGames", String.valueOf(scoreInFile));
+
     }
     public void checkPerfectScoreAchievement(AchievementManager achievementManager, int playerFinalScore, Properties generalSavesFile, String propertyKey, int achievementIndex)
     {
@@ -196,13 +215,11 @@ public class AchievementManager
         vBox.getChildren().add(imageView);
     }
 
-    public void setUpCupResultLabel(Label label)
-    {
+    public void setUpCupResultLabel(Label label) {
         ResultScene.resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
         stylizeLabel(label, 200, 70);
     }
-    public void setUpSurviveResultLabel(Label label)
-    {
+    public void setUpSurviveResultLabel(Label label) {
         ResultScene.resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
         stylizeLabel(label, 100, 70);
     }

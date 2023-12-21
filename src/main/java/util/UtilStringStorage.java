@@ -69,6 +69,7 @@ public class UtilStringStorage
     public static  String bestScoreIn15Label = "";
     public static  String bestScoreIn20Label = "";
     public static  String bestScoreSurvivalLabel = "";
+    public static String numberOfGamesLabel = "";
 
     // MENU SCENE
     public static String welcomeLabel = "";

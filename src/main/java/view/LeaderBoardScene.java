@@ -117,6 +117,9 @@ public class LeaderBoardScene extends Scene
         Label bestScoreInSurvivalMode = new Label();
         checkForBestSurvivalScore(bestScoreInSurvivalMode);
         stylizeBestScoreLabel(bestScoresVbox, bestScoreInSurvivalMode, 10, 60);
+
+        Label numberOfGamesStat = new Label(UtilStringStorage.numberOfGamesLabel +" "+FileUtil.generalSavesFile.getProperty("numberOfGames"));
+        stylizeBestScoreLabel(bestScoresVbox, numberOfGamesStat, 10, 80);
     }
 
     public void checkForBestSurvivalScore(Label bestScoreInSurvivalMode)

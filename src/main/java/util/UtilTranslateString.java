@@ -106,6 +106,7 @@ public class UtilTranslateString {
         UtilStringStorage.bestScoreIn15Label = engTradFile.getProperty("bestScoreIn15QuestionsLabel");
         UtilStringStorage.bestScoreIn20Label = engTradFile.getProperty("bestScoreIn20QuestionsLabel");
         UtilStringStorage.bestScoreSurvivalLabel = engTradFile.getProperty("bestScoreInSurvivalMode");
+        UtilStringStorage.numberOfGamesLabel = engTradFile.getProperty("numberOfGamesLabel");
 
         // MENU SCENE
         UtilStringStorage.welcomeLabel = engTradFile.getProperty("welcomeLabel");
@@ -302,6 +303,7 @@ public class UtilTranslateString {
         UtilStringStorage.bestScoreIn15Label = frTradFile.getProperty("bestScoreIn15QuestionsLabel");
         UtilStringStorage.bestScoreIn20Label = frTradFile.getProperty("bestScoreIn20QuestionsLabel");
         UtilStringStorage.bestScoreSurvivalLabel = frTradFile.getProperty("bestScoreInSurvivalMode");
+        UtilStringStorage.numberOfGamesLabel = frTradFile.getProperty("numberOfGamesLabel");
 
         // MENU SCENE
         UtilStringStorage.welcomeLabel = frTradFile.getProperty("welcomeLabel");

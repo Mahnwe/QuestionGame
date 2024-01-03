@@ -112,8 +112,19 @@ public class FileUtil {
         generalSavesFile.setProperty("survivalScore50", "0");
 
         generalSavesFile.setProperty("numberOfGames", "0");
+        generalSavesFile.setProperty("questionAnswered", "0");
+        generalSavesFile.setProperty("goodAnswerNumber", "0");
+        generalSavesFile.setProperty("badAnswerNumber", "0");
 
         FileUtil.storeGeneralSavesFile();
+    }
+
+    public static void incrementGeneralStat(String propertyKey)
+    {
+        int checkForStat = Integer.parseInt(generalSavesFile.getProperty(propertyKey));
+        checkForStat++;
+        generalSavesFile.setProperty(propertyKey, String.valueOf(checkForStat));
+        storeGeneralSavesFile();
     }
 
 }

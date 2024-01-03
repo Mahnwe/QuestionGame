@@ -12,6 +12,7 @@ import model.Question;
 import model.QuestionStorage;
 import model.SoundManager;
 import util.CustomOption;
+import util.FileUtil;
 import util.PathUtil;
 import util.UtilStringStorage;
 
@@ -185,6 +186,7 @@ public class QuestionInterface extends BorderPane
               answerButtonClicked.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
               soundEffectToStop = SoundManager.playMusic(PathUtil.GOOD_ANSWER_SOUND_EFFECT);
               displayAnswer(UtilStringStorage.goodAnswerLabel);
+              FileUtil.incrementGeneralStat("goodAnswerNumber");
           }
           else
           {
@@ -194,9 +196,11 @@ public class QuestionInterface extends BorderPane
               showGoodAnswer(answerButton1); showGoodAnswer(answerButton2);
               showGoodAnswer(answerButton3); showGoodAnswer(answerButton4);
               displayAnswer(UtilStringStorage.badAnswerLabel);
+              FileUtil.incrementGeneralStat("badAnswerNumber");
           }
           nextQuestionButton.setDisable(false);
           disableButtons();
+          FileUtil.incrementGeneralStat("questionAnswered");
     }
 
     private void displayAnswer(String answerLabel)

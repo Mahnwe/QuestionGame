@@ -65,11 +65,19 @@ public class UtilStringStorage
     public static String leaderBoardLabel = "";
     public static String eraseTooltipLabel = "";
     public static String askToResetScore = "";
+    public static String statisticLabel = "";
+    public static String statisticTooltip = "";
+
+    // STATS SCENE
     public static  String bestScoreIn10Label = "";
     public static  String bestScoreIn15Label = "";
     public static  String bestScoreIn20Label = "";
     public static  String bestScoreSurvivalLabel = "";
     public static String numberOfGamesLabel = "";
+    public static String questionAnsweredLabel = "";
+    public static String goodAnswerNumberLabel = "";
+    public static String badAnswerNumberLabel = "";
+    public static String successPercentageLabel = "";
 
     // MENU SCENE
     public static String welcomeLabel = "";

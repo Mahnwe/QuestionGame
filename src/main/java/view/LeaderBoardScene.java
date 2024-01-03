@@ -27,7 +27,7 @@ public class LeaderBoardScene extends Scene
     private final AchievementManager achievementManager;
     private final VBox leaderBoardVBox;
     private final ConfirmAlert confirmAlert;
-    private VBox bestScoresVbox;
+    private VBox statsVbox;
     private final BorderPane borderPane;
     private GridPane scoreGridPane;
 
@@ -57,7 +57,7 @@ public class LeaderBoardScene extends Scene
         createBestScoresLabel();
         createEraseFileButton();
 
-        borderPane.setLeft(bestScoresVbox);
+        borderPane.setLeft(statsVbox);
         gridpane.add(leaderBoardVBox, 0, 0);
         borderPane.setCenter(gridpane);
         scrollPane.setContent(borderPane);
@@ -103,51 +103,23 @@ public class LeaderBoardScene extends Scene
 
     public void createBestScoresLabel()
     {
-        bestScoresVbox = new VBox();
+        statsVbox = new VBox();
 
-        Label bestScoreIn10Questions = new Label(UtilStringStorage.bestScoreIn10Label+  " "+FileUtil.generalSavesFile.getProperty("perfectScore10"));
-        stylizeBestScoreLabel(bestScoresVbox, bestScoreIn10Questions, 10, 0);
+        Button statsSceneButton = new Button(UtilStringStorage.statisticLabel);
+        statsSceneButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 18));
+        Tooltip tooltip = new Tooltip(UtilStringStorage.statisticTooltip);
+        statsSceneButton.setTooltip(tooltip);
+        statsSceneButton.setBorder(CustomOption.createCustomBorder(3.0, 2.0, Color.BLACK));
+        CustomOption.setGlowEffectOnButton(statsSceneButton);
+        statsSceneButton.setOnAction(event -> {
+            StatsScene statsScene = new StatsScene(new BorderPane(), stage, achievementManager);
+            stage.setScene(statsScene);
+        });
 
-        Label bestScoreIn15Questions = new Label(UtilStringStorage.bestScoreIn15Label+  " "+FileUtil.generalSavesFile.getProperty("perfectScore15"));
-        stylizeBestScoreLabel(bestScoresVbox, bestScoreIn15Questions, 10, 20);
+        statsVbox.getChildren().add(statsSceneButton);
+        statsSceneButton.setTranslateX(20);
+        statsSceneButton.setTranslateY(30);
 
-        Label bestScoreIn20Questions = new Label(UtilStringStorage.bestScoreIn20Label+  " "+FileUtil.generalSavesFile.getProperty("perfectScore20"));
-        stylizeBestScoreLabel(bestScoresVbox, bestScoreIn20Questions, 10, 40);
-
-        Label bestScoreInSurvivalMode = new Label();
-        checkForBestSurvivalScore(bestScoreInSurvivalMode);
-        stylizeBestScoreLabel(bestScoresVbox, bestScoreInSurvivalMode, 10, 60);
-
-        Label numberOfGamesStat = new Label(UtilStringStorage.numberOfGamesLabel +" "+FileUtil.generalSavesFile.getProperty("numberOfGames"));
-        stylizeBestScoreLabel(bestScoresVbox, numberOfGamesStat, 10, 80);
-    }
-
-    public void checkForBestSurvivalScore(Label bestScoreInSurvivalMode)
-    {
-        int survivalScore = Integer.parseInt(FileUtil.generalSavesFile.getProperty("survivalScore50"));
-        if(survivalScore != 0)
-        {
-            bestScoreInSurvivalMode.setText(UtilStringStorage.bestScoreSurvivalLabel+ " "+survivalScore);
-        }
-        if(survivalScore == 0) {
-            survivalScore = Integer.parseInt(FileUtil.generalSavesFile.getProperty("survivalScore30"));
-            if (survivalScore != 0) {
-                bestScoreInSurvivalMode.setText(UtilStringStorage.bestScoreSurvivalLabel + " " + survivalScore);
-            }
-            if (survivalScore == 0) {
-                survivalScore = Integer.parseInt(FileUtil.generalSavesFile.getProperty("survivalScore20"));
-                bestScoreInSurvivalMode.setText(UtilStringStorage.bestScoreSurvivalLabel + " " + survivalScore);
-            }
-        }
-    }
-
-    public void stylizeBestScoreLabel(VBox vBox, Label label, int translateX, int translateY)
-    {
-        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 15));
-        label.setTextFill(Color.BLACK);
-        label.setTranslateX(translateX);
-        label.setTranslateY(translateY);
-        vBox.getChildren().add(label);
     }
 
     public void createEraseFileButton()
@@ -166,8 +138,8 @@ public class LeaderBoardScene extends Scene
             }
         });
 
-        bestScoresVbox.getChildren().add(eraseSaveFileButton);
-        bestScoresVbox.setTranslateY(80);
+        statsVbox.getChildren().add(eraseSaveFileButton);
+        statsVbox.setTranslateY(80);
     }
 
     public void createBackground()

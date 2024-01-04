@@ -12,6 +12,7 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.AchievementManager;
 import model.SoundManager;
+import model.TimePlayedTimer;
 import util.*;
 
 import java.util.Optional;
@@ -179,7 +180,9 @@ public class OptionScene extends Scene {
             Optional<ButtonType> result = confirmAlert.showAndWait();
             if(result.orElse(null) == ButtonType.OK)
             {
+                TimePlayedTimer.stopTimer();
                 resetSave();
+                TimePlayedTimer.startTimer();
                 MenuScene menuScene = new MenuScene(new BorderPane(), stage, new AchievementManager());
                 stage.setScene(menuScene);
             }

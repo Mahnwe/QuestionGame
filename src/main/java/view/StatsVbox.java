@@ -10,6 +10,8 @@ import util.CustomOption;
 
 public class StatsVbox extends VBox {
 
+    Label statScoreLabel;
+
     public StatsVbox(String statsDescriptionLabel, String statsScoreLabel)
     {
         this.setPadding(new Insets(10.0, 5.0, 10.0, 5.0));
@@ -17,12 +19,16 @@ public class StatsVbox extends VBox {
         Label statDescriptionLabel = new Label(statsDescriptionLabel);
         statDescriptionLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 18));
 
-        Label statScoreLabel = new Label(statsScoreLabel);
+        statScoreLabel = new Label(statsScoreLabel);
         statScoreLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 20));
         statScoreLabel.setTranslateX(80);
         statScoreLabel.setTranslateY(10);
 
         this.getChildren().add(statDescriptionLabel);
         this.getChildren().add(statScoreLabel);
+    }
+
+    public Label getStatScoreLabel() {
+        return statScoreLabel;
     }
 }

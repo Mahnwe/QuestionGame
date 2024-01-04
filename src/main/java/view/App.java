@@ -6,6 +6,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import model.AchievementManager;
+import model.TimePlayedTimer;
 import util.FileUtil;
 import util.PathUtil;
 import util.UtilStringStorage;
@@ -38,6 +39,17 @@ public class App extends Application
         stage.setScene(languageScene);
         stage.setTitle("Launcher");
         stage.show();
+        TimePlayedTimer.startTimer();
 
+    }
+
+    @Override
+    public void stop() {
+        // executed when the application shuts down
+        TimePlayedTimer.stopTimer();
+        long timeInFile = Long.parseLong(FileUtil.generalSavesFile.getProperty("timePlayed"));
+        timeInFile += TimePlayedTimer.getElapsedTime();
+        FileUtil.generalSavesFile.setProperty("timePlayed", String.valueOf(timeInFile));
+        FileUtil.storeGeneralSavesFile();
     }
 }

@@ -8,6 +8,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.AchievementManager;
+import model.TimePlayedTimer;
 import util.BackgroundCreator;
 import util.FileUtil;
 import util.UtilStringStorage;
@@ -52,21 +53,31 @@ public class StatsScene extends Scene
         StatsVbox statsVbox4 = new StatsVbox(UtilStringStorage.bestScoreSurvivalLabel, checkForBestSurvivalScore());
         gridPane.add(statsVbox4, 0, 5);
 
-        StatsVbox statsVbox5 = new StatsVbox(UtilStringStorage.numberOfGamesLabel, FileUtil.generalSavesFile.getProperty("numberOfGames"));
-        gridPane.add(statsVbox5, 2, 2);
+        StatsVbox statsVbox5 = new StatsVbox(UtilStringStorage.timePlayedLabel, calculateTimePlayed());
+        gridPane.add(statsVbox5, 0, 6);
+        statsVbox5.getStatScoreLabel().setTranslateX(5);
 
-        StatsVbox statsVbox6 = new StatsVbox(UtilStringStorage.questionAnsweredLabel, FileUtil.generalSavesFile.getProperty("questionAnswered"));
-        gridPane.add(statsVbox6, 2, 3);
+        StatsVbox statsVbox6 = new StatsVbox(UtilStringStorage.numberOfGamesLabel, FileUtil.generalSavesFile.getProperty("numberOfGames"));
+        gridPane.add(statsVbox6, 2, 2);
 
-        StatsVbox statsVbox7 = new StatsVbox(UtilStringStorage.goodAnswerNumberLabel, FileUtil.generalSavesFile.getProperty("goodAnswerNumber"));
-        gridPane.add(statsVbox7, 2, 4);
+        StatsVbox statsVbox7 = new StatsVbox(UtilStringStorage.questionAnsweredLabel, FileUtil.generalSavesFile.getProperty("questionAnswered"));
+        gridPane.add(statsVbox7, 2, 3);
 
-        StatsVbox statsVbox8 = new StatsVbox(UtilStringStorage.badAnswerNumberLabel, FileUtil.generalSavesFile.getProperty("badAnswerNumber"));
-        gridPane.add(statsVbox8, 2, 5);
+        StatsVbox statsVbox8 = new StatsVbox(UtilStringStorage.goodAnswerNumberLabel, FileUtil.generalSavesFile.getProperty("goodAnswerNumber"));
+        gridPane.add(statsVbox8, 2, 4);
 
-        StatsVbox statsVbox9 = new StatsVbox(UtilStringStorage.successPercentageLabel, calculateSuccessPercentage());
-        gridPane.add(statsVbox9, 2, 6);
+        StatsVbox statsVbox9 = new StatsVbox(UtilStringStorage.badAnswerNumberLabel, FileUtil.generalSavesFile.getProperty("badAnswerNumber"));
+        gridPane.add(statsVbox9, 2, 5);
 
+        StatsVbox statsVbox10 = new StatsVbox(UtilStringStorage.successPercentageLabel, calculateSuccessPercentage());
+        gridPane.add(statsVbox10, 2, 6);
+
+    }
+
+    public String calculateTimePlayed()
+    {
+        TimePlayedTimer.setTimerDisplay(Long.parseLong(FileUtil.generalSavesFile.getProperty("timePlayed")));
+        return TimePlayedTimer.getElapsedHours()+"Hrs"+TimePlayedTimer.getElapsedMinutes()+"Min"+TimePlayedTimer.getSecondsDisplay()+"Sec";
     }
 
     public String calculateSuccessPercentage()

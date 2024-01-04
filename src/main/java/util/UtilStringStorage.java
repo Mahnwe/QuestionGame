@@ -73,6 +73,7 @@ public class UtilStringStorage
     public static  String bestScoreIn15Label = "";
     public static  String bestScoreIn20Label = "";
     public static  String bestScoreSurvivalLabel = "";
+    public static String timePlayedLabel = "";
     public static String numberOfGamesLabel = "";
     public static String questionAnsweredLabel = "";
     public static String goodAnswerNumberLabel = "";

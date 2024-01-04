@@ -115,6 +115,7 @@ public class FileUtil {
         generalSavesFile.setProperty("questionAnswered", "0");
         generalSavesFile.setProperty("goodAnswerNumber", "0");
         generalSavesFile.setProperty("badAnswerNumber", "0");
+        generalSavesFile.setProperty("timePlayed", "0");
 
         FileUtil.storeGeneralSavesFile();
     }

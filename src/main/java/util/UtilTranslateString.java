@@ -110,6 +110,7 @@ public class UtilTranslateString {
         UtilStringStorage.bestScoreIn15Label = engTradFile.getProperty("bestScoreIn15QuestionsLabel");
         UtilStringStorage.bestScoreIn20Label = engTradFile.getProperty("bestScoreIn20QuestionsLabel");
         UtilStringStorage.bestScoreSurvivalLabel = engTradFile.getProperty("bestScoreInSurvivalMode");
+        UtilStringStorage.timePlayedLabel = engTradFile.getProperty("timePlayedLabel");
         UtilStringStorage.numberOfGamesLabel = engTradFile.getProperty("numberOfGamesLabel");
         UtilStringStorage.questionAnsweredLabel = engTradFile.getProperty("questionAnsweredLabel");
         UtilStringStorage.goodAnswerNumberLabel = engTradFile.getProperty("goodAnswerNumberLabel");
@@ -315,6 +316,7 @@ public class UtilTranslateString {
         UtilStringStorage.bestScoreIn15Label = frTradFile.getProperty("bestScoreIn15QuestionsLabel");
         UtilStringStorage.bestScoreIn20Label = frTradFile.getProperty("bestScoreIn20QuestionsLabel");
         UtilStringStorage.bestScoreSurvivalLabel = frTradFile.getProperty("bestScoreInSurvivalMode");
+        UtilStringStorage.timePlayedLabel = frTradFile.getProperty("timePlayedLabel");
         UtilStringStorage.numberOfGamesLabel = frTradFile.getProperty("numberOfGamesLabel");
         UtilStringStorage.questionAnsweredLabel = frTradFile.getProperty("questionAnsweredLabel");
         UtilStringStorage.goodAnswerNumberLabel = frTradFile.getProperty("goodAnswerNumberLabel");

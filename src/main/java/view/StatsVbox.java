@@ -17,10 +17,10 @@ public class StatsVbox extends VBox {
         this.setPadding(new Insets(10.0, 5.0, 10.0, 5.0));
         this.setBorder(CustomOption.createCustomBorder(2.0, 2.0, Color.BLACK));
         Label statDescriptionLabel = new Label(statsDescriptionLabel);
-        statDescriptionLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 18));
+        statDescriptionLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 20));
 
         statScoreLabel = new Label(statsScoreLabel);
-        statScoreLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 20));
+        statScoreLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 22));
         statScoreLabel.setTranslateX(80);
         statScoreLabel.setTranslateY(10);
 

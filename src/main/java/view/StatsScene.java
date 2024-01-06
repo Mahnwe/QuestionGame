@@ -29,8 +29,9 @@ public class StatsScene extends Scene
         createBackground();
 
         gridPane = new GridPane();
-        gridPane.setVgap(15);
-        gridPane.setTranslateX(200);
+        gridPane.setVgap(25);
+        gridPane.setHgap(35);
+        gridPane.setTranslateX(120);
         gridPane.setTranslateY(50);
         createStatistiques();
         createTitleScene();
@@ -53,24 +54,30 @@ public class StatsScene extends Scene
         StatsVbox statsVbox4 = new StatsVbox(UtilStringStorage.bestScoreSurvivalLabel, checkForBestSurvivalScore());
         gridPane.add(statsVbox4, 0, 5);
 
-        StatsVbox statsVbox5 = new StatsVbox(UtilStringStorage.timePlayedLabel, calculateTimePlayed());
-        gridPane.add(statsVbox5, 0, 6);
-        statsVbox5.getStatScoreLabel().setTranslateX(5);
+        StatsVbox statsVbox5 = new StatsVbox(UtilStringStorage.questionAnsweredLabel, FileUtil.generalSavesFile.getProperty("questionAnswered"));
+        gridPane.add(statsVbox5, 2, 2);
 
-        StatsVbox statsVbox6 = new StatsVbox(UtilStringStorage.numberOfGamesLabel, FileUtil.generalSavesFile.getProperty("numberOfGames"));
-        gridPane.add(statsVbox6, 2, 2);
+        StatsVbox statsVbox6 = new StatsVbox(UtilStringStorage.goodAnswerNumberLabel, FileUtil.generalSavesFile.getProperty("goodAnswerNumber"));
+        gridPane.add(statsVbox6, 2, 3);
 
-        StatsVbox statsVbox7 = new StatsVbox(UtilStringStorage.questionAnsweredLabel, FileUtil.generalSavesFile.getProperty("questionAnswered"));
-        gridPane.add(statsVbox7, 2, 3);
+        StatsVbox statsVbox7 = new StatsVbox(UtilStringStorage.badAnswerNumberLabel, FileUtil.generalSavesFile.getProperty("badAnswerNumber"));
+        gridPane.add(statsVbox7, 2, 4);
 
-        StatsVbox statsVbox8 = new StatsVbox(UtilStringStorage.goodAnswerNumberLabel, FileUtil.generalSavesFile.getProperty("goodAnswerNumber"));
-        gridPane.add(statsVbox8, 2, 4);
+        StatsVbox statsVbox8 = new StatsVbox(UtilStringStorage.successPercentageLabel, calculateSuccessPercentage());
+        gridPane.add(statsVbox8, 2, 5);
 
-        StatsVbox statsVbox9 = new StatsVbox(UtilStringStorage.badAnswerNumberLabel, FileUtil.generalSavesFile.getProperty("badAnswerNumber"));
-        gridPane.add(statsVbox9, 2, 5);
+        StatsVbox statsVbox9 = new StatsVbox(UtilStringStorage.numberOfGamesLabel, FileUtil.generalSavesFile.getProperty("numberOfGames"));
+        gridPane.add(statsVbox9, 4, 2);
 
-        StatsVbox statsVbox10 = new StatsVbox(UtilStringStorage.successPercentageLabel, calculateSuccessPercentage());
-        gridPane.add(statsVbox10, 2, 6);
+        StatsVbox statsVbox10 = new StatsVbox(UtilStringStorage.normalGameModeLabel, FileUtil.generalSavesFile.getProperty("numberOfNormalGames"));
+        gridPane.add(statsVbox10, 4, 3);
+
+        StatsVbox statsVbox11 = new StatsVbox(UtilStringStorage.survivalGameModeLabel, FileUtil.generalSavesFile.getProperty("numberOfSurvivalGames"));
+        gridPane.add(statsVbox11, 4, 4);
+
+        StatsVbox statsVbox12 = new StatsVbox(UtilStringStorage.timePlayedLabel, calculateTimePlayed());
+        gridPane.add(statsVbox12, 4, 5);
+        statsVbox12.getStatScoreLabel().setTranslateX(-1);
 
     }
 
@@ -120,7 +127,7 @@ public class StatsScene extends Scene
     {
         Label achievementLabel = new Label(UtilStringStorage.statisticLabel);
         achievementLabel.setFont(Font.font("Impact", FontWeight.BOLD, 35));
-        gridPane.add(achievementLabel, 1, 0);
+        gridPane.add(achievementLabel, 2, 0);
     }
 
     public void createReturnButton()

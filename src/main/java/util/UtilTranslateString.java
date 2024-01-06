@@ -116,6 +116,8 @@ public class UtilTranslateString {
         UtilStringStorage.goodAnswerNumberLabel = engTradFile.getProperty("goodAnswerNumberLabel");
         UtilStringStorage.badAnswerNumberLabel = engTradFile.getProperty("badAnswerNumberLabel");
         UtilStringStorage.successPercentageLabel = engTradFile.getProperty("successPercentageLabel");
+        UtilStringStorage.normalGameModeLabel = engTradFile.getProperty("normalGameModLabel");
+        UtilStringStorage.survivalGameModeLabel = engTradFile.getProperty("survivalGameModLabel");
 
         // MENU SCENE
         UtilStringStorage.welcomeLabel = engTradFile.getProperty("welcomeLabel");
@@ -322,6 +324,8 @@ public class UtilTranslateString {
         UtilStringStorage.goodAnswerNumberLabel = frTradFile.getProperty("goodAnswerNumberLabel");
         UtilStringStorage.badAnswerNumberLabel = frTradFile.getProperty("badAnswerNumberLabel");
         UtilStringStorage.successPercentageLabel = frTradFile.getProperty("successPercentageLabel");
+        UtilStringStorage.normalGameModeLabel = frTradFile.getProperty("normalGameModLabel");
+        UtilStringStorage.survivalGameModeLabel = frTradFile.getProperty("survivalGameModLabel");
 
         // MENU SCENE
         UtilStringStorage.welcomeLabel = frTradFile.getProperty("welcomeLabel");

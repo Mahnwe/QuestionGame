@@ -94,6 +94,7 @@ public class ResultScene extends VBox
             gameResult.getChildren().add(cupLabel);
         }
         achievementManager.checkNumberOfGamesAchievement(achievementManager, FileUtil.generalSavesFile);
+        FileUtil.incrementGeneralStat("numberOfSurvivalGames");
         FileUtil.storeGeneralSavesFile();
     }
 
@@ -120,6 +121,7 @@ public class ResultScene extends VBox
             gameResult.getChildren().add(cupLabel);
         }
         achievementManager.checkNumberOfGamesAchievement(achievementManager, FileUtil.generalSavesFile);
+        FileUtil.incrementGeneralStat("numberOfNormalGames");
         FileUtil.storeGeneralSavesFile();
     }
 

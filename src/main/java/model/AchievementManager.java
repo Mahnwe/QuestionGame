@@ -221,7 +221,7 @@ public class AchievementManager
     }
     public void setUpSurviveResultLabel(Label label) {
         ResultScene.resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
-        stylizeLabel(label, 100, 70);
+        stylizeLabel(label, 40, 70);
     }
     public void stylizeLabel(Label label, int translateX, int translateY)
     {

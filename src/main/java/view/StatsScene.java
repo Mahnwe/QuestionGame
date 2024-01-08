@@ -18,7 +18,7 @@ public class StatsScene extends Scene
     private final BorderPane borderPane;
     private final Stage stage;
     private final AchievementManager achievementManager;
-    private final GridPane gridPane;
+    private GridPane gridPane;
     public StatsScene (BorderPane borderPane, Stage stage, AchievementManager achievementManager)
     {
         super(borderPane);
@@ -27,20 +27,26 @@ public class StatsScene extends Scene
         this.achievementManager = achievementManager;
 
         createBackground();
-
-        gridPane = new GridPane();
-        gridPane.setVgap(25);
-        gridPane.setHgap(35);
-        gridPane.setTranslateX(120);
-        gridPane.setTranslateY(50);
-        createStatistiques();
+        createGridPane();
+        create1stRowStatistic();
+        create2ndRowStatistic();
+        create3rdRowStatistic();
         createTitleScene();
         createReturnButton();
 
         borderPane.setCenter(gridPane);
     }
 
-    public void createStatistiques()
+    public void createGridPane()
+    {
+        gridPane = new GridPane();
+        gridPane.setVgap(25);
+        gridPane.setHgap(55);
+        gridPane.setTranslateX(80);
+        gridPane.setTranslateY(50);
+    }
+
+    public void create1stRowStatistic()
     {
         StatsVbox statsVbox1 = new StatsVbox(UtilStringStorage.bestScoreIn10Label, FileUtil.generalSavesFile.getProperty("perfectScore10"));
         gridPane.add(statsVbox1, 0, 2);
@@ -53,7 +59,10 @@ public class StatsScene extends Scene
 
         StatsVbox statsVbox4 = new StatsVbox(UtilStringStorage.bestScoreSurvivalLabel, checkForBestSurvivalScore());
         gridPane.add(statsVbox4, 0, 5);
+    }
 
+    public void create2ndRowStatistic()
+    {
         StatsVbox statsVbox5 = new StatsVbox(UtilStringStorage.questionAnsweredLabel, FileUtil.generalSavesFile.getProperty("questionAnswered"));
         gridPane.add(statsVbox5, 2, 2);
 
@@ -65,7 +74,10 @@ public class StatsScene extends Scene
 
         StatsVbox statsVbox8 = new StatsVbox(UtilStringStorage.successPercentageLabel, calculateSuccessPercentage());
         gridPane.add(statsVbox8, 2, 5);
+    }
 
+    public void create3rdRowStatistic()
+    {
         StatsVbox statsVbox9 = new StatsVbox(UtilStringStorage.numberOfGamesLabel, FileUtil.generalSavesFile.getProperty("numberOfGames"));
         gridPane.add(statsVbox9, 4, 2);
 
@@ -78,7 +90,6 @@ public class StatsScene extends Scene
         StatsVbox statsVbox12 = new StatsVbox(UtilStringStorage.timePlayedLabel, calculateTimePlayed());
         gridPane.add(statsVbox12, 4, 5);
         statsVbox12.getStatScoreLabel().setTranslateX(-1);
-
     }
 
     public String calculateTimePlayed()
@@ -95,8 +106,7 @@ public class StatsScene extends Scene
         if(questionAnswered != 0) {
             successPercentage = (goodAnswerNumber * 100 / questionAnswered);
         }
-        else
-        {
+        else {
           successPercentage = 0;
         }
         return successPercentage+"%";
@@ -110,12 +120,15 @@ public class StatsScene extends Scene
         {
             checkBestSurvivalScore = String.valueOf(survivalScore);
         }
-        if(survivalScore == 0) {
+        if(survivalScore == 0)
+        {
             survivalScore = Integer.parseInt(FileUtil.generalSavesFile.getProperty("survivalScore30"));
-            if (survivalScore != 0) {
+            if (survivalScore != 0)
+            {
                 checkBestSurvivalScore = String.valueOf(survivalScore);
             }
-            if (survivalScore == 0) {
+            if (survivalScore == 0)
+            {
                 survivalScore = Integer.parseInt(FileUtil.generalSavesFile.getProperty("survivalScore20"));
                 checkBestSurvivalScore = String.valueOf(survivalScore);
             }
@@ -128,6 +141,7 @@ public class StatsScene extends Scene
         Label achievementLabel = new Label(UtilStringStorage.statisticLabel);
         achievementLabel.setFont(Font.font("Impact", FontWeight.BOLD, 35));
         gridPane.add(achievementLabel, 2, 0);
+        achievementLabel.setTranslateX(10);
     }
 
     public void createReturnButton()
@@ -150,5 +164,4 @@ public class StatsScene extends Scene
         BackgroundImage backgroundImage = BackgroundCreator.createMenuBackground();
         borderPane.setBackground(new Background(backgroundImage));
     }
-
 }

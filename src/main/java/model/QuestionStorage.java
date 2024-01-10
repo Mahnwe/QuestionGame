@@ -532,11 +532,26 @@ public class QuestionStorage
                 questionList.add(question);
             }
         }
+        ImportFileHandler.addImportPersonalizeQuestionsToStringList();
+        if(!ImportFileHandler.getImportPersonalizeQuestionList().isEmpty()) {
+            randomIndex = new Random();
+            for(int i = ImportFileHandler.getImportPersonalizeQuestionList().size(); i > 0; i--) {
+                int randomImportQuestionIndex = generateRandomIndexImport();
+                Question importQuestion = ImportFileHandler.getImportPersonalizeQuestionList().remove(randomImportQuestionIndex);
+                questionList.add(importQuestion);
+            }
+        }
     }
 
     public int generateRandomIndex()
     {
         int maxRandom = PersonalizeQuestionsHandler.personalizeQuestionList.size();
+        int minRandom = 0;
+        return randomIndex.nextInt((maxRandom - 1 - minRandom) + 1) + minRandom;
+    }
+    public int generateRandomIndexImport()
+    {
+        int maxRandom = ImportFileHandler.getImportPersonalizeQuestionList().size();
         int minRandom = 0;
         return randomIndex.nextInt((maxRandom - 1 - minRandom) + 1) + minRandom;
     }

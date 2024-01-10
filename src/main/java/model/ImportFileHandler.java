@@ -21,9 +21,9 @@ public class ImportFileHandler {
     public static String ressourcesString = "./src/main/resources/PersonalizeQuestions/";
     public static String fileImportName = "ImportPersonalizeQuestion"+FileUtil.generalSavesFile.getProperty("numberOfImportFile")+".properties";
     private static final String FULL_PATH_FILE = ressourcesString+fileImportName;
-    public static List<Question> importPersonalizeQuestionList = new ArrayList<>();
+    private static final List<Question> importPersonalizeQuestionList = new ArrayList<>();
     private static final ArrayList<String> listeStringQuestion = new ArrayList<>();
-    public static final ArrayList<Properties> propertiesList = new ArrayList<>();
+    public static final List<Properties> propertiesList = new ArrayList<>();
 
     public static void setUpCopyButton(Button button)
     {
@@ -37,8 +37,21 @@ public class ImportFileHandler {
         });
     }
 
+    public static void addFileToList()
+    {
+        int numberOfImportFile = Integer.parseInt(FileUtil.generalSavesFile.getProperty("numberOfImportFile"));
+        if(numberOfImportFile >= 1) {
+            for (int i = 0; i < numberOfImportFile; i++) {
+                Properties propertiesFile;
+                propertiesFile = loadFile("./src/main/resources/PersonalizeQuestions/ImportPersonalizeQuestion" + i + ".properties");
+                propertiesList.add(propertiesFile);
+            }
+        }
+    }
+
     public static void addImportPersonalizeQuestionsToStringList()
     {
+        addFileToList();
         int numberOfImportFiles = Integer.parseInt(FileUtil.generalSavesFile.getProperty("numberOfImportFile"));
         for(int i = 0; i < numberOfImportFiles; i++) {
             int propertyKeyQuestionNumber = Integer.parseInt(propertiesList.get(i).getProperty(PersonalizeQuestionsHandler.QUESTION_NUMBER_KEY_PROPERTIES));
@@ -75,8 +88,7 @@ public class ImportFileHandler {
                 numberOfImportFile++;
                 FileUtil.generalSavesFile.setProperty("numberOfImportFile", String.valueOf(numberOfImportFile));
                 FileUtil.storeGeneralSavesFile();
-                storePersonalizeQuestionsFile(propertiesImportFile);
-                propertiesList.add(propertiesImportFile);
+                storeImportPersonalizeQuestionsFile(propertiesImportFile);
             }
         });
     }
@@ -99,7 +111,7 @@ public class ImportFileHandler {
         }
     }
 
-    public static void storePersonalizeQuestionsFile(Properties properties)
+    public static void storeImportPersonalizeQuestionsFile(Properties properties)
     {
         try (FileWriter fileWriter = new FileWriter(FULL_PATH_FILE)){
             properties.store(fileWriter, "");
@@ -107,8 +119,34 @@ public class ImportFileHandler {
             logger.error("Personalize questions file can't be store");
         }
     }
+    public static Properties loadFile(final String filePath)
+    {
+        FileInputStream fileInputStream = null;
+        Properties properties = new Properties();
+        try {
+            fileInputStream = new FileInputStream(filePath);
+        } catch (FileNotFoundException e) {
+            logger.error("Stream can't be create");
+        }
+        try {
+            properties.load(fileInputStream);
+        } catch (IOException e) {
+            logger.error("File not found");
+            logger.error(filePath);
+        }
+        finally {
+            if(fileInputStream != null) {
+                try {
+                    fileInputStream.close();
+                } catch (IOException e) {
+                    logger.error("Stream can't be close");
+                }
+            }
+        }
+        return properties;
+    }
 
-    public static String getFullPathFile() {
-        return FULL_PATH_FILE;
+    public static List<Question> getImportPersonalizeQuestionList() {
+        return importPersonalizeQuestionList;
     }
 }

@@ -2,15 +2,13 @@ package view;
 
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundImage;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.AchievementManager;
+import model.ImportFileHandler;
 import model.SoundManager;
 import model.TimePlayedTimer;
 import util.*;
@@ -21,7 +19,9 @@ public class OptionScene extends Scene {
 
     private final AchievementManager achievementManager;
     private final Stage stage;
+    private GridPane gridPane;
     private final VBox optionVbox;
+    private final VBox importFileVbox;
     private final ConfirmAlert confirmAlert;
     private final BorderPane pane;
     private LanguageButton engButton;
@@ -39,15 +39,68 @@ public class OptionScene extends Scene {
         confirmAlert.modifyConfirmAlert(UtilStringStorage.askConfirmReset);
 
         optionVbox = new VBox();
-        pane.setCenter(optionVbox);
-        optionVbox.setTranslateX(100);
+        optionVbox.setTranslateX(-80);
         optionVbox.setTranslateY(50);
+        importFileVbox = new VBox();
+        importFileVbox.setTranslateX(50);
+        importFileVbox.setTranslateY(90);
+        createGridPane();
+        pane.setCenter(gridPane);
+
 
         createSliderArea();
         createReturnButton();
         createLanguageButton();
         createResetButtonArea();
+        createImportVbox();
         createBackground();
+    }
+
+    public void createImportVbox()
+    {
+        Label copyPersoQuestionFileLabel = new Label("Copiez votre fichier"+"\n"+"de questions personnalisées");
+        copyPersoQuestionFileLabel.setFont(Font.font("Futura", FontWeight.EXTRA_BOLD, 22));
+
+        Button copyPersoQuestionFileButton = new Button("Copier");
+        ImportFileHandler.setUpCopyButton(copyPersoQuestionFileButton);
+        CustomOption.setGlowEffectOnButton(copyPersoQuestionFileButton);
+        copyPersoQuestionFileButton.setTranslateX(50);
+        copyPersoQuestionFileButton.setTranslateY(15);
+        copyPersoQuestionFileButton.setFont(Font.font("Futura", FontWeight.BOLD, 20));
+
+        importFileVbox.getChildren().add(copyPersoQuestionFileLabel);
+        importFileVbox.getChildren().add(copyPersoQuestionFileButton);
+
+        Label createNewFileWithImportLabel = new Label("Collez un fichier de questions"+"\n"+"personnalisées pour l'importer");
+        createNewFileWithImportLabel.setTranslateY(130);
+        createNewFileWithImportLabel.setFont(Font.font("Futura", FontWeight.EXTRA_BOLD, 22));
+
+        HBox hBox = new HBox();
+        hBox.setTranslateY(145);
+        TextArea copyFileArea = new TextArea();
+        copyFileArea.setMaxWidth(200);
+        copyFileArea.setMaxHeight(50);
+        copyFileArea.setFont(Font.font(PlayerInfoScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 16));
+        copyFileArea.setBorder(CustomOption.createCustomBorder(1.5, 2.0, Color.BLACK));
+
+        Button pasteFileFromImportButton = new Button("Coller");
+        ImportFileHandler.setUpButtonFileFromImport(pasteFileFromImportButton);
+        pasteFileFromImportButton.setTranslateX(10);
+        pasteFileFromImportButton.setFont(Font.font("Futura", FontWeight.BOLD, 20));
+
+        hBox.getChildren().add(copyFileArea);
+        hBox.getChildren().add(pasteFileFromImportButton);
+
+        importFileVbox.getChildren().add(createNewFileWithImportLabel);
+        importFileVbox.getChildren().add(hBox);
+    }
+
+    public void createGridPane()
+    {
+        gridPane = new GridPane();
+        gridPane.setHgap(50);
+        gridPane.add(optionVbox, 0, 0);
+        gridPane.add(importFileVbox, 7, 0);
     }
 
     public void createBackground()
@@ -78,11 +131,11 @@ public class OptionScene extends Scene {
         optionVbox.getChildren().add(volumeLabel);
 
         Button muteButton = new Button();
-        CustomOption.customMuteButton(muteButton, PathUtil.MUTE_ICON, 52, 202);
+        CustomOption.customMuteButton(muteButton, PathUtil.MUTE_ICON, 52, 252);
         optionVbox.getChildren().add(muteButton);
 
         Slider volumeSlider = new Slider(0, 10, 5);
-        CustomOption.customSlider(volumeSlider, 400, 150, 20, 250);
+        CustomOption.customSlider(volumeSlider, 350, 150, 20, 300);
         volumeSlider.setValue(SoundManager.soundVolume);
 
         if(SoundManager.soundVolume == 0.0) {

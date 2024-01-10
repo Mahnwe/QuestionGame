@@ -12,14 +12,14 @@ public class PersonalizeQuestionsHandler
     private static int propertyKeyQuestionNumber = Integer.parseInt(FileUtil.personalizeQuestionsFile.getProperty(QUESTION_NUMBER_KEY_PROPERTIES));
     private static final ArrayList<String> listeStringQuestion = new ArrayList<>();
     private static final String PROPERTY_KEY_START = "personalizeQuestion";
-    private static final String PROPERTY_KEY_CATEGORY = "Category";
-    private static final String PROPERTY_KEY_QUESTION = "Question";
-    private static final String PROPERTY_KEY_ANSWER_A = "AnswerA";
-    private static final String PROPERTY_KEY_ANSWER_B = "AnswerB";
-    private static final String PROPERTY_KEY_ANSWER_C = "AnswerC";
-    private static final String PROPERTY_KEY_ANSWER_D = "AnswerD";
-    private static final String PROPERTY_KEY_GOOD_ANSWER = "GoodAnswer";
-    private static final String PROPERTY_KEY_EXPLANATION = "Explanation";
+    public static final String PROPERTY_KEY_CATEGORY = "Category";
+    public static final String PROPERTY_KEY_QUESTION = "Question";
+    public static final String PROPERTY_KEY_ANSWER_A = "AnswerA";
+    public static final String PROPERTY_KEY_ANSWER_B = "AnswerB";
+    public static final String PROPERTY_KEY_ANSWER_C = "AnswerC";
+    public static final String PROPERTY_KEY_ANSWER_D = "AnswerD";
+    public static final String PROPERTY_KEY_GOOD_ANSWER = "GoodAnswer";
+    public static final String PROPERTY_KEY_EXPLANATION = "Explanation";
 
     public static void addNewQuestionToPropertiesFile(String category, String questionToAsk, String answerA, String answerB, String answerC, String answerD, String goodAnswer, String explanation)
     {

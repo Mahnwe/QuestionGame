@@ -19,7 +19,7 @@ public class CustomOption {
 
     public static void customSlider(Slider slider, int width, int height, int translateY, int translateX)
     {
-        slider.setMaxWidth(width);
+        slider.setMinWidth(width);
         slider.setMaxHeight(height);
         slider.setTranslateY(translateY);
         slider.setTranslateX(translateX);

@@ -39,9 +39,15 @@ public class ImportFileHandler {
 
     public static void addFileToList()
     {
+        FileChooser fileChooserGetNumber = new FileChooser();
+        fileChooserGetNumber.setInitialDirectory(new File("C:\\Users\\mat-d\\IdeaProjects\\QuestionGame\\src\\main\\resources\\PersonalizeQuestions"));
+        int numberOfFileInDirectory = fileChooserGetNumber.getInitialDirectory().listFiles().length;
+        FileUtil.generalSavesFile.setProperty("numberOfImportFile", String.valueOf((numberOfFileInDirectory-1)));
+        FileUtil.storeGeneralSavesFile();
         int numberOfImportFile = Integer.parseInt(FileUtil.generalSavesFile.getProperty("numberOfImportFile"));
         if(numberOfImportFile >= 1) {
-            for (int i = 0; i < numberOfImportFile; i++) {
+            for (int i = 0; i < numberOfImportFile; i++)
+            {
                 Properties propertiesFile;
                 propertiesFile = loadFile("./src/main/resources/PersonalizeQuestions/ImportPersonalizeQuestion" + i + ".properties");
                 propertiesList.add(propertiesFile);

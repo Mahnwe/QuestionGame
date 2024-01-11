@@ -58,10 +58,10 @@ public class OptionScene extends Scene {
 
     public void createImportVbox()
     {
-        Label copyPersoQuestionFileLabel = new Label("Copiez votre fichier"+"\n"+"de questions personnalisées");
+        Label copyPersoQuestionFileLabel = new Label(UtilStringStorage.exportLabel);
         copyPersoQuestionFileLabel.setFont(Font.font("Futura", FontWeight.EXTRA_BOLD, 22));
 
-        Button copyPersoQuestionFileButton = new Button("Copier");
+        Button copyPersoQuestionFileButton = new Button(UtilStringStorage.exportButtonLabel);
         ImportFileHandler.setUpCopyButton(copyPersoQuestionFileButton);
         CustomOption.setGlowEffectOnButton(copyPersoQuestionFileButton);
         copyPersoQuestionFileButton.setTranslateX(50);
@@ -71,24 +71,18 @@ public class OptionScene extends Scene {
         importFileVbox.getChildren().add(copyPersoQuestionFileLabel);
         importFileVbox.getChildren().add(copyPersoQuestionFileButton);
 
-        Label createNewFileWithImportLabel = new Label("Collez un fichier de questions"+"\n"+"personnalisées pour l'importer");
+        Label createNewFileWithImportLabel = new Label(UtilStringStorage.importLabel);
         createNewFileWithImportLabel.setTranslateY(130);
         createNewFileWithImportLabel.setFont(Font.font("Futura", FontWeight.EXTRA_BOLD, 22));
 
         HBox hBox = new HBox();
         hBox.setTranslateY(145);
-        TextArea copyFileArea = new TextArea();
-        copyFileArea.setMaxWidth(200);
-        copyFileArea.setMaxHeight(50);
-        copyFileArea.setFont(Font.font(PlayerInfoScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 16));
-        copyFileArea.setBorder(CustomOption.createCustomBorder(1.5, 2.0, Color.BLACK));
 
-        Button pasteFileFromImportButton = new Button("Coller");
+        Button pasteFileFromImportButton = new Button(UtilStringStorage.importButtonLabel);
         ImportFileHandler.setUpButtonFileFromImport(pasteFileFromImportButton);
-        pasteFileFromImportButton.setTranslateX(10);
+        pasteFileFromImportButton.setTranslateX(50);
         pasteFileFromImportButton.setFont(Font.font("Futura", FontWeight.BOLD, 20));
 
-        hBox.getChildren().add(copyFileArea);
         hBox.getChildren().add(pasteFileFromImportButton);
 
         importFileVbox.getChildren().add(createNewFileWithImportLabel);

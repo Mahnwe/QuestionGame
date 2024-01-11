@@ -227,6 +227,10 @@ public class UtilTranslateString {
         UtilStringStorage.resetTooltip = engTradFile.getProperty("resetTooltip");
         UtilStringStorage.confirmAlertWindow = engTradFile.getProperty("confirmAlertWindow");
         UtilStringStorage.askConfirmReset = engTradFile.getProperty("askToReset");
+        UtilStringStorage.exportLabel = engTradFile.getProperty("exportLabel");
+        UtilStringStorage.exportButtonLabel = engTradFile.getProperty("exportButtonLabel");
+        UtilStringStorage.importLabel = engTradFile.getProperty("importLabel");
+        UtilStringStorage.importButtonLabel = engTradFile.getProperty("importButtonLabel");
 
         // CREDIT SCENE
         UtilStringStorage.generalThank = engTradFile.getProperty("generalThank");
@@ -435,6 +439,10 @@ public class UtilTranslateString {
         UtilStringStorage.resetTooltip = frTradFile.getProperty("resetTooltip");
         UtilStringStorage.confirmAlertWindow = frTradFile.getProperty("confirmAlertWindow");
         UtilStringStorage.askConfirmReset = frTradFile.getProperty("askToReset");
+        UtilStringStorage.exportLabel = frTradFile.getProperty("exportLabel");
+        UtilStringStorage.exportButtonLabel = frTradFile.getProperty("exportButtonLabel");
+        UtilStringStorage.importLabel = frTradFile.getProperty("importLabel");
+        UtilStringStorage.importButtonLabel = frTradFile.getProperty("importButtonLabel");
 
         // CREDIT SCENE
         UtilStringStorage.generalThank = frTradFile.getProperty("generalThank");

@@ -190,6 +190,10 @@ public class UtilStringStorage
     public static String resetTooltip = "";
     public static String confirmAlertWindow = "";
     public static String askConfirmReset = "";
+    public static String exportLabel = "";
+    public static String exportButtonLabel = "";
+    public static String importLabel = "";
+    public static String importButtonLabel = "";
 
     // CREDIT SCENE
     public static String generalThank = "";

@@ -11,19 +11,14 @@ import org.apache.logging.log4j.Logger;
 import util.FileUtil;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 
 public class ImportFileHandler {
 
     private static final Logger logger = LogManager.getLogger(ImportFileHandler.class);
-    public static String ressourcesString = "./src/main/resources/PersonalizeQuestions/";
-    public static String fileImportName = "ImportPersonalizeQuestion"+FileUtil.generalSavesFile.getProperty("numberOfImportFile")+".properties";
-    private static final String FULL_PATH_FILE = ressourcesString+fileImportName;
     private static final List<Question> importPersonalizeQuestionList = new ArrayList<>();
     private static final ArrayList<String> listeStringQuestion = new ArrayList<>();
-    public static final List<Properties> propertiesList = new ArrayList<>();
+    private static final List<Properties> propertiesList = new ArrayList<>();
 
     public static void setUpCopyButton(Button button)
     {
@@ -40,17 +35,18 @@ public class ImportFileHandler {
     public static void addFileToList()
     {
         FileChooser fileChooserGetNumber = new FileChooser();
-        fileChooserGetNumber.setInitialDirectory(new File("C:\\Users\\mat-d\\IdeaProjects\\QuestionGame\\src\\main\\resources\\PersonalizeQuestions"));
-        int numberOfFileInDirectory = fileChooserGetNumber.getInitialDirectory().listFiles().length;
-        FileUtil.generalSavesFile.setProperty("numberOfImportFile", String.valueOf((numberOfFileInDirectory-1)));
+        fileChooserGetNumber.setInitialDirectory(new File("C:\\Users\\mat-d\\IdeaProjects\\QuestionGame\\src\\main\\resources\\ImportFile"));
+        int numberOfFileInDirectory = Objects.requireNonNull(fileChooserGetNumber.getInitialDirectory().listFiles()).length;
+        FileUtil.generalSavesFile.setProperty("numberOfImportFile", String.valueOf(numberOfFileInDirectory));
         FileUtil.storeGeneralSavesFile();
         int numberOfImportFile = Integer.parseInt(FileUtil.generalSavesFile.getProperty("numberOfImportFile"));
         if(numberOfImportFile >= 1) {
-            for (int i = 0; i < numberOfImportFile; i++)
+            for (int i = 0; i < Objects.requireNonNull(fileChooserGetNumber.getInitialDirectory().listFiles()).length; i++)
             {
-                Properties propertiesFile;
-                propertiesFile = loadFile("./src/main/resources/PersonalizeQuestions/ImportPersonalizeQuestion" + i + ".properties");
-                propertiesList.add(propertiesFile);
+                    Properties propertiesFile;
+                    String getPath = Arrays.stream(Objects.requireNonNull(fileChooserGetNumber.getInitialDirectory().listFiles())).toList().get(i).getAbsolutePath();
+                    propertiesFile = loadFile(getPath);
+                    propertiesList.add(propertiesFile);
             }
         }
     }
@@ -86,15 +82,43 @@ public class ImportFileHandler {
             if(Clipboard.getSystemClipboard().hasFiles()) {
                 Properties propertiesImportFile = new Properties();
                 Clipboard clipboardImportFile = Clipboard.getSystemClipboard();
-                List listOfFiles;
-                listOfFiles = (List) clipboardImportFile.getContent(DataFormat.FILES);
-                File file = (File) listOfFiles.get(0);
+                List<File> listOfFiles;
+                listOfFiles = (List<File>) clipboardImportFile.getContent(DataFormat.FILES);
+                File file = listOfFiles.get(0);
                 readSaveFile(propertiesImportFile, file);
                 int numberOfImportFile = Integer.parseInt(FileUtil.generalSavesFile.getProperty("numberOfImportFile"));
                 numberOfImportFile++;
-                FileUtil.generalSavesFile.setProperty("numberOfImportFile", String.valueOf(numberOfImportFile));
-                FileUtil.storeGeneralSavesFile();
-                storeImportPersonalizeQuestionsFile(propertiesImportFile);
+                if(numberOfImportFile > 2) {
+                    boolean isFull = true;
+                    FileChooser fileCheckForImportPlace = new FileChooser();
+                    fileCheckForImportPlace.setInitialDirectory(new File("C:\\Users\\mat-d\\IdeaProjects\\QuestionGame\\src\\main\\resources\\ImportFile"));
+                    for (int i = 0; i < Objects.requireNonNull(fileCheckForImportPlace.getInitialDirectory().listFiles()).length; i++)
+                    {
+                        String checkAllPath = "C:\\Users\\mat-d\\IdeaProjects\\QuestionGame\\src\\main\\resources\\ImportFile\\ImportPersonalizeQuestion" + i + ".properties";
+                        if(!checkAllPath.equals(Arrays.stream(Objects.requireNonNull(fileCheckForImportPlace.getInitialDirectory().listFiles())).toList().get(i).getAbsolutePath()))
+                        {
+                            FileUtil.generalSavesFile.setProperty("numberOfImportFile", String.valueOf(numberOfImportFile));
+                            FileUtil.storeGeneralSavesFile();
+                            String getI = String.valueOf(i);
+                            storeImportPersonalizeQuestionsFile(propertiesImportFile, "./src/main/resources/ImportFile/ImportPersonalizeQuestion" +getI+ ".properties");
+                            isFull = false;
+                        }
+                    }
+                    if(isFull)
+                    {
+                        FileUtil.generalSavesFile.setProperty("numberOfImportFile", String.valueOf(numberOfImportFile));
+                        FileUtil.storeGeneralSavesFile();
+                        int calculateNumber = (numberOfImportFile - 1);
+                        storeImportPersonalizeQuestionsFile(propertiesImportFile, "./src/main/resources/ImportFile/ImportPersonalizeQuestion"+ calculateNumber +".properties");
+                    }
+                } else
+                {
+                    FileUtil.generalSavesFile.setProperty("numberOfImportFile", String.valueOf(numberOfImportFile));
+                    FileUtil.storeGeneralSavesFile();
+                    int calculateNumber = (numberOfImportFile - 1);
+                    storeImportPersonalizeQuestionsFile(propertiesImportFile, "./src/main/resources/ImportFile/ImportPersonalizeQuestion"+ calculateNumber +".properties");
+                }
+
             }
         });
     }
@@ -117,9 +141,9 @@ public class ImportFileHandler {
         }
     }
 
-    public static void storeImportPersonalizeQuestionsFile(Properties properties)
+    public static void storeImportPersonalizeQuestionsFile(Properties properties, String fullPathFile)
     {
-        try (FileWriter fileWriter = new FileWriter(FULL_PATH_FILE)){
+        try (FileWriter fileWriter = new FileWriter(fullPathFile)){
             properties.store(fileWriter, "");
         } catch (IOException e) {
             logger.error("Personalize questions file can't be store");

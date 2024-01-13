@@ -192,8 +192,13 @@ public class UtilStringStorage
     public static String askConfirmReset = "";
     public static String exportLabel = "";
     public static String exportButtonLabel = "";
+    public static String exportInfoButton = "";
     public static String importLabel = "";
     public static String importButtonLabel = "";
+    public static String importInfoButton = "";
+    public static String importDirectoryLabel = "";
+    public static String importDirectoryButtonLabel = "";
+    public static String importDirectoryInfoButton = "";
 
     // CREDIT SCENE
     public static String generalThank = "";

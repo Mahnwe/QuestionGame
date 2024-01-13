@@ -229,8 +229,13 @@ public class UtilTranslateString {
         UtilStringStorage.askConfirmReset = engTradFile.getProperty("askToReset");
         UtilStringStorage.exportLabel = engTradFile.getProperty("exportLabel");
         UtilStringStorage.exportButtonLabel = engTradFile.getProperty("exportButtonLabel");
+        UtilStringStorage.exportInfoButton = engTradFile.getProperty("exportButtonInfo");
         UtilStringStorage.importLabel = engTradFile.getProperty("importLabel");
         UtilStringStorage.importButtonLabel = engTradFile.getProperty("importButtonLabel");
+        UtilStringStorage.importInfoButton = engTradFile.getProperty("importButtonInfo");
+        UtilStringStorage.importDirectoryLabel = engTradFile.getProperty("importDirectoryLabel");
+        UtilStringStorage.importDirectoryButtonLabel = engTradFile.getProperty("importDirectoryButtonLabel");
+        UtilStringStorage.importDirectoryInfoButton = engTradFile.getProperty("importDirectoryInfoButton");
 
         // CREDIT SCENE
         UtilStringStorage.generalThank = engTradFile.getProperty("generalThank");
@@ -441,8 +446,13 @@ public class UtilTranslateString {
         UtilStringStorage.askConfirmReset = frTradFile.getProperty("askToReset");
         UtilStringStorage.exportLabel = frTradFile.getProperty("exportLabel");
         UtilStringStorage.exportButtonLabel = frTradFile.getProperty("exportButtonLabel");
+        UtilStringStorage.exportInfoButton = frTradFile.getProperty("exportButtonInfo");
         UtilStringStorage.importLabel = frTradFile.getProperty("importLabel");
         UtilStringStorage.importButtonLabel = frTradFile.getProperty("importButtonLabel");
+        UtilStringStorage.importInfoButton = frTradFile.getProperty("importButtonInfo");
+        UtilStringStorage.importDirectoryLabel = frTradFile.getProperty("importDirectoryLabel");
+        UtilStringStorage.importDirectoryButtonLabel = frTradFile.getProperty("importDirectoryButtonLabel");
+        UtilStringStorage.importDirectoryInfoButton = frTradFile.getProperty("importDirectoryInfoButton");
 
         // CREDIT SCENE
         UtilStringStorage.generalThank = frTradFile.getProperty("generalThank");

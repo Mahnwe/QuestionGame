@@ -176,6 +176,18 @@ public class ImportFileHandler {
         return properties;
     }
 
+    public static void setUpOpenImportDirectoryButton(Button button)
+    {
+        button.setOnAction(event -> {
+            Stage fileChooserStage = new Stage();
+            fileChooserStage.initModality(Modality.APPLICATION_MODAL);
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setInitialDirectory(new File("C:\\Users\\mat-d\\IdeaProjects\\QuestionGame\\src\\main\\resources\\ImportFile"));
+            fileChooser.setTitle("Open Resource File");
+            fileChooser.showOpenDialog(fileChooserStage);
+        });
+    }
+
     public static List<Question> getImportPersonalizeQuestionList() {
         return importPersonalizeQuestionList;
     }

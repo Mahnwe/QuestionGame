@@ -61,32 +61,63 @@ public class OptionScene extends Scene {
         Label copyPersoQuestionFileLabel = new Label(UtilStringStorage.exportLabel);
         copyPersoQuestionFileLabel.setFont(Font.font("Futura", FontWeight.EXTRA_BOLD, 22));
 
+        HBox hBox1 = new HBox();
+        hBox1.setTranslateY(15);
+
         Button copyPersoQuestionFileButton = new Button(UtilStringStorage.exportButtonLabel);
         ImportFileHandler.setUpCopyButton(copyPersoQuestionFileButton);
         CustomOption.setGlowEffectOnButton(copyPersoQuestionFileButton);
         copyPersoQuestionFileButton.setTranslateX(50);
-        copyPersoQuestionFileButton.setTranslateY(15);
         copyPersoQuestionFileButton.setFont(Font.font("Futura", FontWeight.BOLD, 20));
 
+        InfoButton copyInfoButton = new InfoButton(UtilStringStorage.exportInfoButton);
+
+        hBox1.getChildren().add(copyPersoQuestionFileButton);
+        hBox1.getChildren().add(copyInfoButton);
+
         importFileVbox.getChildren().add(copyPersoQuestionFileLabel);
-        importFileVbox.getChildren().add(copyPersoQuestionFileButton);
+        importFileVbox.getChildren().add(hBox1);
 
         Label createNewFileWithImportLabel = new Label(UtilStringStorage.importLabel);
-        createNewFileWithImportLabel.setTranslateY(130);
+        createNewFileWithImportLabel.setTranslateY(50);
         createNewFileWithImportLabel.setFont(Font.font("Futura", FontWeight.EXTRA_BOLD, 22));
 
-        HBox hBox = new HBox();
-        hBox.setTranslateY(145);
+        HBox hBox2 = new HBox();
+        hBox2.setTranslateY(65);
 
         Button pasteFileFromImportButton = new Button(UtilStringStorage.importButtonLabel);
         ImportFileHandler.setUpButtonFileFromImport(pasteFileFromImportButton);
         pasteFileFromImportButton.setTranslateX(50);
         pasteFileFromImportButton.setFont(Font.font("Futura", FontWeight.BOLD, 20));
 
-        hBox.getChildren().add(pasteFileFromImportButton);
+        InfoButton importInfoButton = new InfoButton(UtilStringStorage.importInfoButton);
+
+        hBox2.getChildren().add(pasteFileFromImportButton);
+        hBox2.getChildren().add(importInfoButton);
 
         importFileVbox.getChildren().add(createNewFileWithImportLabel);
-        importFileVbox.getChildren().add(hBox);
+        importFileVbox.getChildren().add(hBox2);
+
+        Label importFileManagementLabel = new Label(UtilStringStorage.importDirectoryLabel);
+        importFileManagementLabel.setFont(Font.font("Futura", FontWeight.EXTRA_BOLD, 22));
+        importFileManagementLabel.setTranslateY(100);
+
+        HBox hBox3 = new HBox();
+        hBox3.setTranslateY(115);
+
+        Button openImportFileDirectoryButton = new Button(UtilStringStorage.importDirectoryButtonLabel);
+        ImportFileHandler.setUpOpenImportDirectoryButton(openImportFileDirectoryButton);
+        CustomOption.setGlowEffectOnButton(openImportFileDirectoryButton);
+        openImportFileDirectoryButton.setTranslateX(50);
+        openImportFileDirectoryButton.setFont(Font.font("Futura", FontWeight.BOLD, 20));
+
+        InfoButton openDirectoryInfoButton = new InfoButton(UtilStringStorage.importDirectoryInfoButton);
+
+        hBox3.getChildren().add(openImportFileDirectoryButton);
+        hBox3.getChildren().add(openDirectoryInfoButton);
+
+        importFileVbox.getChildren().add(importFileManagementLabel);
+        importFileVbox.getChildren().add(hBox3);
     }
 
     public void createGridPane()

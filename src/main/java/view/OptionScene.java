@@ -65,7 +65,7 @@ public class OptionScene extends Scene {
         hBox1.setTranslateY(15);
 
         Button copyPersoQuestionFileButton = new Button(UtilStringStorage.exportButtonLabel);
-        ImportFileHandler.setUpCopyButton(copyPersoQuestionFileButton);
+        ImportFileHandler.setUpOpenDirectoryButton(copyPersoQuestionFileButton, ImportFileHandler.getPersonalizeQuestionPath());
         CustomOption.setGlowEffectOnButton(copyPersoQuestionFileButton);
         copyPersoQuestionFileButton.setTranslateX(50);
         copyPersoQuestionFileButton.setFont(Font.font("Futura", FontWeight.BOLD, 20));
@@ -106,7 +106,7 @@ public class OptionScene extends Scene {
         hBox3.setTranslateY(115);
 
         Button openImportFileDirectoryButton = new Button(UtilStringStorage.importDirectoryButtonLabel);
-        ImportFileHandler.setUpOpenImportDirectoryButton(openImportFileDirectoryButton);
+        ImportFileHandler.setUpOpenDirectoryButton(openImportFileDirectoryButton, ImportFileHandler.getImportPath());
         CustomOption.setGlowEffectOnButton(openImportFileDirectoryButton);
         openImportFileDirectoryButton.setTranslateX(50);
         openImportFileDirectoryButton.setFont(Font.font("Futura", FontWeight.BOLD, 20));

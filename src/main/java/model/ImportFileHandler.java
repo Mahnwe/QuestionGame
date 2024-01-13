@@ -19,14 +19,16 @@ public class ImportFileHandler {
     private static final List<Question> importPersonalizeQuestionList = new ArrayList<>();
     private static final ArrayList<String> listeStringQuestion = new ArrayList<>();
     private static final List<Properties> propertiesList = new ArrayList<>();
+    private static final String PERSONALIZE_QUESTION_PATH = "C:\\Users\\mat-d\\IdeaProjects\\QuestionGame\\src\\main\\resources\\PersonalizeQuestions";
+    private static final String IMPORT_PATH = "C:\\Users\\mat-d\\IdeaProjects\\QuestionGame\\src\\main\\resources\\ImportFile";
 
-    public static void setUpCopyButton(Button button)
+    public static void setUpOpenDirectoryButton(Button button, String directoryPath)
     {
         button.setOnAction(event -> {
             Stage fileChooserStage = new Stage();
             fileChooserStage.initModality(Modality.APPLICATION_MODAL);
             FileChooser fileChooser = new FileChooser();
-            fileChooser.setInitialDirectory(new File("C:\\Users\\mat-d\\IdeaProjects\\QuestionGame\\src\\main\\resources\\PersonalizeQuestions"));
+            fileChooser.setInitialDirectory(new File(directoryPath));
             fileChooser.setTitle("Open Resource File");
             fileChooser.showOpenDialog(fileChooserStage);
         });
@@ -35,7 +37,7 @@ public class ImportFileHandler {
     public static void addFileToList()
     {
         FileChooser fileChooserGetNumber = new FileChooser();
-        fileChooserGetNumber.setInitialDirectory(new File("C:\\Users\\mat-d\\IdeaProjects\\QuestionGame\\src\\main\\resources\\ImportFile"));
+        fileChooserGetNumber.setInitialDirectory(new File(IMPORT_PATH));
         int numberOfFileInDirectory = Objects.requireNonNull(fileChooserGetNumber.getInitialDirectory().listFiles()).length;
         FileUtil.generalSavesFile.setProperty("numberOfImportFile", String.valueOf(numberOfFileInDirectory));
         FileUtil.storeGeneralSavesFile();
@@ -79,7 +81,8 @@ public class ImportFileHandler {
     public static void setUpButtonFileFromImport(Button button)
     {
         button.setOnAction(event -> {
-            if(Clipboard.getSystemClipboard().hasFiles()) {
+            if(Clipboard.getSystemClipboard().hasFiles())
+            {
                 Properties propertiesImportFile = new Properties();
                 Clipboard clipboardImportFile = Clipboard.getSystemClipboard();
                 List<File> listOfFiles;
@@ -88,10 +91,9 @@ public class ImportFileHandler {
                 readSaveFile(propertiesImportFile, file);
                 int numberOfImportFile = Integer.parseInt(FileUtil.generalSavesFile.getProperty("numberOfImportFile"));
                 numberOfImportFile++;
-                if(numberOfImportFile > 2) {
                     boolean isFull = true;
                     FileChooser fileCheckForImportPlace = new FileChooser();
-                    fileCheckForImportPlace.setInitialDirectory(new File("C:\\Users\\mat-d\\IdeaProjects\\QuestionGame\\src\\main\\resources\\ImportFile"));
+                    fileCheckForImportPlace.setInitialDirectory(new File(IMPORT_PATH));
                     for (int i = 0; i < Objects.requireNonNull(fileCheckForImportPlace.getInitialDirectory().listFiles()).length; i++)
                     {
                         String checkAllPath = "C:\\Users\\mat-d\\IdeaProjects\\QuestionGame\\src\\main\\resources\\ImportFile\\ImportPersonalizeQuestion" + i + ".properties";
@@ -111,14 +113,6 @@ public class ImportFileHandler {
                         int calculateNumber = (numberOfImportFile - 1);
                         storeImportPersonalizeQuestionsFile(propertiesImportFile, "./src/main/resources/ImportFile/ImportPersonalizeQuestion"+ calculateNumber +".properties");
                     }
-                } else
-                {
-                    FileUtil.generalSavesFile.setProperty("numberOfImportFile", String.valueOf(numberOfImportFile));
-                    FileUtil.storeGeneralSavesFile();
-                    int calculateNumber = (numberOfImportFile - 1);
-                    storeImportPersonalizeQuestionsFile(propertiesImportFile, "./src/main/resources/ImportFile/ImportPersonalizeQuestion"+ calculateNumber +".properties");
-                }
-
             }
         });
     }
@@ -176,19 +170,13 @@ public class ImportFileHandler {
         return properties;
     }
 
-    public static void setUpOpenImportDirectoryButton(Button button)
-    {
-        button.setOnAction(event -> {
-            Stage fileChooserStage = new Stage();
-            fileChooserStage.initModality(Modality.APPLICATION_MODAL);
-            FileChooser fileChooser = new FileChooser();
-            fileChooser.setInitialDirectory(new File("C:\\Users\\mat-d\\IdeaProjects\\QuestionGame\\src\\main\\resources\\ImportFile"));
-            fileChooser.setTitle("Open Resource File");
-            fileChooser.showOpenDialog(fileChooserStage);
-        });
-    }
-
     public static List<Question> getImportPersonalizeQuestionList() {
         return importPersonalizeQuestionList;
+    }
+    public static String getImportPath() {
+        return IMPORT_PATH;
+    }
+    public static String getPersonalizeQuestionPath() {
+        return PERSONALIZE_QUESTION_PATH;
     }
 }

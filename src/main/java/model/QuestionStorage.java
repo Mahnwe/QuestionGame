@@ -529,6 +529,16 @@ public class QuestionStorage
                 UtilStringStorage.explanation102);
         questionList.add(question102);
 
+        Question question103 = new Question(UtilStringStorage.humanBody, UtilStringStorage.question103,UtilStringStorage.answerA103,
+                UtilStringStorage.answerB103, UtilStringStorage.answerC103, UtilStringStorage.answerD103, UtilStringStorage.goodAnswer103,
+                UtilStringStorage.explanation103);
+        questionList.add(question103);
+
+        Question question104 = new Question(UtilStringStorage.geography, UtilStringStorage.question104,UtilStringStorage.answerA104,
+                UtilStringStorage.answerB104, UtilStringStorage.answerC104, UtilStringStorage.answerD104, UtilStringStorage.goodAnswer104,
+                UtilStringStorage.explanation104);
+        questionList.add(question104);
+
     }
 
     public void checkPersonalizeQuestions()

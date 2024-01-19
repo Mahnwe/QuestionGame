@@ -1,11 +1,14 @@
 package model;
 
+import javafx.animation.PauseTransition;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.DataFormat;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import util.FileUtil;
@@ -78,7 +81,7 @@ public class ImportFileHandler {
         }
     }
 
-    public static void setUpButtonFileFromImport(Button button)
+    public static void setUpButtonFileFromImport(Button button, Label label)
     {
         button.setOnAction(event -> {
             if(Clipboard.getSystemClipboard().hasFiles())
@@ -104,6 +107,7 @@ public class ImportFileHandler {
                             String getI = String.valueOf(i);
                             storeImportPersonalizeQuestionsFile(propertiesImportFile, "./src/main/resources/ImportFile/ImportPersonalizeQuestion" +getI+ ".properties");
                             isFull = false;
+                            displayLabelAfterImport(label);
                         }
                     }
                     if(isFull)
@@ -112,9 +116,18 @@ public class ImportFileHandler {
                         FileUtil.storeGeneralSavesFile();
                         int calculateNumber = (numberOfImportFile - 1);
                         storeImportPersonalizeQuestionsFile(propertiesImportFile, "./src/main/resources/ImportFile/ImportPersonalizeQuestion"+ calculateNumber +".properties");
+                        displayLabelAfterImport(label);
                     }
             }
         });
+    }
+
+    public static void displayLabelAfterImport(Label label)
+    {
+        label.setVisible(true);
+        PauseTransition visiblePause = new PauseTransition(Duration.seconds(5));
+        visiblePause.setOnFinished(event -> label.setVisible(false));
+        visiblePause.play();
     }
 
     public static void readSaveFile(Properties properties, File file)

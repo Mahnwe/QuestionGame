@@ -43,26 +43,27 @@ public class OptionScene extends Scene {
         optionVbox.setTranslateY(50);
         importFileVbox = new VBox();
         importFileVbox.setTranslateX(50);
-        importFileVbox.setTranslateY(90);
+        importFileVbox.setTranslateY(70);
         createGridPane();
         pane.setCenter(gridPane);
-
 
         createSliderArea();
         createReturnButton();
         createLanguageButton();
         createResetButtonArea();
-        createImportVbox();
+        createOptionImportBox1();
+        createOptionImportBox2();
+        createOptionImportBox3();
         createBackground();
     }
 
-    public void createImportVbox()
+    public void createOptionImportBox1()
     {
         Label copyPersoQuestionFileLabel = new Label(UtilStringStorage.exportLabel);
         copyPersoQuestionFileLabel.setFont(Font.font("Futura", FontWeight.EXTRA_BOLD, 22));
 
         HBox hBox1 = new HBox();
-        hBox1.setTranslateY(15);
+        hBox1.setTranslateY(10);
 
         Button copyPersoQuestionFileButton = new Button(UtilStringStorage.exportButtonLabel);
         ImportFileHandler.setUpOpenDirectoryButton(copyPersoQuestionFileButton, ImportFileHandler.getPersonalizeQuestionPath());
@@ -77,16 +78,22 @@ public class OptionScene extends Scene {
 
         importFileVbox.getChildren().add(copyPersoQuestionFileLabel);
         importFileVbox.getChildren().add(hBox1);
-
+    }
+    public void createOptionImportBox2()
+    {
         Label createNewFileWithImportLabel = new Label(UtilStringStorage.importLabel);
-        createNewFileWithImportLabel.setTranslateY(50);
+        createNewFileWithImportLabel.setTranslateY(60);
         createNewFileWithImportLabel.setFont(Font.font("Futura", FontWeight.EXTRA_BOLD, 22));
 
         HBox hBox2 = new HBox();
-        hBox2.setTranslateY(65);
+        hBox2.setTranslateY(75);
+
+        Label confirmImportLabel = new Label("Fichier importé avec succès");
+        confirmImportLabel.setFont(Font.font("Futura", FontWeight.BOLD, 20));
+        confirmImportLabel.setVisible(false);
 
         Button pasteFileFromImportButton = new Button(UtilStringStorage.importButtonLabel);
-        ImportFileHandler.setUpButtonFileFromImport(pasteFileFromImportButton);
+        ImportFileHandler.setUpButtonFileFromImport(pasteFileFromImportButton, confirmImportLabel);
         pasteFileFromImportButton.setTranslateX(50);
         pasteFileFromImportButton.setFont(Font.font("Futura", FontWeight.BOLD, 20));
 
@@ -97,13 +104,17 @@ public class OptionScene extends Scene {
 
         importFileVbox.getChildren().add(createNewFileWithImportLabel);
         importFileVbox.getChildren().add(hBox2);
-
+        importFileVbox.getChildren().add(confirmImportLabel);
+        confirmImportLabel.setTranslateY(85);
+    }
+    public void createOptionImportBox3()
+    {
         Label importFileManagementLabel = new Label(UtilStringStorage.importDirectoryLabel);
         importFileManagementLabel.setFont(Font.font("Futura", FontWeight.EXTRA_BOLD, 22));
-        importFileManagementLabel.setTranslateY(100);
+        importFileManagementLabel.setTranslateY(110);
 
         HBox hBox3 = new HBox();
-        hBox3.setTranslateY(115);
+        hBox3.setTranslateY(145);
 
         Button openImportFileDirectoryButton = new Button(UtilStringStorage.importDirectoryButtonLabel);
         ImportFileHandler.setUpOpenDirectoryButton(openImportFileDirectoryButton, ImportFileHandler.getImportPath());

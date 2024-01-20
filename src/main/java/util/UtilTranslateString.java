@@ -232,6 +232,7 @@ public class UtilTranslateString {
         UtilStringStorage.exportInfoButton = engTradFile.getProperty("exportButtonInfo");
         UtilStringStorage.importLabel = engTradFile.getProperty("importLabel");
         UtilStringStorage.importButtonLabel = engTradFile.getProperty("importButtonLabel");
+        UtilStringStorage.confirmImportLabel = engTradFile.getProperty("confirmImportLabel");
         UtilStringStorage.importInfoButton = engTradFile.getProperty("importButtonInfo");
         UtilStringStorage.importDirectoryLabel = engTradFile.getProperty("importDirectoryLabel");
         UtilStringStorage.importDirectoryButtonLabel = engTradFile.getProperty("importDirectoryButtonLabel");
@@ -449,6 +450,7 @@ public class UtilTranslateString {
         UtilStringStorage.exportInfoButton = frTradFile.getProperty("exportButtonInfo");
         UtilStringStorage.importLabel = frTradFile.getProperty("importLabel");
         UtilStringStorage.importButtonLabel = frTradFile.getProperty("importButtonLabel");
+        UtilStringStorage.confirmImportLabel = frTradFile.getProperty("confirmImportLabel");
         UtilStringStorage.importInfoButton = frTradFile.getProperty("importButtonInfo");
         UtilStringStorage.importDirectoryLabel = frTradFile.getProperty("importDirectoryLabel");
         UtilStringStorage.importDirectoryButtonLabel = frTradFile.getProperty("importDirectoryButtonLabel");

@@ -51,13 +51,13 @@ public class OptionScene extends Scene {
         createReturnButton();
         createLanguageButton();
         createResetButtonArea();
-        createOptionImportBox1();
-        createOptionImportBox2();
-        createOptionImportBox3();
+        createCopyFileBox();
+        createPasteFileBox();
+        createImportedFileBox();
         createBackground();
     }
 
-    public void createOptionImportBox1()
+    public void createCopyFileBox()
     {
         Label copyPersoQuestionFileLabel = new Label(UtilStringStorage.exportLabel);
         copyPersoQuestionFileLabel.setFont(Font.font("Futura", FontWeight.EXTRA_BOLD, 22));
@@ -79,7 +79,7 @@ public class OptionScene extends Scene {
         importFileVbox.getChildren().add(copyPersoQuestionFileLabel);
         importFileVbox.getChildren().add(hBox1);
     }
-    public void createOptionImportBox2()
+    public void createPasteFileBox()
     {
         Label createNewFileWithImportLabel = new Label(UtilStringStorage.importLabel);
         createNewFileWithImportLabel.setTranslateY(60);
@@ -88,7 +88,7 @@ public class OptionScene extends Scene {
         HBox hBox2 = new HBox();
         hBox2.setTranslateY(75);
 
-        Label confirmImportLabel = new Label("Fichier importé avec succès");
+        Label confirmImportLabel = new Label(UtilStringStorage.confirmImportLabel);
         confirmImportLabel.setFont(Font.font("Futura", FontWeight.BOLD, 20));
         confirmImportLabel.setVisible(false);
 
@@ -107,14 +107,14 @@ public class OptionScene extends Scene {
         importFileVbox.getChildren().add(confirmImportLabel);
         confirmImportLabel.setTranslateY(85);
     }
-    public void createOptionImportBox3()
+    public void createImportedFileBox()
     {
         Label importFileManagementLabel = new Label(UtilStringStorage.importDirectoryLabel);
         importFileManagementLabel.setFont(Font.font("Futura", FontWeight.EXTRA_BOLD, 22));
-        importFileManagementLabel.setTranslateY(110);
+        importFileManagementLabel.setTranslateY(120);
 
         HBox hBox3 = new HBox();
-        hBox3.setTranslateY(145);
+        hBox3.setTranslateY(155);
 
         Button openImportFileDirectoryButton = new Button(UtilStringStorage.importDirectoryButtonLabel);
         ImportFileHandler.setUpOpenDirectoryButton(openImportFileDirectoryButton, ImportFileHandler.getImportPath());

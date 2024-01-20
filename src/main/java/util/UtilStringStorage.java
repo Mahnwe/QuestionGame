@@ -195,6 +195,7 @@ public class UtilStringStorage
     public static String exportInfoButton = "";
     public static String importLabel = "";
     public static String importButtonLabel = "";
+    public static String confirmImportLabel = "";
     public static String importInfoButton = "";
     public static String importDirectoryLabel = "";
     public static String importDirectoryButtonLabel = "";

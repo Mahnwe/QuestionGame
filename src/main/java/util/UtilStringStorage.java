@@ -946,5 +946,19 @@ public class UtilStringStorage
     public static String answerD104 = "";
     public static String goodAnswer104 = "";
     public static String explanation104 = "";
+    public static String question105 = "";
+    public static String answerA105 = "";
+    public static String answerB105 = "";
+    public static String answerC105 = "";
+    public static String answerD105 = "";
+    public static String goodAnswer105 = "";
+    public static String explanation105 = "";
+    public static String question106 = "";
+    public static String answerA106 = "";
+    public static String answerB106 = "";
+    public static String answerC106 = "";
+    public static String answerD106 = "";
+    public static String goodAnswer106 = "";
+    public static String explanation106 = "";
 
 }

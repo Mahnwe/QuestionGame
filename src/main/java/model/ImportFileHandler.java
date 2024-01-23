@@ -4,6 +4,7 @@ import javafx.animation.PauseTransition;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.DataFormat;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
@@ -22,7 +23,7 @@ public class ImportFileHandler {
     private static final List<Question> importPersonalizeQuestionList = new ArrayList<>();
     private static final ArrayList<String> listeStringQuestion = new ArrayList<>();
     private static final List<Properties> propertiesList = new ArrayList<>();
-    private static final String PERSONALIZE_QUESTION_PATH = "C:\\Users\\mat-d\\IdeaProjects\\QuestionGame\\src\\main\\resources\\PersonalizeQuestions";
+    private static final String PERSONALIZE_QUESTION_PATH = "C:\\Users\\mat-d\\IdeaProjects\\QuestionGame\\src\\main\\resources\\PersonalizeQuestions\\PersonalizeQuestions.properties";
     private static final String IMPORT_PATH = "C:\\Users\\mat-d\\IdeaProjects\\QuestionGame\\src\\main\\resources\\ImportFile";
 
     public static void setUpOpenDirectoryButton(Button button, String directoryPath)
@@ -34,6 +35,20 @@ public class ImportFileHandler {
             fileChooser.setInitialDirectory(new File(directoryPath));
             fileChooser.setTitle("Open Resource File");
             fileChooser.showOpenDialog(fileChooserStage);
+        });
+    }
+
+    public static void setUpCopyFileButton(Button button, Label label)
+    {
+        button.setOnAction(event -> {
+            List<File> fileList = new ArrayList<>();
+            File file = new File(PERSONALIZE_QUESTION_PATH);
+            fileList.add(file);
+            Clipboard clipboard = Clipboard.getSystemClipboard();
+            ClipboardContent clipboardContent = new ClipboardContent();
+            clipboardContent.putFiles(fileList);
+            clipboard.setContent(clipboardContent);
+            displayLabelAfterImport(label);
         });
     }
 
@@ -188,8 +203,5 @@ public class ImportFileHandler {
     }
     public static String getImportPath() {
         return IMPORT_PATH;
-    }
-    public static String getPersonalizeQuestionPath() {
-        return PERSONALIZE_QUESTION_PATH;
     }
 }

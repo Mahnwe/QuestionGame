@@ -192,6 +192,7 @@ public class UtilStringStorage
     public static String askConfirmReset = "";
     public static String exportLabel = "";
     public static String exportButtonLabel = "";
+    public static String confirmCopyFileLabel = "";
     public static String exportInfoButton = "";
     public static String importLabel = "";
     public static String importButtonLabel = "";

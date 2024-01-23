@@ -65,8 +65,14 @@ public class OptionScene extends Scene {
         HBox hBox1 = new HBox();
         hBox1.setTranslateY(10);
 
+        Label confirmCopyFileInClipboard = new Label(UtilStringStorage.confirmCopyFileLabel);
+        confirmCopyFileInClipboard.setFont(Font.font("Futura", FontWeight.EXTRA_BOLD, 22));
+        confirmCopyFileInClipboard.setTextFill(Color.GREEN);
+        confirmCopyFileInClipboard.setVisible(false);
+        confirmCopyFileInClipboard.setTranslateY(10);
+
         Button copyPersoQuestionFileButton = new Button(UtilStringStorage.exportButtonLabel);
-        ImportFileHandler.setUpOpenDirectoryButton(copyPersoQuestionFileButton, ImportFileHandler.getPersonalizeQuestionPath());
+        ImportFileHandler.setUpCopyFileButton(copyPersoQuestionFileButton, confirmCopyFileInClipboard);
         CustomOption.setGlowEffectOnButton(copyPersoQuestionFileButton);
         copyPersoQuestionFileButton.setTranslateX(50);
         copyPersoQuestionFileButton.setFont(Font.font("Futura", FontWeight.BOLD, 20));
@@ -78,6 +84,7 @@ public class OptionScene extends Scene {
 
         importFileVbox.getChildren().add(copyPersoQuestionFileLabel);
         importFileVbox.getChildren().add(hBox1);
+        importFileVbox.getChildren().add(confirmCopyFileInClipboard);
     }
     public void createPasteFileBox()
     {
@@ -90,6 +97,7 @@ public class OptionScene extends Scene {
 
         Label confirmImportLabel = new Label(UtilStringStorage.confirmImportLabel);
         confirmImportLabel.setFont(Font.font("Futura", FontWeight.BOLD, 20));
+        confirmImportLabel.setTextFill(Color.GREEN);
         confirmImportLabel.setVisible(false);
 
         Button pasteFileFromImportButton = new Button(UtilStringStorage.importButtonLabel);
@@ -114,7 +122,7 @@ public class OptionScene extends Scene {
         importFileManagementLabel.setTranslateY(120);
 
         HBox hBox3 = new HBox();
-        hBox3.setTranslateY(155);
+        hBox3.setTranslateY(145);
 
         Button openImportFileDirectoryButton = new Button(UtilStringStorage.importDirectoryButtonLabel);
         ImportFileHandler.setUpOpenDirectoryButton(openImportFileDirectoryButton, ImportFileHandler.getImportPath());

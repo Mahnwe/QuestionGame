@@ -23,8 +23,8 @@ public class ImportFileHandler {
     private static final List<Question> importPersonalizeQuestionList = new ArrayList<>();
     private static final ArrayList<String> listeStringQuestion = new ArrayList<>();
     private static final List<Properties> propertiesList = new ArrayList<>();
-    private static final String PERSONALIZE_QUESTION_PATH = "C:\\Users\\mat-d\\IdeaProjects\\QuestionGame\\src\\main\\resources\\PersonalizeQuestions\\PersonalizeQuestions.properties";
-    private static final String IMPORT_PATH = "C:\\Users\\mat-d\\IdeaProjects\\QuestionGame\\src\\main\\resources\\ImportFile";
+    private static final String PERSONALIZE_QUESTION_PATH = "./src/main/resources/PersonalizeQuestions/PersonalizeQuestions.properties";
+    private static final String IMPORT_PATH = "./src/main/resources/ImportFile";
 
     public static void setUpOpenDirectoryButton(Button button, String directoryPath)
     {
@@ -114,7 +114,7 @@ public class ImportFileHandler {
                     fileCheckForImportPlace.setInitialDirectory(new File(IMPORT_PATH));
                     for (int i = 0; i < Objects.requireNonNull(fileCheckForImportPlace.getInitialDirectory().listFiles()).length; i++)
                     {
-                        String checkAllPath = "C:\\Users\\mat-d\\IdeaProjects\\QuestionGame\\src\\main\\resources\\ImportFile\\ImportPersonalizeQuestion" + i + ".properties";
+                        String checkAllPath = "./src/main/resources/ImportFile/ImportPersonalizeQuestion" + i + ".properties";
                         if(!checkAllPath.equals(Arrays.stream(Objects.requireNonNull(fileCheckForImportPlace.getInitialDirectory().listFiles())).toList().get(i).getAbsolutePath()))
                         {
                             FileUtil.generalSavesFile.setProperty("numberOfImportFile", String.valueOf(numberOfImportFile));

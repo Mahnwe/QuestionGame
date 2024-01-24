@@ -549,6 +549,11 @@ public class QuestionStorage
                 UtilStringStorage.explanation106);
         questionList.add(question106);
 
+        Question question107 = new Question(UtilStringStorage.flags, UtilStringStorage.question107,UtilStringStorage.answerA107,
+                UtilStringStorage.answerB107, UtilStringStorage.answerC107, UtilStringStorage.answerD107, UtilStringStorage.goodAnswer107,
+                UtilStringStorage.explanation107);
+        questionList.add(question107);
+
     }
 
     public void checkPersonalizeQuestions()

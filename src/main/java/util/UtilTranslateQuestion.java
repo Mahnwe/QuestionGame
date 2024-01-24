@@ -853,6 +853,14 @@ public class UtilTranslateQuestion {
         UtilStringStorage.answerD106 = UtilTranslateString.frTradFile.getProperty("answerD106");
         UtilStringStorage.goodAnswer106 = UtilTranslateString.frTradFile.getProperty("goodAnswer106");
         UtilStringStorage.explanation106 = UtilTranslateString.frTradFile.getProperty("explanation106");
+
+        UtilStringStorage.question107 = UtilTranslateString.frTradFile.getProperty("question107");
+        UtilStringStorage.answerA107 = UtilTranslateString.frTradFile.getProperty("answerA107");
+        UtilStringStorage.answerB107 = UtilTranslateString.frTradFile.getProperty("answerB107");
+        UtilStringStorage.answerC107 = UtilTranslateString.frTradFile.getProperty("answerC107");
+        UtilStringStorage.answerD107 = UtilTranslateString.frTradFile.getProperty("answerD107");
+        UtilStringStorage.goodAnswer107 = UtilTranslateString.frTradFile.getProperty("goodAnswer107");
+        UtilStringStorage.explanation107 = UtilTranslateString.frTradFile.getProperty("explanation107");
     }
 
     public void translateEngQuestions()
@@ -1705,6 +1713,14 @@ public class UtilTranslateQuestion {
         UtilStringStorage.answerD106 = UtilTranslateString.engTradFile.getProperty("answerD106");
         UtilStringStorage.goodAnswer106 = UtilTranslateString.engTradFile.getProperty("goodAnswer106");
         UtilStringStorage.explanation106 = UtilTranslateString.engTradFile.getProperty("explanation106");
+
+        UtilStringStorage.question107 = UtilTranslateString.engTradFile.getProperty("question107");
+        UtilStringStorage.answerA107 = UtilTranslateString.engTradFile.getProperty("answerA107");
+        UtilStringStorage.answerB107 = UtilTranslateString.engTradFile.getProperty("answerB107");
+        UtilStringStorage.answerC107 = UtilTranslateString.engTradFile.getProperty("answerC107");
+        UtilStringStorage.answerD107 = UtilTranslateString.engTradFile.getProperty("answerD107");
+        UtilStringStorage.goodAnswer107 = UtilTranslateString.engTradFile.getProperty("goodAnswer107");
+        UtilStringStorage.explanation107 = UtilTranslateString.engTradFile.getProperty("explanation107");
 
     }
 }

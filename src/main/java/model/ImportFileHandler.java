@@ -99,41 +99,41 @@ public class ImportFileHandler {
     public static void setUpButtonFileFromImport(Button button, Label label)
     {
         button.setOnAction(event -> {
-            if(Clipboard.getSystemClipboard().hasFiles())
-            {
+            if(Clipboard.getSystemClipboard().hasFiles()) {
                 Properties propertiesImportFile = new Properties();
                 Clipboard clipboardImportFile = Clipboard.getSystemClipboard();
                 List<File> listOfFiles;
                 listOfFiles = (List<File>) clipboardImportFile.getContent(DataFormat.FILES);
                 File file = listOfFiles.get(0);
-                readSaveFile(propertiesImportFile, file);
-                int numberOfImportFile = Integer.parseInt(FileUtil.generalSavesFile.getProperty("numberOfImportFile"));
-                numberOfImportFile++;
+                if (file.getName().equals("PersonalizeQuestions.properties")) {
+                    readSaveFile(propertiesImportFile, file);
+                    int numberOfImportFile = Integer.parseInt(FileUtil.generalSavesFile.getProperty("numberOfImportFile"));
+                    numberOfImportFile++;
                     boolean isFull = true;
                     FileChooser fileCheckForImportPlace = new FileChooser();
                     fileCheckForImportPlace.setInitialDirectory(new File(IMPORT_PATH));
-                    for (int i = 0; i < Objects.requireNonNull(fileCheckForImportPlace.getInitialDirectory().listFiles()).length; i++)
-                    {
+                    for (int i = 0; i < Objects.requireNonNull(fileCheckForImportPlace.getInitialDirectory().listFiles()).length; i++) {
                         String checkAllPath = "./src/main/resources/ImportFile/ImportPersonalizeQuestion" + i + ".properties";
-                        if(!checkAllPath.equals(Arrays.stream(Objects.requireNonNull(fileCheckForImportPlace.getInitialDirectory().listFiles())).toList().get(i).getAbsolutePath()))
-                        {
+                        if (!checkAllPath.equals(Arrays.stream(Objects.requireNonNull(fileCheckForImportPlace.getInitialDirectory().listFiles())).toList().get(i).getAbsolutePath())) {
                             FileUtil.generalSavesFile.setProperty("numberOfImportFile", String.valueOf(numberOfImportFile));
                             FileUtil.storeGeneralSavesFile();
                             String getI = String.valueOf(i);
-                            storeImportPersonalizeQuestionsFile(propertiesImportFile, "./src/main/resources/ImportFile/ImportPersonalizeQuestion" +getI+ ".properties");
+                            storeImportPersonalizeQuestionsFile(propertiesImportFile, "./src/main/resources/ImportFile/ImportPersonalizeQuestion" + getI + ".properties");
                             isFull = false;
                             displayLabelAfterImport(label);
                         }
                     }
-                    if(isFull)
-                    {
+                    if (isFull) {
                         FileUtil.generalSavesFile.setProperty("numberOfImportFile", String.valueOf(numberOfImportFile));
                         FileUtil.storeGeneralSavesFile();
                         int calculateNumber = (numberOfImportFile - 1);
-                        storeImportPersonalizeQuestionsFile(propertiesImportFile, "./src/main/resources/ImportFile/ImportPersonalizeQuestion"+ calculateNumber +".properties");
+                        storeImportPersonalizeQuestionsFile(propertiesImportFile, "./src/main/resources/ImportFile/ImportPersonalizeQuestion" + calculateNumber + ".properties");
                         displayLabelAfterImport(label);
                     }
+                }
             }
+            Clipboard clipboardImportFile = Clipboard.getSystemClipboard();
+            clipboardImportFile.clear();
         });
     }
 

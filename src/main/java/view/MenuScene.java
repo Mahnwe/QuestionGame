@@ -35,6 +35,7 @@ public class MenuScene extends Scene
     private MenuSideButton questionCreatorButton;
     private MenuSideButton optionButton;
     private MenuSideButton creditButton;
+    private MenuSideButton statsButton;
     public static MediaPlayer relaunchGame;
 
     public MenuScene(BorderPane pane, Stage stage, AchievementManager achievementManager)
@@ -49,6 +50,7 @@ public class MenuScene extends Scene
         this.achievementManager = achievementManager;
         FileUtil.actualizeTimePlayed();
         createWelcomeArea();
+        createIconOptionButton();
         createLeaderBoardButtonArea();
         createButtonArea();
 
@@ -95,7 +97,7 @@ public class MenuScene extends Scene
         gridPaneMenuButton.addRow(6);
         gridPaneMenuButton.setVgap(70);
         gridPaneMenuButton.setAlignment(Pos.CENTER);
-        gridPaneMenuButton.setTranslateY(40);
+        gridPaneMenuButton.setTranslateY(80);
         gridPaneMenuButton.setTranslateX(40);
 
         leaderBoardButton = new MenuSideButton(UtilStringStorage.leaderBoardButton, UtilStringStorage.leaderBoardTooltip, 5);
@@ -115,16 +117,32 @@ public class MenuScene extends Scene
         }
         gridPaneMenuButton.add(achievementButton, 0, 2);
 
+        statsButton = new MenuSideButton(UtilStringStorage.statisticLabel, UtilStringStorage.statisticTooltip, 5);
+        gridPaneMenuButton.add(statsButton, 0, 3);
+
         questionCreatorButton = new MenuSideButton(UtilStringStorage.questionCreatorButton, UtilStringStorage.questionCreatorTooltip, 15);
-        gridPaneMenuButton.add(questionCreatorButton, 0, 3);
-
-        optionButton = new MenuSideButton(UtilStringStorage.optionButton, UtilStringStorage.optionTooltip, 15);
-        gridPaneMenuButton.add(optionButton, 0, 4);
-
-        creditButton = new MenuSideButton(UtilStringStorage.creditButton, UtilStringStorage.creditTooltip, 15);
-        gridPaneMenuButton.add(creditButton, 0, 5);
+        gridPaneMenuButton.add(questionCreatorButton, 0, 4);
 
         return gridPaneMenuButton;
+    }
+
+    public void createIconOptionButton()
+    {
+        optionButton = new MenuSideButton("", UtilStringStorage.optionTooltip, 15);
+        optionButton.setTranslateX(25);
+        IconCreator optionIcon = new IconCreator(PathUtil.OPTION_ICON);
+        ImageView optionImage = optionIcon.createImage();
+        optionImage.setFitHeight(40);
+        optionImage.setFitWidth(40);
+        optionButton.setGraphic(optionImage);
+
+        creditButton = new MenuSideButton("", UtilStringStorage.creditTooltip, 15);
+        IconCreator creditsIcon = new IconCreator(PathUtil.CREDITS_ICON);
+        ImageView creditsImage = creditsIcon.createImage();
+        creditsImage.setFitHeight(40);
+        creditsImage.setFitWidth(40);
+        creditButton.setGraphic(creditsImage);
+        creditButton.setTranslateX(55);
     }
 
     public void setLeftButtonOnAction()
@@ -158,6 +176,11 @@ public class MenuScene extends Scene
             CreditScene creditScene = new CreditScene(new BorderPane(), menuStage, achievementManager);
             menuStage.setScene(creditScene);
         });
+
+        statsButton.setOnAction(event -> {
+            StatsScene statsScene = new StatsScene(new BorderPane(), menuStage, achievementManager);
+            menuStage.setScene(statsScene);
+    });
     }
 
     public void createButtonArea()
@@ -183,16 +206,20 @@ public class MenuScene extends Scene
         ImageView gifImageView = GifCreator.createVibeGif(60, 70);
         ImageView gifImageView2 = GifCreator.createVibeGif(640, -80);
 
+        HBox bottomHbox = new HBox();
         DeveloperVbox developerVbox = new DeveloperVbox();
-        developerVbox.setTranslateX(355);
-        developerVbox.setTranslateY(63);
+        developerVbox.setTranslateX(305);
+        bottomHbox.setTranslateY(63);
+        bottomHbox.getChildren().add(optionButton);
+        bottomHbox.getChildren().add(creditButton);
+        bottomHbox.getChildren().add(developerVbox);
 
         selectModeArea.getChildren().add(chooseMode);
         selectModeArea.getChildren().add(comboBox);
         selectModeArea.getChildren().add(launchGameButton);
         selectModeArea.getChildren().add(gifImageView);
         selectModeArea.getChildren().add(gifImageView2);
-        selectModeArea.getChildren().add(developerVbox);
+        selectModeArea.getChildren().add(bottomHbox);
         pane.setCenter(selectModeArea);
         selectModeArea.setTranslateX(50);
         selectModeArea.setTranslateY(50);

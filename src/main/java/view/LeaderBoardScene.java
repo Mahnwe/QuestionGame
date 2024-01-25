@@ -3,7 +3,6 @@ package view;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
@@ -27,7 +26,7 @@ public class LeaderBoardScene extends Scene
     private final AchievementManager achievementManager;
     private final VBox leaderBoardVBox;
     private final ConfirmAlert confirmAlert;
-    private VBox statsVbox;
+    private Button eraseSaveFileButton;
     private final BorderPane borderPane;
     private GridPane scoreGridPane;
 
@@ -54,10 +53,9 @@ public class LeaderBoardScene extends Scene
 
         createReturnButton();
         createLeaderBoard();
-        createBestScoresLabel();
         createEraseFileButton();
 
-        borderPane.setLeft(statsVbox);
+        borderPane.setLeft(eraseSaveFileButton);
         gridpane.add(leaderBoardVBox, 0, 0);
         borderPane.setCenter(gridpane);
         scrollPane.setContent(borderPane);
@@ -101,32 +99,11 @@ public class LeaderBoardScene extends Scene
         leaderBoardVBox.getChildren().add(scoreGridPane);
     }
 
-    public void createBestScoresLabel()
-    {
-        statsVbox = new VBox();
-
-        Button statsSceneButton = new Button(UtilStringStorage.statisticLabel);
-        statsSceneButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 18));
-        Tooltip tooltip = new Tooltip(UtilStringStorage.statisticTooltip);
-        statsSceneButton.setTooltip(tooltip);
-        statsSceneButton.setBorder(CustomOption.createCustomBorder(3.0, 2.0, Color.BLACK));
-        CustomOption.setGlowEffectOnButton(statsSceneButton);
-        statsSceneButton.setOnAction(event -> {
-            StatsScene statsScene = new StatsScene(new BorderPane(), stage, achievementManager);
-            stage.setScene(statsScene);
-        });
-
-        statsVbox.getChildren().add(statsSceneButton);
-        statsSceneButton.setTranslateX(20);
-        statsSceneButton.setTranslateY(30);
-
-    }
-
     public void createEraseFileButton()
     {
-        Button eraseSaveFileButton = new Button();
-        eraseSaveFileButton.setTranslateX(50);
-        eraseSaveFileButton.setTranslateY(170);
+        eraseSaveFileButton = new Button();
+        eraseSaveFileButton.setTranslateY(100);
+        eraseSaveFileButton.setTranslateX(25);
         CustomOption.setUpTrashButton(eraseSaveFileButton, UtilStringStorage.eraseTooltipLabel);
 
         eraseSaveFileButton.setOnAction(event -> {
@@ -138,8 +115,6 @@ public class LeaderBoardScene extends Scene
             }
         });
 
-        statsVbox.getChildren().add(eraseSaveFileButton);
-        statsVbox.setTranslateY(80);
     }
 
     public void createBackground()

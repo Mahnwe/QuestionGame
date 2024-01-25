@@ -1,7 +1,6 @@
 package model;
 
 import javafx.animation.PauseTransition;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
@@ -25,22 +24,21 @@ public class ImportFileHandler {
     private static final List<Properties> propertiesList = new ArrayList<>();
     private static final String PERSONALIZE_QUESTION_PATH = "./src/main/resources/PersonalizeQuestions/PersonalizeQuestions.properties";
     private static final String IMPORT_PATH = "./src/main/resources/ImportFile";
+    private static final String PREFIX_CHECK_FILE_PATH = "./src/main/resources/ImportFile/ImportPersonalizeQuestion";
+    private static final String SUFFIX_CHECK_FILE_PATH = ".properties";
 
-    public static void setUpOpenDirectoryButton(Button button, String directoryPath)
+    public static void setUpOpenDirectoryButton(String directoryPath)
     {
-        button.setOnAction(event -> {
             Stage fileChooserStage = new Stage();
             fileChooserStage.initModality(Modality.APPLICATION_MODAL);
             FileChooser fileChooser = new FileChooser();
             fileChooser.setInitialDirectory(new File(directoryPath));
             fileChooser.setTitle("Open Resource File");
             fileChooser.showOpenDialog(fileChooserStage);
-        });
     }
 
-    public static void setUpCopyFileButton(Button button, Label label)
+    public static void setUpCopyFileButton()
     {
-        button.setOnAction(event -> {
             List<File> fileList = new ArrayList<>();
             File file = new File(PERSONALIZE_QUESTION_PATH);
             fileList.add(file);
@@ -48,8 +46,6 @@ public class ImportFileHandler {
             ClipboardContent clipboardContent = new ClipboardContent();
             clipboardContent.putFiles(fileList);
             clipboard.setContent(clipboardContent);
-            displayLabelAfterImport(label);
-        });
     }
 
     public static void addFileToList()
@@ -96,47 +92,56 @@ public class ImportFileHandler {
         }
     }
 
-    public static void setUpButtonFileFromImport(Button button, Label label)
+    public static void setUpButtonFileFromImport(Label label)
     {
-        button.setOnAction(event -> {
             if(Clipboard.getSystemClipboard().hasFiles()) {
                 Properties propertiesImportFile = new Properties();
-                Clipboard clipboardImportFile = Clipboard.getSystemClipboard();
-                List<File> listOfFiles;
-                listOfFiles = (List<File>) clipboardImportFile.getContent(DataFormat.FILES);
-                File file = listOfFiles.get(0);
+                File file = getClipboardFile();
                 if (file.getName().equals("PersonalizeQuestions.properties")) {
                     readSaveFile(propertiesImportFile, file);
+
                     int numberOfImportFile = Integer.parseInt(FileUtil.generalSavesFile.getProperty("numberOfImportFile"));
                     numberOfImportFile++;
                     boolean isFull = true;
                     FileChooser fileCheckForImportPlace = new FileChooser();
                     fileCheckForImportPlace.setInitialDirectory(new File(IMPORT_PATH));
-                    for (int i = 0; i < Objects.requireNonNull(fileCheckForImportPlace.getInitialDirectory().listFiles()).length; i++) {
-                        String checkAllPath = "./src/main/resources/ImportFile/ImportPersonalizeQuestion" + i + ".properties";
-                        if (!checkAllPath.equals(Arrays.stream(Objects.requireNonNull(fileCheckForImportPlace.getInitialDirectory().listFiles())).toList().get(i).getAbsolutePath())) {
-                            FileUtil.generalSavesFile.setProperty("numberOfImportFile", String.valueOf(numberOfImportFile));
-                            FileUtil.storeGeneralSavesFile();
-                            String getI = String.valueOf(i);
-                            storeImportPersonalizeQuestionsFile(propertiesImportFile, "./src/main/resources/ImportFile/ImportPersonalizeQuestion" + getI + ".properties");
-                            isFull = false;
-                            displayLabelAfterImport(label);
-                        }
-                    }
-                    if (isFull) {
-                        FileUtil.generalSavesFile.setProperty("numberOfImportFile", String.valueOf(numberOfImportFile));
-                        FileUtil.storeGeneralSavesFile();
-                        int calculateNumber = (numberOfImportFile - 1);
-                        storeImportPersonalizeQuestionsFile(propertiesImportFile, "./src/main/resources/ImportFile/ImportPersonalizeQuestion" + calculateNumber + ".properties");
-                        displayLabelAfterImport(label);
-                    }
+
+                    checkFileSlotInDirectory(fileCheckForImportPlace, numberOfImportFile, isFull, propertiesImportFile, label);
                 }
             }
             Clipboard clipboardImportFile = Clipboard.getSystemClipboard();
             clipboardImportFile.clear();
-        });
     }
 
+    public static File getClipboardFile()
+    {
+        Clipboard clipboardImportFile = Clipboard.getSystemClipboard();
+        List<File> listOfFiles;
+        listOfFiles = (List<File>) clipboardImportFile.getContent(DataFormat.FILES);
+        return listOfFiles.get(0);
+    }
+
+    public static void checkFileSlotInDirectory(FileChooser fileCheckForImportPlace, int numberOfImportFile, boolean isFull, Properties propertiesImportFile, Label label)
+    {
+        for (int i = 0; i < Objects.requireNonNull(fileCheckForImportPlace.getInitialDirectory().listFiles()).length; i++) {
+            String checkAllPath = PREFIX_CHECK_FILE_PATH + i + SUFFIX_CHECK_FILE_PATH;
+            if (!checkAllPath.equals(Arrays.stream(Objects.requireNonNull(fileCheckForImportPlace.getInitialDirectory().listFiles())).toList().get(i).getAbsolutePath())) {
+                FileUtil.generalSavesFile.setProperty("numberOfImportFile", String.valueOf(numberOfImportFile));
+                FileUtil.storeGeneralSavesFile();
+                String getI = String.valueOf(i);
+                storeImportPersonalizeQuestionsFile(propertiesImportFile, PREFIX_CHECK_FILE_PATH + getI + SUFFIX_CHECK_FILE_PATH);
+                isFull = false;
+                displayLabelAfterImport(label);
+            }
+        }
+        if (isFull) {
+            FileUtil.generalSavesFile.setProperty("numberOfImportFile", String.valueOf(numberOfImportFile));
+            FileUtil.storeGeneralSavesFile();
+            int calculateNumber = (numberOfImportFile - 1);
+            storeImportPersonalizeQuestionsFile(propertiesImportFile, PREFIX_CHECK_FILE_PATH + calculateNumber + SUFFIX_CHECK_FILE_PATH);
+            displayLabelAfterImport(label);
+        }
+    }
     public static void displayLabelAfterImport(Label label)
     {
         label.setVisible(true);
@@ -159,7 +164,7 @@ public class ImportFileHandler {
                 lineNumber++;
             }
         } catch (IOException e) {
-            logger.error("Save file can't be read");
+            logger.error("Save file can't be read"+e.getMessage());
         }
     }
 
@@ -168,7 +173,7 @@ public class ImportFileHandler {
         try (FileWriter fileWriter = new FileWriter(fullPathFile)){
             properties.store(fileWriter, "");
         } catch (IOException e) {
-            logger.error("Personalize questions file can't be store");
+            logger.error("Personalize questions file can't be store"+e.getMessage());
         }
     }
     public static Properties loadFile(final String filePath)
@@ -178,12 +183,12 @@ public class ImportFileHandler {
         try {
             fileInputStream = new FileInputStream(filePath);
         } catch (FileNotFoundException e) {
-            logger.error("Stream can't be create");
+            logger.error("Stream can't be create"+e.getMessage());
         }
         try {
             properties.load(fileInputStream);
         } catch (IOException e) {
-            logger.error("File not found");
+            logger.error("File not found"+e.getMessage());
             logger.error(filePath);
         }
         finally {
@@ -191,7 +196,7 @@ public class ImportFileHandler {
                 try {
                     fileInputStream.close();
                 } catch (IOException e) {
-                    logger.error("Stream can't be close");
+                    logger.error("Stream can't be close"+e.getMessage());
                 }
             }
         }

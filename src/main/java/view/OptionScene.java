@@ -1,5 +1,6 @@
 package view;
 
+import javafx.animation.PauseTransition;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
@@ -7,6 +8,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import model.AchievementManager;
 import model.ImportFileHandler;
 import model.SoundManager;
@@ -72,7 +74,10 @@ public class OptionScene extends Scene {
         confirmCopyFileInClipboard.setTranslateY(10);
 
         Button copyPersoQuestionFileButton = new Button(UtilStringStorage.exportButtonLabel);
-        ImportFileHandler.setUpCopyFileButton(copyPersoQuestionFileButton, confirmCopyFileInClipboard);
+        copyPersoQuestionFileButton.setOnAction(event -> {
+            ImportFileHandler.setUpCopyFileButton();
+            displayLabelAfterImport(confirmCopyFileInClipboard);
+        });
         CustomOption.setGlowEffectOnButton(copyPersoQuestionFileButton);
         copyPersoQuestionFileButton.setTranslateX(50);
         copyPersoQuestionFileButton.setFont(Font.font("Futura", FontWeight.BOLD, 20));
@@ -101,7 +106,7 @@ public class OptionScene extends Scene {
         confirmImportLabel.setVisible(false);
 
         Button pasteFileFromImportButton = new Button(UtilStringStorage.importButtonLabel);
-        ImportFileHandler.setUpButtonFileFromImport(pasteFileFromImportButton, confirmImportLabel);
+        pasteFileFromImportButton.setOnAction(event -> ImportFileHandler.setUpButtonFileFromImport(confirmImportLabel));
         pasteFileFromImportButton.setTranslateX(50);
         pasteFileFromImportButton.setFont(Font.font("Futura", FontWeight.BOLD, 20));
 
@@ -125,7 +130,7 @@ public class OptionScene extends Scene {
         hBox3.setTranslateY(145);
 
         Button openImportFileDirectoryButton = new Button(UtilStringStorage.importDirectoryButtonLabel);
-        ImportFileHandler.setUpOpenDirectoryButton(openImportFileDirectoryButton, ImportFileHandler.getImportPath());
+        openImportFileDirectoryButton.setOnAction(event -> ImportFileHandler.setUpOpenDirectoryButton(ImportFileHandler.getImportPath()));
         CustomOption.setGlowEffectOnButton(openImportFileDirectoryButton);
         openImportFileDirectoryButton.setTranslateX(50);
         openImportFileDirectoryButton.setFont(Font.font("Futura", FontWeight.BOLD, 20));
@@ -137,6 +142,13 @@ public class OptionScene extends Scene {
 
         importFileVbox.getChildren().add(importFileManagementLabel);
         importFileVbox.getChildren().add(hBox3);
+    }
+    public static void displayLabelAfterImport(Label label)
+    {
+        label.setVisible(true);
+        PauseTransition visiblePause = new PauseTransition(Duration.seconds(5));
+        visiblePause.setOnFinished(event -> label.setVisible(false));
+        visiblePause.play();
     }
 
     public void createGridPane()

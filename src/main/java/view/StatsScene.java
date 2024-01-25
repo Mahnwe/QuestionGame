@@ -2,7 +2,6 @@ package view;
 
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -151,13 +150,13 @@ public class StatsScene extends Scene
 
         buttonHbox.getChildren().add(returnButton);
         borderPane.setTop(buttonHbox);
-        returnButton.setOnAction(event -> backToRecords());
+        returnButton.setOnAction(event -> backToMainMenu());
     }
 
-    public void backToRecords()
+    public void backToMainMenu()
     {
-        LeaderBoardScene leaderBoardScene = new LeaderBoardScene(new ScrollPane(), stage, achievementManager);
-        stage.setScene(leaderBoardScene);
+        MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
+        stage.setScene(menuScene);
     }
     public void createBackground()
     {

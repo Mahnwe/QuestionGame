@@ -4,6 +4,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import util.CustomOption;
 import util.IconCreator;
 import util.PathUtil;
@@ -20,6 +22,7 @@ public class ReturnButton  extends Button {
         this.setPrefHeight(70);
         this.setPrefWidth(70);
         Tooltip returnTooltip = new Tooltip(UtilStringStorage.returnButton);
+        returnTooltip.setFont(Font.font("Futura", FontWeight.BOLD, 18));
         this.setTooltip(returnTooltip);
         BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
         this.setBackground(new Background(new BackgroundImage(backArrow, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,

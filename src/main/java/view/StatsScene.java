@@ -47,13 +47,13 @@ public class StatsScene extends Scene
 
     public void create1stRowStatistic()
     {
-        StatsVbox statsVbox1 = new StatsVbox(UtilStringStorage.bestScoreIn10Label, FileUtil.generalSavesFile.getProperty("perfectScore10"));
+        StatsVbox statsVbox1 = new StatsVbox(UtilStringStorage.bestScoreIn10Label, FileUtil.getGeneralSavesFile().getProperty("perfectScore10"));
         gridPane.add(statsVbox1, 0, 2);
 
-        StatsVbox statsVbox2 = new StatsVbox(UtilStringStorage.bestScoreIn15Label, FileUtil.generalSavesFile.getProperty("perfectScore15"));
+        StatsVbox statsVbox2 = new StatsVbox(UtilStringStorage.bestScoreIn15Label, FileUtil.getGeneralSavesFile().getProperty("perfectScore15"));
         gridPane.add(statsVbox2, 0, 3);
 
-        StatsVbox statsVbox3 = new StatsVbox(UtilStringStorage.bestScoreIn20Label, FileUtil.generalSavesFile.getProperty("perfectScore20"));
+        StatsVbox statsVbox3 = new StatsVbox(UtilStringStorage.bestScoreIn20Label, FileUtil.getGeneralSavesFile().getProperty("perfectScore20"));
         gridPane.add(statsVbox3, 0, 4);
 
         StatsVbox statsVbox4 = new StatsVbox(UtilStringStorage.bestScoreSurvivalLabel, checkForBestSurvivalScore());
@@ -62,13 +62,13 @@ public class StatsScene extends Scene
 
     public void create2ndRowStatistic()
     {
-        StatsVbox statsVbox5 = new StatsVbox(UtilStringStorage.questionAnsweredLabel, FileUtil.generalSavesFile.getProperty("questionAnswered"));
+        StatsVbox statsVbox5 = new StatsVbox(UtilStringStorage.questionAnsweredLabel, FileUtil.getGeneralSavesFile().getProperty("questionAnswered"));
         gridPane.add(statsVbox5, 2, 2);
 
-        StatsVbox statsVbox6 = new StatsVbox(UtilStringStorage.goodAnswerNumberLabel, FileUtil.generalSavesFile.getProperty("goodAnswerNumber"));
+        StatsVbox statsVbox6 = new StatsVbox(UtilStringStorage.goodAnswerNumberLabel, FileUtil.getGeneralSavesFile().getProperty("goodAnswerNumber"));
         gridPane.add(statsVbox6, 2, 3);
 
-        StatsVbox statsVbox7 = new StatsVbox(UtilStringStorage.badAnswerNumberLabel, FileUtil.generalSavesFile.getProperty("badAnswerNumber"));
+        StatsVbox statsVbox7 = new StatsVbox(UtilStringStorage.badAnswerNumberLabel, FileUtil.getGeneralSavesFile().getProperty("badAnswerNumber"));
         gridPane.add(statsVbox7, 2, 4);
 
         StatsVbox statsVbox8 = new StatsVbox(UtilStringStorage.successPercentageLabel, calculateSuccessPercentage());
@@ -77,13 +77,13 @@ public class StatsScene extends Scene
 
     public void create3rdRowStatistic()
     {
-        StatsVbox statsVbox9 = new StatsVbox(UtilStringStorage.numberOfGamesLabel, FileUtil.generalSavesFile.getProperty("numberOfGames"));
+        StatsVbox statsVbox9 = new StatsVbox(UtilStringStorage.numberOfGamesLabel, FileUtil.getGeneralSavesFile().getProperty("numberOfGames"));
         gridPane.add(statsVbox9, 4, 2);
 
-        StatsVbox statsVbox10 = new StatsVbox(UtilStringStorage.normalGameModeLabel, FileUtil.generalSavesFile.getProperty("numberOfNormalGames"));
+        StatsVbox statsVbox10 = new StatsVbox(UtilStringStorage.normalGameModeLabel, FileUtil.getGeneralSavesFile().getProperty("numberOfNormalGames"));
         gridPane.add(statsVbox10, 4, 3);
 
-        StatsVbox statsVbox11 = new StatsVbox(UtilStringStorage.survivalGameModeLabel, FileUtil.generalSavesFile.getProperty("numberOfSurvivalGames"));
+        StatsVbox statsVbox11 = new StatsVbox(UtilStringStorage.survivalGameModeLabel, FileUtil.getGeneralSavesFile().getProperty("numberOfSurvivalGames"));
         gridPane.add(statsVbox11, 4, 4);
 
         StatsVbox statsVbox12 = new StatsVbox(UtilStringStorage.timePlayedLabel, calculateTimePlayed());
@@ -93,14 +93,14 @@ public class StatsScene extends Scene
 
     public String calculateTimePlayed()
     {
-        TimePlayedTimer.setTimerDisplay(Long.parseLong(FileUtil.generalSavesFile.getProperty("timePlayed")));
-        return TimePlayedTimer.getElapsedHours()+"Hrs"+TimePlayedTimer.getElapsedMinutes()+"Min"+TimePlayedTimer.getSecondsDisplay()+"Sec";
+        TimePlayedTimer.setTimerDisplay(Long.parseLong(FileUtil.getGeneralSavesFile().getProperty("timePlayed")));
+        return TimePlayedTimer.getHoursDisplay()+"Hrs"+TimePlayedTimer.getMinutesDisplay()+"Min"+TimePlayedTimer.getSecondsDisplay()+"Sec";
     }
 
     public String calculateSuccessPercentage()
     {
-        int questionAnswered = Integer.parseInt(FileUtil.generalSavesFile.getProperty("questionAnswered"));
-        int goodAnswerNumber = Integer.parseInt(FileUtil.generalSavesFile.getProperty("goodAnswerNumber"));
+        int questionAnswered = Integer.parseInt(FileUtil.getGeneralSavesFile().getProperty("questionAnswered"));
+        int goodAnswerNumber = Integer.parseInt(FileUtil.getGeneralSavesFile().getProperty("goodAnswerNumber"));
         int successPercentage;
         if(questionAnswered != 0) {
             successPercentage = (goodAnswerNumber * 100 / questionAnswered);
@@ -114,21 +114,21 @@ public class StatsScene extends Scene
     public String checkForBestSurvivalScore()
     {
         String checkBestSurvivalScore = null;
-        int survivalScore = Integer.parseInt(FileUtil.generalSavesFile.getProperty("survivalScore50"));
+        int survivalScore = Integer.parseInt(FileUtil.getGeneralSavesFile().getProperty("survivalScore50"));
         if(survivalScore != 0)
         {
             checkBestSurvivalScore = String.valueOf(survivalScore);
         }
         if(survivalScore == 0)
         {
-            survivalScore = Integer.parseInt(FileUtil.generalSavesFile.getProperty("survivalScore30"));
+            survivalScore = Integer.parseInt(FileUtil.getGeneralSavesFile().getProperty("survivalScore30"));
             if (survivalScore != 0)
             {
                 checkBestSurvivalScore = String.valueOf(survivalScore);
             }
             if (survivalScore == 0)
             {
-                survivalScore = Integer.parseInt(FileUtil.generalSavesFile.getProperty("survivalScore20"));
+                survivalScore = Integer.parseInt(FileUtil.getGeneralSavesFile().getProperty("survivalScore20"));
                 checkBestSurvivalScore = String.valueOf(survivalScore);
             }
         }

@@ -31,25 +31,25 @@ public class App extends Application
         hyperLinkBackground.setOnAction(linkEvent -> getHostServices().showDocument(hyperLinkBackground.getText()));
 
         FileUtil.createSaveFile();
-        FileUtil.loadFile(FileUtil.generalSavesFile, PathUtil.GENERAL_SAVES_FILE);
-        FileUtil.loadFile(FileUtil.personalizeQuestionsFile, PathUtil.PERSONALIZE_QUESTIONS_FILE);
+        FileUtil.loadFile(FileUtil.getGeneralSavesFile(), PathUtil.GENERAL_SAVES_FILE);
+        FileUtil.loadFile(FileUtil.getPersonalizeQuestionsFile(), PathUtil.PERSONALIZE_QUESTIONS_FILE);
 
         AchievementManager achievementManager = new AchievementManager();
         LanguageScene languageScene = new LanguageScene(new BorderPane(), stage, achievementManager);
         stage.setScene(languageScene);
         stage.setTitle("Launcher");
         stage.show();
-        TimePlayedTimer.startTimer();
 
+        TimePlayedTimer.startTimer();
     }
 
     @Override
     public void stop() {
         // executed when the application shuts down
         TimePlayedTimer.stopTimer();
-        long timeInFile = Long.parseLong(FileUtil.generalSavesFile.getProperty("timePlayed"));
+        long timeInFile = Long.parseLong(FileUtil.getGeneralSavesFile().getProperty("timePlayed"));
         timeInFile += TimePlayedTimer.getElapsedTime();
-        FileUtil.generalSavesFile.setProperty("timePlayed", String.valueOf(timeInFile));
+        FileUtil.getGeneralSavesFile().setProperty("timePlayed", String.valueOf(timeInFile));
         FileUtil.storeGeneralSavesFile();
     }
 }

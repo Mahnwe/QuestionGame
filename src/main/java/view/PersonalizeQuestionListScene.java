@@ -123,7 +123,7 @@ public class PersonalizeQuestionListScene extends Scene {
             for (int i = 0; i < 100; i++)
             {
                 String propertyQuestionKey = PersonalizeQuestionsHandler.getPropertyKeyStart() + i;
-                String checkForProperty = FileUtil.personalizeQuestionsFile.getProperty(propertyQuestionKey + PersonalizeQuestionsHandler.getPropertyKeyQuestion());
+                String checkForProperty = FileUtil.getPersonalizeQuestionsFile().getProperty(propertyQuestionKey + PersonalizeQuestionsHandler.getPropertyKeyQuestion());
 
                 if(checkForProperty != null)
                 {

@@ -71,29 +71,29 @@ public class ResultScene extends VBox
         AchievementManager.notificationAlert = null;
         if(questionCount >= 10 && questionCount < 19)
         {
-            achievementManager.survivalModeResult(questionCount, FileUtil.generalSavesFile, achievementManager);
-            achievementManager.bronzeCupResult(questionCount, playerFinalScore, gameResult, FileUtil.generalSavesFile, achievementManager, bronzeCup);
+            achievementManager.survivalModeResult(questionCount, FileUtil.getGeneralSavesFile(), achievementManager);
+            achievementManager.bronzeCupResult(questionCount, playerFinalScore, gameResult, FileUtil.getGeneralSavesFile(), achievementManager, bronzeCup);
             FileUtil.storeGeneralSavesFile();
         }
         if(questionCount >= 20 && questionCount < 29)
         {
-            achievementManager.survivalModeResult(questionCount, FileUtil.generalSavesFile, achievementManager);
-            achievementManager.silverCupResult(questionCount, playerFinalScore, gameResult, FileUtil.generalSavesFile, achievementManager, silverCup);
+            achievementManager.survivalModeResult(questionCount, FileUtil.getGeneralSavesFile(), achievementManager);
+            achievementManager.silverCupResult(questionCount, playerFinalScore, gameResult, FileUtil.getGeneralSavesFile(), achievementManager, silverCup);
             FileUtil.storeGeneralSavesFile();
         }
         if(questionCount >= 30)
         {
-            achievementManager.survivalModeResult(questionCount, FileUtil.generalSavesFile, achievementManager);
-            achievementManager.goldCupResult(questionCount, playerFinalScore, gameResult, FileUtil.generalSavesFile, achievementManager, goldCup);
+            achievementManager.survivalModeResult(questionCount, FileUtil.getGeneralSavesFile(), achievementManager);
+            achievementManager.goldCupResult(questionCount, playerFinalScore, gameResult, FileUtil.getGeneralSavesFile(), achievementManager, goldCup);
             FileUtil.storeGeneralSavesFile();
         }
         if(questionCount < 10) {
-            FileUtil.generalSavesFile.setProperty("survivalScore20", String.valueOf(questionCount));
+            FileUtil.getGeneralSavesFile().setProperty("survivalScore20", String.valueOf(questionCount));
             Label cupLabel = new Label(UtilStringStorage.noSurviveLabel);
             stylizeLabel(cupLabel, 100, 70);
             gameResult.getChildren().add(cupLabel);
         }
-        achievementManager.checkNumberOfGamesAchievement(achievementManager, FileUtil.generalSavesFile);
+        achievementManager.checkNumberOfGamesAchievement(achievementManager, FileUtil.getGeneralSavesFile());
         FileUtil.incrementGeneralStat("numberOfSurvivalGames");
         FileUtil.storeGeneralSavesFile();
     }
@@ -103,24 +103,24 @@ public class ResultScene extends VBox
         AchievementManager.notificationAlert = null;
         if(playerFinalScore >= questionCount*90/100)
         {
-            achievementManager.goldCupResult(questionCount, playerFinalScore, gameResult, FileUtil.generalSavesFile, achievementManager, goldCup);
+            achievementManager.goldCupResult(questionCount, playerFinalScore, gameResult, FileUtil.getGeneralSavesFile(), achievementManager, goldCup);
         }
         if(playerFinalScore > questionCount*60/100 && playerFinalScore <= questionCount*80/100)
         {
-            achievementManager.silverCupResult(questionCount, playerFinalScore, gameResult, FileUtil.generalSavesFile, achievementManager, silverCup);
+            achievementManager.silverCupResult(questionCount, playerFinalScore, gameResult, FileUtil.getGeneralSavesFile(), achievementManager, silverCup);
         }
         if(playerFinalScore >= questionCount*50/100 && playerFinalScore < questionCount*60/100)
         {
-            achievementManager.bronzeCupResult(questionCount, playerFinalScore, gameResult, FileUtil.generalSavesFile, achievementManager, bronzeCup);
+            achievementManager.bronzeCupResult(questionCount, playerFinalScore, gameResult, FileUtil.getGeneralSavesFile(), achievementManager, bronzeCup);
         }
         if(playerFinalScore < questionCount*50/100)
         {
-            achievementManager.checkIfPerfectScoreAchievementIsUnlock(questionCount, playerFinalScore, FileUtil.generalSavesFile, achievementManager);
+            achievementManager.checkIfPerfectScoreAchievementIsUnlock(questionCount, playerFinalScore, FileUtil.getGeneralSavesFile(), achievementManager);
             Label cupLabel = new Label(UtilStringStorage.noCupLabel);
             stylizeLabel(cupLabel, 100, 70);
             gameResult.getChildren().add(cupLabel);
         }
-        achievementManager.checkNumberOfGamesAchievement(achievementManager, FileUtil.generalSavesFile);
+        achievementManager.checkNumberOfGamesAchievement(achievementManager, FileUtil.getGeneralSavesFile());
         FileUtil.incrementGeneralStat("numberOfNormalGames");
         FileUtil.storeGeneralSavesFile();
     }

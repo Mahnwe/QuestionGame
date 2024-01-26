@@ -559,11 +559,11 @@ public class QuestionStorage
     public void checkPersonalizeQuestions()
     {
         PersonalizeQuestionsHandler.addPersonalizeQuestionsToStringList();
-        if(!PersonalizeQuestionsHandler.personalizeQuestionList.isEmpty()) {
+        if(!PersonalizeQuestionsHandler.getPersonalizeQuestionList().isEmpty()) {
             randomIndex = new Random();
-            for (int i = PersonalizeQuestionsHandler.personalizeQuestionList.size(); i > 0; i--) {
+            for (int i = PersonalizeQuestionsHandler.getPersonalizeQuestionList().size(); i > 0; i--) {
                 int randomQuestionIndex = generateRandomIndex();
-                Question question = PersonalizeQuestionsHandler.personalizeQuestionList.remove(randomQuestionIndex);
+                Question question = PersonalizeQuestionsHandler.getPersonalizeQuestionList().remove(randomQuestionIndex);
                 questionList.add(question);
             }
         }
@@ -580,7 +580,7 @@ public class QuestionStorage
 
     public int generateRandomIndex()
     {
-        int maxRandom = PersonalizeQuestionsHandler.personalizeQuestionList.size();
+        int maxRandom = PersonalizeQuestionsHandler.getPersonalizeQuestionList().size();
         int minRandom = 0;
         return randomIndex.nextInt((maxRandom - 1 - minRandom) + 1) + minRandom;
     }

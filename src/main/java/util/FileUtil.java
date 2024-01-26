@@ -12,8 +12,8 @@ import java.util.Properties;
 public class FileUtil {
 
     private static final Logger logger = LogManager.getLogger(FileUtil.class);
-    public static Properties generalSavesFile = new Properties();
-    public static Properties personalizeQuestionsFile = new Properties();
+    protected static Properties generalSavesFile = new Properties();
+    protected static Properties personalizeQuestionsFile = new Properties();
     public static File saveFile;
 
     public static void loadFile(Properties properties, final String filePath)
@@ -141,4 +141,11 @@ public class FileUtil {
         TimePlayedTimer.startTimer();
     }
 
+    public static Properties getGeneralSavesFile() {
+        return generalSavesFile;
+    }
+
+    public static Properties getPersonalizeQuestionsFile() {
+        return personalizeQuestionsFile;
+    }
 }

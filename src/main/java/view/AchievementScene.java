@@ -155,21 +155,21 @@ public class AchievementScene extends Scene
 
     public void checkAchievements()
     {
-        checkPropertyKeyNumber(FileUtil.generalSavesFile, "goldCup", 0, goldCupAchievementInfo);
-        checkPropertyKeyNumber(FileUtil.generalSavesFile,"silverCup", 1, silverCupAchievementInfo);
-        checkPropertyKeyNumber(FileUtil.generalSavesFile,"bronzeCup", 2, bronzeCupAchievementInfo);
+        checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(), "goldCup", 0, goldCupAchievementInfo);
+        checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(),"silverCup", 1, silverCupAchievementInfo);
+        checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(),"bronzeCup", 2, bronzeCupAchievementInfo);
 
-        checkPropertyKeyNumber(FileUtil.generalSavesFile, "perfectScore10", 3, perfectScoreAchievementInfo);
-        checkPropertyKeyNumber(FileUtil.generalSavesFile, "perfectScore15", 4, perfectScoreAchievement15Info);
-        checkPropertyKeyNumber(FileUtil.generalSavesFile, "perfectScore20", 5, perfectScoreAchievement20Info);
+        checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(), "perfectScore10", 3, perfectScoreAchievementInfo);
+        checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(), "perfectScore15", 4, perfectScoreAchievement15Info);
+        checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(), "perfectScore20", 5, perfectScoreAchievement20Info);
 
-        checkPropertyKeyNumber(FileUtil.generalSavesFile, "survivalScore20", 6, survivalAchievement20Info);
-        checkPropertyKeyNumber(FileUtil.generalSavesFile, "survivalScore30", 7, survivalAchievement30Info);
-        checkPropertyKeyNumber(FileUtil.generalSavesFile, "survivalScore50", 8, survivalAchievement40Info);
+        checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(), "survivalScore20", 6, survivalAchievement20Info);
+        checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(), "survivalScore30", 7, survivalAchievement30Info);
+        checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(), "survivalScore50", 8, survivalAchievement40Info);
 
-        checkPropertyKeyNumber(FileUtil.generalSavesFile, "numberOfGames", 9, numberOfGamesPlayed5Info);
-        checkPropertyKeyNumber(FileUtil.generalSavesFile, "numberOfGames", 10, numberOfGamesPlayed10Info);
-        checkPropertyKeyNumber(FileUtil.generalSavesFile, "numberOfGames", 11, numberOfGamesPlayed20Info);
+        checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(), "numberOfGames", 9, numberOfGamesPlayed5Info);
+        checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(), "numberOfGames", 10, numberOfGamesPlayed10Info);
+        checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(), "numberOfGames", 11, numberOfGamesPlayed20Info);
 
         int checkNbrOfAchievementUnlock = checkSecretAchievement();
         achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(12), checkNbrOfAchievementUnlock);
@@ -178,9 +178,9 @@ public class AchievementScene extends Scene
         {
             secretAchievementLabel.setText(UtilStringStorage.secretAchievement);
             TrophyScene.setAllAchievementAreUnlocked(true);
-            int nbrOfSecretCup = Integer.parseInt(FileUtil.generalSavesFile.getProperty("secretCup"));
+            int nbrOfSecretCup = Integer.parseInt(FileUtil.getGeneralSavesFile().getProperty("secretCup"));
             nbrOfSecretCup++;
-            FileUtil.generalSavesFile.setProperty("secretCup", String.valueOf(nbrOfSecretCup));
+            FileUtil.getGeneralSavesFile().setProperty("secretCup", String.valueOf(nbrOfSecretCup));
         }
     }
 

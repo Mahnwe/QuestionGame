@@ -5,8 +5,10 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import util.CustomOption;
-import util.IconCreator;
+import javafx.stage.Stage;
+import model.AchievementManager;
+import model.SoundManager;
+import util.*;
 
 public class LanguageButton extends Button {
 
@@ -35,6 +37,43 @@ public class LanguageButton extends Button {
         this.setOnMouseExited(event -> {
             this.setEffect(null);
             this.setBorder(null);
+        });
+    }
+
+    public void setUpEnglishLanguageButton(Button button, UtilTranslateString utilTranslateString, Stage stage, AchievementManager achievementManager, boolean isMusicPlaying)
+    {
+        button.setOnAction(event -> {
+            utilTranslateString.translateEngString();
+            if(isMusicPlaying)
+            {
+                SoundManager.checkIfMusicIsPlayed(App.menuMusicToStop);
+            }
+            
+            App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
+            MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
+            stage.setMinHeight(750);
+            stage.setMinWidth(1200);
+            stage.setScene(menuScene);
+            stage.setTitle(UtilStringStorage.gameTitle);
+            stage.show();
+        });
+    }
+    public void setUpFrenchLanguageButton(Button button, UtilTranslateString utilTranslateString, Stage stage, AchievementManager achievementManager, boolean isMusicPlaying)
+    {
+        button.setOnAction(event -> {
+            utilTranslateString.translateFrString();
+            if(isMusicPlaying)
+            {
+                SoundManager.checkIfMusicIsPlayed(App.menuMusicToStop);
+            }
+
+            App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
+            MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
+            stage.setMinHeight(750);
+            stage.setMinWidth(1200);
+            stage.setScene(menuScene);
+            stage.setTitle(UtilStringStorage.gameTitle);
+            stage.show();
         });
     }
 }

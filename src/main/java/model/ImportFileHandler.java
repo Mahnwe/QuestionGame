@@ -53,9 +53,9 @@ public class ImportFileHandler {
         FileChooser fileChooserGetNumber = new FileChooser();
         fileChooserGetNumber.setInitialDirectory(new File(IMPORT_PATH));
         int numberOfFileInDirectory = Objects.requireNonNull(fileChooserGetNumber.getInitialDirectory().listFiles()).length;
-        FileUtil.generalSavesFile.setProperty("numberOfImportFile", String.valueOf(numberOfFileInDirectory));
+        FileUtil.getGeneralSavesFile().setProperty("numberOfImportFile", String.valueOf(numberOfFileInDirectory));
         FileUtil.storeGeneralSavesFile();
-        int numberOfImportFile = Integer.parseInt(FileUtil.generalSavesFile.getProperty("numberOfImportFile"));
+        int numberOfImportFile = Integer.parseInt(FileUtil.getGeneralSavesFile().getProperty("numberOfImportFile"));
         if(numberOfImportFile >= 1) {
             for (int i = 0; i < Objects.requireNonNull(fileChooserGetNumber.getInitialDirectory().listFiles()).length; i++)
             {
@@ -70,7 +70,7 @@ public class ImportFileHandler {
     public static void addImportPersonalizeQuestionsToStringList()
     {
         addFileToList();
-        int numberOfImportFiles = Integer.parseInt(FileUtil.generalSavesFile.getProperty("numberOfImportFile"));
+        int numberOfImportFiles = Integer.parseInt(FileUtil.getGeneralSavesFile().getProperty("numberOfImportFile"));
         for(int i = 0; i < numberOfImportFiles; i++) {
             int propertyKeyQuestionNumber = Integer.parseInt(propertiesList.get(i).getProperty(PersonalizeQuestionsHandler.QUESTION_NUMBER_KEY_PROPERTIES));
             String propertyReadQuestionKey;
@@ -100,7 +100,7 @@ public class ImportFileHandler {
                 if (file.getName().equals("PersonalizeQuestions.properties")) {
                     readSaveFile(propertiesImportFile, file);
 
-                    int numberOfImportFile = Integer.parseInt(FileUtil.generalSavesFile.getProperty("numberOfImportFile"));
+                    int numberOfImportFile = Integer.parseInt(FileUtil.getGeneralSavesFile().getProperty("numberOfImportFile"));
                     numberOfImportFile++;
                     boolean isFull = true;
                     FileChooser fileCheckForImportPlace = new FileChooser();
@@ -126,7 +126,7 @@ public class ImportFileHandler {
         for (int i = 0; i < Objects.requireNonNull(fileCheckForImportPlace.getInitialDirectory().listFiles()).length; i++) {
             String checkAllPath = PREFIX_CHECK_FILE_PATH + i + SUFFIX_CHECK_FILE_PATH;
             if (!checkAllPath.equals(Arrays.stream(Objects.requireNonNull(fileCheckForImportPlace.getInitialDirectory().listFiles())).toList().get(i).getAbsolutePath())) {
-                FileUtil.generalSavesFile.setProperty("numberOfImportFile", String.valueOf(numberOfImportFile));
+                FileUtil.getGeneralSavesFile().setProperty("numberOfImportFile", String.valueOf(numberOfImportFile));
                 FileUtil.storeGeneralSavesFile();
                 String getI = String.valueOf(i);
                 storeImportPersonalizeQuestionsFile(propertiesImportFile, PREFIX_CHECK_FILE_PATH + getI + SUFFIX_CHECK_FILE_PATH);
@@ -135,7 +135,7 @@ public class ImportFileHandler {
             }
         }
         if (isFull) {
-            FileUtil.generalSavesFile.setProperty("numberOfImportFile", String.valueOf(numberOfImportFile));
+            FileUtil.getGeneralSavesFile().setProperty("numberOfImportFile", String.valueOf(numberOfImportFile));
             FileUtil.storeGeneralSavesFile();
             int calculateNumber = (numberOfImportFile - 1);
             storeImportPersonalizeQuestionsFile(propertiesImportFile, PREFIX_CHECK_FILE_PATH + calculateNumber + SUFFIX_CHECK_FILE_PATH);

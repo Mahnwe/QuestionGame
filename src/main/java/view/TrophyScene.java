@@ -77,7 +77,7 @@ public class TrophyScene extends Scene
         Label goldCupNumber = new Label();
 
         goldCupImage.getChildren().add(goldCup);
-        setUpVbox(goldCupImage, nbrOfGoldCupLabel, 0, 25, UtilStringStorage.goldCupTrophy, FileUtil.generalSavesFile, "goldCup", goldCupNumber);
+        setUpVbox(goldCupImage, nbrOfGoldCupLabel, 0, 25, UtilStringStorage.goldCupTrophy, FileUtil.getGeneralSavesFile(), "goldCup", goldCupNumber);
         goldCupImage.getChildren().add(goldCupNumber);
     }
     public void createSilverVbox()
@@ -89,7 +89,7 @@ public class TrophyScene extends Scene
 
         silverCupImage.getChildren().add(silverCup);
         silverCup.setTranslateX(10);
-        setUpVbox(silverCupImage, nbrOfSilverCupLabel, 0, 25, UtilStringStorage.silverCupTrophy, FileUtil.generalSavesFile, "silverCup", silverCupNumber);
+        setUpVbox(silverCupImage, nbrOfSilverCupLabel, 0, 25, UtilStringStorage.silverCupTrophy, FileUtil.getGeneralSavesFile(), "silverCup", silverCupNumber);
         silverCupImage.getChildren().add(silverCupNumber);
     }
     public void createBronzeVbox()
@@ -100,7 +100,7 @@ public class TrophyScene extends Scene
         Label bronzeCupNumber = new Label();
 
         bronzeCupImage.getChildren().add(bronzeCup);
-        setUpVbox(bronzeCupImage, nbrOfBronzeCupLabel, 0, 25, UtilStringStorage.bronzeCupTrophy, FileUtil.generalSavesFile, "bronzeCup", bronzeCupNumber);
+        setUpVbox(bronzeCupImage, nbrOfBronzeCupLabel, 0, 25, UtilStringStorage.bronzeCupTrophy, FileUtil.getGeneralSavesFile(), "bronzeCup", bronzeCupNumber);
         bronzeCupImage.getChildren().add(bronzeCupNumber);
     }
 
@@ -112,7 +112,7 @@ public class TrophyScene extends Scene
         Label secretCupNumber = new Label();
 
         secretCupImage.getChildren().add(secretCup);
-        setUpVbox(secretCupImage, nbrOfSecretCupLabel, 0, 25, UtilStringStorage.secretCupTrophy, FileUtil.generalSavesFile, "secretCup", secretCupNumber);
+        setUpVbox(secretCupImage, nbrOfSecretCupLabel, 0, 25, UtilStringStorage.secretCupTrophy, FileUtil.getGeneralSavesFile(), "secretCup", secretCupNumber);
         secretCupImage.getChildren().add(secretCupNumber);
     }
 

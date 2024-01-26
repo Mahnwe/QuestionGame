@@ -26,8 +26,6 @@ public class OptionScene extends Scene {
     private final VBox importFileVbox;
     private final ConfirmAlert confirmAlert;
     private final BorderPane pane;
-    private LanguageButton engButton;
-    private LanguageButton frButton;
     public static final String OPTION_POLICE_LABEL = "Impact";
     public OptionScene(BorderPane pane, Stage stage, AchievementManager achievementManager)
     {
@@ -51,7 +49,7 @@ public class OptionScene extends Scene {
 
         createSliderArea();
         createReturnButton();
-        createLanguageButton();
+        createButtons();
         createResetButtonArea();
         createCopyFileBox();
         createPasteFileBox();
@@ -206,34 +204,15 @@ public class OptionScene extends Scene {
         volumeSlider.setOnMouseReleased(event -> setVolumeFromSlider(volumeSlider.getValue()));
     }
 
-
     public void createButtons()
     {
+        UtilTranslateString utilTranslateString = new UtilTranslateString();
+
         VBox englishVbox = new VBox();
-        Label englishLabel = new Label("English");
-        englishLabel.setFont(Font.font("Futura", FontWeight.BOLD, 20));
-        englishLabel.setTranslateX(60);
-        englishLabel.setTranslateY(10);
-
-        engButton = new LanguageButton(PathUtil.ENGLISH_FLAG, UtilStringStorage.englishLanguageTooltip);
-
-        englishVbox.getChildren().add(englishLabel);
-        englishVbox.getChildren().add(engButton);
-        englishVbox.setTranslateY(95);
-        englishVbox.setTranslateX(230);
+        createEngVbox(englishVbox, utilTranslateString);
 
         VBox frenchVbox = new VBox();
-        Label frenchLabel = new Label("Français");
-        frenchLabel.setFont(Font.font("Futura", FontWeight.BOLD, 20));
-        frenchLabel.setTranslateX(60);
-        frenchLabel.setTranslateY(10);
-
-        frButton = new LanguageButton(PathUtil.FRENCH_FLAG, UtilStringStorage.frenchLanguageTooltip);
-
-        frenchVbox.getChildren().add(frenchLabel);
-        frenchVbox.getChildren().add(frButton);
-        frenchVbox.setTranslateX(480);
-        frenchVbox.setTranslateY(-12);
+        createFrVbox(frenchVbox, utilTranslateString);
 
         Label languageLabel = new Label(UtilStringStorage.languageLabel);
         stylizeLabel(languageLabel, 85, 405);
@@ -245,38 +224,40 @@ public class OptionScene extends Scene {
         optionVbox.getChildren().add(languageLabel);
         optionVbox.getChildren().add(englishVbox);
         optionVbox.getChildren().add(frenchVbox);
+
     }
 
-    public void createLanguageButton()
+    public void createEngVbox(VBox vBox, UtilTranslateString utilTranslateString)
     {
-        createButtons();
+        Label englishLabel = new Label("English");
+        englishLabel.setFont(Font.font("Futura", FontWeight.BOLD, 20));
+        englishLabel.setTranslateX(60);
+        englishLabel.setTranslateY(10);
 
-        UtilTranslateString utilTranslateString = new UtilTranslateString();
-        engButton.setOnAction(event -> {
-            utilTranslateString.translateEngString();
-            App.menuMusicToStop.stop();
-            SoundManager.checkIfMusicIsPlayed(App.menuMusicToStop);
-            App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
-            MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
-            stage.setMinHeight(750);
-            stage.setMinWidth(1200);
-            stage.setScene(menuScene);
-            stage.setTitle(UtilStringStorage.gameTitle);
-            stage.show();
-        });
+        LanguageButton engButton = new LanguageButton(PathUtil.ENGLISH_FLAG, UtilStringStorage.englishLanguageTooltip);
+        engButton.setUpEnglishLanguageButton(engButton, utilTranslateString, stage, achievementManager, true);
 
-        frButton.setOnAction(event -> {
-            utilTranslateString.translateFrString();
-            App.menuMusicToStop.stop();
-            SoundManager.checkIfMusicIsPlayed(App.menuMusicToStop);
-            App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
-            MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
-            stage.setMinHeight(750);
-            stage.setMinWidth(1200);
-            stage.setScene(menuScene);
-            stage.setTitle(UtilStringStorage.gameTitle);
-            stage.show();
-        });
+        vBox.getChildren().add(englishLabel);
+        vBox.getChildren().add(engButton);
+        vBox.setTranslateY(95);
+        vBox.setTranslateX(230);
+
+    }
+
+    public void createFrVbox(VBox vBox, UtilTranslateString utilTranslateString)
+    {
+        Label frenchLabel = new Label("Français");
+        frenchLabel.setFont(Font.font("Futura", FontWeight.BOLD, 20));
+        frenchLabel.setTranslateX(60);
+        frenchLabel.setTranslateY(10);
+
+        LanguageButton frButton = new LanguageButton(PathUtil.FRENCH_FLAG, UtilStringStorage.frenchLanguageTooltip);
+        frButton.setUpFrenchLanguageButton(frButton, utilTranslateString, stage, achievementManager, true);
+
+        vBox.getChildren().add(frenchLabel);
+        vBox.getChildren().add(frButton);
+        vBox.setTranslateX(480);
+        vBox.setTranslateY(-12);
     }
 
     public void createResetButtonArea()

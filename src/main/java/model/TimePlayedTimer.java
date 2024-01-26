@@ -4,6 +4,8 @@ public class TimePlayedTimer {
     private static long startTime;
     private static long elapsedTime;
     private static long secondsDisplay;
+    private static long minutesDisplay;
+    private static long hoursDisplay;
     private static long elapsedHours;
     private static long elapsedMinutes;
     private static long elapsedSeconds;
@@ -20,9 +22,11 @@ public class TimePlayedTimer {
     public static void setTimerDisplay(long timePlayedInFile)
     {
         setElapsedSeconds(timePlayedInFile / 1000);
-        setSecondsDisplay(getElapsedSeconds() % 60);
         setElapsedMinutes(getElapsedSeconds() / 60);
-        setElapsedHours(getElapsedMinutes() / 60);
+        setElapsedHours(getElapsedSeconds() / 3600);
+        setSecondsDisplay(getElapsedSeconds() % 60);
+        setMinutesDisplay(getElapsedMinutes() % 60);
+        setHoursDisplay(getElapsedHours() % 60);
     }
 
     private static long getStartTime() {
@@ -70,5 +74,10 @@ public class TimePlayedTimer {
     private static void setElapsedSeconds(long elapsedSeconds) {
         TimePlayedTimer.elapsedSeconds = elapsedSeconds;
     }
+    private static void setMinutesDisplay(long minutesDisplay) {TimePlayedTimer.minutesDisplay = minutesDisplay;}
+    private static void setHoursDisplay(long hoursDisplay) {TimePlayedTimer.hoursDisplay = hoursDisplay;}
 
+    public static long getMinutesDisplay() {return minutesDisplay;}
+
+    public static long getHoursDisplay() {return hoursDisplay;}
 }

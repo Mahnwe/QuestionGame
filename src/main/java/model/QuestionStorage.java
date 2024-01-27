@@ -554,6 +554,21 @@ public class QuestionStorage
                 UtilStringStorage.explanation107);
         questionList.add(question107);
 
+        Question question108 = new Question(UtilStringStorage.paleontology, UtilStringStorage.question108,UtilStringStorage.answerA108,
+                UtilStringStorage.answerB108, UtilStringStorage.answerC108, UtilStringStorage.answerD108, UtilStringStorage.goodAnswer108,
+                UtilStringStorage.explanation108);
+        questionList.add(question108);
+
+        Question question109 = new Question(UtilStringStorage.monument, UtilStringStorage.question109,UtilStringStorage.answerA109,
+                UtilStringStorage.answerB109, UtilStringStorage.answerC109, UtilStringStorage.answerD109, UtilStringStorage.goodAnswer109,
+                UtilStringStorage.explanation109);
+        questionList.add(question109);
+
+        Question question110 = new Question(UtilStringStorage.monument, UtilStringStorage.question110,UtilStringStorage.answerA110,
+                UtilStringStorage.answerB110, UtilStringStorage.answerC110, UtilStringStorage.answerD110, UtilStringStorage.goodAnswer110,
+                UtilStringStorage.explanation110);
+        questionList.add(question110);
+
     }
 
     public void checkPersonalizeQuestions()

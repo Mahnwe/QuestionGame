@@ -41,6 +41,7 @@ public class UtilStringStorage
     public static String nature = "";
     public static String invention = "";
     public static String science = "";
+    public static String monument = "";
 
     // ACHIEVEMENTS
     public static String achievementLabel = "";
@@ -968,5 +969,26 @@ public class UtilStringStorage
     public static String answerD107 = "";
     public static String goodAnswer107 = "";
     public static String explanation107 = "";
+    public static String question108 = "";
+    public static String answerA108 = "";
+    public static String answerB108 = "";
+    public static String answerC108 = "";
+    public static String answerD108 = "";
+    public static String goodAnswer108 = "";
+    public static String explanation108 = "";
+    public static String question109 = "";
+    public static String answerA109 = "";
+    public static String answerB109 = "";
+    public static String answerC109 = "";
+    public static String answerD109 = "";
+    public static String goodAnswer109 = "";
+    public static String explanation109 = "";
+    public static String question110 = "";
+    public static String answerA110 = "";
+    public static String answerB110 = "";
+    public static String answerC110 = "";
+    public static String answerD110 = "";
+    public static String goodAnswer110 = "";
+    public static String explanation110 = "";
 
 }

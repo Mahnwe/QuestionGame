@@ -141,6 +141,13 @@ public class FileUtil {
         TimePlayedTimer.startTimer();
     }
 
+    public static void createAndLoadFiles()
+    {
+        FileUtil.createSaveFile();
+        FileUtil.loadFile(generalSavesFile, PathUtil.GENERAL_SAVES_FILE);
+        FileUtil.loadFile(personalizeQuestionsFile, PathUtil.PERSONALIZE_QUESTIONS_FILE);
+    }
+
     public static Properties getGeneralSavesFile() {
         return generalSavesFile;
     }

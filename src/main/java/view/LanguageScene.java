@@ -34,6 +34,15 @@ public class LanguageScene extends Scene
         createBackground();
     }
 
+    public static void launchGame(Stage stage)
+    {
+        AchievementManager achievementManager = new AchievementManager();
+        LanguageScene languageScene = new LanguageScene(new BorderPane(), stage, achievementManager);
+        stage.setScene(languageScene);
+        stage.setTitle("Launcher");
+        stage.show();
+    }
+
     public void createTitleArea()
     {
         vBox = new VBox();

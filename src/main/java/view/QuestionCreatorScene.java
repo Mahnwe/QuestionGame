@@ -26,7 +26,7 @@ public class QuestionCreatorScene extends Scene {
     private final BorderPane multiPane = new BorderPane();
     public static final String POLICE_LABEL = "Futura";
     private final VBox centerVbox;
-    public static List<QuestionCreatorTextArea> textAreaList = new ArrayList<>();
+    private final List<QuestionCreatorTextArea> textAreaList = new ArrayList<>();
     private final ValidateQuestionCreationButton validateQuestionCreationButton;
     private Label isCreatedLabel;
 
@@ -34,6 +34,8 @@ public class QuestionCreatorScene extends Scene {
     {
         super(pane);
         this.borderPane = pane;
+        borderPane.setPrefWidth(1200);
+        borderPane.setPrefHeight(750);
         this.stage = stage;
         this.achievementManager = achievementManager;
 

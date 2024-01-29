@@ -1,7 +1,6 @@
 package util;
 
 import model.PersonalizeQuestionsHandler;
-import model.TimePlayedTimer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -129,16 +128,6 @@ public class FileUtil {
         checkForStat++;
         generalSavesFile.setProperty(propertyKey, String.valueOf(checkForStat));
         storeGeneralSavesFile();
-    }
-
-    public static void actualizeTimePlayed()
-    {
-        TimePlayedTimer.stopTimer();
-        long timeInFile = Long.parseLong(FileUtil.generalSavesFile.getProperty("timePlayed"));
-        timeInFile += TimePlayedTimer.getElapsedTime();
-        FileUtil.generalSavesFile.setProperty("timePlayed", String.valueOf(timeInFile));
-        FileUtil.storeGeneralSavesFile();
-        TimePlayedTimer.startTimer();
     }
 
     public static void createAndLoadFiles()

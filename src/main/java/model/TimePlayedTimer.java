@@ -1,5 +1,7 @@
 package model;
 
+import util.FileUtil;
+
 public class TimePlayedTimer {
     private static long startTime;
     private static long elapsedTime;
@@ -27,6 +29,25 @@ public class TimePlayedTimer {
         setSecondsDisplay(getElapsedSeconds() % 60);
         setMinutesDisplay(getElapsedMinutes() % 60);
         setHoursDisplay(getElapsedHours() % 60);
+    }
+
+    public static void calculateTimer()
+    {
+        TimePlayedTimer.stopTimer();
+        long timeInFile = Long.parseLong(FileUtil.getGeneralSavesFile().getProperty("timePlayed"));
+        timeInFile += TimePlayedTimer.getElapsedTime();
+        FileUtil.getGeneralSavesFile().setProperty("timePlayed", String.valueOf(timeInFile));
+        FileUtil.storeGeneralSavesFile();
+    }
+
+    public static void actualizeTimePlayed()
+    {
+        TimePlayedTimer.stopTimer();
+        long timeInFile = Long.parseLong(FileUtil.getGeneralSavesFile().getProperty("timePlayed"));
+        timeInFile += TimePlayedTimer.getElapsedTime();
+        FileUtil.getGeneralSavesFile().setProperty("timePlayed", String.valueOf(timeInFile));
+        FileUtil.storeGeneralSavesFile();
+        TimePlayedTimer.startTimer();
     }
 
     private static long getStartTime() {

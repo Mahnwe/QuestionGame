@@ -14,16 +14,13 @@ public class App extends Application
     public static Hyperlink hyperLinkIcon;
     public static Hyperlink hyperLinkIcon2;
     public static Hyperlink hyperLinkBackground;
-    public static void main (String[]args) {
-        launch(args);
-    }
     @Override
     public void start(Stage stage)
     {
         createHyperLinks();
         FileUtil.createAndLoadFiles();
-        LanguageScene.launchGame(stage);
         TimePlayedTimer.startTimer();
+        LaunchManager.launchGame(stage);
     }
 
     public void createHyperLinks()
@@ -39,10 +36,6 @@ public class App extends Application
     @Override
     public void stop() {
         // executed when the application shuts down
-        TimePlayedTimer.stopTimer();
-        long timeInFile = Long.parseLong(FileUtil.getGeneralSavesFile().getProperty("timePlayed"));
-        timeInFile += TimePlayedTimer.getElapsedTime();
-        FileUtil.getGeneralSavesFile().setProperty("timePlayed", String.valueOf(timeInFile));
-        FileUtil.storeGeneralSavesFile();
+        TimePlayedTimer.calculateTimer();
     }
 }

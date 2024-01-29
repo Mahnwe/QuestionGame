@@ -22,6 +22,8 @@ public class StatsScene extends Scene
     {
         super(borderPane);
         this.borderPane = borderPane;
+        borderPane.setPrefHeight(750);
+        borderPane.setPrefWidth(1200);
         this.stage = stage;
         this.achievementManager = achievementManager;
 

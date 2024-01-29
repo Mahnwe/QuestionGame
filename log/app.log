@@ -1,3 +1,4 @@
-2023-11-20 23:02:57.082 ERROR [JavaFX Application Thread] [util.QuestionException.<init>(QuestionException.java:13)] - Question list can't be create, may be Out of bounds exception, GameHandler.setupQuestionList
-2023-11-20 23:02:57.729 ERROR [JavaFX Application Thread] [util.QuestionException.<init>(QuestionException.java:13)] - Question list can't be create, may be Out of bounds exception, GameHandler.setupQuestionList
-2023-11-20 23:02:59.741 ERROR [JavaFX Application Thread] [util.QuestionException.<init>(QuestionException.java:13)] - Question list can't be create, may be Out of bounds exception, GameHandler.setupQuestionList
+2024-01-12 03:31:15.581 ERROR [JavaFX Application Thread] [model.ImportFileHandler.loadFile(ImportFileHandler.java:135)] - Stream can't be create
+2024-01-12 03:40:44.962 ERROR [JavaFX Application Thread] [model.ImportFileHandler.loadFile(ImportFileHandler.java:139)] - Stream can't be create
+2024-01-12 21:39:23.063 ERROR [JavaFX Application Thread] [model.ImportFileHandler.loadFile(ImportFileHandler.java:156)] - Stream can't be create
+2024-01-12 21:41:08.631 ERROR [JavaFX Application Thread] [model.ImportFileHandler.loadFile(ImportFileHandler.java:157)] - Stream can't be create

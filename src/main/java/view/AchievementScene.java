@@ -43,10 +43,11 @@ public class AchievementScene extends Scene
     public AchievementScene(ScrollPane scrollPane, AchievementManager achievementManager, Stage stage)
     {
         super(scrollPane);
+        scrollPane.setPrefHeight(750);
+        scrollPane.setPrefWidth(1200);
         scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
         scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         scrollPane.setFitToWidth(true);
-        scrollPane.setMinHeight(950);
 
         this.stage = stage;
         this.achievementManager = achievementManager;

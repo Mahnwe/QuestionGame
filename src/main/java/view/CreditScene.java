@@ -24,6 +24,8 @@ public class CreditScene extends Scene
     {
         super(pane);
         this.pane = pane;
+        pane.setPrefHeight(750);
+        pane.setPrefWidth(1200);
         this.stage = stage;
         this.achievementManager = achievementManager;
 

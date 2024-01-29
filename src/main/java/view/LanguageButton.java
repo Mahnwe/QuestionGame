@@ -44,11 +44,10 @@ public class LanguageButton extends Button {
     {
         button.setOnAction(event -> {
             utilTranslateString.translateEngString();
-            if(isMusicPlaying)
-            {
-                SoundManager.checkIfMusicIsPlayed(App.menuMusicToStop);
-            }
-            
+            if(isMusicPlaying) { SoundManager.checkIfMusicIsPlayed(App.menuMusicToStop); }
+
+            FileUtil.getGeneralSavesFile().setProperty("saveLanguageOption", "English");
+            FileUtil.storeGeneralSavesFile();
             App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
             MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
             stage.setMinHeight(750);
@@ -66,7 +65,8 @@ public class LanguageButton extends Button {
             {
                 SoundManager.checkIfMusicIsPlayed(App.menuMusicToStop);
             }
-
+            FileUtil.getGeneralSavesFile().setProperty("saveLanguageOption", "French");
+            FileUtil.storeGeneralSavesFile();
             App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
             MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
             stage.setMinHeight(750);

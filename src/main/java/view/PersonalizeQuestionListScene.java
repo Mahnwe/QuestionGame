@@ -32,6 +32,8 @@ public class PersonalizeQuestionListScene extends Scene {
     {
         super(scrollPane);
         this.stage = stage;
+        scrollPane.setPrefHeight(750);
+        scrollPane.setPrefWidth(1200);
         this.achievementManager = achievementManager;
         this.confirmAlert = new ConfirmAlert(Alert.AlertType.CONFIRMATION);
 

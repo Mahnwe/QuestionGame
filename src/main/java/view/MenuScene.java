@@ -48,7 +48,7 @@ public class MenuScene extends Scene
 
         this.gameHandler = new GameHandler();
         this.achievementManager = achievementManager;
-        FileUtil.actualizeTimePlayed();
+        TimePlayedTimer.actualizeTimePlayed();
         createWelcomeArea();
         createIconOptionButton();
         createLeaderBoardButtonArea();

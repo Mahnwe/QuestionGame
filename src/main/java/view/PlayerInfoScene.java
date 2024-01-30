@@ -35,9 +35,7 @@ public class PlayerInfoScene extends Scene
         this.player = player;
 
         createBackground();
-
         createVBoxGetPlayerName();
-
     }
 
     public void createVBoxGetPlayerName()

@@ -31,7 +31,7 @@ public class CreditScene extends Scene
 
         createReturnButton();
         createBackground();
-        createCreditArea();
+        createVboxArea();
     }
 
     public void createReturnButton()
@@ -39,7 +39,6 @@ public class CreditScene extends Scene
         ReturnButton returnButton = new ReturnButton();
         pane.setTop(returnButton);
         returnButton.setOnAction(event -> backToMainMenu());
-
     }
 
     public void setUpLabels(Label label, String string, int labelSize, int translateX, int translateY)
@@ -57,10 +56,20 @@ public class CreditScene extends Scene
         hyperlink.setTranslateY(translateY);
     }
 
-    public void createCreditArea()
+    public void createVboxArea()
     {
         creditVbox = new VBox();
 
+        createCreditLabelArea();
+        createCreditLinkArea();
+
+        pane.setCenter(creditVbox);
+        creditVbox.setTranslateX(100);
+        creditVbox.setTranslateY(50);
+    }
+
+    public void createCreditLabelArea()
+    {
         Label generalThankLabel = new Label();
         setUpLabels(generalThankLabel, UtilStringStorage.generalThank,  27, 160, 30);
         generalThankLabel.setFont(Font.font("Impact", FontWeight.BOLD, 25));
@@ -91,7 +100,10 @@ public class CreditScene extends Scene
 
         addLabelInVbox(generalThankLabel, kebabThank, pandaThank, satanThank, givrThank);
         addLabelInVboxPart2(yukiThank, darkwestThank, darkantThank, bestLabel);
+    }
 
+    public void createCreditLinkArea()
+    {
         Label linkLabel = new Label();
         setUpLabels(linkLabel, UtilStringStorage.linkLabel, 27, 750, -100);
         linkLabel.setFont(Font.font("Impact", FontWeight.BOLD, 25));
@@ -109,10 +121,6 @@ public class CreditScene extends Scene
         creditVbox.getChildren().add(hyperLinkIcon);
         creditVbox.getChildren().add(hyperLinkIcon2);
         creditVbox.getChildren().add(hyperlinkBackground);
-
-        pane.setCenter(creditVbox);
-        creditVbox.setTranslateX(100);
-        creditVbox.setTranslateY(50);
     }
 
     public void addLabelInVbox(Label label1, Label label2, Label label3, Label label4, Label label5)

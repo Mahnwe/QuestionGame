@@ -32,18 +32,17 @@ public class PersonalizeQuestionListScene extends Scene {
     {
         super(scrollPane);
         this.stage = stage;
-        scrollPane.setPrefHeight(750);
-        scrollPane.setPrefWidth(1200);
         this.achievementManager = achievementManager;
         this.confirmAlert = new ConfirmAlert(Alert.AlertType.CONFIRMATION);
 
         this.mainBorderPane = new BorderPane();
         mainBorderPane.setMinHeight(1080);
 
+        scrollPane.setPrefHeight(750);
+        scrollPane.setPrefWidth(1200);
         scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
         scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         scrollPane.setFitToWidth(true);
-
         scrollPane.setContent(mainBorderPane);
 
         createReturnButton();
@@ -68,8 +67,18 @@ public class PersonalizeQuestionListScene extends Scene {
         questionsAreDeletedLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 18));
         questionsAreDeletedLabel.setVisible(false);
 
-        deleteAllPersonalizeQuestionsButton.setOnAction(event -> {
-            questionsAreDeletedLabel.setText(UtilStringStorage.questionAreDeleted);
+       setOnActionDeleteAllQuestionsButton(deleteAllPersonalizeQuestionsButton, questionsAreDeletedLabel);
+
+        deleteAllVbox.getChildren().add(deleteAllLabel);
+        deleteAllVbox.getChildren().add(deleteAllPersonalizeQuestionsButton);
+        deleteAllVbox.getChildren().add(questionsAreDeletedLabel);
+        deletedAreaVbox.getChildren().add(deleteAllVbox);
+    }
+
+    public void setOnActionDeleteAllQuestionsButton(Button button, Label label)
+    {
+        button.setOnAction(event -> {
+            label.setText(UtilStringStorage.questionAreDeleted);
             confirmAlert.modifyConfirmAlert(UtilStringStorage.confirmAlertDeleteAllQuestions);
             Optional<ButtonType> result = confirmAlert.showAndWait();
             if(result.orElse(null) == ButtonType.OK)
@@ -77,18 +86,14 @@ public class PersonalizeQuestionListScene extends Scene {
                 if(PersonalizeQuestionsHandler.getPropertyKeyQuestionNumber() > 0) {
                     FileUtil.resetPersonalizeQuestionFile();
                     backToMainMenu();
-                    questionsAreDeletedLabel.setVisible(true);
+                    label.setVisible(true);
                 } else {
-                    questionsAreDeletedLabel.setText(UtilStringStorage.nothingToDelete);
-                    questionsAreDeletedLabel.setVisible(true);
+                    label.setText(UtilStringStorage.nothingToDelete);
+                    label.setVisible(true);
                 }
                 gridpane.getChildren().clear();
             }
         });
-        deleteAllVbox.getChildren().add(deleteAllLabel);
-        deleteAllVbox.getChildren().add(deleteAllPersonalizeQuestionsButton);
-        deleteAllVbox.getChildren().add(questionsAreDeletedLabel);
-        deletedAreaVbox.getChildren().add(deleteAllVbox);
     }
 
     public void createGridPaneList()
@@ -110,6 +115,14 @@ public class PersonalizeQuestionListScene extends Scene {
         titleLabel.setTranslateX(250);
         questionListVbox.getChildren().add(titleLabel);
 
+        createIndividualQuestionArea();
+
+        gridpane.setTranslateX(50);
+        questionListVbox.getChildren().add(gridpane);
+    }
+
+    public void createIndividualQuestionArea()
+    {
         if(PersonalizeQuestionsHandler.getPropertyKeyQuestionNumber() == 0)
         {
             HBox hBox = new HBox();
@@ -140,21 +153,25 @@ public class PersonalizeQuestionListScene extends Scene {
                     label.setText("Question n°" + (i+1) + " : " + checkForProperty);
                     hBox.getChildren().add(label);
 
-                    deleteButton.setOnAction(event -> {
-                        confirmAlert.modifyConfirmAlert(UtilStringStorage.individualConfirmDelete);
-                        Optional<ButtonType> result = confirmAlert.showAndWait();
-                        if(result.orElse(null) == ButtonType.OK) {
-                            PersonalizeQuestionsHandler.deleteIndividualQuestion(propertyQuestionKey);
-                            PersonalizeQuestionListScene personalizeQuestionListScene = new PersonalizeQuestionListScene(new ScrollPane(), stage, achievementManager);
-                            stage.setScene(personalizeQuestionListScene);
-                        }
-                    });
+                    setOnActionIndividualDeleteButton(deleteButton, propertyQuestionKey);
+
                     gridpane.add(hBox, 0, i);
                 }
             }
         }
-        gridpane.setTranslateX(50);
-        questionListVbox.getChildren().add(gridpane);
+    }
+
+    public void setOnActionIndividualDeleteButton(Button button, String propertyString)
+    {
+        button.setOnAction(event -> {
+            confirmAlert.modifyConfirmAlert(UtilStringStorage.individualConfirmDelete);
+            Optional<ButtonType> result = confirmAlert.showAndWait();
+            if(result.orElse(null) == ButtonType.OK) {
+                PersonalizeQuestionsHandler.deleteIndividualQuestion(propertyString);
+                PersonalizeQuestionListScene personalizeQuestionListScene = new PersonalizeQuestionListScene(new ScrollPane(), stage, achievementManager);
+                stage.setScene(personalizeQuestionListScene);
+            }
+        });
     }
 
     public void createDeleteArea()

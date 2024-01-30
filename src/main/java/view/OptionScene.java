@@ -241,7 +241,6 @@ public class OptionScene extends Scene {
         vBox.getChildren().add(engButton);
         vBox.setTranslateY(95);
         vBox.setTranslateX(230);
-
     }
 
     public void createFrVbox(VBox vBox, UtilTranslateString utilTranslateString)
@@ -262,21 +261,7 @@ public class OptionScene extends Scene {
 
     public void createResetButtonArea()
     {
-        Button resetButton = new Button();
-        resetButton.setTranslateY(105);
-        resetButton.setTranslateX(410);
-        CustomOption.setUpTrashButton(resetButton, UtilStringStorage.resetTooltip);
-        resetButton.setOnAction(event -> {
-            Optional<ButtonType> result = confirmAlert.showAndWait();
-            if(result.orElse(null) == ButtonType.OK)
-            {
-                TimePlayedTimer.stopTimer();
-                resetSave();
-                TimePlayedTimer.startTimer();
-                MenuScene menuScene = new MenuScene(new BorderPane(), stage, new AchievementManager());
-                stage.setScene(menuScene);
-            }
-        });
+        ResetAllSavesButton resetButton = new ResetAllSavesButton(confirmAlert, stage);
 
         Label resetLabel = new Label(UtilStringStorage.resetLabel);
         stylizeLabel(resetLabel, 15, 10);
@@ -302,11 +287,6 @@ public class OptionScene extends Scene {
     {
         SoundManager.handleMenuSceneVolume(App.menuMusicToStop, sliderValue);
         SoundManager.setSoundVolume(sliderValue);
-    }
-    public void resetSave()
-    {
-       FileUtil.resetSaveFile();
-       FileUtil.resetGeneralSavesFile();
     }
     public void backToMainMenu()
     {

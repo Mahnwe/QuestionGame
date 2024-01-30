@@ -34,12 +34,12 @@ public class LeaderBoardScene extends Scene
     {
         super(scrollPane);
         this.stage = stage;
-        scrollPane.setPrefHeight(750);
-        scrollPane.setPrefWidth(1200);
         this.achievementManager = achievementManager;
         confirmAlert = new ConfirmAlert(Alert.AlertType.CONFIRMATION);
         confirmAlert.modifyConfirmAlertForSaveDelete(confirmAlert);
 
+        scrollPane.setPrefHeight(750);
+        scrollPane.setPrefWidth(1200);
         scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
         scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         scrollPane.setFitToWidth(true);

@@ -47,7 +47,6 @@ public class MainScene extends Scene
         questionInterface.setDisable(true);
 
         createPopup();
-
     }
 
     public void createBackground()

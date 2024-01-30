@@ -48,6 +48,7 @@ public class MenuScene extends Scene
 
         this.gameHandler = new GameHandler();
         this.achievementManager = achievementManager;
+
         TimePlayedTimer.actualizeTimePlayed();
         createWelcomeArea();
         createIconOptionButton();
@@ -90,15 +91,20 @@ public class MenuScene extends Scene
         pane.setLeft(leaderBoardVBox);
     }
 
+    public void setUpBootStrapPane(BootstrapPane bootStrapPane)
+    {
+        bootStrapPane.addColumn(1);
+        bootStrapPane.addRow(6);
+        bootStrapPane.setVgap(70);
+        bootStrapPane.setAlignment(Pos.CENTER);
+        bootStrapPane.setTranslateY(80);
+        bootStrapPane.setTranslateX(40);
+    }
+
     public BootstrapPane createLeftButtons()
     {
         BootstrapPane gridPaneMenuButton = new BootstrapPane(1);
-        gridPaneMenuButton.addColumn(1);
-        gridPaneMenuButton.addRow(6);
-        gridPaneMenuButton.setVgap(70);
-        gridPaneMenuButton.setAlignment(Pos.CENTER);
-        gridPaneMenuButton.setTranslateY(80);
-        gridPaneMenuButton.setTranslateX(40);
+        setUpBootStrapPane(gridPaneMenuButton);
 
         leaderBoardButton = new MenuSideButton(UtilStringStorage.leaderBoardButton, UtilStringStorage.leaderBoardTooltip, 5);
         if(leaderBoardButton.getText().equals("Records"))
@@ -188,14 +194,7 @@ public class MenuScene extends Scene
         VBox selectModeArea = new VBox();
 
         Label chooseMode = new Label(UtilStringStorage.chooseMode);
-        chooseMode.setFont(Font.font("Impact", FontWeight.EXTRA_BOLD, 30));
-        chooseMode.setTextFill(Color.BLACK);
-        chooseMode.setTranslateX(245);
-        chooseMode.setTranslateY(65);
-        if(chooseMode.getText().equals("Choose your game mod"))
-        {
-            chooseMode.setTranslateX(295);
-        }
+        setUpChooseLabel(chooseMode);
 
         comboBox = new ComboBox<>();
         CustomOption.customComboBox(comboBox);
@@ -223,6 +222,18 @@ public class MenuScene extends Scene
         pane.setCenter(selectModeArea);
         selectModeArea.setTranslateX(50);
         selectModeArea.setTranslateY(50);
+    }
+
+    public void setUpChooseLabel(Label label)
+    {
+        label.setFont(Font.font("Impact", FontWeight.EXTRA_BOLD, 30));
+        label.setTextFill(Color.BLACK);
+        label.setTranslateX(245);
+        label.setTranslateY(65);
+        if(label.getText().equals("Choose your game mod"))
+        {
+            label.setTranslateX(295);
+        }
     }
 
     public void setButtonOnAction()

@@ -102,6 +102,7 @@ public class FileUtil {
         generalSavesFile.setProperty("goldCup", "0");
         generalSavesFile.setProperty("silverCup", "0");
         generalSavesFile.setProperty("bronzeCup", "0");
+        generalSavesFile.setProperty("secretCup", "0");
 
         generalSavesFile.setProperty("perfectScore10", "0");
         generalSavesFile.setProperty("perfectScore15", "0");

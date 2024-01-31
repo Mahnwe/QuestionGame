@@ -79,6 +79,7 @@ public class UtilTranslateString {
         UtilStringStorage.invention = engTradFile.getProperty("invention");
         UtilStringStorage.science = engTradFile.getProperty("science");
         UtilStringStorage.monument = engTradFile.getProperty("monument");
+        UtilStringStorage.economy = engTradFile.getProperty("economy");
 
         // ACHIEVEMENTS
         UtilStringStorage.achievementLabel = engTradFile.getProperty("achievementLabel");
@@ -94,6 +95,9 @@ public class UtilTranslateString {
         UtilStringStorage.numberOfGamesPlayed5Description = engTradFile.getProperty("numberOfGamesPlayed5");
         UtilStringStorage.numberOfGamesPlayed10Description = engTradFile.getProperty("numberOfGamesPlayed10");
         UtilStringStorage.numberOfGamesPlayed20Description = engTradFile.getProperty("numberOfGamesPlayed20");
+        UtilStringStorage.numberOfGoodAnswer50Description = engTradFile.getProperty("numberOfGoodAnswer50");
+        UtilStringStorage.numberOfGoodAnswer100Description = engTradFile.getProperty("numberOfGoodAnswer100");
+        UtilStringStorage.numberOfGoodAnswer150Description = engTradFile.getProperty("numberOfGoodAnswer150");
         UtilStringStorage.secretAchievement = engTradFile.getProperty("secretAchievement");
         UtilStringStorage.secretLabel = engTradFile.getProperty("secretLabel");
         UtilStringStorage.successUnlock = engTradFile.getProperty("successUnlock");
@@ -299,6 +303,7 @@ public class UtilTranslateString {
         UtilStringStorage.invention = frTradFile.getProperty("invention");
         UtilStringStorage.science = frTradFile.getProperty("science");
         UtilStringStorage.monument = frTradFile.getProperty("monument");
+        UtilStringStorage.economy = frTradFile.getProperty("economy");
 
         // ACHIEVEMENTS
         UtilStringStorage.achievementLabel = frTradFile.getProperty("achievementLabel");
@@ -314,6 +319,9 @@ public class UtilTranslateString {
         UtilStringStorage.numberOfGamesPlayed5Description = frTradFile.getProperty("numberOfGamesPlayed5");
         UtilStringStorage.numberOfGamesPlayed10Description = frTradFile.getProperty("numberOfGamesPlayed10");
         UtilStringStorage.numberOfGamesPlayed20Description = frTradFile.getProperty("numberOfGamesPlayed20");
+        UtilStringStorage.numberOfGoodAnswer50Description = frTradFile.getProperty("numberOfGoodAnswer50");
+        UtilStringStorage.numberOfGoodAnswer100Description = frTradFile.getProperty("numberOfGoodAnswer100");
+        UtilStringStorage.numberOfGoodAnswer150Description = frTradFile.getProperty("numberOfGoodAnswer150");
         UtilStringStorage.secretAchievement = frTradFile.getProperty("secretAchievement");
         UtilStringStorage.secretLabel = frTradFile.getProperty("secretLabel");
         UtilStringStorage.successUnlock = frTradFile.getProperty("successUnlock");

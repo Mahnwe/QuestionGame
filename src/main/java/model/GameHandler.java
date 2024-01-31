@@ -12,7 +12,6 @@ public class GameHandler
    private final ArrayList<Question> questionList;
    private final Random randomIndex;
     public static String gameMode;
-
    private int questionCount;
 
     public GameHandler()

@@ -419,7 +419,7 @@ public class QuestionStorage
                 UtilStringStorage.explanation80);
         questionList.add(question80);
 
-        Question question81 = new Question(UtilStringStorage.society, UtilStringStorage.question81,UtilStringStorage.answerA81,
+        Question question81 = new Question(UtilStringStorage.economy, UtilStringStorage.question81,UtilStringStorage.answerA81,
                 UtilStringStorage.answerB81, UtilStringStorage.answerC81, UtilStringStorage.answerD81, UtilStringStorage.goodAnswer81,
                 UtilStringStorage.explanation81);
         questionList.add(question81);
@@ -514,7 +514,7 @@ public class QuestionStorage
                 UtilStringStorage.explanation99);
         questionList.add(question99);
 
-        Question question100 = new Question(UtilStringStorage.society, UtilStringStorage.question100,UtilStringStorage.answerA100,
+        Question question100 = new Question(UtilStringStorage.economy, UtilStringStorage.question100,UtilStringStorage.answerA100,
                 UtilStringStorage.answerB100, UtilStringStorage.answerC100, UtilStringStorage.answerD100, UtilStringStorage.goodAnswer100,
                 UtilStringStorage.explanation100);
         questionList.add(question100);
@@ -568,6 +568,16 @@ public class QuestionStorage
                 UtilStringStorage.answerB110, UtilStringStorage.answerC110, UtilStringStorage.answerD110, UtilStringStorage.goodAnswer110,
                 UtilStringStorage.explanation110);
         questionList.add(question110);
+
+        Question question111 = new Question(UtilStringStorage.plants, UtilStringStorage.question111,UtilStringStorage.answerA111,
+                UtilStringStorage.answerB111, UtilStringStorage.answerC111, UtilStringStorage.answerD111, UtilStringStorage.goodAnswer111,
+                UtilStringStorage.explanation111);
+        questionList.add(question111);
+
+        Question question112 = new Question(UtilStringStorage.culture, UtilStringStorage.question112,UtilStringStorage.answerA112,
+                UtilStringStorage.answerB112, UtilStringStorage.answerC112, UtilStringStorage.answerD112, UtilStringStorage.goodAnswer112,
+                UtilStringStorage.explanation112);
+        questionList.add(question112);
 
     }
 

@@ -36,6 +36,9 @@ public class AchievementScene extends Scene
     private final Label numberOfGamesPlayed5Info = new Label();
     private final Label numberOfGamesPlayed10Info = new Label();
     private final Label numberOfGamesPlayed20Info = new Label();
+    private final Label numberOfGoodAnswer50 = new Label();
+    private final Label numberOfGoodAnswer100 = new Label();
+    private final Label numberOfGoodAnswer150 = new Label();
     private Label secretAchievementInfo;
     private Label secretAchievementLabel;
 
@@ -60,7 +63,7 @@ public class AchievementScene extends Scene
         createSecretAchievementArea();
         checkAchievements();
 
-        multiPane.setMinHeight(1100);
+        multiPane.setMinHeight(1300);
         multiPane.setCenter(gridPane);
 
         scrollPane.setContent(multiPane);
@@ -110,6 +113,12 @@ public class AchievementScene extends Scene
         createAchievementArea(UtilStringStorage.numberOfGamesPlayed10Description, numberOfGamesPlayed10Info, 10, 1, 4);
 
         createAchievementArea(UtilStringStorage.numberOfGamesPlayed20Description, numberOfGamesPlayed20Info, 11, 2, 4);
+
+        createAchievementArea(UtilStringStorage.numberOfGoodAnswer50Description, numberOfGoodAnswer50, 12, 0, 5);
+
+        createAchievementArea(UtilStringStorage.numberOfGoodAnswer100Description, numberOfGoodAnswer100, 13, 1, 5);
+
+        createAchievementArea(UtilStringStorage.numberOfGoodAnswer150Description, numberOfGoodAnswer150, 14, 2, 5);
     }
 
     public void createBackground()
@@ -142,8 +151,8 @@ public class AchievementScene extends Scene
         secretAchievementLabel = new Label();
         secretAchievementLabel.setText(UtilStringStorage.secretLabel);
         secretAchievementInfo = new Label();
-        AchievementVbox.setAchievementVbox(secretAchievementBox, secretAchievementLabel, achievementManager, 12, secretAchievementInfo);
-        gridPane.add(secretAchievementBox, 1,5);
+        AchievementVbox.setAchievementVbox(secretAchievementBox, secretAchievementLabel, achievementManager, 15, secretAchievementInfo);
+        gridPane.add(secretAchievementBox, 1,6);
 
     }
 
@@ -172,14 +181,19 @@ public class AchievementScene extends Scene
         checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(), "numberOfGames", 10, numberOfGamesPlayed10Info);
         checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(), "numberOfGames", 11, numberOfGamesPlayed20Info);
 
+        checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(), "goodAnswerNumber", 12, numberOfGoodAnswer50);
+        checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(), "goodAnswerNumber", 13, numberOfGoodAnswer100);
+        checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(), "goodAnswerNumber", 14, numberOfGoodAnswer150);
+
         int checkNbrOfAchievementUnlock = checkSecretAchievement();
-        achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(12), checkNbrOfAchievementUnlock);
-        checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(12), secretAchievementInfo);
-        if(checkNbrOfAchievementUnlock == 12)
+        achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(15), checkNbrOfAchievementUnlock);
+        checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(15), secretAchievementInfo);
+
+        int nbrOfSecretCup = Integer.parseInt(FileUtil.getGeneralSavesFile().getProperty("secretCup"));
+        if(checkNbrOfAchievementUnlock == 15 && nbrOfSecretCup == 0)
         {
             secretAchievementLabel.setText(UtilStringStorage.secretAchievement);
             TrophyScene.setAllAchievementAreUnlocked(true);
-            int nbrOfSecretCup = Integer.parseInt(FileUtil.getGeneralSavesFile().getProperty("secretCup"));
             nbrOfSecretCup++;
             FileUtil.getGeneralSavesFile().setProperty("secretCup", String.valueOf(nbrOfSecretCup));
         }

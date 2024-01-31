@@ -180,7 +180,7 @@ public class ResultScene extends VBox
 
         if(AchievementManager.notificationAlert != null) {
             NotificationAlert notificationAlert = AchievementManager.notificationAlert;
-            notificationAlert.showAlert();
+            NotificationAlert.hideAlertAfter5Sec(notificationAlert);
         }
     }
 

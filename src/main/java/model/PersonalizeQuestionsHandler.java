@@ -26,7 +26,6 @@ public class PersonalizeQuestionsHandler
         propertyKeyQuestionNumber = Integer.parseInt(FileUtil.getPersonalizeQuestionsFile().getProperty(QUESTION_NUMBER_KEY_PROPERTIES));
         propertyKeyQuestionNumber++;
 
-
         for(int i = 0; i < propertyKeyQuestionNumber; i++) {
             String propertyQuestionKey = PROPERTY_KEY_START + i;
             String checkIfPropertyExist = FileUtil.getPersonalizeQuestionsFile().getProperty(propertyQuestionKey +PROPERTY_KEY_QUESTION);

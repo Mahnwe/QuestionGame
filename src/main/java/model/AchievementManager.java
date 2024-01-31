@@ -68,7 +68,16 @@ public class AchievementManager
         Achievement numberOfGamePlayed20 = new Achievement(20, false);
         achievementsList.add(numberOfGamePlayed20);
 
-        Achievement secretAchievement = new Achievement(9, false);
+        Achievement numberOfGoodAnswer50 = new Achievement(50, false);
+        achievementsList.add(numberOfGoodAnswer50);
+
+        Achievement numberOfGoodAnswer100 = new Achievement(100, false);
+        achievementsList.add(numberOfGoodAnswer100);
+
+        Achievement numberOfGoodAnswer150 = new Achievement(150, false);
+        achievementsList.add(numberOfGoodAnswer150);
+
+        Achievement secretAchievement = new Achievement(15, false);
         achievementsList.add(secretAchievement);
     }
 

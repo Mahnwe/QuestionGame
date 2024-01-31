@@ -42,6 +42,7 @@ public class UtilStringStorage
     public static String invention = "";
     public static String science = "";
     public static String monument = "";
+    public static String economy = "";
 
     // ACHIEVEMENTS
     public static String achievementLabel = "";
@@ -57,6 +58,9 @@ public class UtilStringStorage
     public static String numberOfGamesPlayed5Description = "";
     public static String numberOfGamesPlayed10Description = "";
     public static String numberOfGamesPlayed20Description = "";
+    public static String numberOfGoodAnswer50Description = "";
+    public static String numberOfGoodAnswer100Description = "";
+    public static String numberOfGoodAnswer150Description = "";
     public static String secretAchievement = "";
     public static String secretLabel = "";
     public static String successUnlock = "";
@@ -990,5 +994,19 @@ public class UtilStringStorage
     public static String answerD110 = "";
     public static String goodAnswer110 = "";
     public static String explanation110 = "";
+    public static String question111 = "";
+    public static String answerA111 = "";
+    public static String answerB111 = "";
+    public static String answerC111 = "";
+    public static String answerD111 = "";
+    public static String goodAnswer111 = "";
+    public static String explanation111 = "";
+    public static String question112 = "";
+    public static String answerA112 = "";
+    public static String answerB112 = "";
+    public static String answerC112 = "";
+    public static String answerD112 = "";
+    public static String goodAnswer112 = "";
+    public static String explanation112 = "";
 
 }

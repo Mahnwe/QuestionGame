@@ -21,8 +21,8 @@ public class OptionScene extends Scene {
     private final AchievementManager achievementManager;
     private final Stage stage;
     private GridPane gridPane;
-    private final VBox optionVbox;
-    private final VBox importFileVbox;
+    private VBox optionVbox;
+    private VBox importFileVbox;
     private final ConfirmAlert confirmAlert;
     private final BorderPane pane;
     public static final String OPTION_POLICE_LABEL = "Impact";
@@ -37,12 +37,7 @@ public class OptionScene extends Scene {
         this.confirmAlert = new ConfirmAlert(Alert.AlertType.CONFIRMATION);
         confirmAlert.modifyConfirmAlert(UtilStringStorage.askConfirmReset);
 
-        optionVbox = new VBox();
-        optionVbox.setTranslateX(-80);
-        optionVbox.setTranslateY(50);
-        importFileVbox = new VBox();
-        importFileVbox.setTranslateX(50);
-        importFileVbox.setTranslateY(70);
+        createOptionAndImportVbox();
         createGridPane();
         pane.setCenter(gridPane);
 
@@ -54,6 +49,16 @@ public class OptionScene extends Scene {
         createPasteFileBox();
         createImportedFileBox();
         createBackground();
+    }
+
+    public void createOptionAndImportVbox()
+    {
+        optionVbox = new VBox();
+        optionVbox.setTranslateX(-80);
+        optionVbox.setTranslateY(50);
+        importFileVbox = new VBox();
+        importFileVbox.setTranslateX(50);
+        importFileVbox.setTranslateY(70);
     }
 
     public void createCopyFileBox()

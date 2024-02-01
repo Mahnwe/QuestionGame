@@ -118,7 +118,6 @@ public class LeaderBoardScene extends Scene
                 stage.setScene(leaderBoardScene);
             }
         });
-
     }
 
     public void createBackground()

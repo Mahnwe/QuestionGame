@@ -2,7 +2,9 @@ package view.customobject;
 
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
-import javafx.scene.layout.*;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -22,7 +24,7 @@ public class AnswerButton extends Button
         this.setFont(Font.font("Futura", FontWeight.BOLD, 18));
     }
 
-    public void setAnswerButtonOnAction(AnswerButton answerButton, List<AnswerButton> buttonList, Button validateButton)
+    public static void setAnswerButtonOnAction(AnswerButton answerButton, List<AnswerButton> buttonList, Button validateButton)
     {
         answerButton.setOnAction(event -> {
         answerButton.checkOthersButtonClicked(buttonList);

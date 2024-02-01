@@ -9,8 +9,8 @@ import java.util.Properties;
 
 public class UtilTranslateString {
 
-    public static Properties engTradFile = new Properties();
-    public static Properties frTradFile = new Properties();
+    private static final Properties engTradFile = new Properties();
+    private static final Properties frTradFile = new Properties();
     private static final Logger logger = LogManager.getLogger(UtilTranslateString.class);
     private final UtilTranslateQuestion utilTranslateQuestion = new UtilTranslateQuestion();
 
@@ -483,5 +483,13 @@ public class UtilTranslateString {
         //QUESTIONS
         utilTranslateQuestion.translateFrQuestions();
 
+    }
+
+    public static Properties getEngTradFile() {
+        return engTradFile;
+    }
+
+    public static Properties getFrTradFile() {
+        return frTradFile;
     }
 }

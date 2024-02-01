@@ -4,18 +4,21 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.*;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.media.MediaPlayer;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.*;
-import util.*;
+import util.BackgroundCreator;
+import util.FileUtil;
+import util.PathUtil;
+import util.UtilStringStorage;
 import view.App;
-import view.customobject.ConfirmAlert;
 import view.PopUp;
+import view.customobject.ConfirmAlert;
+import view.customobject.QuitLaunchedGameButton;
 
 import java.util.Optional;
 
@@ -96,26 +99,10 @@ public class MainScene extends Scene
     {
         VBox infoQuestionVbox = new VBox();
 
-        Button quitLaunchedGame = new Button("Menu");
-        quitLaunchedGame.setFont(Font.font("Futura", FontWeight.BOLD, 20));
-        quitLaunchedGame.setBorder(CustomOption.createCustomBorder(2.0, 2.0, Color.BLACK));
-
-        IconCreator personalizeIcon = new IconCreator(PathUtil.MENU_BACKGROUND);
-        ImageView personalizeImage = personalizeIcon.createImage();
-
-        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
-        quitLaunchedGame.setBackground(new Background(new BackgroundImage(personalizeImage.getImage(), BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
-                backgroundSize)));
-        CustomOption.setGlowEffectOnButton(quitLaunchedGame);
-        quitLaunchedGame.setOnMouseEntered(event -> quitLaunchedGame.setBorder(CustomOption.createCustomBorder(2.0, 2.0, Color.GHOSTWHITE)));
-        quitLaunchedGame.setOnMouseExited(event -> quitLaunchedGame.setBorder(CustomOption.createCustomBorder(2.0, 2.0, Color.BLACK)));
-
+        QuitLaunchedGameButton quitLaunchedGame = new QuitLaunchedGameButton("Menu");
         quitLaunchedGame.setOnAction(event -> backToMainMenu());
 
-        questionInterface.getQuestionNumber().setText(UtilStringStorage.questionNumber + (gameHandler.getQuestionCount() + 1));
-        questionInterface.getQuestionCategory().setText(questionInterface.getQuestion().getCategory());
-        questionInterface.getQuestionToAsk().setText(questionInterface.getQuestion().getQuestionToAsk());
-        questionInterface.placeQuestionLabelIfNecessary(questionInterface.getQuestionToAsk());
+        setTextInQuestionInterface();
 
         infoQuestionVbox.getChildren().add(quitLaunchedGame);
         infoQuestionVbox.getChildren().add(questionInterface.getQuestionNumber());
@@ -123,6 +110,14 @@ public class MainScene extends Scene
 
         menuPane.setTop(infoQuestionVbox);
         questionInterface.getGame().setTranslateY(-50);
+    }
+
+    public void setTextInQuestionInterface()
+    {
+        questionInterface.getQuestionNumber().setText(UtilStringStorage.questionNumber + (gameHandler.getQuestionCount() + 1));
+        questionInterface.getQuestionCategory().setText(questionInterface.getQuestion().getCategory());
+        questionInterface.getQuestionToAsk().setText(questionInterface.getQuestion().getQuestionToAsk());
+        questionInterface.placeQuestionLabelIfNecessary(questionInterface.getQuestionToAsk());
     }
 
     public void createNewQuestionInterface()

@@ -115,24 +115,17 @@ public class QuestionInterface extends BorderPane
         validateAnswerButton.setTranslateY(30);
 
         answerButton1 = new AnswerButton(false, question.getAnswerList().get(0));
-        answerButton1.setAnswerButtonOnAction(answerButton1, answerButtonList, validateAnswerButton);
-        gridPane.add(answerButton1, 1, 1);
-        answerButtonList.add(answerButton1);
+        setUpAnswerButtonInScene(answerButton1, answerButtonList, validateAnswerButton, gridPane, 1, 1);
 
         answerButton2 = new AnswerButton(false, question.getAnswerList().get(1));
-        answerButton2.setAnswerButtonOnAction(answerButton2, answerButtonList, validateAnswerButton);
-        gridPane.add(answerButton2, 1, 2);
-        answerButtonList.add(answerButton2);
+        setUpAnswerButtonInScene(answerButton2, answerButtonList, validateAnswerButton, gridPane, 2, 1);
 
         answerButton3 = new AnswerButton(false, question.getAnswerList().get(2));
-        answerButton3.setAnswerButtonOnAction(answerButton3, answerButtonList, validateAnswerButton);
-        gridPane.add(answerButton3, 3, 1);
-        answerButtonList.add(answerButton3);
+        setUpAnswerButtonInScene(answerButton3, answerButtonList, validateAnswerButton, gridPane, 1, 3);
 
         answerButton4 = new AnswerButton(false, question.getAnswerList().get(3));
-        answerButton4.setAnswerButtonOnAction(answerButton4, answerButtonList, validateAnswerButton);
-        gridPane.add(answerButton4, 3, 2);
-        answerButtonList.add(answerButton4);
+        setUpAnswerButtonInScene(answerButton4, answerButtonList, validateAnswerButton, gridPane, 2, 3);
+
         placeGridPaneWithTextLength();
 
         nextQuestionButton = new Button(UtilStringStorage.nextQuestionButton);
@@ -142,6 +135,12 @@ public class QuestionInterface extends BorderPane
         nextQuestionButton.setDisable(true);
         nextQuestionButton.setTranslateY(300);
         nextQuestionButton.setTranslateX(700);
+    }
+    public void setUpAnswerButtonInScene(AnswerButton answerButton, List<AnswerButton> answerButtonList, Button validateAnswerButton, GridPane gridPane, int rowIndex, int columnIndex)
+    {
+        AnswerButton.setAnswerButtonOnAction(answerButton, answerButtonList, validateAnswerButton);
+        gridPane.add(answerButton, columnIndex, rowIndex);
+        answerButtonList.add(answerButton);
     }
 
     public void placeGridPaneWithTextLength()

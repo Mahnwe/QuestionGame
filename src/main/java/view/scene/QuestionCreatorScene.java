@@ -113,41 +113,33 @@ public class QuestionCreatorScene extends Scene {
 
     public void createForm()
     {
-        Label categoryLabel = new Label(UtilStringStorage.createCategoryLabel);
         QuestionCreatorTextArea categoryTextArea = new QuestionCreatorTextArea(20);
-        createAreaForForm(categoryLabel, categoryTextArea,0, 0);
+        setUpSlotTextArea(UtilStringStorage.createCategoryLabel, categoryTextArea, 0, 0);
 
-        Label questionToAskLabel = new Label(UtilStringStorage.createQuestionToAskLabel);
         QuestionCreatorTextArea questionTextArea = new QuestionCreatorTextArea(85);
-        createAreaForForm(questionToAskLabel, questionTextArea, 2, 0);
+        setUpSlotTextArea(UtilStringStorage.createQuestionToAskLabel, questionTextArea, 2, 0);
 
-        Label createAnswerALabel = new Label(UtilStringStorage.createAnswerALabel);
         QuestionCreatorTextArea answerATextArea = new QuestionCreatorTextArea(26);
-        createAreaForForm(createAnswerALabel, answerATextArea, 0, 1);
+        setUpSlotTextArea(UtilStringStorage.createAnswerALabel, answerATextArea, 0, 1);
         answerTextAreaList.add(answerATextArea);
 
-        Label createAnswerBLabel = new Label(UtilStringStorage.createAnswerBLabel);
         QuestionCreatorTextArea answerBTextArea = new QuestionCreatorTextArea(26);
-        createAreaForForm(createAnswerBLabel, answerBTextArea, 2, 1);
+        setUpSlotTextArea(UtilStringStorage.createAnswerBLabel, answerBTextArea, 2, 1);
         answerTextAreaList.add(answerBTextArea);
 
-        Label createAnswerCLabel = new Label(UtilStringStorage.createAnswerCLabel);
         QuestionCreatorTextArea answerCTextArea = new QuestionCreatorTextArea(26);
-        createAreaForForm(createAnswerCLabel, answerCTextArea, 0, 2);
+        setUpSlotTextArea(UtilStringStorage.createAnswerCLabel, answerCTextArea, 0, 2);
         answerTextAreaList.add(answerCTextArea);
 
-        Label createAnswerDLabel = new Label(UtilStringStorage.createAnswerDLabel);
         QuestionCreatorTextArea answerDTextArea = new QuestionCreatorTextArea(26);
-        createAreaForForm(createAnswerDLabel,answerDTextArea, 2, 2);
+        setUpSlotTextArea(UtilStringStorage.createAnswerCLabel, answerDTextArea, 2, 2);
         answerTextAreaList.add(answerDTextArea);
 
-        Label createGoodAnswerLabel = new Label(UtilStringStorage.createGoodAnswerLabel);
         QuestionCreatorTextArea goodAnswerTextArea = new QuestionCreatorTextArea(26);
-        createAreaForForm(createGoodAnswerLabel, goodAnswerTextArea, 0, 3);
+        setUpSlotTextArea(UtilStringStorage.createGoodAnswerLabel, goodAnswerTextArea, 0, 3);
 
-        Label createExplanationLabel = new Label(UtilStringStorage.createExplanationLabel);
         QuestionCreatorTextArea explanationTextArea = new QuestionCreatorTextArea(95);
-        createAreaForForm(createExplanationLabel, explanationTextArea, 2, 3);
+        setUpSlotTextArea(UtilStringStorage.createExplanationLabel, explanationTextArea, 2, 3);
 
         centerVbox.getChildren().add(gridPane);
         multiPane.setCenter(centerVbox);
@@ -165,6 +157,12 @@ public class QuestionCreatorScene extends Scene {
                 setUpQuestionIsNotForgedLabel();
             }
         });
+    }
+
+    public void setUpSlotTextArea(String slotLabel, QuestionCreatorTextArea questionCreatorTextArea, int columnIndex, int rowIndex)
+    {
+        Label categoryLabel = new Label(slotLabel);
+        createAreaForForm(categoryLabel, questionCreatorTextArea,columnIndex, rowIndex);
     }
 
     public void setUpQuestionIsNotForgedLabel()

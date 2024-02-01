@@ -24,7 +24,6 @@ public class ResultScene extends VBox
     private Button exitToMenuButton;
     private Label congratsLabel;
     private Label playerResult;
-
     private ImageView goldCup;
     private ImageView bronzeCup;
     private ImageView silverCup;

@@ -1,4 +1,4 @@
-package view;
+package view.scene;
 
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -13,6 +13,8 @@ import util.BackgroundCreator;
 import util.CustomOption;
 import util.FileUtil;
 import util.UtilStringStorage;
+import view.customobject.ConfirmAlert;
+import view.customobject.ReturnButton;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

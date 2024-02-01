@@ -1,4 +1,4 @@
-package view;
+package view.scene;
 
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -15,6 +15,10 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.*;
 import util.*;
+import view.App;
+import view.BootstrapPane;
+import view.customvbox.DeveloperVbox;
+import view.customobject.MenuSideButton;
 
 
 public class MenuScene extends Scene

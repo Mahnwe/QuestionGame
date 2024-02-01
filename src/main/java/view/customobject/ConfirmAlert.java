@@ -1,4 +1,4 @@
-package view;
+package view.customobject;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -11,6 +11,7 @@ import util.CustomOption;
 import util.IconCreator;
 import util.PathUtil;
 import util.UtilStringStorage;
+import view.scene.MenuScene;
 
 public class ConfirmAlert extends Alert {
 

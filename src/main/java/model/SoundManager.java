@@ -5,7 +5,7 @@ import javafx.scene.control.Slider;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import view.App;
-import view.MainScene;
+import view.scene.MainScene;
 
 import java.io.File;
 

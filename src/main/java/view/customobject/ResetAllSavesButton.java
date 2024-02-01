@@ -1,4 +1,4 @@
-package view;
+package view.customobject;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
@@ -9,6 +9,7 @@ import model.TimePlayedTimer;
 import util.CustomOption;
 import util.FileUtil;
 import util.UtilStringStorage;
+import view.scene.MenuScene;
 
 import java.util.Optional;
 

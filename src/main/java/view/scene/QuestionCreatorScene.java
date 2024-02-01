@@ -1,5 +1,6 @@
-package view;
+package view.scene;
 
+import javafx.animation.PauseTransition;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -11,9 +12,14 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import model.AchievementManager;
 import model.PersonalizeQuestionsHandler;
 import util.*;
+import view.customobject.QuestionCreatorTextArea;
+import view.customvbox.QuestionCreatorVbox;
+import view.customobject.ReturnButton;
+import view.customobject.ValidateQuestionCreationButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +33,7 @@ public class QuestionCreatorScene extends Scene {
     public static final String POLICE_LABEL = "Futura";
     private final VBox centerVbox;
     private final List<QuestionCreatorTextArea> textAreaList = new ArrayList<>();
+    private final List<QuestionCreatorTextArea> answerTextAreaList = new ArrayList<>();
     private final ValidateQuestionCreationButton validateQuestionCreationButton;
     private Label isCreatedLabel;
 
@@ -117,18 +124,22 @@ public class QuestionCreatorScene extends Scene {
         Label createAnswerALabel = new Label(UtilStringStorage.createAnswerALabel);
         QuestionCreatorTextArea answerATextArea = new QuestionCreatorTextArea(26);
         createAreaForForm(createAnswerALabel, answerATextArea, 0, 1);
+        answerTextAreaList.add(answerATextArea);
 
         Label createAnswerBLabel = new Label(UtilStringStorage.createAnswerBLabel);
         QuestionCreatorTextArea answerBTextArea = new QuestionCreatorTextArea(26);
         createAreaForForm(createAnswerBLabel, answerBTextArea, 2, 1);
+        answerTextAreaList.add(answerBTextArea);
 
         Label createAnswerCLabel = new Label(UtilStringStorage.createAnswerCLabel);
         QuestionCreatorTextArea answerCTextArea = new QuestionCreatorTextArea(26);
         createAreaForForm(createAnswerCLabel, answerCTextArea, 0, 2);
+        answerTextAreaList.add(answerCTextArea);
 
         Label createAnswerDLabel = new Label(UtilStringStorage.createAnswerDLabel);
         QuestionCreatorTextArea answerDTextArea = new QuestionCreatorTextArea(26);
         createAreaForForm(createAnswerDLabel,answerDTextArea, 2, 2);
+        answerTextAreaList.add(answerDTextArea);
 
         Label createGoodAnswerLabel = new Label(UtilStringStorage.createGoodAnswerLabel);
         QuestionCreatorTextArea goodAnswerTextArea = new QuestionCreatorTextArea(26);
@@ -144,18 +155,34 @@ public class QuestionCreatorScene extends Scene {
         validateQuestionCreationButton.setOnAction(event -> {
             isCreatedLabel.setText("");
             validateQuestionCreationButton.checkForValidateQuestion(textAreaList);
-            if(validateQuestionCreationButton.getNumberOfFilledTextArea() == 8)
+            if(validateQuestionCreationButton.getNumberOfFilledTextArea() == 8 && ValidateQuestionCreationButton.findAnswerEqualToGoodAnswer(goodAnswerTextArea, answerTextAreaList))
             {
                 PersonalizeQuestionsHandler.addNewQuestionToPropertiesFile(categoryTextArea.getText(), questionTextArea.getText(), answerATextArea.getText(), answerBTextArea.getText(),
                         answerCTextArea.getText(), answerDTextArea.getText(), goodAnswerTextArea.getText(), explanationTextArea.getText());
-                isCreatedLabel.setText(UtilStringStorage.questionIsForged);
-                PersonalizeQuestionsHandler.addPersonalizeQuestionsToStringList();
-                resetTextAreas();
+                setUpQuestionIsForgedLabel();
             }
             else {
-                isCreatedLabel.setText(UtilStringStorage.questionIsNotForged);
+                setUpQuestionIsNotForgedLabel();
             }
         });
+    }
+
+    public void setUpQuestionIsNotForgedLabel()
+    {
+        isCreatedLabel.setText(UtilStringStorage.questionIsNotForged);
+        PauseTransition visiblePause = new PauseTransition(Duration.seconds(3));
+        visiblePause.setOnFinished(transitionEvent2 -> isCreatedLabel.setText(""));
+        visiblePause.play();
+    }
+
+    public void setUpQuestionIsForgedLabel()
+    {
+        isCreatedLabel.setText(UtilStringStorage.questionIsForged);
+        PauseTransition visiblePause = new PauseTransition(Duration.seconds(3));
+        visiblePause.setOnFinished(transitionEvent -> isCreatedLabel.setText(""));
+        visiblePause.play();
+        PersonalizeQuestionsHandler.addPersonalizeQuestionsToStringList();
+        resetTextAreas();
     }
 
     public void createListPersonalizeQuestionButton()

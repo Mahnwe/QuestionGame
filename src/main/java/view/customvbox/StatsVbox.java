@@ -1,4 +1,4 @@
-package view;
+package view.customvbox;
 
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
@@ -7,6 +7,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import util.CustomOption;
+import view.scene.MenuScene;
 
 public class StatsVbox extends VBox {
 

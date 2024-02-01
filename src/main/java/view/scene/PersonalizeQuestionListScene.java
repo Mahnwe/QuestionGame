@@ -1,17 +1,21 @@
-package view;
+package view.scene;
 
+import javafx.animation.PauseTransition;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import model.AchievementManager;
 import model.PersonalizeQuestionsHandler;
 import util.BackgroundCreator;
 import util.CustomOption;
 import util.FileUtil;
 import util.UtilStringStorage;
+import view.customobject.ConfirmAlert;
+import view.customobject.ReturnButton;
 
 import java.util.Optional;
 
@@ -52,7 +56,6 @@ public class PersonalizeQuestionListScene extends Scene {
         createPersonalizeQuestionList();
         mainBorderPane.setCenter(questionListVbox);
     }
-
     public void createDeleteAllVbox()
     {
         VBox deleteAllVbox = new VBox();
@@ -86,14 +89,22 @@ public class PersonalizeQuestionListScene extends Scene {
                 if(PersonalizeQuestionsHandler.getPropertyKeyQuestionNumber() > 0) {
                     FileUtil.resetPersonalizeQuestionFile();
                     backToMainMenu();
-                    label.setVisible(true);
+                    launchTransitionLabel(label);
                 } else {
                     label.setText(UtilStringStorage.nothingToDelete);
-                    label.setVisible(true);
+                    launchTransitionLabel(label);
                 }
                 gridpane.getChildren().clear();
             }
         });
+    }
+
+    public void launchTransitionLabel(Label label)
+    {
+        label.setVisible(true);
+        PauseTransition visiblePause = new PauseTransition(Duration.seconds(5));
+        visiblePause.setOnFinished(transitionEvent2 -> label.setVisible(false));
+        visiblePause.play();
     }
 
     public void createGridPaneList()
@@ -142,23 +153,28 @@ public class PersonalizeQuestionListScene extends Scene {
 
                 if(checkForProperty != null)
                 {
-                    HBox hBox = new HBox();
-                    Button deleteButton = new Button();
-                    CustomOption.setUpTrashButton(deleteButton, UtilStringStorage.individualQuestionTooltip);
-                    deleteButton.setPrefSize(40, 40);
-                    hBox.getChildren().add(deleteButton);
-
-                    Label label = new Label();
-                    label.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 20));
-                    label.setText("Question n°" + (i+1) + " : " + checkForProperty);
-                    hBox.getChildren().add(label);
-
-                    setOnActionIndividualDeleteButton(deleteButton, propertyQuestionKey);
-
-                    gridpane.add(hBox, 0, i);
+                    createIndividualPersonalizeQuestionArea(i, checkForProperty, propertyQuestionKey);
                 }
             }
         }
+    }
+
+    public void createIndividualPersonalizeQuestionArea(int i, String checkForProperty, String propertyQuestionKey)
+    {
+        HBox hBox = new HBox();
+        Button deleteButton = new Button();
+        CustomOption.setUpTrashButton(deleteButton, UtilStringStorage.individualQuestionTooltip);
+        deleteButton.setPrefSize(40, 40);
+        hBox.getChildren().add(deleteButton);
+
+        Label label = new Label();
+        label.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 20));
+        label.setText("Question n°" + (i+1) + " : " + checkForProperty);
+        hBox.getChildren().add(label);
+
+        setOnActionIndividualDeleteButton(deleteButton, propertyQuestionKey);
+
+        gridpane.add(hBox, 0, i);
     }
 
     public void setOnActionIndividualDeleteButton(Button button, String propertyString)

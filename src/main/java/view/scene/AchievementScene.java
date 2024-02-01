@@ -1,4 +1,4 @@
-package view;
+package view.scene;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -14,6 +14,9 @@ import model.AchievementManager;
 import util.BackgroundCreator;
 import util.FileUtil;
 import util.UtilStringStorage;
+import view.*;
+import view.customobject.ReturnButton;
+import view.customvbox.AchievementVbox;
 
 import java.util.Properties;
 

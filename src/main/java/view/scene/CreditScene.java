@@ -1,4 +1,4 @@
-package view;
+package view.scene;
 
 import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
@@ -13,6 +13,8 @@ import javafx.stage.Stage;
 import model.AchievementManager;
 import util.BackgroundCreator;
 import util.UtilStringStorage;
+import view.App;
+import view.customobject.ReturnButton;
 
 public class CreditScene extends Scene
 {

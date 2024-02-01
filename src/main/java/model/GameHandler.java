@@ -36,6 +36,7 @@ public class GameHandler
                 throw new RuntimeException(e);
             }
         }
+        gameMode = null;
     }
 
     public void setUpSurvivalMode()

@@ -1,4 +1,4 @@
-package view;
+package view.scene;
 
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -14,6 +14,7 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.*;
 import util.*;
+import view.customobject.CustomTextArea;
 
 public class PlayerInfoScene extends Scene
 {

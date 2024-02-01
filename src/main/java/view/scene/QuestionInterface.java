@@ -1,4 +1,4 @@
-package view;
+package view.scene;
 
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
@@ -15,6 +15,7 @@ import util.CustomOption;
 import util.FileUtil;
 import util.PathUtil;
 import util.UtilStringStorage;
+import view.customobject.AnswerButton;
 
 import java.util.ArrayList;
 import java.util.List;

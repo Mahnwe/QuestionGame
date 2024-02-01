@@ -1,4 +1,4 @@
-package view;
+package view.scene;
 
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -11,6 +11,8 @@ import model.TimePlayedTimer;
 import util.BackgroundCreator;
 import util.FileUtil;
 import util.UtilStringStorage;
+import view.customobject.ReturnButton;
+import view.customvbox.StatsVbox;
 
 public class StatsScene extends Scene
 {

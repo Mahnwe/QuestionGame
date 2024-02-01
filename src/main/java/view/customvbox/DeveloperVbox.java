@@ -1,4 +1,4 @@
-package view;
+package view.customvbox;
 
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;

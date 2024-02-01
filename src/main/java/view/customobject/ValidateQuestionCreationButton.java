@@ -1,4 +1,4 @@
-package view;
+package view.customobject;
 
 import javafx.scene.control.Button;
 import javafx.scene.paint.Color;
@@ -6,6 +6,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import util.CustomOption;
 import util.UtilStringStorage;
+import view.scene.QuestionCreatorScene;
 
 import java.util.List;
 
@@ -32,6 +33,24 @@ public class ValidateQuestionCreationButton extends Button {
                 questionCreatorTextArea.setBorder(CustomOption.createCustomBorder(1.5, 2.0, Color.RED));
             }
         }
+    }
+
+    public static boolean findAnswerEqualToGoodAnswer(QuestionCreatorTextArea goodAnswer, List<QuestionCreatorTextArea> answerList)
+    {
+        boolean findValidAnswer = false;
+        for(int i = 0; i < answerList.size(); i++)
+        {
+            if(answerList.get(i).getText().equals(goodAnswer.getText()))
+            {
+                findValidAnswer = true;
+                break;
+            }
+            else {
+                goodAnswer.setBorder(CustomOption.createCustomBorder(1.5, 2.0, Color.RED));
+                answerList.get(i).setBorder(CustomOption.createCustomBorder(1.5, 2.0, Color.RED));
+            }
+        }
+        return findValidAnswer;
     }
 
     public int getNumberOfFilledTextArea() {

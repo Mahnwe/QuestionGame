@@ -1,4 +1,4 @@
-package view;
+package view.customobject;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Tooltip;
@@ -9,6 +9,8 @@ import javafx.stage.Stage;
 import model.AchievementManager;
 import model.SoundManager;
 import util.*;
+import view.App;
+import view.scene.MenuScene;
 
 public class LanguageButton extends Button {
 

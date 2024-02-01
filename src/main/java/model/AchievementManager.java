@@ -1,19 +1,11 @@
 package model;
 
 import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import util.PathUtil;
-import util.UtilStringStorage;
-import view.MenuScene;
-import view.NotificationAlert;
-import view.ResultScene;
+import view.customobject.NotificationAlert;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -165,16 +157,6 @@ public class AchievementManager
         achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(0), nbrOfGoldCup);
         generalSavesFile.setProperty("goldCup", String.valueOf(nbrOfGoldCup));
 
-        Label cupLabel;
-        if(GameHandler.gameMode == null) {
-            cupLabel = new Label(UtilStringStorage.goldCupLabel);
-            setUpCupResultLabel(cupLabel);
-        } else {
-            cupLabel = new Label(UtilStringStorage.surviveEnoughGoldLabel);
-            setUpSurviveResultLabel(cupLabel);
-        }
-
-        vBox.getChildren().add(cupLabel);
         vBox.getChildren().add(imageView);
     }
 
@@ -188,16 +170,6 @@ public class AchievementManager
         achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(1), nbrOfSilverCup);
         generalSavesFile.setProperty("silverCup", String.valueOf(nbrOfSilverCup));
 
-        Label cupLabel;
-        if(GameHandler.gameMode == null) {
-            cupLabel = new Label(UtilStringStorage.silverCupLabel);
-            setUpCupResultLabel(cupLabel);
-        } else {
-            cupLabel = new Label(UtilStringStorage.surviveEnoughSilverLabel);
-            setUpSurviveResultLabel(cupLabel);
-        }
-
-        vBox.getChildren().add(cupLabel);
         vBox.getChildren().add(imageView);
     }
 
@@ -211,33 +183,7 @@ public class AchievementManager
         achievementManager.checkIfAchievementIsUnlock(achievementManager.getAchievementsList().get(2), nbrOfBronzeCup);
         generalSavesFile.setProperty("bronzeCup", String.valueOf(nbrOfBronzeCup));
 
-        Label cupLabel;
-        if(GameHandler.gameMode == null) {
-            cupLabel = new Label(UtilStringStorage.bronzeCupLabel);
-            setUpCupResultLabel(cupLabel);
-        } else {
-            cupLabel = new Label(UtilStringStorage.surviveEnoughBronzeLabel);
-            setUpSurviveResultLabel(cupLabel);
-        }
-
-        vBox.getChildren().add(cupLabel);
         vBox.getChildren().add(imageView);
-    }
-
-    public void setUpCupResultLabel(Label label) {
-        ResultScene.resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
-        stylizeLabel(label, 200, 70);
-    }
-    public void setUpSurviveResultLabel(Label label) {
-        ResultScene.resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
-        stylizeLabel(label, 40, 70);
-    }
-    public void stylizeLabel(Label label, int translateX, int translateY)
-    {
-        label.setTranslateX(translateX);
-        label.setTranslateY(translateY);
-        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 25));
-        label.setTextFill(Color.GHOSTWHITE);
     }
 
     public List<Achievement> getAchievementsList() {

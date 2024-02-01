@@ -1,4 +1,4 @@
-package view;
+package view.scene;
 
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -9,6 +9,8 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.AchievementManager;
 import util.*;
+import view.BootstrapPane;
+import view.customobject.ReturnButton;
 
 import java.util.Properties;
 

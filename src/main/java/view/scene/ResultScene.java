@@ -1,4 +1,4 @@
-package view;
+package view.scene;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -15,6 +15,8 @@ import model.GameHandler;
 import model.GameTimer;
 import model.SoundManager;
 import util.*;
+import view.App;
+import view.customobject.NotificationAlert;
 
 public class ResultScene extends VBox
 {
@@ -73,24 +75,27 @@ public class ResultScene extends VBox
         {
             achievementManager.survivalModeResult(questionCount, FileUtil.getGeneralSavesFile(), achievementManager);
             achievementManager.bronzeCupResult(questionCount, playerFinalScore, gameResult, FileUtil.getGeneralSavesFile(), achievementManager, bronzeCup);
+            setTextToCupLabel(gameResult, UtilStringStorage.surviveEnoughBronzeLabel);
             FileUtil.storeGeneralSavesFile();
         }
         if(questionCount >= 20 && questionCount < 29)
         {
             achievementManager.survivalModeResult(questionCount, FileUtil.getGeneralSavesFile(), achievementManager);
             achievementManager.silverCupResult(questionCount, playerFinalScore, gameResult, FileUtil.getGeneralSavesFile(), achievementManager, silverCup);
+            setTextToCupLabel(gameResult, UtilStringStorage.surviveEnoughSilverLabel);
             FileUtil.storeGeneralSavesFile();
         }
         if(questionCount >= 30)
         {
             achievementManager.survivalModeResult(questionCount, FileUtil.getGeneralSavesFile(), achievementManager);
             achievementManager.goldCupResult(questionCount, playerFinalScore, gameResult, FileUtil.getGeneralSavesFile(), achievementManager, goldCup);
+            setTextToCupLabel(gameResult, UtilStringStorage.surviveEnoughGoldLabel);
             FileUtil.storeGeneralSavesFile();
         }
         if(questionCount < 10) {
             FileUtil.getGeneralSavesFile().setProperty("survivalScore20", String.valueOf(questionCount));
             Label cupLabel = new Label(UtilStringStorage.noSurviveLabel);
-            stylizeLabel(cupLabel, 100, 70);
+            stylizeLabel(cupLabel, 50, 70);
             gameResult.getChildren().add(cupLabel);
         }
         achievementManager.checkNumberOfGamesAchievement(achievementManager, FileUtil.getGeneralSavesFile());
@@ -104,14 +109,17 @@ public class ResultScene extends VBox
         if(playerFinalScore >= questionCount*90/100)
         {
             achievementManager.goldCupResult(questionCount, playerFinalScore, gameResult, FileUtil.getGeneralSavesFile(), achievementManager, goldCup);
+            setTextToCupLabel(gameResult, UtilStringStorage.goldCupLabel);
         }
         if(playerFinalScore > questionCount*60/100 && playerFinalScore <= questionCount*80/100)
         {
             achievementManager.silverCupResult(questionCount, playerFinalScore, gameResult, FileUtil.getGeneralSavesFile(), achievementManager, silverCup);
+            setTextToCupLabel(gameResult, UtilStringStorage.silverCupLabel);
         }
         if(playerFinalScore >= questionCount*50/100 && playerFinalScore < questionCount*60/100)
         {
             achievementManager.bronzeCupResult(questionCount, playerFinalScore, gameResult, FileUtil.getGeneralSavesFile(), achievementManager, bronzeCup);
+            setTextToCupLabel(gameResult, UtilStringStorage.bronzeCupLabel);
         }
         if(playerFinalScore < questionCount*50/100)
         {
@@ -128,7 +136,7 @@ public class ResultScene extends VBox
     public void setUpLabelAndTimer()
     {
         congratsLabel = new Label();
-        stylizeLabel(congratsLabel, 10, 10);
+        stylizeLabel(congratsLabel, 50, 10);
 
         playerResult = new Label();
         stylizeLabel(playerResult, 225, 30);
@@ -148,6 +156,27 @@ public class ResultScene extends VBox
         gameResult.getChildren().add(congratsLabel);
         gameResult.getChildren().add(playerResult);
         gameResult.getChildren().add(timeLabel);
+    }
+
+    public void setTextToCupLabel(VBox vBox, String textForCupLabel)
+    {
+        Label cupLabel = new Label(textForCupLabel);
+        vBox.getChildren().add(cupLabel);
+        if(GameHandler.gameMode == null)
+        {
+            setUpCupResultLabel(cupLabel);
+        } else {
+            setUpSurviveResultLabel(cupLabel);
+        }
+    }
+
+    public void setUpCupResultLabel(Label label) {
+        ResultScene.resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
+        stylizeLabel(label, 200, 90);
+    }
+    public void setUpSurviveResultLabel(Label label) {
+        ResultScene.resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
+        stylizeLabel(label, 40, 90);
     }
 
     public void createIcons()

@@ -1,4 +1,4 @@
-package view;
+package view.scene;
 
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -13,6 +13,9 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.*;
 import util.*;
+import view.App;
+import view.customobject.ConfirmAlert;
+import view.PopUp;
 
 import java.util.Optional;
 
@@ -143,7 +146,7 @@ public class MainScene extends Scene
         SoundManager.checkIfMusicIsPlayed(MenuScene.relaunchGame);
         SoundManager.stopMusic(inGameMusicToStop);
 
-        resultScene.getCongratsLabel().setText(UtilStringStorage.congratsLabel +" "+ playerInfoScene.getPlayer().getPlayerName()+" "+UtilStringStorage.answerAllQuestions);
+        resultScene.getCongratsLabel().setText("   "+UtilStringStorage.congratsLabel +" "+ playerInfoScene.getPlayer().getPlayerName()+"\n"+UtilStringStorage.answerAllQuestions);
 
         if(GameHandler.gameMode == null) {
             resultScene.getPlayerResult().setText(UtilStringStorage.playerResult + playerInfoScene.getPlayer().getPlayerScore() + " " + UtilStringStorage.scoreOn + " " + gameHandler.getQuestionCount());

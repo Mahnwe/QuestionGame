@@ -6,6 +6,8 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Player;
 import util.CustomOption;
+import view.scene.PlayerInfoScene;
+import view.scene.QuestionInterface;
 
 public class PopUp {
 

@@ -1,4 +1,4 @@
-package view;
+package view.customvbox;
 
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;

@@ -8,6 +8,8 @@ import util.FileUtil;
 import util.PathUtil;
 import util.UtilStringStorage;
 import util.UtilTranslateString;
+import view.scene.LanguageScene;
+import view.scene.MenuScene;
 
 public class LaunchManager {
 

@@ -1,4 +1,4 @@
-package view;
+package view.scene;
 
 import javafx.animation.PauseTransition;
 import javafx.scene.Scene;
@@ -12,10 +12,9 @@ import javafx.util.Duration;
 import model.AchievementManager;
 import model.ImportFileHandler;
 import model.SoundManager;
-import model.TimePlayedTimer;
 import util.*;
-
-import java.util.Optional;
+import view.*;
+import view.customobject.*;
 
 public class OptionScene extends Scene {
 

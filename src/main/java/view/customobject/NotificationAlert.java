@@ -1,4 +1,4 @@
-package view;
+package view.customobject;
 
 import javafx.animation.PauseTransition;
 import javafx.scene.control.Alert;

@@ -1,9 +1,10 @@
-package view;
+package view.customobject;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import view.scene.PlayerInfoScene;
 
 public class CustomTextArea extends TextArea {
 

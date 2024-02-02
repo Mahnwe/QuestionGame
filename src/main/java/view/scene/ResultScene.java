@@ -135,10 +135,10 @@ public class ResultScene extends VBox
     public void setUpLabelAndTimer()
     {
         congratsLabel = new Label();
-        stylizeLabel(congratsLabel, 50, 10);
+        stylizeLabel(congratsLabel, 190, 10);
 
         playerResult = new Label();
-        stylizeLabel(playerResult, 225, 30);
+        stylizeLabel(playerResult, 195, 30);
 
         exitToMenuButton = new Button(UtilStringStorage.returnToMenuButton);
         CustomOption.customExitToMenuButton(exitToMenuButton);
@@ -149,7 +149,7 @@ public class ResultScene extends VBox
         });
 
         Label timeLabel = new Label();
-        stylizeLabel(timeLabel, 225, 35);
+        stylizeLabel(timeLabel, 195, 35);
         timeLabel.setText(UtilStringStorage.timeLabel + GameTimer.getElapsedMinutes() + UtilStringStorage.minLabel + GameTimer.getSecondsDisplay() +UtilStringStorage.secondesLabel);
 
         gameResult.getChildren().add(congratsLabel);
@@ -171,11 +171,11 @@ public class ResultScene extends VBox
 
     public void setUpCupResultLabel(Label label) {
         ResultScene.resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
-        stylizeLabel(label, 200, 90);
+        stylizeLabel(label, 200, 120);
     }
     public void setUpSurviveResultLabel(Label label) {
         ResultScene.resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
-        stylizeLabel(label, 40, 90);
+        stylizeLabel(label, 200, 120);
     }
 
     public void createIcons()
@@ -194,14 +194,13 @@ public class ResultScene extends VBox
     {
         imageView.setFitHeight(190);
         imageView.setFitWidth(170);
-        imageView.setTranslateY(110);
+        imageView.setTranslateY(90);
         imageView.setTranslateX(310);
     }
 
     public void backToMainMenu()
     {
         SoundManager.stopMusic(MainScene.inGameMusicToStop);
-        MainScene.inGameMusicToStop.stop();
         MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
         stage.setScene(menuScene);
         App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);

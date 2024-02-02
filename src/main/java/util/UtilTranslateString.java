@@ -150,6 +150,7 @@ public class UtilTranslateString {
         UtilStringStorage.questionNumber = engTradFile.getProperty("questionNumber");
         UtilStringStorage.congratsLabel = engTradFile.getProperty("congratsLabel");
         UtilStringStorage.answerAllQuestions = engTradFile.getProperty("answerAllQuestions");
+        UtilStringStorage.survivalGameOver = engTradFile.getProperty("survivalGameOver");
         UtilStringStorage.playerResult = engTradFile.getProperty("playerResult");
         UtilStringStorage.scoreOn = engTradFile.getProperty("scoreOn");
         UtilStringStorage.survivalLabel = engTradFile.getProperty("survivalLabel");
@@ -374,6 +375,7 @@ public class UtilTranslateString {
         UtilStringStorage.questionNumber = frTradFile.getProperty("questionNumber");
         UtilStringStorage.congratsLabel = frTradFile.getProperty("congratsLabel");
         UtilStringStorage.answerAllQuestions = frTradFile.getProperty("answerAllQuestions");
+        UtilStringStorage.survivalGameOver = frTradFile.getProperty("survivalGameOver");
         UtilStringStorage.playerResult = frTradFile.getProperty("playerResult");
         UtilStringStorage.scoreOn = frTradFile.getProperty("scoreOn");
         UtilStringStorage.survivalLabel = frTradFile.getProperty("survivalLabel");

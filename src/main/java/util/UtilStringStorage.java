@@ -112,6 +112,7 @@ public class UtilStringStorage
     public static String questionNumber = "";
     public static String congratsLabel = "";
     public static String answerAllQuestions = "";
+    public static String survivalGameOver = "";
     public static String playerResult = "";
     public static String scoreOn = "";
     public static String survivalLabel = "";

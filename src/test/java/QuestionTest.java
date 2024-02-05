@@ -2,6 +2,7 @@ import model.GameHandler;
 import model.QuestionStorage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import util.FileUtil;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -15,6 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
     @BeforeEach
     void createElements()
     {
+        FileUtil.createAndLoadFiles();
        questionStorage = new QuestionStorage();
        gameHandler = new GameHandler();
        questionBankSize = questionStorage.getQuestionList().size();

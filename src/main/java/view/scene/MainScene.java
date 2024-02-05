@@ -16,7 +16,7 @@ import util.FileUtil;
 import util.PathUtil;
 import util.UtilStringStorage;
 import view.App;
-import view.PopUp;
+import view.customobject.PopUp;
 import view.customobject.ConfirmAlert;
 import view.customobject.QuitLaunchedGameButton;
 
@@ -41,8 +41,6 @@ public class MainScene extends Scene
         this.stage = stage;
         this.menuPane = (BorderPane) this.getRoot();
         this.player = player;
-        menuPane.setPrefWidth(1200);
-        menuPane.setPrefHeight(750);
         this.gameHandler = gameHandler;
         this.achievementManager = achievementManager;
 

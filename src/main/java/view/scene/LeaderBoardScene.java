@@ -40,8 +40,6 @@ public class LeaderBoardScene extends Scene
         confirmAlert = new ConfirmAlert(Alert.AlertType.CONFIRMATION);
         confirmAlert.modifyConfirmAlertForSaveDelete(confirmAlert);
 
-        scrollPane.setPrefHeight(750);
-        scrollPane.setPrefWidth(1200);
         scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
         scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         scrollPane.setFitToWidth(true);
@@ -76,7 +74,7 @@ public class LeaderBoardScene extends Scene
             {
                 Label label = new Label();
                  label.setText(line);
-                label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 17));
+                label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 20));
                 scoreGridPane.add(label, 0, rowIndex);
                 rowIndex++;
             }
@@ -89,15 +87,15 @@ public class LeaderBoardScene extends Scene
     {
         Label leaderBoardLabel = new Label(UtilStringStorage.leaderBoardLabel);
 
-        leaderBoardLabel.setTranslateX(420);
+        leaderBoardLabel.setTranslateX(700);
         leaderBoardLabel.setTranslateY(10);
-        leaderBoardLabel.setFont(Font.font("Impact", FontWeight.BOLD, 30));
+        leaderBoardLabel.setFont(Font.font("Impact", FontWeight.BOLD, 35));
 
         scoreGridPane = new GridPane();
         scoreGridPane.setVgap(35);
         readSaveFile(0);
-        scoreGridPane.setTranslateX(110);
-        scoreGridPane.setTranslateY(60);
+        scoreGridPane.setTranslateX(300);
+        scoreGridPane.setTranslateY(90);
 
         leaderBoardVBox.getChildren().add(leaderBoardLabel);
         leaderBoardVBox.getChildren().add(scoreGridPane);

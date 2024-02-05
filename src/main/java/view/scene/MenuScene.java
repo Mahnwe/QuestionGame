@@ -47,8 +47,7 @@ public class MenuScene extends Scene
         super(pane);
         this.pane = pane;
         this.menuStage = stage;
-        pane.setPrefWidth(1200);
-        pane.setPrefHeight(750);
+        stage.setMaximized(true);
 
         this.gameHandler = new GameHandler();
         this.achievementManager = achievementManager;
@@ -74,10 +73,10 @@ public class MenuScene extends Scene
         VBox welcomeArea = new VBox();
         Label welcomeInGame = new Label(UtilStringStorage.welcomeLabel);
         welcomeInGame.setTextFill(Color.BLACK);
-        welcomeInGame.setFont(Font.font("Futura", FontWeight.BOLD, 32));
-        welcomeInGame.setTranslateX(350);
+        welcomeInGame.setFont(Font.font("Futura", FontWeight.BOLD, 40));
+        welcomeInGame.setTranslateX(500);
         welcomeArea.getChildren().add(createStatArea(welcomeInGame));
-        welcomeInGame.setTranslateY(20);
+        welcomeInGame.setTranslateY(15);
         pane.setTop(welcomeArea);
     }
 
@@ -85,7 +84,7 @@ public class MenuScene extends Scene
     {
         BootstrapPane leaderBoardVBox = new BootstrapPane(1);
         leaderBoardVBox.setBorder(CustomOption.createCustomBorder(1.0, 1.0, Color.BLACK));
-        leaderBoardVBox.setMinWidth(240);
+        leaderBoardVBox.setMinWidth(320);
 
         BootstrapPane sideButtonGridPane = createLeftButtons();
 
@@ -99,10 +98,10 @@ public class MenuScene extends Scene
     {
         bootStrapPane.addColumn(1);
         bootStrapPane.addRow(6);
-        bootStrapPane.setVgap(70);
+        bootStrapPane.setVgap(90);
         bootStrapPane.setAlignment(Pos.CENTER);
-        bootStrapPane.setTranslateY(80);
-        bootStrapPane.setTranslateX(40);
+        bootStrapPane.setTranslateY(120);
+        bootStrapPane.setTranslateX(60);
     }
 
     public BootstrapPane createLeftButtons()
@@ -133,13 +132,19 @@ public class MenuScene extends Scene
         questionCreatorButton = new MenuSideButton(UtilStringStorage.questionCreatorButton, UtilStringStorage.questionCreatorTooltip, 15);
         gridPaneMenuButton.add(questionCreatorButton, 0, 4);
 
+        HBox iconOptionHbox = new HBox();
+        iconOptionHbox.setTranslateY(30);
+        iconOptionHbox.getChildren().add(optionButton);
+        iconOptionHbox.getChildren().add(creditButton);
+        gridPaneMenuButton.add(iconOptionHbox, 0, 5);
+
         return gridPaneMenuButton;
     }
 
     public void createIconOptionButton()
     {
         optionButton = new MenuSideButton("", UtilStringStorage.optionTooltip, 15);
-        optionButton.setTranslateX(25);
+        optionButton.setTranslateX(-15);
         IconCreator optionIcon = new IconCreator(PathUtil.OPTION_ICON);
         ImageView optionImage = optionIcon.createImage();
         optionImage.setFitHeight(40);
@@ -206,31 +211,27 @@ public class MenuScene extends Scene
         launchGameButton = new Button(UtilStringStorage.launchGameButton);
         CustomOption.customLaunchButton(launchGameButton);
 
-        ImageView gifImageView = GifCreator.createVibeGif(60, 70);
-        ImageView gifImageView2 = GifCreator.createVibeGif(640, -80);
+        ImageView gifImageView = GifCreator.createVibeGif(40, 70);
+        ImageView gifImageView2 = GifCreator.createVibeGif(660, -80);
 
-        HBox bottomHbox = new HBox();
         DeveloperVbox developerVbox = new DeveloperVbox();
-        developerVbox.setTranslateX(305);
-        bottomHbox.setTranslateY(63);
-        bottomHbox.getChildren().add(optionButton);
-        bottomHbox.getChildren().add(creditButton);
-        bottomHbox.getChildren().add(developerVbox);
+        developerVbox.setTranslateX(370);
+        developerVbox.setTranslateY(120);
 
         selectModeArea.getChildren().add(chooseMode);
         selectModeArea.getChildren().add(comboBox);
         selectModeArea.getChildren().add(launchGameButton);
         selectModeArea.getChildren().add(gifImageView);
         selectModeArea.getChildren().add(gifImageView2);
-        selectModeArea.getChildren().add(bottomHbox);
+        selectModeArea.getChildren().add(developerVbox);
         pane.setCenter(selectModeArea);
-        selectModeArea.setTranslateX(50);
-        selectModeArea.setTranslateY(50);
+        selectModeArea.setTranslateX(300);
+        selectModeArea.setTranslateY(150);
     }
 
     public void setUpChooseLabel(Label label)
     {
-        label.setFont(Font.font("Impact", FontWeight.EXTRA_BOLD, 30));
+        label.setFont(Font.font("Impact", FontWeight.EXTRA_BOLD, 35));
         label.setTextFill(Color.BLACK);
         label.setTranslateX(245);
         label.setTranslateY(65);

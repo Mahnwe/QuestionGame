@@ -22,8 +22,6 @@ public class LaunchManager {
             utilTranslateString.translateFrString();
             App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
             MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
-            stage.setMinHeight(750);
-            stage.setMinWidth(1200);
             stage.setScene(menuScene);
             stage.setTitle(UtilStringStorage.gameTitle);
             stage.show();
@@ -33,8 +31,6 @@ public class LaunchManager {
             utilTranslateString.translateEngString();
             App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
             MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
-            stage.setMinHeight(750);
-            stage.setMinWidth(1200);
             stage.setScene(menuScene);
             stage.setTitle(UtilStringStorage.gameTitle);
             stage.show();

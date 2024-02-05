@@ -49,8 +49,6 @@ public class AchievementScene extends Scene
     public AchievementScene(ScrollPane scrollPane, AchievementManager achievementManager, Stage stage)
     {
         super(scrollPane);
-        scrollPane.setPrefHeight(750);
-        scrollPane.setPrefWidth(1200);
         scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
         scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         scrollPane.setFitToWidth(true);
@@ -66,7 +64,7 @@ public class AchievementScene extends Scene
         createSecretAchievementArea();
         checkAchievements();
 
-        multiPane.setMinHeight(1300);
+        multiPane.setMinHeight(1400);
         multiPane.setCenter(gridPane);
 
         scrollPane.setContent(multiPane);
@@ -78,7 +76,8 @@ public class AchievementScene extends Scene
     public void createTitle()
     {
         Label achievementLabel = new Label(UtilStringStorage.achievementLabel);
-        achievementLabel.setFont(Font.font("Impact", FontWeight.BOLD, 35));
+        achievementLabel.setFont(Font.font("Impact", FontWeight.BOLD, 40));
+        achievementLabel.setTranslateX(50);
         gridPane.add(achievementLabel, 1, 0);
     }
 
@@ -86,7 +85,7 @@ public class AchievementScene extends Scene
     {
         gridPane = new BootstrapPane(3);
         gridPane.setTranslateY(50);
-        gridPane.setTranslateX(70);
+        gridPane.setTranslateX(120);
         gridPane.setVgap(60);
         gridPane.addRow(3);
     }

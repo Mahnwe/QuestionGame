@@ -38,17 +38,20 @@ public class ValidateQuestionCreationButton extends Button {
     public static boolean findAnswerEqualToGoodAnswer(QuestionCreatorTextArea goodAnswer, List<QuestionCreatorTextArea> answerList)
     {
         boolean findValidAnswer = false;
+        int numberOfValidAnswer = 0;
         for(int i = 0; i < answerList.size(); i++)
         {
             if(answerList.get(i).getText().equals(goodAnswer.getText()))
             {
-                findValidAnswer = true;
-                break;
+                numberOfValidAnswer++;
             }
-            else {
-                goodAnswer.setBorder(CustomOption.createCustomBorder(1.5, 2.0, Color.RED));
-                answerList.get(i).setBorder(CustomOption.createCustomBorder(1.5, 2.0, Color.RED));
-            }
+        }
+        if(numberOfValidAnswer == 1)
+        {
+            findValidAnswer = true;
+        }
+        else {
+            goodAnswer.setBorder(CustomOption.createCustomBorder(1.5, 2.0, Color.RED));
         }
         return findValidAnswer;
     }

@@ -20,6 +20,8 @@ public class App extends Application
         createHyperLinks();
         FileUtil.createAndLoadFiles();
         TimePlayedTimer.startTimer();
+        stage.setWidth(1920);
+        stage.setHeight(1080);
         stage.setResizable(false);
         LaunchManager.launchGame(stage);
     }

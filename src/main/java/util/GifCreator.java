@@ -8,8 +8,8 @@ public class GifCreator {
     {
         IconCreator iconCreator = new IconCreator(PathUtil.VIBE_GIF);
         ImageView imageView = iconCreator.createImage();
-        imageView.setFitWidth(150);
-        imageView.setFitHeight(150);
+        imageView.setFitWidth(170);
+        imageView.setFitHeight(170);
         imageView.setTranslateX(translateX);
         imageView.setTranslateY(translateY);
         return imageView;

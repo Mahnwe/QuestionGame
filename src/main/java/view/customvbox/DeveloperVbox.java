@@ -19,13 +19,13 @@ public class DeveloperVbox extends VBox {
 
         Label nameLabel = new Label("Manawé Games");
 
-        nameLabel.setFont(Font.font(DEV_LABEL, FontWeight.EXTRA_BOLD, 18));
+        nameLabel.setFont(Font.font(DEV_LABEL, FontWeight.EXTRA_BOLD, 20));
         nameLabel.setTextFill(Color.GHOSTWHITE);
         nameLabel.setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY)));
 
         nameLabel.setBorder(CustomOption.createCustomBorder(3.0, 2.0, Color.BLACK));
 
-        this.setMaxWidth(124);
+        this.setMaxWidth(137);
         this.setBorder(CustomOption.createCustomBorder(3.0, 2.0, Color.BLACK));
         Background background = new Background(new BackgroundFill(Color.LIGHTBLUE, CornerRadii.EMPTY, Insets.EMPTY));
         this.setBackground(background);

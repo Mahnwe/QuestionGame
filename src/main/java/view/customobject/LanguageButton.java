@@ -23,10 +23,10 @@ public class LanguageButton extends Button {
         this.setBackground(new Background(new BackgroundImage(englishFlag, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
                 backgroundSize)));
 
-        this.setMinWidth(130);
-        this.setMinHeight(80);
-        this.setTranslateX(40);
-        this.setTranslateY(30);
+        this.setMinWidth(150);
+        this.setMinHeight(90);
+        this.setTranslateX(50);
+        this.setTranslateY(60);
 
         Tooltip buttonTooltip = new Tooltip(tooltipLanguage);
         this.setTooltip(buttonTooltip);
@@ -52,8 +52,6 @@ public class LanguageButton extends Button {
             FileUtil.storeGeneralSavesFile();
             App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
             MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
-            stage.setMinHeight(750);
-            stage.setMinWidth(1200);
             stage.setScene(menuScene);
             stage.setTitle(UtilStringStorage.gameTitle);
             stage.show();
@@ -71,8 +69,6 @@ public class LanguageButton extends Button {
             FileUtil.storeGeneralSavesFile();
             App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
             MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
-            stage.setMinHeight(750);
-            stage.setMinWidth(1200);
             stage.setScene(menuScene);
             stage.setTitle(UtilStringStorage.gameTitle);
             stage.show();

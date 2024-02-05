@@ -52,9 +52,9 @@ public class IconCreator
     {
         IconCreator iconCreator = new IconCreator(PathUtil.DEV_LURK);
         ImageView imageView = iconCreator.createImage();
-        imageView.setFitWidth(50);
-        imageView.setFitHeight(50);
-        imageView.setTranslateX(35);
+        imageView.setFitWidth(60);
+        imageView.setFitHeight(60);
+        imageView.setTranslateX(25);
         return imageView;
     }
 }

@@ -45,9 +45,9 @@ public class CustomOption {
 
     public static void customLaunchButton(Button button)
     {
-        button.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 27));
+        button.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 30));
         button.setTranslateX(320);
-        button.setTranslateY(195);
+        button.setTranslateY(235);
         button.setBorder(CustomOption.createCustomBorder(3.0, 2.0, Color.BLACK));
         setGlowEffectOnButton(button);
     }
@@ -56,11 +56,11 @@ public class CustomOption {
     {
         createLabel();
 
-        comboBox.setStyle("-fx-font: 28px \"Futura\"");
-        comboBox.setMinHeight(50);
-        comboBox.setMinWidth(150);
+        comboBox.setStyle("-fx-font: 30px \"Futura\"");
+        comboBox.setMinHeight(70);
+        comboBox.setMinWidth(170);
         comboBox.setTranslateX(282);
-        comboBox.setTranslateY(140);
+        comboBox.setTranslateY(150);
         comboBox.setBorder(CustomOption.createCustomBorder(3.0, 2.0, Color.BLACK));
         comboBox.setOnMouseEntered(event -> comboBox.setEffect(glow));
         comboBox.setOnMouseExited(event -> comboBox.setEffect(null));
@@ -75,19 +75,19 @@ public class CustomOption {
     public static void createLabel()
     {
         tenModeButton = new Label(UtilStringStorage.mode10Button);
-        tenModeButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 19));
+        tenModeButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 25));
         tenModeButton.setTextFill(Color.BLACK);
 
         fifteenModeButton = new Label(UtilStringStorage.mode15Button);
-        fifteenModeButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 19));
+        fifteenModeButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 25));
         fifteenModeButton.setTextFill(Color.BLACK);
 
         twentyModeButton = new Label(UtilStringStorage.mode20Button);
-        twentyModeButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 19));
+        twentyModeButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 25));
         twentyModeButton.setTextFill(Color.BLACK);
 
         survivalModeButton = new Label(UtilStringStorage.modeSurvivalButton);
-        survivalModeButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 19));
+        survivalModeButton.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 25));
         survivalModeButton.setTextFill(Color.BLACK);
     }
 

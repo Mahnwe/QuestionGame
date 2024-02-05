@@ -41,8 +41,6 @@ public class QuestionCreatorScene extends Scene {
     {
         super(pane);
         this.borderPane = pane;
-        borderPane.setPrefWidth(1200);
-        borderPane.setPrefHeight(750);
         this.stage = stage;
         this.achievementManager = achievementManager;
 
@@ -132,7 +130,7 @@ public class QuestionCreatorScene extends Scene {
         answerTextAreaList.add(answerCTextArea);
 
         QuestionCreatorTextArea answerDTextArea = new QuestionCreatorTextArea(26);
-        setUpSlotTextArea(UtilStringStorage.createAnswerCLabel, answerDTextArea, 2, 2);
+        setUpSlotTextArea(UtilStringStorage.createAnswerDLabel, answerDTextArea, 2, 2);
         answerTextAreaList.add(answerDTextArea);
 
         QuestionCreatorTextArea goodAnswerTextArea = new QuestionCreatorTextArea(26);

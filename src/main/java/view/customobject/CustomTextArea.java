@@ -10,7 +10,7 @@ public class CustomTextArea extends TextArea {
 
     public CustomTextArea(Button button, int maxCharactersInArea)
     {
-        this.setFont(Font.font(PlayerInfoScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 19));
+        this.setFont(Font.font(PlayerInfoScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 22));
         this.setOnKeyTyped(event -> {
             if(!this.getText().isEmpty())
             {

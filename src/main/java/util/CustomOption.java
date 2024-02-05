@@ -34,7 +34,7 @@ public class CustomOption {
         IconCreator muteIcon = new IconCreator(pathImage);
         Image muteImage = muteIcon.createImage().getImage();
 
-        button.setPrefSize(40,40);
+        button.setPrefSize(50,50);
         BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
         button.setBackground(new Background(new BackgroundImage(muteImage, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
                 backgroundSize)));
@@ -110,7 +110,7 @@ public class CustomOption {
         IconCreator trashIcon = new IconCreator(PathUtil.TRASH_ICON);
         Image trashImage = trashIcon.createImage().getImage();
 
-        button.setPrefSize(80,80);
+        button.setPrefSize(90,90);
         Tooltip resetTooltip = new Tooltip(tooltipString);
         resetTooltip.setFont(Font.font("Futura", FontWeight.BOLD, 18));
         button.setTooltip(resetTooltip);

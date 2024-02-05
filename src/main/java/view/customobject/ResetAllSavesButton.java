@@ -17,7 +17,7 @@ public class ResetAllSavesButton extends Button {
 
     public ResetAllSavesButton(ConfirmAlert confirmAlert, Stage stage)
     {
-        this.setTranslateY(105);
+        this.setTranslateY(205);
         this.setTranslateX(410);
 
         CustomOption.setUpTrashButton(this, UtilStringStorage.resetTooltip);

@@ -45,6 +45,8 @@ public class QuestionCreatorScene extends Scene {
         this.achievementManager = achievementManager;
 
         centerVbox = new VBox();
+        centerVbox.setTranslateY(50);
+        centerVbox.setTranslateX(50);
         validateQuestionCreationButton = new ValidateQuestionCreationButton();
 
         createGridPane();
@@ -62,25 +64,26 @@ public class QuestionCreatorScene extends Scene {
         gridPane = new GridPane();
         gridPane.addRow(7);
         gridPane.addColumn(5);
-        gridPane.setHgap(30);
-        gridPane.setVgap(20);
+        gridPane.setHgap(40);
+        gridPane.setVgap(30);
         borderPane.setCenter(multiPane);
-        gridPane.setTranslateY(40);
-        gridPane.setTranslateX(20);
+        gridPane.setTranslateY(90);
+        gridPane.setTranslateX(200);
     }
 
     public void createPresentation()
     {
         VBox titleFormVbox = new VBox();
-        titleFormVbox.setTranslateX(450);
+        titleFormVbox.setTranslateX(500);
+        titleFormVbox.setTranslateY(20);
         Label sceneTitleLabel = new Label(UtilStringStorage.creatorSceneTitleLabel);
-        sceneTitleLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 35));
+        sceneTitleLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 40));
         titleFormVbox.getChildren().add(sceneTitleLabel);
 
         Label explanationLabel = new Label(UtilStringStorage.sceneExplanationLabel);
-        explanationLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 25));
+        explanationLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 30));
         titleFormVbox.getChildren().add(explanationLabel);
-        explanationLabel.setTranslateY(20);
+        explanationLabel.setTranslateY(50);
         explanationLabel.setTranslateX(-250);
 
         multiPane.setTop(titleFormVbox);
@@ -88,18 +91,18 @@ public class QuestionCreatorScene extends Scene {
 
     public void createButtons()
     {
-        validateQuestionCreationButton.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 20));
+        validateQuestionCreationButton.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 24));
 
         isCreatedLabel = new Label();
-        isCreatedLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 20));
-        isCreatedLabel.setTranslateY(50);
-        isCreatedLabel.setTranslateX(450);
+        isCreatedLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 24));
+        isCreatedLabel.setTranslateY(120);
+        isCreatedLabel.setTranslateX(500);
 
         centerVbox.getChildren().add(validateQuestionCreationButton);
         centerVbox.getChildren().add(isCreatedLabel);
 
-        validateQuestionCreationButton.setTranslateY(90);
-        validateQuestionCreationButton.setTranslateX(200);
+        validateQuestionCreationButton.setTranslateY(160);
+        validateQuestionCreationButton.setTranslateX(250);
     }
 
     public void createAreaForForm(Label label, QuestionCreatorTextArea textArea, int columnIndex, int rowIndex)
@@ -188,13 +191,14 @@ public class QuestionCreatorScene extends Scene {
         vBox.setBorder(CustomOption.createCustomBorder(3.0, 1.5, Color.BLACK));
 
         Label personalizeListLabel = new Label(UtilStringStorage.personalizeQuestionListLabel);
-        personalizeListLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 20));
+        personalizeListLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 26));
         vBox.getChildren().add(personalizeListLabel);
 
         Button personalizeQuestionList = new Button();
         Tooltip buttonTooltip = new Tooltip(UtilStringStorage.personalizeListButtonTooltip);
+        buttonTooltip.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 20));
         personalizeQuestionList.setTooltip(buttonTooltip);
-        personalizeQuestionList.setPrefSize(110, 110);
+        personalizeQuestionList.setPrefSize(130, 130);
 
         IconCreator personalizeIcon = new IconCreator(PathUtil.PERSONALIZE_LIST);
         ImageView personalizeImage = personalizeIcon.createImage();
@@ -212,8 +216,8 @@ public class QuestionCreatorScene extends Scene {
 
         vBox.getChildren().add(personalizeQuestionList);
         multiPane.setRight(vBox);
-        vBox.setTranslateY(110);
-        vBox.setTranslateX(-60);
+        vBox.setTranslateY(230);
+        vBox.setTranslateX(-230);
     }
 
     public void resetTextAreas() {
@@ -224,7 +228,7 @@ public class QuestionCreatorScene extends Scene {
         }
     }
     public void stylizeLabel(VBox vBox, Label label, int columnIndex, int rowIndex) {
-        label.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 18));
+        label.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 22));
         gridPane.add(vBox, columnIndex, rowIndex);
     }
 

@@ -87,14 +87,14 @@ public class LeaderBoardScene extends Scene
     {
         Label leaderBoardLabel = new Label(UtilStringStorage.leaderBoardLabel);
 
-        leaderBoardLabel.setTranslateX(700);
+        leaderBoardLabel.setTranslateX(720);
         leaderBoardLabel.setTranslateY(10);
-        leaderBoardLabel.setFont(Font.font("Impact", FontWeight.BOLD, 35));
+        leaderBoardLabel.setFont(Font.font("Impact", FontWeight.BOLD, 40));
 
         scoreGridPane = new GridPane();
         scoreGridPane.setVgap(35);
         readSaveFile(0);
-        scoreGridPane.setTranslateX(300);
+        scoreGridPane.setTranslateX(320);
         scoreGridPane.setTranslateY(90);
 
         leaderBoardVBox.getChildren().add(leaderBoardLabel);
@@ -104,8 +104,8 @@ public class LeaderBoardScene extends Scene
     public void createEraseFileButton()
     {
         eraseSaveFileButton = new Button();
-        eraseSaveFileButton.setTranslateY(100);
-        eraseSaveFileButton.setTranslateX(25);
+        eraseSaveFileButton.setTranslateY(150);
+        eraseSaveFileButton.setTranslateX(45);
         CustomOption.setUpTrashButton(eraseSaveFileButton, UtilStringStorage.eraseTooltipLabel);
 
         eraseSaveFileButton.setOnAction(event -> {

@@ -26,8 +26,6 @@ public class CreditScene extends Scene
     {
         super(pane);
         this.pane = pane;
-        pane.setPrefHeight(750);
-        pane.setPrefWidth(1200);
         this.stage = stage;
         this.achievementManager = achievementManager;
 
@@ -66,39 +64,39 @@ public class CreditScene extends Scene
         createCreditLinkArea();
 
         pane.setCenter(creditVbox);
-        creditVbox.setTranslateX(100);
-        creditVbox.setTranslateY(50);
+        creditVbox.setTranslateX(300);
+        creditVbox.setTranslateY(100);
     }
 
     public void createCreditLabelArea()
     {
         Label generalThankLabel = new Label();
-        setUpLabels(generalThankLabel, UtilStringStorage.generalThank,  27, 160, 30);
-        generalThankLabel.setFont(Font.font("Impact", FontWeight.BOLD, 25));
+        setUpLabels(generalThankLabel, UtilStringStorage.generalThank,  35, 160, 30);
+        generalThankLabel.setFont(Font.font("Impact", FontWeight.BOLD, 35));
 
         Label kebabThank = new Label();
-        setUpLabels(kebabThank, UtilStringStorage.kebabThank, 20, 70, 60);
+        setUpLabels(kebabThank, UtilStringStorage.kebabThank, 26, 70, 70);
 
         Label pandaThank = new Label();
-        setUpLabels(pandaThank, UtilStringStorage.pandaThank, 20, 70, 90);
+        setUpLabels(pandaThank, UtilStringStorage.pandaThank, 26, 70, 120);
 
         Label satanThank = new Label();
-        setUpLabels(satanThank, UtilStringStorage.satanThank, 20, 70, 120);
+        setUpLabels(satanThank, UtilStringStorage.satanThank, 26, 70, 170);
 
         Label givrThank = new Label();
-        setUpLabels(givrThank, UtilStringStorage.givrThank, 20, 70, 150);
+        setUpLabels(givrThank, UtilStringStorage.givrThank, 26, 70, 220);
 
         Label yukiThank = new Label();
-        setUpLabels(yukiThank, UtilStringStorage.yukiThank, 20, 70, 180);
+        setUpLabels(yukiThank, UtilStringStorage.yukiThank, 26, 70, 270);
 
         Label darkwestThank = new Label();
-        setUpLabels(darkwestThank, UtilStringStorage.darkwestThank, 20, 70, 200);
+        setUpLabels(darkwestThank, UtilStringStorage.darkwestThank, 26, 70, 320);
 
         Label darkantThank = new Label();
-        setUpLabels(darkantThank, UtilStringStorage.darkantThank, 20, 70, 230);
+        setUpLabels(darkantThank, UtilStringStorage.darkantThank, 26, 70, 370);
 
         Label bestLabel = new Label();
-        setUpLabels(bestLabel, UtilStringStorage.loveLabel, 25, 140, 260);
+        setUpLabels(bestLabel, UtilStringStorage.loveLabel, 30, 140, 420);
 
         addLabelInVbox(generalThankLabel, kebabThank, pandaThank, satanThank, givrThank);
         addLabelInVboxPart2(yukiThank, darkwestThank, darkantThank, bestLabel);
@@ -107,17 +105,17 @@ public class CreditScene extends Scene
     public void createCreditLinkArea()
     {
         Label linkLabel = new Label();
-        setUpLabels(linkLabel, UtilStringStorage.linkLabel, 27, 750, -100);
-        linkLabel.setFont(Font.font("Impact", FontWeight.BOLD, 25));
+        setUpLabels(linkLabel, UtilStringStorage.linkLabel, 35, 940, -120);
+        linkLabel.setFont(Font.font("Impact", FontWeight.BOLD, 35));
 
         Hyperlink hyperLinkIcon = App.hyperLinkIcon;
-        setUpLinkLabels(hyperLinkIcon, 20, 660, -70);
+        setUpLinkLabels(hyperLinkIcon, 26, 850, -90);
 
         Hyperlink hyperLinkIcon2 = App.hyperLinkIcon2;
-        setUpLinkLabels(hyperLinkIcon2, 20, 660, -50);
+        setUpLinkLabels(hyperLinkIcon2, 26, 850, -70);
 
         Hyperlink hyperlinkBackground = App.hyperLinkBackground;
-        setUpLinkLabels(hyperlinkBackground, 20, 660, -30);
+        setUpLinkLabels(hyperlinkBackground, 26, 850, -50);
 
         creditVbox.getChildren().add(linkLabel);
         creditVbox.getChildren().add(hyperLinkIcon);

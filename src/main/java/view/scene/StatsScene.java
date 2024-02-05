@@ -20,33 +20,36 @@ public class StatsScene extends Scene
     private final Stage stage;
     private final AchievementManager achievementManager;
     private GridPane gridPane;
+    private final VBox mainVbox;
     public StatsScene (BorderPane borderPane, Stage stage, AchievementManager achievementManager)
     {
         super(borderPane);
         this.borderPane = borderPane;
-        borderPane.setPrefHeight(750);
-        borderPane.setPrefWidth(1200);
         this.stage = stage;
         this.achievementManager = achievementManager;
 
+        mainVbox = new VBox();
+        mainVbox.setTranslateX(100);
+
         createBackground();
+        createTitleScene();
         createGridPane();
         create1stRowStatistic();
         create2ndRowStatistic();
         create3rdRowStatistic();
-        createTitleScene();
         createReturnButton();
 
-        borderPane.setCenter(gridPane);
+        borderPane.setCenter(mainVbox);
     }
 
     public void createGridPane()
     {
         gridPane = new GridPane();
-        gridPane.setVgap(25);
+        gridPane.setVgap(35);
         gridPane.setHgap(55);
-        gridPane.setTranslateX(80);
-        gridPane.setTranslateY(50);
+        gridPane.setTranslateX(200);
+        gridPane.setTranslateY(150);
+        mainVbox.getChildren().add(gridPane);
     }
 
     public void create1stRowStatistic()
@@ -142,9 +145,10 @@ public class StatsScene extends Scene
     public void createTitleScene()
     {
         Label achievementLabel = new Label(UtilStringStorage.statisticLabel);
-        achievementLabel.setFont(Font.font("Impact", FontWeight.BOLD, 35));
-        gridPane.add(achievementLabel, 2, 0);
-        achievementLabel.setTranslateX(10);
+        achievementLabel.setFont(Font.font("Impact", FontWeight.BOLD, 40));
+        mainVbox.getChildren().add(achievementLabel);
+        achievementLabel.setTranslateX(650);
+        achievementLabel.setTranslateY(80);
     }
 
     public void createReturnButton()

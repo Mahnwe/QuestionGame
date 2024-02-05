@@ -42,8 +42,6 @@ public class PersonalizeQuestionListScene extends Scene {
         this.mainBorderPane = new BorderPane();
         mainBorderPane.setMinHeight(1080);
 
-        scrollPane.setPrefHeight(750);
-        scrollPane.setPrefWidth(1200);
         scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
         scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         scrollPane.setFitToWidth(true);
@@ -59,15 +57,18 @@ public class PersonalizeQuestionListScene extends Scene {
     public void createDeleteAllVbox()
     {
         VBox deleteAllVbox = new VBox();
+        deleteAllVbox.setTranslateY(100);
+        deleteAllVbox.setTranslateX(50);
         Label deleteAllLabel = new Label(UtilStringStorage.deleteAllLabel);
-        deleteAllLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 18));
+        deleteAllLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 22));
 
         Button deleteAllPersonalizeQuestionsButton = new Button();
         CustomOption.setUpTrashButton(deleteAllPersonalizeQuestionsButton, UtilStringStorage.deleteAllTooltip);
-        deleteAllPersonalizeQuestionsButton.setTranslateX(10);
+        deleteAllPersonalizeQuestionsButton.setTranslateX(20);
+        deleteAllPersonalizeQuestionsButton.setTranslateY(50);
 
         Label questionsAreDeletedLabel = new Label(UtilStringStorage.questionAreDeleted);
-        questionsAreDeletedLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 18));
+        questionsAreDeletedLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 22));
         questionsAreDeletedLabel.setVisible(false);
 
        setOnActionDeleteAllQuestionsButton(deleteAllPersonalizeQuestionsButton, questionsAreDeletedLabel);
@@ -113,22 +114,23 @@ public class PersonalizeQuestionListScene extends Scene {
         gridpane.setMinHeight(1080);
         GridPane.setVgrow(gridpane, Priority.ALWAYS);
         gridpane.setVgap(30);
-        gridpane.setTranslateY(50);
-        gridpane.setTranslateX(50);
+        gridpane.setTranslateY(100);
+        gridpane.setTranslateX(250);
     }
 
     public void createPersonalizeQuestionList()
     {
         questionListVbox = new VBox();
+        questionListVbox.setTranslateX(100);
+        questionListVbox.setTranslateY(50);
 
         Label titleLabel = new Label(UtilStringStorage.questionListTitle);
-        titleLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 25));
-        titleLabel.setTranslateX(250);
+        titleLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 40));
+        titleLabel.setTranslateX(350);
         questionListVbox.getChildren().add(titleLabel);
 
         createIndividualQuestionArea();
 
-        gridpane.setTranslateX(50);
         questionListVbox.getChildren().add(gridpane);
     }
 
@@ -139,7 +141,7 @@ public class PersonalizeQuestionListScene extends Scene {
             HBox hBox = new HBox();
 
             Label label = new Label();
-            label.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 20));
+            label.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 22));
             label.setText(UtilStringStorage.noPersonalizeQuestionInList);
             hBox.getChildren().add(label);
             gridpane.add(hBox, 0, 0);
@@ -168,7 +170,7 @@ public class PersonalizeQuestionListScene extends Scene {
         hBox.getChildren().add(deleteButton);
 
         Label label = new Label();
-        label.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 20));
+        label.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 22));
         label.setText("Question n°" + (i+1) + " : " + checkForProperty);
         hBox.getChildren().add(label);
 

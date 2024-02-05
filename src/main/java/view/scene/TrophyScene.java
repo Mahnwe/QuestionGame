@@ -34,8 +34,6 @@ public class TrophyScene extends Scene
     {
         super(pane);
         this.pane = pane;
-        pane.setPrefHeight(750);
-        pane.setPrefWidth(1200);
         this.stage = stage;
         this.achievementManager = achievementManager;
 
@@ -58,7 +56,7 @@ public class TrophyScene extends Scene
 
         gridPane = new BootstrapPane(4);
         gridPane.setHgap(10);
-        gridPane.setVgap(90);
+        gridPane.setVgap(200);
 
         createGoldVbox();
         createSilverVbox();
@@ -68,7 +66,7 @@ public class TrophyScene extends Scene
         setUpGridPane();
         centralVbox.getChildren().add(gridPane);
         pane.setCenter(centralVbox);
-        centralVbox.setTranslateY(70);
+        centralVbox.setTranslateY(120);
     }
 
     public void createGoldVbox()
@@ -125,20 +123,21 @@ public class TrophyScene extends Scene
 
         gridPane.add(trophyLabel, 1, 0);
         gridPane.add(goldCupImage, 0, 1);
+        goldCupImage.setTranslateX(25);
         gridPane.add(silverCupImage, 1, 1);
-        silverCupImage.setTranslateX(-55);
+        silverCupImage.setTranslateX(-30);
         gridPane.add(bronzeCupImage, 2, 1);
-        bronzeCupImage.setTranslateX(-50);
+        bronzeCupImage.setTranslateX(-25);
         gridPane.add(secretCupImage, 3, 1);
-        secretCupImage.setTranslateX(-35);
+        secretCupImage.setTranslateX(-10);
         gridPane.setTranslateX(80);
     }
 
     public void stylizeTitleLabel(Label label)
     {
         label.setText(UtilStringStorage.trophyLabel);
-        label.setFont(Font.font("Impact", FontWeight.BOLD, 35));
-        label.setTranslateX(50);
+        label.setFont(Font.font("Impact", FontWeight.BOLD, 40));
+        label.setTranslateX(150);
     }
 
     public void setUpVbox(VBox vBox, Label label, int translateX, int translateY, String string, Properties properties, String propertyKey, Label cupNumber)
@@ -170,8 +169,8 @@ public class TrophyScene extends Scene
     {
         label.setText(string +" ");
         cupNumber.setText(properties.getProperty(propertyKey));
-        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 25));
-        cupNumber.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 27));
+        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 26));
+        cupNumber.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 28));
     }
 
     public void createIcons()

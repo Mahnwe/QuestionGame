@@ -92,7 +92,7 @@ public class LeaderBoardScene extends Scene
         leaderBoardLabel.setFont(Font.font("Impact", FontWeight.BOLD, 40));
 
         scoreGridPane = new GridPane();
-        scoreGridPane.setVgap(35);
+        scoreGridPane.setVgap(50);
         readSaveFile(0);
         scoreGridPane.setTranslateX(320);
         scoreGridPane.setTranslateY(90);

@@ -55,15 +55,15 @@ public class ResultScene extends VBox
 
         gameResult.getChildren().add(exitToMenuButton);
         pane.setCenter(gameResult);
-        gameResult.setTranslateY(20);
-        gameResult.setTranslateX(-70);
+        gameResult.setTranslateY(100);
+        gameResult.setTranslateX(100);
 
     }
 
     public void stylizeLabel(Label label, int translateX, int translateY) {
         label.setTranslateX(translateX);
         label.setTranslateY(translateY);
-        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 25));
+        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 28));
         label.setTextFill(Color.GHOSTWHITE);
     }
 
@@ -94,7 +94,7 @@ public class ResultScene extends VBox
         if(questionCount < 10) {
             FileUtil.getGeneralSavesFile().setProperty("survivalScore20", String.valueOf(questionCount));
             Label cupLabel = new Label(UtilStringStorage.noSurviveLabel);
-            stylizeLabel(cupLabel, 50, 70);
+            stylizeLabel(cupLabel, 80, 90);
             gameResult.getChildren().add(cupLabel);
         }
         achievementManager.checkNumberOfGamesAchievement(achievementManager, FileUtil.getGeneralSavesFile());
@@ -124,7 +124,7 @@ public class ResultScene extends VBox
         {
             achievementManager.checkIfPerfectScoreAchievementIsUnlock(questionCount, playerFinalScore, FileUtil.getGeneralSavesFile(), achievementManager);
             Label cupLabel = new Label(UtilStringStorage.noCupLabel);
-            stylizeLabel(cupLabel, 100, 70);
+            stylizeLabel(cupLabel, 130, 90);
             gameResult.getChildren().add(cupLabel);
         }
         achievementManager.checkNumberOfGamesAchievement(achievementManager, FileUtil.getGeneralSavesFile());
@@ -135,10 +135,10 @@ public class ResultScene extends VBox
     public void setUpLabelAndTimer()
     {
         congratsLabel = new Label();
-        stylizeLabel(congratsLabel, 190, 10);
+        stylizeLabel(congratsLabel, 200, 10);
 
         playerResult = new Label();
-        stylizeLabel(playerResult, 195, 30);
+        stylizeLabel(playerResult, 235, 50);
 
         exitToMenuButton = new Button(UtilStringStorage.returnToMenuButton);
         CustomOption.customExitToMenuButton(exitToMenuButton);
@@ -149,8 +149,8 @@ public class ResultScene extends VBox
         });
 
         Label timeLabel = new Label();
-        stylizeLabel(timeLabel, 195, 35);
-        timeLabel.setText(UtilStringStorage.timeLabel + GameTimer.getElapsedMinutes() + UtilStringStorage.minLabel + GameTimer.getSecondsDisplay() +UtilStringStorage.secondesLabel);
+        stylizeLabel(timeLabel, 230, 55);
+        timeLabel.setText(UtilStringStorage.timeLabel +"  "+ GameTimer.getElapsedMinutes() + UtilStringStorage.minLabel + GameTimer.getSecondsDisplay() +UtilStringStorage.secondesLabel);
 
         gameResult.getChildren().add(congratsLabel);
         gameResult.getChildren().add(playerResult);
@@ -171,11 +171,11 @@ public class ResultScene extends VBox
 
     public void setUpCupResultLabel(Label label) {
         ResultScene.resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
-        stylizeLabel(label, 200, 120);
+        stylizeLabel(label, 230, 130);
     }
     public void setUpSurviveResultLabel(Label label) {
         ResultScene.resultSoundEffect = SoundManager.playMusic(PathUtil.RESULT_SOUND_EFFECT);
-        stylizeLabel(label, 200, 120);
+        stylizeLabel(label, 230, 130);
     }
 
     public void createIcons()
@@ -192,10 +192,10 @@ public class ResultScene extends VBox
 
     public void stylizeIcon (ImageView imageView)
     {
-        imageView.setFitHeight(190);
-        imageView.setFitWidth(170);
-        imageView.setTranslateY(90);
-        imageView.setTranslateX(310);
+        imageView.setFitHeight(200);
+        imageView.setFitWidth(180);
+        imageView.setTranslateY(120);
+        imageView.setTranslateX(340);
     }
 
     public void backToMainMenu()

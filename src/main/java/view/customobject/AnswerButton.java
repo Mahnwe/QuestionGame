@@ -21,7 +21,7 @@ public class AnswerButton extends Button
         String upperText = text.toUpperCase();
         this.setText(upperText);
         this.setBorder(CustomOption.createCustomBorder(1.5, 2.0, Color.BLACK));
-        this.setFont(Font.font("Futura", FontWeight.BOLD, 18));
+        this.setFont(Font.font("Futura", FontWeight.BOLD, 20));
     }
 
     public static void setAnswerButtonOnAction(AnswerButton answerButton, List<AnswerButton> buttonList, Button validateButton)

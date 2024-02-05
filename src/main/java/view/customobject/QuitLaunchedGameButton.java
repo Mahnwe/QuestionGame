@@ -15,7 +15,7 @@ public class QuitLaunchedGameButton extends Button {
     public QuitLaunchedGameButton(String buttonText)
     {
         this.setText(buttonText);
-        this.setFont(Font.font("Futura", FontWeight.BOLD, 20));
+        this.setFont(Font.font("Futura", FontWeight.BOLD, 24));
         this.setBorder(CustomOption.createCustomBorder(2.0, 2.0, Color.BLACK));
 
         IconCreator personalizeIcon = new IconCreator(PathUtil.MENU_BACKGROUND);

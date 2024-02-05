@@ -117,11 +117,11 @@ public class PlayerInfoScene extends Scene
     public void createPlayerInfoArea()
     {
         playerInfos = new VBox();
-        playerInfos.setMinWidth(230);
-        playerInfos.setTranslateY(200);
+        playerInfos.setMinWidth(370);
+        playerInfos.setTranslateY(280);
 
         player.setPlayerName(userInputArea.getText());
-        Label playerNameLabel = new Label(UtilStringStorage.playerNameIngame + " " + player.getPlayerName());
+        Label playerNameLabel = new Label(UtilStringStorage.playerNameIngame + "   " + player.getPlayerName());
         stylizeLabel(playerNameLabel);
 
         playerInfos.getChildren().add(createStatArea(playerNameLabel));
@@ -144,7 +144,7 @@ public class PlayerInfoScene extends Scene
 
     public void stylizeLabel(Label label)
     {
-        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 19));
+        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 22));
         label.setTextFill(Color.GHOSTWHITE);
         label.setTranslateX(-11);
     }
@@ -152,18 +152,18 @@ public class PlayerInfoScene extends Scene
     public void createSliderArea()
     {
         Label volumeLabel = new Label(UtilStringStorage.volumeLabel);
-        volumeLabel.setTranslateY(110);
-        volumeLabel.setTranslateX(80);
-        volumeLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 19));
+        volumeLabel.setTranslateY(220);
+        volumeLabel.setTranslateX(130);
+        volumeLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 25));
         volumeLabel.setTextFill(Color.GHOSTWHITE);
         playerInfos.getChildren().add(volumeLabel);
 
         Button muteButton = new Button();
-        CustomOption.customMuteButton(muteButton, PathUtil.WHITE_MUTE_ICON, 175, 105);
+        CustomOption.customMuteButton(muteButton, PathUtil.WHITE_MUTE_ICON, 315, 155);
         playerInfos.getChildren().add(muteButton);
 
         Slider volumeSlider = new Slider(0, 10, 5);
-        CustomOption.customSlider(volumeSlider, 245, 50, 95, 0);
+        CustomOption.customSlider(volumeSlider, 155, 50, 205, 0);
         volumeSlider.setValue(SoundManager.soundVolume);
         if(SoundManager.soundVolume == 0.0) {
             SoundManager.isMute = true;

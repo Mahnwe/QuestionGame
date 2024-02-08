@@ -19,8 +19,8 @@ public class NotificationAlert extends Alert
     public NotificationAlert(AlertType alertType)
     {
         super(alertType);
-        this.setHeight(70);
-        this.setWidth(70);
+        this.setHeight(110);
+        this.setWidth(120);
         designAlertNotif();
     }
 
@@ -28,21 +28,21 @@ public class NotificationAlert extends Alert
     {
         IconCreator notifIcon = new IconCreator(PathUtil.NOTIF_ICON);
         ImageView notifImage = notifIcon.createImage();
-        notifImage.setFitWidth(50);
-        notifImage.setFitHeight(50);
+        notifImage.setFitWidth(60);
+        notifImage.setFitHeight(60);
 
         Label notificationTitle = new Label(UtilStringStorage.notificationTitle);
-        notificationTitle.setFont(Font.font(ALERT_POLICE, FontWeight.BOLD, 23));
+        notificationTitle.setFont(Font.font(ALERT_POLICE, FontWeight.BOLD, 25));
 
         Label notificationHeaderText = new Label(UtilStringStorage.notificationText);
-        notificationHeaderText.setFont(Font.font(ALERT_POLICE, FontWeight.BOLD, 23));
+        notificationHeaderText.setFont(Font.font(ALERT_POLICE, FontWeight.BOLD, 25));
 
         this.setTitle(notificationTitle.getText());
         this.setHeaderText(notificationHeaderText.getText());
         this.setGraphic(notifImage);
 
         Button alertOkButton = (Button) this.getDialogPane().lookupButton(ButtonType.OK);
-        alertOkButton.setFont(Font.font(ALERT_POLICE, FontWeight.BOLD, 15));
+        alertOkButton.setFont(Font.font(ALERT_POLICE, FontWeight.BOLD, 20));
         alertOkButton.setTranslateX(-140);
     }
 

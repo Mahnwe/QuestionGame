@@ -565,7 +565,7 @@ public class QuestionStorage
                 QuestionStringStorage.explanation109);
         questionList.add(question109);
 
-        Question question110 = new Question(UtilStringStorage.monument, QuestionStringStorage.question110,QuestionStringStorage.answerA110,
+        Question question110 = new Question(UtilStringStorage.geography, QuestionStringStorage.question110,QuestionStringStorage.answerA110,
                 QuestionStringStorage.answerB110, QuestionStringStorage.answerC110, QuestionStringStorage.answerD110, QuestionStringStorage.goodAnswer110,
                 QuestionStringStorage.explanation110);
         questionList.add(question110);
@@ -579,6 +579,21 @@ public class QuestionStorage
                 QuestionStringStorage.answerB112, QuestionStringStorage.answerC112, QuestionStringStorage.answerD112, QuestionStringStorage.goodAnswer112,
                 QuestionStringStorage.explanation112);
         questionList.add(question112);
+
+        Question question113 = new Question(UtilStringStorage.mythology, QuestionStringStorage.question113,QuestionStringStorage.answerA113,
+                QuestionStringStorage.answerB113, QuestionStringStorage.answerC113, QuestionStringStorage.answerD113, QuestionStringStorage.goodAnswer113,
+                QuestionStringStorage.explanation113);
+        questionList.add(question113);
+
+        Question question114 = new Question(UtilStringStorage.mythology, QuestionStringStorage.question114,QuestionStringStorage.answerA114,
+                QuestionStringStorage.answerB114, QuestionStringStorage.answerC114, QuestionStringStorage.answerD114, QuestionStringStorage.goodAnswer114,
+                QuestionStringStorage.explanation114);
+        questionList.add(question114);
+
+        Question question115 = new Question(UtilStringStorage.monument, QuestionStringStorage.question115,QuestionStringStorage.answerA115,
+                QuestionStringStorage.answerB115, QuestionStringStorage.answerC115, QuestionStringStorage.answerD115, QuestionStringStorage.goodAnswer115,
+                QuestionStringStorage.explanation115);
+        questionList.add(question115);
 
     }
 

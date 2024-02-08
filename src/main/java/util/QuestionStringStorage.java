@@ -787,4 +787,25 @@ public class QuestionStringStorage {
     public static String answerD112 = "";
     public static String goodAnswer112 = "";
     public static String explanation112 = "";
+    public static String question113 = "";
+    public static String answerA113 = "";
+    public static String answerB113 = "";
+    public static String answerC113 = "";
+    public static String answerD113 = "";
+    public static String goodAnswer113 = "";
+    public static String explanation113 = "";
+    public static String question114 = "";
+    public static String answerA114 = "";
+    public static String answerB114 = "";
+    public static String answerC114 = "";
+    public static String answerD114 = "";
+    public static String goodAnswer114 = "";
+    public static String explanation114 = "";
+    public static String question115 = "";
+    public static String answerA115 = "";
+    public static String answerB115 = "";
+    public static String answerC115 = "";
+    public static String answerD115 = "";
+    public static String goodAnswer115 = "";
+    public static String explanation115 = "";
 }

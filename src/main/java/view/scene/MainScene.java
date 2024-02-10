@@ -16,8 +16,8 @@ import util.FileUtil;
 import util.PathUtil;
 import util.UtilStringStorage;
 import view.App;
-import view.customobject.PopUp;
 import view.customobject.ConfirmAlert;
+import view.customobject.PopUp;
 import view.customobject.QuitLaunchedGameButton;
 
 import java.util.Optional;
@@ -151,13 +151,16 @@ public class MainScene extends Scene
 
     public void saveScoreInFile()
     {
-        if(GameHandler.gameMode == null) {
-            FileUtil.writeInSaveFile(FileUtil.saveFile, UtilStringStorage.classicModeLabelInfile+"  "+UtilStringStorage.playerNameInfile + " " + playerInfoScene.getPlayer().getPlayerName() + " | " + UtilStringStorage.scoreLabelInfile + " " + playerInfoScene.getPlayer().getPlayerScore() + " " + UtilStringStorage.scoreOn + " " + gameHandler.getQuestionCount() +
-                    " | " + UtilStringStorage.timerLabelInfile + " " + GameTimer.getElapsedMinutes() + " " + UtilStringStorage.gameMinutes + " " + GameTimer.getSecondsDisplay() + " " + UtilStringStorage.gameSecondes + "\n");
+        if(GameHandler.gameMode == null)
+        {
+            FileUtil.writeNormalModInJsonFile(UtilStringStorage.classicModeLabelInfile, playerInfoScene.getPlayer().getPlayerName(), playerInfoScene.getPlayer().getPlayerScore(),
+                    " " + UtilStringStorage.scoreOn + " ", gameHandler.getQuestionCount(), GameTimer.getElapsedMinutes(), " " + UtilStringStorage.gameMinutes + " ",
+                    GameTimer.getSecondsDisplay(), " " + UtilStringStorage.gameSecondes);
         }
-        else if(GameHandler.gameMode.equals(SURVIVAL_MODE)) {
-            FileUtil.writeInSaveFile(FileUtil.saveFile,  UtilStringStorage.survivalLabelInfile +"  "+ UtilStringStorage.playerNameInfile +" "+ playerInfoScene.getPlayer().getPlayerName() +" | "+ UtilStringStorage.scoreLabelInfile +" "+ gameHandler.getQuestionCount()+ " questions"+
-                    " | " + UtilStringStorage.timerLabelInfile + " " + GameTimer.getElapsedMinutes() + " " + UtilStringStorage.gameMinutes + " " + GameTimer.getSecondsDisplay() + " " + UtilStringStorage.gameSecondes +"\n");
+        else if(GameHandler.gameMode.equals(SURVIVAL_MODE))
+        {
+            FileUtil.writeSurvivalModeInJsonFile(UtilStringStorage.survivalLabelInfile, playerInfoScene.getPlayer().getPlayerName(), gameHandler.getQuestionCount(), " questions",
+                    GameTimer.getElapsedMinutes(), UtilStringStorage.gameMinutes, GameTimer.getSecondsDisplay(), UtilStringStorage.gameSecondes);
         }
     }
 

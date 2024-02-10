@@ -7,8 +7,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.AchievementManager;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.json.simple.JSONObject;
 import util.BackgroundCreator;
 import util.CustomOption;
 import util.FileUtil;
@@ -16,14 +15,11 @@ import util.UtilStringStorage;
 import view.customobject.ConfirmAlert;
 import view.customobject.ReturnButton;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.util.List;
 import java.util.Optional;
 
 public class LeaderBoardScene extends Scene
 {
-    private static final Logger logger = LogManager.getLogger(LeaderBoardScene.class);
     private final Stage stage;
     private final AchievementManager achievementManager;
     private final VBox leaderBoardVBox;
@@ -68,18 +64,28 @@ public class LeaderBoardScene extends Scene
 
     public void readSaveFile(int rowIndex)
     {
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(FileUtil.saveFile))){
-            String line;
-            while((line = bufferedReader.readLine()) != null)
-            {
-                Label label = new Label();
-                 label.setText(line);
-                label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 20));
-                scoreGridPane.add(label, 0, rowIndex);
-                rowIndex++;
-            }
-        } catch (IOException e) {
-            logger.error("Save file can't be read");
+        List<JSONObject> jsonArrayList = FileUtil.readJsonFile();
+        for(int i = 0; i < jsonArrayList.size(); i++)
+        {
+            JSONObject jsonObject = jsonArrayList.get(i);
+
+            Label gameModLabel = new Label((String) jsonObject.get("gameMod"));
+            gameModLabel.setFont(Font.font("Impact", FontWeight.NORMAL, 24));
+
+            Label playerName = new Label((String) jsonObject.get("playerName"));
+            playerName.setFont(Font.font("Impact", FontWeight.NORMAL, 24));
+
+            Label playerScore = new Label((String) jsonObject.get("playerScore"));
+            playerScore.setFont(Font.font("Impact", FontWeight.NORMAL, 24));
+
+            Label playerTimer = new Label((String) jsonObject.get("playerTimer"));
+            playerTimer.setFont(Font.font("Impact", FontWeight.NORMAL, 24));
+
+            scoreGridPane.add(gameModLabel, 0, rowIndex);
+            scoreGridPane.add(playerName, 1, rowIndex);
+            scoreGridPane.add(playerScore, 2, rowIndex);
+            scoreGridPane.add(playerTimer, 3, rowIndex);
+            rowIndex++;
         }
     }
 
@@ -93,12 +99,36 @@ public class LeaderBoardScene extends Scene
 
         scoreGridPane = new GridPane();
         scoreGridPane.setVgap(50);
-        readSaveFile(0);
-        scoreGridPane.setTranslateX(320);
-        scoreGridPane.setTranslateY(90);
+        scoreGridPane.setHgap(50);
+
+        createGridPaneBoard();
+
+        readSaveFile(1);
+        scoreGridPane.setTranslateX(500);
+        scoreGridPane.setTranslateY(100);
 
         leaderBoardVBox.getChildren().add(leaderBoardLabel);
         leaderBoardVBox.getChildren().add(scoreGridPane);
+    }
+
+    public void createGridPaneBoard()
+    {
+        Label gameModLabel = new Label(UtilStringStorage.gameModLabel);
+        gameModLabel.setFont(Font.font("Impact", FontWeight.BOLD, 30));
+
+        Label playerName = new Label(UtilStringStorage.playerNameInfile);
+        playerName.setFont(Font.font("Impact", FontWeight.BOLD, 30));
+
+        Label playerScore = new Label(UtilStringStorage.scoreLabelInfile);
+        playerScore.setFont(Font.font("Impact", FontWeight.BOLD, 30));
+
+        Label playerTimer = new Label(UtilStringStorage.timerLabelInfile);
+        playerTimer.setFont(Font.font("Impact", FontWeight.BOLD, 30));
+
+        scoreGridPane.add(gameModLabel, 0, 0);
+        scoreGridPane.add(playerName, 1, 0);
+        scoreGridPane.add(playerScore, 2, 0);
+        scoreGridPane.add(playerTimer, 3, 0);
     }
 
     public void createEraseFileButton()
@@ -111,7 +141,7 @@ public class LeaderBoardScene extends Scene
         eraseSaveFileButton.setOnAction(event -> {
             Optional<ButtonType> result = confirmAlert.showAndWait();
             if(result.orElse(null) == ButtonType.OK) {
-                FileUtil.resetSaveFile();
+                FileUtil.resetJsonFile();
                 LeaderBoardScene leaderBoardScene = new LeaderBoardScene(new ScrollPane(), stage, achievementManager);
                 stage.setScene(leaderBoardScene);
             }

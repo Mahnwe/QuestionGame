@@ -27,7 +27,7 @@ public class ResetAllSavesButton extends Button {
             if(result.orElse(null) == ButtonType.OK)
             {
                 TimePlayedTimer.stopTimer();
-                FileUtil.resetSaveFile();
+                FileUtil.resetJsonFile();
                 FileUtil.resetGeneralSavesFile();
                 TimePlayedTimer.startTimer();
                 MenuScene menuScene = new MenuScene(new BorderPane(), stage, new AchievementManager());

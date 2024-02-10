@@ -116,6 +116,7 @@ public class UtilStringStorage
     public static String playerResult = "";
     public static String scoreOn = "";
     public static String survivalLabel = "";
+    public static String gameModLabel = "";
     public static String classicModeLabelInfile = "";
     public static String survivalLabelInfile = "";
     public static String playerNameInfile = "";

@@ -154,6 +154,7 @@ public class UtilTranslateString {
         UtilStringStorage.playerResult = engTradFile.getProperty("playerResult");
         UtilStringStorage.scoreOn = engTradFile.getProperty("scoreOn");
         UtilStringStorage.survivalLabel = engTradFile.getProperty("survivalLabel");
+        UtilStringStorage.gameModLabel = engTradFile.getProperty("gameModLabel");
         UtilStringStorage.classicModeLabelInfile = engTradFile.getProperty("classicModeLabelInfile");
         UtilStringStorage.survivalLabelInfile = engTradFile.getProperty("survivalLabelInfile");
         UtilStringStorage.playerNameInfile = engTradFile.getProperty("playerNameInfile");
@@ -379,6 +380,7 @@ public class UtilTranslateString {
         UtilStringStorage.playerResult = frTradFile.getProperty("playerResult");
         UtilStringStorage.scoreOn = frTradFile.getProperty("scoreOn");
         UtilStringStorage.survivalLabel = frTradFile.getProperty("survivalLabel");
+        UtilStringStorage.gameModLabel = frTradFile.getProperty("gameModLabel");
         UtilStringStorage.classicModeLabelInfile = frTradFile.getProperty("classicModeLabelInfile");
         UtilStringStorage.survivalLabelInfile = frTradFile.getProperty("survivalLabelInfile");
         UtilStringStorage.playerNameInfile = frTradFile.getProperty("playerNameInfile");

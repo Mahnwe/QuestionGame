@@ -3,8 +3,13 @@ package util;
 import model.PersonalizeQuestionsHandler;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 
@@ -13,7 +18,6 @@ public class FileUtil {
     private static final Logger logger = LogManager.getLogger(FileUtil.class);
     protected static Properties generalSavesFile = new Properties();
     protected static Properties personalizeQuestionsFile = new Properties();
-    public static File saveFile;
 
     public static void loadFile(Properties properties, final String filePath)
     {
@@ -40,22 +44,64 @@ public class FileUtil {
         }
     }
 
-    public static void createSaveFile()
+    public static void writeNormalModInJsonFile(String gameMod, String playerName, int playerScore, String scoreOn, int questionCount, long elapsedMinute, String gameMinute, long elapsedSecond, String gameSecond)
     {
-        saveFile = new File("./src/main/resources/SaveFile/saveScoresFile");
-    }
-
-    public static void writeInSaveFile(File saveFile, String lineToWrite)
-    {
+        List<JSONObject> jsonObjectList = readJsonFile();
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("gameMod", gameMod);
+        jsonObject.put("playerName", playerName);
+        jsonObject.put("playerScore", playerScore + " " + scoreOn + " " + questionCount);
+        jsonObject.put("playerTimer", elapsedMinute + " " + gameMinute + " " + elapsedSecond + " " + gameSecond);
+        jsonObjectList.add(jsonObject);
+        FileWriter file = null;
         try {
-            boolean append = true;
-            FileWriter fw = new FileWriter(saveFile.getAbsoluteFile(), append);
-            try (BufferedWriter bw = new BufferedWriter(fw)) {
-                bw.write(lineToWrite);
-            }
-        }catch (IOException e) {
+            file = new FileWriter("./src/main/resources/SaveFile/GamesSaveFile.json");
+        } catch (IOException e) {
+            e.printStackTrace();
+            logger.error("File can't be found");
+        }
+        try {
+            assert file != null;
+            file.append(jsonObjectList.toString());
+        } catch (IOException e) {
             e.printStackTrace();
             logger.error("Can't write in save file");
+        }
+        try {
+            file.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            logger.error("File can't be closed");
+        }
+    }
+    public static void writeSurvivalModeInJsonFile(String gameMod, String playerName, int questionCount, String questions, long elapsedMinute, String gameMinute, long elapsedSecond, String gameSecond)
+    {
+        List<JSONObject> jsonObjectList = readJsonFile();
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("gameMod", gameMod);
+        jsonObject.put("playerName", playerName);
+        jsonObject.put("playerScore", questionCount + questions);
+        jsonObject.put("playerTimer", elapsedMinute + " " + gameMinute + " " + elapsedSecond + " " + gameSecond);
+        jsonObjectList.add(jsonObject);
+        FileWriter file = null;
+        try {
+            file = new FileWriter("./src/main/resources/SaveFile/GamesSaveFile.json");
+        } catch (IOException e) {
+            e.printStackTrace();
+            logger.error("File can't be found");
+        }
+        try {
+            assert file != null;
+            file.write(jsonObjectList.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+            logger.error("Can't write in save file");
+        }
+        try {
+            file.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            logger.error("File can't be closed");
         }
     }
 
@@ -84,16 +130,49 @@ public class FileUtil {
         storePersonalizeQuestionsFile();
     }
 
-    public static void resetSaveFile()
+    public static List<JSONObject> readJsonFile()
     {
+        JSONParser jsonParser = new JSONParser();
+        FileReader reader = null;
         try {
-            FileWriter fw = new FileWriter(saveFile.getAbsoluteFile());
-            try (BufferedWriter bw = new BufferedWriter(fw)) {
-                bw.write("");
-            }
-        }catch (IOException e) {
+                reader = new FileReader("./src/main/resources/SaveFile/GamesSaveFile.json");
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
-            logger.error("Save file can't be reset");
+            logger.error("File can't be found");
+        }
+        List<JSONObject> jsonArrayList = new ArrayList<>();
+            try {
+                jsonArrayList = (List<JSONObject>) jsonParser.parse(reader);
+            } catch (ParseException | IOException e) {
+                e.printStackTrace();
+                logger.error("object can't be parsed");
+            }
+            return jsonArrayList;
+    }
+
+    public static void resetJsonFile()
+    {
+        List<JSONObject> jsonObjectList = readJsonFile();
+        jsonObjectList.clear();
+        FileWriter file = null;
+        try {
+            file = new FileWriter("./src/main/resources/SaveFile/GamesSaveFile.json");
+        } catch (IOException e) {
+            e.printStackTrace();
+            logger.error("File can't be found");
+        }
+        try {
+            assert file != null;
+            file.write(jsonObjectList.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+            logger.error("Can't write in save file");
+        }
+        try {
+            file.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            logger.error("File can't be closed");
         }
     }
 
@@ -133,7 +212,6 @@ public class FileUtil {
 
     public static void createAndLoadFiles()
     {
-        FileUtil.createSaveFile();
         FileUtil.loadFile(generalSavesFile, PathUtil.GENERAL_SAVES_FILE);
         FileUtil.loadFile(personalizeQuestionsFile, PathUtil.PERSONALIZE_QUESTIONS_FILE);
     }

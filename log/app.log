@@ -1,4 +1,4 @@
-2024-01-12 03:31:15.581 ERROR [JavaFX Application Thread] [model.ImportFileHandler.loadFile(ImportFileHandler.java:135)] - Stream can't be create
-2024-01-12 03:40:44.962 ERROR [JavaFX Application Thread] [model.ImportFileHandler.loadFile(ImportFileHandler.java:139)] - Stream can't be create
-2024-01-12 21:39:23.063 ERROR [JavaFX Application Thread] [model.ImportFileHandler.loadFile(ImportFileHandler.java:156)] - Stream can't be create
-2024-01-12 21:41:08.631 ERROR [JavaFX Application Thread] [model.ImportFileHandler.loadFile(ImportFileHandler.java:157)] - Stream can't be create
+2024-02-10 02:21:22.213 ERROR [JavaFX Application Thread] [util.FileUtil.readJsonFile(FileUtil.java:153)] - object can't be parsed
+2024-02-10 02:21:22.220 ERROR [JavaFX Application Thread] [util.FileUtil.readJsonFile(FileUtil.java:153)] - object can't be parsed
+2024-02-10 02:24:44.839 ERROR [JavaFX Application Thread] [util.FileUtil.readJsonFile(FileUtil.java:153)] - object can't be parsed
+2024-02-10 02:24:44.842 ERROR [JavaFX Application Thread] [util.FileUtil.readJsonFile(FileUtil.java:153)] - object can't be parsed

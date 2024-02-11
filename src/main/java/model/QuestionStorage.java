@@ -595,6 +595,31 @@ public class QuestionStorage
                 QuestionStringStorage.explanation115);
         questionList.add(question115);
 
+        Question question116 = new Question(UtilStringStorage.invention, QuestionStringStorage.question116,QuestionStringStorage.answerA116,
+                QuestionStringStorage.answerB116, QuestionStringStorage.answerC116, QuestionStringStorage.answerD116, QuestionStringStorage.goodAnswer116,
+                QuestionStringStorage.explanation116);
+        questionList.add(question116);
+
+        Question question117 = new Question(UtilStringStorage.monument, QuestionStringStorage.question117,QuestionStringStorage.answerA117,
+                QuestionStringStorage.answerB117, QuestionStringStorage.answerC117, QuestionStringStorage.answerD117, QuestionStringStorage.goodAnswer117,
+                QuestionStringStorage.explanation117);
+        questionList.add(question117);
+
+        Question question118 = new Question(UtilStringStorage.animals, QuestionStringStorage.question118,QuestionStringStorage.answerA118,
+                QuestionStringStorage.answerB118, QuestionStringStorage.answerC118, QuestionStringStorage.answerD118, QuestionStringStorage.goodAnswer118,
+                QuestionStringStorage.explanation118);
+        questionList.add(question118);
+
+        Question question119 = new Question(UtilStringStorage.geography, QuestionStringStorage.question119,QuestionStringStorage.answerA119,
+                QuestionStringStorage.answerB119, QuestionStringStorage.answerC119, QuestionStringStorage.answerD119, QuestionStringStorage.goodAnswer119,
+                QuestionStringStorage.explanation119);
+        questionList.add(question119);
+
+        Question question120 = new Question(UtilStringStorage.space, QuestionStringStorage.question120,QuestionStringStorage.answerA120,
+                QuestionStringStorage.answerB120, QuestionStringStorage.answerC120, QuestionStringStorage.answerD120, QuestionStringStorage.goodAnswer120,
+                QuestionStringStorage.explanation120);
+        questionList.add(question120);
+
     }
 
     public void checkPersonalizeQuestions()

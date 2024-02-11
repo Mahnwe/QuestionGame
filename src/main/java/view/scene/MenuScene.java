@@ -24,9 +24,7 @@ import view.customobject.MenuSideButton;
 public class MenuScene extends Scene
 {
     private final BorderPane pane;
-
     private final Stage menuStage;
-
     private Button launchGameButton;
     private final GameHandler gameHandler;
     private ComboBox<String> comboBox;

@@ -72,6 +72,8 @@ public class UtilStringStorage
     public static String askToResetScore = "";
     public static String statisticLabel = "";
     public static String statisticTooltip = "";
+    public static String individualDeleteTooltip = "";
+    public static String confirmIndividualDeleteGame = "";
 
     // STATS SCENE
     public static  String bestScoreIn10Label = "";

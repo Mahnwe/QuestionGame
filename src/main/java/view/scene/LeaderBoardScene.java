@@ -24,7 +24,6 @@ public class LeaderBoardScene extends Scene
     private final AchievementManager achievementManager;
     private final VBox leaderBoardVBox;
     private final ConfirmAlert confirmAlert;
-    private Button eraseSaveFileButton;
     private final BorderPane borderPane;
     private GridPane scoreGridPane;
 
@@ -53,7 +52,6 @@ public class LeaderBoardScene extends Scene
         createLeaderBoard();
         createEraseFileButton();
 
-        borderPane.setLeft(eraseSaveFileButton);
         gridpane.add(leaderBoardVBox, 0, 0);
         borderPane.setCenter(gridpane);
         scrollPane.setContent(borderPane);
@@ -62,12 +60,33 @@ public class LeaderBoardScene extends Scene
 
     }
 
+    public Button createIndividualDeleteButton(List<JSONObject> jsonArrayList, int jsonIndex)
+    {
+        Button individualDeleteButton = new Button();
+        CustomOption.setUpTrashButton(individualDeleteButton, UtilStringStorage.individualDeleteTooltip);
+        individualDeleteButton.setPrefSize(50, 50);
+
+        individualDeleteButton.setOnAction(event -> {
+            confirmAlert.modifyConfirmAlert(UtilStringStorage.confirmIndividualDeleteGame);
+            Optional<ButtonType> result = confirmAlert.showAndWait();
+            if(result.orElse(null) == ButtonType.OK) {
+                jsonArrayList.remove(jsonIndex);
+                FileUtil.actualizeJsonFile(jsonArrayList);
+                LeaderBoardScene leaderBoardScene = new LeaderBoardScene(new ScrollPane(), stage, achievementManager);
+                stage.setScene(leaderBoardScene);
+            }
+        });
+        return individualDeleteButton;
+    }
+
     public void readSaveFile(int rowIndex)
     {
         List<JSONObject> jsonArrayList = FileUtil.readJsonFile();
         for(int i = 0; i < jsonArrayList.size(); i++)
         {
             JSONObject jsonObject = jsonArrayList.get(i);
+
+            Button individualDeleteButton = createIndividualDeleteButton(jsonArrayList, i);
 
             Label gameModLabel = new Label((String) jsonObject.get("gameMod"));
             gameModLabel.setFont(Font.font("Impact", FontWeight.NORMAL, 24));
@@ -81,10 +100,11 @@ public class LeaderBoardScene extends Scene
             Label playerTimer = new Label((String) jsonObject.get("playerTimer"));
             playerTimer.setFont(Font.font("Impact", FontWeight.NORMAL, 24));
 
-            scoreGridPane.add(gameModLabel, 0, rowIndex);
-            scoreGridPane.add(playerName, 1, rowIndex);
-            scoreGridPane.add(playerScore, 2, rowIndex);
-            scoreGridPane.add(playerTimer, 3, rowIndex);
+            scoreGridPane.add(individualDeleteButton, 0, rowIndex);
+            scoreGridPane.add(gameModLabel, 1, rowIndex);
+            scoreGridPane.add(playerName, 2, rowIndex);
+            scoreGridPane.add(playerScore, 3, rowIndex);
+            scoreGridPane.add(playerTimer, 4, rowIndex);
             rowIndex++;
         }
     }
@@ -104,7 +124,7 @@ public class LeaderBoardScene extends Scene
         createGridPaneBoard();
 
         readSaveFile(1);
-        scoreGridPane.setTranslateX(500);
+        scoreGridPane.setTranslateX(470);
         scoreGridPane.setTranslateY(100);
 
         leaderBoardVBox.getChildren().add(leaderBoardLabel);
@@ -125,18 +145,19 @@ public class LeaderBoardScene extends Scene
         Label playerTimer = new Label(UtilStringStorage.timerLabelInfile);
         playerTimer.setFont(Font.font("Impact", FontWeight.BOLD, 30));
 
-        scoreGridPane.add(gameModLabel, 0, 0);
-        scoreGridPane.add(playerName, 1, 0);
-        scoreGridPane.add(playerScore, 2, 0);
-        scoreGridPane.add(playerTimer, 3, 0);
+        scoreGridPane.add(gameModLabel, 1, 0);
+        scoreGridPane.add(playerName, 2, 0);
+        scoreGridPane.add(playerScore, 3, 0);
+        scoreGridPane.add(playerTimer, 4, 0);
     }
 
     public void createEraseFileButton()
     {
-        eraseSaveFileButton = new Button();
+        Button eraseSaveFileButton = new Button();
+        CustomOption.setUpTrashButton(eraseSaveFileButton, UtilStringStorage.eraseTooltipLabel);
+        borderPane.setLeft(eraseSaveFileButton);
         eraseSaveFileButton.setTranslateY(150);
         eraseSaveFileButton.setTranslateX(45);
-        CustomOption.setUpTrashButton(eraseSaveFileButton, UtilStringStorage.eraseTooltipLabel);
 
         eraseSaveFileButton.setOnAction(event -> {
             Optional<ButtonType> result = confirmAlert.showAndWait();

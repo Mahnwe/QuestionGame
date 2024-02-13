@@ -109,6 +109,8 @@ public class UtilTranslateString {
         UtilStringStorage.askToResetScore = engTradFile.getProperty("askToResetScore");
         UtilStringStorage.statisticLabel = engTradFile.getProperty("statisticLabel");
         UtilStringStorage.statisticTooltip = engTradFile.getProperty("statisticTooltip");
+        UtilStringStorage.individualDeleteTooltip = engTradFile.getProperty("individualDeleteTooltip");
+        UtilStringStorage.confirmIndividualDeleteGame = engTradFile.getProperty("confirmIndividualDeleteGame");
 
         // STATS SCENE
         UtilStringStorage.bestScoreIn10Label = engTradFile.getProperty("bestScoreIn10QuestionsLabel");
@@ -335,6 +337,8 @@ public class UtilTranslateString {
         UtilStringStorage.askToResetScore = frTradFile.getProperty("askToResetScore");
         UtilStringStorage.statisticLabel = frTradFile.getProperty("statisticLabel");
         UtilStringStorage.statisticTooltip = frTradFile.getProperty("statisticTooltip");
+        UtilStringStorage.individualDeleteTooltip = frTradFile.getProperty("individualDeleteTooltip");
+        UtilStringStorage.confirmIndividualDeleteGame = frTradFile.getProperty("confirmIndividualDeleteGame");
 
         // STATS SCENE
         UtilStringStorage.bestScoreIn10Label = frTradFile.getProperty("bestScoreIn10QuestionsLabel");

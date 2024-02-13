@@ -112,7 +112,7 @@ public class CustomOption {
 
         button.setPrefSize(90,90);
         Tooltip resetTooltip = new Tooltip(tooltipString);
-        resetTooltip.setFont(Font.font("Futura", FontWeight.BOLD, 18));
+        resetTooltip.setFont(Font.font("Futura", FontWeight.BOLD, 20));
         button.setTooltip(resetTooltip);
         BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
         button.setBackground(new Background(new BackgroundImage(trashImage, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,

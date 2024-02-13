@@ -176,6 +176,30 @@ public class FileUtil {
         }
     }
 
+    public static void actualizeJsonFile(List<JSONObject> jsonObjectList)
+    {
+        FileWriter file = null;
+        try {
+            file = new FileWriter("./src/main/resources/SaveFile/GamesSaveFile.json");
+        } catch (IOException e) {
+            e.printStackTrace();
+            logger.error("File can't be found");
+        }
+        try {
+            assert file != null;
+            file.write(jsonObjectList.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+            logger.error("Can't write in save file");
+        }
+        try {
+            file.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            logger.error("File can't be closed");
+        }
+    }
+
     public static void resetGeneralSavesFile()
     {
         generalSavesFile.setProperty("goldCup", "0");

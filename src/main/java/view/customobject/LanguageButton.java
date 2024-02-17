@@ -6,9 +6,12 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import model.AchievementManager;
-import model.SoundManager;
+import model.handlers.AchievementManager;
+import model.handlers.SoundManager;
 import util.*;
+import util.creators.IconCreator;
+import util.stringUtilTranslate.UtilStringStorage;
+import util.stringUtilTranslate.UtilTranslateString;
 import view.App;
 import view.scene.MenuScene;
 

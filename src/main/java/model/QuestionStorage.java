@@ -1,7 +1,9 @@
 package model;
 
-import util.QuestionStringStorage;
-import util.UtilStringStorage;
+import model.handlers.ImportFileHandler;
+import model.handlers.PersonalizeQuestionsHandler;
+import util.stringUtilTranslate.QuestionStringStorage;
+import util.stringUtilTranslate.UtilStringStorage;
 
 import java.util.ArrayList;
 import java.util.List;

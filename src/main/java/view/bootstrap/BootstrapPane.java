@@ -1,4 +1,4 @@
-package view;
+package view.bootstrap;
 
 import javafx.geometry.Pos;
 import javafx.scene.layout.ColumnConstraints;

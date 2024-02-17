@@ -1,4 +1,4 @@
-package util;
+package util.creators;
 
 import javafx.geometry.Insets;
 import javafx.scene.image.Image;
@@ -6,6 +6,7 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.ImagePattern;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import util.PathUtil;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

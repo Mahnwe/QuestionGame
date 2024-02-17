@@ -1,6 +1,7 @@
-package util;
+package util.creators;
 
 import javafx.scene.image.ImageView;
+import util.PathUtil;
 
 public class GifCreator {
 

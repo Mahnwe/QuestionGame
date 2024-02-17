@@ -10,11 +10,11 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.Achievement;
-import model.AchievementManager;
-import util.BackgroundCreator;
+import model.handlers.AchievementManager;
+import util.creators.BackgroundCreator;
 import util.FileUtil;
-import util.UtilStringStorage;
-import view.*;
+import util.stringUtilTranslate.UtilStringStorage;
+import view.bootstrap.BootstrapPane;
 import view.customobject.ReturnButton;
 import view.customvbox.AchievementVbox;
 

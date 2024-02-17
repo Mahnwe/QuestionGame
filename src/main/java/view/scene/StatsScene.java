@@ -6,11 +6,11 @@ import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import model.AchievementManager;
+import model.handlers.AchievementManager;
 import model.TimePlayedTimer;
-import util.BackgroundCreator;
+import util.creators.BackgroundCreator;
 import util.FileUtil;
-import util.UtilStringStorage;
+import util.stringUtilTranslate.UtilStringStorage;
 import view.customobject.ReturnButton;
 import view.customvbox.StatsVbox;
 

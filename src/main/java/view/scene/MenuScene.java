@@ -3,7 +3,6 @@ package view.scene;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
@@ -13,21 +12,30 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import model.*;
-import util.*;
+import model.Player;
+import model.TimePlayedTimer;
+import model.handlers.AchievementManager;
+import model.handlers.GameHandler;
+import model.handlers.SoundManager;
+import util.CustomOption;
+import util.PathUtil;
+import util.creators.BackgroundCreator;
+import util.creators.GifCreator;
+import util.creators.IconCreator;
+import util.stringUtilTranslate.UtilStringStorage;
 import view.App;
-import view.BootstrapPane;
-import view.customvbox.DeveloperVbox;
+import view.bootstrap.BootstrapPane;
+import view.customobject.CustomComboBox;
+import view.customobject.LaunchGameButton;
 import view.customobject.MenuSideButton;
+import view.customvbox.DeveloperVbox;
 
 
 public class MenuScene extends Scene
 {
     private final BorderPane pane;
     private final Stage menuStage;
-    private Button launchGameButton;
     private final GameHandler gameHandler;
-    private ComboBox<String> comboBox;
     private final AchievementManager achievementManager;
 
     public static final String POLICE_LABEL = "Verdana";
@@ -56,7 +64,6 @@ public class MenuScene extends Scene
         createLeaderBoardButtonArea();
         createButtonArea();
 
-        setButtonOnAction();
         createBackground();
     }
 
@@ -203,11 +210,9 @@ public class MenuScene extends Scene
         Label chooseMode = new Label(UtilStringStorage.chooseMode);
         setUpChooseLabel(chooseMode);
 
-        comboBox = new ComboBox<>();
-        CustomOption.customComboBox(comboBox);
+        CustomComboBox comboBox = new CustomComboBox();
 
-        launchGameButton = new Button(UtilStringStorage.launchGameButton);
-        CustomOption.customLaunchButton(launchGameButton);
+        Button launchGameButton = new LaunchGameButton(comboBox, gameHandler, this);
 
         ImageView gifImageView = GifCreator.createVibeGif(40, 70);
         ImageView gifImageView2 = GifCreator.createVibeGif(660, -80);
@@ -237,33 +242,6 @@ public class MenuScene extends Scene
         {
             label.setTranslateX(295);
         }
-    }
-
-    public void setButtonOnAction()
-    {
-        launchGameButton.setOnAction(event ->
-        {
-            if(comboBox.getSelectionModel().getSelectedItem().equals(comboBox.getItems().get(0))) {
-                gameHandler.setupQuestionList(10);
-                instantiateMainScene();
-            }
-
-            if(comboBox.getSelectionModel().getSelectedItem().equals(comboBox.getItems().get(1))) {
-                gameHandler.setupQuestionList(15);
-                instantiateMainScene();
-            }
-
-            if(comboBox.getSelectionModel().getSelectedItem().equals(comboBox.getItems().get(2))) {
-            gameHandler.setupQuestionList(20);
-            instantiateMainScene();
-            }
-
-            if(comboBox.getSelectionModel().getSelectedItem().equals(comboBox.getItems().get(3))) {
-                gameHandler.setUpSurvivalMode();
-                instantiateMainScene();
-            }
-
-        });
     }
 
     public void instantiateMainScene()

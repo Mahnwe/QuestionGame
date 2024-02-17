@@ -1,5 +1,6 @@
-package model;
+package model.handlers;
 
+import model.Question;
 import util.FileUtil;
 
 import java.util.ArrayList;

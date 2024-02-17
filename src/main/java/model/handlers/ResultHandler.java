@@ -1,4 +1,4 @@
-package model;
+package model.handlers;
 
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -8,7 +8,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import util.FileUtil;
 import util.PathUtil;
-import util.UtilStringStorage;
+import util.stringUtilTranslate.UtilStringStorage;
 import view.scene.MenuScene;
 import view.scene.ResultScene;
 

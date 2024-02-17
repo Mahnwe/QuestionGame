@@ -5,7 +5,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import util.CustomOption;
-import util.UtilStringStorage;
+import util.stringUtilTranslate.UtilStringStorage;
 import view.scene.QuestionCreatorScene;
 
 import java.util.List;

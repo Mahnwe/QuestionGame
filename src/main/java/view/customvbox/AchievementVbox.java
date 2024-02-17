@@ -5,7 +5,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import model.AchievementManager;
+import model.handlers.AchievementManager;
 import view.scene.MenuScene;
 
 public class AchievementVbox {

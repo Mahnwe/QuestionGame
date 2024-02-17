@@ -8,12 +8,12 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import model.AchievementManager;
-import model.PersonalizeQuestionsHandler;
-import util.BackgroundCreator;
+import model.handlers.AchievementManager;
+import model.handlers.PersonalizeQuestionsHandler;
+import util.creators.BackgroundCreator;
 import util.CustomOption;
 import util.FileUtil;
-import util.UtilStringStorage;
+import util.stringUtilTranslate.UtilStringStorage;
 import view.customobject.ConfirmAlert;
 import view.customobject.ReturnButton;
 

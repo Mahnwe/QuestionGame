@@ -1,4 +1,4 @@
-package model;
+package model.handlers;
 
 import javafx.animation.PauseTransition;
 import javafx.scene.control.Label;
@@ -9,6 +9,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import model.Question;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import util.FileUtil;

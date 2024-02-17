@@ -4,11 +4,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import model.AchievementManager;
+import model.handlers.AchievementManager;
 import model.TimePlayedTimer;
 import util.CustomOption;
 import util.FileUtil;
-import util.UtilStringStorage;
+import util.stringUtilTranslate.UtilStringStorage;
 import view.scene.MenuScene;
 
 import java.util.Optional;

@@ -1,4 +1,4 @@
-import model.AchievementManager;
+import model.handlers.AchievementManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

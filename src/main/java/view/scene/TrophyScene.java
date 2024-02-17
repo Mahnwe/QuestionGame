@@ -7,9 +7,12 @@ import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import model.AchievementManager;
+import model.handlers.AchievementManager;
 import util.*;
-import view.BootstrapPane;
+import util.creators.BackgroundCreator;
+import util.creators.IconCreator;
+import util.stringUtilTranslate.UtilStringStorage;
+import view.bootstrap.BootstrapPane;
 import view.customobject.ReturnButton;
 
 import java.util.Properties;

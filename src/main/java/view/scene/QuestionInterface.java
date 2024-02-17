@@ -1,20 +1,20 @@
 package view.scene;
 
-import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.*;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import model.handlers.AnswerHandler;
 import model.Question;
 import model.QuestionStorage;
-import model.SoundManager;
 import util.CustomOption;
 import util.FileUtil;
-import util.PathUtil;
-import util.UtilStringStorage;
+import util.stringUtilTranslate.UtilStringStorage;
 import view.customobject.AnswerButton;
 
 import java.util.ArrayList;
@@ -126,6 +126,11 @@ public class QuestionInterface extends BorderPane
 
         placeGridPaneWithTextLength();
 
+        createNextQuestionButton();
+    }
+
+    public void createNextQuestionButton()
+    {
         nextQuestionButton = new Button(UtilStringStorage.nextQuestionButton);
         nextQuestionButton.setFont(Font.font("Futura", FontWeight.BOLD, 20));
         nextQuestionButton.setBorder(CustomOption.createCustomBorder(3.0, 2.0, Color.BLACK));
@@ -172,61 +177,23 @@ public class QuestionInterface extends BorderPane
     {
         validateAnswerButton.setDisable(true);
         Button answerButtonClicked = new Button();
-        for (AnswerButton answerButton : answerButtonList) {
-            if (answerButton.isClicked()) {
-                answerButtonClicked = answerButton;
-            }
-        }
+        answerButtonClicked = AnswerHandler.checkWhichButtonIsClicked(answerButtonList, answerButtonClicked);
         String upperGoodAnswer = question.getGoodAnswer().toUpperCase();
+
           if(answerButtonClicked.getText().equals(upperGoodAnswer))
           {
-              playerAnswer = true;
-              answerButtonClicked.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
-              soundEffectToStop = SoundManager.playMusic(PathUtil.GOOD_ANSWER_SOUND_EFFECT);
-              displayAnswer(UtilStringStorage.goodAnswerLabel);
-              FileUtil.incrementGeneralStat("goodAnswerNumber");
+             playerAnswer = AnswerHandler.playerAnswerIsGood(answerButtonClicked, question, game);
           }
           else
           {
-              playerAnswer = false;
-              soundEffectToStop = SoundManager.playMusic(PathUtil.BAD_ANSWER_SOUND_EFFECT);
-              answerButtonClicked.setBackground(new Background(new BackgroundFill(Color.RED, CornerRadii.EMPTY, Insets.EMPTY)));
-              showGoodAnswer(answerButton1); showGoodAnswer(answerButton2);
-              showGoodAnswer(answerButton3); showGoodAnswer(answerButton4);
-              displayAnswer(UtilStringStorage.badAnswerLabel);
-              FileUtil.incrementGeneralStat("badAnswerNumber");
+              playerAnswer = AnswerHandler.playerAnswerIsWrong(answerButtonClicked, answerButton1, answerButton2, answerButton3, answerButton4, question, game);
           }
+
           nextQuestionButton.setDisable(false);
           disableButtons();
           FileUtil.incrementGeneralStat("questionAnswered");
     }
 
-    private void displayAnswer(String answerLabel)
-    {
-        Label goodResult = new Label(answerLabel);
-        goodResult.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 20));
-        goodResult.setTextFill(Color.GHOSTWHITE);
-        goodResult.setTranslateY(260);
-        goodResult.setTranslateX(580);
-
-        Label explanation = new Label(question.getExplanation());
-        explanation.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 18));
-        explanation.setTextFill(Color.GHOSTWHITE);
-        explanation.setTranslateY(295);
-        explanation.setTranslateX(300);
-
-        game.getChildren().add(goodResult);
-        game.getChildren().add(explanation);
-    }
-
-    public void showGoodAnswer(AnswerButton button)
-    {
-        String upperGoodAnswer = question.getGoodAnswer().toUpperCase();
-        if(button.getText().equals(upperGoodAnswer))
-        {
-            button.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
-        }
-    }
     public void disableButtons()
     {
         answerButton1.setDisable(true);

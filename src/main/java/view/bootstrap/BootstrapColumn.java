@@ -1,4 +1,4 @@
-package view;
+package view.bootstrap;
 
 import com.sun.javafx.util.Utils;
 import javafx.scene.Node;

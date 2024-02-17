@@ -10,8 +10,12 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import model.AchievementManager;
+import model.handlers.AchievementManager;
 import util.*;
+import util.creators.BackgroundCreator;
+import util.creators.IconCreator;
+import util.stringUtilTranslate.UtilStringStorage;
+import util.stringUtilTranslate.UtilTranslateString;
 import view.customobject.LanguageButton;
 
 public class LanguageScene extends Scene

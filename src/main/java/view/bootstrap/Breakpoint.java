@@ -1,4 +1,4 @@
-package view;
+package view.bootstrap;
 
 public enum Breakpoint {
     XSMALL(0),

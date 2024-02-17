@@ -11,7 +11,13 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.*;
+import model.handlers.AchievementManager;
+import model.handlers.GameHandler;
+import model.handlers.ResultHandler;
+import model.handlers.SoundManager;
 import util.*;
+import util.creators.IconCreator;
+import util.stringUtilTranslate.UtilStringStorage;
 import view.App;
 import view.customobject.NotificationAlert;
 

@@ -9,9 +9,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.util.Duration;
-import util.IconCreator;
+import util.creators.IconCreator;
 import util.PathUtil;
-import util.UtilStringStorage;
+import util.stringUtilTranslate.UtilStringStorage;
 
 public class NotificationAlert extends Alert
 {

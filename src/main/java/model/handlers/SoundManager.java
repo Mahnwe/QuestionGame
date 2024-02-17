@@ -1,4 +1,4 @@
-package model;
+package model.handlers;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;

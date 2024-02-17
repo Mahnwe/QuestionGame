@@ -1,4 +1,4 @@
-package util;
+package util.stringUtilTranslate;
 
 public class UtilTranslateQuestion {
 

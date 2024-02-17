@@ -7,7 +7,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import util.CustomOption;
-import util.IconCreator;
+import util.creators.IconCreator;
 import util.PathUtil;
 
 public class QuitLaunchedGameButton extends Button {

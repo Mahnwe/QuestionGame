@@ -9,10 +9,13 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import model.AchievementManager;
-import model.ImportFileHandler;
-import model.SoundManager;
+import model.handlers.AchievementManager;
+import model.handlers.ImportFileHandler;
+import model.handlers.SoundManager;
 import util.*;
+import util.creators.BackgroundCreator;
+import util.stringUtilTranslate.UtilStringStorage;
+import util.stringUtilTranslate.UtilTranslateString;
 import view.*;
 import view.customobject.*;
 

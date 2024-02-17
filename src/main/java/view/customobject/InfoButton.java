@@ -6,7 +6,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.util.Duration;
-import util.IconCreator;
+import util.creators.IconCreator;
 import util.PathUtil;
 
 public class InfoButton extends Button {

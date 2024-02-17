@@ -2,12 +2,12 @@ package view;
 
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import model.AchievementManager;
-import model.SoundManager;
+import model.handlers.AchievementManager;
+import model.handlers.SoundManager;
 import util.FileUtil;
 import util.PathUtil;
-import util.UtilStringStorage;
-import util.UtilTranslateString;
+import util.stringUtilTranslate.UtilStringStorage;
+import util.stringUtilTranslate.UtilTranslateString;
 import view.scene.LanguageScene;
 import view.scene.MenuScene;
 

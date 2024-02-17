@@ -1,8 +1,9 @@
-package model;
+package model.handlers;
 
 import javafx.scene.control.Alert;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
+import model.Achievement;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import view.customobject.NotificationAlert;

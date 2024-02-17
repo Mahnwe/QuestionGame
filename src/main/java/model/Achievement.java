@@ -1,7 +1,7 @@
 package model;
 
 import javafx.scene.image.ImageView;
-import util.IconCreator;
+import util.creators.IconCreator;
 import util.PathUtil;
 
 public class Achievement

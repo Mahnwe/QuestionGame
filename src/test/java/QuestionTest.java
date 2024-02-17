@@ -1,4 +1,4 @@
-import model.GameHandler;
+import model.handlers.GameHandler;
 import model.QuestionStorage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

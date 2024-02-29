@@ -13,7 +13,6 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.Player;
-import model.TimePlayedTimer;
 import model.handlers.AchievementManager;
 import model.handlers.GameHandler;
 import model.handlers.SoundManager;
@@ -58,7 +57,6 @@ public class MenuScene extends Scene
         this.gameHandler = new GameHandler();
         this.achievementManager = achievementManager;
 
-        TimePlayedTimer.actualizeTimePlayed();
         createWelcomeArea();
         createIconOptionButton();
         createLeaderBoardButtonArea();

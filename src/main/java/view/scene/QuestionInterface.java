@@ -9,11 +9,10 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import model.handlers.AnswerHandler;
 import model.Question;
 import model.QuestionStorage;
+import model.handlers.AnswerHandler;
 import util.CustomOption;
-import util.FileUtil;
 import util.stringUtilTranslate.UtilStringStorage;
 import view.customobject.AnswerButton;
 
@@ -191,7 +190,7 @@ public class QuestionInterface extends BorderPane
 
           nextQuestionButton.setDisable(false);
           disableButtons();
-          FileUtil.incrementGeneralStat("questionAnswered");
+          AnswerHandler.setQuestionsAnswered(AnswerHandler.incrementStat(AnswerHandler.getQuestionsAnswered()));
     }
 
     public void disableButtons()

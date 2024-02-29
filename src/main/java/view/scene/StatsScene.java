@@ -31,6 +31,7 @@ public class StatsScene extends Scene
         mainVbox = new VBox();
         mainVbox.setTranslateX(100);
 
+        TimePlayedTimer.actualizeTimePlayed();
         createBackground();
         createTitleScene();
         createGridPane();

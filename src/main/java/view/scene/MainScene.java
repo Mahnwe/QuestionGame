@@ -12,6 +12,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import model.*;
 import model.handlers.AchievementManager;
+import model.handlers.AnswerHandler;
 import model.handlers.GameHandler;
 import model.handlers.SoundManager;
 import util.creators.BackgroundCreator;
@@ -49,6 +50,7 @@ public class MainScene extends Scene
 
         createBackground();
 
+        AnswerHandler.setStatsToZero();
         createNewQuestionInterface();
         setAnswersButtonListeners();
         questionInterface.setDisable(true);

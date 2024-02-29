@@ -11,10 +11,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.*;
-import model.handlers.AchievementManager;
-import model.handlers.GameHandler;
-import model.handlers.ResultHandler;
-import model.handlers.SoundManager;
+import model.handlers.*;
 import util.*;
 import util.creators.IconCreator;
 import util.stringUtilTranslate.UtilStringStorage;
@@ -48,9 +45,10 @@ public class ResultScene extends VBox
 
         createIcons();
         setUpLabelAndTimer();
+        AnswerHandler.storeStatsInFile();
 
         if(GameHandler.gameMode == null) {
-            checkPlayerResult();
+            checkPlayerResultNormalMod();
         } else if (GameHandler.gameMode.equals("survival"))
         {
             checkSurvivalModeResult();
@@ -95,7 +93,7 @@ public class ResultScene extends VBox
         FileUtil.storeGeneralSavesFile();
     }
 
-    public void checkPlayerResult()
+    public void checkPlayerResultNormalMod()
     {
         AchievementManager.notificationAlert = null;
         if(playerFinalScore >= questionCount*90/100)

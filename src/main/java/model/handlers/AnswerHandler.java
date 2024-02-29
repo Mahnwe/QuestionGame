@@ -22,12 +22,16 @@ import java.util.List;
 
 public class AnswerHandler {
 
+    private static int goodAnswerNumber;
+    private static int badAnswerNumber;
+    private static int questionsAnswered;
+
     public static boolean playerAnswerIsGood(Button answerButtonClicked, Question question, VBox game)
     {
         answerButtonClicked.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
         QuestionInterface.soundEffectToStop = SoundManager.playMusic(PathUtil.GOOD_ANSWER_SOUND_EFFECT);
         displayAnswer(UtilStringStorage.goodAnswerLabel, question, game);
-        FileUtil.incrementGeneralStat("goodAnswerNumber");
+        goodAnswerNumber = incrementStat(goodAnswerNumber);
         return true;
     }
 
@@ -38,7 +42,7 @@ public class AnswerHandler {
         showGoodAnswer(answerButton1, question); showGoodAnswer(answerButton2, question);
         showGoodAnswer(answerButton3, question); showGoodAnswer(answerButton4, question);
         displayAnswer(UtilStringStorage.badAnswerLabel, question, game);
-        FileUtil.incrementGeneralStat("badAnswerNumber");
+        badAnswerNumber = incrementStat(badAnswerNumber);
         return false;
     }
     public static Button checkWhichButtonIsClicked(List<AnswerButton> answerButtonList, Button answerButtonClicked)
@@ -75,5 +79,32 @@ public class AnswerHandler {
         {
             button.setBackground(new Background(new BackgroundFill(Color.GREEN, CornerRadii.EMPTY, Insets.EMPTY)));
         }
+    }
+
+    public static void setStatsToZero()
+    {
+        goodAnswerNumber = 0;
+        badAnswerNumber = 0;
+        questionsAnswered = 0;
+    }
+
+    public static int incrementStat(int statToIncrement)
+    {
+        statToIncrement++;
+        return statToIncrement;
+    }
+    public static void storeStatsInFile()
+    {
+        FileUtil.getGeneralSavesFile().setProperty("goodAnswerNumber", String.valueOf(goodAnswerNumber));
+        FileUtil.getGeneralSavesFile().setProperty("badAnswerNumber", String.valueOf(badAnswerNumber));
+        FileUtil.getGeneralSavesFile().setProperty("questionAnswered", String.valueOf(questionsAnswered));
+    }
+
+    public static void setQuestionsAnswered(int questionsAnswered) {
+        AnswerHandler.questionsAnswered = questionsAnswered;
+    }
+
+    public static int getQuestionsAnswered() {
+        return questionsAnswered;
     }
 }

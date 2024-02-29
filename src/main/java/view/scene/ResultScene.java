@@ -144,7 +144,6 @@ public class ResultScene extends VBox
         gameResult.getChildren().add(timeLabel);
     }
 
-
     public void createIcons()
     {
         goldCup = IconCreator.createCupIcon(PathUtil.GOLD_CUP_PATH);

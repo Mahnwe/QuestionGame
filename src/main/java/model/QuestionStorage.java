@@ -622,6 +622,27 @@ public class QuestionStorage
                 QuestionStringStorage.explanation120);
         questionList.add(question120);
 
+        Question question121 = new Question(UtilStringStorage.records, QuestionStringStorage.question121,QuestionStringStorage.answerA121,
+                QuestionStringStorage.answerB121, QuestionStringStorage.answerC121, QuestionStringStorage.answerD121, QuestionStringStorage.goodAnswer121,
+                QuestionStringStorage.explanation121);
+        questionList.add(question121);
+
+        Question question122 = new Question(UtilStringStorage.society, QuestionStringStorage.question122,QuestionStringStorage.answerA122,
+                QuestionStringStorage.answerB122, QuestionStringStorage.answerC122, QuestionStringStorage.answerD122, QuestionStringStorage.goodAnswer122,
+                QuestionStringStorage.explanation122);
+        questionList.add(question122);
+
+        Question question123 = new Question(UtilStringStorage.economy, QuestionStringStorage.question123,QuestionStringStorage.answerA123,
+                QuestionStringStorage.answerB123, QuestionStringStorage.answerC123, QuestionStringStorage.answerD123, QuestionStringStorage.goodAnswer123,
+                QuestionStringStorage.explanation123);
+        questionList.add(question123);
+
+        Question question124 = new Question(UtilStringStorage.food, QuestionStringStorage.question124,QuestionStringStorage.answerA124,
+                QuestionStringStorage.answerB124, QuestionStringStorage.answerC124, QuestionStringStorage.answerD124, QuestionStringStorage.goodAnswer124,
+                QuestionStringStorage.explanation124);
+        questionList.add(question124);
+
+
     }
 
     public void checkPersonalizeQuestions()

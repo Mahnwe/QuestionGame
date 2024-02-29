@@ -145,7 +145,7 @@ public class StatsScene extends Scene
     public void createTitleScene()
     {
         Label achievementLabel = new Label(UtilStringStorage.statisticLabel);
-        achievementLabel.setFont(Font.font("Impact", FontWeight.BOLD, 40));
+        achievementLabel.setFont(Font.font("Impact", FontWeight.BOLD, 45));
         mainVbox.getChildren().add(achievementLabel);
         achievementLabel.setTranslateX(650);
         achievementLabel.setTranslateY(80);

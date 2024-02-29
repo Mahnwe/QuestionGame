@@ -43,6 +43,7 @@ public class UtilStringStorage
     public static String science = "";
     public static String monument = "";
     public static String economy = "";
+    public static String food = "";
 
     // ACHIEVEMENTS
     public static String achievementLabel = "";

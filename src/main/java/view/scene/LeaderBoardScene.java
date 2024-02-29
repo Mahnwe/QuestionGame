@@ -89,16 +89,16 @@ public class LeaderBoardScene extends Scene
             Button individualDeleteButton = createIndividualDeleteButton(jsonArrayList, i);
 
             Label gameModLabel = new Label((String) jsonObject.get("gameMod"));
-            gameModLabel.setFont(Font.font("Impact", FontWeight.NORMAL, 24));
+            gameModLabel.setFont(Font.font("Impact", FontWeight.NORMAL, 28));
 
             Label playerName = new Label((String) jsonObject.get("playerName"));
-            playerName.setFont(Font.font("Impact", FontWeight.NORMAL, 24));
+            playerName.setFont(Font.font("Impact", FontWeight.NORMAL, 28));
 
             Label playerScore = new Label((String) jsonObject.get("playerScore"));
-            playerScore.setFont(Font.font("Impact", FontWeight.NORMAL, 24));
+            playerScore.setFont(Font.font("Impact", FontWeight.NORMAL, 28));
 
             Label playerTimer = new Label((String) jsonObject.get("playerTimer"));
-            playerTimer.setFont(Font.font("Impact", FontWeight.NORMAL, 24));
+            playerTimer.setFont(Font.font("Impact", FontWeight.NORMAL, 28));
 
             scoreGridPane.add(individualDeleteButton, 0, rowIndex);
             scoreGridPane.add(gameModLabel, 1, rowIndex);
@@ -134,16 +134,16 @@ public class LeaderBoardScene extends Scene
     public void createGridPaneBoard()
     {
         Label gameModLabel = new Label(UtilStringStorage.gameModLabel);
-        gameModLabel.setFont(Font.font("Impact", FontWeight.BOLD, 30));
+        gameModLabel.setFont(Font.font("Impact", FontWeight.BOLD, 34));
 
         Label playerName = new Label(UtilStringStorage.playerNameInfile);
-        playerName.setFont(Font.font("Impact", FontWeight.BOLD, 30));
+        playerName.setFont(Font.font("Impact", FontWeight.BOLD, 34));
 
         Label playerScore = new Label(UtilStringStorage.scoreLabelInfile);
-        playerScore.setFont(Font.font("Impact", FontWeight.BOLD, 30));
+        playerScore.setFont(Font.font("Impact", FontWeight.BOLD, 34));
 
         Label playerTimer = new Label(UtilStringStorage.timerLabelInfile);
-        playerTimer.setFont(Font.font("Impact", FontWeight.BOLD, 30));
+        playerTimer.setFont(Font.font("Impact", FontWeight.BOLD, 34));
 
         scoreGridPane.add(gameModLabel, 1, 0);
         scoreGridPane.add(playerName, 2, 0);

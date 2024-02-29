@@ -193,7 +193,7 @@ public class TrophyScene extends Scene
         } else {
             secretCup = IconCreator.createCupIcon(PathUtil.SECRET_CUP);
         }
-        secretCup.setFitWidth(170);
+        secretCup.setFitWidth(180);
         secretCup.setTranslateY(10);
     }
     public void backToMainMenu()

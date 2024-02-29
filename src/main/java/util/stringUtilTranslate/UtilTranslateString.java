@@ -81,6 +81,7 @@ public class UtilTranslateString {
         UtilStringStorage.science = engTradFile.getProperty("science");
         UtilStringStorage.monument = engTradFile.getProperty("monument");
         UtilStringStorage.economy = engTradFile.getProperty("economy");
+        UtilStringStorage.food = engTradFile.getProperty("food");
 
         // ACHIEVEMENTS
         UtilStringStorage.achievementLabel = engTradFile.getProperty("achievementLabel");
@@ -309,6 +310,7 @@ public class UtilTranslateString {
         UtilStringStorage.science = frTradFile.getProperty("science");
         UtilStringStorage.monument = frTradFile.getProperty("monument");
         UtilStringStorage.economy = frTradFile.getProperty("economy");
+        UtilStringStorage.food = frTradFile.getProperty("food");
 
         // ACHIEVEMENTS
         UtilStringStorage.achievementLabel = frTradFile.getProperty("achievementLabel");

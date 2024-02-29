@@ -157,8 +157,8 @@ public class MainScene extends Scene
         if(GameHandler.gameMode == null)
         {
             FileUtil.writeNormalModInJsonFile(UtilStringStorage.classicModeLabelInfile, playerInfoScene.getPlayer().getPlayerName(), playerInfoScene.getPlayer().getPlayerScore(),
-                    " " + UtilStringStorage.scoreOn + " ", gameHandler.getQuestionCount(), GameTimer.getElapsedMinutes(), " " + UtilStringStorage.gameMinutes + " ",
-                    GameTimer.getSecondsDisplay(), " " + UtilStringStorage.gameSecondes);
+                    " " + UtilStringStorage.scoreOn + " ", gameHandler.getQuestionCount(), GameTimer.getElapsedMinutes(),UtilStringStorage.gameMinutes,
+                    GameTimer.getSecondsDisplay(),UtilStringStorage.gameSecondes);
         }
         else if(GameHandler.gameMode.equals(SURVIVAL_MODE))
         {

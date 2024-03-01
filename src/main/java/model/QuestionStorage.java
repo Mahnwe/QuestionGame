@@ -182,7 +182,7 @@ public class QuestionStorage
                 QuestionStringStorage.explanation32);
         questionList.add(question32);
 
-        Question question33 = new Question(UtilStringStorage.society, QuestionStringStorage.question33,QuestionStringStorage.answerA33,
+        Question question33 = new Question(UtilStringStorage.food, QuestionStringStorage.question33,QuestionStringStorage.answerA33,
                 QuestionStringStorage.answerB33, QuestionStringStorage.answerC33, QuestionStringStorage.answerD33, QuestionStringStorage.goodAnswer33,
                 QuestionStringStorage.explanation33);
         questionList.add(question33);
@@ -317,7 +317,7 @@ public class QuestionStorage
                 QuestionStringStorage.explanation59);
         questionList.add(question59);
 
-        Question question60 = new Question(UtilStringStorage.society, QuestionStringStorage.question60,QuestionStringStorage.answerA60,
+        Question question60 = new Question(UtilStringStorage.food, QuestionStringStorage.question60,QuestionStringStorage.answerA60,
                 QuestionStringStorage.answerB60, QuestionStringStorage.answerC60, QuestionStringStorage.answerD60, QuestionStringStorage.goodAnswer60,
                 QuestionStringStorage.explanation60);
         questionList.add(question60);
@@ -642,7 +642,15 @@ public class QuestionStorage
                 QuestionStringStorage.explanation124);
         questionList.add(question124);
 
+        Question question125 = new Question(UtilStringStorage.food, QuestionStringStorage.question125,QuestionStringStorage.answerA125,
+                QuestionStringStorage.answerB125, QuestionStringStorage.answerC125, QuestionStringStorage.answerD125, QuestionStringStorage.goodAnswer125,
+                QuestionStringStorage.explanation125);
+        questionList.add(question125);
 
+        Question question126 = new Question(UtilStringStorage.plants, QuestionStringStorage.question126,QuestionStringStorage.answerA126,
+                QuestionStringStorage.answerB126, QuestionStringStorage.answerC126, QuestionStringStorage.answerD126, QuestionStringStorage.goodAnswer126,
+                QuestionStringStorage.explanation126);
+        questionList.add(question126);
     }
 
     public void checkPersonalizeQuestions()

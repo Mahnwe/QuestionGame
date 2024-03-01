@@ -9,7 +9,7 @@ import javafx.scene.text.FontWeight;
 import util.CustomOption;
 import util.creators.IconCreator;
 import util.PathUtil;
-import util.stringUtilTranslate.UtilStringStorage;
+import util.stringutiltranslate.UtilStringStorage;
 
 public class ReturnButton  extends Button {
 

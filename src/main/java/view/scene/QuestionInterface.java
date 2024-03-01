@@ -13,7 +13,7 @@ import model.Question;
 import model.QuestionStorage;
 import model.handlers.AnswerHandler;
 import util.CustomOption;
-import util.stringUtilTranslate.UtilStringStorage;
+import util.stringutiltranslate.UtilStringStorage;
 import view.customobject.AnswerButton;
 
 import java.util.ArrayList;

@@ -6,7 +6,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import model.TimePlayedTimer;
 import util.FileUtil;
-import util.stringUtilTranslate.UtilStringStorage;
+import util.stringutiltranslate.UtilStringStorage;
 
 public class App extends Application
 {

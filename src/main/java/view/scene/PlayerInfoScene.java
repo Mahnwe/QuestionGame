@@ -17,7 +17,7 @@ import model.handlers.GameHandler;
 import model.handlers.SoundManager;
 import util.*;
 import util.creators.BackgroundCreator;
-import util.stringUtilTranslate.UtilStringStorage;
+import util.stringutiltranslate.UtilStringStorage;
 import view.customobject.CustomTextArea;
 
 public class PlayerInfoScene extends Scene

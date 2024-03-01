@@ -10,9 +10,12 @@ public class CustomTextArea extends TextArea {
 
     public CustomTextArea(Button button, int maxCharactersInArea)
     {
+        String playerNameRegex = "\\S+";
         this.setFont(Font.font(PlayerInfoScene.POLICE_LABEL, FontWeight.EXTRA_LIGHT, 22));
-        this.setOnKeyTyped(event -> {
-            if(!this.getText().isEmpty())
+
+        this.setOnKeyTyped(event ->
+        {
+            if(!this.getText().isEmpty() && this.getText().matches(playerNameRegex))
             {
                 button.setDisable(false);
             }

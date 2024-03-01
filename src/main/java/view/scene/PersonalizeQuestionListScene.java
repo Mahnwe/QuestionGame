@@ -13,7 +13,7 @@ import model.handlers.PersonalizeQuestionsHandler;
 import util.creators.BackgroundCreator;
 import util.CustomOption;
 import util.FileUtil;
-import util.stringUtilTranslate.UtilStringStorage;
+import util.stringutiltranslate.UtilStringStorage;
 import view.customobject.ConfirmAlert;
 import view.customobject.ReturnButton;
 
@@ -181,7 +181,8 @@ public class PersonalizeQuestionListScene extends Scene {
 
     public void setOnActionIndividualDeleteButton(Button button, String propertyString)
     {
-        button.setOnAction(event -> {
+        button.setOnAction(event ->
+        {
             confirmAlert.modifyConfirmAlert(UtilStringStorage.individualConfirmDelete);
             Optional<ButtonType> result = confirmAlert.showAndWait();
             if(result.orElse(null) == ButtonType.OK) {

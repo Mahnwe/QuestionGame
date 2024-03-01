@@ -1,4 +1,4 @@
-package util.stringUtilTranslate;
+package util.stringutiltranslate;
 
 public class UtilStringStorage
 {
@@ -179,7 +179,8 @@ public class UtilStringStorage
     public static String createExplanationLabel = "";
     public static String validateCreationButton = "";
     public static String questionIsForged = "";
-    public static String questionIsNotForged = "";
+    public static String questionIsNotForgedAreaAreNotAllFiled = "";
+    public static String questionIsNotForgedValidAnswerIsNotGood = "";
     public static String personalizeListButtonTooltip = "";
     public static String personalizeQuestionListLabel = "";
     public static String confirmAlertDeleteAllQuestions = "";

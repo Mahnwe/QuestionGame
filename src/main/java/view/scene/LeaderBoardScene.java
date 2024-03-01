@@ -11,7 +11,7 @@ import org.json.simple.JSONObject;
 import util.creators.BackgroundCreator;
 import util.CustomOption;
 import util.FileUtil;
-import util.stringUtilTranslate.UtilStringStorage;
+import util.stringutiltranslate.UtilStringStorage;
 import view.customobject.ConfirmAlert;
 import view.customobject.ReturnButton;
 

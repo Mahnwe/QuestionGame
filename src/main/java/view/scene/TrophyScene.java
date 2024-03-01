@@ -11,7 +11,7 @@ import model.handlers.AchievementManager;
 import util.*;
 import util.creators.BackgroundCreator;
 import util.creators.IconCreator;
-import util.stringUtilTranslate.UtilStringStorage;
+import util.stringutiltranslate.UtilStringStorage;
 import view.bootstrap.BootstrapPane;
 import view.customobject.ReturnButton;
 

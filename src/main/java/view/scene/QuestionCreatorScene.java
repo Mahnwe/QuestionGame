@@ -18,7 +18,7 @@ import model.handlers.PersonalizeQuestionsHandler;
 import util.*;
 import util.creators.BackgroundCreator;
 import util.creators.IconCreator;
-import util.stringUtilTranslate.UtilStringStorage;
+import util.stringutiltranslate.UtilStringStorage;
 import view.customobject.QuestionCreatorTextArea;
 import view.customvbox.QuestionCreatorVbox;
 import view.customobject.ReturnButton;
@@ -35,10 +35,10 @@ public class QuestionCreatorScene extends Scene {
     private final BorderPane multiPane = new BorderPane();
     public static final String POLICE_LABEL = "Futura";
     private final VBox centerVbox;
-    private final List<QuestionCreatorTextArea> textAreaList = new ArrayList<>();
+    private static final List<QuestionCreatorTextArea> textAreaList = new ArrayList<>();
     private final List<QuestionCreatorTextArea> answerTextAreaList = new ArrayList<>();
     private final ValidateQuestionCreationButton validateQuestionCreationButton;
-    private Label isCreatedLabel;
+    private static Label isCreatedLabel;
 
     public QuestionCreatorScene(BorderPane pane, Stage stage, AchievementManager achievementManager)
     {
@@ -148,19 +148,7 @@ public class QuestionCreatorScene extends Scene {
         centerVbox.getChildren().add(gridPane);
         multiPane.setCenter(centerVbox);
 
-        validateQuestionCreationButton.setOnAction(event -> {
-            isCreatedLabel.setText("");
-            validateQuestionCreationButton.checkForValidateQuestion(textAreaList);
-            if(validateQuestionCreationButton.getNumberOfFilledTextArea() == 8 && ValidateQuestionCreationButton.findAnswerEqualToGoodAnswer(goodAnswerTextArea, answerTextAreaList))
-            {
-                PersonalizeQuestionsHandler.addNewQuestionToPropertiesFile(categoryTextArea.getText(), questionTextArea.getText(), answerATextArea.getText(), answerBTextArea.getText(),
-                        answerCTextArea.getText(), answerDTextArea.getText(), goodAnswerTextArea.getText(), explanationTextArea.getText());
-                setUpQuestionIsForgedLabel();
-            }
-            else {
-                setUpQuestionIsNotForgedLabel();
-            }
-        });
+        validateQuestionCreationButton.setValidateButtonOnAction(validateQuestionCreationButton, textAreaList, goodAnswerTextArea, answerTextAreaList);
     }
 
     public void setUpSlotTextArea(String slotLabel, QuestionCreatorTextArea questionCreatorTextArea, int columnIndex, int rowIndex)
@@ -169,15 +157,22 @@ public class QuestionCreatorScene extends Scene {
         createAreaForForm(categoryLabel, questionCreatorTextArea,columnIndex, rowIndex);
     }
 
-    public void setUpQuestionIsNotForgedLabel()
+    public static void setUpQuestionIsNotForgedAreaAreNotFiledLabel()
     {
-        isCreatedLabel.setText(UtilStringStorage.questionIsNotForged);
+        isCreatedLabel.setText(UtilStringStorage.questionIsNotForgedAreaAreNotAllFiled);
         PauseTransition visiblePause = new PauseTransition(Duration.seconds(3));
         visiblePause.setOnFinished(transitionEvent2 -> isCreatedLabel.setText(""));
         visiblePause.play();
     }
+    public static void setUpQuestionIsNotForgedValidAnswerIsNotGood()
+    {
+        isCreatedLabel.setText(UtilStringStorage.questionIsNotForgedValidAnswerIsNotGood);
+        PauseTransition visiblePause = new PauseTransition(Duration.seconds(3));
+        visiblePause.setOnFinished(transitionEvent3 -> isCreatedLabel.setText(""));
+        visiblePause.play();
+    }
 
-    public void setUpQuestionIsForgedLabel()
+    public static void setUpQuestionIsForgedLabel()
     {
         isCreatedLabel.setText(UtilStringStorage.questionIsForged);
         PauseTransition visiblePause = new PauseTransition(Duration.seconds(3));
@@ -223,7 +218,7 @@ public class QuestionCreatorScene extends Scene {
         vBox.setTranslateX(-230);
     }
 
-    public void resetTextAreas() {
+    public static void resetTextAreas() {
         for (QuestionCreatorTextArea questionCreatorTextArea : textAreaList) {
             questionCreatorTextArea.clear();
             questionCreatorTextArea.setFill(false);
@@ -253,4 +248,7 @@ public class QuestionCreatorScene extends Scene {
         stage.setScene(menuScene);
     }
 
+    public static Label getIsCreatedLabel() {
+        return isCreatedLabel;
+    }
 }

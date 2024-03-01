@@ -14,7 +14,7 @@ import model.*;
 import model.handlers.*;
 import util.*;
 import util.creators.IconCreator;
-import util.stringUtilTranslate.UtilStringStorage;
+import util.stringutiltranslate.UtilStringStorage;
 import view.App;
 import view.customobject.NotificationAlert;
 

@@ -1,4 +1,4 @@
-package util.stringUtilTranslate;
+package util.stringutiltranslate;
 
 public class QuestionStringStorage {
 

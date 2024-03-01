@@ -2,6 +2,7 @@ package model.handlers;
 
 import model.Question;
 import util.FileUtil;
+import view.customobject.QuestionCreatorTextArea;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +23,7 @@ public class PersonalizeQuestionsHandler
     public static final String PROPERTY_KEY_GOOD_ANSWER = "GoodAnswer";
     public static final String PROPERTY_KEY_EXPLANATION = "Explanation";
 
-    public static void addNewQuestionToPropertiesFile(String category, String questionToAsk, String answerA, String answerB, String answerC, String answerD, String goodAnswer, String explanation)
+    public static void addNewQuestionToPropertiesFile(List<QuestionCreatorTextArea> textAreaList)
     {
         propertyKeyQuestionNumber = Integer.parseInt(FileUtil.getPersonalizeQuestionsFile().getProperty(QUESTION_NUMBER_KEY_PROPERTIES));
         propertyKeyQuestionNumber++;
@@ -31,14 +32,14 @@ public class PersonalizeQuestionsHandler
             String propertyQuestionKey = PROPERTY_KEY_START + i;
             String checkIfPropertyExist = FileUtil.getPersonalizeQuestionsFile().getProperty(propertyQuestionKey +PROPERTY_KEY_QUESTION);
             if (checkIfPropertyExist == null) {
-                FileUtil.getPersonalizeQuestionsFile().setProperty(propertyQuestionKey + PROPERTY_KEY_CATEGORY, category);
-                FileUtil.getPersonalizeQuestionsFile().setProperty(propertyQuestionKey + PROPERTY_KEY_QUESTION, questionToAsk);
-                FileUtil.getPersonalizeQuestionsFile().setProperty(propertyQuestionKey + PROPERTY_KEY_ANSWER_A, answerA);
-                FileUtil.getPersonalizeQuestionsFile().setProperty(propertyQuestionKey + PROPERTY_KEY_ANSWER_B, answerB);
-                FileUtil.getPersonalizeQuestionsFile().setProperty(propertyQuestionKey + PROPERTY_KEY_ANSWER_C, answerC);
-                FileUtil.getPersonalizeQuestionsFile().setProperty(propertyQuestionKey + PROPERTY_KEY_ANSWER_D, answerD);
-                FileUtil.getPersonalizeQuestionsFile().setProperty(propertyQuestionKey + PROPERTY_KEY_GOOD_ANSWER, goodAnswer);
-                FileUtil.getPersonalizeQuestionsFile().setProperty(propertyQuestionKey + PROPERTY_KEY_EXPLANATION, explanation);
+                FileUtil.getPersonalizeQuestionsFile().setProperty(propertyQuestionKey + PROPERTY_KEY_CATEGORY, textAreaList.get(0).getText());
+                FileUtil.getPersonalizeQuestionsFile().setProperty(propertyQuestionKey + PROPERTY_KEY_QUESTION, textAreaList.get(1).getText());
+                FileUtil.getPersonalizeQuestionsFile().setProperty(propertyQuestionKey + PROPERTY_KEY_ANSWER_A, textAreaList.get(2).getText());
+                FileUtil.getPersonalizeQuestionsFile().setProperty(propertyQuestionKey + PROPERTY_KEY_ANSWER_B, textAreaList.get(3).getText());
+                FileUtil.getPersonalizeQuestionsFile().setProperty(propertyQuestionKey + PROPERTY_KEY_ANSWER_C, textAreaList.get(4).getText());
+                FileUtil.getPersonalizeQuestionsFile().setProperty(propertyQuestionKey + PROPERTY_KEY_ANSWER_D, textAreaList.get(5).getText());
+                FileUtil.getPersonalizeQuestionsFile().setProperty(propertyQuestionKey + PROPERTY_KEY_GOOD_ANSWER, textAreaList.get(6).getText());
+                FileUtil.getPersonalizeQuestionsFile().setProperty(propertyQuestionKey + PROPERTY_KEY_EXPLANATION, textAreaList.get(7).getText());
                 break;
             }
         }

@@ -8,7 +8,7 @@ import model.handlers.AchievementManager;
 import model.TimePlayedTimer;
 import util.CustomOption;
 import util.FileUtil;
-import util.stringUtilTranslate.UtilStringStorage;
+import util.stringutiltranslate.UtilStringStorage;
 import view.scene.MenuScene;
 
 import java.util.Optional;

@@ -14,8 +14,8 @@ import model.handlers.ImportFileHandler;
 import model.handlers.SoundManager;
 import util.*;
 import util.creators.BackgroundCreator;
-import util.stringUtilTranslate.UtilStringStorage;
-import util.stringUtilTranslate.UtilTranslateString;
+import util.stringutiltranslate.UtilStringStorage;
+import util.stringutiltranslate.UtilTranslateString;
 import view.*;
 import view.customobject.*;
 

@@ -21,7 +21,7 @@ import util.PathUtil;
 import util.creators.BackgroundCreator;
 import util.creators.GifCreator;
 import util.creators.IconCreator;
-import util.stringUtilTranslate.UtilStringStorage;
+import util.stringutiltranslate.UtilStringStorage;
 import view.App;
 import view.bootstrap.BootstrapPane;
 import view.customobject.CustomComboBox;

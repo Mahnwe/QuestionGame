@@ -10,7 +10,7 @@ import model.handlers.AchievementManager;
 import model.TimePlayedTimer;
 import util.creators.BackgroundCreator;
 import util.FileUtil;
-import util.stringUtilTranslate.UtilStringStorage;
+import util.stringutiltranslate.UtilStringStorage;
 import view.customobject.ReturnButton;
 import view.customvbox.StatsVbox;
 

@@ -6,7 +6,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import model.handlers.GameHandler;
 import util.CustomOption;
-import util.stringUtilTranslate.UtilStringStorage;
+import util.stringutiltranslate.UtilStringStorage;
 import view.scene.MenuScene;
 
 public class LaunchGameButton extends Button {

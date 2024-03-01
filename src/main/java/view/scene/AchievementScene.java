@@ -13,7 +13,7 @@ import model.Achievement;
 import model.handlers.AchievementManager;
 import util.creators.BackgroundCreator;
 import util.FileUtil;
-import util.stringUtilTranslate.UtilStringStorage;
+import util.stringutiltranslate.UtilStringStorage;
 import view.bootstrap.BootstrapPane;
 import view.customobject.ReturnButton;
 import view.customvbox.AchievementVbox;

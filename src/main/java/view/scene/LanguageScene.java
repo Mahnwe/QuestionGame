@@ -14,8 +14,8 @@ import model.handlers.AchievementManager;
 import util.*;
 import util.creators.BackgroundCreator;
 import util.creators.IconCreator;
-import util.stringUtilTranslate.UtilStringStorage;
-import util.stringUtilTranslate.UtilTranslateString;
+import util.stringutiltranslate.UtilStringStorage;
+import util.stringutiltranslate.UtilTranslateString;
 import view.customobject.LanguageButton;
 
 public class LanguageScene extends Scene

@@ -12,7 +12,7 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.handlers.AchievementManager;
 import util.creators.BackgroundCreator;
-import util.stringUtilTranslate.UtilStringStorage;
+import util.stringutiltranslate.UtilStringStorage;
 import view.App;
 import view.customobject.ReturnButton;
 

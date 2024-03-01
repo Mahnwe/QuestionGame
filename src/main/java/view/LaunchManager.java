@@ -6,8 +6,8 @@ import model.handlers.AchievementManager;
 import model.handlers.SoundManager;
 import util.FileUtil;
 import util.PathUtil;
-import util.stringUtilTranslate.UtilStringStorage;
-import util.stringUtilTranslate.UtilTranslateString;
+import util.stringutiltranslate.UtilStringStorage;
+import util.stringutiltranslate.UtilTranslateString;
 import view.scene.LanguageScene;
 import view.scene.MenuScene;
 

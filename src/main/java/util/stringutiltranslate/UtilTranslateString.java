@@ -1,4 +1,4 @@
-package util.stringUtilTranslate;
+package util.stringutiltranslate;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -217,7 +217,8 @@ public class UtilTranslateString {
         UtilStringStorage.createExplanationLabel = engTradFile.getProperty("createExplanationLabel");
         UtilStringStorage.validateCreationButton = engTradFile.getProperty("validateCreationButton");
         UtilStringStorage.questionIsForged = engTradFile.getProperty("questionIsForged");
-        UtilStringStorage.questionIsNotForged = engTradFile.getProperty("questionIsNotForged");
+        UtilStringStorage.questionIsNotForgedAreaAreNotAllFiled = engTradFile.getProperty("questionIsNotForgedAreaAreNotAllFiled");
+        UtilStringStorage.questionIsNotForgedValidAnswerIsNotGood = engTradFile.getProperty("questionIsNotForgedValidAnswerIsNotGood");
         UtilStringStorage.personalizeListButtonTooltip = engTradFile.getProperty("personalizeListButtonTooltip");
         UtilStringStorage.personalizeQuestionListLabel = engTradFile.getProperty("personalizeQuestionListLabel");
         UtilStringStorage.confirmAlertDeleteAllQuestions = engTradFile.getProperty("confirmAlertHeaderText");
@@ -446,7 +447,8 @@ public class UtilTranslateString {
         UtilStringStorage.createExplanationLabel = frTradFile.getProperty("createExplanationLabel");
         UtilStringStorage.validateCreationButton = frTradFile.getProperty("validateCreationButton");
         UtilStringStorage.questionIsForged = frTradFile.getProperty("questionIsForged");
-        UtilStringStorage.questionIsNotForged = frTradFile.getProperty("questionIsNotForged");
+        UtilStringStorage.questionIsNotForgedAreaAreNotAllFiled = frTradFile.getProperty("questionIsNotForgedAreaAreNotAllFiled");
+        UtilStringStorage.questionIsNotForgedValidAnswerIsNotGood = frTradFile.getProperty("questionIsNotForgedValidAnswerIsNotGood");
         UtilStringStorage.personalizeListButtonTooltip = frTradFile.getProperty("personalizeListButtonTooltip");
         UtilStringStorage.personalizeQuestionListLabel = frTradFile.getProperty("personalizeQuestionListLabel");
         UtilStringStorage.confirmAlertDeleteAllQuestions = frTradFile.getProperty("confirmAlertHeaderText");

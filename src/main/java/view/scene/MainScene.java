@@ -18,7 +18,7 @@ import model.handlers.SoundManager;
 import util.creators.BackgroundCreator;
 import util.FileUtil;
 import util.PathUtil;
-import util.stringUtilTranslate.UtilStringStorage;
+import util.stringutiltranslate.UtilStringStorage;
 import view.App;
 import view.customobject.ConfirmAlert;
 import view.customobject.PopUp;

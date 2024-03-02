@@ -11,10 +11,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import model.*;
-import model.handlers.AchievementManager;
-import model.handlers.AnswerHandler;
-import model.handlers.GameHandler;
-import model.handlers.SoundManager;
+import model.handlers.*;
 import util.creators.BackgroundCreator;
 import util.FileUtil;
 import util.PathUtil;
@@ -36,15 +33,15 @@ public class MainScene extends Scene
     private final Stage stage;
     private final AchievementManager achievementManager;
     public static MediaPlayer inGameMusicToStop;
-    private final Player player;
+    private final PlayerHandler playerHandler;
     private static final String SURVIVAL_MODE = "survival";
 
-    public MainScene(Player player, GameHandler gameHandler, Stage stage, AchievementManager achievementManager)
+    public MainScene(PlayerHandler playerHandler, GameHandler gameHandler, Stage stage, AchievementManager achievementManager)
     {
         super(new BorderPane());
         this.stage = stage;
         this.menuPane = (BorderPane) this.getRoot();
-        this.player = player;
+        this.playerHandler = playerHandler;
         this.gameHandler = gameHandler;
         this.achievementManager = achievementManager;
 
@@ -66,8 +63,8 @@ public class MainScene extends Scene
 
     public void createPopup()
     {
-        playerInfoScene = new PlayerInfoScene(new BorderPane(), player);
-        playerInfoScene = PopUp.createPopup(player, menuPane, questionInterface);
+        playerInfoScene = new PlayerInfoScene(new BorderPane(), playerHandler);
+        playerInfoScene = PopUp.createPopup(playerHandler, menuPane, questionInterface);
     }
 
     private void setAnswersButtonListeners()
@@ -77,15 +74,15 @@ public class MainScene extends Scene
             questionInterface.checkAnswer();
             if(questionInterface.isPlayerAnswer())
             {
-                playerInfoScene.increaseScore();
+                PlayerHandler.increaseScore();
             }
             else {
-                playerInfoScene.removePlayerLife();
+                PlayerHandler.removePlayerLife();
                 if(playerInfoScene.getPlayerLivesLabel() != null) {
-                    playerInfoScene.getPlayerLivesLabel().setText(UtilStringStorage.playerLivesIngame + " " + playerInfoScene.getPlayer().getNbrOfLives());
+                    playerInfoScene.getPlayerLivesLabel().setText(UtilStringStorage.playerLivesIngame + " " + playerHandler.getPlayer().getNbrOfLives());
                 }
             }
-            playerInfoScene.getPlayerScoreLabel().setText(UtilStringStorage.scoreLabel + " " +playerInfoScene.getPlayer().getPlayerScore()+"/"+gameHandler.getQuestionCount());
+            playerInfoScene.getPlayerScoreLabel().setText(UtilStringStorage.scoreLabel + " " +playerHandler.getPlayer().getPlayerScore()+"/"+gameHandler.getQuestionCount());
             setNextQuestionButton();
         });
     }
@@ -138,18 +135,18 @@ public class MainScene extends Scene
     {
         GameTimer.stopTimer();
         GameTimer.setTimerDisplay();
-        ResultScene resultScene = new ResultScene(menuPane, playerInfoScene.getPlayer().getPlayerScore(), gameHandler.getQuestionCount(), achievementManager, stage);
+        ResultScene resultScene = new ResultScene(menuPane, playerHandler.getPlayer().getPlayerScore(), gameHandler.getQuestionCount(), achievementManager, stage);
         SoundManager.checkIfMusicIsPlayed(MenuScene.relaunchGame);
         SoundManager.stopMusic(inGameMusicToStop);
 
         if(GameHandler.gameMode == null)
         {
-            resultScene.getCongratsLabel().setText("     "+UtilStringStorage.congratsLabel +" "+ playerInfoScene.getPlayer().getPlayerName()+"\n"+UtilStringStorage.answerAllQuestions);
-            resultScene.getPlayerResult().setText(UtilStringStorage.playerResult + "  "+ playerInfoScene.getPlayer().getPlayerScore() + "  " + UtilStringStorage.scoreOn + "  " + gameHandler.getQuestionCount());
+            resultScene.getCongratsLabel().setText("     "+UtilStringStorage.congratsLabel +" "+ playerHandler.getPlayer().getPlayerName()+"\n"+UtilStringStorage.answerAllQuestions);
+            resultScene.getPlayerResult().setText(UtilStringStorage.playerResult + "  "+ playerHandler.getPlayer().getPlayerScore() + "  " + UtilStringStorage.scoreOn + "  " + gameHandler.getQuestionCount());
         }
         else if(GameHandler.gameMode.equals(SURVIVAL_MODE))
         {
-            resultScene.getCongratsLabel().setText("       "+UtilStringStorage.congratsLabel +" "+ playerInfoScene.getPlayer().getPlayerName()+"\n"+UtilStringStorage.survivalGameOver);
+            resultScene.getCongratsLabel().setText("       "+UtilStringStorage.congratsLabel +" "+ playerHandler.getPlayer().getPlayerName()+"\n"+UtilStringStorage.survivalGameOver);
             resultScene.getPlayerResult().setText(UtilStringStorage.survivalLabel +"  "+gameHandler.getQuestionCount() + " questions");
         }
     }
@@ -158,13 +155,13 @@ public class MainScene extends Scene
     {
         if(GameHandler.gameMode == null)
         {
-            FileUtil.writeNormalModInJsonFile(UtilStringStorage.classicModeLabelInfile, playerInfoScene.getPlayer().getPlayerName(), playerInfoScene.getPlayer().getPlayerScore(),
+            FileUtil.writeNormalModInJsonFile(UtilStringStorage.classicModeLabelInfile, playerHandler.getPlayer().getPlayerName(), playerHandler.getPlayer().getPlayerScore(),
                     " " + UtilStringStorage.scoreOn + " ", gameHandler.getQuestionCount(), GameTimer.getElapsedMinutes(),UtilStringStorage.gameMinutes,
                     GameTimer.getSecondsDisplay(),UtilStringStorage.gameSecondes);
         }
         else if(GameHandler.gameMode.equals(SURVIVAL_MODE))
         {
-            FileUtil.writeSurvivalModeInJsonFile(UtilStringStorage.survivalLabelInfile, playerInfoScene.getPlayer().getPlayerName(), gameHandler.getQuestionCount(), " questions",
+            FileUtil.writeSurvivalModeInJsonFile(UtilStringStorage.survivalLabelInfile, playerHandler.getPlayer().getPlayerName(), gameHandler.getQuestionCount(), " questions",
                     GameTimer.getElapsedMinutes(), UtilStringStorage.gameMinutes, GameTimer.getSecondsDisplay(), UtilStringStorage.gameSecondes);
         }
     }
@@ -199,7 +196,7 @@ public class MainScene extends Scene
         }
         else
         {
-            if(playerInfoScene.getPlayer().getNbrOfLives() == 0 || gameHandler.getQuestionCount() >= gameHandler.getQuestionList().size())
+            if(playerHandler.getPlayer().getNbrOfLives() == 0 || gameHandler.getQuestionCount() >= gameHandler.getQuestionList().size())
             {
                 setDisplayResult();
                 saveScoreInFile();

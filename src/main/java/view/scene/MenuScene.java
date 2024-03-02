@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import model.Player;
 import model.handlers.AchievementManager;
 import model.handlers.GameHandler;
+import model.handlers.PlayerHandler;
 import model.handlers.SoundManager;
 import util.CustomOption;
 import util.PathUtil;
@@ -245,7 +246,8 @@ public class MenuScene extends Scene
     public void instantiateMainScene()
     {
         Player player = new Player();
-        MainScene mainScene = new MainScene(player, gameHandler, menuStage, achievementManager);
+        PlayerHandler playerHandler = new PlayerHandler(player);
+        MainScene mainScene = new MainScene(playerHandler, gameHandler, menuStage, achievementManager);
         MainScene.inGameMusicToStop = SoundManager.playMusicRepeat(PathUtil.IN_GAME_MUSIC);
         SoundManager.stopMusic(App.menuMusicToStop);
         menuStage.setScene(mainScene);

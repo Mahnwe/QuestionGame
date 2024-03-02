@@ -1,4 +1,5 @@
 import model.Player;
+import model.handlers.PlayerHandler;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -7,27 +8,41 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PlayerTest
 {
-   private Player player;
-
+    private PlayerHandler playerHandler;
     @BeforeEach
     void setUpPlayer()
     {
-        player = new Player();
+        Player player = new Player();
+        playerHandler = new PlayerHandler(player);
     }
 
     @Test
      void testPlayerName()
     {
-        player.setPlayerName("Thierry");
+        playerHandler.getPlayer().setPlayerName("Thierry");
 
-        assertThat(player.getPlayerName()).isEqualTo("Thierry");
+        assertThat(playerHandler.getPlayer().getPlayerName()).isEqualTo("Thierry");
     }
 
     @Test
     void testPlayerScore()
     {
-        player.setPlayerScore(9);
+        playerHandler.getPlayer().setPlayerScore(9);
 
-        assertEquals(9, player.getPlayerScore());
+        assertEquals(9, playerHandler.getPlayer().getPlayerScore());
+    }
+
+    @Test
+    void testIncreasePlayerScore()
+    {
+        PlayerHandler.increaseScore();
+        assertEquals(1, playerHandler.getPlayer().getPlayerScore());
+    }
+
+    @Test
+    void testRemovePlayerLife()
+    {
+        PlayerHandler.removePlayerLife();
+        assertEquals(2, playerHandler.getPlayer().getNbrOfLives());
     }
 }

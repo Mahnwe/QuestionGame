@@ -4,16 +4,16 @@ import javafx.event.Event;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import model.Player;
+import model.handlers.PlayerHandler;
 import util.CustomOption;
 import view.scene.PlayerInfoScene;
 import view.scene.QuestionInterface;
 
 public class PopUp {
 
-    public static PlayerInfoScene createPopup(Player player, BorderPane menuPane, QuestionInterface questionInterface)
+    public static PlayerInfoScene createPopup(PlayerHandler playerHandler, BorderPane menuPane, QuestionInterface questionInterface)
     {
-        PlayerInfoScene playerInfoScene = new PlayerInfoScene(new BorderPane(), player);
+        PlayerInfoScene playerInfoScene = new PlayerInfoScene(new BorderPane(), playerHandler);
         Stage popUpStage = new Stage();
 
         popUpStage.setOnCloseRequest(Event::consume);

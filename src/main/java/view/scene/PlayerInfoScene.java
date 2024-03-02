@@ -14,6 +14,7 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.*;
 import model.handlers.GameHandler;
+import model.handlers.PlayerHandler;
 import model.handlers.SoundManager;
 import util.*;
 import util.creators.BackgroundCreator;
@@ -29,15 +30,15 @@ public class PlayerInfoScene extends Scene
     private VBox playerInfos;
     private Label playerScoreLabel;
     private Label playerLivesLabel;
-    private final Player player;
+    private final PlayerHandler playerHandler;
 
     public static final String POLICE_LABEL = "Futura";
 
-    public PlayerInfoScene(BorderPane pane, Player player)
+    public PlayerInfoScene(BorderPane pane, PlayerHandler playerHandler)
     {
         super(pane);
         this.pane = pane;
-        this.player = player;
+        this.playerHandler = playerHandler;
 
         createBackground();
         createVBoxGetPlayerName();
@@ -124,20 +125,20 @@ public class PlayerInfoScene extends Scene
         playerInfos.setMinWidth(370);
         playerInfos.setTranslateY(280);
 
-        player.setPlayerName(userInputArea.getText());
-        Label playerNameLabel = new Label(UtilStringStorage.playerNameIngame + "   " + player.getPlayerName());
+        playerHandler.getPlayer().setPlayerName(userInputArea.getText());
+        Label playerNameLabel = new Label(UtilStringStorage.playerNameIngame + "   " + playerHandler.getPlayer().getPlayerName());
         stylizeLabel(playerNameLabel);
 
         playerInfos.getChildren().add(createStatArea(playerNameLabel));
         playerInfos.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
 
-        playerScoreLabel = new Label(UtilStringStorage.scoreLabelIngame + "    " + player.getPlayerScore());
+        playerScoreLabel = new Label(UtilStringStorage.scoreLabelIngame + "    " + playerHandler.getPlayer().getPlayerScore());
         stylizeLabel(playerScoreLabel);
 
         playerInfos.getChildren().add(createStatArea(playerScoreLabel));
 
         if(GameHandler.gameMode != null) {
-            playerLivesLabel = new Label(UtilStringStorage.playerLivesIngame + " "+ player.getNbrOfLives());
+            playerLivesLabel = new Label(UtilStringStorage.playerLivesIngame + " "+ playerHandler.getPlayer().getNbrOfLives());
             stylizeLabel(playerLivesLabel);
             playerInfos.getChildren().add(createStatArea(playerLivesLabel));
         }
@@ -181,15 +182,6 @@ public class PlayerInfoScene extends Scene
         volumeSlider.setOnMouseReleased(event -> SoundManager.setVolumeFromSliderInGame(volumeSlider.getValue()));
 
     }
-    public void increaseScore()
-    {
-        player.setPlayerScore(player.getPlayerScore()+1);
-    }
-
-    public void removePlayerLife()
-    {
-        player.setNbrOfLives(player.getNbrOfLives()-1);
-    }
 
     public HBox createStatArea(Label label) {
         label.setTranslateY(12);
@@ -208,10 +200,6 @@ public class PlayerInfoScene extends Scene
 
     public Label getPlayerScoreLabel() {
         return playerScoreLabel;
-    }
-
-    public Player getPlayer() {
-        return player;
     }
 
     public Button getSendButton() {

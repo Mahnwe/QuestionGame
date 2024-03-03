@@ -148,7 +148,14 @@ public class QuestionCreatorScene extends Scene {
         centerVbox.getChildren().add(gridPane);
         multiPane.setCenter(centerVbox);
 
-        validateQuestionCreationButton.setValidateButtonOnAction(validateQuestionCreationButton, textAreaList, goodAnswerTextArea, answerTextAreaList);
+        validateQuestionCreationButton.setOnAction(event -> {
+            boolean isQuestionValid = ValidateQuestionCreationButton.setValidateButtonOnAction(textAreaList, goodAnswerTextArea, answerTextAreaList);
+            if(isQuestionValid)
+            {
+                PersonalizeQuestionsHandler.addNewQuestionToPropertiesFile(categoryTextArea.getText(), questionTextArea.getText(), answerATextArea.getText(), answerBTextArea.getText(),
+                        answerCTextArea.getText(), answerDTextArea.getText(), goodAnswerTextArea.getText(), explanationTextArea.getText());
+            }
+        });
     }
 
     public void setUpSlotTextArea(String slotLabel, QuestionCreatorTextArea questionCreatorTextArea, int columnIndex, int rowIndex)
@@ -174,12 +181,14 @@ public class QuestionCreatorScene extends Scene {
 
     public static void setUpQuestionIsForgedLabel()
     {
+        PersonalizeQuestionsHandler.addPersonalizeQuestionsToStringList();
         isCreatedLabel.setText(UtilStringStorage.questionIsForged);
         PauseTransition visiblePause = new PauseTransition(Duration.seconds(3));
         visiblePause.setOnFinished(transitionEvent -> isCreatedLabel.setText(""));
         visiblePause.play();
-        PersonalizeQuestionsHandler.addPersonalizeQuestionsToStringList();
-        resetTextAreas();
+        PauseTransition visiblePause2 = new PauseTransition(Duration.seconds(0.25));
+        visiblePause2.setOnFinished(transitionEvent -> resetTextAreas());
+        visiblePause2.play();
     }
 
     public void createListPersonalizeQuestionButton()
@@ -220,7 +229,7 @@ public class QuestionCreatorScene extends Scene {
 
     public static void resetTextAreas() {
         for (QuestionCreatorTextArea questionCreatorTextArea : textAreaList) {
-            questionCreatorTextArea.clear();
+            questionCreatorTextArea.setText("");
             questionCreatorTextArea.setFill(false);
             questionCreatorTextArea.setBorder(CustomOption.createCustomBorder(1.5, 2.0, Color.BLACK));
         }

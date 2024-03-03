@@ -4,7 +4,6 @@ import javafx.scene.control.Button;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import model.handlers.PersonalizeQuestionsHandler;
 import util.CustomOption;
 import util.stringutiltranslate.UtilStringStorage;
 import view.scene.QuestionCreatorScene;
@@ -13,7 +12,7 @@ import java.util.List;
 
 public class ValidateQuestionCreationButton extends Button {
 
-    int numberOfFilledTextArea;
+    static int numberOfFilledTextArea;
 
     public ValidateQuestionCreationButton()
     {
@@ -22,30 +21,29 @@ public class ValidateQuestionCreationButton extends Button {
         this.setBorder(CustomOption.createCustomBorder(3.0, 2.0, Color.BLACK));
     }
 
-    public void setValidateButtonOnAction(ValidateQuestionCreationButton validateQuestionCreationButton, List<QuestionCreatorTextArea> textAreaList, QuestionCreatorTextArea goodAnswerTextArea,  List<QuestionCreatorTextArea> answerTextAreaList)
+    public static boolean setValidateButtonOnAction(List<QuestionCreatorTextArea> textAreaList, QuestionCreatorTextArea goodAnswerTextArea,  List<QuestionCreatorTextArea> answerTextAreaList)
     {
-        validateQuestionCreationButton.setOnAction(event -> {
             QuestionCreatorScene.getIsCreatedLabel().setText("");
-            validateQuestionCreationButton.checkForValidateQuestion(textAreaList);
-            if(validateQuestionCreationButton.getNumberOfFilledTextArea() == 8 && ValidateQuestionCreationButton.findAnswerEqualToGoodAnswer(goodAnswerTextArea, answerTextAreaList))
+            ValidateQuestionCreationButton.checkForValidateQuestion(textAreaList);
+            if(ValidateQuestionCreationButton.getNumberOfFilledTextArea() == 8 && ValidateQuestionCreationButton.findAnswerEqualToGoodAnswer(goodAnswerTextArea, answerTextAreaList))
             {
-                PersonalizeQuestionsHandler.addNewQuestionToPropertiesFile(textAreaList);
                 QuestionCreatorScene.setUpQuestionIsForgedLabel();
+                return true;
             }
-            else if(validateQuestionCreationButton.getNumberOfFilledTextArea() != 8 && ValidateQuestionCreationButton.findAnswerEqualToGoodAnswer(goodAnswerTextArea, answerTextAreaList)) {
+            else if(ValidateQuestionCreationButton.getNumberOfFilledTextArea() != 8 && ValidateQuestionCreationButton.findAnswerEqualToGoodAnswer(goodAnswerTextArea, answerTextAreaList)) {
                 QuestionCreatorScene.setUpQuestionIsNotForgedAreaAreNotFiledLabel();
             }
-            else if(validateQuestionCreationButton.getNumberOfFilledTextArea() == 8 && !ValidateQuestionCreationButton.findAnswerEqualToGoodAnswer(goodAnswerTextArea, answerTextAreaList))
+            else if(ValidateQuestionCreationButton.getNumberOfFilledTextArea() == 8 && !ValidateQuestionCreationButton.findAnswerEqualToGoodAnswer(goodAnswerTextArea, answerTextAreaList))
             {
                 QuestionCreatorScene.setUpQuestionIsNotForgedValidAnswerIsNotGood();
             }
-            else if(validateQuestionCreationButton.getNumberOfFilledTextArea() != 8 && !ValidateQuestionCreationButton.findAnswerEqualToGoodAnswer(goodAnswerTextArea, answerTextAreaList)) {
+            else if(ValidateQuestionCreationButton.getNumberOfFilledTextArea() != 8 && !ValidateQuestionCreationButton.findAnswerEqualToGoodAnswer(goodAnswerTextArea, answerTextAreaList)) {
                 QuestionCreatorScene.setUpQuestionIsNotForgedAreaAreNotFiledLabel();
             }
-        });
+        return false;
     }
 
-    public void checkForValidateQuestion(List<QuestionCreatorTextArea> textAreaList)
+    public static void checkForValidateQuestion(List<QuestionCreatorTextArea> textAreaList)
     {
         numberOfFilledTextArea = 0;
         for (QuestionCreatorTextArea questionCreatorTextArea : textAreaList)
@@ -82,7 +80,7 @@ public class ValidateQuestionCreationButton extends Button {
         return findValidAnswer;
     }
 
-    public int getNumberOfFilledTextArea() {
+    public static int getNumberOfFilledTextArea() {
         return numberOfFilledTextArea;
     }
 }

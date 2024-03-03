@@ -42,7 +42,10 @@ class PlayerTest
     @Test
     void testRemovePlayerLife()
     {
+        assertEquals(3, playerHandler.getPlayer().getNbrOfLives());
+
         PlayerHandler.removePlayerLife();
+
         assertEquals(2, playerHandler.getPlayer().getNbrOfLives());
     }
 }

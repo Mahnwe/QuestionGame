@@ -60,7 +60,7 @@ public class PersonalizeQuestionListScene extends Scene {
         deleteAllVbox.setTranslateY(100);
         deleteAllVbox.setTranslateX(50);
         Label deleteAllLabel = new Label(UtilStringStorage.deleteAllLabel);
-        deleteAllLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 22));
+        deleteAllLabel.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 24));
 
         Button deleteAllPersonalizeQuestionsButton = new Button();
         CustomOption.setUpTrashButton(deleteAllPersonalizeQuestionsButton, UtilStringStorage.deleteAllTooltip);
@@ -141,7 +141,7 @@ public class PersonalizeQuestionListScene extends Scene {
             HBox hBox = new HBox();
 
             Label label = new Label();
-            label.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 22));
+            label.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 24));
             label.setText(UtilStringStorage.noPersonalizeQuestionInList);
             hBox.getChildren().add(label);
             gridpane.add(hBox, 0, 0);
@@ -166,11 +166,11 @@ public class PersonalizeQuestionListScene extends Scene {
         HBox hBox = new HBox();
         Button deleteButton = new Button();
         CustomOption.setUpTrashButton(deleteButton, UtilStringStorage.individualQuestionTooltip);
-        deleteButton.setPrefSize(40, 40);
+        deleteButton.setPrefSize(50, 50);
         hBox.getChildren().add(deleteButton);
 
         Label label = new Label();
-        label.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 22));
+        label.setFont(Font.font(POLICE_LABEL, FontWeight.BOLD, 24));
         label.setText("Question n°" + (i+1) + " : " + checkForProperty);
         hBox.getChildren().add(label);
 

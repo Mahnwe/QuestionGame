@@ -8,9 +8,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 
 
 public class FileUtil {
@@ -47,11 +45,14 @@ public class FileUtil {
     public static void writeNormalModInJsonFile(String gameMod, String playerName, int playerScore, String scoreOn, int questionCount, long elapsedMinute, String gameMinute, long elapsedSecond, String gameSecond)
     {
         List<JSONObject> jsonObjectList = readJsonFile();
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("gameMod", gameMod);
-        jsonObject.put("playerName", playerName);
-        jsonObject.put("playerScore", playerScore + " " + scoreOn + " " + questionCount);
-        jsonObject.put("playerTimer", elapsedMinute + " " + gameMinute + " " + elapsedSecond + " " + gameSecond);
+
+        Map<String,String> jsonMap = new HashMap<>();
+        jsonMap.put("gameMod", gameMod);
+        jsonMap.put("playerName", playerName);
+        jsonMap.put("playerScore", playerScore + " " + scoreOn + " " + questionCount);
+        jsonMap.put("playerTimer", elapsedMinute + " " + gameMinute + " " + elapsedSecond + " " + gameSecond);
+
+        JSONObject jsonObject = new JSONObject(jsonMap);
         jsonObjectList.add(jsonObject);
         FileWriter file = null;
         try {
@@ -77,11 +78,14 @@ public class FileUtil {
     public static void writeSurvivalModeInJsonFile(String gameMod, String playerName, int questionCount, String questions, long elapsedMinute, String gameMinute, long elapsedSecond, String gameSecond)
     {
         List<JSONObject> jsonObjectList = readJsonFile();
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("gameMod", gameMod);
-        jsonObject.put("playerName", playerName);
-        jsonObject.put("playerScore", questionCount + questions);
-        jsonObject.put("playerTimer", elapsedMinute + " " + gameMinute + " " + elapsedSecond + " " + gameSecond);
+
+        Map<String,String> jsonMap = new HashMap<>();
+        jsonMap.put("gameMod", gameMod);
+        jsonMap.put("playerName", playerName);
+        jsonMap.put("playerScore", questionCount + questions);
+        jsonMap.put("playerTimer", elapsedMinute + " " + gameMinute + " " + elapsedSecond + " " + gameSecond);
+
+        JSONObject jsonObject = new JSONObject(jsonMap);
         jsonObjectList.add(jsonObject);
         FileWriter file = null;
         try {

@@ -7,7 +7,6 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import util.CustomOption;
 import util.creators.IconCreator;
 import util.PathUtil;
 import util.stringutiltranslate.UtilStringStorage;

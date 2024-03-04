@@ -6,8 +6,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import model.handlers.AchievementManager;
 import model.TimePlayedTimer;
-import util.CustomOption;
 import util.FileUtil;
+import util.JsonFileUtil;
 import util.stringutiltranslate.UtilStringStorage;
 import view.scene.MenuScene;
 
@@ -27,7 +27,7 @@ public class ResetAllSavesButton extends Button {
             if(result.orElse(null) == ButtonType.OK)
             {
                 TimePlayedTimer.stopTimer();
-                FileUtil.resetJsonFile();
+                JsonFileUtil.resetJsonFile();
                 FileUtil.resetGeneralSavesFile();
                 TimePlayedTimer.startTimer();
                 MenuScene menuScene = new MenuScene(new BorderPane(), stage, new AchievementManager());

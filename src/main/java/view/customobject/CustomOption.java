@@ -1,4 +1,4 @@
-package util;
+package view.customobject;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
@@ -9,6 +9,7 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import util.PathUtil;
 import util.creators.IconCreator;
 import view.scene.MenuScene;
 

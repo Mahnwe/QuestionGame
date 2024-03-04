@@ -19,6 +19,7 @@ import util.*;
 import util.creators.BackgroundCreator;
 import util.creators.IconCreator;
 import util.stringutiltranslate.UtilStringStorage;
+import view.customobject.CustomOption;
 import view.customobject.QuestionCreatorTextArea;
 import view.customvbox.QuestionCreatorVbox;
 import view.customobject.ReturnButton;

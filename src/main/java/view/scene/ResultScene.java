@@ -16,6 +16,7 @@ import util.*;
 import util.creators.IconCreator;
 import util.stringutiltranslate.UtilStringStorage;
 import view.App;
+import view.customobject.CustomOption;
 import view.customobject.NotificationAlert;
 
 public class ResultScene extends VBox

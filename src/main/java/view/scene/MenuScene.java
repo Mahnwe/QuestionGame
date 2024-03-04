@@ -17,7 +17,7 @@ import model.handlers.AchievementManager;
 import model.handlers.GameHandler;
 import model.handlers.PlayerHandler;
 import model.handlers.SoundManager;
-import util.CustomOption;
+import view.customobject.CustomOption;
 import util.PathUtil;
 import util.creators.BackgroundCreator;
 import util.creators.GifCreator;

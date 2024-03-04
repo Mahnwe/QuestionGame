@@ -8,9 +8,9 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.handlers.AchievementManager;
 import org.json.simple.JSONObject;
+import util.JsonFileUtil;
 import util.creators.BackgroundCreator;
-import util.CustomOption;
-import util.FileUtil;
+import view.customobject.CustomOption;
 import util.stringutiltranslate.UtilStringStorage;
 import view.customobject.ConfirmAlert;
 import view.customobject.ReturnButton;
@@ -71,7 +71,7 @@ public class LeaderBoardScene extends Scene
             Optional<ButtonType> result = confirmAlert.showAndWait();
             if(result.orElse(null) == ButtonType.OK) {
                 jsonArrayList.remove(jsonIndex);
-                FileUtil.actualizeJsonFile(jsonArrayList);
+                JsonFileUtil.actualizeJsonFile(jsonArrayList);
                 LeaderBoardScene leaderBoardScene = new LeaderBoardScene(new ScrollPane(), stage, achievementManager);
                 stage.setScene(leaderBoardScene);
             }
@@ -81,7 +81,7 @@ public class LeaderBoardScene extends Scene
 
     public void readSaveFile(int rowIndex)
     {
-        List<JSONObject> jsonArrayList = FileUtil.readJsonFile();
+        List<JSONObject> jsonArrayList = JsonFileUtil.readJsonFile();
         for(int i = 0; i < jsonArrayList.size(); i++)
         {
             JSONObject jsonObject = jsonArrayList.get(i);
@@ -162,7 +162,7 @@ public class LeaderBoardScene extends Scene
         eraseSaveFileButton.setOnAction(event -> {
             Optional<ButtonType> result = confirmAlert.showAndWait();
             if(result.orElse(null) == ButtonType.OK) {
-                FileUtil.resetJsonFile();
+                JsonFileUtil.resetJsonFile();
                 LeaderBoardScene leaderBoardScene = new LeaderBoardScene(new ScrollPane(), stage, achievementManager);
                 stage.setScene(leaderBoardScene);
             }

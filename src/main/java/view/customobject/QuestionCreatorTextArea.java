@@ -4,7 +4,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import util.CustomOption;
 import view.scene.PlayerInfoScene;
 
 public class QuestionCreatorTextArea extends TextArea

@@ -5,7 +5,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.handlers.PlayerHandler;
-import util.CustomOption;
 import view.scene.PlayerInfoScene;
 import view.scene.QuestionInterface;
 

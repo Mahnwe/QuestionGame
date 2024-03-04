@@ -5,7 +5,6 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import util.CustomOption;
 import view.scene.MenuScene;
 
 public class MenuSideButton extends Button

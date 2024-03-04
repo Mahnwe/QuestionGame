@@ -11,7 +11,7 @@ import javafx.util.Duration;
 import model.handlers.AchievementManager;
 import model.handlers.PersonalizeQuestionsHandler;
 import util.creators.BackgroundCreator;
-import util.CustomOption;
+import view.customobject.CustomOption;
 import util.FileUtil;
 import util.stringutiltranslate.UtilStringStorage;
 import view.customobject.ConfirmAlert;

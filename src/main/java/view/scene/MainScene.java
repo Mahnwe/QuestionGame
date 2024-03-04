@@ -12,6 +12,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import model.*;
 import model.handlers.*;
+import util.JsonFileUtil;
 import util.creators.BackgroundCreator;
 import util.FileUtil;
 import util.PathUtil;
@@ -155,13 +156,13 @@ public class MainScene extends Scene
     {
         if(GameHandler.gameMode == null)
         {
-            FileUtil.writeNormalModInJsonFile(UtilStringStorage.classicModeLabelInfile, playerHandler.getPlayer().getPlayerName(), playerHandler.getPlayer().getPlayerScore(),
+            JsonFileUtil.writeNormalModInJsonFile(UtilStringStorage.classicModeLabelInfile, playerHandler.getPlayer().getPlayerName(), playerHandler.getPlayer().getPlayerScore(),
                     " " + UtilStringStorage.scoreOn + " ", gameHandler.getQuestionCount(), GameTimer.getElapsedMinutes(),UtilStringStorage.gameMinutes,
                     GameTimer.getSecondsDisplay(),UtilStringStorage.gameSecondes);
         }
         else if(GameHandler.gameMode.equals(SURVIVAL_MODE))
         {
-            FileUtil.writeSurvivalModeInJsonFile(UtilStringStorage.survivalLabelInfile, playerHandler.getPlayer().getPlayerName(), gameHandler.getQuestionCount(), " questions",
+            JsonFileUtil.writeSurvivalModeInJsonFile(UtilStringStorage.survivalLabelInfile, playerHandler.getPlayer().getPlayerName(), gameHandler.getQuestionCount(), " questions",
                     GameTimer.getElapsedMinutes(), UtilStringStorage.gameMinutes, GameTimer.getSecondsDisplay(), UtilStringStorage.gameSecondes);
         }
     }

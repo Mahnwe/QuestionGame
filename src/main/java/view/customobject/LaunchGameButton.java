@@ -5,7 +5,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import model.handlers.GameHandler;
-import util.CustomOption;
 import util.stringutiltranslate.UtilStringStorage;
 import view.scene.MenuScene;
 

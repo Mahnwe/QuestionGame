@@ -12,7 +12,7 @@ import javafx.scene.text.FontWeight;
 import model.Question;
 import model.QuestionStorage;
 import model.handlers.AnswerHandler;
-import util.CustomOption;
+import view.customobject.CustomOption;
 import util.stringutiltranslate.UtilStringStorage;
 import view.customobject.AnswerButton;
 

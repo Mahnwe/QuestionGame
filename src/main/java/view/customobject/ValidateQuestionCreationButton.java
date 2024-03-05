@@ -61,9 +61,9 @@ public class ValidateQuestionCreationButton extends Button {
     {
         boolean findValidAnswer = false;
         int numberOfValidAnswer = 0;
-        for(int i = 0; i < answerList.size(); i++)
+        for (QuestionCreatorTextArea questionCreatorTextArea : answerList)
         {
-            if(answerList.get(i).getText().equals(goodAnswer.getText()))
+            if (questionCreatorTextArea.getText().equals(goodAnswer.getText()))
             {
                 numberOfValidAnswer++;
             }

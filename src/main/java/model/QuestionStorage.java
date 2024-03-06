@@ -661,6 +661,16 @@ public class QuestionStorage
                 QuestionStringStorage.answerB128, QuestionStringStorage.answerC128, QuestionStringStorage.answerD128, QuestionStringStorage.goodAnswer128,
                 QuestionStringStorage.explanation128);
         questionList.add(question128);
+
+        Question question129 = new Question(UtilStringStorage.music, QuestionStringStorage.question129,QuestionStringStorage.answerA129,
+                QuestionStringStorage.answerB129, QuestionStringStorage.answerC129, QuestionStringStorage.answerD129, QuestionStringStorage.goodAnswer129,
+                QuestionStringStorage.explanation129);
+        questionList.add(question129);
+
+        Question question130 = new Question(UtilStringStorage.food, QuestionStringStorage.question130,QuestionStringStorage.answerA130,
+                QuestionStringStorage.answerB130, QuestionStringStorage.answerC130, QuestionStringStorage.answerD130, QuestionStringStorage.goodAnswer130,
+                QuestionStringStorage.explanation130);
+        questionList.add(question130);
     }
 
     public void checkPersonalizeQuestions()

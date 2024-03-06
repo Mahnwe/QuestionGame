@@ -31,6 +31,7 @@ public class LanguageScene extends Scene
         this.pane = pane;
         this.stage = stage;
         this.achievementManager = achievementManager;
+        stage.setMaximized(true);
 
         createTitleArea();
         setUpVbox();
@@ -40,7 +41,7 @@ public class LanguageScene extends Scene
     {
         vBox = new VBox();
         vBox.setTranslateX(650);
-        vBox.setTranslateY(170);
+        vBox.setTranslateY(120);
 
         IconCreator iconCreator = new IconCreator(PathUtil.LOGO_ICON);
         ImageView logoIcon = iconCreator.createImage();
@@ -69,7 +70,7 @@ public class LanguageScene extends Scene
 
         VBox languageVbox = new VBox();
         languageVbox.setTranslateX(100);
-        languageVbox.setTranslateY(80);
+        languageVbox.setTranslateY(60);
 
         languageVbox.getChildren().add(englishVbox);
         languageVbox.getChildren().add(frenchVbox);
@@ -80,7 +81,7 @@ public class LanguageScene extends Scene
     public void createEngVbox(VBox vBox, UtilTranslateString utilTranslateString)
     {
         Label englishLabel = new Label("Choose a language");
-        englishLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 24));
+        englishLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 28));
 
         LanguageButton engButton = new LanguageButton(PathUtil.ENGLISH_FLAG, UtilStringStorage.englishLanguageTooltip);
         engButton.setUpEnglishLanguageButton(engButton, utilTranslateString, stage, achievementManager, false);
@@ -88,20 +89,20 @@ public class LanguageScene extends Scene
         vBox.getChildren().add(englishLabel);
         vBox.getChildren().add(engButton);
         vBox.setTranslateY(10);
-        vBox.setTranslateX(-160);
+        vBox.setTranslateX(-200);
     }
 
     public void createFrenchVbox(VBox vBox, UtilTranslateString utilTranslateString)
     {
         Label frenchLabel = new Label("Choisissez une langue");
-        frenchLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 24));
+        frenchLabel.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 28));
 
         LanguageButton frButton = new LanguageButton(PathUtil.FRENCH_FLAG, UtilStringStorage.frenchLanguageTooltip);
         frButton.setUpFrenchLanguageButton(frButton, utilTranslateString, stage, achievementManager, false);
 
         vBox.getChildren().add(frenchLabel);
         vBox.getChildren().add(frButton);
-        vBox.setTranslateX(230);
-        vBox.setTranslateY(-105);
+        vBox.setTranslateX(270);
+        vBox.setTranslateY(-130);
     }
 }

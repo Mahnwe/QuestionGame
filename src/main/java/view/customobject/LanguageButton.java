@@ -5,6 +5,8 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.handlers.AchievementManager;
 import model.handlers.SoundManager;
@@ -26,12 +28,13 @@ public class LanguageButton extends Button {
         this.setBackground(new Background(new BackgroundImage(englishFlag, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
                 backgroundSize)));
 
-        this.setMinWidth(150);
-        this.setMinHeight(90);
+        this.setMinWidth(180);
+        this.setMinHeight(110);
         this.setTranslateX(50);
         this.setTranslateY(60);
 
         Tooltip buttonTooltip = new Tooltip(tooltipLanguage);
+        buttonTooltip.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 22));
         this.setTooltip(buttonTooltip);
 
         this.setOnMouseEntered(event -> {

@@ -89,6 +89,7 @@ public class UtilStringStorage
     public static String successPercentageLabel = "";
     public static String normalGameModeLabel = "";
     public static String survivalGameModeLabel = "";
+
     // MENU SCENE
     public static String welcomeLabel = "";
     public static String leaderBoardButton = "";

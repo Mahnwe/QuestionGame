@@ -109,7 +109,7 @@ public class ResultScene extends VBox
         {
             ResultHandler.normalBronzeResult(achievementManager, questionCount, playerFinalScore, gameResult, bronzeCup);
         }
-        if(playerFinalScore < questionCount*50/100)
+        else
         {
             ResultHandler.normalNoCupResult(achievementManager, questionCount, playerFinalScore, gameResult);
         }

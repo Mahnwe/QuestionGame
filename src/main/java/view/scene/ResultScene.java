@@ -101,11 +101,11 @@ public class ResultScene extends VBox
         {
             ResultHandler.normalGoldResult(achievementManager, questionCount, playerFinalScore, gameResult, goldCup);
         }
-        if(playerFinalScore > questionCount*60/100 && playerFinalScore <= questionCount*80/100)
+        else if(playerFinalScore > questionCount*60/100 && playerFinalScore <= questionCount*80/100)
         {
             ResultHandler.normalSilverResult(achievementManager, questionCount, playerFinalScore, gameResult, silverCup);
         }
-        if(playerFinalScore >= questionCount*50/100 && playerFinalScore < questionCount*60/100)
+        else if(playerFinalScore >= questionCount*50/100 && playerFinalScore < questionCount*60/100)
         {
             ResultHandler.normalBronzeResult(achievementManager, questionCount, playerFinalScore, gameResult, bronzeCup);
         }

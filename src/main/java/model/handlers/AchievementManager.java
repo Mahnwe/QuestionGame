@@ -6,6 +6,7 @@ import javafx.scene.layout.VBox;
 import model.Achievement;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import util.FileUtil;
 import view.customobject.NotificationAlert;
 
 import java.util.ArrayList;
@@ -122,17 +123,22 @@ public class AchievementManager
 
     public void survivalModeResult(int questionCount, Properties generalSavesFile, AchievementManager achievementManager)
     {
-        if(questionCount >= 20)
+        if(questionCount >= 20 && questionCount < 30)
         {
             checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "survivalScore20", 6);
         }
-        if(questionCount >= 30)
+        else if(questionCount >= 30 && questionCount < 40)
         {
             checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "survivalScore30", 7);
         }
-        if(questionCount >= 40)
+        else if(questionCount >= 40)
         {
             checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "survivalScore50", 8);
+        }
+        else
+        {
+            FileUtil.getGeneralSavesFile().setProperty("survivalScore20", String.valueOf(questionCount));
+            FileUtil.storeGeneralSavesFile();
         }
     }
 

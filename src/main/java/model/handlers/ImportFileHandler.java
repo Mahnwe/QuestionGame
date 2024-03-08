@@ -5,6 +5,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.DataFormat;
+import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -13,6 +14,7 @@ import model.Question;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import util.FileUtil;
+import util.stringutiltranslate.UtilStringStorage;
 
 import java.io.*;
 import java.util.*;
@@ -38,7 +40,7 @@ public class ImportFileHandler {
             fileChooser.showOpenDialog(fileChooserStage);
     }
 
-    public static void setUpCopyFileButton()
+    public static void setUpCopyFileButton(Label label)
     {
             List<File> fileList = new ArrayList<>();
             File file = new File(PERSONALIZE_QUESTION_PATH);
@@ -47,6 +49,8 @@ public class ImportFileHandler {
             ClipboardContent clipboardContent = new ClipboardContent();
             clipboardContent.putFiles(fileList);
             clipboard.setContent(clipboardContent);
+            label.setText(UtilStringStorage.confirmCopyFileLabel);
+            displayLabelAfterImport(label);
     }
 
     public static void addFileToList()
@@ -100,6 +104,7 @@ public class ImportFileHandler {
                 File file = getClipboardFile();
                 if (file.getName().equals("PersonalizeQuestions.properties"))
                 {
+                    label.setText(UtilStringStorage.confirmImportLabel);
                     readSaveFile(propertiesImportFile, file);
 
                     int numberOfImportFile = Integer.parseInt(FileUtil.getGeneralSavesFile().getProperty("numberOfImportFile"));
@@ -109,6 +114,11 @@ public class ImportFileHandler {
                     fileCheckForImportPlace.setInitialDirectory(new File(IMPORT_PATH));
 
                     checkFileSlotInDirectory(fileCheckForImportPlace, numberOfImportFile, isFull, propertiesImportFile, label);
+                }
+                else {
+                    label.setText("Le fichier importé n'est pas compatible");
+                    label.setTextFill(Color.RED);
+                    displayLabelAfterImport(label);
                 }
             }
             Clipboard clipboardImportFile = Clipboard.getSystemClipboard();
@@ -147,8 +157,11 @@ public class ImportFileHandler {
     public static void displayLabelAfterImport(Label label)
     {
         label.setVisible(true);
-        PauseTransition visiblePause = new PauseTransition(Duration.seconds(5));
-        visiblePause.setOnFinished(event -> label.setVisible(false));
+        PauseTransition visiblePause = new PauseTransition(Duration.seconds(3));
+        visiblePause.setOnFinished(event -> {
+            label.setVisible(false);
+            label.setTextFill(Color.GREEN);
+        });
         visiblePause.play();
     }
 

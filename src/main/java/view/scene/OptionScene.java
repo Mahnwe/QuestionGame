@@ -70,7 +70,7 @@ public class OptionScene extends Scene {
         HBox hBox1 = new HBox();
         hBox1.setTranslateY(10);
 
-        Label confirmCopyFileInClipboard = new Label(UtilStringStorage.confirmCopyFileLabel);
+        Label confirmCopyFileInClipboard = new Label();
         confirmCopyFileInClipboard.setFont(Font.font("Futura", FontWeight.EXTRA_BOLD, 24));
         confirmCopyFileInClipboard.setTextFill(Color.GREEN);
         confirmCopyFileInClipboard.setVisible(false);
@@ -78,7 +78,7 @@ public class OptionScene extends Scene {
 
         Button copyPersoQuestionFileButton = new Button(UtilStringStorage.exportButtonLabel);
         copyPersoQuestionFileButton.setOnAction(event -> {
-            ImportFileHandler.setUpCopyFileButton();
+            ImportFileHandler.setUpCopyFileButton(confirmCopyFileInClipboard);
             displayLabelAfterImport(confirmCopyFileInClipboard);
         });
         CustomOption.setGlowEffectOnButton(copyPersoQuestionFileButton);
@@ -103,7 +103,7 @@ public class OptionScene extends Scene {
         HBox hBox2 = new HBox();
         hBox2.setTranslateY(95);
 
-        Label confirmImportLabel = new Label(UtilStringStorage.confirmImportLabel);
+        Label confirmImportLabel = new Label();
         confirmImportLabel.setFont(Font.font("Futura", FontWeight.BOLD, 22));
         confirmImportLabel.setTextFill(Color.GREEN);
         confirmImportLabel.setVisible(false);
@@ -149,7 +149,7 @@ public class OptionScene extends Scene {
     public static void displayLabelAfterImport(Label label)
     {
         label.setVisible(true);
-        PauseTransition visiblePause = new PauseTransition(Duration.seconds(5));
+        PauseTransition visiblePause = new PauseTransition(Duration.seconds(3));
         visiblePause.setOnFinished(event -> label.setVisible(false));
         visiblePause.play();
     }

@@ -95,9 +95,17 @@ public class AnswerHandler {
     }
     public static void storeStatsInFile()
     {
-        FileUtil.getGeneralSavesFile().setProperty("goodAnswerNumber", String.valueOf(goodAnswerNumber));
-        FileUtil.getGeneralSavesFile().setProperty("badAnswerNumber", String.valueOf(badAnswerNumber));
-        FileUtil.getGeneralSavesFile().setProperty("questionAnswered", String.valueOf(questionsAnswered));
+        int goodAnswerNumberInFile = Integer.parseInt(FileUtil.getGeneralSavesFile().getProperty("goodAnswerNumber"));
+        goodAnswerNumberInFile += goodAnswerNumber;
+        FileUtil.getGeneralSavesFile().setProperty("goodAnswerNumber", String.valueOf(goodAnswerNumberInFile));
+
+        int badAnswerNumberInFile = Integer.parseInt(FileUtil.getGeneralSavesFile().getProperty("badAnswerNumber"));
+        badAnswerNumberInFile += badAnswerNumber;
+        FileUtil.getGeneralSavesFile().setProperty("badAnswerNumber", String.valueOf(badAnswerNumberInFile));
+
+        int questionAnsweredInFile = Integer.parseInt(FileUtil.getGeneralSavesFile().getProperty("questionAnswered"));
+        questionAnsweredInFile += questionsAnswered;
+        FileUtil.getGeneralSavesFile().setProperty("questionAnswered", String.valueOf(questionAnsweredInFile));
     }
 
     public static void setQuestionsAnswered(int questionsAnswered) {

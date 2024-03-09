@@ -72,11 +72,11 @@ public class ResultScene extends VBox
     public void checkSurvivalModeResult()
     {
         AchievementManager.notificationAlert = null;
-        if(questionCount >= 10 && questionCount < 19)
+        if(questionCount >= 10 && questionCount <= 19)
         {
             ResultHandler.survivalBronzeResult(achievementManager, questionCount, playerFinalScore, gameResult, bronzeCup);
         }
-        if(questionCount >= 20 && questionCount < 29)
+        if(questionCount >= 20 && questionCount <= 29)
         {
             ResultHandler.survivalSilverResult(achievementManager, questionCount, playerFinalScore, gameResult, silverCup);
         }
@@ -101,11 +101,11 @@ public class ResultScene extends VBox
         {
             ResultHandler.normalGoldResult(achievementManager, questionCount, playerFinalScore, gameResult, goldCup);
         }
-        else if(playerFinalScore > questionCount*60/100 && playerFinalScore <= questionCount*80/100)
+        else if(playerFinalScore >= questionCount*70/100 && playerFinalScore < questionCount*90/100)
         {
             ResultHandler.normalSilverResult(achievementManager, questionCount, playerFinalScore, gameResult, silverCup);
         }
-        else if(playerFinalScore >= questionCount*50/100 && playerFinalScore < questionCount*60/100)
+        else if(playerFinalScore >= questionCount*50/100 && playerFinalScore < questionCount*70/100)
         {
             ResultHandler.normalBronzeResult(achievementManager, questionCount, playerFinalScore, gameResult, bronzeCup);
         }

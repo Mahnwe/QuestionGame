@@ -1,7 +1,12 @@
 package view;
 
-public class Main {
-    public static void main(String[] args) {
-        App.launch(args);
+import javafx.application.Application;
+import javafx.stage.Stage;
+
+public class Main extends Application {
+    @Override
+    public void start(Stage primaryStage)
+    {
+        App.launch();
     }
 }

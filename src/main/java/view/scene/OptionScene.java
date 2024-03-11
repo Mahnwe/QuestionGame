@@ -246,7 +246,7 @@ public class OptionScene extends Scene {
         vBox.getChildren().add(englishLabel);
         vBox.getChildren().add(engButton);
         vBox.setTranslateY(125);
-        vBox.setTranslateX(230);
+        vBox.setTranslateX(200);
     }
 
     public void createFrVbox(VBox vBox, UtilTranslateString utilTranslateString)
@@ -262,6 +262,7 @@ public class OptionScene extends Scene {
         vBox.getChildren().add(frenchLabel);
         vBox.getChildren().add(frButton);
         vBox.setTranslateX(480);
+        vBox.setTranslateY(-19);
     }
 
     public void createResetButtonArea()

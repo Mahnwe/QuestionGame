@@ -14,17 +14,6 @@ public class App extends Application
     public static Hyperlink hyperLinkIcon;
     public static Hyperlink hyperLinkIcon2;
     public static Hyperlink hyperLinkBackground;
-    @Override
-    public void start(Stage stage)
-    {
-        createHyperLinks();
-        FileUtil.createAndLoadFiles();
-        TimePlayedTimer.startTimer();
-        stage.setWidth(1920);
-        stage.setHeight(1080);
-        stage.setResizable(false);
-        LaunchManager.launchGame(stage);
-    }
 
     public void createHyperLinks()
     {
@@ -34,6 +23,19 @@ public class App extends Application
         hyperLinkIcon.setOnAction(linkEvent -> getHostServices().showDocument(hyperLinkIcon.getText()));
         hyperLinkIcon2.setOnAction(linkEvent -> getHostServices().showDocument(hyperLinkIcon2.getText()));
         hyperLinkBackground.setOnAction(linkEvent -> getHostServices().showDocument(hyperLinkBackground.getText()));
+    }
+
+    @Override
+    public void start(Stage primaryStage)
+    {
+        Stage stage = new Stage();
+        createHyperLinks();
+        FileUtil.createAndLoadFiles();
+        TimePlayedTimer.startTimer();
+        stage.setWidth(1920);
+        stage.setHeight(1080);
+        stage.setResizable(false);
+        LaunchManager.launchGame(stage);
     }
 
     @Override

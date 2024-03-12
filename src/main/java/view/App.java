@@ -5,7 +5,6 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import model.TimePlayedTimer;
-import util.FileUtil;
 import util.stringutiltranslate.UtilStringStorage;
 
 public class App extends Application
@@ -28,19 +27,19 @@ public class App extends Application
     @Override
     public void start(Stage primaryStage)
     {
-        Stage stage = new Stage();
         createHyperLinks();
-        FileUtil.createAndLoadFiles();
         TimePlayedTimer.startTimer();
-        stage.setWidth(1920);
-        stage.setHeight(1080);
-        stage.setResizable(false);
-        LaunchManager.launchGame(stage);
+        primaryStage.setWidth(1920);
+        primaryStage.setHeight(1080);
+        primaryStage.setResizable(false);
+        LaunchManager.launchGame(primaryStage);
     }
 
     @Override
-    public void stop() {
+    public void stop()
+    {
         // executed when the application shuts down
         TimePlayedTimer.calculateTimer();
     }
+
 }

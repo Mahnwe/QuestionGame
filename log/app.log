@@ -1,4 +1,2 @@
-2024-02-10 02:21:22.213 ERROR [JavaFX Application Thread] [util.FileUtil.readJsonFile(FileUtil.java:153)] - object can't be parsed
-2024-02-10 02:21:22.220 ERROR [JavaFX Application Thread] [util.FileUtil.readJsonFile(FileUtil.java:153)] - object can't be parsed
-2024-02-10 02:24:44.839 ERROR [JavaFX Application Thread] [util.FileUtil.readJsonFile(FileUtil.java:153)] - object can't be parsed
-2024-02-10 02:24:44.842 ERROR [JavaFX Application Thread] [util.FileUtil.readJsonFile(FileUtil.java:153)] - object can't be parsed
+2024-03-12 15:46:39.566 ERROR [JavaFX Application Thread] [util.FileUtil.loadFile(FileUtil.java:26)] - Stream can't be create
+2024-03-12 15:46:57.457 ERROR [JavaFX Application Thread] [util.FileUtil.loadFile(FileUtil.java:26)] - Stream can't be create

@@ -15,6 +15,7 @@ public class LaunchManager {
 
     public static void launchGame(Stage stage)
     {
+        FileUtil.createAndLoadFiles();
         UtilTranslateString utilTranslateString = new UtilTranslateString();
         AchievementManager achievementManager = new AchievementManager();
         if(FileUtil.getGeneralSavesFile().getProperty("saveLanguageOption").equals("French"))

@@ -1,11 +1,10 @@
 package view;
 
-import javafx.stage.Stage;
+import javafx.application.Application;
 
 public class Main {
     public static void main(String[] args)
     {
-        App app = new App();
-        app.start(new Stage());
+        Application.launch(App.class, args);
     }
 }

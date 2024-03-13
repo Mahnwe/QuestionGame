@@ -142,6 +142,9 @@ public class UtilTranslateString {
         UtilStringStorage.optionTooltip = engTradFile.getProperty("optionTooltip");
         UtilStringStorage.creditButton = engTradFile.getProperty("creditButton");
         UtilStringStorage.creditTooltip = engTradFile.getProperty("creditTooltip");
+        UtilStringStorage.quitGameButtonLabel = engTradFile.getProperty("quitGameButtonLabel");
+        UtilStringStorage.quitGameButtonTooltip = engTradFile.getProperty("quitGameButtonTooltip");
+        UtilStringStorage.confirmQuitGameText = engTradFile.getProperty("confirmQuitGameText");
         UtilStringStorage.chooseMode = engTradFile.getProperty("chooseMode");
         UtilStringStorage.mode10Button = engTradFile.getProperty("mode10Button");
         UtilStringStorage.mode15Button = engTradFile.getProperty("mode15Button");
@@ -373,6 +376,9 @@ public class UtilTranslateString {
         UtilStringStorage.optionTooltip = frTradFile.getProperty("optionTooltip");
         UtilStringStorage.creditButton = frTradFile.getProperty("creditButton");
         UtilStringStorage.creditTooltip = frTradFile.getProperty("creditTooltip");
+        UtilStringStorage.quitGameButtonLabel = frTradFile.getProperty("quitGameButtonLabel");
+        UtilStringStorage.quitGameButtonTooltip = frTradFile.getProperty("quitGameButtonTooltip");
+        UtilStringStorage.confirmQuitGameText = frTradFile.getProperty("confirmQuitGameText");
         UtilStringStorage.chooseMode = frTradFile.getProperty("chooseMode");
         UtilStringStorage.mode10Button = frTradFile.getProperty("mode10Button");
         UtilStringStorage.mode15Button = frTradFile.getProperty("mode15Button");

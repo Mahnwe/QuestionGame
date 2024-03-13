@@ -104,6 +104,9 @@ public class UtilStringStorage
     public static String optionTooltip = "";
     public static String creditButton = "";
     public static String creditTooltip = "";
+    public static String quitGameButtonLabel = "";
+    public static String quitGameButtonTooltip = "";
+    public static String confirmQuitGameText = "";
     public static String chooseMode = "";
     public static String mode10Button = "";
     public static String mode15Button = "";

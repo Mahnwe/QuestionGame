@@ -17,7 +17,7 @@ import model.handlers.AchievementManager;
 import model.handlers.GameHandler;
 import model.handlers.PlayerHandler;
 import model.handlers.SoundManager;
-import view.customobject.CustomOption;
+import view.customobject.*;
 import util.PathUtil;
 import util.creators.BackgroundCreator;
 import util.creators.GifCreator;
@@ -25,9 +25,6 @@ import util.creators.IconCreator;
 import util.stringutiltranslate.UtilStringStorage;
 import view.App;
 import view.bootstrap.BootstrapPane;
-import view.customobject.CustomComboBox;
-import view.customobject.LaunchGameButton;
-import view.customobject.MenuSideButton;
 import view.customvbox.DeveloperVbox;
 
 
@@ -104,7 +101,7 @@ public class MenuScene extends Scene
         bootStrapPane.addRow(6);
         bootStrapPane.setVgap(90);
         bootStrapPane.setAlignment(Pos.CENTER);
-        bootStrapPane.setTranslateY(120);
+        bootStrapPane.setTranslateY(80);
         bootStrapPane.setTranslateX(60);
     }
 
@@ -137,10 +134,12 @@ public class MenuScene extends Scene
         gridPaneMenuButton.add(questionCreatorButton, 0, 4);
 
         HBox iconOptionHbox = new HBox();
-        iconOptionHbox.setTranslateY(30);
         iconOptionHbox.getChildren().add(optionButton);
         iconOptionHbox.getChildren().add(creditButton);
         gridPaneMenuButton.add(iconOptionHbox, 0, 5);
+
+        ExitGameButton exitGameButton = new ExitGameButton(UtilStringStorage.quitGameButtonLabel, UtilStringStorage.quitGameButtonTooltip, 15);
+        gridPaneMenuButton.add(exitGameButton, 0, 6);
 
         return gridPaneMenuButton;
     }

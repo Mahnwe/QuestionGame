@@ -24,19 +24,22 @@ public class ValidateQuestionCreationButton extends Button {
     {
             QuestionCreatorScene.getIsCreatedLabel().setText("");
             ValidateQuestionCreationButton.checkForValidateQuestion(textAreaList);
+            
             if(ValidateQuestionCreationButton.getNumberOfFilledTextArea() == 8 && ValidateQuestionCreationButton.findAnswerEqualToGoodAnswer(goodAnswerTextArea, answerTextAreaList))
             {
                 QuestionCreatorScene.setUpQuestionIsForgedLabel();
                 return true;
             }
-            else if(ValidateQuestionCreationButton.getNumberOfFilledTextArea() != 8 && ValidateQuestionCreationButton.findAnswerEqualToGoodAnswer(goodAnswerTextArea, answerTextAreaList)) {
+            else if(ValidateQuestionCreationButton.getNumberOfFilledTextArea() != 8 && ValidateQuestionCreationButton.findAnswerEqualToGoodAnswer(goodAnswerTextArea, answerTextAreaList))
+            {
                 QuestionCreatorScene.setUpQuestionIsNotForgedAreaAreNotFiledLabel();
             }
             else if(ValidateQuestionCreationButton.getNumberOfFilledTextArea() == 8 && !ValidateQuestionCreationButton.findAnswerEqualToGoodAnswer(goodAnswerTextArea, answerTextAreaList))
             {
                 QuestionCreatorScene.setUpQuestionIsNotForgedValidAnswerIsNotGood();
             }
-            else if(ValidateQuestionCreationButton.getNumberOfFilledTextArea() != 8 && !ValidateQuestionCreationButton.findAnswerEqualToGoodAnswer(goodAnswerTextArea, answerTextAreaList)) {
+            else if(ValidateQuestionCreationButton.getNumberOfFilledTextArea() != 8 && !ValidateQuestionCreationButton.findAnswerEqualToGoodAnswer(goodAnswerTextArea, answerTextAreaList))
+            {
                 QuestionCreatorScene.setUpQuestionIsNotForgedAreaAreNotFiledLabel();
             }
         return false;

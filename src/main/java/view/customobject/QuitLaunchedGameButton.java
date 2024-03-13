@@ -24,6 +24,7 @@ public class QuitLaunchedGameButton extends Button {
         this.setBackground(new Background(new BackgroundImage(personalizeImage.getImage(), BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
                 backgroundSize)));
         CustomOption.setGlowEffectOnButton(this);
+
         this.setOnMouseEntered(event -> this.setBorder(CustomOption.createCustomBorder(2.0, 2.0, Color.GHOSTWHITE)));
         this.setOnMouseExited(event -> this.setBorder(CustomOption.createCustomBorder(2.0, 2.0, Color.BLACK)));
     }

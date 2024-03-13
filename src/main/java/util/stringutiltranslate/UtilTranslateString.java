@@ -147,6 +147,7 @@ public class UtilTranslateString {
         UtilStringStorage.mode15Button = engTradFile.getProperty("mode15Button");
         UtilStringStorage.mode20Button = engTradFile.getProperty("mode20Button");
         UtilStringStorage.modeSurvivalButton = engTradFile.getProperty("modeSurvivalButton");
+        UtilStringStorage.labelBeforeLaunchingGame = engTradFile.getProperty("labelBeforeLaunchingGame");
         UtilStringStorage.launchGameButton = engTradFile.getProperty("launchGameButton");
 
         // MAIN SCENE
@@ -377,6 +378,7 @@ public class UtilTranslateString {
         UtilStringStorage.mode15Button = frTradFile.getProperty("mode15Button");
         UtilStringStorage.mode20Button = frTradFile.getProperty("mode20Button");
         UtilStringStorage.modeSurvivalButton = frTradFile.getProperty("modeSurvivalButton");
+        UtilStringStorage.labelBeforeLaunchingGame = frTradFile.getProperty("labelBeforeLaunchingGame");
         UtilStringStorage.launchGameButton = frTradFile.getProperty("launchGameButton");
 
         // MAIN SCENE

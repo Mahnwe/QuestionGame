@@ -18,31 +18,52 @@ public class LaunchManager {
         FileUtil.createAndLoadFiles();
         UtilTranslateString utilTranslateString = new UtilTranslateString();
         AchievementManager achievementManager = new AchievementManager();
+
+        checkSavedLanguage(utilTranslateString, stage, achievementManager);
+    }
+
+    public static void checkSavedLanguage(UtilTranslateString utilTranslateString, Stage stage, AchievementManager achievementManager)
+    {
         if(FileUtil.getGeneralSavesFile().getProperty("saveLanguageOption").equals("French"))
         {
-            utilTranslateString.translateFrString();
-            App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
-            MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
-            stage.setScene(menuScene);
-            stage.setTitle(UtilStringStorage.gameTitle);
-            stage.show();
+            launchGameInFr(utilTranslateString, stage, achievementManager);
         }
         else if(FileUtil.getGeneralSavesFile().getProperty("saveLanguageOption").equals("English"))
         {
-            utilTranslateString.translateEngString();
-            App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
-            MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
-            stage.setScene(menuScene);
-            stage.setTitle(UtilStringStorage.gameTitle);
-            stage.show();
+            launchGameInEng(utilTranslateString, stage, achievementManager);
         }
         else if(FileUtil.getGeneralSavesFile().getProperty("saveLanguageOption").equals("Blank"))
         {
-            LanguageScene languageScene = new LanguageScene(new BorderPane(), stage, achievementManager);
-            stage.setScene(languageScene);
-            stage.setTitle("Launcher");
-            stage.show();
+            launchGameWithNoLanguageSaved(stage, achievementManager);
         }
+    }
+
+    public static void launchGameInFr(UtilTranslateString utilTranslateString, Stage stage, AchievementManager achievementManager)
+    {
+        utilTranslateString.translateFrString();
+        App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
+        MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
+        stage.setScene(menuScene);
+        stage.setTitle(UtilStringStorage.gameTitle);
+        stage.show();
+    }
+
+    public static void launchGameInEng(UtilTranslateString utilTranslateString, Stage stage, AchievementManager achievementManager)
+    {
+        utilTranslateString.translateEngString();
+        App.menuMusicToStop = SoundManager.playMusicRepeat(PathUtil.MENU_MUSIC);
+        MenuScene menuScene = new MenuScene(new BorderPane(), stage, achievementManager);
+        stage.setScene(menuScene);
+        stage.setTitle(UtilStringStorage.gameTitle);
+        stage.show();
+    }
+
+    public static void launchGameWithNoLanguageSaved(Stage stage, AchievementManager achievementManager)
+    {
+        LanguageScene languageScene = new LanguageScene(new BorderPane(), stage, achievementManager);
+        stage.setScene(languageScene);
+        stage.setTitle("Launcher");
+        stage.show();
     }
 
 }

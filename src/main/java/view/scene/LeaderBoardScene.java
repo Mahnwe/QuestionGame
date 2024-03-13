@@ -66,10 +66,12 @@ public class LeaderBoardScene extends Scene
         CustomOption.setUpTrashButton(individualDeleteButton, UtilStringStorage.individualDeleteTooltip);
         individualDeleteButton.setPrefSize(50, 50);
 
-        individualDeleteButton.setOnAction(event -> {
+        individualDeleteButton.setOnAction(event ->
+        {
             confirmAlert.modifyConfirmAlert(UtilStringStorage.confirmIndividualDeleteGame);
             Optional<ButtonType> result = confirmAlert.showAndWait();
-            if(result.orElse(null) == ButtonType.OK) {
+            if(result.orElse(null) == ButtonType.OK)
+            {
                 jsonArrayList.remove(jsonIndex);
                 JsonFileUtil.actualizeJsonFile(jsonArrayList);
                 LeaderBoardScene leaderBoardScene = new LeaderBoardScene(new ScrollPane(), stage, achievementManager);

@@ -20,20 +20,24 @@ public class FileUtil {
     public static void loadFile(Properties properties, final String filePath)
     {
         FileInputStream fileInputStream = null;
-        try {
+        try
+        {
             fileInputStream = new FileInputStream(filePath);
         } catch (FileNotFoundException e) {
             logger.error("Stream can't be create");
         }
-        try {
+        try
+        {
             properties.load(fileInputStream);
         } catch (IOException e) {
             logger.error("File not found");
             logger.error(filePath);
         }
-        finally {
+        finally
+        {
             if(fileInputStream != null) {
-                try {
+                try
+                {
                     fileInputStream.close();
                 } catch (IOException e) {
                     logger.error("Stream can't be close");
@@ -44,7 +48,8 @@ public class FileUtil {
 
     public static void storeGeneralSavesFile()
     {
-        try (FileWriter fileWriter = new FileWriter(PathUtil.GENERAL_SAVES_FILE)){
+        try (FileWriter fileWriter = new FileWriter(PathUtil.GENERAL_SAVES_FILE))
+        {
             generalSavesFile.store(fileWriter, "");
         } catch (IOException e) {
             logger.error("General file can't be store");
@@ -53,7 +58,8 @@ public class FileUtil {
 
     public static void storePersonalizeQuestionsFile()
     {
-        try (FileWriter fileWriter = new FileWriter(PathUtil.PERSONALIZE_QUESTIONS_FILE)){
+        try (FileWriter fileWriter = new FileWriter(PathUtil.PERSONALIZE_QUESTIONS_FILE))
+        {
             personalizeQuestionsFile.store(fileWriter, "");
         } catch (IOException e) {
             logger.error("Personalize questions file can't be store");

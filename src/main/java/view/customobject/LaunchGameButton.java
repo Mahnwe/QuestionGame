@@ -14,7 +14,7 @@ public class LaunchGameButton extends Button {
         this.setText(UtilStringStorage.launchGameButton);
         this.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 30));
         this.setTranslateX(320);
-        this.setTranslateY(235);
+        this.setTranslateY(255);
         this.setBorder(CustomOption.createCustomBorder(3.0, 2.0, Color.BLACK));
         CustomOption.setGlowEffectOnButton(this);
         setLaunchGameButtonOnAction(comboBox, gameHandler, menuScene);

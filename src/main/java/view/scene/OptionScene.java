@@ -97,11 +97,11 @@ public class OptionScene extends Scene {
     public void createPasteFileBox()
     {
         Label createNewFileWithImportLabel = new Label(UtilStringStorage.importLabel);
-        createNewFileWithImportLabel.setTranslateY(80);
+        createNewFileWithImportLabel.setTranslateY(70);
         createNewFileWithImportLabel.setFont(Font.font("Futura", FontWeight.EXTRA_BOLD, 24));
 
         HBox hBox2 = new HBox();
-        hBox2.setTranslateY(95);
+        hBox2.setTranslateY(85);
 
         Label confirmImportLabel = new Label();
         confirmImportLabel.setFont(Font.font("Futura", FontWeight.BOLD, 22));
@@ -121,7 +121,7 @@ public class OptionScene extends Scene {
         importFileVbox.getChildren().add(createNewFileWithImportLabel);
         importFileVbox.getChildren().add(hBox2);
         importFileVbox.getChildren().add(confirmImportLabel);
-        confirmImportLabel.setTranslateY(105);
+        confirmImportLabel.setTranslateY(95);
     }
     public void createImportedFileBox()
     {

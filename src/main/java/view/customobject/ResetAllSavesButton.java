@@ -22,7 +22,8 @@ public class ResetAllSavesButton extends Button {
 
         CustomOption.setUpTrashButton(this, UtilStringStorage.resetTooltip);
 
-        this.setOnAction(event -> {
+        this.setOnAction(event ->
+        {
             Optional<ButtonType> result = confirmAlert.showAndWait();
             if(result.orElse(null) == ButtonType.OK)
             {

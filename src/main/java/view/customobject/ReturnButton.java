@@ -20,9 +20,11 @@ public class ReturnButton  extends Button {
 
         this.setPrefHeight(80);
         this.setPrefWidth(80);
+
         Tooltip returnTooltip = new Tooltip(UtilStringStorage.returnButton);
         returnTooltip.setFont(Font.font("Futura", FontWeight.BOLD, 18));
         this.setTooltip(returnTooltip);
+
         BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, true, true);
         this.setBackground(new Background(new BackgroundImage(backArrow, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
                 backgroundSize)));

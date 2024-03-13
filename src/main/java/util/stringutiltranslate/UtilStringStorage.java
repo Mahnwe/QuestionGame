@@ -109,6 +109,7 @@ public class UtilStringStorage
     public static String mode15Button = "";
     public static String mode20Button = "";
     public static String modeSurvivalButton = "";
+    public static String labelBeforeLaunchingGame = "";
     public static String launchGameButton = "";
 
     // MAIN SCENE

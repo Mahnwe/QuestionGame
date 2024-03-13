@@ -37,12 +37,19 @@ public class LanguageButton extends Button {
         buttonTooltip.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 22));
         this.setTooltip(buttonTooltip);
 
-        this.setOnMouseEntered(event -> {
+        setGlowEffectOnMouse();
+    }
+
+    public void setGlowEffectOnMouse()
+    {
+        this.setOnMouseEntered(event ->
+        {
             this.setEffect(CustomOption.glow);
             this.setBorder(CustomOption.createCustomBorder(1.0, 2.0, Color.GHOSTWHITE));
         });
 
-        this.setOnMouseExited(event -> {
+        this.setOnMouseExited(event ->
+        {
             this.setEffect(null);
             this.setBorder(null);
         });

@@ -32,20 +32,23 @@ public class JsonFileUtil
         JSONObject jsonObject = new JSONObject(jsonMap);
         jsonObjectList.add(jsonObject);
         FileWriter file = null;
-        try {
+        try
+        {
             file = new FileWriter("./src/main/resources/SaveFile/GamesSaveFile.json");
         } catch (IOException e) {
             e.printStackTrace();
             logger.error("File can't be found");
         }
-        try {
+        try
+        {
             assert file != null;
             file.append(jsonObjectList.toString());
         } catch (IOException e) {
             e.printStackTrace();
             logger.error("Can't write in save file");
         }
-        try {
+        try
+        {
             file.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -65,20 +68,23 @@ public class JsonFileUtil
         JSONObject jsonObject = new JSONObject(jsonMap);
         jsonObjectList.add(jsonObject);
         FileWriter file = null;
-        try {
+        try
+        {
             file = new FileWriter("./src/main/resources/SaveFile/GamesSaveFile.json");
         } catch (IOException e) {
             e.printStackTrace();
             logger.error("File can't be found");
         }
-        try {
+        try
+        {
             assert file != null;
             file.write(jsonObjectList.toString());
         } catch (IOException e) {
             e.printStackTrace();
             logger.error("Can't write in save file");
         }
-        try {
+        try
+        {
             file.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -90,14 +96,16 @@ public class JsonFileUtil
     {
         JSONParser jsonParser = new JSONParser();
         FileReader reader = null;
-        try {
+        try
+        {
             reader = new FileReader("./src/main/resources/SaveFile/GamesSaveFile.json");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             logger.error("File can't be found");
         }
         List<JSONObject> jsonArrayList = new ArrayList<>();
-        try {
+        try
+        {
             jsonArrayList = (List<JSONObject>) jsonParser.parse(reader);
         } catch (ParseException | IOException e) {
             e.printStackTrace();
@@ -111,20 +119,23 @@ public class JsonFileUtil
         List<JSONObject> jsonObjectList = readJsonFile();
         jsonObjectList.clear();
         FileWriter file = null;
-        try {
+        try
+        {
             file = new FileWriter("./src/main/resources/SaveFile/GamesSaveFile.json");
         } catch (IOException e) {
             e.printStackTrace();
             logger.error("File can't be found");
         }
-        try {
+        try
+        {
             assert file != null;
             file.write(jsonObjectList.toString());
         } catch (IOException e) {
             e.printStackTrace();
             logger.error("Can't write in save file");
         }
-        try {
+        try
+        {
             file.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -135,20 +146,23 @@ public class JsonFileUtil
     public static void actualizeJsonFile(List<JSONObject> jsonObjectList)
     {
         FileWriter file = null;
-        try {
+        try
+        {
             file = new FileWriter("./src/main/resources/SaveFile/GamesSaveFile.json");
         } catch (IOException e) {
             e.printStackTrace();
             logger.error("File can't be found");
         }
-        try {
+        try
+        {
             assert file != null;
             file.write(jsonObjectList.toString());
         } catch (IOException e) {
             e.printStackTrace();
             logger.error("Can't write in save file");
         }
-        try {
+        try
+        {
             file.close();
         } catch (IOException e) {
             e.printStackTrace();

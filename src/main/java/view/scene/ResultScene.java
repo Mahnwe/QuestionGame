@@ -48,7 +48,8 @@ public class ResultScene extends VBox
         setUpLabelAndTimer();
         AnswerHandler.storeStatsInFile();
 
-        if(GameHandler.gameMode == null) {
+        if(GameHandler.gameMode == null)
+        {
             checkPlayerResultNormalMod();
         } else if (GameHandler.gameMode.equals("survival"))
         {

@@ -123,16 +123,20 @@ public class TrophyScene extends Scene
     {
         Label trophyLabel = new Label();
         stylizeTitleLabel(trophyLabel);
-
         gridPane.add(trophyLabel, 1, 0);
+
         gridPane.add(goldCupImage, 0, 1);
         goldCupImage.setTranslateX(25);
+
         gridPane.add(silverCupImage, 1, 1);
         silverCupImage.setTranslateX(-30);
+
         gridPane.add(bronzeCupImage, 2, 1);
         bronzeCupImage.setTranslateX(-25);
+
         gridPane.add(secretCupImage, 3, 1);
         secretCupImage.setTranslateX(-10);
+
         gridPane.setTranslateX(80);
     }
 
@@ -190,7 +194,8 @@ public class TrophyScene extends Scene
         if(!allAchievementAreUnlocked)
         {
             secretCup = IconCreator.createCupIcon(PathUtil.PLACE_HOLDER_CUP);
-        } else {
+        } else
+        {
             secretCup = IconCreator.createCupIcon(PathUtil.SECRET_CUP);
         }
         secretCup.setFitWidth(180);
@@ -202,7 +207,8 @@ public class TrophyScene extends Scene
         stage.setScene(menuScene);
     }
 
-    public static void setAllAchievementAreUnlocked(boolean allAchievementAreUnlocked) {
+    public static void setAllAchievementAreUnlocked(boolean allAchievementAreUnlocked)
+    {
         TrophyScene.allAchievementAreUnlocked = allAchievementAreUnlocked;
     }
 }

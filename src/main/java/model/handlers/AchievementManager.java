@@ -129,10 +129,13 @@ public class AchievementManager
         }
         else if(questionCount >= 30 && questionCount < 40)
         {
+            checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "survivalScore20", 6);
             checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "survivalScore30", 7);
         }
         else if(questionCount >= 40)
         {
+            checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "survivalScore20", 6);
+            checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "survivalScore30", 7);
             checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "survivalScore50", 8);
         }
         else

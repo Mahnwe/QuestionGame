@@ -190,13 +190,13 @@ public class MainScene extends Scene
 
     public void checkSurvivalEnding()
     {
-        if(questionInterface.isPlayerAnswer())
+        if(questionInterface.isPlayerAnswer() && gameHandler.getQuestionCount() < gameHandler.getQuestionList().size())
         {
             createNewQuestionInterface();
         }
         else
         {
-            if(playerHandler.getPlayer().getNbrOfLives() == 0 || gameHandler.getQuestionCount() >= gameHandler.getQuestionList().size())
+            if(playerHandler.getPlayer().getNbrOfLives() == 0 || gameHandler.getQuestionCount() == gameHandler.getQuestionList().size())
             {
                 setDisplayResult();
                 saveScoreInFile();

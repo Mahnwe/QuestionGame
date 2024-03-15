@@ -37,7 +37,7 @@ public class ResultHandler
     }
     public static void survivalNoCupResult(int questionCount, VBox gameResult)
     {
-        FileUtil.getGeneralSavesFile().setProperty("survivalScore20", String.valueOf(questionCount));
+        FileUtil.getGeneralSavesFile().setProperty("bestSurvivalScore", String.valueOf(questionCount));
         FileUtil.storeGeneralSavesFile();
         Label cupLabel = new Label(UtilStringStorage.noSurviveLabel);
         stylizeLabel(cupLabel, 80, 90);

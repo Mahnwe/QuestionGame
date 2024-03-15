@@ -84,17 +84,17 @@ public class FileUtil {
         generalSavesFile.setProperty("perfectScore15", "0");
         generalSavesFile.setProperty("perfectScore20", "0");
 
-        generalSavesFile.setProperty("survivalScore20", "0");
-        generalSavesFile.setProperty("survivalScore30", "0");
-        generalSavesFile.setProperty("survivalScore50", "0");
+        generalSavesFile.setProperty("bestSurvivalScore", "0");
 
         generalSavesFile.setProperty("numberOfGames", "0");
+        generalSavesFile.setProperty("numberOfNormalGames", "0");
+        generalSavesFile.setProperty("numberOfSurvivalGames", "0");
+
         generalSavesFile.setProperty("questionAnswered", "0");
         generalSavesFile.setProperty("goodAnswerNumber", "0");
         generalSavesFile.setProperty("badAnswerNumber", "0");
+
         generalSavesFile.setProperty("timePlayed", "0");
-        generalSavesFile.setProperty("numberOfNormalGames", "0");
-        generalSavesFile.setProperty("numberOfSurvivalGames", "0");
 
         FileUtil.storeGeneralSavesFile();
     }

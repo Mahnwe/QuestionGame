@@ -121,26 +121,8 @@ public class StatsScene extends Scene
 
     public String checkForBestSurvivalScore()
     {
-        String checkBestSurvivalScore = null;
-        int survivalScore = Integer.parseInt(FileUtil.getGeneralSavesFile().getProperty("survivalScore50"));
-        if(survivalScore != 0)
-        {
-            checkBestSurvivalScore = String.valueOf(survivalScore);
-        }
-        if(survivalScore == 0)
-        {
-            survivalScore = Integer.parseInt(FileUtil.getGeneralSavesFile().getProperty("survivalScore30"));
-            if (survivalScore != 0)
-            {
-                checkBestSurvivalScore = String.valueOf(survivalScore);
-            }
-            if (survivalScore == 0)
-            {
-                survivalScore = Integer.parseInt(FileUtil.getGeneralSavesFile().getProperty("survivalScore20"));
-                checkBestSurvivalScore = String.valueOf(survivalScore);
-            }
-        }
-        return checkBestSurvivalScore;
+        int survivalScore = Integer.parseInt(FileUtil.getGeneralSavesFile().getProperty("bestSurvivalScore"));
+        return String.valueOf(survivalScore);
     }
 
     public void createTitleScene()

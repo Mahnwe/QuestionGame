@@ -125,22 +125,22 @@ public class AchievementManager
     {
         if(questionCount >= 20 && questionCount < 30)
         {
-            checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "survivalScore20", 6);
+            checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "bestSurvivalScore", 6);
         }
         else if(questionCount >= 30 && questionCount < 40)
         {
-            checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "survivalScore20", 6);
-            checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "survivalScore30", 7);
+            checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "bestSurvivalScore", 6);
+            checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "bestSurvivalScore", 7);
         }
         else if(questionCount >= 40)
         {
-            checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "survivalScore20", 6);
-            checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "survivalScore30", 7);
-            checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "survivalScore50", 8);
+            checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "bestSurvivalScore", 6);
+            checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "bestSurvivalScore", 7);
+            checkSurvivalScoreAchievement(achievementManager, questionCount, generalSavesFile, "bestSurvivalScore", 8);
         }
         else
         {
-            FileUtil.getGeneralSavesFile().setProperty("survivalScore20", String.valueOf(questionCount));
+            FileUtil.getGeneralSavesFile().setProperty("bestSurvivalScore", String.valueOf(questionCount));
             FileUtil.storeGeneralSavesFile();
         }
     }

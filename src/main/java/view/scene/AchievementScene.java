@@ -175,9 +175,9 @@ public class AchievementScene extends Scene
         checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(), "perfectScore15", 4, perfectScoreAchievement15Info);
         checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(), "perfectScore20", 5, perfectScoreAchievement20Info);
 
-        checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(), "survivalScore20", 6, survivalAchievement20Info);
-        checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(), "survivalScore30", 7, survivalAchievement30Info);
-        checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(), "survivalScore50", 8, survivalAchievement40Info);
+        checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(), "bestSurvivalScore", 6, survivalAchievement20Info);
+        checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(), "bestSurvivalScore", 7, survivalAchievement30Info);
+        checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(), "bestSurvivalScore", 8, survivalAchievement40Info);
 
         checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(), "numberOfGames", 9, numberOfGamesPlayed5Info);
         checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(), "numberOfGames", 10, numberOfGamesPlayed10Info);

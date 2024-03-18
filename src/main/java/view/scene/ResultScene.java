@@ -33,12 +33,14 @@ public class ResultScene extends VBox
     private final Stage stage;
     private final int questionCount;
     public static MediaPlayer resultSoundEffect;
+    private final GameHandler gameHandler;
 
-    public ResultScene(BorderPane pane, int playerFinalScore, int questionCount, AchievementManager achievementManager, Stage stage)
+    public ResultScene(BorderPane pane, int playerFinalScore, int questionCount, AchievementManager achievementManager, Stage stage, GameHandler gameHandler)
     {
         this.achievementManager = achievementManager;
         this.playerFinalScore = playerFinalScore;
         this.questionCount = questionCount;
+        this.gameHandler = gameHandler;
         this.stage = stage;
         gameResult = new VBox();
         pane.getLeft().setVisible(false);
@@ -73,6 +75,10 @@ public class ResultScene extends VBox
     public void checkSurvivalModeResult()
     {
         AchievementManager.notificationAlert = null;
+        if(questionCount < 10)
+        {
+            ResultHandler.survivalNoCupResult(questionCount, gameResult);
+        }
         if(questionCount >= 10 && questionCount <= 19)
         {
             ResultHandler.survivalBronzeResult(achievementManager, questionCount, playerFinalScore, gameResult, bronzeCup);
@@ -84,10 +90,13 @@ public class ResultScene extends VBox
         if(questionCount >= 30)
         {
             ResultHandler.survivalGoldResult(achievementManager, questionCount, playerFinalScore, gameResult, goldCup);
-        }
-        if(questionCount < 10)
-        {
-            ResultHandler.survivalNoCupResult(questionCount, gameResult);
+            if(questionCount == gameHandler.getQuestionList().size())
+            {
+                int numberOfSecretCup = Integer.parseInt(FileUtil.getGeneralSavesFile().getProperty("secretCup"));
+                numberOfSecretCup++;
+                FileUtil.getGeneralSavesFile().setProperty("secretCup", String.valueOf(numberOfSecretCup));
+                FileUtil.storeGeneralSavesFile();
+            }
         }
 
         achievementManager.checkNumberOfGamesAchievement(achievementManager, FileUtil.getGeneralSavesFile());

@@ -17,7 +17,7 @@ public class QuestionStorage
     public QuestionStorage()
     {
         createQuestions();
-        checkPersonalizeQuestions();
+        checkExternalSourcesOfQuestions();
     }
 
     public void createQuestions()
@@ -671,23 +671,47 @@ public class QuestionStorage
                 QuestionStringStorage.answerB130, QuestionStringStorage.answerC130, QuestionStringStorage.answerD130, QuestionStringStorage.goodAnswer130,
                 QuestionStringStorage.explanation130);
         questionList.add(question130);
+
+        Question question131 = new Question(UtilStringStorage.food, QuestionStringStorage.question131,QuestionStringStorage.answerA131,
+                QuestionStringStorage.answerB131, QuestionStringStorage.answerC131, QuestionStringStorage.answerD131, QuestionStringStorage.goodAnswer131,
+                QuestionStringStorage.explanation131);
+        questionList.add(question131);
+
+        Question question132 = new Question(UtilStringStorage.historia, QuestionStringStorage.question132,QuestionStringStorage.answerA132,
+                QuestionStringStorage.answerB132, QuestionStringStorage.answerC132, QuestionStringStorage.answerD132, QuestionStringStorage.goodAnswer132,
+                QuestionStringStorage.explanation132);
+        questionList.add(question132);
+    }
+
+    public void checkExternalSourcesOfQuestions()
+    {
+        checkPersonalizeQuestions();
+        checkImportQuestions();
     }
 
     public void checkPersonalizeQuestions()
     {
         PersonalizeQuestionsHandler.addPersonalizeQuestionsToStringList();
-        if(!PersonalizeQuestionsHandler.getPersonalizeQuestionList().isEmpty()) {
+        if(!PersonalizeQuestionsHandler.getPersonalizeQuestionList().isEmpty())
+        {
             randomIndex = new Random();
-            for (int i = PersonalizeQuestionsHandler.getPersonalizeQuestionList().size(); i > 0; i--) {
+            for (int i = PersonalizeQuestionsHandler.getPersonalizeQuestionList().size(); i > 0; i--)
+            {
                 int randomQuestionIndex = generateRandomIndex();
                 Question question = PersonalizeQuestionsHandler.getPersonalizeQuestionList().remove(randomQuestionIndex);
                 questionList.add(question);
             }
         }
+    }
+
+    public void checkImportQuestions()
+    {
         ImportFileHandler.addImportPersonalizeQuestionsToStringList();
-        if(!ImportFileHandler.getImportPersonalizeQuestionList().isEmpty()) {
+        if(!ImportFileHandler.getImportPersonalizeQuestionList().isEmpty())
+        {
             randomIndex = new Random();
-            for(int i = ImportFileHandler.getImportPersonalizeQuestionList().size(); i > 0; i--) {
+            for(int i = ImportFileHandler.getImportPersonalizeQuestionList().size(); i > 0; i--)
+            {
                 int randomImportQuestionIndex = generateRandomIndexImport();
                 Question importQuestion = ImportFileHandler.getImportPersonalizeQuestionList().remove(randomImportQuestionIndex);
                 questionList.add(importQuestion);

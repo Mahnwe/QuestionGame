@@ -913,4 +913,18 @@ public class QuestionStringStorage {
     public static String answerD130 = "";
     public static String goodAnswer130 = "";
     public static String explanation130 = "";
+    public static String question131 = "";
+    public static String answerA131 = "";
+    public static String answerB131 = "";
+    public static String answerC131 = "";
+    public static String answerD131 = "";
+    public static String goodAnswer131 = "";
+    public static String explanation131 = "";
+    public static String question132 = "";
+    public static String answerA132 = "";
+    public static String answerB132 = "";
+    public static String answerC132 = "";
+    public static String answerD132 = "";
+    public static String goodAnswer132 = "";
+    public static String explanation132 = "";
 }

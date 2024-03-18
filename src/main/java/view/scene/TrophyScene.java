@@ -80,7 +80,7 @@ public class TrophyScene extends Scene
         Label goldCupNumber = new Label();
 
         goldCupImage.getChildren().add(goldCup);
-        setUpVbox(goldCupImage, nbrOfGoldCupLabel, 0, 25, UtilStringStorage.goldCupTrophy, FileUtil.getGeneralSavesFile(), "goldCup", goldCupNumber);
+        setUpVbox(goldCupImage, nbrOfGoldCupLabel, UtilStringStorage.goldCupTrophy, FileUtil.getGeneralSavesFile(), "goldCup", goldCupNumber);
         goldCupImage.getChildren().add(goldCupNumber);
     }
     public void createSilverVbox()
@@ -92,7 +92,7 @@ public class TrophyScene extends Scene
 
         silverCupImage.getChildren().add(silverCup);
         silverCup.setTranslateX(10);
-        setUpVbox(silverCupImage, nbrOfSilverCupLabel, 0, 25, UtilStringStorage.silverCupTrophy, FileUtil.getGeneralSavesFile(), "silverCup", silverCupNumber);
+        setUpVbox(silverCupImage, nbrOfSilverCupLabel, UtilStringStorage.silverCupTrophy, FileUtil.getGeneralSavesFile(), "silverCup", silverCupNumber);
         silverCupImage.getChildren().add(silverCupNumber);
     }
     public void createBronzeVbox()
@@ -103,7 +103,7 @@ public class TrophyScene extends Scene
         Label bronzeCupNumber = new Label();
 
         bronzeCupImage.getChildren().add(bronzeCup);
-        setUpVbox(bronzeCupImage, nbrOfBronzeCupLabel, 0, 25, UtilStringStorage.bronzeCupTrophy, FileUtil.getGeneralSavesFile(), "bronzeCup", bronzeCupNumber);
+        setUpVbox(bronzeCupImage, nbrOfBronzeCupLabel, UtilStringStorage.bronzeCupTrophy, FileUtil.getGeneralSavesFile(), "bronzeCup", bronzeCupNumber);
         bronzeCupImage.getChildren().add(bronzeCupNumber);
     }
 
@@ -115,7 +115,7 @@ public class TrophyScene extends Scene
         Label secretCupNumber = new Label();
 
         secretCupImage.getChildren().add(secretCup);
-        setUpVbox(secretCupImage, nbrOfSecretCupLabel, 0, 25, UtilStringStorage.secretCupTrophy, FileUtil.getGeneralSavesFile(), "secretCup", secretCupNumber);
+        setUpSecretVbox(secretCupImage, nbrOfSecretCupLabel, UtilStringStorage.secretCupTrophy, FileUtil.getGeneralSavesFile(), "secretCup", secretCupNumber);
         secretCupImage.getChildren().add(secretCupNumber);
     }
 
@@ -147,9 +147,9 @@ public class TrophyScene extends Scene
         label.setTranslateX(150);
     }
 
-    public void setUpVbox(VBox vBox, Label label, int translateX, int translateY, String string, Properties properties, String propertyKey, Label cupNumber)
+    public void setUpVbox(VBox vBox, Label label, String string, Properties properties, String propertyKey, Label cupNumber)
     {
-        placeLabel(label, translateX, translateY);
+        placeLabel(label, 0, 25);
         stylizeLabel(label, string, properties, propertyKey, cupNumber);
         cupNumber.setTranslateX(80);
         cupNumber.setTranslateY(40);
@@ -180,6 +180,23 @@ public class TrophyScene extends Scene
         cupNumber.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 28));
     }
 
+    public void setUpSecretVbox(VBox vBox, Label label, String string, Properties properties, String propertyKey, Label cupNumber)
+    {
+        placeLabel(label, 0, 25);
+        stylizeSecretLabel(label, string, properties, propertyKey, cupNumber);
+        cupNumber.setTranslateX(80);
+        cupNumber.setTranslateY(40);
+        vBox.getChildren().add(label);
+    }
+
+    public void stylizeSecretLabel(Label label, String string, Properties properties, String propertyKey, Label cupNumber)
+    {
+        label.setText(string +" ");
+        cupNumber.setText(properties.getProperty(propertyKey)+"/2");
+        label.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 26));
+        cupNumber.setFont(Font.font(MenuScene.POLICE_LABEL, FontWeight.BOLD, 28));
+    }
+
     public void createIcons()
     {
         goldCup = IconCreator.createCupIcon(PathUtil.GOLD_CUP_PATH);
@@ -191,12 +208,13 @@ public class TrophyScene extends Scene
         silverCup = IconCreator.createCupIcon(PathUtil.SILVER_CUP_PATH);
         silverCup.setTranslateY(10);
 
-        if(!allAchievementAreUnlocked)
-        {
-            secretCup = IconCreator.createCupIcon(PathUtil.PLACE_HOLDER_CUP);
-        } else
+        int numberOfSecretCup = Integer.parseInt(FileUtil.getGeneralSavesFile().getProperty("secretCup"));
+        if(numberOfSecretCup > 0)
         {
             secretCup = IconCreator.createCupIcon(PathUtil.SECRET_CUP);
+        } else
+        {
+            secretCup = IconCreator.createCupIcon(PathUtil.PLACE_HOLDER_CUP);
         }
         secretCup.setFitWidth(180);
         secretCup.setTranslateY(10);

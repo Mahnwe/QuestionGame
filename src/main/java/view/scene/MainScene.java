@@ -135,7 +135,7 @@ public class MainScene extends Scene
     {
         GameTimer.stopTimer();
         GameTimer.setTimerDisplay();
-        ResultScene resultScene = new ResultScene(menuPane, playerHandler.getPlayer().getPlayerScore(), gameHandler.getQuestionCount(), achievementManager, stage);
+        ResultScene resultScene = new ResultScene(menuPane, playerHandler.getPlayer().getPlayerScore(), gameHandler.getQuestionCount(), achievementManager, stage, gameHandler);
         SoundManager.checkIfMusicIsPlayed(MenuScene.relaunchGame);
         SoundManager.stopMusic(inGameMusicToStop);
 

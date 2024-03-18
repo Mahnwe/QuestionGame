@@ -11,8 +11,8 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.Achievement;
 import model.handlers.AchievementManager;
-import util.creators.BackgroundCreator;
 import util.FileUtil;
+import util.creators.BackgroundCreator;
 import util.stringutiltranslate.UtilStringStorage;
 import view.bootstrap.BootstrapPane;
 import view.customobject.ReturnButton;
@@ -198,6 +198,7 @@ public class AchievementScene extends Scene
             TrophyScene.setAllAchievementAreUnlocked(true);
             nbrOfSecretCup++;
             FileUtil.getGeneralSavesFile().setProperty("secretCup", String.valueOf(nbrOfSecretCup));
+            FileUtil.storeGeneralSavesFile();
         }
     }
 

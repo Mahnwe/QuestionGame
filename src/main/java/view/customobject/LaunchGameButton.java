@@ -5,6 +5,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import model.handlers.GameHandler;
+import util.FileUtil;
 import util.stringutiltranslate.UtilStringStorage;
 import view.scene.MenuScene;
 
@@ -24,6 +25,9 @@ public class LaunchGameButton extends Button {
     {
         this.setOnAction(event ->
         {
+            FileUtil.getGeneralSavesFile().setProperty("lastModChosen", String.valueOf(comboBox.getSelectionModel().getSelectedIndex()));
+            FileUtil.storeGeneralSavesFile();
+
             if(comboBox.getSelectionModel().getSelectedItem().equals(comboBox.getItems().get(0))) {
                 gameHandler.setupQuestionList(10);
                 menuScene.instantiateMainScene();

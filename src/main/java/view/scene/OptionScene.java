@@ -25,7 +25,7 @@ public class OptionScene extends Scene {
     private final Stage stage;
     private GridPane gridPane;
     private VBox optionVbox;
-    private VBox importFileVbox;
+    private VBox fileHandlingVbox;
     private final ConfirmAlert confirmAlert;
     private final BorderPane pane;
     public static final String OPTION_POLICE_LABEL = "Impact";
@@ -57,9 +57,10 @@ public class OptionScene extends Scene {
         optionVbox = new VBox();
         optionVbox.setTranslateX(30);
         optionVbox.setTranslateY(80);
-        importFileVbox = new VBox();
-        importFileVbox.setTranslateX(250);
-        importFileVbox.setTranslateY(180);
+
+        fileHandlingVbox = new VBox();
+        fileHandlingVbox.setTranslateX(250);
+        fileHandlingVbox.setTranslateY(180);
     }
 
     public void createCopyFileBox()
@@ -90,9 +91,9 @@ public class OptionScene extends Scene {
         hBox1.getChildren().add(copyPersoQuestionFileButton);
         hBox1.getChildren().add(copyInfoButton);
 
-        importFileVbox.getChildren().add(copyPersoQuestionFileLabel);
-        importFileVbox.getChildren().add(hBox1);
-        importFileVbox.getChildren().add(confirmCopyFileInClipboard);
+        fileHandlingVbox.getChildren().add(copyPersoQuestionFileLabel);
+        fileHandlingVbox.getChildren().add(hBox1);
+        fileHandlingVbox.getChildren().add(confirmCopyFileInClipboard);
     }
     public void createPasteFileBox()
     {
@@ -118,9 +119,9 @@ public class OptionScene extends Scene {
         hBox2.getChildren().add(pasteFileFromImportButton);
         hBox2.getChildren().add(importInfoButton);
 
-        importFileVbox.getChildren().add(createNewFileWithImportLabel);
-        importFileVbox.getChildren().add(hBox2);
-        importFileVbox.getChildren().add(confirmImportLabel);
+        fileHandlingVbox.getChildren().add(createNewFileWithImportLabel);
+        fileHandlingVbox.getChildren().add(hBox2);
+        fileHandlingVbox.getChildren().add(confirmImportLabel);
         confirmImportLabel.setTranslateY(95);
     }
     public void createImportedFileBox()
@@ -143,8 +144,8 @@ public class OptionScene extends Scene {
         hBox3.getChildren().add(openImportFileDirectoryButton);
         hBox3.getChildren().add(openDirectoryInfoButton);
 
-        importFileVbox.getChildren().add(importFileManagementLabel);
-        importFileVbox.getChildren().add(hBox3);
+        fileHandlingVbox.getChildren().add(importFileManagementLabel);
+        fileHandlingVbox.getChildren().add(hBox3);
     }
     public static void displayLabelAfterImport(Label label)
     {
@@ -160,7 +161,7 @@ public class OptionScene extends Scene {
         gridPane.setTranslateX(100);
         gridPane.setHgap(50);
         gridPane.add(optionVbox, 0, 0);
-        gridPane.add(importFileVbox, 7, 0);
+        gridPane.add(fileHandlingVbox, 7, 0);
     }
 
     public void createBackground()

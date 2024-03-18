@@ -6,16 +6,16 @@ import util.PathUtil;
 
 public class Achievement
 {
-    private final int condition;
+    private final int unlockCondition;
     private boolean isUnlock;
     private final ImageView achievementImage;
     private ImageView lockImageView;
     private ImageView unlockImageView;
 
-    public Achievement(int condition, boolean isUnlock)
+    public Achievement(int unlockCondition, boolean isUnlock)
     {
         createIcons();
-        this.condition = condition;
+        this.unlockCondition = unlockCondition;
         this.isUnlock = isUnlock;
         this.achievementImage = new ImageView();
     }
@@ -35,8 +35,8 @@ public class Achievement
         unlockImageView.setTranslateX(20);
     }
 
-    public int getCondition() {
-        return condition;
+    public int getUnlockCondition() {
+        return unlockCondition;
     }
 
     public boolean isUnlock() {

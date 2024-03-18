@@ -7,7 +7,6 @@ public class Question
 {
     private final String questionToAsk;
     private final String goodAnswer;
-
     private final String explanation;
     private final String category;
 

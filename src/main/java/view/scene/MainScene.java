@@ -74,10 +74,10 @@ public class MainScene extends Scene
             questionInterface.checkAnswer();
             if(questionInterface.isPlayerAnswer())
             {
-                PlayerHandler.increaseScore();
+                playerHandler.increaseScore();
             }
             else {
-                PlayerHandler.removePlayerLife();
+                playerHandler.removePlayerLife();
                 if(playerInfoScene.getPlayerLivesLabel() != null) {
                     playerInfoScene.getPlayerLivesLabel().setText(UtilStringStorage.playerLivesIngame + " " + playerHandler.getPlayer().getNbrOfLives());
                 }
@@ -109,7 +109,7 @@ public class MainScene extends Scene
         infoQuestionVbox.getChildren().add(questionInterface.getQuestionCategory());
 
         menuPane.setTop(infoQuestionVbox);
-        questionInterface.getGame().setTranslateY(-50);
+        questionInterface.getMainVbox().setTranslateY(-50);
     }
 
     public void setTextInQuestionInterface()

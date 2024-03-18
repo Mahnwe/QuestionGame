@@ -77,12 +77,12 @@ public class AchievementManager
 
     public void checkIfAchievementIsUnlock(Achievement achievement, int numberToCompareWithCondition)
     {
-        if (!achievement.isUnlock() && achievement.getCondition() <= numberToCompareWithCondition) {
+        if (!achievement.isUnlock() && achievement.getUnlockCondition() <= numberToCompareWithCondition) {
             achievement.setUnlock(true);
             achievement.getAchievementImage().setImage(achievement.getUnlockImageView().getImage());
             notificationAlert = new NotificationAlert(Alert.AlertType.INFORMATION);
         }
-        if(achievement.isUnlock() && achievement.getCondition() <= numberToCompareWithCondition) {
+        if(achievement.isUnlock() && achievement.getUnlockCondition() <= numberToCompareWithCondition) {
             achievement.setUnlock(true);
             achievement.getAchievementImage().setImage(achievement.getUnlockImageView().getImage());
         }

@@ -25,7 +25,7 @@ import view.customobject.CustomTextArea;
 public class PlayerInfoScene extends Scene
 {
     private VBox getPlayerName;
-    private Button sendButton;
+    private Button sendNameButton;
     private CustomTextArea userInputArea;
     private final BorderPane pane;
     private VBox playerInfos;
@@ -66,10 +66,14 @@ public class PlayerInfoScene extends Scene
 
     public void createUserInputArea()
     {
-        sendButton = new Button(UtilStringStorage.validateButton);
-        stylizeSendButton(sendButton);
+        sendNameButton = new Button(UtilStringStorage.validateButton);
+        stylizeSendButton(sendNameButton);
 
-        userInputArea = new CustomTextArea(sendButton, 12);
+        userInputArea = new CustomTextArea(sendNameButton, 12);
+        if(!FileUtil.getGeneralSavesFile().getProperty("lastNameEntered").equals("0"))
+        {
+            userInputArea.setText(FileUtil.getGeneralSavesFile().getProperty("lastNameEntered"));
+        }
         userInputArea.setMaxHeight(50);
         userInputArea.setMaxWidth(250);
         userInputArea.setTranslateY(75);
@@ -77,7 +81,7 @@ public class PlayerInfoScene extends Scene
         userInputArea.setBorder(CustomOption.createCustomBorder(1.0, 1.5, Color.BLACK));
 
         getPlayerName.getChildren().add(userInputArea);
-        getPlayerName.getChildren().add(sendButton);
+        getPlayerName.getChildren().add(sendNameButton);
     }
 
     public void stylizeSendButton(Button sendButton)
@@ -92,10 +96,13 @@ public class PlayerInfoScene extends Scene
         sendButton.setTranslateX(295);
     }
 
-    public void setOnActionSendButton(BorderPane pane, QuestionInterface questionInterface, Stage popUpStage)
+    public void setOnClickSendButton(BorderPane pane, QuestionInterface questionInterface, Stage popUpStage)
     {
             if(!userInputArea.getText().isEmpty())
             {
+                FileUtil.getGeneralSavesFile().setProperty("lastNameEntered", userInputArea.getText());
+                FileUtil.storeGeneralSavesFile();
+
                     createPlayerInfoArea();
                     pane.setLeft(playerInfos);
                     questionInterface.setDisable(false);
@@ -107,7 +114,11 @@ public class PlayerInfoScene extends Scene
     public void setOnKeyTypedSendButton(BorderPane pane, QuestionInterface questionInterface, Stage popUpStage)
     {
         userInputArea.setOnKeyPressed(keyEvent -> {
-            if (keyEvent.getCode().equals(KeyCode.ENTER) && (!userInputArea.getText().substring(0,1).isBlank())) {
+            if (keyEvent.getCode().equals(KeyCode.ENTER) && (!userInputArea.getText().substring(0,1).isBlank()))
+            {
+                FileUtil.getGeneralSavesFile().setProperty("lastNameEntered", userInputArea.getText());
+                FileUtil.storeGeneralSavesFile();
+
                 createPlayerInfoArea();
                 pane.setLeft(playerInfos);
                 questionInterface.setDisable(false);
@@ -203,8 +214,8 @@ public class PlayerInfoScene extends Scene
         return playerScoreLabel;
     }
 
-    public Button getSendButton() {
-        return sendButton;
+    public Button getSendNameButton() {
+        return sendNameButton;
     }
 
     public TextArea getUserInputArea() {

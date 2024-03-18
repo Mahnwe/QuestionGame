@@ -58,7 +58,7 @@ public class MenuScene extends Scene
         createWelcomeArea();
         createIconOptionButton();
         createLeaderBoardButtonArea();
-        createButtonArea();
+        createCenterArea();
 
         createBackground();
     }
@@ -201,7 +201,7 @@ public class MenuScene extends Scene
     });
     }
 
-    public void createButtonArea()
+    public void createCenterArea()
     {
         VBox selectModeArea = new VBox();
 

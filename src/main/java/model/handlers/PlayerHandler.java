@@ -4,17 +4,17 @@ import model.Player;
 
 public class PlayerHandler
 {
-    private static Player player;
+    private final Player player;
     public PlayerHandler(Player player)
     {
-        PlayerHandler.player = player;
+        this.player = player;
     }
-    public static void increaseScore()
+    public void increaseScore()
     {
         player.setPlayerScore(player.getPlayerScore()+1);
     }
 
-    public static void removePlayerLife()
+    public void removePlayerLife()
     {
         player.setNbrOfLives(player.getNbrOfLives()-1);
     }

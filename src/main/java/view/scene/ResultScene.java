@@ -25,9 +25,9 @@ public class ResultScene extends VBox
     private Button exitToMenuButton;
     private Label congratsLabel;
     private Label playerResult;
-    private ImageView goldCup;
-    private ImageView bronzeCup;
-    private ImageView silverCup;
+    private ImageView goldCupImage;
+    private ImageView bronzeCupImage;
+    private ImageView silverCupImage;
     private final AchievementManager achievementManager;
     private final int playerFinalScore;
     private final Stage stage;
@@ -81,15 +81,15 @@ public class ResultScene extends VBox
         }
         if(questionCount >= 10 && questionCount <= 19)
         {
-            ResultHandler.survivalBronzeResult(achievementManager, questionCount, playerFinalScore, gameResult, bronzeCup);
+            ResultHandler.survivalBronzeResult(achievementManager, questionCount, playerFinalScore, gameResult, bronzeCupImage);
         }
         if(questionCount >= 20 && questionCount <= 29)
         {
-            ResultHandler.survivalSilverResult(achievementManager, questionCount, playerFinalScore, gameResult, silverCup);
+            ResultHandler.survivalSilverResult(achievementManager, questionCount, playerFinalScore, gameResult, silverCupImage);
         }
         if(questionCount >= 30)
         {
-            ResultHandler.survivalGoldResult(achievementManager, questionCount, playerFinalScore, gameResult, goldCup);
+            ResultHandler.survivalGoldResult(achievementManager, questionCount, playerFinalScore, gameResult, goldCupImage);
             if(questionCount == gameHandler.getQuestionList().size())
             {
                 int numberOfSecretCup = Integer.parseInt(FileUtil.getGeneralSavesFile().getProperty("secretCup"));
@@ -109,15 +109,15 @@ public class ResultScene extends VBox
         AchievementManager.notificationAlert = null;
         if(playerFinalScore >= questionCount*90/100)
         {
-            ResultHandler.normalGoldResult(achievementManager, questionCount, playerFinalScore, gameResult, goldCup);
+            ResultHandler.normalGoldResult(achievementManager, questionCount, playerFinalScore, gameResult, goldCupImage);
         }
         else if(playerFinalScore >= questionCount*70/100 && playerFinalScore < questionCount*90/100)
         {
-            ResultHandler.normalSilverResult(achievementManager, questionCount, playerFinalScore, gameResult, silverCup);
+            ResultHandler.normalSilverResult(achievementManager, questionCount, playerFinalScore, gameResult, silverCupImage);
         }
         else if(playerFinalScore >= questionCount*50/100 && playerFinalScore < questionCount*70/100)
         {
-            ResultHandler.normalBronzeResult(achievementManager, questionCount, playerFinalScore, gameResult, bronzeCup);
+            ResultHandler.normalBronzeResult(achievementManager, questionCount, playerFinalScore, gameResult, bronzeCupImage);
         }
         else
         {
@@ -155,14 +155,14 @@ public class ResultScene extends VBox
 
     public void createIcons()
     {
-        goldCup = IconCreator.createCupIcon(PathUtil.GOLD_CUP_PATH);
-        stylizeIcon(goldCup);
+        goldCupImage = IconCreator.createCupIcon(PathUtil.GOLD_CUP_PATH);
+        stylizeIcon(goldCupImage);
 
-        bronzeCup = IconCreator.createCupIcon(PathUtil.BRONZE_CUP_PATH);
-        stylizeIcon(bronzeCup);
+        bronzeCupImage = IconCreator.createCupIcon(PathUtil.BRONZE_CUP_PATH);
+        stylizeIcon(bronzeCupImage);
 
-        silverCup = IconCreator.createCupIcon(PathUtil.SILVER_CUP_PATH);
-        stylizeIcon(silverCup);
+        silverCupImage = IconCreator.createCupIcon(PathUtil.SILVER_CUP_PATH);
+        stylizeIcon(silverCupImage);
     }
 
     public void stylizeIcon (ImageView imageView)

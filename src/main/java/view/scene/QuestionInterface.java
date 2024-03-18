@@ -23,7 +23,7 @@ public class QuestionInterface extends BorderPane
 {
     private final QuestionStorage questionList;
     private final BorderPane questionPane;
-    private VBox game;
+    private VBox mainVbox;
     private final Question question;
     private Label questionNumber;
     private Label questionCategory;
@@ -64,8 +64,8 @@ public class QuestionInterface extends BorderPane
 
     public void createGameSpace()
     {
-        game = new VBox();
-        game.setBorder(CustomOption.createCustomBorder(1.0, 1.0, Color.BLACK));
+        mainVbox = new VBox();
+        mainVbox.setBorder(CustomOption.createCustomBorder(1.0, 1.0, Color.BLACK));
     }
 
     public void createQuestionLabel()
@@ -157,11 +157,11 @@ public class QuestionInterface extends BorderPane
 
     public void initGameSpace()
     {
-        game.getChildren().add(questionNumber);
-        game.getChildren().add(questionToAsk);
-        game.getChildren().add(gridPane);
-        game.getChildren().add(nextQuestionButton);
-        questionPane.setCenter(game);
+        mainVbox.getChildren().add(questionNumber);
+        mainVbox.getChildren().add(questionToAsk);
+        mainVbox.getChildren().add(gridPane);
+        mainVbox.getChildren().add(nextQuestionButton);
+        questionPane.setCenter(mainVbox);
     }
 
     public void createView()
@@ -181,11 +181,11 @@ public class QuestionInterface extends BorderPane
 
           if(answerButtonClicked.getText().equals(upperGoodAnswer))
           {
-             playerAnswer = AnswerHandler.playerAnswerIsGood(answerButtonClicked, question, game);
+             playerAnswer = AnswerHandler.playerAnswerIsGood(answerButtonClicked, question, mainVbox);
           }
           else
           {
-              playerAnswer = AnswerHandler.playerAnswerIsWrong(answerButtonClicked, answerButton1, answerButton2, answerButton3, answerButton4, question, game);
+              playerAnswer = AnswerHandler.playerAnswerIsWrong(answerButtonClicked, answerButton1, answerButton2, answerButton3, answerButton4, question, mainVbox);
           }
 
           nextQuestionButton.setDisable(false);
@@ -229,7 +229,7 @@ public class QuestionInterface extends BorderPane
         return validateAnswerButton;
     }
 
-    public VBox getGame() {
-        return game;
+    public VBox getMainVbox() {
+        return mainVbox;
     }
 }

@@ -20,7 +20,7 @@ import view.customobject.LanguageButton;
 
 public class LanguageScene extends Scene
 {
-    private VBox vBox;
+    private VBox mainVbox;
     private final BorderPane pane;
     private final Stage stage;
     private final AchievementManager achievementManager;
@@ -39,17 +39,17 @@ public class LanguageScene extends Scene
     }
     public void createTitleArea()
     {
-        vBox = new VBox();
-        vBox.setTranslateX(650);
-        vBox.setTranslateY(120);
+        mainVbox = new VBox();
+        mainVbox.setTranslateX(650);
+        mainVbox.setTranslateY(120);
 
         IconCreator iconCreator = new IconCreator(PathUtil.LOGO_ICON);
         ImageView logoIcon = iconCreator.createImage();
         logoIcon.setFitWidth(510);
         logoIcon.setFitHeight(410);
 
-        vBox.getChildren().add(logoIcon);
-        pane.setCenter(vBox);
+        mainVbox.getChildren().add(logoIcon);
+        pane.setCenter(mainVbox);
     }
 
     public void createBackground()
@@ -75,7 +75,7 @@ public class LanguageScene extends Scene
         languageVbox.getChildren().add(englishVbox);
         languageVbox.getChildren().add(frenchVbox);
 
-        vBox.getChildren().add(languageVbox);
+        mainVbox.getChildren().add(languageVbox);
     }
 
     public void createEngVbox(VBox vBox, UtilTranslateString utilTranslateString)

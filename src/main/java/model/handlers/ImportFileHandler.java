@@ -101,11 +101,11 @@ public class ImportFileHandler {
     {
             if(Clipboard.getSystemClipboard().hasFiles()) {
                 Properties propertiesImportFile = new Properties();
-                File file = getClipboardFile();
-                if (file.getName().equals("PersonalizeQuestions.properties"))
+                File clipboardFile = getClipboardFile();
+                if (clipboardFile.getName().equals("PersonalizeQuestions.properties"))
                 {
                     label.setText(UtilStringStorage.confirmImportLabel);
-                    readSaveFile(propertiesImportFile, file);
+                    readSaveFile(propertiesImportFile, clipboardFile);
 
                     int numberOfImportFile = Integer.parseInt(FileUtil.getGeneralSavesFile().getProperty("numberOfImportFile"));
                     numberOfImportFile++;

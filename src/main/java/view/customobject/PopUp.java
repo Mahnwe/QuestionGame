@@ -25,9 +25,9 @@ public class PopUp {
 
         popUpStage.show();
 
-        CustomOption.setGlowEffectOnButton(playerInfoScene.getSendButton());
+        CustomOption.setGlowEffectOnButton(playerInfoScene.getSendNameButton());
 
-        playerInfoScene.getSendButton().setOnAction(event -> playerInfoScene.setOnActionSendButton(menuPane, questionInterface, popUpStage));
+        playerInfoScene.getSendNameButton().setOnAction(event -> playerInfoScene.setOnClickSendButton(menuPane, questionInterface, popUpStage));
         playerInfoScene.getUserInputArea().setOnKeyPressed(event -> playerInfoScene.setOnKeyTypedSendButton(menuPane, questionInterface, popUpStage));
 
         return playerInfoScene;

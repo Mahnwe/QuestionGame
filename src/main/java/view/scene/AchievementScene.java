@@ -30,7 +30,7 @@ public class AchievementScene extends Scene
     private final Label goldCupAchievementInfo = new Label();
     private final Label silverCupAchievementInfo = new Label();
     private final Label bronzeCupAchievementInfo = new Label();
-    private final Label perfectScoreAchievementInfo= new Label();
+    private final Label perfectScoreAchievement10Info = new Label();
     private final Label perfectScoreAchievement15Info= new Label();
     private final Label perfectScoreAchievement20Info= new Label();
     private final Label survivalAchievement20Info= new Label();
@@ -98,7 +98,7 @@ public class AchievementScene extends Scene
 
         createAchievementArea(UtilStringStorage.bronzeCupAchievementDescription, bronzeCupAchievementInfo, 2, 2,1);
 
-        createAchievementArea(UtilStringStorage.perfectScore10Achievement, perfectScoreAchievementInfo, 3, 0, 2);
+        createAchievementArea(UtilStringStorage.perfectScore10Achievement, perfectScoreAchievement10Info, 3, 0, 2);
 
         createAchievementArea(UtilStringStorage.perfectScore15Achievement, perfectScoreAchievement15Info, 4, 1, 2);
 
@@ -171,7 +171,7 @@ public class AchievementScene extends Scene
         checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(),"silverCup", 1, silverCupAchievementInfo);
         checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(),"bronzeCup", 2, bronzeCupAchievementInfo);
 
-        checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(), "perfectScore10", 3, perfectScoreAchievementInfo);
+        checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(), "perfectScore10", 3, perfectScoreAchievement10Info);
         checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(), "perfectScore15", 4, perfectScoreAchievement15Info);
         checkPropertyKeyNumber(FileUtil.getGeneralSavesFile(), "perfectScore20", 5, perfectScoreAchievement20Info);
 

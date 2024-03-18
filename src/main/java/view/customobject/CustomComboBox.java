@@ -5,6 +5,7 @@ import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import util.FileUtil;
 import util.stringutiltranslate.UtilStringStorage;
 import view.scene.MenuScene;
 
@@ -54,6 +55,12 @@ public class CustomComboBox extends ComboBox<String> {
         this.getItems().add(fifteenModeButton.getText());
         this.getItems().add(twentyModeButton.getText());
         this.getItems().add(survivalModeButton.getText());
-        this.getSelectionModel().selectFirst();
+        if(!FileUtil.getGeneralSavesFile().getProperty("lastModChosen").equals("None"))
+        {
+            int lastModSelected = Integer.parseInt(FileUtil.getGeneralSavesFile().getProperty("lastModChosen"));
+            this.getSelectionModel().select(lastModSelected);
+        } else {
+            this.getSelectionModel().selectFirst();
+        }
     }
 }

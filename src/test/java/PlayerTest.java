@@ -35,7 +35,7 @@ class PlayerTest
     @Test
     void testIncreasePlayerScore()
     {
-        PlayerHandler.increaseScore();
+        playerHandler.increaseScore();
         assertEquals(1, playerHandler.getPlayer().getPlayerScore());
     }
 
@@ -44,7 +44,7 @@ class PlayerTest
     {
         assertEquals(3, playerHandler.getPlayer().getNbrOfLives());
 
-        PlayerHandler.removePlayerLife();
+        playerHandler.removePlayerLife();
 
         assertEquals(2, playerHandler.getPlayer().getNbrOfLives());
     }

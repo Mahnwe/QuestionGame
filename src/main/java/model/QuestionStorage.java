@@ -681,6 +681,16 @@ public class QuestionStorage
                 QuestionStringStorage.answerB132, QuestionStringStorage.answerC132, QuestionStringStorage.answerD132, QuestionStringStorage.goodAnswer132,
                 QuestionStringStorage.explanation132);
         questionList.add(question132);
+
+        Question question133 = new Question(UtilStringStorage.linguistic, QuestionStringStorage.question133,QuestionStringStorage.answerA133,
+                QuestionStringStorage.answerB133, QuestionStringStorage.answerC133, QuestionStringStorage.answerD133, QuestionStringStorage.goodAnswer133,
+                QuestionStringStorage.explanation133);
+        questionList.add(question133);
+
+        Question question134 = new Question(UtilStringStorage.cinema, QuestionStringStorage.question134,QuestionStringStorage.answerA134,
+                QuestionStringStorage.answerB134, QuestionStringStorage.answerC134, QuestionStringStorage.answerD134, QuestionStringStorage.goodAnswer134,
+                QuestionStringStorage.explanation134);
+        questionList.add(question134);
     }
 
     public void checkExternalSourcesOfQuestions()

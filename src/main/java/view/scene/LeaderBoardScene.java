@@ -41,7 +41,6 @@ public class LeaderBoardScene extends Scene
 
         GridPane gridpane = new GridPane();
         gridpane.setMinHeight(1080);
-        GridPane.setVgrow(gridpane, Priority.ALWAYS);
 
         leaderBoardVBox = new VBox();
         VBox.setVgrow(leaderBoardVBox, Priority.ALWAYS);

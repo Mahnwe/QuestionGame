@@ -31,7 +31,6 @@ public class LanguageScene extends Scene
         this.pane = pane;
         this.stage = stage;
         this.achievementManager = achievementManager;
-        stage.setMaximized(true);
 
         createTitleArea();
         setUpVbox();

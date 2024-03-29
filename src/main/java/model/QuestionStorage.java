@@ -691,6 +691,11 @@ public class QuestionStorage
                 QuestionStringStorage.answerB134, QuestionStringStorage.answerC134, QuestionStringStorage.answerD134, QuestionStringStorage.goodAnswer134,
                 QuestionStringStorage.explanation134);
         questionList.add(question134);
+
+        Question question135 = new Question(UtilStringStorage.mathematics, QuestionStringStorage.question135,QuestionStringStorage.answerA135,
+                QuestionStringStorage.answerB135, QuestionStringStorage.answerC135, QuestionStringStorage.answerD135, QuestionStringStorage.goodAnswer135,
+                QuestionStringStorage.explanation135);
+        questionList.add(question135);
     }
 
     public void checkExternalSourcesOfQuestions()

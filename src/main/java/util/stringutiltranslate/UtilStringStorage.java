@@ -44,6 +44,7 @@ public class UtilStringStorage
     public static String monument = "";
     public static String economy = "";
     public static String food = "";
+    public static String mathematics = "";
 
     // ACHIEVEMENTS
     public static String achievementLabel = "";

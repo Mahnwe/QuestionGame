@@ -487,7 +487,7 @@ public class QuestionStorage
                 QuestionStringStorage.explanation93);
         questionList.add(question93);
 
-        Question question94 = new Question(UtilStringStorage.science, QuestionStringStorage.question94,QuestionStringStorage.answerA94,
+        Question question94 = new Question(UtilStringStorage.mathematics, QuestionStringStorage.question94,QuestionStringStorage.answerA94,
                 QuestionStringStorage.answerB94, QuestionStringStorage.answerC94, QuestionStringStorage.answerD94, QuestionStringStorage.goodAnswer94,
                 QuestionStringStorage.explanation94);
         questionList.add(question94);
@@ -721,6 +721,21 @@ public class QuestionStorage
                 QuestionStringStorage.answerB140, QuestionStringStorage.answerC140, QuestionStringStorage.answerD140, QuestionStringStorage.goodAnswer140,
                 QuestionStringStorage.explanation140);
         questionList.add(question140);
+
+        Question question141 = new Question(UtilStringStorage.monument, QuestionStringStorage.question141,QuestionStringStorage.answerA141,
+                QuestionStringStorage.answerB141, QuestionStringStorage.answerC141, QuestionStringStorage.answerD141, QuestionStringStorage.goodAnswer141,
+                QuestionStringStorage.explanation141);
+        questionList.add(question141);
+
+        Question question142 = new Question(UtilStringStorage.science, QuestionStringStorage.question142,QuestionStringStorage.answerA142,
+                QuestionStringStorage.answerB142, QuestionStringStorage.answerC142, QuestionStringStorage.answerD142, QuestionStringStorage.goodAnswer142,
+                QuestionStringStorage.explanation142);
+        questionList.add(question142);
+
+        Question question143 = new Question(UtilStringStorage.economy, QuestionStringStorage.question143,QuestionStringStorage.answerA143,
+                QuestionStringStorage.answerB143, QuestionStringStorage.answerC143, QuestionStringStorage.answerD143, QuestionStringStorage.goodAnswer143,
+                QuestionStringStorage.explanation143);
+        questionList.add(question143);
     }
 
     public void checkExternalSourcesOfQuestions()

@@ -692,7 +692,7 @@ public class QuestionStorage
                 QuestionStringStorage.explanation134);
         questionList.add(question134);
 
-        Question question135 = new Question(UtilStringStorage.mathematics, QuestionStringStorage.question135,QuestionStringStorage.answerA135,
+        Question question135 = new Question(UtilStringStorage.science, QuestionStringStorage.question135,QuestionStringStorage.answerA135,
                 QuestionStringStorage.answerB135, QuestionStringStorage.answerC135, QuestionStringStorage.answerD135, QuestionStringStorage.goodAnswer135,
                 QuestionStringStorage.explanation135);
         questionList.add(question135);
@@ -736,6 +736,26 @@ public class QuestionStorage
                 QuestionStringStorage.answerB143, QuestionStringStorage.answerC143, QuestionStringStorage.answerD143, QuestionStringStorage.goodAnswer143,
                 QuestionStringStorage.explanation143);
         questionList.add(question143);
+
+        Question question144 = new Question(UtilStringStorage.music, QuestionStringStorage.question144,QuestionStringStorage.answerA144,
+                QuestionStringStorage.answerB144, QuestionStringStorage.answerC144, QuestionStringStorage.answerD144, QuestionStringStorage.goodAnswer144,
+                QuestionStringStorage.explanation144);
+        questionList.add(question144);
+
+        Question question145 = new Question(UtilStringStorage.mathematics, QuestionStringStorage.question145,QuestionStringStorage.answerA145,
+                QuestionStringStorage.answerB145, QuestionStringStorage.answerC145, QuestionStringStorage.answerD145, QuestionStringStorage.goodAnswer145,
+                QuestionStringStorage.explanation145);
+        questionList.add(question145);
+
+        Question question146 = new Question(UtilStringStorage.records, QuestionStringStorage.question146,QuestionStringStorage.answerA146,
+                QuestionStringStorage.answerB146, QuestionStringStorage.answerC146, QuestionStringStorage.answerD146, QuestionStringStorage.goodAnswer146,
+                QuestionStringStorage.explanation146);
+        questionList.add(question146);
+
+        Question question147 = new Question(UtilStringStorage.nature, QuestionStringStorage.question147,QuestionStringStorage.answerA147,
+                QuestionStringStorage.answerB147, QuestionStringStorage.answerC147, QuestionStringStorage.answerD147, QuestionStringStorage.goodAnswer147,
+                QuestionStringStorage.explanation147);
+        questionList.add(question147);
     }
 
     public void checkExternalSourcesOfQuestions()

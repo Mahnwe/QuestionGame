@@ -1032,4 +1032,25 @@ public class QuestionStringStorage {
     public static String answerD147 = "";
     public static String goodAnswer147 = "";
     public static String explanation147 = "";
+    public static String question148 = "";
+    public static String answerA148 = "";
+    public static String answerB148 = "";
+    public static String answerC148 = "";
+    public static String answerD148 = "";
+    public static String goodAnswer148 = "";
+    public static String explanation148 = "";
+    public static String question149 = "";
+    public static String answerA149 = "";
+    public static String answerB149 = "";
+    public static String answerC149 = "";
+    public static String answerD149 = "";
+    public static String goodAnswer149 = "";
+    public static String explanation149 = "";
+    public static String question150 = "";
+    public static String answerA150 = "";
+    public static String answerB150 = "";
+    public static String answerC150 = "";
+    public static String answerD150 = "";
+    public static String goodAnswer150 = "";
+    public static String explanation150 = "";
 }

@@ -756,6 +756,21 @@ public class QuestionStorage
                 QuestionStringStorage.answerB147, QuestionStringStorage.answerC147, QuestionStringStorage.answerD147, QuestionStringStorage.goodAnswer147,
                 QuestionStringStorage.explanation147);
         questionList.add(question147);
+
+        Question question148 = new Question(UtilStringStorage.invention, QuestionStringStorage.question148,QuestionStringStorage.answerA148,
+                QuestionStringStorage.answerB148, QuestionStringStorage.answerC148, QuestionStringStorage.answerD148, QuestionStringStorage.goodAnswer148,
+                QuestionStringStorage.explanation148);
+        questionList.add(question148);
+
+        Question question149 = new Question(UtilStringStorage.law, QuestionStringStorage.question149,QuestionStringStorage.answerA149,
+                QuestionStringStorage.answerB149, QuestionStringStorage.answerC149, QuestionStringStorage.answerD149, QuestionStringStorage.goodAnswer149,
+                QuestionStringStorage.explanation149);
+        questionList.add(question149);
+
+        Question question150 = new Question(UtilStringStorage.plants, QuestionStringStorage.question150,QuestionStringStorage.answerA150,
+                QuestionStringStorage.answerB150, QuestionStringStorage.answerC150, QuestionStringStorage.answerD150, QuestionStringStorage.goodAnswer150,
+                QuestionStringStorage.explanation150);
+        questionList.add(question150);
     }
 
     public void checkExternalSourcesOfQuestions()

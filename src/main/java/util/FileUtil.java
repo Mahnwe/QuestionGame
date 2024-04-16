@@ -96,6 +96,9 @@ public class FileUtil {
 
         generalSavesFile.setProperty("timePlayed", "0");
 
+        generalSavesFile.setProperty("lastModChosen", "0");
+        generalSavesFile.setProperty("lastNameEntered", "0");
+
         FileUtil.storeGeneralSavesFile();
     }
 

@@ -141,12 +141,12 @@ public class MainScene extends Scene
 
         if(GameHandler.gameMode == null)
         {
-            resultScene.getCongratsLabel().setText("     "+UtilStringStorage.congratsLabel +" "+ playerHandler.getPlayer().getPlayerName()+"\n"+UtilStringStorage.answerAllQuestions);
+            resultScene.getCongratsLabel().setText("       "+UtilStringStorage.congratsLabel +" "+ playerHandler.getPlayer().getPlayerName()+"\n"+UtilStringStorage.answerAllQuestions);
             resultScene.getPlayerResult().setText(UtilStringStorage.playerResult + "  "+ playerHandler.getPlayer().getPlayerScore() + "  " + UtilStringStorage.scoreOn + "  " + gameHandler.getQuestionCount());
         }
         else if(GameHandler.gameMode.equals(SURVIVAL_MODE))
         {
-            resultScene.getCongratsLabel().setText("       "+UtilStringStorage.congratsLabel +" "+ playerHandler.getPlayer().getPlayerName()+"\n"+UtilStringStorage.survivalGameOver);
+            resultScene.getCongratsLabel().setText("        "+UtilStringStorage.congratsLabel +" "+ playerHandler.getPlayer().getPlayerName()+"\n"+UtilStringStorage.survivalGameOver);
             resultScene.getPlayerResult().setText(UtilStringStorage.survivalLabel +"  "+gameHandler.getQuestionCount() + " questions");
         }
     }

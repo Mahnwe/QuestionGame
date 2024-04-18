@@ -73,6 +73,7 @@ public class PlayerInfoScene extends Scene
         if(!FileUtil.getGeneralSavesFile().getProperty("lastNameEntered").equals("0"))
         {
             userInputArea.setText(FileUtil.getGeneralSavesFile().getProperty("lastNameEntered"));
+            sendNameButton.setDisable(false);
         }
         userInputArea.setMaxHeight(50);
         userInputArea.setMaxWidth(250);

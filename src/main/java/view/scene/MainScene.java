@@ -64,7 +64,7 @@ public class MainScene extends Scene
     public void createPopup()
     {
         playerInfoScene = new PlayerInfoScene(new BorderPane(), playerHandler);
-        playerInfoScene = PopUp.createPopup(playerHandler, menuPane, questionInterface);
+        playerInfoScene = PopUp.createPopup(playerHandler, menuPane, questionInterface, stage, achievementManager);
     }
 
     private void setAnswersButtonListeners()

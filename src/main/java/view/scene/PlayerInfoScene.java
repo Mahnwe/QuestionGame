@@ -12,11 +12,12 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import model.*;
+import model.GameTimer;
 import model.handlers.GameHandler;
 import model.handlers.PlayerHandler;
 import model.handlers.SoundManager;
-import util.*;
+import util.FileUtil;
+import util.PathUtil;
 import util.creators.BackgroundCreator;
 import util.stringutiltranslate.UtilStringStorage;
 import view.customobject.CustomOption;
@@ -99,7 +100,7 @@ public class PlayerInfoScene extends Scene
 
     public void setOnClickSendButton(BorderPane pane, QuestionInterface questionInterface, Stage popUpStage)
     {
-            if(!userInputArea.getText().isEmpty())
+            if(!userInputArea.getText().isEmpty() && !userInputArea.getText().isBlank())
             {
                 FileUtil.getGeneralSavesFile().setProperty("lastNameEntered", userInputArea.getText());
                 FileUtil.storeGeneralSavesFile();

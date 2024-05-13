@@ -1,3 +1,5 @@
+First "big" project in Java, a general knowledge game, with achievements, trophy cupboard and possibility to create your own questions, and send them in a questionFile to your friends
+
 Download game here --> ["put weTransfer link here"](https://we.tl/t-qOpv29mVfx)
 
 After downloading, extract directory and click on the "Launcher" .bat file that you can see on the image and the game should run !

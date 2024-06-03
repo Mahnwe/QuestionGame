@@ -6,4 +6,4 @@ After downloading, extract directory and click on the "Launcher" .bat file that 
 ![image](https://github.com/Mahnwe/QuestionGame/assets/120069846/c8cbbff9-cf50-4a73-9d0b-ae8a70a5e5d2)
 
 Main menu look like this after selecting your language
-![image](https://github.com/Mahnwe/QuestionGame/assets/120069846/55ff3fb3-ca0c-47d4-a624-d707ee395089)
+![Desktop Screenshot 2024 06 03 - 16 30 34 95](https://github.com/Mahnwe/QuestionGame/assets/120069846/65b63eb4-053c-4b2b-8cd5-508a861101f7)

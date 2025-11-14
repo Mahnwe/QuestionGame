@@ -58,9 +58,11 @@ public class SoundManager {
                 handleMenuSceneVolume(App.menuMusicToStop, 0.0);
                 isMute = true;
                 volumeSlider.setDisable(true);
+                button.setOpacity(0.5);
             }
             else {
                 volumeSlider.setDisable(false);
+                button.setOpacity(1.0);
                 setVolumeFromSlider(volumeSlider.getValue());
                 isMute = false;
             }
@@ -81,9 +83,11 @@ public class SoundManager {
                 handleMenuSceneVolume(MainScene.inGameMusicToStop, 0.0);
                 isMute = true;
                 volumeSlider.setDisable(true);
+                button.setOpacity(0.5);
             }
             else {
                 volumeSlider.setDisable(false);
+                button.setOpacity(1.0);
                 setVolumeFromSliderInGame(volumeSlider.getValue());
                 isMute = false;
             }

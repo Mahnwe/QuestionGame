@@ -1,568 +1,169 @@
 package util.stringutiltranslate;
 
-public class QuestionStringStorage {
+public class QuestionStringStorage
+{
 
     // QUESTIONS LABELS
-    public static String question1 = "";
-    public static String answerA1 = "";
-    public static String answerB1 = "";
-    public static String answerC1 = "";
-    public static String answerD1 = "";
-    public static String goodAnswer1 = "";
-    public static String explanation1 = "";
-    public static String question2 = "";
-    public static String answerA2 = "";
-    public static String answerB2 = "";
-    public static String answerC2 = "";
-    public static String answerD2 = "";
-    public static String goodAnswer2 = "";
-    public static String explanation2 = "";
-    public static String question3 = "";
-    public static String answerA3 = "";
-    public static String answerB3 = "";
-    public static String answerC3 = "";
-    public static String answerD3 = "";
-    public static String goodAnswer3 = "";
-    public static String explanation3 = "";
-    public static String question4 = "";
-    public static String answerA4 = "";
-    public static String answerB4 = "";
-    public static String answerC4 = "";
-    public static String answerD4 = "";
-    public static String goodAnswer4 = "";
-    public static String explanation4 = "";
-    public static String question5 = "";
-    public static String answerA5 = "";
-    public static String answerB5 = "";
-    public static String answerC5 = "";
-    public static String answerD5 = "";
-    public static String goodAnswer5 = "";
-    public static String explanation5 = "";
-    public static String question6 = "";
-    public static String answerA6 = "";
-    public static String answerB6 = "";
-    public static String answerC6 = "";
-    public static String answerD6 = "";
-    public static String goodAnswer6 = "";
-    public static String explanation6 = "";
-    public static String question7 = "";
-    public static String answerA7 = "";
-    public static String answerB7 = "";
-    public static String answerC7 = "";
-    public static String answerD7 = "";
-    public static String goodAnswer7 = "";
-    public static String explanation7 = "";
-    public static String question8 = "";
-    public static String answerA8 = "";
-    public static String answerB8 = "";
-    public static String answerC8 = "";
-    public static String answerD8 = "";
-    public static String goodAnswer8 = "";
-    public static String explanation8 = "";
-    public static String question9 = "";
-    public static String answerA9 = "";
-    public static String answerB9 = "";
-    public static String answerC9 = "";
-    public static String answerD9 = "";
-    public static String goodAnswer9 = "";
-    public static String explanation9 = "";
-    public static String question10 = "";
-    public static String answerA10 = "";
-    public static String answerB10 = "";
-    public static String answerC10 = "";
-    public static String answerD10 = "";
-    public static String goodAnswer10 = "";
-    public static String explanation10 = "";
-    public static String question11 = "";
-    public static String answerA11 = "";
-    public static String answerB11 = "";
-    public static String answerC11 = "";
-    public static String answerD11 = "";
-    public static String goodAnswer11 = "";
-    public static String explanation11 = "";
-    public static String question12 = "";
-    public static String answerA12 = "";
-    public static String answerB12 = "";
-    public static String answerC12 = "";
-    public static String answerD12 = "";
-    public static String goodAnswer12 = "";
-    public static String explanation12 = "";
-    public static String question13 = "";
-    public static String answerA13 = "";
-    public static String answerB13 = "";
-    public static String answerC13 = "";
-    public static String answerD13 = "";
-    public static String goodAnswer13 = "";
-    public static String explanation13 = "";
-    public static String question14 = "";
-    public static String answerA14 = "";
-    public static String answerB14 = "";
-    public static String answerC14 = "";
-    public static String answerD14 = "";
-    public static String goodAnswer14 = "";
-    public static String explanation14 = "";
-    public static String question15 = "";
-    public static String answerA15 = "";
-    public static String answerB15 = "";
-    public static String answerC15 = "";
-    public static String answerD15 = "";
-    public static String goodAnswer15 = "";
-    public static String explanation15 = "";
-    public static String question16 = "";
-    public static String answerA16 = "";
-    public static String answerB16 = "";
-    public static String answerC16 = "";
-    public static String answerD16 = "";
-    public static String goodAnswer16 = "";
-    public static String explanation16 = "";
-    public static String question17 = "";
-    public static String answerA17 = "";
-    public static String answerB17 = "";
-    public static String answerC17 = "";
-    public static String answerD17 = "";
-    public static String goodAnswer17 = "";
-    public static String explanation17 = "";
-    public static String question18 = "";
-    public static String answerA18 = "";
-    public static String answerB18 = "";
-    public static String answerC18 = "";
-    public static String answerD18 = "";
-    public static String goodAnswer18 = "";
-    public static String explanation18 = "";
-    public static String question19 = "";
-    public static String answerA19 = "";
-    public static String answerB19 = "";
-    public static String answerC19 = "";
-    public static String answerD19 = "";
-    public static String goodAnswer19 = "";
-    public static String explanation19 = "";
-    public static String question20 = "";
-    public static String answerA20 = "";
-    public static String answerB20 = "";
-    public static String answerC20 = "";
-    public static String answerD20 = "";
-    public static String goodAnswer20 = "";
-    public static String explanation20 = "";
-    public static String question21 = "";
-    public static String answerA21 = "";
-    public static String answerB21 = "";
-    public static String answerC21 = "";
-    public static String answerD21 = "";
-    public static String goodAnswer21 = "";
-    public static String explanation21 = "";
-    public static String question22 = "";
-    public static String answerA22 = "";
-    public static String answerB22 = "";
-    public static String answerC22 = "";
-    public static String answerD22 = "";
-    public static String goodAnswer22 = "";
-    public static String explanation22 = "";
-    public static String question23 = "";
-    public static String answerA23 = "";
-    public static String answerB23 = "";
-    public static String answerC23 = "";
-    public static String answerD23 = "";
-    public static String goodAnswer23 = "";
-    public static String explanation23 = "";
-    public static String question24 = "";
-    public static String answerA24 = "";
-    public static String answerB24 = "";
-    public static String answerC24 = "";
-    public static String answerD24 = "";
-    public static String goodAnswer24 = "";
-    public static String explanation24 = "";
-    public static String question25 = "";
-    public static String answerA25 = "";
-    public static String answerB25 = "";
-    public static String answerC25 = "";
-    public static String answerD25 = "";
-    public static String goodAnswer25 = "";
-    public static String explanation25 = "";
-    public static String question26 = "";
-    public static String answerA26 = "";
-    public static String answerB26 = "";
-    public static String answerC26 = "";
-    public static String answerD26 = "";
-    public static String goodAnswer26 = "";
-    public static String explanation26 = "";
-    public static String question27 = "";
-    public static String answerA27 = "";
-    public static String answerB27 = "";
-    public static String answerC27 = "";
-    public static String answerD27 = "";
-    public static String goodAnswer27 = "";
-    public static String explanation27 = "";
-    public static String question28 = "";
-    public static String answerA28 = "";
-    public static String answerB28 = "";
-    public static String answerC28 = "";
-    public static String answerD28 = "";
-    public static String goodAnswer28 = "";
-    public static String explanation28 = "";
-    public static String question29 = "";
-    public static String answerA29 = "";
-    public static String answerB29 = "";
-    public static String answerC29 = "";
-    public static String answerD29 = "";
-    public static String goodAnswer29 = "";
-    public static String explanation29 = "";
-    public static String question30 = "";
-    public static String answerA30 = "";
-    public static String answerB30 = "";
-    public static String answerC30 = "";
-    public static String answerD30 = "";
-    public static String goodAnswer30 = "";
-    public static String explanation30 = "";
-    public static String question31 = "";
-    public static String answerA31 = "";
-    public static String answerB31 = "";
-    public static String answerC31 = "";
-    public static String answerD31 = "";
-    public static String goodAnswer31 = "";
-    public static String explanation31 = "";
-    public static String question32 = "";
-    public static String answerA32 = "";
-    public static String answerB32 = "";
-    public static String answerC32 = "";
-    public static String answerD32 = "";
-    public static String goodAnswer32 = "";
-    public static String explanation32 = "";
-    public static String question33 = "";
-    public static String answerA33 = "";
-    public static String answerB33 = "";
-    public static String answerC33 = "";
-    public static String answerD33 = "";
-    public static String goodAnswer33 = "";
-    public static String explanation33 = "";
-    public static String question34 = "";
-    public static String answerA34 = "";
-    public static String answerB34 = "";
-    public static String answerC34 = "";
-    public static String answerD34 = "";
-    public static String goodAnswer34 = "";
-    public static String explanation34 = "";
-    public static String question35 = "";
-    public static String answerA35 = "";
-    public static String answerB35 = "";
-    public static String answerC35 = "";
-    public static String answerD35 = "";
-    public static String goodAnswer35 = "";
-    public static String explanation35 = "";
-    public static String question36 = "";
-    public static String answerA36 = "";
-    public static String answerB36 = "";
-    public static String answerC36 = "";
-    public static String answerD36 = "";
-    public static String goodAnswer36 = "";
-    public static String explanation36 = "";
-    public static String question37 = "";
-    public static String answerA37 = "";
-    public static String answerB37 = "";
-    public static String answerC37 = "";
-    public static String answerD37 = "";
-    public static String goodAnswer37 = "";
-    public static String explanation37 = "";
-    public static String question38 = "";
-    public static String answerA38 = "";
-    public static String answerB38 = "";
-    public static String answerC38 = "";
-    public static String answerD38 = "";
-    public static String goodAnswer38 = "";
-    public static String explanation38 = "";
-    public static String question39 = "";
-    public static String answerA39 = "";
-    public static String answerB39 = "";
-    public static String answerC39 = "";
-    public static String answerD39 = "";
-    public static String goodAnswer39 = "";
-    public static String explanation39 = "";
-    public static String question40 = "";
-    public static String answerA40 = "";
-    public static String answerB40 = "";
-    public static String answerC40 = "";
-    public static String answerD40 = "";
-    public static String goodAnswer40 = "";
-    public static String explanation40 = "";
-    public static String question41 = "";
-    public static String answerA41 = "";
-    public static String answerB41 = "";
-    public static String answerC41 = "";
-    public static String answerD41 = "";
-    public static String goodAnswer41 = "";
-    public static String explanation41 = "";
-    public static String question42 = "";
-    public static String answerA42 = "";
-    public static String answerB42 = "";
-    public static String answerC42 = "";
-    public static String answerD42 = "";
-    public static String goodAnswer42 = "";
-    public static String explanation42 = "";
-    public static String question43 = "";
-    public static String answerA43 = "";
-    public static String answerB43 = "";
-    public static String answerC43 = "";
-    public static String answerD43 = "";
-    public static String goodAnswer43 = "";
-    public static String explanation43 = "";
-    public static String question44 = "";
-    public static String answerA44 = "";
-    public static String answerB44 = "";
-    public static String answerC44 = "";
-    public static String answerD44 = "";
-    public static String goodAnswer44 = "";
-    public static String explanation44 = "";
-    public static String question45 = "";
-    public static String answerA45 = "";
-    public static String answerB45 = "";
-    public static String answerC45 = "";
-    public static String answerD45 = "";
-    public static String goodAnswer45 = "";
-    public static String explanation45 = "";
-    public static String question46 = "";
-    public static String answerA46 = "";
-    public static String answerB46 = "";
-    public static String answerC46 = "";
-    public static String answerD46 = "";
-    public static String goodAnswer46 = "";
-    public static String explanation46 = "";
-    public static String question47 = "";
-    public static String answerA47 = "";
-    public static String answerB47 = "";
-    public static String answerC47 = "";
-    public static String answerD47 = "";
-    public static String goodAnswer47 = "";
-    public static String explanation47 = "";
-    public static String question48 = "";
-    public static String answerA48 = "";
-    public static String answerB48 = "";
-    public static String answerC48 = "";
-    public static String answerD48 = "";
-    public static String goodAnswer48 = "";
-    public static String explanation48 = "";
-    public static String question49 = "";
-    public static String answerA49 = "";
-    public static String answerB49 = "";
-    public static String answerC49 = "";
-    public static String answerD49 = "";
-    public static String goodAnswer49 = "";
-    public static String explanation49 = "";
-    public static String question50 = "";
-    public static String answerA50 = "";
-    public static String answerB50 = "";
-    public static String answerC50 = "";
-    public static String answerD50 = "";
-    public static String goodAnswer50 = "";
-    public static String explanation50 = "";
-    public static String question51 = "";
-    public static String answerA51 = "";
-    public static String answerB51 = "";
-    public static String answerC51 = "";
-    public static String answerD51 = "";
-    public static String goodAnswer51 = "";
-    public static String explanation51 = "";
-    public static String question52 = "";
-    public static String answerA52 = "";
-    public static String answerB52 = "";
-    public static String answerC52 = "";
-    public static String answerD52 = "";
-    public static String goodAnswer52 = "";
-    public static String explanation52 = "";
-    public static String question53 = "";
-    public static String answerA53 = "";
-    public static String answerB53 = "";
-    public static String answerC53 = "";
-    public static String answerD53 = "";
-    public static String goodAnswer53 = "";
-    public static String explanation53 = "";
-    public static String question54 = "";
-    public static String answerA54 = "";
-    public static String answerB54 = "";
-    public static String answerC54 = "";
-    public static String answerD54 = "";
-    public static String goodAnswer54 = "";
-    public static String explanation54 = "";
-    public static String question55 = "";
-    public static String answerA55 = "";
-    public static String answerB55 = "";
-    public static String answerC55 = "";
-    public static String answerD55 = "";
-    public static String goodAnswer55 = "";
-    public static String explanation55 = "";
-    public static String question56 = "";
-    public static String answerA56 = "";
-    public static String answerB56 = "";
-    public static String answerC56 = "";
-    public static String answerD56 = "";
-    public static String goodAnswer56 = "";
-    public static String explanation56 = "";
-    public static String question57 = "";
-    public static String answerA57 = "";
-    public static String answerB57 = "";
-    public static String answerC57 = "";
-    public static String answerD57 = "";
-    public static String goodAnswer57 = "";
-    public static String explanation57 = "";
-    public static String question58 = "";
-    public static String answerA58 = "";
-    public static String answerB58 = "";
-    public static String answerC58 = "";
-    public static String answerD58 = "";
-    public static String goodAnswer58 = "";
-    public static String explanation58 = "";
-    public static String question59 = "";
-    public static String answerA59 = "";
-    public static String answerB59 = "";
-    public static String answerC59 = "";
-    public static String answerD59 = "";
-    public static String goodAnswer59 = "";
-    public static String explanation59 = "";
-    public static String question60 = "";
-    public static String answerA60 = "";
-    public static String answerB60 = "";
-    public static String answerC60 = "";
-    public static String answerD60 = "";
-    public static String goodAnswer60 = "";
-    public static String explanation60 = "";
-    public static String question61 = "";
-    public static String answerA61 = "";
-    public static String answerB61 = "";
-    public static String answerC61 = "";
-    public static String answerD61 = "";
-    public static String goodAnswer61 = "";
-    public static String explanation61 = "";
-    public static String question62 = "";
-    public static String answerA62 = "";
-    public static String answerB62 = "";
-    public static String answerC62 = "";
-    public static String answerD62 = "";
-    public static String goodAnswer62 = "";
-    public static String explanation62 = "";
-    public static String question63 = "";
-    public static String answerA63 = "";
-    public static String answerB63 = "";
-    public static String answerC63 = "";
-    public static String answerD63 = "";
-    public static String goodAnswer63 = "";
-    public static String explanation63 = "";
-    public static String question64 = "";
-    public static String answerA64 = "";
-    public static String answerB64 = "";
-    public static String answerC64 = "";
-    public static String answerD64 = "";
-    public static String goodAnswer64 = "";
-    public static String explanation64 = "";
-    public static String question65 = "";
-    public static String answerA65 = "";
-    public static String answerB65 = "";
-    public static String answerC65 = "";
-    public static String answerD65 = "";
-    public static String goodAnswer65 = "";
-    public static String explanation65 = "";
-    public static String question66 = "";
-    public static String answerA66 = "";
-    public static String answerB66 = "";
-    public static String answerC66 = "";
-    public static String answerD66 = "";
-    public static String goodAnswer66 = "";
-    public static String explanation66 = "";
-    public static String question67 = "";
-    public static String answerA67 = "";
-    public static String answerB67 = "";
-    public static String answerC67 = "";
-    public static String answerD67 = "";
-    public static String goodAnswer67 = "";
-    public static String explanation67 = "";
-    public static String question68 = "";
-    public static String answerA68 = "";
-    public static String answerB68 = "";
-    public static String answerC68 = "";
-    public static String answerD68 = "";
-    public static String goodAnswer68 = "";
-    public static String explanation68 = "";
-    public static String question69 = "";
-    public static String answerA69 = "";
-    public static String answerB69 = "";
-    public static String answerC69 = "";
-    public static String answerD69 = "";
-    public static String goodAnswer69 = "";
-    public static String explanation69 = "";
-    public static String question70 = "";
-    public static String answerA70 = "";
-    public static String answerB70 = "";
-    public static String answerC70 = "";
-    public static String answerD70 = "";
-    public static String goodAnswer70 = "";
-    public static String explanation70 = "";
-    public static String question71 = "";
-    public static String answerA71 = "";
-    public static String answerB71 = "";
-    public static String answerC71 = "";
-    public static String answerD71 = "";
-    public static String goodAnswer71 = "";
-    public static String explanation71 = "";
-    public static String question72 = "";
-    public static String answerA72 = "";
-    public static String answerB72 = "";
-    public static String answerC72 = "";
-    public static String answerD72 = "";
-    public static String goodAnswer72 = "";
-    public static String explanation72 = "";
-    public static String question73 = "";
-    public static String answerA73 = "";
-    public static String answerB73 = "";
-    public static String answerC73 = "";
-    public static String answerD73 = "";
-    public static String goodAnswer73 = "";
-    public static String explanation73 = "";
-    public static String question74 = "";
-    public static String answerA74 = "";
-    public static String answerB74 = "";
-    public static String answerC74 = "";
-    public static String answerD74 = "";
-    public static String goodAnswer74 = "";
-    public static String explanation74 = "";
-    public static String question75 = "";
-    public static String answerA75 = "";
-    public static String answerB75 = "";
-    public static String answerC75 = "";
-    public static String answerD75 = "";
-    public static String goodAnswer75 = "";
-    public static String explanation75 = "";
-    public static String question76 = "";
-    public static String answerA76 = "";
-    public static String answerB76 = "";
-    public static String answerC76 = "";
-    public static String answerD76 = "";
-    public static String goodAnswer76 = "";
-    public static String explanation76 = "";
-    public static String question77 = "";
-    public static String answerA77 = "";
-    public static String answerB77 = "";
-    public static String answerC77 = "";
-    public static String answerD77 = "";
-    public static String goodAnswer77 = "";
-    public static String explanation77 = "";
-    public static String question78 = "";
-    public static String answerA78 = "";
-    public static String answerB78 = "";
-    public static String answerC78 = "";
-    public static String answerD78 = "";
-    public static String goodAnswer78 = "";
-    public static String explanation78 = "";
-    public static String question79 = "";
-    public static String answerA79 = "";
-    public static String answerB79 = "";
-    public static String answerC79 = "";
-    public static String answerD79 = "";
-    public static String goodAnswer79 = "";
-    public static String explanation79 = "";
-    public static String question80 = "";
-    public static String answerA80 = "";
-    public static String answerB80 = "";
-    public static String answerC80 = "";
-    public static String answerD80 = "";
-    public static String goodAnswer80 = "";
-    public static String explanation80 = "";
+    public static QuestionObject questionObject1 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject2 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject3 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject4 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject5 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject6 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject7 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject8 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject9 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject10 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject11 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject12 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject13 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject14 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject15 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject16 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject17 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject18 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject19 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject20 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject21 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject22 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject23 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject24 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject25 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject26 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject27 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject28 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject29 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject30 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject31 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject32 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject33 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject34 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject35 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject36 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject37 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject38 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject39 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject40 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject41 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject42 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject43 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject44 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject45 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject46 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject47 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject48 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject49 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject50 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject51 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject52 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject53 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject54 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject55 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject56 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject57 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject58 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject59 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject60 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject61 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject62 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject63 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject64 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject65 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject66 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject67 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject68 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject69 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject70 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject71 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject72 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject73 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject74 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject75 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject76 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject77 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject78 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject79 = new QuestionObject("","","","","","","");
+
+    public static QuestionObject questionObject80 = new QuestionObject("","","","","","","");
+
     public static String question81 = "";
     public static String answerA81 = "";
     public static String answerB81 = "";
@@ -1088,4 +689,40 @@ public class QuestionStringStorage {
     public static String answerD155 = "";
     public static String goodAnswer155 = "";
     public static String explanation155 = "";
+    public static String question156 = "";
+    public static String answerA156 = "";
+    public static String answerB156 = "";
+    public static String answerC156 = "";
+    public static String answerD156 = "";
+    public static String goodAnswer156 = "";
+    public static String explanation156 = "";
+    public static String question157 = "";
+    public static String answerA157 = "";
+    public static String answerB157 = "";
+    public static String answerC157 = "";
+    public static String answerD157 = "";
+    public static String goodAnswer157 = "";
+    public static String explanation157 = "";
+    public static String question158 = "";
+    public static String answerA158 = "";
+    public static String answerB158 = "";
+    public static String answerC158 = "";
+    public static String answerD158 = "";
+    public static String goodAnswer158 = "";
+    public static String explanation158 = "";
+    public static String question159 = "";
+    public static String answerA159 = "";
+    public static String answerB159 = "";
+    public static String answerC159 = "";
+    public static String answerD159 = "";
+    public static String goodAnswer159 = "";
+    public static String explanation159 = "";
+    public static String question160 = "";
+    public static String answerA160 = "";
+    public static String answerB160 = "";
+    public static String answerC160 = "";
+    public static String answerD160 = "";
+    public static String goodAnswer160 = "";
+    public static String explanation160 = "";
+
 }

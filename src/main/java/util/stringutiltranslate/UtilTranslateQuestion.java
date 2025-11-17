@@ -6,645 +6,163 @@ public class UtilTranslateQuestion
     {
         // QUESTIONS
 
-        QuestionStringStorage.question1 = UtilTranslateString.getFrTradFile().getProperty("question1");
-        QuestionStringStorage.answerA1 = UtilTranslateString.getFrTradFile().getProperty("answerA1");
-        QuestionStringStorage.answerB1 = UtilTranslateString.getFrTradFile().getProperty("answerB1");
-        QuestionStringStorage.answerC1 = UtilTranslateString.getFrTradFile().getProperty("answerC1");
-        QuestionStringStorage.answerD1 = UtilTranslateString.getFrTradFile().getProperty("answerD1");
-        QuestionStringStorage.goodAnswer1 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer1");
-        QuestionStringStorage.explanation1 = UtilTranslateString.getFrTradFile().getProperty("explanation1");
-
-        QuestionStringStorage.question2 = UtilTranslateString.getFrTradFile().getProperty("question2");
-        QuestionStringStorage.answerA2 = UtilTranslateString.getFrTradFile().getProperty("answerA2");
-        QuestionStringStorage.answerB2 = UtilTranslateString.getFrTradFile().getProperty("answerB2");
-        QuestionStringStorage.answerC2 = UtilTranslateString.getFrTradFile().getProperty("answerC2");
-        QuestionStringStorage.answerD2 = UtilTranslateString.getFrTradFile().getProperty("answerD2");
-        QuestionStringStorage.goodAnswer2 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer2");
-        QuestionStringStorage.explanation2 = UtilTranslateString.getFrTradFile().getProperty("explanation2");
-
-        QuestionStringStorage.question3 = UtilTranslateString.getFrTradFile().getProperty("question3");
-        QuestionStringStorage.answerA3 = UtilTranslateString.getFrTradFile().getProperty("answerA3");
-        QuestionStringStorage.answerB3 = UtilTranslateString.getFrTradFile().getProperty("answerB3");
-        QuestionStringStorage.answerC3 = UtilTranslateString.getFrTradFile().getProperty("answerC3");
-        QuestionStringStorage.answerD3 = UtilTranslateString.getFrTradFile().getProperty("answerD3");
-        QuestionStringStorage.goodAnswer3 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer3");
-        QuestionStringStorage.explanation3 = UtilTranslateString.getFrTradFile().getProperty("explanation3");
-
-        QuestionStringStorage.question4 = UtilTranslateString.getFrTradFile().getProperty("question4");
-        QuestionStringStorage.answerA4 = UtilTranslateString.getFrTradFile().getProperty("answerA4");
-        QuestionStringStorage.answerB4 = UtilTranslateString.getFrTradFile().getProperty("answerB4");
-        QuestionStringStorage.answerC4 = UtilTranslateString.getFrTradFile().getProperty("answerC4");
-        QuestionStringStorage.answerD4 = UtilTranslateString.getFrTradFile().getProperty("answerD4");
-        QuestionStringStorage.goodAnswer4 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer4");
-        QuestionStringStorage.explanation4 = UtilTranslateString.getFrTradFile().getProperty("explanation4");
-
-        QuestionStringStorage.question5 = UtilTranslateString.getFrTradFile().getProperty("question5");
-        QuestionStringStorage.answerA5 = UtilTranslateString.getFrTradFile().getProperty("answerA5");
-        QuestionStringStorage.answerB5 = UtilTranslateString.getFrTradFile().getProperty("answerB5");
-        QuestionStringStorage.answerC5 = UtilTranslateString.getFrTradFile().getProperty("answerC5");
-        QuestionStringStorage.answerD5 = UtilTranslateString.getFrTradFile().getProperty("answerD5");
-        QuestionStringStorage.goodAnswer5 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer5");
-        QuestionStringStorage.explanation5 = UtilTranslateString.getFrTradFile().getProperty("explanation5");
-
-        QuestionStringStorage.question6 = UtilTranslateString.getFrTradFile().getProperty("question6");
-        QuestionStringStorage.answerA6 = UtilTranslateString.getFrTradFile().getProperty("answerA6");
-        QuestionStringStorage.answerB6 = UtilTranslateString.getFrTradFile().getProperty("answerB6");
-        QuestionStringStorage.answerC6 = UtilTranslateString.getFrTradFile().getProperty("answerC6");
-        QuestionStringStorage.answerD6 = UtilTranslateString.getFrTradFile().getProperty("answerD6");
-        QuestionStringStorage.goodAnswer6 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer6");
-        QuestionStringStorage.explanation6 = UtilTranslateString.getFrTradFile().getProperty("explanation6");
-
-        QuestionStringStorage.question7 = UtilTranslateString.getFrTradFile().getProperty("question7");
-        QuestionStringStorage.answerA7 = UtilTranslateString.getFrTradFile().getProperty("answerA7");
-        QuestionStringStorage.answerB7 = UtilTranslateString.getFrTradFile().getProperty("answerB7");
-        QuestionStringStorage.answerC7 = UtilTranslateString.getFrTradFile().getProperty("answerC7");
-        QuestionStringStorage.answerD7 = UtilTranslateString.getFrTradFile().getProperty("answerD7");
-        QuestionStringStorage.goodAnswer7 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer7");
-        QuestionStringStorage.explanation7 = UtilTranslateString.getFrTradFile().getProperty("explanation7");
-
-        QuestionStringStorage.question8 = UtilTranslateString.getFrTradFile().getProperty("question8");
-        QuestionStringStorage.answerA8 = UtilTranslateString.getFrTradFile().getProperty("answerA8");
-        QuestionStringStorage.answerB8 = UtilTranslateString.getFrTradFile().getProperty("answerB8");
-        QuestionStringStorage.answerC8 = UtilTranslateString.getFrTradFile().getProperty("answerC8");
-        QuestionStringStorage.answerD8 = UtilTranslateString.getFrTradFile().getProperty("answerD8");
-        QuestionStringStorage.goodAnswer8 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer8");
-        QuestionStringStorage.explanation8 = UtilTranslateString.getFrTradFile().getProperty("explanation8");
-
-        QuestionStringStorage.question9 = UtilTranslateString.getFrTradFile().getProperty("question9");
-        QuestionStringStorage.answerA9 = UtilTranslateString.getFrTradFile().getProperty("answerA9");
-        QuestionStringStorage.answerB9 = UtilTranslateString.getFrTradFile().getProperty("answerB9");
-        QuestionStringStorage.answerC9 = UtilTranslateString.getFrTradFile().getProperty("answerC9");
-        QuestionStringStorage.answerD9 = UtilTranslateString.getFrTradFile().getProperty("answerD9");
-        QuestionStringStorage.goodAnswer9 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer9");
-        QuestionStringStorage.explanation9 = UtilTranslateString.getFrTradFile().getProperty("explanation9");
-
-        QuestionStringStorage.question10 = UtilTranslateString.getFrTradFile().getProperty("question10");
-        QuestionStringStorage.answerA10 = UtilTranslateString.getFrTradFile().getProperty("answerA10");
-        QuestionStringStorage.answerB10 = UtilTranslateString.getFrTradFile().getProperty("answerB10");
-        QuestionStringStorage.answerC10 = UtilTranslateString.getFrTradFile().getProperty("answerC10");
-        QuestionStringStorage.answerD10 = UtilTranslateString.getFrTradFile().getProperty("answerD10");
-        QuestionStringStorage.goodAnswer10 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer10");
-        QuestionStringStorage.explanation10 = UtilTranslateString.getFrTradFile().getProperty("explanation10");
-
-        QuestionStringStorage.question11 = UtilTranslateString.getFrTradFile().getProperty("question11");
-        QuestionStringStorage.answerA11 = UtilTranslateString.getFrTradFile().getProperty("answerA11");
-        QuestionStringStorage.answerB11 = UtilTranslateString.getFrTradFile().getProperty("answerB11");
-        QuestionStringStorage.answerC11 = UtilTranslateString.getFrTradFile().getProperty("answerC11");
-        QuestionStringStorage.answerD11 = UtilTranslateString.getFrTradFile().getProperty("answerD11");
-        QuestionStringStorage.goodAnswer11 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer11");
-        QuestionStringStorage.explanation11 = UtilTranslateString.getFrTradFile().getProperty("explanation11");
-
-        QuestionStringStorage.question12 = UtilTranslateString.getFrTradFile().getProperty("question12");
-        QuestionStringStorage.answerA12 = UtilTranslateString.getFrTradFile().getProperty("answerA12");
-        QuestionStringStorage.answerB12 = UtilTranslateString.getFrTradFile().getProperty("answerB12");
-        QuestionStringStorage.answerC12 = UtilTranslateString.getFrTradFile().getProperty("answerC12");
-        QuestionStringStorage.answerD12 = UtilTranslateString.getFrTradFile().getProperty("answerD12");
-        QuestionStringStorage.goodAnswer12 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer12");
-        QuestionStringStorage.explanation12 = UtilTranslateString.getFrTradFile().getProperty("explanation12");
-
-        QuestionStringStorage.question13 = UtilTranslateString.getFrTradFile().getProperty("question13");
-        QuestionStringStorage.answerA13 = UtilTranslateString.getFrTradFile().getProperty("answerA13");
-        QuestionStringStorage.answerB13 = UtilTranslateString.getFrTradFile().getProperty("answerB13");
-        QuestionStringStorage.answerC13 = UtilTranslateString.getFrTradFile().getProperty("answerC13");
-        QuestionStringStorage.answerD13 = UtilTranslateString.getFrTradFile().getProperty("answerD13");
-        QuestionStringStorage.goodAnswer13 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer13");
-        QuestionStringStorage.explanation13 = UtilTranslateString.getFrTradFile().getProperty("explanation13");
-
-        QuestionStringStorage.question14 = UtilTranslateString.getFrTradFile().getProperty("question14");
-        QuestionStringStorage.answerA14 = UtilTranslateString.getFrTradFile().getProperty("answerA14");
-        QuestionStringStorage.answerB14 = UtilTranslateString.getFrTradFile().getProperty("answerB14");
-        QuestionStringStorage.answerC14 = UtilTranslateString.getFrTradFile().getProperty("answerC14");
-        QuestionStringStorage.answerD14 = UtilTranslateString.getFrTradFile().getProperty("answerD14");
-        QuestionStringStorage.goodAnswer14 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer14");
-        QuestionStringStorage.explanation14 = UtilTranslateString.getFrTradFile().getProperty("explanation14");
-
-        QuestionStringStorage.question15 = UtilTranslateString.getFrTradFile().getProperty("question15");
-        QuestionStringStorage.answerA15 = UtilTranslateString.getFrTradFile().getProperty("answerA15");
-        QuestionStringStorage.answerB15 = UtilTranslateString.getFrTradFile().getProperty("answerB15");
-        QuestionStringStorage.answerC15 = UtilTranslateString.getFrTradFile().getProperty("answerC15");
-        QuestionStringStorage.answerD15 = UtilTranslateString.getFrTradFile().getProperty("answerD15");
-        QuestionStringStorage.goodAnswer15 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer15");
-        QuestionStringStorage.explanation15 = UtilTranslateString.getFrTradFile().getProperty("explanation15");
-
-        QuestionStringStorage.question16 = UtilTranslateString.getFrTradFile().getProperty("question16");
-        QuestionStringStorage.answerA16 = UtilTranslateString.getFrTradFile().getProperty("answerA16");
-        QuestionStringStorage.answerB16 = UtilTranslateString.getFrTradFile().getProperty("answerB16");
-        QuestionStringStorage.answerC16 = UtilTranslateString.getFrTradFile().getProperty("answerC16");
-        QuestionStringStorage.answerD16 = UtilTranslateString.getFrTradFile().getProperty("answerD16");
-        QuestionStringStorage.goodAnswer16 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer16");
-        QuestionStringStorage.explanation16 = UtilTranslateString.getFrTradFile().getProperty("explanation16");
-
-        QuestionStringStorage.question17 = UtilTranslateString.getFrTradFile().getProperty("question17");
-        QuestionStringStorage.answerA17 = UtilTranslateString.getFrTradFile().getProperty("answerA17");
-        QuestionStringStorage.answerB17 = UtilTranslateString.getFrTradFile().getProperty("answerB17");
-        QuestionStringStorage.answerC17 = UtilTranslateString.getFrTradFile().getProperty("answerC17");
-        QuestionStringStorage.answerD17 = UtilTranslateString.getFrTradFile().getProperty("answerD17");
-        QuestionStringStorage.goodAnswer17 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer17");
-        QuestionStringStorage.explanation17 = UtilTranslateString.getFrTradFile().getProperty("explanation17");
-
-        QuestionStringStorage.question18 = UtilTranslateString.getFrTradFile().getProperty("question18");
-        QuestionStringStorage.answerA18 = UtilTranslateString.getFrTradFile().getProperty("answerA18");
-        QuestionStringStorage.answerB18 = UtilTranslateString.getFrTradFile().getProperty("answerB18");
-        QuestionStringStorage.answerC18 = UtilTranslateString.getFrTradFile().getProperty("answerC18");
-        QuestionStringStorage.answerD18 = UtilTranslateString.getFrTradFile().getProperty("answerD18");
-        QuestionStringStorage.goodAnswer18 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer18");
-        QuestionStringStorage.explanation18 = UtilTranslateString.getFrTradFile().getProperty("explanation18");
-
-        QuestionStringStorage.question19 = UtilTranslateString.getFrTradFile().getProperty("question19");
-        QuestionStringStorage.answerA19 = UtilTranslateString.getFrTradFile().getProperty("answerA19");
-        QuestionStringStorage.answerB19 = UtilTranslateString.getFrTradFile().getProperty("answerB19");
-        QuestionStringStorage.answerC19 = UtilTranslateString.getFrTradFile().getProperty("answerC19");
-        QuestionStringStorage.answerD19 = UtilTranslateString.getFrTradFile().getProperty("answerD19");
-        QuestionStringStorage.goodAnswer19 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer19");
-        QuestionStringStorage.explanation19 = UtilTranslateString.getFrTradFile().getProperty("explanation19");
-
-        QuestionStringStorage.question20 = UtilTranslateString.getFrTradFile().getProperty("question20");
-        QuestionStringStorage.answerA20 = UtilTranslateString.getFrTradFile().getProperty("answerA20");
-        QuestionStringStorage.answerB20 = UtilTranslateString.getFrTradFile().getProperty("answerB20");
-        QuestionStringStorage.answerC20 = UtilTranslateString.getFrTradFile().getProperty("answerC20");
-        QuestionStringStorage.answerD20 = UtilTranslateString.getFrTradFile().getProperty("answerD20");
-        QuestionStringStorage.goodAnswer20 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer20");
-        QuestionStringStorage.explanation20 = UtilTranslateString.getFrTradFile().getProperty("explanation20");
-
-        QuestionStringStorage.question21 = UtilTranslateString.getFrTradFile().getProperty("question21");
-        QuestionStringStorage.answerA21 = UtilTranslateString.getFrTradFile().getProperty("answerA21");
-        QuestionStringStorage.answerB21 = UtilTranslateString.getFrTradFile().getProperty("answerB21");
-        QuestionStringStorage.answerC21 = UtilTranslateString.getFrTradFile().getProperty("answerC21");
-        QuestionStringStorage.answerD21 = UtilTranslateString.getFrTradFile().getProperty("answerD21");
-        QuestionStringStorage.goodAnswer21 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer21");
-        QuestionStringStorage.explanation21 = UtilTranslateString.getFrTradFile().getProperty("explanation21");
-
-        QuestionStringStorage.question22 = UtilTranslateString.getFrTradFile().getProperty("question22");
-        QuestionStringStorage.answerA22 = UtilTranslateString.getFrTradFile().getProperty("answerA22");
-        QuestionStringStorage.answerB22 = UtilTranslateString.getFrTradFile().getProperty("answerB22");
-        QuestionStringStorage.answerC22 = UtilTranslateString.getFrTradFile().getProperty("answerC22");
-        QuestionStringStorage.answerD22 = UtilTranslateString.getFrTradFile().getProperty("answerD22");
-        QuestionStringStorage.goodAnswer22 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer22");
-        QuestionStringStorage.explanation22 = UtilTranslateString.getFrTradFile().getProperty("explanation22");
-
-        QuestionStringStorage.question23 = UtilTranslateString.getFrTradFile().getProperty("question23");
-        QuestionStringStorage.answerA23 = UtilTranslateString.getFrTradFile().getProperty("answerA23");
-        QuestionStringStorage.answerB23 = UtilTranslateString.getFrTradFile().getProperty("answerB23");
-        QuestionStringStorage.answerC23 = UtilTranslateString.getFrTradFile().getProperty("answerC23");
-        QuestionStringStorage.answerD23 = UtilTranslateString.getFrTradFile().getProperty("answerD23");
-        QuestionStringStorage.goodAnswer23 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer23");
-        QuestionStringStorage.explanation23 = UtilTranslateString.getFrTradFile().getProperty("explanation23");
-
-        QuestionStringStorage.question24 = UtilTranslateString.getFrTradFile().getProperty("question24");
-        QuestionStringStorage.answerA24 = UtilTranslateString.getFrTradFile().getProperty("answerA24");
-        QuestionStringStorage.answerB24 = UtilTranslateString.getFrTradFile().getProperty("answerB24");
-        QuestionStringStorage.answerC24 = UtilTranslateString.getFrTradFile().getProperty("answerC24");
-        QuestionStringStorage.answerD24 = UtilTranslateString.getFrTradFile().getProperty("answerD24");
-        QuestionStringStorage.goodAnswer24 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer24");
-        QuestionStringStorage.explanation24 = UtilTranslateString.getFrTradFile().getProperty("explanation24");
-
-        QuestionStringStorage.question25 = UtilTranslateString.getFrTradFile().getProperty("question25");
-        QuestionStringStorage.answerA25 = UtilTranslateString.getFrTradFile().getProperty("answerA25");
-        QuestionStringStorage.answerB25 = UtilTranslateString.getFrTradFile().getProperty("answerB25");
-        QuestionStringStorage.answerC25 = UtilTranslateString.getFrTradFile().getProperty("answerC25");
-        QuestionStringStorage.answerD25 = UtilTranslateString.getFrTradFile().getProperty("answerD25");
-        QuestionStringStorage.goodAnswer25 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer25");
-        QuestionStringStorage.explanation25 = UtilTranslateString.getFrTradFile().getProperty("explanation25");
-
-        QuestionStringStorage.question26 = UtilTranslateString.getFrTradFile().getProperty("question26");
-        QuestionStringStorage.answerA26 = UtilTranslateString.getFrTradFile().getProperty("answerA26");
-        QuestionStringStorage.answerB26 = UtilTranslateString.getFrTradFile().getProperty("answerB26");
-        QuestionStringStorage.answerC26 = UtilTranslateString.getFrTradFile().getProperty("answerC26");
-        QuestionStringStorage.answerD26 = UtilTranslateString.getFrTradFile().getProperty("answerD26");
-        QuestionStringStorage.goodAnswer26 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer26");
-        QuestionStringStorage.explanation26 = UtilTranslateString.getFrTradFile().getProperty("explanation26");
-
-        QuestionStringStorage.question27 = UtilTranslateString.getFrTradFile().getProperty("question27");
-        QuestionStringStorage.answerA27 = UtilTranslateString.getFrTradFile().getProperty("answerA27");
-        QuestionStringStorage.answerB27 = UtilTranslateString.getFrTradFile().getProperty("answerB27");
-        QuestionStringStorage.answerC27 = UtilTranslateString.getFrTradFile().getProperty("answerC27");
-        QuestionStringStorage.answerD27 = UtilTranslateString.getFrTradFile().getProperty("answerD27");
-        QuestionStringStorage.goodAnswer27 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer27");
-        QuestionStringStorage.explanation27 = UtilTranslateString.getFrTradFile().getProperty("explanation27");
-
-        QuestionStringStorage.question28 = UtilTranslateString.getFrTradFile().getProperty("question28");
-        QuestionStringStorage.answerA28 = UtilTranslateString.getFrTradFile().getProperty("answerA28");
-        QuestionStringStorage.answerB28 = UtilTranslateString.getFrTradFile().getProperty("answerB28");
-        QuestionStringStorage.answerC28 = UtilTranslateString.getFrTradFile().getProperty("answerC28");
-        QuestionStringStorage.answerD28 = UtilTranslateString.getFrTradFile().getProperty("answerD28");
-        QuestionStringStorage.goodAnswer28 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer28");
-        QuestionStringStorage.explanation28 = UtilTranslateString.getFrTradFile().getProperty("explanation28");
-
-        QuestionStringStorage.question29 = UtilTranslateString.getFrTradFile().getProperty("question29");
-        QuestionStringStorage.answerA29 = UtilTranslateString.getFrTradFile().getProperty("answerA29");
-        QuestionStringStorage.answerB29 = UtilTranslateString.getFrTradFile().getProperty("answerB29");
-        QuestionStringStorage.answerC29 = UtilTranslateString.getFrTradFile().getProperty("answerC29");
-        QuestionStringStorage.answerD29 = UtilTranslateString.getFrTradFile().getProperty("answerD29");
-        QuestionStringStorage.goodAnswer29 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer29");
-        QuestionStringStorage.explanation29 = UtilTranslateString.getFrTradFile().getProperty("explanation29");
-
-        QuestionStringStorage.question30 = UtilTranslateString.getFrTradFile().getProperty("question30");
-        QuestionStringStorage.answerA30 = UtilTranslateString.getFrTradFile().getProperty("answerA30");
-        QuestionStringStorage.answerB30 = UtilTranslateString.getFrTradFile().getProperty("answerB30");
-        QuestionStringStorage.answerC30 = UtilTranslateString.getFrTradFile().getProperty("answerC30");
-        QuestionStringStorage.answerD30 = UtilTranslateString.getFrTradFile().getProperty("answerD30");
-        QuestionStringStorage.goodAnswer30 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer30");
-        QuestionStringStorage.explanation30 = UtilTranslateString.getFrTradFile().getProperty("explanation30");
-
-        QuestionStringStorage.question31 = UtilTranslateString.getFrTradFile().getProperty("question31");
-        QuestionStringStorage.answerA31 = UtilTranslateString.getFrTradFile().getProperty("answerA31");
-        QuestionStringStorage.answerB31 = UtilTranslateString.getFrTradFile().getProperty("answerB31");
-        QuestionStringStorage.answerC31 = UtilTranslateString.getFrTradFile().getProperty("answerC31");
-        QuestionStringStorage.answerD31 = UtilTranslateString.getFrTradFile().getProperty("answerD31");
-        QuestionStringStorage.goodAnswer31 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer31");
-        QuestionStringStorage.explanation31 = UtilTranslateString.getFrTradFile().getProperty("explanation31");
-
-        QuestionStringStorage.question32 = UtilTranslateString.getFrTradFile().getProperty("question32");
-        QuestionStringStorage.answerA32 = UtilTranslateString.getFrTradFile().getProperty("answerA32");
-        QuestionStringStorage.answerB32 = UtilTranslateString.getFrTradFile().getProperty("answerB32");
-        QuestionStringStorage.answerC32 = UtilTranslateString.getFrTradFile().getProperty("answerC32");
-        QuestionStringStorage.answerD32 = UtilTranslateString.getFrTradFile().getProperty("answerD32");
-        QuestionStringStorage.goodAnswer32 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer32");
-        QuestionStringStorage.explanation32 = UtilTranslateString.getFrTradFile().getProperty("explanation32");
-
-        QuestionStringStorage.question33 = UtilTranslateString.getFrTradFile().getProperty("question33");
-        QuestionStringStorage.answerA33 = UtilTranslateString.getFrTradFile().getProperty("answerA33");
-        QuestionStringStorage.answerB33 = UtilTranslateString.getFrTradFile().getProperty("answerB33");
-        QuestionStringStorage.answerC33 = UtilTranslateString.getFrTradFile().getProperty("answerC33");
-        QuestionStringStorage.answerD33 = UtilTranslateString.getFrTradFile().getProperty("answerD33");
-        QuestionStringStorage.goodAnswer33 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer33");
-        QuestionStringStorage.explanation33 = UtilTranslateString.getFrTradFile().getProperty("explanation33");
-
-        QuestionStringStorage.question34 = UtilTranslateString.getFrTradFile().getProperty("question34");
-        QuestionStringStorage.answerA34 = UtilTranslateString.getFrTradFile().getProperty("answerA34");
-        QuestionStringStorage.answerB34 = UtilTranslateString.getFrTradFile().getProperty("answerB34");
-        QuestionStringStorage.answerC34 = UtilTranslateString.getFrTradFile().getProperty("answerC34");
-        QuestionStringStorage.answerD34 = UtilTranslateString.getFrTradFile().getProperty("answerD34");
-        QuestionStringStorage.goodAnswer34 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer34");
-        QuestionStringStorage.explanation34 = UtilTranslateString.getFrTradFile().getProperty("explanation34");
-
-        QuestionStringStorage.question35 = UtilTranslateString.getFrTradFile().getProperty("question35");
-        QuestionStringStorage.answerA35 = UtilTranslateString.getFrTradFile().getProperty("answerA35");
-        QuestionStringStorage.answerB35 = UtilTranslateString.getFrTradFile().getProperty("answerB35");
-        QuestionStringStorage.answerC35 = UtilTranslateString.getFrTradFile().getProperty("answerC35");
-        QuestionStringStorage.answerD35 = UtilTranslateString.getFrTradFile().getProperty("answerD35");
-        QuestionStringStorage.goodAnswer35 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer35");
-        QuestionStringStorage.explanation35 = UtilTranslateString.getFrTradFile().getProperty("explanation35");
-
-        QuestionStringStorage.question36 = UtilTranslateString.getFrTradFile().getProperty("question36");
-        QuestionStringStorage.answerA36 = UtilTranslateString.getFrTradFile().getProperty("answerA36");
-        QuestionStringStorage.answerB36 = UtilTranslateString.getFrTradFile().getProperty("answerB36");
-        QuestionStringStorage.answerC36 = UtilTranslateString.getFrTradFile().getProperty("answerC36");
-        QuestionStringStorage.answerD36 = UtilTranslateString.getFrTradFile().getProperty("answerD36");
-        QuestionStringStorage.goodAnswer36 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer36");
-        QuestionStringStorage.explanation36 = UtilTranslateString.getFrTradFile().getProperty("explanation36");
-
-        QuestionStringStorage.question37 = UtilTranslateString.getFrTradFile().getProperty("question37");
-        QuestionStringStorage.answerA37 = UtilTranslateString.getFrTradFile().getProperty("answerA37");
-        QuestionStringStorage.answerB37 = UtilTranslateString.getFrTradFile().getProperty("answerB37");
-        QuestionStringStorage.answerC37 = UtilTranslateString.getFrTradFile().getProperty("answerC37");
-        QuestionStringStorage.answerD37 = UtilTranslateString.getFrTradFile().getProperty("answerD37");
-        QuestionStringStorage.goodAnswer37 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer37");
-        QuestionStringStorage.explanation37 = UtilTranslateString.getFrTradFile().getProperty("explanation37");
-
-        QuestionStringStorage.question38 = UtilTranslateString.getFrTradFile().getProperty("question38");
-        QuestionStringStorage.answerA38 = UtilTranslateString.getFrTradFile().getProperty("answerA38");
-        QuestionStringStorage.answerB38 = UtilTranslateString.getFrTradFile().getProperty("answerB38");
-        QuestionStringStorage.answerC38 = UtilTranslateString.getFrTradFile().getProperty("answerC38");
-        QuestionStringStorage.answerD38 = UtilTranslateString.getFrTradFile().getProperty("answerD38");
-        QuestionStringStorage.goodAnswer38 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer38");
-        QuestionStringStorage.explanation38 = UtilTranslateString.getFrTradFile().getProperty("explanation38");
-
-        QuestionStringStorage.question39 = UtilTranslateString.getFrTradFile().getProperty("question39");
-        QuestionStringStorage.answerA39 = UtilTranslateString.getFrTradFile().getProperty("answerA39");
-        QuestionStringStorage.answerB39 = UtilTranslateString.getFrTradFile().getProperty("answerB39");
-        QuestionStringStorage.answerC39 = UtilTranslateString.getFrTradFile().getProperty("answerC39");
-        QuestionStringStorage.answerD39 = UtilTranslateString.getFrTradFile().getProperty("answerD39");
-        QuestionStringStorage.goodAnswer39 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer39");
-        QuestionStringStorage.explanation39 = UtilTranslateString.getFrTradFile().getProperty("explanation39");
-
-        QuestionStringStorage.question40 = UtilTranslateString.getFrTradFile().getProperty("question40");
-        QuestionStringStorage.answerA40 = UtilTranslateString.getFrTradFile().getProperty("answerA40");
-        QuestionStringStorage.answerB40 = UtilTranslateString.getFrTradFile().getProperty("answerB40");
-        QuestionStringStorage.answerC40 = UtilTranslateString.getFrTradFile().getProperty("answerC40");
-        QuestionStringStorage.answerD40 = UtilTranslateString.getFrTradFile().getProperty("answerD40");
-        QuestionStringStorage.goodAnswer40 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer40");
-        QuestionStringStorage.explanation40 = UtilTranslateString.getFrTradFile().getProperty("explanation40");
-
-        QuestionStringStorage.question41 = UtilTranslateString.getFrTradFile().getProperty("question41");
-        QuestionStringStorage.answerA41 = UtilTranslateString.getFrTradFile().getProperty("answerA41");
-        QuestionStringStorage.answerB41 = UtilTranslateString.getFrTradFile().getProperty("answerB41");
-        QuestionStringStorage.answerC41 = UtilTranslateString.getFrTradFile().getProperty("answerC41");
-        QuestionStringStorage.answerD41 = UtilTranslateString.getFrTradFile().getProperty("answerD41");
-        QuestionStringStorage.goodAnswer41 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer41");
-        QuestionStringStorage.explanation41 = UtilTranslateString.getFrTradFile().getProperty("explanation41");
-
-        QuestionStringStorage.question42 = UtilTranslateString.getFrTradFile().getProperty("question42");
-        QuestionStringStorage.answerA42 = UtilTranslateString.getFrTradFile().getProperty("answerA42");
-        QuestionStringStorage.answerB42 = UtilTranslateString.getFrTradFile().getProperty("answerB42");
-        QuestionStringStorage.answerC42 = UtilTranslateString.getFrTradFile().getProperty("answerC42");
-        QuestionStringStorage.answerD42 = UtilTranslateString.getFrTradFile().getProperty("answerD42");
-        QuestionStringStorage.goodAnswer42 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer42");
-        QuestionStringStorage.explanation42 = UtilTranslateString.getFrTradFile().getProperty("explanation42");
-
-        QuestionStringStorage.question43 = UtilTranslateString.getFrTradFile().getProperty("question43");
-        QuestionStringStorage.answerA43 = UtilTranslateString.getFrTradFile().getProperty("answerA43");
-        QuestionStringStorage.answerB43 = UtilTranslateString.getFrTradFile().getProperty("answerB43");
-        QuestionStringStorage.answerC43 = UtilTranslateString.getFrTradFile().getProperty("answerC43");
-        QuestionStringStorage.answerD43 = UtilTranslateString.getFrTradFile().getProperty("answerD43");
-        QuestionStringStorage.goodAnswer43 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer43");
-        QuestionStringStorage.explanation43 = UtilTranslateString.getFrTradFile().getProperty("explanation43");
-
-        QuestionStringStorage.question44 = UtilTranslateString.getFrTradFile().getProperty("question44");
-        QuestionStringStorage.answerA44 = UtilTranslateString.getFrTradFile().getProperty("answerA44");
-        QuestionStringStorage.answerB44 = UtilTranslateString.getFrTradFile().getProperty("answerB44");
-        QuestionStringStorage.answerC44 = UtilTranslateString.getFrTradFile().getProperty("answerC44");
-        QuestionStringStorage.answerD44 = UtilTranslateString.getFrTradFile().getProperty("answerD44");
-        QuestionStringStorage.goodAnswer44 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer44");
-        QuestionStringStorage.explanation44 = UtilTranslateString.getFrTradFile().getProperty("explanation44");
-
-        QuestionStringStorage.question45 = UtilTranslateString.getFrTradFile().getProperty("question45");
-        QuestionStringStorage.answerA45 = UtilTranslateString.getFrTradFile().getProperty("answerA45");
-        QuestionStringStorage.answerB45 = UtilTranslateString.getFrTradFile().getProperty("answerB45");
-        QuestionStringStorage.answerC45 = UtilTranslateString.getFrTradFile().getProperty("answerC45");
-        QuestionStringStorage.answerD45 = UtilTranslateString.getFrTradFile().getProperty("answerD45");
-        QuestionStringStorage.goodAnswer45 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer45");
-        QuestionStringStorage.explanation45 = UtilTranslateString.getFrTradFile().getProperty("explanation45");
-
-        QuestionStringStorage.question46 = UtilTranslateString.getFrTradFile().getProperty("question46");
-        QuestionStringStorage.answerA46 = UtilTranslateString.getFrTradFile().getProperty("answerA46");
-        QuestionStringStorage.answerB46 = UtilTranslateString.getFrTradFile().getProperty("answerB46");
-        QuestionStringStorage.answerC46 = UtilTranslateString.getFrTradFile().getProperty("answerC46");
-        QuestionStringStorage.answerD46 = UtilTranslateString.getFrTradFile().getProperty("answerD46");
-        QuestionStringStorage.goodAnswer46 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer46");
-        QuestionStringStorage.explanation46 = UtilTranslateString.getFrTradFile().getProperty("explanation46");
-
-        QuestionStringStorage.question47 = UtilTranslateString.getFrTradFile().getProperty("question47");
-        QuestionStringStorage.answerA47 = UtilTranslateString.getFrTradFile().getProperty("answerA47");
-        QuestionStringStorage.answerB47 = UtilTranslateString.getFrTradFile().getProperty("answerB47");
-        QuestionStringStorage.answerC47 = UtilTranslateString.getFrTradFile().getProperty("answerC47");
-        QuestionStringStorage.answerD47 = UtilTranslateString.getFrTradFile().getProperty("answerD47");
-        QuestionStringStorage.goodAnswer47 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer47");
-        QuestionStringStorage.explanation47 = UtilTranslateString.getFrTradFile().getProperty("explanation47");
-
-        QuestionStringStorage.question48 = UtilTranslateString.getFrTradFile().getProperty("question48");
-        QuestionStringStorage.answerA48 = UtilTranslateString.getFrTradFile().getProperty("answerA48");
-        QuestionStringStorage.answerB48 = UtilTranslateString.getFrTradFile().getProperty("answerB48");
-        QuestionStringStorage.answerC48 = UtilTranslateString.getFrTradFile().getProperty("answerC48");
-        QuestionStringStorage.answerD48 = UtilTranslateString.getFrTradFile().getProperty("answerD48");
-        QuestionStringStorage.goodAnswer48 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer48");
-        QuestionStringStorage.explanation48 = UtilTranslateString.getFrTradFile().getProperty("explanation48");
-
-        QuestionStringStorage.question49 = UtilTranslateString.getFrTradFile().getProperty("question49");
-        QuestionStringStorage.answerA49 = UtilTranslateString.getFrTradFile().getProperty("answerA49");
-        QuestionStringStorage.answerB49 = UtilTranslateString.getFrTradFile().getProperty("answerB49");
-        QuestionStringStorage.answerC49 = UtilTranslateString.getFrTradFile().getProperty("answerC49");
-        QuestionStringStorage.answerD49 = UtilTranslateString.getFrTradFile().getProperty("answerD49");
-        QuestionStringStorage.goodAnswer49 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer49");
-        QuestionStringStorage.explanation49 = UtilTranslateString.getFrTradFile().getProperty("explanation49");
-
-        QuestionStringStorage.question50 = UtilTranslateString.getFrTradFile().getProperty("question50");
-        QuestionStringStorage.answerA50 = UtilTranslateString.getFrTradFile().getProperty("answerA50");
-        QuestionStringStorage.answerB50 = UtilTranslateString.getFrTradFile().getProperty("answerB50");
-        QuestionStringStorage.answerC50 = UtilTranslateString.getFrTradFile().getProperty("answerC50");
-        QuestionStringStorage.answerD50 = UtilTranslateString.getFrTradFile().getProperty("answerD50");
-        QuestionStringStorage.goodAnswer50 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer50");
-        QuestionStringStorage.explanation50 = UtilTranslateString.getFrTradFile().getProperty("explanation50");
-
-        QuestionStringStorage.question51 = UtilTranslateString.getFrTradFile().getProperty("question51");
-        QuestionStringStorage.answerA51 = UtilTranslateString.getFrTradFile().getProperty("answerA51");
-        QuestionStringStorage.answerB51 = UtilTranslateString.getFrTradFile().getProperty("answerB51");
-        QuestionStringStorage.answerC51 = UtilTranslateString.getFrTradFile().getProperty("answerC51");
-        QuestionStringStorage.answerD51 = UtilTranslateString.getFrTradFile().getProperty("answerD51");
-        QuestionStringStorage.goodAnswer51 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer51");
-        QuestionStringStorage.explanation51 = UtilTranslateString.getFrTradFile().getProperty("explanation51");
-
-        QuestionStringStorage.question52 = UtilTranslateString.getFrTradFile().getProperty("question52");
-        QuestionStringStorage.answerA52 = UtilTranslateString.getFrTradFile().getProperty("answerA52");
-        QuestionStringStorage.answerB52 = UtilTranslateString.getFrTradFile().getProperty("answerB52");
-        QuestionStringStorage.answerC52 = UtilTranslateString.getFrTradFile().getProperty("answerC52");
-        QuestionStringStorage.answerD52 = UtilTranslateString.getFrTradFile().getProperty("answerD52");
-        QuestionStringStorage.goodAnswer52 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer52");
-        QuestionStringStorage.explanation52 = UtilTranslateString.getFrTradFile().getProperty("explanation52");
-
-        QuestionStringStorage.question53 = UtilTranslateString.getFrTradFile().getProperty("question53");
-        QuestionStringStorage.answerA53 = UtilTranslateString.getFrTradFile().getProperty("answerA53");
-        QuestionStringStorage.answerB53 = UtilTranslateString.getFrTradFile().getProperty("answerB53");
-        QuestionStringStorage.answerC53 = UtilTranslateString.getFrTradFile().getProperty("answerC53");
-        QuestionStringStorage.answerD53 = UtilTranslateString.getFrTradFile().getProperty("answerD53");
-        QuestionStringStorage.goodAnswer53 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer53");
-        QuestionStringStorage.explanation53 = UtilTranslateString.getFrTradFile().getProperty("explanation53");
-
-        QuestionStringStorage.question54 = UtilTranslateString.getFrTradFile().getProperty("question54");
-        QuestionStringStorage.answerA54 = UtilTranslateString.getFrTradFile().getProperty("answerA54");
-        QuestionStringStorage.answerB54 = UtilTranslateString.getFrTradFile().getProperty("answerB54");
-        QuestionStringStorage.answerC54 = UtilTranslateString.getFrTradFile().getProperty("answerC54");
-        QuestionStringStorage.answerD54 = UtilTranslateString.getFrTradFile().getProperty("answerD54");
-        QuestionStringStorage.goodAnswer54 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer54");
-        QuestionStringStorage.explanation54 = UtilTranslateString.getFrTradFile().getProperty("explanation54");
-
-        QuestionStringStorage.question55 = UtilTranslateString.getFrTradFile().getProperty("question55");
-        QuestionStringStorage.answerA55 = UtilTranslateString.getFrTradFile().getProperty("answerA55");
-        QuestionStringStorage.answerB55 = UtilTranslateString.getFrTradFile().getProperty("answerB55");
-        QuestionStringStorage.answerC55 = UtilTranslateString.getFrTradFile().getProperty("answerC55");
-        QuestionStringStorage.answerD55 = UtilTranslateString.getFrTradFile().getProperty("answerD55");
-        QuestionStringStorage.goodAnswer55 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer55");
-        QuestionStringStorage.explanation55 = UtilTranslateString.getFrTradFile().getProperty("explanation55");
-
-        QuestionStringStorage.question56 = UtilTranslateString.getFrTradFile().getProperty("question56");
-        QuestionStringStorage.answerA56 = UtilTranslateString.getFrTradFile().getProperty("answerA56");
-        QuestionStringStorage.answerB56 = UtilTranslateString.getFrTradFile().getProperty("answerB56");
-        QuestionStringStorage.answerC56 = UtilTranslateString.getFrTradFile().getProperty("answerC56");
-        QuestionStringStorage.answerD56 = UtilTranslateString.getFrTradFile().getProperty("answerD56");
-        QuestionStringStorage.goodAnswer56 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer56");
-        QuestionStringStorage.explanation56 = UtilTranslateString.getFrTradFile().getProperty("explanation56");
-
-        QuestionStringStorage.question57 = UtilTranslateString.getFrTradFile().getProperty("question57");
-        QuestionStringStorage.answerA57 = UtilTranslateString.getFrTradFile().getProperty("answerA57");
-        QuestionStringStorage.answerB57 = UtilTranslateString.getFrTradFile().getProperty("answerB57");
-        QuestionStringStorage.answerC57 = UtilTranslateString.getFrTradFile().getProperty("answerC57");
-        QuestionStringStorage.answerD57 = UtilTranslateString.getFrTradFile().getProperty("answerD57");
-        QuestionStringStorage.goodAnswer57 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer57");
-        QuestionStringStorage.explanation57 = UtilTranslateString.getFrTradFile().getProperty("explanation57");
-
-        QuestionStringStorage.question58 = UtilTranslateString.getFrTradFile().getProperty("question58");
-        QuestionStringStorage.answerA58 = UtilTranslateString.getFrTradFile().getProperty("answerA58");
-        QuestionStringStorage.answerB58 = UtilTranslateString.getFrTradFile().getProperty("answerB58");
-        QuestionStringStorage.answerC58 = UtilTranslateString.getFrTradFile().getProperty("answerC58");
-        QuestionStringStorage.answerD58 = UtilTranslateString.getFrTradFile().getProperty("answerD58");
-        QuestionStringStorage.goodAnswer58 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer58");
-        QuestionStringStorage.explanation58 = UtilTranslateString.getFrTradFile().getProperty("explanation58");
-
-        QuestionStringStorage.question59 = UtilTranslateString.getFrTradFile().getProperty("question59");
-        QuestionStringStorage.answerA59 = UtilTranslateString.getFrTradFile().getProperty("answerA59");
-        QuestionStringStorage.answerB59 = UtilTranslateString.getFrTradFile().getProperty("answerB59");
-        QuestionStringStorage.answerC59 = UtilTranslateString.getFrTradFile().getProperty("answerC59");
-        QuestionStringStorage.answerD59 = UtilTranslateString.getFrTradFile().getProperty("answerD59");
-        QuestionStringStorage.goodAnswer59 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer59");
-        QuestionStringStorage.explanation59 = UtilTranslateString.getFrTradFile().getProperty("explanation59");
-
-        QuestionStringStorage.question60 = UtilTranslateString.getFrTradFile().getProperty("question60");
-        QuestionStringStorage.answerA60 = UtilTranslateString.getFrTradFile().getProperty("answerA60");
-        QuestionStringStorage.answerB60 = UtilTranslateString.getFrTradFile().getProperty("answerB60");
-        QuestionStringStorage.answerC60 = UtilTranslateString.getFrTradFile().getProperty("answerC60");
-        QuestionStringStorage.answerD60 = UtilTranslateString.getFrTradFile().getProperty("answerD60");
-        QuestionStringStorage.goodAnswer60 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer60");
-        QuestionStringStorage.explanation60 = UtilTranslateString.getFrTradFile().getProperty("explanation60");
-
-        QuestionStringStorage.question61 = UtilTranslateString.getFrTradFile().getProperty("question61");
-        QuestionStringStorage.answerA61 = UtilTranslateString.getFrTradFile().getProperty("answerA61");
-        QuestionStringStorage.answerB61 = UtilTranslateString.getFrTradFile().getProperty("answerB61");
-        QuestionStringStorage.answerC61 = UtilTranslateString.getFrTradFile().getProperty("answerC61");
-        QuestionStringStorage.answerD61 = UtilTranslateString.getFrTradFile().getProperty("answerD61");
-        QuestionStringStorage.goodAnswer61 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer61");
-        QuestionStringStorage.explanation61 = UtilTranslateString.getFrTradFile().getProperty("explanation61");
-
-        QuestionStringStorage.question62 = UtilTranslateString.getFrTradFile().getProperty("question62");
-        QuestionStringStorage.answerA62 = UtilTranslateString.getFrTradFile().getProperty("answerA62");
-        QuestionStringStorage.answerB62 = UtilTranslateString.getFrTradFile().getProperty("answerB62");
-        QuestionStringStorage.answerC62 = UtilTranslateString.getFrTradFile().getProperty("answerC62");
-        QuestionStringStorage.answerD62 = UtilTranslateString.getFrTradFile().getProperty("answerD62");
-        QuestionStringStorage.goodAnswer62 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer62");
-        QuestionStringStorage.explanation62 = UtilTranslateString.getFrTradFile().getProperty("explanation62");
-
-        QuestionStringStorage.question63 = UtilTranslateString.getFrTradFile().getProperty("question63");
-        QuestionStringStorage.answerA63 = UtilTranslateString.getFrTradFile().getProperty("answerA63");
-        QuestionStringStorage.answerB63 = UtilTranslateString.getFrTradFile().getProperty("answerB63");
-        QuestionStringStorage.answerC63 = UtilTranslateString.getFrTradFile().getProperty("answerC63");
-        QuestionStringStorage.answerD63 = UtilTranslateString.getFrTradFile().getProperty("answerD63");
-        QuestionStringStorage.goodAnswer63 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer63");
-        QuestionStringStorage.explanation63 = UtilTranslateString.getFrTradFile().getProperty("explanation63");
-
-        QuestionStringStorage.question64 = UtilTranslateString.getFrTradFile().getProperty("question64");
-        QuestionStringStorage.answerA64 = UtilTranslateString.getFrTradFile().getProperty("answerA64");
-        QuestionStringStorage.answerB64 = UtilTranslateString.getFrTradFile().getProperty("answerB64");
-        QuestionStringStorage.answerC64 = UtilTranslateString.getFrTradFile().getProperty("answerC64");
-        QuestionStringStorage.answerD64 = UtilTranslateString.getFrTradFile().getProperty("answerD64");
-        QuestionStringStorage.goodAnswer64 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer64");
-        QuestionStringStorage.explanation64 = UtilTranslateString.getFrTradFile().getProperty("explanation64");
-
-        QuestionStringStorage.question65 = UtilTranslateString.getFrTradFile().getProperty("question65");
-        QuestionStringStorage.answerA65 = UtilTranslateString.getFrTradFile().getProperty("answerA65");
-        QuestionStringStorage.answerB65 = UtilTranslateString.getFrTradFile().getProperty("answerB65");
-        QuestionStringStorage.answerC65 = UtilTranslateString.getFrTradFile().getProperty("answerC65");
-        QuestionStringStorage.answerD65 = UtilTranslateString.getFrTradFile().getProperty("answerD65");
-        QuestionStringStorage.goodAnswer65 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer65");
-        QuestionStringStorage.explanation65 = UtilTranslateString.getFrTradFile().getProperty("explanation65");
-
-        QuestionStringStorage.question66 = UtilTranslateString.getFrTradFile().getProperty("question66");
-        QuestionStringStorage.answerA66 = UtilTranslateString.getFrTradFile().getProperty("answerA66");
-        QuestionStringStorage.answerB66 = UtilTranslateString.getFrTradFile().getProperty("answerB66");
-        QuestionStringStorage.answerC66 = UtilTranslateString.getFrTradFile().getProperty("answerC66");
-        QuestionStringStorage.answerD66 = UtilTranslateString.getFrTradFile().getProperty("answerD66");
-        QuestionStringStorage.goodAnswer66 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer66");
-        QuestionStringStorage.explanation66 = UtilTranslateString.getFrTradFile().getProperty("explanation66");
-
-        QuestionStringStorage.question67 = UtilTranslateString.getFrTradFile().getProperty("question67");
-        QuestionStringStorage.answerA67 = UtilTranslateString.getFrTradFile().getProperty("answerA67");
-        QuestionStringStorage.answerB67 = UtilTranslateString.getFrTradFile().getProperty("answerB67");
-        QuestionStringStorage.answerC67 = UtilTranslateString.getFrTradFile().getProperty("answerC67");
-        QuestionStringStorage.answerD67 = UtilTranslateString.getFrTradFile().getProperty("answerD67");
-        QuestionStringStorage.goodAnswer67 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer67");
-        QuestionStringStorage.explanation67 = UtilTranslateString.getFrTradFile().getProperty("explanation67");
-
-        QuestionStringStorage.question68 = UtilTranslateString.getFrTradFile().getProperty("question68");
-        QuestionStringStorage.answerA68 = UtilTranslateString.getFrTradFile().getProperty("answerA68");
-        QuestionStringStorage.answerB68 = UtilTranslateString.getFrTradFile().getProperty("answerB68");
-        QuestionStringStorage.answerC68 = UtilTranslateString.getFrTradFile().getProperty("answerC68");
-        QuestionStringStorage.answerD68 = UtilTranslateString.getFrTradFile().getProperty("answerD68");
-        QuestionStringStorage.goodAnswer68 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer68");
-        QuestionStringStorage.explanation68 = UtilTranslateString.getFrTradFile().getProperty("explanation68");
-
-        QuestionStringStorage.question69 = UtilTranslateString.getFrTradFile().getProperty("question69");
-        QuestionStringStorage.answerA69 = UtilTranslateString.getFrTradFile().getProperty("answerA69");
-        QuestionStringStorage.answerB69 = UtilTranslateString.getFrTradFile().getProperty("answerB69");
-        QuestionStringStorage.answerC69 = UtilTranslateString.getFrTradFile().getProperty("answerC69");
-        QuestionStringStorage.answerD69 = UtilTranslateString.getFrTradFile().getProperty("answerD69");
-        QuestionStringStorage.goodAnswer69 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer69");
-        QuestionStringStorage.explanation69 = UtilTranslateString.getFrTradFile().getProperty("explanation69");
-
-        QuestionStringStorage.question70 = UtilTranslateString.getFrTradFile().getProperty("question70");
-        QuestionStringStorage.answerA70 = UtilTranslateString.getFrTradFile().getProperty("answerA70");
-        QuestionStringStorage.answerB70 = UtilTranslateString.getFrTradFile().getProperty("answerB70");
-        QuestionStringStorage.answerC70 = UtilTranslateString.getFrTradFile().getProperty("answerC70");
-        QuestionStringStorage.answerD70 = UtilTranslateString.getFrTradFile().getProperty("answerD70");
-        QuestionStringStorage.goodAnswer70 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer70");
-        QuestionStringStorage.explanation70 = UtilTranslateString.getFrTradFile().getProperty("explanation70");
-
-        QuestionStringStorage.question71 = UtilTranslateString.getFrTradFile().getProperty("question71");
-        QuestionStringStorage.answerA71 = UtilTranslateString.getFrTradFile().getProperty("answerA71");
-        QuestionStringStorage.answerB71 = UtilTranslateString.getFrTradFile().getProperty("answerB71");
-        QuestionStringStorage.answerC71 = UtilTranslateString.getFrTradFile().getProperty("answerC71");
-        QuestionStringStorage.answerD71 = UtilTranslateString.getFrTradFile().getProperty("answerD71");
-        QuestionStringStorage.goodAnswer71 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer71");
-        QuestionStringStorage.explanation71 = UtilTranslateString.getFrTradFile().getProperty("explanation71");
-
-        QuestionStringStorage.question72 = UtilTranslateString.getFrTradFile().getProperty("question72");
-        QuestionStringStorage.answerA72 = UtilTranslateString.getFrTradFile().getProperty("answerA72");
-        QuestionStringStorage.answerB72 = UtilTranslateString.getFrTradFile().getProperty("answerB72");
-        QuestionStringStorage.answerC72 = UtilTranslateString.getFrTradFile().getProperty("answerC72");
-        QuestionStringStorage.answerD72 = UtilTranslateString.getFrTradFile().getProperty("answerD72");
-        QuestionStringStorage.goodAnswer72 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer72");
-        QuestionStringStorage.explanation72 = UtilTranslateString.getFrTradFile().getProperty("explanation72");
-
-        QuestionStringStorage.question73 = UtilTranslateString.getFrTradFile().getProperty("question73");
-        QuestionStringStorage.answerA73 = UtilTranslateString.getFrTradFile().getProperty("answerA73");
-        QuestionStringStorage.answerB73 = UtilTranslateString.getFrTradFile().getProperty("answerB73");
-        QuestionStringStorage.answerC73 = UtilTranslateString.getFrTradFile().getProperty("answerC73");
-        QuestionStringStorage.answerD73 = UtilTranslateString.getFrTradFile().getProperty("answerD73");
-        QuestionStringStorage.goodAnswer73 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer73");
-        QuestionStringStorage.explanation73 = UtilTranslateString.getFrTradFile().getProperty("explanation73");
-
-        QuestionStringStorage.question74 = UtilTranslateString.getFrTradFile().getProperty("question74");
-        QuestionStringStorage.answerA74 = UtilTranslateString.getFrTradFile().getProperty("answerA74");
-        QuestionStringStorage.answerB74 = UtilTranslateString.getFrTradFile().getProperty("answerB74");
-        QuestionStringStorage.answerC74 = UtilTranslateString.getFrTradFile().getProperty("answerC74");
-        QuestionStringStorage.answerD74 = UtilTranslateString.getFrTradFile().getProperty("answerD74");
-        QuestionStringStorage.goodAnswer74 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer74");
-        QuestionStringStorage.explanation74 = UtilTranslateString.getFrTradFile().getProperty("explanation74");
-
-        QuestionStringStorage.question75 = UtilTranslateString.getFrTradFile().getProperty("question75");
-        QuestionStringStorage.answerA75 = UtilTranslateString.getFrTradFile().getProperty("answerA75");
-        QuestionStringStorage.answerB75 = UtilTranslateString.getFrTradFile().getProperty("answerB75");
-        QuestionStringStorage.answerC75 = UtilTranslateString.getFrTradFile().getProperty("answerC75");
-        QuestionStringStorage.answerD75 = UtilTranslateString.getFrTradFile().getProperty("answerD75");
-        QuestionStringStorage.goodAnswer75 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer75");
-        QuestionStringStorage.explanation75 = UtilTranslateString.getFrTradFile().getProperty("explanation75");
-
-        QuestionStringStorage.question76 = UtilTranslateString.getFrTradFile().getProperty("question76");
-        QuestionStringStorage.answerA76 = UtilTranslateString.getFrTradFile().getProperty("answerA76");
-        QuestionStringStorage.answerB76 = UtilTranslateString.getFrTradFile().getProperty("answerB76");
-        QuestionStringStorage.answerC76 = UtilTranslateString.getFrTradFile().getProperty("answerC76");
-        QuestionStringStorage.answerD76 = UtilTranslateString.getFrTradFile().getProperty("answerD76");
-        QuestionStringStorage.goodAnswer76 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer76");
-        QuestionStringStorage.explanation76 = UtilTranslateString.getFrTradFile().getProperty("explanation76");
-
-        QuestionStringStorage.question77 = UtilTranslateString.getFrTradFile().getProperty("question77");
-        QuestionStringStorage.answerA77 = UtilTranslateString.getFrTradFile().getProperty("answerA77");
-        QuestionStringStorage.answerB77 = UtilTranslateString.getFrTradFile().getProperty("answerB77");
-        QuestionStringStorage.answerC77 = UtilTranslateString.getFrTradFile().getProperty("answerC77");
-        QuestionStringStorage.answerD77 = UtilTranslateString.getFrTradFile().getProperty("answerD77");
-        QuestionStringStorage.goodAnswer77 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer77");
-        QuestionStringStorage.explanation77 = UtilTranslateString.getFrTradFile().getProperty("explanation77");
-
-        QuestionStringStorage.question78 = UtilTranslateString.getFrTradFile().getProperty("question78");
-        QuestionStringStorage.answerA78 = UtilTranslateString.getFrTradFile().getProperty("answerA78");
-        QuestionStringStorage.answerB78 = UtilTranslateString.getFrTradFile().getProperty("answerB78");
-        QuestionStringStorage.answerC78 = UtilTranslateString.getFrTradFile().getProperty("answerC78");
-        QuestionStringStorage.answerD78 = UtilTranslateString.getFrTradFile().getProperty("answerD78");
-        QuestionStringStorage.goodAnswer78 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer78");
-        QuestionStringStorage.explanation78 = UtilTranslateString.getFrTradFile().getProperty("explanation78");
-
-        QuestionStringStorage.question79 = UtilTranslateString.getFrTradFile().getProperty("question79");
-        QuestionStringStorage.answerA79 = UtilTranslateString.getFrTradFile().getProperty("answerA79");
-        QuestionStringStorage.answerB79 = UtilTranslateString.getFrTradFile().getProperty("answerB79");
-        QuestionStringStorage.answerC79 = UtilTranslateString.getFrTradFile().getProperty("answerC79");
-        QuestionStringStorage.answerD79 = UtilTranslateString.getFrTradFile().getProperty("answerD79");
-        QuestionStringStorage.goodAnswer79 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer79");
-        QuestionStringStorage.explanation79 = UtilTranslateString.getFrTradFile().getProperty("explanation79");
-
-        QuestionStringStorage.question80 = UtilTranslateString.getFrTradFile().getProperty("question80");
-        QuestionStringStorage.answerA80 = UtilTranslateString.getFrTradFile().getProperty("answerA80");
-        QuestionStringStorage.answerB80 = UtilTranslateString.getFrTradFile().getProperty("answerB80");
-        QuestionStringStorage.answerC80 = UtilTranslateString.getFrTradFile().getProperty("answerC80");
-        QuestionStringStorage.answerD80 = UtilTranslateString.getFrTradFile().getProperty("answerD80");
-        QuestionStringStorage.goodAnswer80 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer80");
-        QuestionStringStorage.explanation80 = UtilTranslateString.getFrTradFile().getProperty("explanation80");
+        setupFrQuestion(QuestionStringStorage.questionObject1, "1");
+
+        setupFrQuestion(QuestionStringStorage.questionObject2, "2");
+
+        setupFrQuestion(QuestionStringStorage.questionObject3, "3");
+
+        setupFrQuestion(QuestionStringStorage.questionObject5, "5");
+
+        setupFrQuestion(QuestionStringStorage.questionObject6, "6");
+
+        setupFrQuestion(QuestionStringStorage.questionObject7, "7");
+
+        setupFrQuestion(QuestionStringStorage.questionObject8, "8");
+
+        setupFrQuestion(QuestionStringStorage.questionObject9, "9");
+
+        setupFrQuestion(QuestionStringStorage.questionObject10, "10");
+
+        setupFrQuestion(QuestionStringStorage.questionObject11, "11");
+
+        setupFrQuestion(QuestionStringStorage.questionObject12, "12");
+
+        setupFrQuestion(QuestionStringStorage.questionObject13, "13");
+
+        setupFrQuestion(QuestionStringStorage.questionObject14, "14");
+
+        setupFrQuestion(QuestionStringStorage.questionObject15, "15");
+
+        setupFrQuestion(QuestionStringStorage.questionObject16, "16");
+
+        setupFrQuestion(QuestionStringStorage.questionObject17, "17");
+
+        setupFrQuestion(QuestionStringStorage.questionObject18, "18");
+
+        setupFrQuestion(QuestionStringStorage.questionObject19, "19");
+
+        setupFrQuestion(QuestionStringStorage.questionObject20, "20");
+
+        setupFrQuestion(QuestionStringStorage.questionObject21, "21");
+
+        setupFrQuestion(QuestionStringStorage.questionObject22, "22");
+
+        setupFrQuestion(QuestionStringStorage.questionObject23, "23");
+
+        setupFrQuestion(QuestionStringStorage.questionObject24, "24");
+
+        setupFrQuestion(QuestionStringStorage.questionObject25, "25");
+
+        setupFrQuestion(QuestionStringStorage.questionObject26, "26");
+
+        setupFrQuestion(QuestionStringStorage.questionObject27, "27");
+
+        setupFrQuestion(QuestionStringStorage.questionObject28, "28");
+
+        setupFrQuestion(QuestionStringStorage.questionObject29, "29");
+
+        setupFrQuestion(QuestionStringStorage.questionObject30, "30");
+
+        setupFrQuestion(QuestionStringStorage.questionObject31, "31");
+
+        setupFrQuestion(QuestionStringStorage.questionObject32, "32");
+
+        setupFrQuestion(QuestionStringStorage.questionObject33, "33");
+
+        setupFrQuestion(QuestionStringStorage.questionObject34, "34");
+
+        setupFrQuestion(QuestionStringStorage.questionObject35, "35");
+
+        setupFrQuestion(QuestionStringStorage.questionObject36, "36");
+
+        setupFrQuestion(QuestionStringStorage.questionObject37, "37");
+
+        setupFrQuestion(QuestionStringStorage.questionObject38, "38");
+
+        setupFrQuestion(QuestionStringStorage.questionObject39, "39");
+
+        setupFrQuestion(QuestionStringStorage.questionObject40, "40");
+
+        setupFrQuestion(QuestionStringStorage.questionObject41, "41");
+
+        setupFrQuestion(QuestionStringStorage.questionObject42, "42");
+
+        setupFrQuestion(QuestionStringStorage.questionObject43, "43");
+
+        setupFrQuestion(QuestionStringStorage.questionObject44, "44");
+
+        setupFrQuestion(QuestionStringStorage.questionObject45, "45");
+
+        setupFrQuestion(QuestionStringStorage.questionObject46, "46");
+
+        setupFrQuestion(QuestionStringStorage.questionObject47, "47");
+
+        setupFrQuestion(QuestionStringStorage.questionObject48, "48");
+
+        setupFrQuestion(QuestionStringStorage.questionObject49, "49");
+
+        setupFrQuestion(QuestionStringStorage.questionObject50, "50");
+
+        setupFrQuestion(QuestionStringStorage.questionObject51, "51");
+
+        setupFrQuestion(QuestionStringStorage.questionObject52, "52");
+
+        setupFrQuestion(QuestionStringStorage.questionObject53, "53");
+
+        setupFrQuestion(QuestionStringStorage.questionObject54, "54");
+
+        setupFrQuestion(QuestionStringStorage.questionObject55, "55");
+
+        setupFrQuestion(QuestionStringStorage.questionObject56, "56");
+
+        setupFrQuestion(QuestionStringStorage.questionObject57, "57");
+
+        setupFrQuestion(QuestionStringStorage.questionObject58, "58");
+
+        setupFrQuestion(QuestionStringStorage.questionObject59, "59");
+
+        setupFrQuestion(QuestionStringStorage.questionObject60, "60");
+
+        setupFrQuestion(QuestionStringStorage.questionObject61, "61");
+
+        setupFrQuestion(QuestionStringStorage.questionObject62, "62");
+
+        setupFrQuestion(QuestionStringStorage.questionObject63, "63");
+
+        setupFrQuestion(QuestionStringStorage.questionObject64, "64");
+
+        setupFrQuestion(QuestionStringStorage.questionObject65, "65");
+
+        setupFrQuestion(QuestionStringStorage.questionObject66, "66");
+
+        setupFrQuestion(QuestionStringStorage.questionObject67, "67");
+
+        setupFrQuestion(QuestionStringStorage.questionObject68, "68");
+
+        setupFrQuestion(QuestionStringStorage.questionObject69, "69");
+
+        setupFrQuestion(QuestionStringStorage.questionObject70, "70");
+
+        setupFrQuestion(QuestionStringStorage.questionObject71, "71");
+
+        setupFrQuestion(QuestionStringStorage.questionObject72, "72");
+
+        setupFrQuestion(QuestionStringStorage.questionObject73, "73");
+
+        setupFrQuestion(QuestionStringStorage.questionObject74, "74");
+
+        setupFrQuestion(QuestionStringStorage.questionObject75, "75");
+
+        setupFrQuestion(QuestionStringStorage.questionObject76, "76");
+
+        setupFrQuestion(QuestionStringStorage.questionObject77, "77");
+
+        setupFrQuestion(QuestionStringStorage.questionObject78, "78");
+
+        setupFrQuestion(QuestionStringStorage.questionObject79, "79");
+
+        setupFrQuestion(QuestionStringStorage.questionObject80, "80");
 
         QuestionStringStorage.question81 = UtilTranslateString.getFrTradFile().getProperty("question81");
         QuestionStringStorage.answerA81 = UtilTranslateString.getFrTradFile().getProperty("answerA81");
@@ -1245,650 +763,218 @@ public class UtilTranslateQuestion
         QuestionStringStorage.answerD155 = UtilTranslateString.getFrTradFile().getProperty("answerD155");
         QuestionStringStorage.goodAnswer155 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer155");
         QuestionStringStorage.explanation155 = UtilTranslateString.getFrTradFile().getProperty("explanation155");
+
+        QuestionStringStorage.question156 = UtilTranslateString.getFrTradFile().getProperty("question156");
+        QuestionStringStorage.answerA156 = UtilTranslateString.getFrTradFile().getProperty("answerA156");
+        QuestionStringStorage.answerB156 = UtilTranslateString.getFrTradFile().getProperty("answerB156");
+        QuestionStringStorage.answerC156 = UtilTranslateString.getFrTradFile().getProperty("answerC156");
+        QuestionStringStorage.answerD156 = UtilTranslateString.getFrTradFile().getProperty("answerD156");
+        QuestionStringStorage.goodAnswer156 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer156");
+        QuestionStringStorage.explanation156 = UtilTranslateString.getFrTradFile().getProperty("explanation156");
+
+        QuestionStringStorage.question157 = UtilTranslateString.getFrTradFile().getProperty("question157");
+        QuestionStringStorage.answerA157 = UtilTranslateString.getFrTradFile().getProperty("answerA157");
+        QuestionStringStorage.answerB157 = UtilTranslateString.getFrTradFile().getProperty("answerB157");
+        QuestionStringStorage.answerC157 = UtilTranslateString.getFrTradFile().getProperty("answerC157");
+        QuestionStringStorage.answerD157 = UtilTranslateString.getFrTradFile().getProperty("answerD157");
+        QuestionStringStorage.goodAnswer157 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer157");
+        QuestionStringStorage.explanation157 = UtilTranslateString.getFrTradFile().getProperty("explanation157");
+
+        QuestionStringStorage.question158 = UtilTranslateString.getFrTradFile().getProperty("question158");
+        QuestionStringStorage.answerA158 = UtilTranslateString.getFrTradFile().getProperty("answerA158");
+        QuestionStringStorage.answerB158 = UtilTranslateString.getFrTradFile().getProperty("answerB158");
+        QuestionStringStorage.answerC158 = UtilTranslateString.getFrTradFile().getProperty("answerC158");
+        QuestionStringStorage.answerD158 = UtilTranslateString.getFrTradFile().getProperty("answerD158");
+        QuestionStringStorage.goodAnswer158 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer158");
+        QuestionStringStorage.explanation158 = UtilTranslateString.getFrTradFile().getProperty("explanation158");
+
+        QuestionStringStorage.question159 = UtilTranslateString.getFrTradFile().getProperty("question159");
+        QuestionStringStorage.answerA159 = UtilTranslateString.getFrTradFile().getProperty("answerA159");
+        QuestionStringStorage.answerB159 = UtilTranslateString.getFrTradFile().getProperty("answerB159");
+        QuestionStringStorage.answerC159 = UtilTranslateString.getFrTradFile().getProperty("answerC159");
+        QuestionStringStorage.answerD159 = UtilTranslateString.getFrTradFile().getProperty("answerD159");
+        QuestionStringStorage.goodAnswer159 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer159");
+        QuestionStringStorage.explanation159 = UtilTranslateString.getFrTradFile().getProperty("explanation159");
+
+        QuestionStringStorage.question160 = UtilTranslateString.getFrTradFile().getProperty("question160");
+        QuestionStringStorage.answerA160 = UtilTranslateString.getFrTradFile().getProperty("answerA160");
+        QuestionStringStorage.answerB160 = UtilTranslateString.getFrTradFile().getProperty("answerB160");
+        QuestionStringStorage.answerC160 = UtilTranslateString.getFrTradFile().getProperty("answerC160");
+        QuestionStringStorage.answerD160 = UtilTranslateString.getFrTradFile().getProperty("answerD160");
+        QuestionStringStorage.goodAnswer160 = UtilTranslateString.getFrTradFile().getProperty("goodAnswer160");
+        QuestionStringStorage.explanation160 = UtilTranslateString.getFrTradFile().getProperty("explanation160");
     }
 
     public void translateEngQuestions()
     {
         // QUESTIONS
-        QuestionStringStorage.question1 = UtilTranslateString.getEngTradFile().getProperty("question1");
-        QuestionStringStorage.answerA1 = UtilTranslateString.getEngTradFile().getProperty("answerA1");
-        QuestionStringStorage.answerB1 = UtilTranslateString.getEngTradFile().getProperty("answerB1");
-        QuestionStringStorage.answerC1 = UtilTranslateString.getEngTradFile().getProperty("answerC1");
-        QuestionStringStorage.answerD1 = UtilTranslateString.getEngTradFile().getProperty("answerD1");
-        QuestionStringStorage.goodAnswer1 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer1");
-        QuestionStringStorage.explanation1 = UtilTranslateString.getEngTradFile().getProperty("explanation1");
-
-        QuestionStringStorage.question2 = UtilTranslateString.getEngTradFile().getProperty("question2");
-        QuestionStringStorage.answerA2 = UtilTranslateString.getEngTradFile().getProperty("answerA2");
-        QuestionStringStorage.answerB2 = UtilTranslateString.getEngTradFile().getProperty("answerB2");
-        QuestionStringStorage.answerC2 = UtilTranslateString.getEngTradFile().getProperty("answerC2");
-        QuestionStringStorage.answerD2 = UtilTranslateString.getEngTradFile().getProperty("answerD2");
-        QuestionStringStorage.goodAnswer2 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer2");
-        QuestionStringStorage.explanation2 = UtilTranslateString.getEngTradFile().getProperty("explanation2");
-
-        QuestionStringStorage.question3 = UtilTranslateString.getEngTradFile().getProperty("question3");
-        QuestionStringStorage.answerA3 = UtilTranslateString.getEngTradFile().getProperty("answerA3");
-        QuestionStringStorage.answerB3 = UtilTranslateString.getEngTradFile().getProperty("answerB3");
-        QuestionStringStorage.answerC3 = UtilTranslateString.getEngTradFile().getProperty("answerC3");
-        QuestionStringStorage.answerD3 = UtilTranslateString.getEngTradFile().getProperty("answerD3");
-        QuestionStringStorage.goodAnswer3 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer3");
-        QuestionStringStorage.explanation3 = UtilTranslateString.getEngTradFile().getProperty("explanation3");
-
-        QuestionStringStorage.question4 = UtilTranslateString.getEngTradFile().getProperty("question4");
-        QuestionStringStorage.answerA4 = UtilTranslateString.getEngTradFile().getProperty("answerA4");
-        QuestionStringStorage.answerB4 = UtilTranslateString.getEngTradFile().getProperty("answerB4");
-        QuestionStringStorage.answerC4 = UtilTranslateString.getEngTradFile().getProperty("answerC4");
-        QuestionStringStorage.answerD4 = UtilTranslateString.getEngTradFile().getProperty("answerD4");
-        QuestionStringStorage.goodAnswer4 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer4");
-        QuestionStringStorage.explanation4 = UtilTranslateString.getEngTradFile().getProperty("explanation4");
-
-        QuestionStringStorage.question5 = UtilTranslateString.getEngTradFile().getProperty("question5");
-        QuestionStringStorage.answerA5 = UtilTranslateString.getEngTradFile().getProperty("answerA5");
-        QuestionStringStorage.answerB5 = UtilTranslateString.getEngTradFile().getProperty("answerB5");
-        QuestionStringStorage.answerC5 = UtilTranslateString.getEngTradFile().getProperty("answerC5");
-        QuestionStringStorage.answerD5 = UtilTranslateString.getEngTradFile().getProperty("answerD5");
-        QuestionStringStorage.goodAnswer5 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer5");
-        QuestionStringStorage.explanation5 = UtilTranslateString.getEngTradFile().getProperty("explanation5");
-
-        QuestionStringStorage.question6 = UtilTranslateString.getEngTradFile().getProperty("question6");
-        QuestionStringStorage.answerA6 = UtilTranslateString.getEngTradFile().getProperty("answerA6");
-        QuestionStringStorage.answerB6 = UtilTranslateString.getEngTradFile().getProperty("answerB6");
-        QuestionStringStorage.answerC6 = UtilTranslateString.getEngTradFile().getProperty("answerC6");
-        QuestionStringStorage.answerD6 = UtilTranslateString.getEngTradFile().getProperty("answerD6");
-        QuestionStringStorage.goodAnswer6 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer6");
-        QuestionStringStorage.explanation6 = UtilTranslateString.getEngTradFile().getProperty("explanation6");
-
-        QuestionStringStorage.question7 = UtilTranslateString.getEngTradFile().getProperty("question7");
-        QuestionStringStorage.answerA7 = UtilTranslateString.getEngTradFile().getProperty("answerA7");
-        QuestionStringStorage.answerB7 = UtilTranslateString.getEngTradFile().getProperty("answerB7");
-        QuestionStringStorage.answerC7 = UtilTranslateString.getEngTradFile().getProperty("answerC7");
-        QuestionStringStorage.answerD7 = UtilTranslateString.getEngTradFile().getProperty("answerD7");
-        QuestionStringStorage.goodAnswer7 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer7");
-        QuestionStringStorage.explanation7 = UtilTranslateString.getEngTradFile().getProperty("explanation7");
-
-        QuestionStringStorage.question8 = UtilTranslateString.getEngTradFile().getProperty("question8");
-        QuestionStringStorage.answerA8 = UtilTranslateString.getEngTradFile().getProperty("answerA8");
-        QuestionStringStorage.answerB8 = UtilTranslateString.getEngTradFile().getProperty("answerB8");
-        QuestionStringStorage.answerC8 = UtilTranslateString.getEngTradFile().getProperty("answerC8");
-        QuestionStringStorage.answerD8 = UtilTranslateString.getEngTradFile().getProperty("answerD8");
-        QuestionStringStorage.goodAnswer8 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer8");
-        QuestionStringStorage.explanation8 = UtilTranslateString.getEngTradFile().getProperty("explanation8");
-
-        QuestionStringStorage.question9 = UtilTranslateString.getEngTradFile().getProperty("question9");
-        QuestionStringStorage.answerA9 = UtilTranslateString.getEngTradFile().getProperty("answerA9");
-        QuestionStringStorage.answerB9 = UtilTranslateString.getEngTradFile().getProperty("answerB9");
-        QuestionStringStorage.answerC9 = UtilTranslateString.getEngTradFile().getProperty("answerC9");
-        QuestionStringStorage.answerD9 = UtilTranslateString.getEngTradFile().getProperty("answerD9");
-        QuestionStringStorage.goodAnswer9 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer9");
-        QuestionStringStorage.explanation9 = UtilTranslateString.getEngTradFile().getProperty("explanation9");
-
-        QuestionStringStorage.question10 = UtilTranslateString.getEngTradFile().getProperty("question10");
-        QuestionStringStorage.answerA10 = UtilTranslateString.getEngTradFile().getProperty("answerA10");
-        QuestionStringStorage.answerB10 = UtilTranslateString.getEngTradFile().getProperty("answerB10");
-        QuestionStringStorage.answerC10 = UtilTranslateString.getEngTradFile().getProperty("answerC10");
-        QuestionStringStorage.answerD10 = UtilTranslateString.getEngTradFile().getProperty("answerD10");
-        QuestionStringStorage.goodAnswer10 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer10");
-        QuestionStringStorage.explanation10 = UtilTranslateString.getEngTradFile().getProperty("explanation10");
-
-        QuestionStringStorage.question11 = UtilTranslateString.getEngTradFile().getProperty("question11");
-        QuestionStringStorage.answerA11 = UtilTranslateString.getEngTradFile().getProperty("answerA11");
-        QuestionStringStorage.answerB11 = UtilTranslateString.getEngTradFile().getProperty("answerB11");
-        QuestionStringStorage.answerC11 = UtilTranslateString.getEngTradFile().getProperty("answerC11");
-        QuestionStringStorage.answerD11 = UtilTranslateString.getEngTradFile().getProperty("answerD11");
-        QuestionStringStorage.goodAnswer11 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer11");
-        QuestionStringStorage.explanation11 = UtilTranslateString.getEngTradFile().getProperty("explanation11");
-
-        QuestionStringStorage.question12 = UtilTranslateString.getEngTradFile().getProperty("question12");
-        QuestionStringStorage.answerA12 = UtilTranslateString.getEngTradFile().getProperty("answerA12");
-        QuestionStringStorage.answerB12 = UtilTranslateString.getEngTradFile().getProperty("answerB12");
-        QuestionStringStorage.answerC12 = UtilTranslateString.getEngTradFile().getProperty("answerC12");
-        QuestionStringStorage.answerD12 = UtilTranslateString.getEngTradFile().getProperty("answerD12");
-        QuestionStringStorage.goodAnswer12 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer12");
-        QuestionStringStorage.explanation12 = UtilTranslateString.getEngTradFile().getProperty("explanation12");
-
-        QuestionStringStorage.question13 = UtilTranslateString.getEngTradFile().getProperty("question13");
-        QuestionStringStorage.answerA13 = UtilTranslateString.getEngTradFile().getProperty("answerA13");
-        QuestionStringStorage.answerB13 = UtilTranslateString.getEngTradFile().getProperty("answerB13");
-        QuestionStringStorage.answerC13 = UtilTranslateString.getEngTradFile().getProperty("answerC13");
-        QuestionStringStorage.answerD13 = UtilTranslateString.getEngTradFile().getProperty("answerD13");
-        QuestionStringStorage.goodAnswer13 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer13");
-        QuestionStringStorage.explanation13 = UtilTranslateString.getEngTradFile().getProperty("explanation13");
-
-        QuestionStringStorage.question14 = UtilTranslateString.getEngTradFile().getProperty("question14");
-        QuestionStringStorage.answerA14 = UtilTranslateString.getEngTradFile().getProperty("answerA14");
-        QuestionStringStorage.answerB14 = UtilTranslateString.getEngTradFile().getProperty("answerB14");
-        QuestionStringStorage.answerC14 = UtilTranslateString.getEngTradFile().getProperty("answerC14");
-        QuestionStringStorage.answerD14 = UtilTranslateString.getEngTradFile().getProperty("answerD14");
-        QuestionStringStorage.goodAnswer14 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer14");
-        QuestionStringStorage.explanation14 = UtilTranslateString.getEngTradFile().getProperty("explanation14");
-
-        QuestionStringStorage.question15 = UtilTranslateString.getEngTradFile().getProperty("question15");
-        QuestionStringStorage.answerA15 = UtilTranslateString.getEngTradFile().getProperty("answerA15");
-        QuestionStringStorage.answerB15 = UtilTranslateString.getEngTradFile().getProperty("answerB15");
-        QuestionStringStorage.answerC15 = UtilTranslateString.getEngTradFile().getProperty("answerC15");
-        QuestionStringStorage.answerD15 = UtilTranslateString.getEngTradFile().getProperty("answerD15");
-        QuestionStringStorage.goodAnswer15 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer15");
-        QuestionStringStorage.explanation15 = UtilTranslateString.getEngTradFile().getProperty("explanation15");
-
-        QuestionStringStorage.question16 = UtilTranslateString.getEngTradFile().getProperty("question16");
-        QuestionStringStorage.answerA16 = UtilTranslateString.getEngTradFile().getProperty("answerA16");
-        QuestionStringStorage.answerB16 = UtilTranslateString.getEngTradFile().getProperty("answerB16");
-        QuestionStringStorage.answerC16 = UtilTranslateString.getEngTradFile().getProperty("answerC16");
-        QuestionStringStorage.answerD16 = UtilTranslateString.getEngTradFile().getProperty("answerD16");
-        QuestionStringStorage.goodAnswer16 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer16");
-        QuestionStringStorage.explanation16 = UtilTranslateString.getEngTradFile().getProperty("explanation16");
-
-        QuestionStringStorage.question17 = UtilTranslateString.getEngTradFile().getProperty("question17");
-        QuestionStringStorage.answerA17 = UtilTranslateString.getEngTradFile().getProperty("answerA17");
-        QuestionStringStorage.answerB17 = UtilTranslateString.getEngTradFile().getProperty("answerB17");
-        QuestionStringStorage.answerC17 = UtilTranslateString.getEngTradFile().getProperty("answerC17");
-        QuestionStringStorage.answerD17 = UtilTranslateString.getEngTradFile().getProperty("answerD17");
-        QuestionStringStorage.goodAnswer17 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer17");
-        QuestionStringStorage.explanation17 = UtilTranslateString.getEngTradFile().getProperty("explanation17");
-
-        QuestionStringStorage.question18 = UtilTranslateString.getEngTradFile().getProperty("question18");
-        QuestionStringStorage.answerA18 = UtilTranslateString.getEngTradFile().getProperty("answerA18");
-        QuestionStringStorage.answerB18 = UtilTranslateString.getEngTradFile().getProperty("answerB18");
-        QuestionStringStorage.answerC18 = UtilTranslateString.getEngTradFile().getProperty("answerC18");
-        QuestionStringStorage.answerD18 = UtilTranslateString.getEngTradFile().getProperty("answerD18");
-        QuestionStringStorage.goodAnswer18 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer18");
-        QuestionStringStorage.explanation18 = UtilTranslateString.getEngTradFile().getProperty("explanation18");
-
-        QuestionStringStorage.question19 = UtilTranslateString.getEngTradFile().getProperty("question19");
-        QuestionStringStorage.answerA19 = UtilTranslateString.getEngTradFile().getProperty("answerA19");
-        QuestionStringStorage.answerB19 = UtilTranslateString.getEngTradFile().getProperty("answerB19");
-        QuestionStringStorage.answerC19 = UtilTranslateString.getEngTradFile().getProperty("answerC19");
-        QuestionStringStorage.answerD19 = UtilTranslateString.getEngTradFile().getProperty("answerD19");
-        QuestionStringStorage.goodAnswer19 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer19");
-        QuestionStringStorage.explanation19 = UtilTranslateString.getEngTradFile().getProperty("explanation19");
-
-        QuestionStringStorage.question20 = UtilTranslateString.getEngTradFile().getProperty("question20");
-        QuestionStringStorage.answerA20 = UtilTranslateString.getEngTradFile().getProperty("answerA20");
-        QuestionStringStorage.answerB20 = UtilTranslateString.getEngTradFile().getProperty("answerB20");
-        QuestionStringStorage.answerC20 = UtilTranslateString.getEngTradFile().getProperty("answerC20");
-        QuestionStringStorage.answerD20 = UtilTranslateString.getEngTradFile().getProperty("answerD20");
-        QuestionStringStorage.goodAnswer20 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer20");
-        QuestionStringStorage.explanation20 = UtilTranslateString.getEngTradFile().getProperty("explanation20");
-
-        QuestionStringStorage.question21 = UtilTranslateString.getEngTradFile().getProperty("question21");
-        QuestionStringStorage.answerA21 = UtilTranslateString.getEngTradFile().getProperty("answerA21");
-        QuestionStringStorage.answerB21 = UtilTranslateString.getEngTradFile().getProperty("answerB21");
-        QuestionStringStorage.answerC21 = UtilTranslateString.getEngTradFile().getProperty("answerC21");
-        QuestionStringStorage.answerD21 = UtilTranslateString.getEngTradFile().getProperty("answerD21");
-        QuestionStringStorage.goodAnswer21 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer21");
-        QuestionStringStorage.explanation21 = UtilTranslateString.getEngTradFile().getProperty("explanation21");
-
-        QuestionStringStorage.question22 = UtilTranslateString.getEngTradFile().getProperty("question22");
-        QuestionStringStorage.answerA22 = UtilTranslateString.getEngTradFile().getProperty("answerA22");
-        QuestionStringStorage.answerB22 = UtilTranslateString.getEngTradFile().getProperty("answerB22");
-        QuestionStringStorage.answerC22 = UtilTranslateString.getEngTradFile().getProperty("answerC22");
-        QuestionStringStorage.answerD22 = UtilTranslateString.getEngTradFile().getProperty("answerD22");
-        QuestionStringStorage.goodAnswer22 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer22");
-        QuestionStringStorage.explanation22 = UtilTranslateString.getEngTradFile().getProperty("explanation22");
-
-        QuestionStringStorage.question23 = UtilTranslateString.getEngTradFile().getProperty("question23");
-        QuestionStringStorage.answerA23 = UtilTranslateString.getEngTradFile().getProperty("answerA23");
-        QuestionStringStorage.answerB23 = UtilTranslateString.getEngTradFile().getProperty("answerB23");
-        QuestionStringStorage.answerC23 = UtilTranslateString.getEngTradFile().getProperty("answerC23");
-        QuestionStringStorage.answerD23 = UtilTranslateString.getEngTradFile().getProperty("answerD23");
-        QuestionStringStorage.goodAnswer23 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer23");
-        QuestionStringStorage.explanation23 = UtilTranslateString.getEngTradFile().getProperty("explanation23");
-
-        QuestionStringStorage.question24 = UtilTranslateString.getEngTradFile().getProperty("question24");
-        QuestionStringStorage.answerA24 = UtilTranslateString.getEngTradFile().getProperty("answerA24");
-        QuestionStringStorage.answerB24 = UtilTranslateString.getEngTradFile().getProperty("answerB24");
-        QuestionStringStorage.answerC24 = UtilTranslateString.getEngTradFile().getProperty("answerC24");
-        QuestionStringStorage.answerD24 = UtilTranslateString.getEngTradFile().getProperty("answerD24");
-        QuestionStringStorage.goodAnswer24 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer24");
-        QuestionStringStorage.explanation24 = UtilTranslateString.getEngTradFile().getProperty("explanation24");
-
-        QuestionStringStorage.question25 = UtilTranslateString.getEngTradFile().getProperty("question25");
-        QuestionStringStorage.answerA25 = UtilTranslateString.getEngTradFile().getProperty("answerA25");
-        QuestionStringStorage.answerB25 = UtilTranslateString.getEngTradFile().getProperty("answerB25");
-        QuestionStringStorage.answerC25 = UtilTranslateString.getEngTradFile().getProperty("answerC25");
-        QuestionStringStorage.answerD25 = UtilTranslateString.getEngTradFile().getProperty("answerD25");
-        QuestionStringStorage.goodAnswer25 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer25");
-        QuestionStringStorage.explanation25 = UtilTranslateString.getEngTradFile().getProperty("explanation25");
-
-        QuestionStringStorage.question26 = UtilTranslateString.getEngTradFile().getProperty("question26");
-        QuestionStringStorage.answerA26 = UtilTranslateString.getEngTradFile().getProperty("answerA26");
-        QuestionStringStorage.answerB26 = UtilTranslateString.getEngTradFile().getProperty("answerB26");
-        QuestionStringStorage.answerC26 = UtilTranslateString.getEngTradFile().getProperty("answerC26");
-        QuestionStringStorage.answerD26 = UtilTranslateString.getEngTradFile().getProperty("answerD26");
-        QuestionStringStorage.goodAnswer26 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer26");
-        QuestionStringStorage.explanation26 = UtilTranslateString.getEngTradFile().getProperty("explanation26");
-
-        QuestionStringStorage.question27 = UtilTranslateString.getEngTradFile().getProperty("question27");
-        QuestionStringStorage.answerA27 = UtilTranslateString.getEngTradFile().getProperty("answerA27");
-        QuestionStringStorage.answerB27 = UtilTranslateString.getEngTradFile().getProperty("answerB27");
-        QuestionStringStorage.answerC27 = UtilTranslateString.getEngTradFile().getProperty("answerC27");
-        QuestionStringStorage.answerD27 = UtilTranslateString.getEngTradFile().getProperty("answerD27");
-        QuestionStringStorage.goodAnswer27 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer27");
-        QuestionStringStorage.explanation27 = UtilTranslateString.getEngTradFile().getProperty("explanation27");
-
-        QuestionStringStorage.question28 = UtilTranslateString.getEngTradFile().getProperty("question28");
-        QuestionStringStorage.answerA28 = UtilTranslateString.getEngTradFile().getProperty("answerA28");
-        QuestionStringStorage.answerB28 = UtilTranslateString.getEngTradFile().getProperty("answerB28");
-        QuestionStringStorage.answerC28 = UtilTranslateString.getEngTradFile().getProperty("answerC28");
-        QuestionStringStorage.answerD28 = UtilTranslateString.getEngTradFile().getProperty("answerD28");
-        QuestionStringStorage.goodAnswer28 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer28");
-        QuestionStringStorage.explanation28 = UtilTranslateString.getEngTradFile().getProperty("explanation28");
-
-        QuestionStringStorage.question29 = UtilTranslateString.getEngTradFile().getProperty("question29");
-        QuestionStringStorage.answerA29 = UtilTranslateString.getEngTradFile().getProperty("answerA29");
-        QuestionStringStorage.answerB29 = UtilTranslateString.getEngTradFile().getProperty("answerB29");
-        QuestionStringStorage.answerC29 = UtilTranslateString.getEngTradFile().getProperty("answerC29");
-        QuestionStringStorage.answerD29 = UtilTranslateString.getEngTradFile().getProperty("answerD29");
-        QuestionStringStorage.goodAnswer29 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer29");
-        QuestionStringStorage.explanation29 = UtilTranslateString.getEngTradFile().getProperty("explanation29");
-
-        QuestionStringStorage.question30 = UtilTranslateString.getEngTradFile().getProperty("question30");
-        QuestionStringStorage.answerA30 = UtilTranslateString.getEngTradFile().getProperty("answerA30");
-        QuestionStringStorage.answerB30 = UtilTranslateString.getEngTradFile().getProperty("answerB30");
-        QuestionStringStorage.answerC30 = UtilTranslateString.getEngTradFile().getProperty("answerC30");
-        QuestionStringStorage.answerD30 = UtilTranslateString.getEngTradFile().getProperty("answerD30");
-        QuestionStringStorage.goodAnswer30 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer30");
-        QuestionStringStorage.explanation30 = UtilTranslateString.getEngTradFile().getProperty("explanation30");
-
-        QuestionStringStorage.question31 = UtilTranslateString.getEngTradFile().getProperty("question31");
-        QuestionStringStorage.answerA31 = UtilTranslateString.getEngTradFile().getProperty("answerA31");
-        QuestionStringStorage.answerB31 = UtilTranslateString.getEngTradFile().getProperty("answerB31");
-        QuestionStringStorage.answerC31 = UtilTranslateString.getEngTradFile().getProperty("answerC31");
-        QuestionStringStorage.answerD31 = UtilTranslateString.getEngTradFile().getProperty("answerD31");
-        QuestionStringStorage.goodAnswer31 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer31");
-        QuestionStringStorage.explanation31 = UtilTranslateString.getEngTradFile().getProperty("explanation31");
-
-        QuestionStringStorage.question32 = UtilTranslateString.getEngTradFile().getProperty("question32");
-        QuestionStringStorage.answerA32 = UtilTranslateString.getEngTradFile().getProperty("answerA32");
-        QuestionStringStorage.answerB32 = UtilTranslateString.getEngTradFile().getProperty("answerB32");
-        QuestionStringStorage.answerC32 = UtilTranslateString.getEngTradFile().getProperty("answerC32");
-        QuestionStringStorage.answerD32 = UtilTranslateString.getEngTradFile().getProperty("answerD32");
-        QuestionStringStorage.goodAnswer32 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer32");
-        QuestionStringStorage.explanation32 = UtilTranslateString.getEngTradFile().getProperty("explanation32");
-
-        QuestionStringStorage.question33 = UtilTranslateString.getEngTradFile().getProperty("question33");
-        QuestionStringStorage.answerA33 = UtilTranslateString.getEngTradFile().getProperty("answerA33");
-        QuestionStringStorage.answerB33 = UtilTranslateString.getEngTradFile().getProperty("answerB33");
-        QuestionStringStorage.answerC33 = UtilTranslateString.getEngTradFile().getProperty("answerC33");
-        QuestionStringStorage.answerD33 = UtilTranslateString.getEngTradFile().getProperty("answerD33");
-        QuestionStringStorage.goodAnswer33 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer33");
-        QuestionStringStorage.explanation33 = UtilTranslateString.getEngTradFile().getProperty("explanation33");
-
-        QuestionStringStorage.question34 = UtilTranslateString.getEngTradFile().getProperty("question34");
-        QuestionStringStorage.answerA34 = UtilTranslateString.getEngTradFile().getProperty("answerA34");
-        QuestionStringStorage.answerB34 = UtilTranslateString.getEngTradFile().getProperty("answerB34");
-        QuestionStringStorage.answerC34 = UtilTranslateString.getEngTradFile().getProperty("answerC34");
-        QuestionStringStorage.answerD34 = UtilTranslateString.getEngTradFile().getProperty("answerD34");
-        QuestionStringStorage.goodAnswer34 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer34");
-        QuestionStringStorage.explanation34 = UtilTranslateString.getEngTradFile().getProperty("explanation34");
-
-        QuestionStringStorage.question35 = UtilTranslateString.getEngTradFile().getProperty("question35");
-        QuestionStringStorage.answerA35 = UtilTranslateString.getEngTradFile().getProperty("answerA35");
-        QuestionStringStorage.answerB35 = UtilTranslateString.getEngTradFile().getProperty("answerB35");
-        QuestionStringStorage.answerC35 = UtilTranslateString.getEngTradFile().getProperty("answerC35");
-        QuestionStringStorage.answerD35 = UtilTranslateString.getEngTradFile().getProperty("answerD35");
-        QuestionStringStorage.goodAnswer35 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer35");
-        QuestionStringStorage.explanation35 = UtilTranslateString.getEngTradFile().getProperty("explanation35");
-
-        QuestionStringStorage.question36 = UtilTranslateString.getEngTradFile().getProperty("question36");
-        QuestionStringStorage.answerA36 = UtilTranslateString.getEngTradFile().getProperty("answerA36");
-        QuestionStringStorage.answerB36 = UtilTranslateString.getEngTradFile().getProperty("answerB36");
-        QuestionStringStorage.answerC36 = UtilTranslateString.getEngTradFile().getProperty("answerC36");
-        QuestionStringStorage.answerD36 = UtilTranslateString.getEngTradFile().getProperty("answerD36");
-        QuestionStringStorage.goodAnswer36 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer36");
-        QuestionStringStorage.explanation36 = UtilTranslateString.getEngTradFile().getProperty("explanation36");
-
-        QuestionStringStorage.question37 = UtilTranslateString.getEngTradFile().getProperty("question37");
-        QuestionStringStorage.answerA37 = UtilTranslateString.getEngTradFile().getProperty("answerA37");
-        QuestionStringStorage.answerB37 = UtilTranslateString.getEngTradFile().getProperty("answerB37");
-        QuestionStringStorage.answerC37 = UtilTranslateString.getEngTradFile().getProperty("answerC37");
-        QuestionStringStorage.answerD37 = UtilTranslateString.getEngTradFile().getProperty("answerD37");
-        QuestionStringStorage.goodAnswer37 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer37");
-        QuestionStringStorage.explanation37 = UtilTranslateString.getEngTradFile().getProperty("explanation37");
-
-        QuestionStringStorage.question38 = UtilTranslateString.getEngTradFile().getProperty("question38");
-        QuestionStringStorage.answerA38 = UtilTranslateString.getEngTradFile().getProperty("answerA38");
-        QuestionStringStorage.answerB38 = UtilTranslateString.getEngTradFile().getProperty("answerB38");
-        QuestionStringStorage.answerC38 = UtilTranslateString.getEngTradFile().getProperty("answerC38");
-        QuestionStringStorage.answerD38 = UtilTranslateString.getEngTradFile().getProperty("answerD38");
-        QuestionStringStorage.goodAnswer38 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer38");
-        QuestionStringStorage.explanation38 = UtilTranslateString.getEngTradFile().getProperty("explanation38");
-
-        QuestionStringStorage.question39 = UtilTranslateString.getEngTradFile().getProperty("question39");
-        QuestionStringStorage.answerA39 = UtilTranslateString.getEngTradFile().getProperty("answerA39");
-        QuestionStringStorage.answerB39 = UtilTranslateString.getEngTradFile().getProperty("answerB39");
-        QuestionStringStorage.answerC39 = UtilTranslateString.getEngTradFile().getProperty("answerC39");
-        QuestionStringStorage.answerD39 = UtilTranslateString.getEngTradFile().getProperty("answerD39");
-        QuestionStringStorage.goodAnswer39 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer39");
-        QuestionStringStorage.explanation39 = UtilTranslateString.getEngTradFile().getProperty("explanation39");
-
-        QuestionStringStorage.question40 = UtilTranslateString.getEngTradFile().getProperty("question40");
-        QuestionStringStorage.answerA40 = UtilTranslateString.getEngTradFile().getProperty("answerA40");
-        QuestionStringStorage.answerB40 = UtilTranslateString.getEngTradFile().getProperty("answerB40");
-        QuestionStringStorage.answerC40 = UtilTranslateString.getEngTradFile().getProperty("answerC40");
-        QuestionStringStorage.answerD40 = UtilTranslateString.getEngTradFile().getProperty("answerD40");
-        QuestionStringStorage.goodAnswer40 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer40");
-        QuestionStringStorage.explanation40 = UtilTranslateString.getEngTradFile().getProperty("explanation40");
-
-        QuestionStringStorage.question41 = UtilTranslateString.getEngTradFile().getProperty("question41");
-        QuestionStringStorage.answerA41 = UtilTranslateString.getEngTradFile().getProperty("answerA41");
-        QuestionStringStorage.answerB41 = UtilTranslateString.getEngTradFile().getProperty("answerB41");
-        QuestionStringStorage.answerC41 = UtilTranslateString.getEngTradFile().getProperty("answerC41");
-        QuestionStringStorage.answerD41 = UtilTranslateString.getEngTradFile().getProperty("answerD41");
-        QuestionStringStorage.goodAnswer41 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer41");
-        QuestionStringStorage.explanation41 = UtilTranslateString.getEngTradFile().getProperty("explanation41");
-
-        QuestionStringStorage.question42 = UtilTranslateString.getEngTradFile().getProperty("question42");
-        QuestionStringStorage.answerA42 = UtilTranslateString.getEngTradFile().getProperty("answerA42");
-        QuestionStringStorage.answerB42 = UtilTranslateString.getEngTradFile().getProperty("answerB42");
-        QuestionStringStorage.answerC42 = UtilTranslateString.getEngTradFile().getProperty("answerC42");
-        QuestionStringStorage.answerD42 = UtilTranslateString.getEngTradFile().getProperty("answerD42");
-        QuestionStringStorage.goodAnswer42 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer42");
-        QuestionStringStorage.explanation42 = UtilTranslateString.getEngTradFile().getProperty("explanation42");
-
-        QuestionStringStorage.question43 = UtilTranslateString.getEngTradFile().getProperty("question43");
-        QuestionStringStorage.answerA43 = UtilTranslateString.getEngTradFile().getProperty("answerA43");
-        QuestionStringStorage.answerB43 = UtilTranslateString.getEngTradFile().getProperty("answerB43");
-        QuestionStringStorage.answerC43 = UtilTranslateString.getEngTradFile().getProperty("answerC43");
-        QuestionStringStorage.answerD43 = UtilTranslateString.getEngTradFile().getProperty("answerD43");
-        QuestionStringStorage.goodAnswer43= UtilTranslateString.getEngTradFile().getProperty("goodAnswer43");
-        QuestionStringStorage.explanation43 = UtilTranslateString.getEngTradFile().getProperty("explanation43");
-
-        QuestionStringStorage.question44 = UtilTranslateString.getEngTradFile().getProperty("question44");
-        QuestionStringStorage.answerA44 = UtilTranslateString.getEngTradFile().getProperty("answerA44");
-        QuestionStringStorage.answerB44 = UtilTranslateString.getEngTradFile().getProperty("answerB44");
-        QuestionStringStorage.answerC44 = UtilTranslateString.getEngTradFile().getProperty("answerC44");
-        QuestionStringStorage.answerD44 = UtilTranslateString.getEngTradFile().getProperty("answerD44");
-        QuestionStringStorage.goodAnswer44 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer44");
-        QuestionStringStorage.explanation44 = UtilTranslateString.getEngTradFile().getProperty("explanation44");
-
-        QuestionStringStorage.question45 = UtilTranslateString.getEngTradFile().getProperty("question45");
-        QuestionStringStorage.answerA45 = UtilTranslateString.getEngTradFile().getProperty("answerA45");
-        QuestionStringStorage.answerB45 = UtilTranslateString.getEngTradFile().getProperty("answerB45");
-        QuestionStringStorage.answerC45 = UtilTranslateString.getEngTradFile().getProperty("answerC45");
-        QuestionStringStorage.answerD45 = UtilTranslateString.getEngTradFile().getProperty("answerD45");
-        QuestionStringStorage.goodAnswer45 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer45");
-        QuestionStringStorage.explanation45 = UtilTranslateString.getEngTradFile().getProperty("explanation45");
-
-        QuestionStringStorage.question46 = UtilTranslateString.getEngTradFile().getProperty("question46");
-        QuestionStringStorage.answerA46 = UtilTranslateString.getEngTradFile().getProperty("answerA46");
-        QuestionStringStorage.answerB46 = UtilTranslateString.getEngTradFile().getProperty("answerB46");
-        QuestionStringStorage.answerC46 = UtilTranslateString.getEngTradFile().getProperty("answerC46");
-        QuestionStringStorage.answerD46 = UtilTranslateString.getEngTradFile().getProperty("answerD46");
-        QuestionStringStorage.goodAnswer46 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer46");
-        QuestionStringStorage.explanation46 = UtilTranslateString.getEngTradFile().getProperty("explanation46");
-
-        QuestionStringStorage.question47 = UtilTranslateString.getEngTradFile().getProperty("question47");
-        QuestionStringStorage.answerA47 = UtilTranslateString.getEngTradFile().getProperty("answerA47");
-        QuestionStringStorage.answerB47 = UtilTranslateString.getEngTradFile().getProperty("answerB47");
-        QuestionStringStorage.answerC47 = UtilTranslateString.getEngTradFile().getProperty("answerC47");
-        QuestionStringStorage.answerD47 = UtilTranslateString.getEngTradFile().getProperty("answerD47");
-        QuestionStringStorage.goodAnswer47 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer47");
-        QuestionStringStorage.explanation47 = UtilTranslateString.getEngTradFile().getProperty("explanation47");
-
-        QuestionStringStorage.question48 = UtilTranslateString.getEngTradFile().getProperty("question48");
-        QuestionStringStorage.answerA48 = UtilTranslateString.getEngTradFile().getProperty("answerA48");
-        QuestionStringStorage.answerB48 = UtilTranslateString.getEngTradFile().getProperty("answerB48");
-        QuestionStringStorage.answerC48 = UtilTranslateString.getEngTradFile().getProperty("answerC48");
-        QuestionStringStorage.answerD48 = UtilTranslateString.getEngTradFile().getProperty("answerD48");
-        QuestionStringStorage.goodAnswer48 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer48");
-        QuestionStringStorage.explanation48 = UtilTranslateString.getEngTradFile().getProperty("explanation48");
-
-        QuestionStringStorage.question49 = UtilTranslateString.getEngTradFile().getProperty("question49");
-        QuestionStringStorage.answerA49 = UtilTranslateString.getEngTradFile().getProperty("answerA49");
-        QuestionStringStorage.answerB49 = UtilTranslateString.getEngTradFile().getProperty("answerB49");
-        QuestionStringStorage.answerC49 = UtilTranslateString.getEngTradFile().getProperty("answerC49");
-        QuestionStringStorage.answerD49 = UtilTranslateString.getEngTradFile().getProperty("answerD49");
-        QuestionStringStorage.goodAnswer49 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer49");
-        QuestionStringStorage.explanation49 = UtilTranslateString.getEngTradFile().getProperty("explanation49");
-
-        QuestionStringStorage.question50 = UtilTranslateString.getEngTradFile().getProperty("question50");
-        QuestionStringStorage.answerA50 = UtilTranslateString.getEngTradFile().getProperty("answerA50");
-        QuestionStringStorage.answerB50 = UtilTranslateString.getEngTradFile().getProperty("answerB50");
-        QuestionStringStorage.answerC50 = UtilTranslateString.getEngTradFile().getProperty("answerC50");
-        QuestionStringStorage.answerD50 = UtilTranslateString.getEngTradFile().getProperty("answerD50");
-        QuestionStringStorage.goodAnswer50 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer50");
-        QuestionStringStorage.explanation50 = UtilTranslateString.getEngTradFile().getProperty("explanation50");
-
-        QuestionStringStorage.question51 = UtilTranslateString.getEngTradFile().getProperty("question51");
-        QuestionStringStorage.answerA51 = UtilTranslateString.getEngTradFile().getProperty("answerA51");
-        QuestionStringStorage.answerB51 = UtilTranslateString.getEngTradFile().getProperty("answerB51");
-        QuestionStringStorage.answerC51 = UtilTranslateString.getEngTradFile().getProperty("answerC51");
-        QuestionStringStorage.answerD51 = UtilTranslateString.getEngTradFile().getProperty("answerD51");
-        QuestionStringStorage.goodAnswer51 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer51");
-        QuestionStringStorage.explanation51 = UtilTranslateString.getEngTradFile().getProperty("explanation51");
-
-        QuestionStringStorage.question52 = UtilTranslateString.getEngTradFile().getProperty("question52");
-        QuestionStringStorage.answerA52 = UtilTranslateString.getEngTradFile().getProperty("answerA52");
-        QuestionStringStorage.answerB52 = UtilTranslateString.getEngTradFile().getProperty("answerB52");
-        QuestionStringStorage.answerC52 = UtilTranslateString.getEngTradFile().getProperty("answerC52");
-        QuestionStringStorage.answerD52 = UtilTranslateString.getEngTradFile().getProperty("answerD52");
-        QuestionStringStorage.goodAnswer52 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer52");
-        QuestionStringStorage.explanation52 = UtilTranslateString.getEngTradFile().getProperty("explanation52");
-
-        QuestionStringStorage.question53 = UtilTranslateString.getEngTradFile().getProperty("question53");
-        QuestionStringStorage.answerA53 = UtilTranslateString.getEngTradFile().getProperty("answerA53");
-        QuestionStringStorage.answerB53 = UtilTranslateString.getEngTradFile().getProperty("answerB53");
-        QuestionStringStorage.answerC53 = UtilTranslateString.getEngTradFile().getProperty("answerC53");
-        QuestionStringStorage.answerD53 = UtilTranslateString.getEngTradFile().getProperty("answerD53");
-        QuestionStringStorage.goodAnswer53 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer53");
-        QuestionStringStorage.explanation53 = UtilTranslateString.getEngTradFile().getProperty("explanation53");
-
-        QuestionStringStorage.question54 = UtilTranslateString.getEngTradFile().getProperty("question54");
-        QuestionStringStorage.answerA54 = UtilTranslateString.getEngTradFile().getProperty("answerA54");
-        QuestionStringStorage.answerB54 = UtilTranslateString.getEngTradFile().getProperty("answerB54");
-        QuestionStringStorage.answerC54 = UtilTranslateString.getEngTradFile().getProperty("answerC54");
-        QuestionStringStorage.answerD54 = UtilTranslateString.getEngTradFile().getProperty("answerD54");
-        QuestionStringStorage.goodAnswer54 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer54");
-        QuestionStringStorage.explanation54 = UtilTranslateString.getEngTradFile().getProperty("explanation54");
-
-        QuestionStringStorage.question55 = UtilTranslateString.getEngTradFile().getProperty("question55");
-        QuestionStringStorage.answerA55 = UtilTranslateString.getEngTradFile().getProperty("answerA55");
-        QuestionStringStorage.answerB55 = UtilTranslateString.getEngTradFile().getProperty("answerB55");
-        QuestionStringStorage.answerC55 = UtilTranslateString.getEngTradFile().getProperty("answerC55");
-        QuestionStringStorage.answerD55 = UtilTranslateString.getEngTradFile().getProperty("answerD55");
-        QuestionStringStorage.goodAnswer55 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer55");
-        QuestionStringStorage.explanation55 = UtilTranslateString.getEngTradFile().getProperty("explanation55");
-
-        QuestionStringStorage.question56 = UtilTranslateString.getEngTradFile().getProperty("question56");
-        QuestionStringStorage.answerA56 = UtilTranslateString.getEngTradFile().getProperty("answerA56");
-        QuestionStringStorage.answerB56 = UtilTranslateString.getEngTradFile().getProperty("answerB56");
-        QuestionStringStorage.answerC56 = UtilTranslateString.getEngTradFile().getProperty("answerC56");
-        QuestionStringStorage.answerD56 = UtilTranslateString.getEngTradFile().getProperty("answerD56");
-        QuestionStringStorage.goodAnswer56 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer56");
-        QuestionStringStorage.explanation56 = UtilTranslateString.getEngTradFile().getProperty("explanation56");
-
-        QuestionStringStorage.question57 = UtilTranslateString.getEngTradFile().getProperty("question57");
-        QuestionStringStorage.answerA57 = UtilTranslateString.getEngTradFile().getProperty("answerA57");
-        QuestionStringStorage.answerB57 = UtilTranslateString.getEngTradFile().getProperty("answerB57");
-        QuestionStringStorage.answerC57 = UtilTranslateString.getEngTradFile().getProperty("answerC57");
-        QuestionStringStorage.answerD57 = UtilTranslateString.getEngTradFile().getProperty("answerD57");
-        QuestionStringStorage.goodAnswer57 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer57");
-        QuestionStringStorage.explanation57 = UtilTranslateString.getEngTradFile().getProperty("explanation57");
-
-        QuestionStringStorage.question58 = UtilTranslateString.getEngTradFile().getProperty("question58");
-        QuestionStringStorage.answerA58 = UtilTranslateString.getEngTradFile().getProperty("answerA58");
-        QuestionStringStorage.answerB58 = UtilTranslateString.getEngTradFile().getProperty("answerB58");
-        QuestionStringStorage.answerC58 = UtilTranslateString.getEngTradFile().getProperty("answerC58");
-        QuestionStringStorage.answerD58 = UtilTranslateString.getEngTradFile().getProperty("answerD58");
-        QuestionStringStorage.goodAnswer58 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer58");
-        QuestionStringStorage.explanation58 = UtilTranslateString.getEngTradFile().getProperty("explanation58");
-
-        QuestionStringStorage.question59 = UtilTranslateString.getEngTradFile().getProperty("question59");
-        QuestionStringStorage.answerA59 = UtilTranslateString.getEngTradFile().getProperty("answerA59");
-        QuestionStringStorage.answerB59 = UtilTranslateString.getEngTradFile().getProperty("answerB59");
-        QuestionStringStorage.answerC59 = UtilTranslateString.getEngTradFile().getProperty("answerC59");
-        QuestionStringStorage.answerD59 = UtilTranslateString.getEngTradFile().getProperty("answerD59");
-        QuestionStringStorage.goodAnswer59 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer59");
-        QuestionStringStorage.explanation59 = UtilTranslateString.getEngTradFile().getProperty("explanation59");
-
-        QuestionStringStorage.question60 = UtilTranslateString.getEngTradFile().getProperty("question60");
-        QuestionStringStorage.answerA60 = UtilTranslateString.getEngTradFile().getProperty("answerA60");
-        QuestionStringStorage.answerB60 = UtilTranslateString.getEngTradFile().getProperty("answerB60");
-        QuestionStringStorage.answerC60 = UtilTranslateString.getEngTradFile().getProperty("answerC60");
-        QuestionStringStorage.answerD60 = UtilTranslateString.getEngTradFile().getProperty("answerD60");
-        QuestionStringStorage.goodAnswer60 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer60");
-        QuestionStringStorage.explanation60 = UtilTranslateString.getEngTradFile().getProperty("explanation60");
-
-        QuestionStringStorage.question61 = UtilTranslateString.getEngTradFile().getProperty("question61");
-        QuestionStringStorage.answerA61 = UtilTranslateString.getEngTradFile().getProperty("answerA61");
-        QuestionStringStorage.answerB61 = UtilTranslateString.getEngTradFile().getProperty("answerB61");
-        QuestionStringStorage.answerC61 = UtilTranslateString.getEngTradFile().getProperty("answerC61");
-        QuestionStringStorage.answerD61 = UtilTranslateString.getEngTradFile().getProperty("answerD61");
-        QuestionStringStorage.goodAnswer61 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer61");
-        QuestionStringStorage.explanation61 = UtilTranslateString.getEngTradFile().getProperty("explanation61");
-
-        QuestionStringStorage.question62 = UtilTranslateString.getEngTradFile().getProperty("question62");
-        QuestionStringStorage.answerA62 = UtilTranslateString.getEngTradFile().getProperty("answerA62");
-        QuestionStringStorage.answerB62 = UtilTranslateString.getEngTradFile().getProperty("answerB62");
-        QuestionStringStorage.answerC62 = UtilTranslateString.getEngTradFile().getProperty("answerC62");
-        QuestionStringStorage.answerD62 = UtilTranslateString.getEngTradFile().getProperty("answerD62");
-        QuestionStringStorage.goodAnswer62 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer62");
-        QuestionStringStorage.explanation62 = UtilTranslateString.getEngTradFile().getProperty("explanation62");
-
-        QuestionStringStorage.question63 = UtilTranslateString.getEngTradFile().getProperty("question63");
-        QuestionStringStorage.answerA63 = UtilTranslateString.getEngTradFile().getProperty("answerA63");
-        QuestionStringStorage.answerB63 = UtilTranslateString.getEngTradFile().getProperty("answerB63");
-        QuestionStringStorage.answerC63 = UtilTranslateString.getEngTradFile().getProperty("answerC63");
-        QuestionStringStorage.answerD63 = UtilTranslateString.getEngTradFile().getProperty("answerD63");
-        QuestionStringStorage.goodAnswer63 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer63");
-        QuestionStringStorage.explanation63 = UtilTranslateString.getEngTradFile().getProperty("explanation63");
-
-        QuestionStringStorage.question64 = UtilTranslateString.getEngTradFile().getProperty("question64");
-        QuestionStringStorage.answerA64 = UtilTranslateString.getEngTradFile().getProperty("answerA64");
-        QuestionStringStorage.answerB64 = UtilTranslateString.getEngTradFile().getProperty("answerB64");
-        QuestionStringStorage.answerC64 = UtilTranslateString.getEngTradFile().getProperty("answerC64");
-        QuestionStringStorage.answerD64 = UtilTranslateString.getEngTradFile().getProperty("answerD64");
-        QuestionStringStorage.goodAnswer64 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer64");
-        QuestionStringStorage.explanation64 = UtilTranslateString.getEngTradFile().getProperty("explanation64");
-
-        QuestionStringStorage.question65 = UtilTranslateString.getEngTradFile().getProperty("question65");
-        QuestionStringStorage.answerA65 = UtilTranslateString.getEngTradFile().getProperty("answerA65");
-        QuestionStringStorage.answerB65 = UtilTranslateString.getEngTradFile().getProperty("answerB65");
-        QuestionStringStorage.answerC65 = UtilTranslateString.getEngTradFile().getProperty("answerC65");
-        QuestionStringStorage.answerD65 = UtilTranslateString.getEngTradFile().getProperty("answerD65");
-        QuestionStringStorage.goodAnswer65 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer65");
-        QuestionStringStorage.explanation65 = UtilTranslateString.getEngTradFile().getProperty("explanation65");
-
-        QuestionStringStorage.question66 = UtilTranslateString.getEngTradFile().getProperty("question66");
-        QuestionStringStorage.answerA66 = UtilTranslateString.getEngTradFile().getProperty("answerA66");
-        QuestionStringStorage.answerB66 = UtilTranslateString.getEngTradFile().getProperty("answerB66");
-        QuestionStringStorage.answerC66 = UtilTranslateString.getEngTradFile().getProperty("answerC66");
-        QuestionStringStorage.answerD66 = UtilTranslateString.getEngTradFile().getProperty("answerD66");
-        QuestionStringStorage.goodAnswer66 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer66");
-        QuestionStringStorage.explanation66 = UtilTranslateString.getEngTradFile().getProperty("explanation66");
-
-        QuestionStringStorage.question67 = UtilTranslateString.getEngTradFile().getProperty("question67");
-        QuestionStringStorage.answerA67 = UtilTranslateString.getEngTradFile().getProperty("answerA67");
-        QuestionStringStorage.answerB67 = UtilTranslateString.getEngTradFile().getProperty("answerB67");
-        QuestionStringStorage.answerC67 = UtilTranslateString.getEngTradFile().getProperty("answerC67");
-        QuestionStringStorage.answerD67 = UtilTranslateString.getEngTradFile().getProperty("answerD67");
-        QuestionStringStorage.goodAnswer67 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer67");
-        QuestionStringStorage.explanation67 = UtilTranslateString.getEngTradFile().getProperty("explanation67");
-
-        QuestionStringStorage.question68 = UtilTranslateString.getEngTradFile().getProperty("question68");
-        QuestionStringStorage.answerA68 = UtilTranslateString.getEngTradFile().getProperty("answerA68");
-        QuestionStringStorage.answerB68 = UtilTranslateString.getEngTradFile().getProperty("answerB68");
-        QuestionStringStorage.answerC68 = UtilTranslateString.getEngTradFile().getProperty("answerC68");
-        QuestionStringStorage.answerD68 = UtilTranslateString.getEngTradFile().getProperty("answerD68");
-        QuestionStringStorage.goodAnswer68 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer68");
-        QuestionStringStorage.explanation68 = UtilTranslateString.getEngTradFile().getProperty("explanation68");
-
-        QuestionStringStorage.question69 = UtilTranslateString.getEngTradFile().getProperty("question69");
-        QuestionStringStorage.answerA69 = UtilTranslateString.getEngTradFile().getProperty("answerA69");
-        QuestionStringStorage.answerB69 = UtilTranslateString.getEngTradFile().getProperty("answerB69");
-        QuestionStringStorage.answerC69 = UtilTranslateString.getEngTradFile().getProperty("answerC69");
-        QuestionStringStorage.answerD69 = UtilTranslateString.getEngTradFile().getProperty("answerD69");
-        QuestionStringStorage.goodAnswer69 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer69");
-        QuestionStringStorage.explanation69 = UtilTranslateString.getEngTradFile().getProperty("explanation69");
-
-        QuestionStringStorage.question70 = UtilTranslateString.getEngTradFile().getProperty("question70");
-        QuestionStringStorage.answerA70 = UtilTranslateString.getEngTradFile().getProperty("answerA70");
-        QuestionStringStorage.answerB70 = UtilTranslateString.getEngTradFile().getProperty("answerB70");
-        QuestionStringStorage.answerC70 = UtilTranslateString.getEngTradFile().getProperty("answerC70");
-        QuestionStringStorage.answerD70 = UtilTranslateString.getEngTradFile().getProperty("answerD70");
-        QuestionStringStorage.goodAnswer70 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer70");
-        QuestionStringStorage.explanation70 = UtilTranslateString.getEngTradFile().getProperty("explanation70");
-
-        QuestionStringStorage.question71 = UtilTranslateString.getEngTradFile().getProperty("question71");
-        QuestionStringStorage.answerA71 = UtilTranslateString.getEngTradFile().getProperty("answerA71");
-        QuestionStringStorage.answerB71 = UtilTranslateString.getEngTradFile().getProperty("answerB71");
-        QuestionStringStorage.answerC71 = UtilTranslateString.getEngTradFile().getProperty("answerC71");
-        QuestionStringStorage.answerD71 = UtilTranslateString.getEngTradFile().getProperty("answerD71");
-        QuestionStringStorage.goodAnswer71 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer71");
-        QuestionStringStorage.explanation71 = UtilTranslateString.getEngTradFile().getProperty("explanation71");
-
-        QuestionStringStorage.question72 = UtilTranslateString.getEngTradFile().getProperty("question72");
-        QuestionStringStorage.answerA72 = UtilTranslateString.getEngTradFile().getProperty("answerA72");
-        QuestionStringStorage.answerB72 = UtilTranslateString.getEngTradFile().getProperty("answerB72");
-        QuestionStringStorage.answerC72 = UtilTranslateString.getEngTradFile().getProperty("answerC72");
-        QuestionStringStorage.answerD72 = UtilTranslateString.getEngTradFile().getProperty("answerD72");
-        QuestionStringStorage.goodAnswer72 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer72");
-        QuestionStringStorage.explanation72 = UtilTranslateString.getEngTradFile().getProperty("explanation72");
-
-        QuestionStringStorage.question73 = UtilTranslateString.getEngTradFile().getProperty("question73");
-        QuestionStringStorage.answerA73 = UtilTranslateString.getEngTradFile().getProperty("answerA73");
-        QuestionStringStorage.answerB73 = UtilTranslateString.getEngTradFile().getProperty("answerB73");
-        QuestionStringStorage.answerC73 = UtilTranslateString.getEngTradFile().getProperty("answerC73");
-        QuestionStringStorage.answerD73 = UtilTranslateString.getEngTradFile().getProperty("answerD73");
-        QuestionStringStorage.goodAnswer73 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer73");
-        QuestionStringStorage.explanation73 = UtilTranslateString.getEngTradFile().getProperty("explanation73");
-
-        QuestionStringStorage.question74 = UtilTranslateString.getEngTradFile().getProperty("question74");
-        QuestionStringStorage.answerA74 = UtilTranslateString.getEngTradFile().getProperty("answerA74");
-        QuestionStringStorage.answerB74 = UtilTranslateString.getEngTradFile().getProperty("answerB74");
-        QuestionStringStorage.answerC74 = UtilTranslateString.getEngTradFile().getProperty("answerC74");
-        QuestionStringStorage.answerD74 = UtilTranslateString.getEngTradFile().getProperty("answerD74");
-        QuestionStringStorage.goodAnswer74 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer74");
-        QuestionStringStorage.explanation74 = UtilTranslateString.getEngTradFile().getProperty("explanation74");
-
-        QuestionStringStorage.question75 = UtilTranslateString.getEngTradFile().getProperty("question75");
-        QuestionStringStorage.answerA75 = UtilTranslateString.getEngTradFile().getProperty("answerA75");
-        QuestionStringStorage.answerB75 = UtilTranslateString.getEngTradFile().getProperty("answerB75");
-        QuestionStringStorage.answerC75 = UtilTranslateString.getEngTradFile().getProperty("answerC75");
-        QuestionStringStorage.answerD75 = UtilTranslateString.getEngTradFile().getProperty("answerD75");
-        QuestionStringStorage.goodAnswer75 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer75");
-        QuestionStringStorage.explanation75 = UtilTranslateString.getEngTradFile().getProperty("explanation75");
-
-        QuestionStringStorage.question76 = UtilTranslateString.getEngTradFile().getProperty("question76");
-        QuestionStringStorage.answerA76 = UtilTranslateString.getEngTradFile().getProperty("answerA76");
-        QuestionStringStorage.answerB76 = UtilTranslateString.getEngTradFile().getProperty("answerB76");
-        QuestionStringStorage.answerC76 = UtilTranslateString.getEngTradFile().getProperty("answerC76");
-        QuestionStringStorage.answerD76 = UtilTranslateString.getEngTradFile().getProperty("answerD76");
-        QuestionStringStorage.goodAnswer76 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer76");
-        QuestionStringStorage.explanation76 = UtilTranslateString.getEngTradFile().getProperty("explanation76");
-
-        QuestionStringStorage.question77 = UtilTranslateString.getEngTradFile().getProperty("question77");
-        QuestionStringStorage.answerA77 = UtilTranslateString.getEngTradFile().getProperty("answerA77");
-        QuestionStringStorage.answerB77 = UtilTranslateString.getEngTradFile().getProperty("answerB77");
-        QuestionStringStorage.answerC77 = UtilTranslateString.getEngTradFile().getProperty("answerC77");
-        QuestionStringStorage.answerD77 = UtilTranslateString.getEngTradFile().getProperty("answerD77");
-        QuestionStringStorage.goodAnswer77 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer77");
-        QuestionStringStorage.explanation77 = UtilTranslateString.getEngTradFile().getProperty("explanation77");
-
-        QuestionStringStorage.question78 = UtilTranslateString.getEngTradFile().getProperty("question78");
-        QuestionStringStorage.answerA78 = UtilTranslateString.getEngTradFile().getProperty("answerA78");
-        QuestionStringStorage.answerB78 = UtilTranslateString.getEngTradFile().getProperty("answerB78");
-        QuestionStringStorage.answerC78 = UtilTranslateString.getEngTradFile().getProperty("answerC78");
-        QuestionStringStorage.answerD78 = UtilTranslateString.getEngTradFile().getProperty("answerD78");
-        QuestionStringStorage.goodAnswer78 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer78");
-        QuestionStringStorage.explanation78 = UtilTranslateString.getEngTradFile().getProperty("explanation78");
-
-        QuestionStringStorage.question79 = UtilTranslateString.getEngTradFile().getProperty("question79");
-        QuestionStringStorage.answerA79 = UtilTranslateString.getEngTradFile().getProperty("answerA79");
-        QuestionStringStorage.answerB79 = UtilTranslateString.getEngTradFile().getProperty("answerB79");
-        QuestionStringStorage.answerC79 = UtilTranslateString.getEngTradFile().getProperty("answerC79");
-        QuestionStringStorage.answerD79 = UtilTranslateString.getEngTradFile().getProperty("answerD79");
-        QuestionStringStorage.goodAnswer79 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer79");
-        QuestionStringStorage.explanation79 = UtilTranslateString.getEngTradFile().getProperty("explanation79");
-
-        QuestionStringStorage.question80 = UtilTranslateString.getEngTradFile().getProperty("question80");
-        QuestionStringStorage.answerA80 = UtilTranslateString.getEngTradFile().getProperty("answerA80");
-        QuestionStringStorage.answerB80 = UtilTranslateString.getEngTradFile().getProperty("answerB80");
-        QuestionStringStorage.answerC80 = UtilTranslateString.getEngTradFile().getProperty("answerC80");
-        QuestionStringStorage.answerD80 = UtilTranslateString.getEngTradFile().getProperty("answerD80");
-        QuestionStringStorage.goodAnswer80 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer80");
-        QuestionStringStorage.explanation80 = UtilTranslateString.getEngTradFile().getProperty("explanation80");
+        setupEngQuestion(QuestionStringStorage.questionObject1, "1");
+
+        setupEngQuestion(QuestionStringStorage.questionObject2, "2");
+
+        setupEngQuestion(QuestionStringStorage.questionObject3, "3");
+
+        setupEngQuestion(QuestionStringStorage.questionObject4, "4");
+
+        setupEngQuestion(QuestionStringStorage.questionObject5, "5");
+
+        setupEngQuestion(QuestionStringStorage.questionObject1, "1");
+
+        setupEngQuestion(QuestionStringStorage.questionObject2, "2");
+
+        setupEngQuestion(QuestionStringStorage.questionObject3, "3");
+
+        setupEngQuestion(QuestionStringStorage.questionObject5, "5");
+
+        setupEngQuestion(QuestionStringStorage.questionObject6, "6");
+
+        setupEngQuestion(QuestionStringStorage.questionObject7, "7");
+
+        setupEngQuestion(QuestionStringStorage.questionObject8, "8");
+
+        setupEngQuestion(QuestionStringStorage.questionObject9, "9");
+
+        setupEngQuestion(QuestionStringStorage.questionObject10, "10");
+
+        setupEngQuestion(QuestionStringStorage.questionObject11, "11");
+
+        setupEngQuestion(QuestionStringStorage.questionObject12, "12");
+
+        setupEngQuestion(QuestionStringStorage.questionObject13, "13");
+
+        setupEngQuestion(QuestionStringStorage.questionObject14, "14");
+
+        setupEngQuestion(QuestionStringStorage.questionObject15, "15");
+
+        setupEngQuestion(QuestionStringStorage.questionObject16, "16");
+
+        setupEngQuestion(QuestionStringStorage.questionObject17, "17");
+
+        setupEngQuestion(QuestionStringStorage.questionObject18, "18");
+
+        setupEngQuestion(QuestionStringStorage.questionObject19, "19");
+
+        setupEngQuestion(QuestionStringStorage.questionObject20, "20");
+
+        setupEngQuestion(QuestionStringStorage.questionObject21, "21");
+
+        setupEngQuestion(QuestionStringStorage.questionObject22, "22");
+
+        setupEngQuestion(QuestionStringStorage.questionObject23, "23");
+
+        setupEngQuestion(QuestionStringStorage.questionObject24, "24");
+
+        setupEngQuestion(QuestionStringStorage.questionObject25, "25");
+
+        setupEngQuestion(QuestionStringStorage.questionObject26, "26");
+
+        setupEngQuestion(QuestionStringStorage.questionObject27, "27");
+
+        setupEngQuestion(QuestionStringStorage.questionObject28, "28");
+
+        setupEngQuestion(QuestionStringStorage.questionObject29, "29");
+
+        setupEngQuestion(QuestionStringStorage.questionObject30, "30");
+
+        setupEngQuestion(QuestionStringStorage.questionObject31, "31");
+
+        setupEngQuestion(QuestionStringStorage.questionObject32, "32");
+
+        setupEngQuestion(QuestionStringStorage.questionObject33, "33");
+
+        setupEngQuestion(QuestionStringStorage.questionObject34, "34");
+
+        setupEngQuestion(QuestionStringStorage.questionObject35, "35");
+
+        setupEngQuestion(QuestionStringStorage.questionObject36, "36");
+
+        setupEngQuestion(QuestionStringStorage.questionObject37, "37");
+
+        setupEngQuestion(QuestionStringStorage.questionObject38, "38");
+
+        setupEngQuestion(QuestionStringStorage.questionObject39, "39");
+
+        setupEngQuestion(QuestionStringStorage.questionObject40, "40");
+
+        setupEngQuestion(QuestionStringStorage.questionObject41, "41");
+
+        setupEngQuestion(QuestionStringStorage.questionObject42, "42");
+
+        setupEngQuestion(QuestionStringStorage.questionObject43, "43");
+
+        setupEngQuestion(QuestionStringStorage.questionObject44, "44");
+
+        setupEngQuestion(QuestionStringStorage.questionObject45, "45");
+
+        setupEngQuestion(QuestionStringStorage.questionObject46, "46");
+
+        setupEngQuestion(QuestionStringStorage.questionObject47, "47");
+
+        setupEngQuestion(QuestionStringStorage.questionObject48, "48");
+
+        setupEngQuestion(QuestionStringStorage.questionObject49, "49");
+
+        setupEngQuestion(QuestionStringStorage.questionObject50, "50");
+
+        setupEngQuestion(QuestionStringStorage.questionObject51, "51");
+
+        setupEngQuestion(QuestionStringStorage.questionObject52, "52");
+
+        setupEngQuestion(QuestionStringStorage.questionObject53, "53");
+
+        setupEngQuestion(QuestionStringStorage.questionObject54, "54");
+
+        setupEngQuestion(QuestionStringStorage.questionObject55, "55");
+
+        setupEngQuestion(QuestionStringStorage.questionObject56, "56");
+
+        setupEngQuestion(QuestionStringStorage.questionObject57, "57");
+
+        setupEngQuestion(QuestionStringStorage.questionObject58, "58");
+
+        setupEngQuestion(QuestionStringStorage.questionObject59, "59");
+
+        setupEngQuestion(QuestionStringStorage.questionObject60, "60");
+
+        setupEngQuestion(QuestionStringStorage.questionObject61, "61");
+
+        setupEngQuestion(QuestionStringStorage.questionObject62, "62");
+
+        setupEngQuestion(QuestionStringStorage.questionObject63, "63");
+
+        setupEngQuestion(QuestionStringStorage.questionObject64, "64");
+
+        setupEngQuestion(QuestionStringStorage.questionObject65, "65");
+
+        setupEngQuestion(QuestionStringStorage.questionObject66, "66");
+
+        setupEngQuestion(QuestionStringStorage.questionObject67, "67");
+
+        setupEngQuestion(QuestionStringStorage.questionObject68, "68");
+
+        setupEngQuestion(QuestionStringStorage.questionObject69, "69");
+
+        setupEngQuestion(QuestionStringStorage.questionObject70, "70");
+
+        setupEngQuestion(QuestionStringStorage.questionObject71, "71");
+
+        setupEngQuestion(QuestionStringStorage.questionObject72, "72");
+
+        setupEngQuestion(QuestionStringStorage.questionObject73, "73");
+
+        setupEngQuestion(QuestionStringStorage.questionObject74, "74");
+
+        setupEngQuestion(QuestionStringStorage.questionObject75, "75");
+
+        setupEngQuestion(QuestionStringStorage.questionObject76, "76");
+
+        setupEngQuestion(QuestionStringStorage.questionObject77, "77");
+
+        setupEngQuestion(QuestionStringStorage.questionObject78, "78");
+
+        setupEngQuestion(QuestionStringStorage.questionObject79, "79");
+
+        setupEngQuestion(QuestionStringStorage.questionObject80, "80");
 
         QuestionStringStorage.question81 = UtilTranslateString.getEngTradFile().getProperty("question81");
         QuestionStringStorage.answerA81 = UtilTranslateString.getEngTradFile().getProperty("answerA81");
@@ -2490,5 +1576,67 @@ public class UtilTranslateQuestion
         QuestionStringStorage.goodAnswer155 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer155");
         QuestionStringStorage.explanation155 = UtilTranslateString.getEngTradFile().getProperty("explanation155");
 
+        QuestionStringStorage.question156 = UtilTranslateString.getEngTradFile().getProperty("question156");
+        QuestionStringStorage.answerA156 = UtilTranslateString.getEngTradFile().getProperty("answerA156");
+        QuestionStringStorage.answerB156 = UtilTranslateString.getEngTradFile().getProperty("answerB156");
+        QuestionStringStorage.answerC156 = UtilTranslateString.getEngTradFile().getProperty("answerC156");
+        QuestionStringStorage.answerD156 = UtilTranslateString.getEngTradFile().getProperty("answerD156");
+        QuestionStringStorage.goodAnswer156 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer156");
+        QuestionStringStorage.explanation156 = UtilTranslateString.getEngTradFile().getProperty("explanation156");
+
+        QuestionStringStorage.question157 = UtilTranslateString.getEngTradFile().getProperty("question157");
+        QuestionStringStorage.answerA157 = UtilTranslateString.getEngTradFile().getProperty("answerA157");
+        QuestionStringStorage.answerB157 = UtilTranslateString.getEngTradFile().getProperty("answerB157");
+        QuestionStringStorage.answerC157 = UtilTranslateString.getEngTradFile().getProperty("answerC157");
+        QuestionStringStorage.answerD157 = UtilTranslateString.getEngTradFile().getProperty("answerD157");
+        QuestionStringStorage.goodAnswer157 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer157");
+        QuestionStringStorage.explanation157 = UtilTranslateString.getEngTradFile().getProperty("explanation157");
+
+        QuestionStringStorage.question158 = UtilTranslateString.getEngTradFile().getProperty("question158");
+        QuestionStringStorage.answerA158 = UtilTranslateString.getEngTradFile().getProperty("answerA158");
+        QuestionStringStorage.answerB158 = UtilTranslateString.getEngTradFile().getProperty("answerB158");
+        QuestionStringStorage.answerC158 = UtilTranslateString.getEngTradFile().getProperty("answerC158");
+        QuestionStringStorage.answerD158 = UtilTranslateString.getEngTradFile().getProperty("answerD158");
+        QuestionStringStorage.goodAnswer158 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer158");
+        QuestionStringStorage.explanation158 = UtilTranslateString.getEngTradFile().getProperty("explanation158");
+
+        QuestionStringStorage.question159 = UtilTranslateString.getEngTradFile().getProperty("question159");
+        QuestionStringStorage.answerA159 = UtilTranslateString.getEngTradFile().getProperty("answerA159");
+        QuestionStringStorage.answerB159 = UtilTranslateString.getEngTradFile().getProperty("answerB159");
+        QuestionStringStorage.answerC159 = UtilTranslateString.getEngTradFile().getProperty("answerC159");
+        QuestionStringStorage.answerD159 = UtilTranslateString.getEngTradFile().getProperty("answerD159");
+        QuestionStringStorage.goodAnswer159 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer159");
+        QuestionStringStorage.explanation159 = UtilTranslateString.getEngTradFile().getProperty("explanation159");
+
+        QuestionStringStorage.question160 = UtilTranslateString.getEngTradFile().getProperty("question160");
+        QuestionStringStorage.answerA160 = UtilTranslateString.getEngTradFile().getProperty("answerA160");
+        QuestionStringStorage.answerB160 = UtilTranslateString.getEngTradFile().getProperty("answerB160");
+        QuestionStringStorage.answerC160 = UtilTranslateString.getEngTradFile().getProperty("answerC160");
+        QuestionStringStorage.answerD160 = UtilTranslateString.getEngTradFile().getProperty("answerD160");
+        QuestionStringStorage.goodAnswer160 = UtilTranslateString.getEngTradFile().getProperty("goodAnswer160");
+        QuestionStringStorage.explanation160 = UtilTranslateString.getEngTradFile().getProperty("explanation160");
+
+    }
+
+    public void setupEngQuestion(QuestionObject questionObject, String index)
+    {
+        questionObject.setQuestion(UtilTranslateString.getEngTradFile().getProperty("question"+index));
+        questionObject.setAnswerA(UtilTranslateString.getEngTradFile().getProperty("answerA"+index));
+        questionObject.setAnswerB(UtilTranslateString.getEngTradFile().getProperty("answerB"+index));
+        questionObject.setAnswerC(UtilTranslateString.getEngTradFile().getProperty("answerC"+index));
+        questionObject.setAnswerD(UtilTranslateString.getEngTradFile().getProperty("answerD"+index));
+        questionObject.setGoodAnswer(UtilTranslateString.getEngTradFile().getProperty("goodAnswer"+index));
+        questionObject.setExplanation(UtilTranslateString.getEngTradFile().getProperty("explanation"+index));
+    }
+
+    public void setupFrQuestion(QuestionObject questionObject, String index)
+    {
+        questionObject.setQuestion(UtilTranslateString.getFrTradFile().getProperty("question"+index));
+        questionObject.setAnswerA(UtilTranslateString.getFrTradFile().getProperty("answerA"+index));
+        questionObject.setAnswerB(UtilTranslateString.getFrTradFile().getProperty("answerB"+index));
+        questionObject.setAnswerC(UtilTranslateString.getFrTradFile().getProperty("answerC"+index));
+        questionObject.setAnswerD(UtilTranslateString.getFrTradFile().getProperty("answerD"+index));
+        questionObject.setGoodAnswer(UtilTranslateString.getFrTradFile().getProperty("goodAnswer"+index));
+        questionObject.setExplanation(UtilTranslateString.getFrTradFile().getProperty("explanation"+index));
     }
 }

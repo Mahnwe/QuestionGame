@@ -22,404 +22,404 @@ public class QuestionStorage
 
     public void createQuestions()
     {
-        Question question1 = new Question(UtilStringStorage.geography, QuestionStringStorage.question1,QuestionStringStorage.answerA1,
-                QuestionStringStorage.answerB1, QuestionStringStorage.answerC1, QuestionStringStorage.answerD1, QuestionStringStorage.goodAnswer1,
-                QuestionStringStorage.explanation1);
+        Question question1 = new Question(UtilStringStorage.geography, QuestionStringStorage.questionObject1.getQuestion(),QuestionStringStorage.questionObject1.getAnswerA(),
+                QuestionStringStorage.questionObject1.getAnswerB(), QuestionStringStorage.questionObject1.getAnswerC(), QuestionStringStorage.questionObject1.getAnswerD(),
+                QuestionStringStorage.questionObject1.getGoodAnswer(), QuestionStringStorage.questionObject1.getExplanation());
         questionList.add(question1);
 
-        Question question2 = new Question(UtilStringStorage.historia, QuestionStringStorage.question2,QuestionStringStorage.answerA2,
-                QuestionStringStorage.answerB2, QuestionStringStorage.answerC2, QuestionStringStorage.answerD2, QuestionStringStorage.goodAnswer2,
-                QuestionStringStorage.explanation2);
+        Question question2 = new Question(UtilStringStorage.historia, QuestionStringStorage.questionObject2.getQuestion(),QuestionStringStorage.questionObject2.getAnswerA(),
+                QuestionStringStorage.questionObject2.getAnswerB(), QuestionStringStorage.questionObject2.getAnswerC(), QuestionStringStorage.questionObject2.getAnswerD(),
+                QuestionStringStorage.questionObject2.getGoodAnswer(), QuestionStringStorage.questionObject2.getExplanation());
         questionList.add(question2);
 
-        Question question3 = new Question(UtilStringStorage.linguistic, QuestionStringStorage.question3,QuestionStringStorage.answerA3,
-                QuestionStringStorage.answerB3, QuestionStringStorage.answerC3, QuestionStringStorage.answerD3, QuestionStringStorage.goodAnswer3,
-                QuestionStringStorage.explanation3);
+        Question question3 = new Question(UtilStringStorage.linguistic, QuestionStringStorage.questionObject3.getQuestion(),QuestionStringStorage.questionObject3.getAnswerA(),
+                QuestionStringStorage.questionObject3.getAnswerB(), QuestionStringStorage.questionObject3.getAnswerC(), QuestionStringStorage.questionObject3.getAnswerD(),
+                QuestionStringStorage.questionObject3.getGoodAnswer(), QuestionStringStorage.questionObject3.getExplanation());
         questionList.add(question3);
 
-        Question question4 = new Question(UtilStringStorage.geography, QuestionStringStorage.question4,QuestionStringStorage.answerA4,
-                QuestionStringStorage.answerB4, QuestionStringStorage.answerC4, QuestionStringStorage.answerD4, QuestionStringStorage.goodAnswer4,
-                QuestionStringStorage.explanation4);
+        Question question4 = new Question(UtilStringStorage.geography, QuestionStringStorage.questionObject4.getQuestion(),QuestionStringStorage.questionObject4.getAnswerA(),
+                QuestionStringStorage.questionObject4.getAnswerB(), QuestionStringStorage.questionObject4.getAnswerC(), QuestionStringStorage.questionObject4.getAnswerD(),
+                QuestionStringStorage.questionObject4.getGoodAnswer(), QuestionStringStorage.questionObject4.getExplanation());
         questionList.add(question4);
 
-        Question question5 = new Question(UtilStringStorage.animals, QuestionStringStorage.question5,QuestionStringStorage.answerA5,
-                QuestionStringStorage.answerB5, QuestionStringStorage.answerC5, QuestionStringStorage.answerD5, QuestionStringStorage.goodAnswer5,
-                QuestionStringStorage.explanation5);
+        Question question5 = new Question(UtilStringStorage.animals, QuestionStringStorage.questionObject5.getQuestion(),QuestionStringStorage.questionObject5.getAnswerA(),
+                QuestionStringStorage.questionObject5.getAnswerB(), QuestionStringStorage.questionObject5.getAnswerC(), QuestionStringStorage.questionObject5.getAnswerD(),
+                QuestionStringStorage.questionObject5.getGoodAnswer(), QuestionStringStorage.questionObject5.getExplanation());
         questionList.add(question5);
 
-        Question question6 = new Question(UtilStringStorage.invention, QuestionStringStorage.question6,QuestionStringStorage.answerA6,
-                QuestionStringStorage.answerB6, QuestionStringStorage.answerC6, QuestionStringStorage.answerD6, QuestionStringStorage.goodAnswer6,
-                QuestionStringStorage.explanation6);
+        Question question6 = new Question(UtilStringStorage.invention, QuestionStringStorage.questionObject6.getQuestion(),QuestionStringStorage.questionObject6.getAnswerA(),
+                QuestionStringStorage.questionObject6.getAnswerB(), QuestionStringStorage.questionObject6.getAnswerC(), QuestionStringStorage.questionObject6.getAnswerD(),
+                QuestionStringStorage.questionObject6.getGoodAnswer(), QuestionStringStorage.questionObject6.getExplanation());
         questionList.add(question6);
 
-        Question question7 = new Question(UtilStringStorage.linguistic, QuestionStringStorage.question7,QuestionStringStorage.answerA7,
-                QuestionStringStorage.answerB7, QuestionStringStorage.answerC7, QuestionStringStorage.answerD7, QuestionStringStorage.goodAnswer7,
-                QuestionStringStorage.explanation7);
+        Question question7 = new Question(UtilStringStorage.linguistic, QuestionStringStorage.questionObject7.getQuestion(),QuestionStringStorage.questionObject7.getAnswerA(),
+                QuestionStringStorage.questionObject7.getAnswerB(), QuestionStringStorage.questionObject7.getAnswerC(), QuestionStringStorage.questionObject7.getAnswerD(),
+                QuestionStringStorage.questionObject7.getGoodAnswer(), QuestionStringStorage.questionObject7.getExplanation());
         questionList.add(question7);
 
-        Question question8 = new Question(UtilStringStorage.insolite, QuestionStringStorage.question8,QuestionStringStorage.answerA8,
-                QuestionStringStorage.answerB8, QuestionStringStorage.answerC8, QuestionStringStorage.answerD8, QuestionStringStorage.goodAnswer8,
-                QuestionStringStorage.explanation8);
+        Question question8 = new Question(UtilStringStorage.insolite, QuestionStringStorage.questionObject8.getQuestion(),QuestionStringStorage.questionObject8.getAnswerA(),
+                QuestionStringStorage.questionObject8.getAnswerB(), QuestionStringStorage.questionObject8.getAnswerC(), QuestionStringStorage.questionObject8.getAnswerD(),
+                QuestionStringStorage.questionObject8.getGoodAnswer(), QuestionStringStorage.questionObject8.getExplanation());
         questionList.add(question8);
 
-        Question question9 = new Question(UtilStringStorage.paleontology, QuestionStringStorage.question9,QuestionStringStorage.answerA9,
-                QuestionStringStorage.answerB9, QuestionStringStorage.answerC9, QuestionStringStorage.answerD9, QuestionStringStorage.goodAnswer9,
-                QuestionStringStorage.explanation9);
+        Question question9 = new Question(UtilStringStorage.paleontology, QuestionStringStorage.questionObject9.getQuestion(),QuestionStringStorage.questionObject9.getAnswerA(),
+                QuestionStringStorage.questionObject9.getAnswerB(), QuestionStringStorage.questionObject9.getAnswerC(), QuestionStringStorage.questionObject9.getAnswerD(),
+                QuestionStringStorage.questionObject9.getGoodAnswer(), QuestionStringStorage.questionObject9.getExplanation());
         questionList.add(question9);
 
-        Question question10 = new Question(UtilStringStorage.insolite, QuestionStringStorage.question10,QuestionStringStorage.answerA10,
-                QuestionStringStorage.answerB10, QuestionStringStorage.answerC10, QuestionStringStorage.answerD10, QuestionStringStorage.goodAnswer10,
-                QuestionStringStorage.explanation10);
+        Question question10 = new Question(UtilStringStorage.insolite, QuestionStringStorage.questionObject10.getQuestion(),QuestionStringStorage.questionObject10.getAnswerA(),
+                QuestionStringStorage.questionObject10.getAnswerB(), QuestionStringStorage.questionObject10.getAnswerC(), QuestionStringStorage.questionObject10.getAnswerD(),
+                QuestionStringStorage.questionObject10.getGoodAnswer(), QuestionStringStorage.questionObject10.getExplanation());
         questionList.add(question10);
 
-        Question question11 = new Question(UtilStringStorage.animals, QuestionStringStorage.question11,QuestionStringStorage.answerA11,
-                QuestionStringStorage.answerB11, QuestionStringStorage.answerC11, QuestionStringStorage.answerD11, QuestionStringStorage.goodAnswer11,
-                QuestionStringStorage.explanation11);
+        Question question11 = new Question(UtilStringStorage.animals, QuestionStringStorage.questionObject11.getQuestion(),QuestionStringStorage.questionObject11.getAnswerA(),
+                QuestionStringStorage.questionObject11.getAnswerB(), QuestionStringStorage.questionObject11.getAnswerC(), QuestionStringStorage.questionObject11.getAnswerD(),
+                QuestionStringStorage.questionObject11.getGoodAnswer(), QuestionStringStorage.questionObject11.getExplanation());
         questionList.add(question11);
 
-        Question question12 = new Question(UtilStringStorage.videoGames, QuestionStringStorage.question12,QuestionStringStorage.answerA12,
-                QuestionStringStorage.answerB12, QuestionStringStorage.answerC12, QuestionStringStorage.answerD12, QuestionStringStorage.goodAnswer12,
-                QuestionStringStorage.explanation12);
+        Question question12 = new Question(UtilStringStorage.videoGames, QuestionStringStorage.questionObject12.getQuestion(),QuestionStringStorage.questionObject12.getAnswerA(),
+                QuestionStringStorage.questionObject12.getAnswerB(), QuestionStringStorage.questionObject12.getAnswerC(), QuestionStringStorage.questionObject12.getAnswerD(),
+                QuestionStringStorage.questionObject12.getGoodAnswer(), QuestionStringStorage.questionObject12.getExplanation());
         questionList.add(question12);
 
-        Question question13 = new Question(UtilStringStorage.cinema, QuestionStringStorage.question13,QuestionStringStorage.answerA13,
-                QuestionStringStorage.answerB13, QuestionStringStorage.answerC13, QuestionStringStorage.answerD13, QuestionStringStorage.goodAnswer13,
-                QuestionStringStorage.explanation13);
+        Question question13 = new Question(UtilStringStorage.cinema, QuestionStringStorage.questionObject13.getQuestion(),QuestionStringStorage.questionObject13.getAnswerA(),
+                QuestionStringStorage.questionObject13.getAnswerB(), QuestionStringStorage.questionObject13.getAnswerC(), QuestionStringStorage.questionObject13.getAnswerD(),
+                QuestionStringStorage.questionObject13.getGoodAnswer(), QuestionStringStorage.questionObject13.getExplanation());
         questionList.add(question13);
 
-        Question question14 = new Question(UtilStringStorage.space, QuestionStringStorage.question14,QuestionStringStorage.answerA14,
-                QuestionStringStorage.answerB14, QuestionStringStorage.answerC14, QuestionStringStorage.answerD14, QuestionStringStorage.goodAnswer14,
-                QuestionStringStorage.explanation14);
+        Question question14 = new Question(UtilStringStorage.space, QuestionStringStorage.questionObject14.getQuestion(),QuestionStringStorage.questionObject14.getAnswerA(),
+                QuestionStringStorage.questionObject14.getAnswerB(), QuestionStringStorage.questionObject14.getAnswerC(), QuestionStringStorage.questionObject14.getAnswerD(),
+                QuestionStringStorage.questionObject14.getGoodAnswer(), QuestionStringStorage.questionObject14.getExplanation());
         questionList.add(question14);
 
-        Question question15 = new Question(UtilStringStorage.plants, QuestionStringStorage.question15,QuestionStringStorage.answerA15,
-                QuestionStringStorage.answerB15, QuestionStringStorage.answerC15, QuestionStringStorage.answerD15, QuestionStringStorage.goodAnswer15,
-                QuestionStringStorage.explanation15);
+        Question question15 = new Question(UtilStringStorage.plants, QuestionStringStorage.questionObject15.getQuestion(),QuestionStringStorage.questionObject15.getAnswerA(),
+                QuestionStringStorage.questionObject15.getAnswerB(), QuestionStringStorage.questionObject15.getAnswerC(), QuestionStringStorage.questionObject15.getAnswerD(),
+                QuestionStringStorage.questionObject15.getGoodAnswer(), QuestionStringStorage.questionObject15.getExplanation());
         questionList.add(question15);
 
-        Question question16 = new Question(UtilStringStorage.geography, QuestionStringStorage.question16,QuestionStringStorage.answerA16,
-                QuestionStringStorage.answerB16, QuestionStringStorage.answerC16, QuestionStringStorage.answerD16, QuestionStringStorage.goodAnswer16,
-                QuestionStringStorage.explanation16);
+        Question question16 = new Question(UtilStringStorage.geography, QuestionStringStorage.questionObject16.getQuestion(),QuestionStringStorage.questionObject16.getAnswerA(),
+                QuestionStringStorage.questionObject16.getAnswerB(), QuestionStringStorage.questionObject16.getAnswerC(), QuestionStringStorage.questionObject16.getAnswerD(),
+                QuestionStringStorage.questionObject16.getGoodAnswer(), QuestionStringStorage.questionObject16.getExplanation());
         questionList.add(question16);
 
-        Question question17 = new Question(UtilStringStorage.historia, QuestionStringStorage.question17,QuestionStringStorage.answerA17,
-                QuestionStringStorage.answerB17, QuestionStringStorage.answerC17, QuestionStringStorage.answerD17, QuestionStringStorage.goodAnswer17,
-                QuestionStringStorage.explanation17);
+        Question question17 = new Question(UtilStringStorage.historia, QuestionStringStorage.questionObject17.getQuestion(),QuestionStringStorage.questionObject17.getAnswerA(),
+                QuestionStringStorage.questionObject17.getAnswerB(), QuestionStringStorage.questionObject17.getAnswerC(), QuestionStringStorage.questionObject17.getAnswerD(),
+                QuestionStringStorage.questionObject17.getGoodAnswer(), QuestionStringStorage.questionObject17.getExplanation());
         questionList.add(question17);
 
-        Question question18 = new Question(UtilStringStorage.geography, QuestionStringStorage.question18,QuestionStringStorage.answerA18,
-                QuestionStringStorage.answerB18, QuestionStringStorage.answerC18, QuestionStringStorage.answerD18, QuestionStringStorage.goodAnswer18,
-                QuestionStringStorage.explanation18);
+        Question question18 = new Question(UtilStringStorage.geography, QuestionStringStorage.questionObject18.getQuestion(),QuestionStringStorage.questionObject18.getAnswerA(),
+                QuestionStringStorage.questionObject18.getAnswerB(), QuestionStringStorage.questionObject18.getAnswerC(), QuestionStringStorage.questionObject18.getAnswerD(),
+                QuestionStringStorage.questionObject18.getGoodAnswer(), QuestionStringStorage.questionObject18.getExplanation());
         questionList.add(question18);
 
-        Question question19 = new Question(UtilStringStorage.animals, QuestionStringStorage.question19,QuestionStringStorage.answerA19,
-                QuestionStringStorage.answerB19, QuestionStringStorage.answerC19, QuestionStringStorage.answerD19, QuestionStringStorage.goodAnswer19,
-                QuestionStringStorage.explanation19);
+        Question question19 = new Question(UtilStringStorage.animals, QuestionStringStorage.questionObject19.getQuestion(),QuestionStringStorage.questionObject19.getAnswerA(),
+                QuestionStringStorage.questionObject19.getAnswerB(), QuestionStringStorage.questionObject19.getAnswerC(), QuestionStringStorage.questionObject19.getAnswerD(),
+                QuestionStringStorage.questionObject19.getGoodAnswer(), QuestionStringStorage.questionObject19.getExplanation());
         questionList.add(question19);
 
-        Question question20 = new Question(UtilStringStorage.music, QuestionStringStorage.question20,QuestionStringStorage.answerA20,
-                QuestionStringStorage.answerB20, QuestionStringStorage.answerC20, QuestionStringStorage.answerD20, QuestionStringStorage.goodAnswer20,
-                QuestionStringStorage.explanation20);
+        Question question20 = new Question(UtilStringStorage.music, QuestionStringStorage.questionObject20.getQuestion(),QuestionStringStorage.questionObject20.getAnswerA(),
+                QuestionStringStorage.questionObject20.getAnswerB(), QuestionStringStorage.questionObject20.getAnswerC(), QuestionStringStorage.questionObject20.getAnswerD(),
+                QuestionStringStorage.questionObject20.getGoodAnswer(), QuestionStringStorage.questionObject20.getExplanation());
         questionList.add(question20);
 
-        Question question21 = new Question(UtilStringStorage.literature, QuestionStringStorage.question21,QuestionStringStorage.answerA21,
-                QuestionStringStorage.answerB21, QuestionStringStorage.answerC21, QuestionStringStorage.answerD21, QuestionStringStorage.goodAnswer21,
-                QuestionStringStorage.explanation21);
+        Question question21 = new Question(UtilStringStorage.literature, QuestionStringStorage.questionObject21.getQuestion(),QuestionStringStorage.questionObject21.getAnswerA(),
+                QuestionStringStorage.questionObject21.getAnswerB(), QuestionStringStorage.questionObject21.getAnswerC(), QuestionStringStorage.questionObject21.getAnswerD(),
+                QuestionStringStorage.questionObject21.getGoodAnswer(), QuestionStringStorage.questionObject21.getExplanation());
         questionList.add(question21);
 
-        Question question22 = new Question(UtilStringStorage.linguistic, QuestionStringStorage.question22,QuestionStringStorage.answerA22,
-                QuestionStringStorage.answerB22, QuestionStringStorage.answerC22, QuestionStringStorage.answerD22, QuestionStringStorage.goodAnswer22,
-                QuestionStringStorage.explanation22);
+        Question question22 = new Question(UtilStringStorage.linguistic, QuestionStringStorage.questionObject22.getQuestion(),QuestionStringStorage.questionObject22.getAnswerA(),
+                QuestionStringStorage.questionObject22.getAnswerB(), QuestionStringStorage.questionObject22.getAnswerC(), QuestionStringStorage.questionObject22.getAnswerD(),
+                QuestionStringStorage.questionObject22.getGoodAnswer(), QuestionStringStorage.questionObject22.getExplanation());
         questionList.add(question22);
 
-        Question question23 = new Question(UtilStringStorage.humanBody, QuestionStringStorage.question23,QuestionStringStorage.answerA23,
-                QuestionStringStorage.answerB23, QuestionStringStorage.answerC23, QuestionStringStorage.answerD23, QuestionStringStorage.goodAnswer23,
-                QuestionStringStorage.explanation23);
+        Question question23 = new Question(UtilStringStorage.humanBody, QuestionStringStorage.questionObject23.getQuestion(),QuestionStringStorage.questionObject23.getAnswerA(),
+                QuestionStringStorage.questionObject23.getAnswerB(), QuestionStringStorage.questionObject23.getAnswerC(), QuestionStringStorage.questionObject23.getAnswerD(),
+                QuestionStringStorage.questionObject23.getGoodAnswer(), QuestionStringStorage.questionObject23.getExplanation());
         questionList.add(question23);
 
-        Question question24 = new Question(UtilStringStorage.records, QuestionStringStorage.question24,QuestionStringStorage.answerA24,
-                QuestionStringStorage.answerB24, QuestionStringStorage.answerC24, QuestionStringStorage.answerD24, QuestionStringStorage.goodAnswer24,
-                QuestionStringStorage.explanation24);
+        Question question24 = new Question(UtilStringStorage.records, QuestionStringStorage.questionObject24.getQuestion(),QuestionStringStorage.questionObject24.getAnswerA(),
+                QuestionStringStorage.questionObject24.getAnswerB(), QuestionStringStorage.questionObject24.getAnswerC(), QuestionStringStorage.questionObject24.getAnswerD(),
+                QuestionStringStorage.questionObject24.getGoodAnswer(), QuestionStringStorage.questionObject24.getExplanation());
         questionList.add(question24);
 
-        Question question25 = new Question(UtilStringStorage.culture, QuestionStringStorage.question25,QuestionStringStorage.answerA25,
-                QuestionStringStorage.answerB25, QuestionStringStorage.answerC25, QuestionStringStorage.answerD25, QuestionStringStorage.goodAnswer25,
-                QuestionStringStorage.explanation25);
+        Question question25 = new Question(UtilStringStorage.culture, QuestionStringStorage.questionObject25.getQuestion(),QuestionStringStorage.questionObject25.getAnswerA(),
+                QuestionStringStorage.questionObject25.getAnswerB(), QuestionStringStorage.questionObject25.getAnswerC(), QuestionStringStorage.questionObject25.getAnswerD(),
+                QuestionStringStorage.questionObject25.getGoodAnswer(), QuestionStringStorage.questionObject25.getExplanation());
         questionList.add(question25);
 
-        Question question26 = new Question(UtilStringStorage.historia, QuestionStringStorage.question26,QuestionStringStorage.answerA26,
-                QuestionStringStorage.answerB26, QuestionStringStorage.answerC26, QuestionStringStorage.answerD26, QuestionStringStorage.goodAnswer26,
-                QuestionStringStorage.explanation26);
+        Question question26 = new Question(UtilStringStorage.historia, QuestionStringStorage.questionObject26.getQuestion(),QuestionStringStorage.questionObject26.getAnswerA(),
+                QuestionStringStorage.questionObject26.getAnswerB(), QuestionStringStorage.questionObject26.getAnswerC(), QuestionStringStorage.questionObject26.getAnswerD(),
+                QuestionStringStorage.questionObject26.getGoodAnswer(), QuestionStringStorage.questionObject26.getExplanation());
         questionList.add(question26);
 
-        Question question27 = new Question(UtilStringStorage.geography, QuestionStringStorage.question27,QuestionStringStorage.answerA27,
-                QuestionStringStorage.answerB27, QuestionStringStorage.answerC27, QuestionStringStorage.answerD27, QuestionStringStorage.goodAnswer27,
-                QuestionStringStorage.explanation27);
+        Question question27 = new Question(UtilStringStorage.geography, QuestionStringStorage.questionObject27.getQuestion(),QuestionStringStorage.questionObject27.getAnswerA(),
+                QuestionStringStorage.questionObject27.getAnswerB(), QuestionStringStorage.questionObject27.getAnswerC(), QuestionStringStorage.questionObject27.getAnswerD(),
+                QuestionStringStorage.questionObject27.getGoodAnswer(), QuestionStringStorage.questionObject27.getExplanation());
         questionList.add(question27);
 
-        Question question28 = new Question(UtilStringStorage.law, QuestionStringStorage.question28,QuestionStringStorage.answerA28,
-                QuestionStringStorage.answerB28, QuestionStringStorage.answerC28, QuestionStringStorage.answerD28, QuestionStringStorage.goodAnswer28,
-                QuestionStringStorage.explanation28);
+        Question question28 = new Question(UtilStringStorage.law, QuestionStringStorage.questionObject28.getQuestion(),QuestionStringStorage.questionObject28.getAnswerA(),
+                QuestionStringStorage.questionObject28.getAnswerB(), QuestionStringStorage.questionObject28.getAnswerC(), QuestionStringStorage.questionObject28.getAnswerD(),
+                QuestionStringStorage.questionObject28.getGoodAnswer(), QuestionStringStorage.questionObject28.getExplanation());
         questionList.add(question28);
 
-        Question question29 = new Question(UtilStringStorage.linguistic, QuestionStringStorage.question29,QuestionStringStorage.answerA29,
-                QuestionStringStorage.answerB29, QuestionStringStorage.answerC29, QuestionStringStorage.answerD29, QuestionStringStorage.goodAnswer29,
-                QuestionStringStorage.explanation29);
+        Question question29 = new Question(UtilStringStorage.linguistic, QuestionStringStorage.questionObject29.getQuestion(),QuestionStringStorage.questionObject29.getAnswerA(),
+                QuestionStringStorage.questionObject29.getAnswerB(), QuestionStringStorage.questionObject29.getAnswerC(), QuestionStringStorage.questionObject29.getAnswerD(),
+                QuestionStringStorage.questionObject29.getGoodAnswer(), QuestionStringStorage.questionObject29.getExplanation());
         questionList.add(question29);
 
-        Question question30 = new Question(UtilStringStorage.paleontology, QuestionStringStorage.question30,QuestionStringStorage.answerA30,
-                QuestionStringStorage.answerB30, QuestionStringStorage.answerC30, QuestionStringStorage.answerD30, QuestionStringStorage.goodAnswer30,
-                QuestionStringStorage.explanation30);
+        Question question30 = new Question(UtilStringStorage.paleontology, QuestionStringStorage.questionObject30.getQuestion(),QuestionStringStorage.questionObject30.getAnswerA(),
+                QuestionStringStorage.questionObject30.getAnswerB(), QuestionStringStorage.questionObject30.getAnswerC(), QuestionStringStorage.questionObject30.getAnswerD(),
+                QuestionStringStorage.questionObject30.getGoodAnswer(), QuestionStringStorage.questionObject30.getExplanation());
         questionList.add(question30);
 
-        Question question31 = new Question(UtilStringStorage.records, QuestionStringStorage.question31,QuestionStringStorage.answerA31,
-                QuestionStringStorage.answerB31, QuestionStringStorage.answerC31, QuestionStringStorage.answerD31, QuestionStringStorage.goodAnswer31,
-                QuestionStringStorage.explanation31);
+        Question question31 = new Question(UtilStringStorage.records, QuestionStringStorage.questionObject31.getQuestion(),QuestionStringStorage.questionObject31.getAnswerA(),
+                QuestionStringStorage.questionObject31.getAnswerB(), QuestionStringStorage.questionObject31.getAnswerC(), QuestionStringStorage.questionObject31.getAnswerD(),
+                QuestionStringStorage.questionObject31.getGoodAnswer(), QuestionStringStorage.questionObject31.getExplanation());
         questionList.add(question31);
 
-        Question question32 = new Question(UtilStringStorage.mythology, QuestionStringStorage.question32,QuestionStringStorage.answerA32,
-                QuestionStringStorage.answerB32, QuestionStringStorage.answerC32, QuestionStringStorage.answerD32, QuestionStringStorage.goodAnswer32,
-                QuestionStringStorage.explanation32);
+        Question question32 = new Question(UtilStringStorage.mythology, QuestionStringStorage.questionObject32.getQuestion(),QuestionStringStorage.questionObject32.getAnswerA(),
+                QuestionStringStorage.questionObject32.getAnswerB(), QuestionStringStorage.questionObject32.getAnswerC(), QuestionStringStorage.questionObject32.getAnswerD(),
+                QuestionStringStorage.questionObject32.getGoodAnswer(), QuestionStringStorage.questionObject32.getExplanation());
         questionList.add(question32);
 
-        Question question33 = new Question(UtilStringStorage.food, QuestionStringStorage.question33,QuestionStringStorage.answerA33,
-                QuestionStringStorage.answerB33, QuestionStringStorage.answerC33, QuestionStringStorage.answerD33, QuestionStringStorage.goodAnswer33,
-                QuestionStringStorage.explanation33);
+        Question question33 = new Question(UtilStringStorage.food, QuestionStringStorage.questionObject33.getQuestion(),QuestionStringStorage.questionObject33.getAnswerA(),
+                QuestionStringStorage.questionObject33.getAnswerB(), QuestionStringStorage.questionObject33.getAnswerC(), QuestionStringStorage.questionObject33.getAnswerD(),
+                QuestionStringStorage.questionObject33.getGoodAnswer(), QuestionStringStorage.questionObject33.getExplanation());
         questionList.add(question33);
 
-        Question question34 = new Question(UtilStringStorage.humanBody, QuestionStringStorage.question34,QuestionStringStorage.answerA34,
-                QuestionStringStorage.answerB34, QuestionStringStorage.answerC34, QuestionStringStorage.answerD34, QuestionStringStorage.goodAnswer34,
-                QuestionStringStorage.explanation34);
+        Question question34 = new Question(UtilStringStorage.humanBody, QuestionStringStorage.questionObject34.getQuestion(),QuestionStringStorage.questionObject34.getAnswerA(),
+                QuestionStringStorage.questionObject34.getAnswerB(), QuestionStringStorage.questionObject34.getAnswerC(), QuestionStringStorage.questionObject34.getAnswerD(),
+                QuestionStringStorage.questionObject34.getGoodAnswer(), QuestionStringStorage.questionObject34.getExplanation());
         questionList.add(question34);
 
-        Question question35 = new Question(UtilStringStorage.society, QuestionStringStorage.question35,QuestionStringStorage.answerA35,
-                QuestionStringStorage.answerB35, QuestionStringStorage.answerC35, QuestionStringStorage.answerD35, QuestionStringStorage.goodAnswer35,
-                QuestionStringStorage.explanation35);
+        Question question35 = new Question(UtilStringStorage.society, QuestionStringStorage.questionObject35.getQuestion(),QuestionStringStorage.questionObject35.getAnswerA(),
+                QuestionStringStorage.questionObject35.getAnswerB(), QuestionStringStorage.questionObject35.getAnswerC(), QuestionStringStorage.questionObject35.getAnswerD(),
+                QuestionStringStorage.questionObject35.getGoodAnswer(), QuestionStringStorage.questionObject35.getExplanation());
         questionList.add(question35);
 
-        Question question36 = new Question(UtilStringStorage.animals, QuestionStringStorage.question36,QuestionStringStorage.answerA36,
-                QuestionStringStorage.answerB36, QuestionStringStorage.answerC36, QuestionStringStorage.answerD36, QuestionStringStorage.goodAnswer36,
-                QuestionStringStorage.explanation36);
+        Question question36 = new Question(UtilStringStorage.animals, QuestionStringStorage.questionObject36.getQuestion(),QuestionStringStorage.questionObject36.getAnswerA(),
+                QuestionStringStorage.questionObject36.getAnswerB(), QuestionStringStorage.questionObject36.getAnswerC(), QuestionStringStorage.questionObject36.getAnswerD(),
+                QuestionStringStorage.questionObject36.getGoodAnswer(), QuestionStringStorage.questionObject36.getExplanation());
         questionList.add(question36);
 
-        Question question37 = new Question(UtilStringStorage.literature, QuestionStringStorage.question37,QuestionStringStorage.answerA37,
-                QuestionStringStorage.answerB37, QuestionStringStorage.answerC37, QuestionStringStorage.answerD37, QuestionStringStorage.goodAnswer37,
-                QuestionStringStorage.explanation37);
+        Question question37 = new Question(UtilStringStorage.literature, QuestionStringStorage.questionObject37.getQuestion(),QuestionStringStorage.questionObject37.getAnswerA(),
+                QuestionStringStorage.questionObject37.getAnswerB(), QuestionStringStorage.questionObject37.getAnswerC(), QuestionStringStorage.questionObject37.getAnswerD(),
+                QuestionStringStorage.questionObject37.getGoodAnswer(), QuestionStringStorage.questionObject37.getExplanation());
         questionList.add(question37);
 
-        Question question38 = new Question(UtilStringStorage.historia, QuestionStringStorage.question38,QuestionStringStorage.answerA38,
-                QuestionStringStorage.answerB38, QuestionStringStorage.answerC38, QuestionStringStorage.answerD38, QuestionStringStorage.goodAnswer38,
-                QuestionStringStorage.explanation38);
+        Question question38 = new Question(UtilStringStorage.historia, QuestionStringStorage.questionObject38.getQuestion(),QuestionStringStorage.questionObject38.getAnswerA(),
+                QuestionStringStorage.questionObject38.getAnswerB(), QuestionStringStorage.questionObject38.getAnswerC(), QuestionStringStorage.questionObject38.getAnswerD(),
+                QuestionStringStorage.questionObject38.getGoodAnswer(), QuestionStringStorage.questionObject38.getExplanation());
         questionList.add(question38);
 
-        Question question39 = new Question(UtilStringStorage.plants, QuestionStringStorage.question39,QuestionStringStorage.answerA39,
-                QuestionStringStorage.answerB39, QuestionStringStorage.answerC39, QuestionStringStorage.answerD39, QuestionStringStorage.goodAnswer39,
-                QuestionStringStorage.explanation39);
+        Question question39 = new Question(UtilStringStorage.plants, QuestionStringStorage.questionObject39.getQuestion(),QuestionStringStorage.questionObject39.getAnswerA(),
+                QuestionStringStorage.questionObject39.getAnswerB(), QuestionStringStorage.questionObject39.getAnswerC(), QuestionStringStorage.questionObject39.getAnswerD(),
+                QuestionStringStorage.questionObject39.getGoodAnswer(), QuestionStringStorage.questionObject39.getExplanation());
         questionList.add(question39);
 
-        Question question40 = new Question(UtilStringStorage.historia, QuestionStringStorage.question40,QuestionStringStorage.answerA40,
-                QuestionStringStorage.answerB40, QuestionStringStorage.answerC40, QuestionStringStorage.answerD40, QuestionStringStorage.goodAnswer40,
-                QuestionStringStorage.explanation40);
+        Question question40 = new Question(UtilStringStorage.historia, QuestionStringStorage.questionObject40.getQuestion(),QuestionStringStorage.questionObject40.getAnswerA(),
+                QuestionStringStorage.questionObject40.getAnswerB(), QuestionStringStorage.questionObject40.getAnswerC(), QuestionStringStorage.questionObject40.getAnswerD(),
+                QuestionStringStorage.questionObject40.getGoodAnswer(), QuestionStringStorage.questionObject40.getExplanation());
         questionList.add(question40);
 
-        Question question41 = new Question(UtilStringStorage.internet, QuestionStringStorage.question41,QuestionStringStorage.answerA41,
-                QuestionStringStorage.answerB41, QuestionStringStorage.answerC41, QuestionStringStorage.answerD41, QuestionStringStorage.goodAnswer41,
-                QuestionStringStorage.explanation41);
+        Question question41 = new Question(UtilStringStorage.internet, QuestionStringStorage.questionObject41.getQuestion(),QuestionStringStorage.questionObject41.getAnswerA(),
+                QuestionStringStorage.questionObject41.getAnswerB(), QuestionStringStorage.questionObject41.getAnswerC(), QuestionStringStorage.questionObject41.getAnswerD(),
+                QuestionStringStorage.questionObject41.getGoodAnswer(), QuestionStringStorage.questionObject41.getExplanation());
         questionList.add(question41);
 
-        Question question42 = new Question(UtilStringStorage.animals, QuestionStringStorage.question42,QuestionStringStorage.answerA42,
-                QuestionStringStorage.answerB42, QuestionStringStorage.answerC42, QuestionStringStorage.answerD42, QuestionStringStorage.goodAnswer42,
-                QuestionStringStorage.explanation42);
+        Question question42 = new Question(UtilStringStorage.animals, QuestionStringStorage.questionObject42.getQuestion(),QuestionStringStorage.questionObject42.getAnswerA(),
+                QuestionStringStorage.questionObject42.getAnswerB(), QuestionStringStorage.questionObject42.getAnswerC(), QuestionStringStorage.questionObject42.getAnswerD(),
+                QuestionStringStorage.questionObject42.getGoodAnswer(), QuestionStringStorage.questionObject42.getExplanation());
         questionList.add(question42);
 
-        Question question43 = new Question(UtilStringStorage.videoGames, QuestionStringStorage.question43,QuestionStringStorage.answerA43,
-                QuestionStringStorage.answerB43, QuestionStringStorage.answerC43, QuestionStringStorage.answerD43, QuestionStringStorage.goodAnswer43,
-                QuestionStringStorage.explanation43);
+        Question question43 = new Question(UtilStringStorage.videoGames, QuestionStringStorage.questionObject43.getQuestion(),QuestionStringStorage.questionObject43.getAnswerA(),
+                QuestionStringStorage.questionObject43.getAnswerB(), QuestionStringStorage.questionObject43.getAnswerC(), QuestionStringStorage.questionObject43.getAnswerD(),
+                QuestionStringStorage.questionObject43.getGoodAnswer(), QuestionStringStorage.questionObject43.getExplanation());
         questionList.add(question43);
 
-        Question question44 = new Question(UtilStringStorage.society, QuestionStringStorage.question44,QuestionStringStorage.answerA44,
-                QuestionStringStorage.answerB44, QuestionStringStorage.answerC44, QuestionStringStorage.answerD44, QuestionStringStorage.goodAnswer44,
-                QuestionStringStorage.explanation44);
+        Question question44 = new Question(UtilStringStorage.society, QuestionStringStorage.questionObject44.getQuestion(),QuestionStringStorage.questionObject44.getAnswerA(),
+                QuestionStringStorage.questionObject44.getAnswerB(), QuestionStringStorage.questionObject44.getAnswerC(), QuestionStringStorage.questionObject44.getAnswerD(),
+                QuestionStringStorage.questionObject44.getGoodAnswer(), QuestionStringStorage.questionObject44.getExplanation());
         questionList.add(question44);
 
-        Question question45 = new Question(UtilStringStorage.space, QuestionStringStorage.question45,QuestionStringStorage.answerA45,
-                QuestionStringStorage.answerB45, QuestionStringStorage.answerC45, QuestionStringStorage.answerD45, QuestionStringStorage.goodAnswer45,
-                QuestionStringStorage.explanation45);
+        Question question45 = new Question(UtilStringStorage.space, QuestionStringStorage.questionObject45.getQuestion(),QuestionStringStorage.questionObject45.getAnswerA(),
+                QuestionStringStorage.questionObject45.getAnswerB(), QuestionStringStorage.questionObject45.getAnswerC(), QuestionStringStorage.questionObject45.getAnswerD(),
+                QuestionStringStorage.questionObject45.getGoodAnswer(), QuestionStringStorage.questionObject45.getExplanation());
         questionList.add(question45);
 
-        Question question46 = new Question(UtilStringStorage.music, QuestionStringStorage.question46,QuestionStringStorage.answerA46,
-                QuestionStringStorage.answerB46, QuestionStringStorage.answerC46, QuestionStringStorage.answerD46, QuestionStringStorage.goodAnswer46,
-                QuestionStringStorage.explanation46);
+        Question question46 = new Question(UtilStringStorage.music, QuestionStringStorage.questionObject46.getQuestion(),QuestionStringStorage.questionObject46.getAnswerA(),
+                QuestionStringStorage.questionObject46.getAnswerB(), QuestionStringStorage.questionObject46.getAnswerC(), QuestionStringStorage.questionObject46.getAnswerD(),
+                QuestionStringStorage.questionObject46.getGoodAnswer(), QuestionStringStorage.questionObject46.getExplanation());
         questionList.add(question46);
 
-        Question question47 = new Question(UtilStringStorage.flags, QuestionStringStorage.question47,QuestionStringStorage.answerA47,
-                QuestionStringStorage.answerB47, QuestionStringStorage.answerC47, QuestionStringStorage.answerD47, QuestionStringStorage.goodAnswer47,
-                QuestionStringStorage.explanation47);
+        Question question47 = new Question(UtilStringStorage.flags, QuestionStringStorage.questionObject47.getQuestion(),QuestionStringStorage.questionObject47.getAnswerA(),
+                QuestionStringStorage.questionObject47.getAnswerB(), QuestionStringStorage.questionObject47.getAnswerC(), QuestionStringStorage.questionObject47.getAnswerD(),
+                QuestionStringStorage.questionObject47.getGoodAnswer(), QuestionStringStorage.questionObject47.getExplanation());
         questionList.add(question47);
 
-        Question question48 = new Question(UtilStringStorage.humanBody, QuestionStringStorage.question48,QuestionStringStorage.answerA48,
-                QuestionStringStorage.answerB48, QuestionStringStorage.answerC48, QuestionStringStorage.answerD48, QuestionStringStorage.goodAnswer48,
-                QuestionStringStorage.explanation48);
+        Question question48 = new Question(UtilStringStorage.humanBody, QuestionStringStorage.questionObject48.getQuestion(),QuestionStringStorage.questionObject48.getAnswerA(),
+                QuestionStringStorage.questionObject48.getAnswerB(), QuestionStringStorage.questionObject48.getAnswerC(), QuestionStringStorage.questionObject48.getAnswerD(),
+                QuestionStringStorage.questionObject48.getGoodAnswer(), QuestionStringStorage.questionObject48.getExplanation());
         questionList.add(question48);
 
-        Question question49 = new Question(UtilStringStorage.music, QuestionStringStorage.question49,QuestionStringStorage.answerA49,
-                QuestionStringStorage.answerB49, QuestionStringStorage.answerC49, QuestionStringStorage.answerD49, QuestionStringStorage.goodAnswer49,
-                QuestionStringStorage.explanation49);
+        Question question49 = new Question(UtilStringStorage.music, QuestionStringStorage.questionObject49.getQuestion(),QuestionStringStorage.questionObject49.getAnswerA(),
+                QuestionStringStorage.questionObject49.getAnswerB(), QuestionStringStorage.questionObject49.getAnswerC(), QuestionStringStorage.questionObject49.getAnswerD(),
+                QuestionStringStorage.questionObject49.getGoodAnswer(), QuestionStringStorage.questionObject49.getExplanation());
         questionList.add(question49);
 
-        Question question50 = new Question(UtilStringStorage.geography, QuestionStringStorage.question50,QuestionStringStorage.answerA50,
-                QuestionStringStorage.answerB50, QuestionStringStorage.answerC50, QuestionStringStorage.answerD50, QuestionStringStorage.goodAnswer50,
-                QuestionStringStorage.explanation50);
+        Question question50 = new Question(UtilStringStorage.geography, QuestionStringStorage.questionObject50.getQuestion(),QuestionStringStorage.questionObject50.getAnswerA(),
+                QuestionStringStorage.questionObject50.getAnswerB(), QuestionStringStorage.questionObject50.getAnswerC(), QuestionStringStorage.questionObject50.getAnswerD(),
+                QuestionStringStorage.questionObject50.getGoodAnswer(), QuestionStringStorage.questionObject50.getExplanation());
         questionList.add(question50);
 
-        Question question51 = new Question(UtilStringStorage.cinema, QuestionStringStorage.question51,QuestionStringStorage.answerA51,
-                QuestionStringStorage.answerB51, QuestionStringStorage.answerC51, QuestionStringStorage.answerD51, QuestionStringStorage.goodAnswer51,
-                QuestionStringStorage.explanation51);
+        Question question51 = new Question(UtilStringStorage.cinema, QuestionStringStorage.questionObject51.getQuestion(),QuestionStringStorage.questionObject51.getAnswerA(),
+                QuestionStringStorage.questionObject51.getAnswerB(), QuestionStringStorage.questionObject51.getAnswerC(), QuestionStringStorage.questionObject51.getAnswerD(),
+                QuestionStringStorage.questionObject51.getGoodAnswer(), QuestionStringStorage.questionObject51.getExplanation());
         questionList.add(question51);
 
-        Question question52 = new Question(UtilStringStorage.invention, QuestionStringStorage.question52,QuestionStringStorage.answerA52,
-                QuestionStringStorage.answerB52, QuestionStringStorage.answerC52, QuestionStringStorage.answerD52, QuestionStringStorage.goodAnswer52,
-                QuestionStringStorage.explanation52);
+        Question question52 = new Question(UtilStringStorage.invention, QuestionStringStorage.questionObject52.getQuestion(),QuestionStringStorage.questionObject52.getAnswerA(),
+                QuestionStringStorage.questionObject52.getAnswerB(), QuestionStringStorage.questionObject52.getAnswerC(), QuestionStringStorage.questionObject52.getAnswerD(),
+                QuestionStringStorage.questionObject52.getGoodAnswer(), QuestionStringStorage.questionObject52.getExplanation());
         questionList.add(question52);
 
-        Question question53 = new Question(UtilStringStorage.sports, QuestionStringStorage.question53,QuestionStringStorage.answerA53,
-                QuestionStringStorage.answerB53, QuestionStringStorage.answerC53, QuestionStringStorage.answerD53, QuestionStringStorage.goodAnswer53,
-                QuestionStringStorage.explanation53);
+        Question question53 = new Question(UtilStringStorage.sports, QuestionStringStorage.questionObject53.getQuestion(),QuestionStringStorage.questionObject53.getAnswerA(),
+                QuestionStringStorage.questionObject53.getAnswerB(), QuestionStringStorage.questionObject53.getAnswerC(), QuestionStringStorage.questionObject53.getAnswerD(),
+                QuestionStringStorage.questionObject53.getGoodAnswer(), QuestionStringStorage.questionObject53.getExplanation());
         questionList.add(question53);
 
-        Question question54 = new Question(UtilStringStorage.animals, QuestionStringStorage.question54,QuestionStringStorage.answerA54,
-                QuestionStringStorage.answerB54, QuestionStringStorage.answerC54, QuestionStringStorage.answerD54, QuestionStringStorage.goodAnswer54,
-                QuestionStringStorage.explanation54);
+        Question question54 = new Question(UtilStringStorage.animals, QuestionStringStorage.questionObject54.getQuestion(),QuestionStringStorage.questionObject54.getAnswerA(),
+                QuestionStringStorage.questionObject54.getAnswerB(), QuestionStringStorage.questionObject54.getAnswerC(), QuestionStringStorage.questionObject54.getAnswerD(),
+                QuestionStringStorage.questionObject54.getGoodAnswer(), QuestionStringStorage.questionObject54.getExplanation());
         questionList.add(question54);
 
-        Question question55 = new Question(UtilStringStorage.historia, QuestionStringStorage.question55,QuestionStringStorage.answerA55,
-                QuestionStringStorage.answerB55, QuestionStringStorage.answerC55, QuestionStringStorage.answerD55, QuestionStringStorage.goodAnswer55,
-                QuestionStringStorage.explanation55);
+        Question question55 = new Question(UtilStringStorage.historia, QuestionStringStorage.questionObject55.getQuestion(),QuestionStringStorage.questionObject55.getAnswerA(),
+                QuestionStringStorage.questionObject55.getAnswerB(), QuestionStringStorage.questionObject55.getAnswerC(), QuestionStringStorage.questionObject55.getAnswerD(),
+                QuestionStringStorage.questionObject55.getGoodAnswer(), QuestionStringStorage.questionObject55.getExplanation());
         questionList.add(question55);
 
-        Question question56 = new Question(UtilStringStorage.society, QuestionStringStorage.question56,QuestionStringStorage.answerA56,
-                QuestionStringStorage.answerB56, QuestionStringStorage.answerC56, QuestionStringStorage.answerD56, QuestionStringStorage.goodAnswer56,
-                QuestionStringStorage.explanation56);
+        Question question56 = new Question(UtilStringStorage.society, QuestionStringStorage.questionObject56.getQuestion(),QuestionStringStorage.questionObject56.getAnswerA(),
+                QuestionStringStorage.questionObject56.getAnswerB(), QuestionStringStorage.questionObject56.getAnswerC(), QuestionStringStorage.questionObject56.getAnswerD(),
+                QuestionStringStorage.questionObject56.getGoodAnswer(), QuestionStringStorage.questionObject56.getExplanation());
         questionList.add(question56);
 
-        Question question57 = new Question(UtilStringStorage.records, QuestionStringStorage.question57,QuestionStringStorage.answerA57,
-                QuestionStringStorage.answerB57, QuestionStringStorage.answerC57, QuestionStringStorage.answerD57, QuestionStringStorage.goodAnswer57,
-                QuestionStringStorage.explanation57);
+        Question question57 = new Question(UtilStringStorage.records, QuestionStringStorage.questionObject57.getQuestion(),QuestionStringStorage.questionObject57.getAnswerA(),
+                QuestionStringStorage.questionObject57.getAnswerB(), QuestionStringStorage.questionObject57.getAnswerC(), QuestionStringStorage.questionObject57.getAnswerD(),
+                QuestionStringStorage.questionObject57.getGoodAnswer(), QuestionStringStorage.questionObject57.getExplanation());
         questionList.add(question57);
 
-        Question question58 = new Question(UtilStringStorage.society, QuestionStringStorage.question58,QuestionStringStorage.answerA58,
-                QuestionStringStorage.answerB58, QuestionStringStorage.answerC58, QuestionStringStorage.answerD58, QuestionStringStorage.goodAnswer58,
-                QuestionStringStorage.explanation58);
+        Question question58 = new Question(UtilStringStorage.society, QuestionStringStorage.questionObject58.getQuestion(),QuestionStringStorage.questionObject58.getAnswerA(),
+                QuestionStringStorage.questionObject58.getAnswerB(), QuestionStringStorage.questionObject58.getAnswerC(), QuestionStringStorage.questionObject58.getAnswerD(),
+                QuestionStringStorage.questionObject58.getGoodAnswer(), QuestionStringStorage.questionObject58.getExplanation());
         questionList.add(question58);
 
-        Question question59 = new Question(UtilStringStorage.literature, QuestionStringStorage.question59,QuestionStringStorage.answerA59,
-                QuestionStringStorage.answerB59, QuestionStringStorage.answerC59, QuestionStringStorage.answerD59, QuestionStringStorage.goodAnswer59,
-                QuestionStringStorage.explanation59);
+        Question question59 = new Question(UtilStringStorage.literature, QuestionStringStorage.questionObject59.getQuestion(),QuestionStringStorage.questionObject59.getAnswerA(),
+                QuestionStringStorage.questionObject59.getAnswerB(), QuestionStringStorage.questionObject59.getAnswerC(), QuestionStringStorage.questionObject59.getAnswerD(),
+                QuestionStringStorage.questionObject59.getGoodAnswer(), QuestionStringStorage.questionObject59.getExplanation());
         questionList.add(question59);
 
-        Question question60 = new Question(UtilStringStorage.food, QuestionStringStorage.question60,QuestionStringStorage.answerA60,
-                QuestionStringStorage.answerB60, QuestionStringStorage.answerC60, QuestionStringStorage.answerD60, QuestionStringStorage.goodAnswer60,
-                QuestionStringStorage.explanation60);
+        Question question60 = new Question(UtilStringStorage.food, QuestionStringStorage.questionObject60.getQuestion(),QuestionStringStorage.questionObject60.getAnswerA(),
+                QuestionStringStorage.questionObject60.getAnswerB(), QuestionStringStorage.questionObject60.getAnswerC(), QuestionStringStorage.questionObject60.getAnswerD(),
+                QuestionStringStorage.questionObject60.getGoodAnswer(), QuestionStringStorage.questionObject60.getExplanation());
         questionList.add(question60);
 
-        Question question61 = new Question(UtilStringStorage.painting, QuestionStringStorage.question61,QuestionStringStorage.answerA61,
-                QuestionStringStorage.answerB61, QuestionStringStorage.answerC61, QuestionStringStorage.answerD61, QuestionStringStorage.goodAnswer61,
-                QuestionStringStorage.explanation61);
+        Question question61 = new Question(UtilStringStorage.painting, QuestionStringStorage.questionObject61.getQuestion(),QuestionStringStorage.questionObject61.getAnswerA(),
+                QuestionStringStorage.questionObject61.getAnswerB(), QuestionStringStorage.questionObject61.getAnswerC(), QuestionStringStorage.questionObject61.getAnswerD(),
+                QuestionStringStorage.questionObject61.getGoodAnswer(), QuestionStringStorage.questionObject61.getExplanation());
         questionList.add(question61);
 
-        Question question62 = new Question(UtilStringStorage.minerals, QuestionStringStorage.question62,QuestionStringStorage.answerA62,
-                QuestionStringStorage.answerB62, QuestionStringStorage.answerC62, QuestionStringStorage.answerD62, QuestionStringStorage.goodAnswer62,
-                QuestionStringStorage.explanation62);
+        Question question62 = new Question(UtilStringStorage.minerals, QuestionStringStorage.questionObject62.getQuestion(),QuestionStringStorage.questionObject62.getAnswerA(),
+                QuestionStringStorage.questionObject62.getAnswerB(), QuestionStringStorage.questionObject62.getAnswerC(), QuestionStringStorage.questionObject62.getAnswerD(),
+                QuestionStringStorage.questionObject62.getGoodAnswer(), QuestionStringStorage.questionObject62.getExplanation());
         questionList.add(question62);
 
-        Question question63 = new Question(UtilStringStorage.nature, QuestionStringStorage.question63,QuestionStringStorage.answerA63,
-                QuestionStringStorage.answerB63, QuestionStringStorage.answerC63, QuestionStringStorage.answerD63, QuestionStringStorage.goodAnswer63,
-                QuestionStringStorage.explanation63);
+        Question question63 = new Question(UtilStringStorage.nature, QuestionStringStorage.questionObject63.getQuestion(),QuestionStringStorage.questionObject63.getAnswerA(),
+                QuestionStringStorage.questionObject63.getAnswerB(), QuestionStringStorage.questionObject63.getAnswerC(), QuestionStringStorage.questionObject63.getAnswerD(),
+                QuestionStringStorage.questionObject63.getGoodAnswer(), QuestionStringStorage.questionObject63.getExplanation());
         questionList.add(question63);
 
-        Question question64 = new Question(UtilStringStorage.painting, QuestionStringStorage.question64,QuestionStringStorage.answerA64,
-                QuestionStringStorage.answerB64, QuestionStringStorage.answerC64, QuestionStringStorage.answerD64, QuestionStringStorage.goodAnswer64,
-                QuestionStringStorage.explanation64);
+        Question question64 = new Question(UtilStringStorage.painting, QuestionStringStorage.questionObject64.getQuestion(),QuestionStringStorage.questionObject64.getAnswerA(),
+                QuestionStringStorage.questionObject64.getAnswerB(), QuestionStringStorage.questionObject64.getAnswerC(), QuestionStringStorage.questionObject64.getAnswerD(),
+                QuestionStringStorage.questionObject64.getGoodAnswer(), QuestionStringStorage.questionObject64.getExplanation());
         questionList.add(question64);
 
-        Question question65 = new Question(UtilStringStorage.space, QuestionStringStorage.question65,QuestionStringStorage.answerA65,
-                QuestionStringStorage.answerB65, QuestionStringStorage.answerC65, QuestionStringStorage.answerD65, QuestionStringStorage.goodAnswer65,
-                QuestionStringStorage.explanation65);
+        Question question65 = new Question(UtilStringStorage.space, QuestionStringStorage.questionObject65.getQuestion(),QuestionStringStorage.questionObject65.getAnswerA(),
+                QuestionStringStorage.questionObject65.getAnswerB(), QuestionStringStorage.questionObject65.getAnswerC(), QuestionStringStorage.questionObject65.getAnswerD(),
+                QuestionStringStorage.questionObject65.getGoodAnswer(), QuestionStringStorage.questionObject65.getExplanation());
         questionList.add(question65);
 
-        Question question66 = new Question(UtilStringStorage.linguistic, QuestionStringStorage.question66,QuestionStringStorage.answerA66,
-                QuestionStringStorage.answerB66, QuestionStringStorage.answerC66, QuestionStringStorage.answerD66, QuestionStringStorage.goodAnswer66,
-                QuestionStringStorage.explanation66);
+        Question question66 = new Question(UtilStringStorage.linguistic, QuestionStringStorage.questionObject66.getQuestion(),QuestionStringStorage.questionObject66.getAnswerA(),
+                QuestionStringStorage.questionObject66.getAnswerB(), QuestionStringStorage.questionObject66.getAnswerC(), QuestionStringStorage.questionObject66.getAnswerD(),
+                QuestionStringStorage.questionObject66.getGoodAnswer(), QuestionStringStorage.questionObject66.getExplanation());
         questionList.add(question66);
 
-        Question question67 = new Question(UtilStringStorage.nature, QuestionStringStorage.question67,QuestionStringStorage.answerA67,
-                QuestionStringStorage.answerB67, QuestionStringStorage.answerC67, QuestionStringStorage.answerD67, QuestionStringStorage.goodAnswer67,
-                QuestionStringStorage.explanation67);
+        Question question67 = new Question(UtilStringStorage.nature, QuestionStringStorage.questionObject67.getQuestion(),QuestionStringStorage.questionObject67.getAnswerA(),
+                QuestionStringStorage.questionObject67.getAnswerB(), QuestionStringStorage.questionObject67.getAnswerC(), QuestionStringStorage.questionObject67.getAnswerD(),
+                QuestionStringStorage.questionObject67.getGoodAnswer(), QuestionStringStorage.questionObject67.getExplanation());
         questionList.add(question67);
 
-        Question question68 = new Question(UtilStringStorage.law, QuestionStringStorage.question68,QuestionStringStorage.answerA68,
-                QuestionStringStorage.answerB68, QuestionStringStorage.answerC68, QuestionStringStorage.answerD68, QuestionStringStorage.goodAnswer68,
-                QuestionStringStorage.explanation68);
+        Question question68 = new Question(UtilStringStorage.law, QuestionStringStorage.questionObject68.getQuestion(),QuestionStringStorage.questionObject68.getAnswerA(),
+                QuestionStringStorage.questionObject68.getAnswerB(), QuestionStringStorage.questionObject68.getAnswerC(), QuestionStringStorage.questionObject68.getAnswerD(),
+                QuestionStringStorage.questionObject68.getGoodAnswer(), QuestionStringStorage.questionObject68.getExplanation());
         questionList.add(question68);
 
-        Question question69 = new Question(UtilStringStorage.internet, QuestionStringStorage.question69,QuestionStringStorage.answerA69,
-                QuestionStringStorage.answerB69, QuestionStringStorage.answerC69, QuestionStringStorage.answerD69, QuestionStringStorage.goodAnswer69,
-                QuestionStringStorage.explanation69);
+        Question question69 = new Question(UtilStringStorage.internet, QuestionStringStorage.questionObject69.getQuestion(),QuestionStringStorage.questionObject69.getAnswerA(),
+                QuestionStringStorage.questionObject69.getAnswerB(), QuestionStringStorage.questionObject69.getAnswerC(), QuestionStringStorage.questionObject69.getAnswerD(),
+                QuestionStringStorage.questionObject69.getGoodAnswer(), QuestionStringStorage.questionObject69.getExplanation());
         questionList.add(question69);
 
-        Question question70 = new Question(UtilStringStorage.animals, QuestionStringStorage.question70,QuestionStringStorage.answerA70,
-                QuestionStringStorage.answerB70, QuestionStringStorage.answerC70, QuestionStringStorage.answerD70, QuestionStringStorage.goodAnswer70,
-                QuestionStringStorage.explanation70);
+        Question question70 = new Question(UtilStringStorage.animals, QuestionStringStorage.questionObject70.getQuestion(),QuestionStringStorage.questionObject70.getAnswerA(),
+                QuestionStringStorage.questionObject70.getAnswerB(), QuestionStringStorage.questionObject70.getAnswerC(), QuestionStringStorage.questionObject70.getAnswerD(),
+                QuestionStringStorage.questionObject70.getGoodAnswer(), QuestionStringStorage.questionObject70.getExplanation());
         questionList.add(question70);
 
-        Question question71 = new Question(UtilStringStorage.sports, QuestionStringStorage.question71,QuestionStringStorage.answerA71,
-                QuestionStringStorage.answerB71, QuestionStringStorage.answerC71, QuestionStringStorage.answerD71, QuestionStringStorage.goodAnswer71,
-                QuestionStringStorage.explanation71);
+        Question question71 = new Question(UtilStringStorage.sports, QuestionStringStorage.questionObject71.getQuestion(),QuestionStringStorage.questionObject71.getAnswerA(),
+                QuestionStringStorage.questionObject71.getAnswerB(), QuestionStringStorage.questionObject71.getAnswerC(), QuestionStringStorage.questionObject71.getAnswerD(),
+                QuestionStringStorage.questionObject71.getGoodAnswer(), QuestionStringStorage.questionObject71.getExplanation());
         questionList.add(question71);
 
-        Question question72 = new Question(UtilStringStorage.literature, QuestionStringStorage.question72,QuestionStringStorage.answerA72,
-                QuestionStringStorage.answerB72, QuestionStringStorage.answerC72, QuestionStringStorage.answerD72, QuestionStringStorage.goodAnswer72,
-                QuestionStringStorage.explanation72);
+        Question question72 = new Question(UtilStringStorage.literature, QuestionStringStorage.questionObject72.getQuestion(),QuestionStringStorage.questionObject72.getAnswerA(),
+                QuestionStringStorage.questionObject72.getAnswerB(), QuestionStringStorage.questionObject72.getAnswerC(), QuestionStringStorage.questionObject72.getAnswerD(),
+                QuestionStringStorage.questionObject72.getGoodAnswer(), QuestionStringStorage.questionObject72.getExplanation());
         questionList.add(question72);
 
-        Question question73 = new Question(UtilStringStorage.nature, QuestionStringStorage.question73,QuestionStringStorage.answerA73,
-                QuestionStringStorage.answerB73, QuestionStringStorage.answerC73, QuestionStringStorage.answerD73, QuestionStringStorage.goodAnswer73,
-                QuestionStringStorage.explanation73);
+        Question question73 = new Question(UtilStringStorage.nature, QuestionStringStorage.questionObject73.getQuestion(),QuestionStringStorage.questionObject73.getAnswerA(),
+                QuestionStringStorage.questionObject73.getAnswerB(), QuestionStringStorage.questionObject73.getAnswerC(), QuestionStringStorage.questionObject73.getAnswerD(),
+                QuestionStringStorage.questionObject73.getGoodAnswer(), QuestionStringStorage.questionObject73.getExplanation());
         questionList.add(question73);
 
-        Question question74 = new Question(UtilStringStorage.animals, QuestionStringStorage.question74,QuestionStringStorage.answerA74,
-                QuestionStringStorage.answerB74, QuestionStringStorage.answerC74, QuestionStringStorage.answerD74, QuestionStringStorage.goodAnswer74,
-                QuestionStringStorage.explanation74);
+        Question question74 = new Question(UtilStringStorage.animals, QuestionStringStorage.questionObject74.getQuestion(),QuestionStringStorage.questionObject74.getAnswerA(),
+                QuestionStringStorage.questionObject74.getAnswerB(), QuestionStringStorage.questionObject74.getAnswerC(), QuestionStringStorage.questionObject74.getAnswerD(),
+                QuestionStringStorage.questionObject74.getGoodAnswer(), QuestionStringStorage.questionObject74.getExplanation());
         questionList.add(question74);
 
-        Question question75 = new Question(UtilStringStorage.society, QuestionStringStorage.question75,QuestionStringStorage.answerA75,
-                QuestionStringStorage.answerB75, QuestionStringStorage.answerC75, QuestionStringStorage.answerD75, QuestionStringStorage.goodAnswer75,
-                QuestionStringStorage.explanation75);
+        Question question75 = new Question(UtilStringStorage.society, QuestionStringStorage.questionObject75.getQuestion(),QuestionStringStorage.questionObject75.getAnswerA(),
+                QuestionStringStorage.questionObject75.getAnswerB(), QuestionStringStorage.questionObject75.getAnswerC(), QuestionStringStorage.questionObject75.getAnswerD(),
+                QuestionStringStorage.questionObject75.getGoodAnswer(), QuestionStringStorage.questionObject75.getExplanation());
         questionList.add(question75);
 
-        Question question76 = new Question(UtilStringStorage.invention, QuestionStringStorage.question76,QuestionStringStorage.answerA76,
-                QuestionStringStorage.answerB76, QuestionStringStorage.answerC76, QuestionStringStorage.answerD76, QuestionStringStorage.goodAnswer76,
-                QuestionStringStorage.explanation76);
+        Question question76 = new Question(UtilStringStorage.invention, QuestionStringStorage.questionObject76.getQuestion(),QuestionStringStorage.questionObject76.getAnswerA(),
+                QuestionStringStorage.questionObject76.getAnswerB(), QuestionStringStorage.questionObject76.getAnswerC(), QuestionStringStorage.questionObject76.getAnswerD(),
+                QuestionStringStorage.questionObject76.getGoodAnswer(), QuestionStringStorage.questionObject76.getExplanation());
         questionList.add(question76);
 
-        Question question77 = new Question(UtilStringStorage.geography, QuestionStringStorage.question77,QuestionStringStorage.answerA77,
-                QuestionStringStorage.answerB77, QuestionStringStorage.answerC77, QuestionStringStorage.answerD77, QuestionStringStorage.goodAnswer77,
-                QuestionStringStorage.explanation77);
+        Question question77 = new Question(UtilStringStorage.geography, QuestionStringStorage.questionObject77.getQuestion(),QuestionStringStorage.questionObject77.getAnswerA(),
+                QuestionStringStorage.questionObject77.getAnswerB(), QuestionStringStorage.questionObject77.getAnswerC(), QuestionStringStorage.questionObject77.getAnswerD(),
+                QuestionStringStorage.questionObject77.getGoodAnswer(), QuestionStringStorage.questionObject77.getExplanation());
         questionList.add(question77);
 
-        Question question78 = new Question(UtilStringStorage.geography, QuestionStringStorage.question78,QuestionStringStorage.answerA78,
-                QuestionStringStorage.answerB78, QuestionStringStorage.answerC78, QuestionStringStorage.answerD78, QuestionStringStorage.goodAnswer78,
-                QuestionStringStorage.explanation78);
+        Question question78 = new Question(UtilStringStorage.geography, QuestionStringStorage.questionObject78.getQuestion(),QuestionStringStorage.questionObject78.getAnswerA(),
+                QuestionStringStorage.questionObject78.getAnswerB(), QuestionStringStorage.questionObject78.getAnswerC(), QuestionStringStorage.questionObject78.getAnswerD(),
+                QuestionStringStorage.questionObject78.getGoodAnswer(), QuestionStringStorage.questionObject78.getExplanation());
         questionList.add(question78);
 
-        Question question79 = new Question(UtilStringStorage.historia, QuestionStringStorage.question79,QuestionStringStorage.answerA79,
-                QuestionStringStorage.answerB79, QuestionStringStorage.answerC79, QuestionStringStorage.answerD79, QuestionStringStorage.goodAnswer79,
-                QuestionStringStorage.explanation79);
+        Question question79 = new Question(UtilStringStorage.historia, QuestionStringStorage.questionObject79.getQuestion(),QuestionStringStorage.questionObject79.getAnswerA(),
+                QuestionStringStorage.questionObject79.getAnswerB(), QuestionStringStorage.questionObject79.getAnswerC(), QuestionStringStorage.questionObject79.getAnswerD(),
+                QuestionStringStorage.questionObject79.getGoodAnswer(), QuestionStringStorage.questionObject79.getExplanation());
         questionList.add(question79);
 
-        Question question80 = new Question(UtilStringStorage.sports, QuestionStringStorage.question80,QuestionStringStorage.answerA80,
-                QuestionStringStorage.answerB80, QuestionStringStorage.answerC80, QuestionStringStorage.answerD80, QuestionStringStorage.goodAnswer80,
-                QuestionStringStorage.explanation80);
+        Question question80 = new Question(UtilStringStorage.sports, QuestionStringStorage.questionObject80.getQuestion(),QuestionStringStorage.questionObject80.getAnswerA(),
+                QuestionStringStorage.questionObject80.getAnswerB(), QuestionStringStorage.questionObject80.getAnswerC(), QuestionStringStorage.questionObject80.getAnswerD(),
+                QuestionStringStorage.questionObject80.getGoodAnswer(), QuestionStringStorage.questionObject80.getExplanation());
         questionList.add(question80);
 
         Question question81 = new Question(UtilStringStorage.economy, QuestionStringStorage.question81,QuestionStringStorage.answerA81,
@@ -796,6 +796,31 @@ public class QuestionStorage
                 QuestionStringStorage.answerB155, QuestionStringStorage.answerC155, QuestionStringStorage.answerD155, QuestionStringStorage.goodAnswer155,
                 QuestionStringStorage.explanation155);
         questionList.add(question155);
+
+        Question question156 = new Question(UtilStringStorage.paleontology, QuestionStringStorage.question156,QuestionStringStorage.answerA156,
+                QuestionStringStorage.answerB156, QuestionStringStorage.answerC156, QuestionStringStorage.answerD156, QuestionStringStorage.goodAnswer156,
+                QuestionStringStorage.explanation156);
+        questionList.add(question156);
+
+        Question question157 = new Question(UtilStringStorage.videoGames, QuestionStringStorage.question157,QuestionStringStorage.answerA157,
+                QuestionStringStorage.answerB157, QuestionStringStorage.answerC157, QuestionStringStorage.answerD157, QuestionStringStorage.goodAnswer157,
+                QuestionStringStorage.explanation157);
+        questionList.add(question157);
+
+        Question question158 = new Question(UtilStringStorage.cinema, QuestionStringStorage.question158,QuestionStringStorage.answerA158,
+                QuestionStringStorage.answerB158, QuestionStringStorage.answerC158, QuestionStringStorage.answerD158, QuestionStringStorage.goodAnswer158,
+                QuestionStringStorage.explanation158);
+        questionList.add(question158);
+
+        Question question159 = new Question(UtilStringStorage.space, QuestionStringStorage.question159,QuestionStringStorage.answerA159,
+                QuestionStringStorage.answerB159, QuestionStringStorage.answerC159, QuestionStringStorage.answerD159, QuestionStringStorage.goodAnswer159,
+                QuestionStringStorage.explanation159);
+        questionList.add(question159);
+
+        Question question160 = new Question(UtilStringStorage.plants, QuestionStringStorage.question160,QuestionStringStorage.answerA160,
+                QuestionStringStorage.answerB160, QuestionStringStorage.answerC160, QuestionStringStorage.answerD160, QuestionStringStorage.goodAnswer160,
+                QuestionStringStorage.explanation160);
+        questionList.add(question160);
 
     }
 

@@ -129,7 +129,13 @@ public class PlayerInfoScene extends Scene
             }
             if (keyEvent.getCode().equals(KeyCode.ENTER) && (userInputArea.getText().isBlank())) {
                 userInputArea.clear();
+                keyEvent.consume();
             }
+            if (keyEvent.getCode().equals(KeyCode.BACK_SPACE) && (userInputArea.getText().isBlank() || userInputArea.getText().isEmpty()))
+                {
+                    sendNameButton.setDisable(true);
+                }
+
         });
     }
 

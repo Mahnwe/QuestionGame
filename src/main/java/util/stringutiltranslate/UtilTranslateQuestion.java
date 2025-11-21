@@ -334,6 +334,26 @@ public class UtilTranslateQuestion
 
         setupFrQuestion(QuestionStringStorage.questionObject165, "165");
 
+        setupFrQuestion(QuestionStringStorage.questionObject166, "166");
+
+        setupFrQuestion(QuestionStringStorage.questionObject167, "167");
+
+        setupFrQuestion(QuestionStringStorage.questionObject168, "168");
+
+        setupFrQuestion(QuestionStringStorage.questionObject169, "169");
+
+        setupFrQuestion(QuestionStringStorage.questionObject170, "170");
+
+        setupFrQuestion(QuestionStringStorage.questionObject171, "171");
+
+        setupFrQuestion(QuestionStringStorage.questionObject172, "172");
+
+        setupFrQuestion(QuestionStringStorage.questionObject173, "173");
+
+        setupFrQuestion(QuestionStringStorage.questionObject174, "174");
+
+        setupFrQuestion(QuestionStringStorage.questionObject175, "175");
+
     }
 
     public void translateEngQuestions()
@@ -676,6 +696,26 @@ public class UtilTranslateQuestion
         setupEngQuestion(QuestionStringStorage.questionObject164, "164");
 
         setupEngQuestion(QuestionStringStorage.questionObject165, "165");
+
+        setupEngQuestion(QuestionStringStorage.questionObject166, "166");
+
+        setupEngQuestion(QuestionStringStorage.questionObject167, "167");
+
+        setupEngQuestion(QuestionStringStorage.questionObject168, "168");
+
+        setupEngQuestion(QuestionStringStorage.questionObject169, "169");
+
+        setupEngQuestion(QuestionStringStorage.questionObject170, "170");
+
+        setupEngQuestion(QuestionStringStorage.questionObject171, "171");
+
+        setupEngQuestion(QuestionStringStorage.questionObject172, "172");
+
+        setupEngQuestion(QuestionStringStorage.questionObject173, "173");
+
+        setupEngQuestion(QuestionStringStorage.questionObject174, "174");
+
+        setupEngQuestion(QuestionStringStorage.questionObject175, "175");
 
     }
 

@@ -82,7 +82,20 @@ public class MainScene extends Scene
                     playerInfoScene.getPlayerLivesLabel().setText(UtilStringStorage.playerLivesIngame + " " + playerHandler.getPlayer().getNbrOfLives());
                 }
             }
-            playerInfoScene.getPlayerScoreLabel().setText(UtilStringStorage.scoreLabel + " " +playerHandler.getPlayer().getPlayerScore()+"/"+gameHandler.getQuestionCount());
+            if (GameHandler.gameMode == null)
+            {
+                playerInfoScene.getPlayerScoreLabel().setText(UtilStringStorage.scoreLabel + " " + playerHandler.getPlayer().getPlayerScore() + "/" + gameHandler.getQuestionCount());
+            }
+            else {
+                if (gameHandler.getQuestionCount() > 1)
+                {
+                    playerInfoScene.getPlayerScoreLabel().setText(UtilStringStorage.scoreLabel + " " + gameHandler.getQuestionCount() + " questions");
+                }
+                else
+                {
+                    playerInfoScene.getPlayerScoreLabel().setText(UtilStringStorage.scoreLabel + " " + gameHandler.getQuestionCount() + " question");
+                }
+            }
             setNextQuestionButton();
         });
     }

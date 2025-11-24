@@ -12,6 +12,8 @@ public class UtilTranslateQuestion
 
         setupFrQuestion(QuestionStringStorage.questionObject3, "3");
 
+        setupFrQuestion(QuestionStringStorage.questionObject4, "4");
+
         setupFrQuestion(QuestionStringStorage.questionObject5, "5");
 
         setupFrQuestion(QuestionStringStorage.questionObject6, "6");
@@ -353,6 +355,16 @@ public class UtilTranslateQuestion
         setupFrQuestion(QuestionStringStorage.questionObject174, "174");
 
         setupFrQuestion(QuestionStringStorage.questionObject175, "175");
+
+        setupFrQuestion(QuestionStringStorage.questionObject176, "176");
+
+        setupFrQuestion(QuestionStringStorage.questionObject177, "177");
+
+        setupFrQuestion(QuestionStringStorage.questionObject178, "178");
+
+        setupFrQuestion(QuestionStringStorage.questionObject179, "179");
+
+        setupFrQuestion(QuestionStringStorage.questionObject180, "180");
 
     }
 
@@ -716,6 +728,16 @@ public class UtilTranslateQuestion
         setupEngQuestion(QuestionStringStorage.questionObject174, "174");
 
         setupEngQuestion(QuestionStringStorage.questionObject175, "175");
+
+        setupEngQuestion(QuestionStringStorage.questionObject176, "176");
+
+        setupEngQuestion(QuestionStringStorage.questionObject177, "177");
+
+        setupEngQuestion(QuestionStringStorage.questionObject178, "178");
+
+        setupEngQuestion(QuestionStringStorage.questionObject179, "179");
+
+        setupEngQuestion(QuestionStringStorage.questionObject180, "180");
 
     }
 

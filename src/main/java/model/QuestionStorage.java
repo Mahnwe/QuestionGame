@@ -897,6 +897,32 @@ public class QuestionStorage
                 QuestionStringStorage.questionObject175.getGoodAnswer(), QuestionStringStorage.questionObject175.getExplanation());
         questionList.add(question175);
 
+        Question question176 = new Question(UtilStringStorage.science, QuestionStringStorage.questionObject176.getQuestion(),QuestionStringStorage.questionObject176.getAnswerA(),
+                QuestionStringStorage.questionObject176.getAnswerB(), QuestionStringStorage.questionObject176.getAnswerC(), QuestionStringStorage.questionObject176.getAnswerD(),
+                QuestionStringStorage.questionObject176.getGoodAnswer(), QuestionStringStorage.questionObject176.getExplanation());
+        questionList.add(question176);
+
+        Question question177 = new Question(UtilStringStorage.monument, QuestionStringStorage.questionObject177.getQuestion(),QuestionStringStorage.questionObject177.getAnswerA(),
+                QuestionStringStorage.questionObject177.getAnswerB(), QuestionStringStorage.questionObject177.getAnswerC(), QuestionStringStorage.questionObject177.getAnswerD(),
+                QuestionStringStorage.questionObject177.getGoodAnswer(), QuestionStringStorage.questionObject177.getExplanation());
+        questionList.add(question177);
+
+        Question question178 = new Question(UtilStringStorage.economy, QuestionStringStorage.questionObject178.getQuestion(),QuestionStringStorage.questionObject178.getAnswerA(),
+                QuestionStringStorage.questionObject178.getAnswerB(), QuestionStringStorage.questionObject178.getAnswerC(), QuestionStringStorage.questionObject178.getAnswerD(),
+                QuestionStringStorage.questionObject178.getGoodAnswer(), QuestionStringStorage.questionObject178.getExplanation());
+        questionList.add(question178);
+
+        Question question179 = new Question(UtilStringStorage.food, QuestionStringStorage.questionObject179.getQuestion(),QuestionStringStorage.questionObject179.getAnswerA(),
+                QuestionStringStorage.questionObject179.getAnswerB(), QuestionStringStorage.questionObject179.getAnswerC(), QuestionStringStorage.questionObject179.getAnswerD(),
+                QuestionStringStorage.questionObject179.getGoodAnswer(), QuestionStringStorage.questionObject179.getExplanation());
+        questionList.add(question179);
+
+        Question question180 = new Question(UtilStringStorage.mathematics, QuestionStringStorage.questionObject180.getQuestion(),QuestionStringStorage.questionObject180.getAnswerA(),
+                QuestionStringStorage.questionObject180.getAnswerB(), QuestionStringStorage.questionObject180.getAnswerC(), QuestionStringStorage.questionObject180.getAnswerD(),
+                QuestionStringStorage.questionObject180.getGoodAnswer(), QuestionStringStorage.questionObject180.getExplanation());
+        questionList.add(question180);
+
+
     }
 
     public void checkExternalSourcesOfQuestions()

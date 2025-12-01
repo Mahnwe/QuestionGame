@@ -922,6 +922,105 @@ public class QuestionStorage
                 QuestionStringStorage.questionObject180.getGoodAnswer(), QuestionStringStorage.questionObject180.getExplanation());
         questionList.add(question180);
 
+        Question question181 = new Question(UtilStringStorage.insolite, QuestionStringStorage.questionObject181.getQuestion(),QuestionStringStorage.questionObject181.getAnswerA(),
+                QuestionStringStorage.questionObject181.getAnswerB(), QuestionStringStorage.questionObject181.getAnswerC(), QuestionStringStorage.questionObject181.getAnswerD(),
+                QuestionStringStorage.questionObject181.getGoodAnswer(), QuestionStringStorage.questionObject181.getExplanation());
+        questionList.add(question181);
+
+        Question question182 = new Question(UtilStringStorage.paleontology, QuestionStringStorage.questionObject182.getQuestion(),QuestionStringStorage.questionObject182.getAnswerA(),
+                QuestionStringStorage.questionObject182.getAnswerB(), QuestionStringStorage.questionObject182.getAnswerC(), QuestionStringStorage.questionObject182.getAnswerD(),
+                QuestionStringStorage.questionObject182.getGoodAnswer(), QuestionStringStorage.questionObject182.getExplanation());
+        questionList.add(question182);
+
+        Question question183 = new Question(UtilStringStorage.videoGames, QuestionStringStorage.questionObject183.getQuestion(),QuestionStringStorage.questionObject183.getAnswerA(),
+                QuestionStringStorage.questionObject183.getAnswerB(), QuestionStringStorage.questionObject183.getAnswerC(), QuestionStringStorage.questionObject183.getAnswerD(),
+                QuestionStringStorage.questionObject183.getGoodAnswer(), QuestionStringStorage.questionObject183.getExplanation());
+        questionList.add(question183);
+
+        Question question184 = new Question(UtilStringStorage.cinema, QuestionStringStorage.questionObject184.getQuestion(),QuestionStringStorage.questionObject184.getAnswerA(),
+                QuestionStringStorage.questionObject184.getAnswerB(), QuestionStringStorage.questionObject184.getAnswerC(), QuestionStringStorage.questionObject184.getAnswerD(),
+                QuestionStringStorage.questionObject184.getGoodAnswer(), QuestionStringStorage.questionObject184.getExplanation());
+        questionList.add(question184);
+
+        Question question185 = new Question(UtilStringStorage.space, QuestionStringStorage.questionObject185.getQuestion(),QuestionStringStorage.questionObject185.getAnswerA(),
+                QuestionStringStorage.questionObject185.getAnswerB(), QuestionStringStorage.questionObject185.getAnswerC(), QuestionStringStorage.questionObject185.getAnswerD(),
+                QuestionStringStorage.questionObject185.getGoodAnswer(), QuestionStringStorage.questionObject185.getExplanation());
+        questionList.add(question185);
+
+        Question question186 = new Question(UtilStringStorage.culture, QuestionStringStorage.questionObject186.getQuestion(),QuestionStringStorage.questionObject186.getAnswerA(),
+                QuestionStringStorage.questionObject186.getAnswerB(), QuestionStringStorage.questionObject186.getAnswerC(), QuestionStringStorage.questionObject186.getAnswerD(),
+                QuestionStringStorage.questionObject186.getGoodAnswer(), QuestionStringStorage.questionObject186.getExplanation());
+        questionList.add(question186);
+
+        Question question187 = new Question(UtilStringStorage.law, QuestionStringStorage.questionObject187.getQuestion(),QuestionStringStorage.questionObject187.getAnswerA(),
+                QuestionStringStorage.questionObject187.getAnswerB(), QuestionStringStorage.questionObject187.getAnswerC(), QuestionStringStorage.questionObject187.getAnswerD(),
+                QuestionStringStorage.questionObject187.getGoodAnswer(), QuestionStringStorage.questionObject187.getExplanation());
+        questionList.add(question187);
+
+        Question question188 = new Question(UtilStringStorage.mythology, QuestionStringStorage.questionObject188.getQuestion(),QuestionStringStorage.questionObject188.getAnswerA(),
+                QuestionStringStorage.questionObject188.getAnswerB(), QuestionStringStorage.questionObject188.getAnswerC(), QuestionStringStorage.questionObject188.getAnswerD(),
+                QuestionStringStorage.questionObject188.getGoodAnswer(), QuestionStringStorage.questionObject188.getExplanation());
+        questionList.add(question188);
+
+        Question question189 = new Question(UtilStringStorage.internet, QuestionStringStorage.questionObject189.getQuestion(),QuestionStringStorage.questionObject189.getAnswerA(),
+                QuestionStringStorage.questionObject189.getAnswerB(), QuestionStringStorage.questionObject189.getAnswerC(), QuestionStringStorage.questionObject189.getAnswerD(),
+                QuestionStringStorage.questionObject189.getGoodAnswer(), QuestionStringStorage.questionObject189.getExplanation());
+        questionList.add(question189);
+
+        Question question190 = new Question(UtilStringStorage.flags, QuestionStringStorage.questionObject190.getQuestion(),QuestionStringStorage.questionObject190.getAnswerA(),
+                QuestionStringStorage.questionObject190.getAnswerB(), QuestionStringStorage.questionObject190.getAnswerC(), QuestionStringStorage.questionObject190.getAnswerD(),
+                QuestionStringStorage.questionObject190.getGoodAnswer(), QuestionStringStorage.questionObject190.getExplanation());
+        questionList.add(question190);
+
+        Question question191 = new Question(UtilStringStorage.sports, QuestionStringStorage.questionObject191.getQuestion(),QuestionStringStorage.questionObject191.getAnswerA(),
+                QuestionStringStorage.questionObject191.getAnswerB(), QuestionStringStorage.questionObject191.getAnswerC(), QuestionStringStorage.questionObject191.getAnswerD(),
+                QuestionStringStorage.questionObject191.getGoodAnswer(), QuestionStringStorage.questionObject191.getExplanation());
+        questionList.add(question191);
+
+        Question question192 = new Question(UtilStringStorage.painting, QuestionStringStorage.questionObject192.getQuestion(),QuestionStringStorage.questionObject192.getAnswerA(),
+                QuestionStringStorage.questionObject192.getAnswerB(), QuestionStringStorage.questionObject192.getAnswerC(), QuestionStringStorage.questionObject192.getAnswerD(),
+                QuestionStringStorage.questionObject192.getGoodAnswer(), QuestionStringStorage.questionObject192.getExplanation());
+        questionList.add(question192);
+
+        Question question193 = new Question(UtilStringStorage.minerals, QuestionStringStorage.questionObject193.getQuestion(),QuestionStringStorage.questionObject193.getAnswerA(),
+                QuestionStringStorage.questionObject193.getAnswerB(), QuestionStringStorage.questionObject193.getAnswerC(), QuestionStringStorage.questionObject193.getAnswerD(),
+                QuestionStringStorage.questionObject193.getGoodAnswer(), QuestionStringStorage.questionObject193.getExplanation());
+        questionList.add(question193);
+
+        Question question194 = new Question(UtilStringStorage.science, QuestionStringStorage.questionObject194.getQuestion(),QuestionStringStorage.questionObject194.getAnswerA(),
+                QuestionStringStorage.questionObject194.getAnswerB(), QuestionStringStorage.questionObject194.getAnswerC(), QuestionStringStorage.questionObject194.getAnswerD(),
+                QuestionStringStorage.questionObject194.getGoodAnswer(), QuestionStringStorage.questionObject194.getExplanation());
+        questionList.add(question194);
+
+        Question question195 = new Question(UtilStringStorage.monument, QuestionStringStorage.questionObject195.getQuestion(),QuestionStringStorage.questionObject195.getAnswerA(),
+                QuestionStringStorage.questionObject195.getAnswerB(), QuestionStringStorage.questionObject195.getAnswerC(), QuestionStringStorage.questionObject195.getAnswerD(),
+                QuestionStringStorage.questionObject195.getGoodAnswer(), QuestionStringStorage.questionObject195.getExplanation());
+        questionList.add(question195);
+
+        Question question196 = new Question(UtilStringStorage.mathematics, QuestionStringStorage.questionObject196.getQuestion(),QuestionStringStorage.questionObject196.getAnswerA(),
+                QuestionStringStorage.questionObject196.getAnswerB(), QuestionStringStorage.questionObject196.getAnswerC(), QuestionStringStorage.questionObject196.getAnswerD(),
+                QuestionStringStorage.questionObject196.getGoodAnswer(), QuestionStringStorage.questionObject196.getExplanation());
+        questionList.add(question196);
+
+        Question question197 = new Question(UtilStringStorage.painting, QuestionStringStorage.questionObject197.getQuestion(),QuestionStringStorage.questionObject197.getAnswerA(),
+                QuestionStringStorage.questionObject197.getAnswerB(), QuestionStringStorage.questionObject197.getAnswerC(), QuestionStringStorage.questionObject197.getAnswerD(),
+                QuestionStringStorage.questionObject197.getGoodAnswer(), QuestionStringStorage.questionObject197.getExplanation());
+        questionList.add(question197);
+
+        Question question198 = new Question(UtilStringStorage.minerals, QuestionStringStorage.questionObject198.getQuestion(),QuestionStringStorage.questionObject198.getAnswerA(),
+                QuestionStringStorage.questionObject198.getAnswerB(), QuestionStringStorage.questionObject198.getAnswerC(), QuestionStringStorage.questionObject198.getAnswerD(),
+                QuestionStringStorage.questionObject198.getGoodAnswer(), QuestionStringStorage.questionObject198.getExplanation());
+        questionList.add(question198);
+
+        Question question199 = new Question(UtilStringStorage.culture, QuestionStringStorage.questionObject199.getQuestion(),QuestionStringStorage.questionObject199.getAnswerA(),
+                QuestionStringStorage.questionObject199.getAnswerB(), QuestionStringStorage.questionObject199.getAnswerC(), QuestionStringStorage.questionObject199.getAnswerD(),
+                QuestionStringStorage.questionObject199.getGoodAnswer(), QuestionStringStorage.questionObject199.getExplanation());
+        questionList.add(question199);
+
+        Question question200 = new Question(UtilStringStorage.science, QuestionStringStorage.questionObject200.getQuestion(),QuestionStringStorage.questionObject200.getAnswerA(),
+                QuestionStringStorage.questionObject200.getAnswerB(), QuestionStringStorage.questionObject200.getAnswerC(), QuestionStringStorage.questionObject200.getAnswerD(),
+                QuestionStringStorage.questionObject200.getGoodAnswer(), QuestionStringStorage.questionObject200.getExplanation());
+        questionList.add(question200);
 
     }
 

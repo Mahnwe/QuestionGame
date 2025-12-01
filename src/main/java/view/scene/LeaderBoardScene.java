@@ -1,5 +1,7 @@
 package view.scene;
 
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
@@ -114,9 +116,9 @@ public class LeaderBoardScene extends Scene
     {
         Label leaderBoardLabel = new Label(UtilStringStorage.leaderBoardLabel);
 
-        leaderBoardLabel.setTranslateX(720);
-        leaderBoardLabel.setTranslateY(10);
         leaderBoardLabel.setFont(Font.font("Impact", FontWeight.BOLD, 40));
+        leaderBoardLabel.setPadding(new Insets(10, 0, 0, 750));
+        leaderBoardLabel.setAlignment(Pos.CENTER);
 
         scoreGridPane = new GridPane();
         scoreGridPane.setVgap(50);
@@ -125,8 +127,7 @@ public class LeaderBoardScene extends Scene
         createGridPaneBoard();
 
         readSaveFile(1);
-        scoreGridPane.setTranslateX(470);
-        scoreGridPane.setTranslateY(100);
+        scoreGridPane.setPadding(new Insets(100, 0, 0, 470));
 
         leaderBoardVBox.getChildren().add(leaderBoardLabel);
         leaderBoardVBox.getChildren().add(scoreGridPane);
